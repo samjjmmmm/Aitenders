@@ -131,48 +131,67 @@ export default function UC3Page() {
         </div>
       </section>
 
-      {/* Pain Points Section */}
-      <section className="py-16 px-4 bg-white">
+      {/* Pain Points Section - Clean Modern Design */}
+      <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Master complex bids before they master you</h2>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-              Complex multi-lot RFPs are a compliance nightmare for expert teams because manual Excel tracking 
-              creates dangerous gaps that cost million-euro opportunities. With AItenders, you receive:
+          {/* Centered Header Section */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Master complex bids before they master you
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+              Your trusted partner for seamless multi-lot project management
             </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {painPoints.map((pain, index) => (
-              <Card key={index} className="p-6 border-red-100 bg-red-50/50">
-                <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4">
-                  <pain.icon className="w-6 h-6 text-red-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{pain.title}</h3>
-                <p className="text-gray-600">{pain.description}</p>
-              </Card>
-            ))}
+            <Button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 text-base font-medium">
+              Request Demo
+            </Button>
           </div>
 
-          {/* Pain Points Benefits List */}
-          <div className="bg-purple-50/50 rounded-2xl p-8 border border-purple-100">
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <MdCheckCircle className="w-6 h-6 text-purple-600 mr-3 mt-1" />
-                <span className="text-gray-700"><strong>Intelligent project organization</strong> that structures complex RFPs automatically</span>
-              </li>
-              <li className="flex items-start">
-                <MdCheckCircle className="w-6 h-6 text-purple-600 mr-3 mt-1" />
-                <span className="text-gray-700"><strong>Seamless expert coordination</strong> across technical, legal, commercial, and quality teams</span>
-              </li>
-              <li className="flex items-start">
-                <MdCheckCircle className="w-6 h-6 text-purple-600 mr-3 mt-1" />
-                <span className="text-gray-700"><strong>Compliance protection</strong> that prevents costly bid exclusions</span>
-              </li>
-              <li className="flex items-start">
-                <MdCheckCircle className="w-6 h-6 text-purple-600 mr-3 mt-1" />
-                <span className="text-gray-700"><strong>Preparation work security</strong> that safeguards months of team effort</span>
-              </li>
-            </ul>
+          {/* Four Column Features Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Feature 1 */}
+            <div className="text-center">
+              <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center">
+                <MdVerifiedUser className="w-8 h-8 text-purple-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Your trusted compliance partner</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                AItenders is <span className="text-purple-600 font-medium">enterprise-grade compliant</span> by design, with advanced capabilities such as <span className="text-purple-600 font-medium">multi-expert coordination</span> across technical, legal, and commercial teams
+              </p>
+            </div>
+
+            {/* Feature 2 */}
+            <div className="text-center">
+              <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center">
+                <MdSecurity className="w-8 h-8 text-purple-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Certified for complex projects</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Benefit from secure document processing through <span className="text-purple-600 font-medium">AI analysis</span> and high-grade <span className="text-purple-600 font-medium">compliance tracking</span>, with complete audit trails to ensure best-in-class project management for demanding mega-projects.
+              </p>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="text-center">
+              <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center">
+                <MdTrendingUp className="w-8 h-8 text-purple-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">90% faster organization</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                AItenders delivers instant project structuring with <span className="text-purple-600 font-medium">90% data organization</span> completed on Day 1 for all Enterprise customers working with 500+ page RFPs
+              </p>
+            </div>
+
+            {/* Feature 4 */}
+            <div className="text-center">
+              <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center">
+                <MdGroups className="w-8 h-8 text-purple-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Projects that scale</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Manage complex projects from <span className="text-purple-600 font-medium">multi-lot to mega-projects</span> with seamless coordination across <span className="text-purple-600 font-medium">8+ expert teams</span> while maintaining 100% compliance coverage
+              </p>
+            </div>
           </div>
         </div>
       </section>
