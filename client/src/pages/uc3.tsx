@@ -419,92 +419,150 @@ export default function UC3Page() {
         </div>
       </section>
 
-      {/* Target Audience Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Empower your expert teams to master complex bids with confidence
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <div className="space-y-6">
-              <Card className="p-6 border-purple-100 bg-purple-50/30">
-                <div className="flex items-start mb-4">
-                  <MdAccountBox className="w-6 h-6 text-purple-600 mr-3 mt-1" />
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">For Bid Response Managers</h3>
-                    <p className="text-gray-600 text-sm">
-                      Coordinate technical, legal, commercial, and quality experts seamlessly with AI-powered project organization. 
-                      Structure 500+ page RFPs instantly and maintain complete compliance visibility.
-                    </p>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="p-6 border-purple-100 bg-purple-50/30">
-                <div className="flex items-start mb-4">
-                  <MdTrendingUp className="w-6 h-6 text-purple-600 mr-3 mt-1" />
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">For Project Offer Leaders</h3>
-                    <p className="text-gray-600 text-sm">
-                      Lead winning strategies with intelligent project setup that eliminates weeks of manual preparation. 
-                      Access real-time compliance tracking and automated change detection.
-                    </p>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="p-6 border-purple-100 bg-purple-50/30">
-                <div className="flex items-start mb-4">
-                  <MdSettings className="w-6 h-6 text-purple-600 mr-3 mt-1" />
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">For Contract Managers</h3>
-                    <p className="text-gray-600 text-sm">
-                      Ensure compliance across multi-departmental teams with dynamic requirement tracking and 
-                      automated inconsistency detection. Maintain complete audit trails.
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            </div>
-
-            <div className="space-y-6">
-              <Card className="p-6 border-purple-100 bg-purple-50/30">
-                <div className="flex items-start mb-4">
-                  <FaCogs className="w-6 h-6 text-purple-600 mr-3 mt-1" />
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">For Technical Directors</h3>
-                    <p className="text-gray-600 text-sm">
-                      Focus your specialists on solution development instead of administrative compliance. 
-                      Provide pre-organized requirement structures that eliminate interpretation errors.
-                    </p>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="p-6 border-purple-100 bg-purple-50/30">
-                <div className="flex items-start mb-4">
-                  <MdAnalytics className="w-6 h-6 text-purple-600 mr-3 mt-1" />
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">For Large Account Commercial Directors</h3>
-                    <p className="text-gray-600 text-sm">
-                      Pursue complex international opportunities with bulletproof compliance foundations. 
-                      Demonstrate complete requirement coverage to senior management.
-                    </p>
-                  </div>
-                </div>
-              </Card>
-
-              {/* Testimonial */}
-              <Card className="p-6 bg-gradient-to-r from-purple-100 to-blue-100 border-purple-200">
-                <blockquote className="text-gray-700 italic mb-3">
-                  "90% of our data organization is done on Day 1. We save days of manual work and eliminate interpretation errors."
-                </blockquote>
-                <p className="text-sm text-gray-600 font-medium">— Expert Team Lead, Major Infrastructure Project</p>
-              </Card>
+      {/* Target Audience Section - Interactive Design */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
+              Bid management for <span className="text-purple-600">all your needs</span>
+            </h1>
+            
+            {/* Navigation Tabs */}
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              <button className="px-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors">
+                Bid Response Managers
+              </button>
+              <button className="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors">
+                Project Offer Leaders
+              </button>
+              <button className="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors">
+                Contract Managers
+              </button>
+              <button className="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors">
+                Technical Directors
+              </button>
+              <button className="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors">
+                Commercial Directors
+              </button>
             </div>
           </div>
+
+          {/* Content Card */}
+          <Card className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
+              
+              {/* Left Side - Content */}
+              <div className="p-12 flex flex-col justify-center">
+                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                  <MdAccountBox className="w-6 h-6 text-purple-600" />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Bid Response Managers</h3>
+                
+                <p className="text-gray-700 text-lg leading-relaxed mb-8">
+                  Coordinate technical, legal, commercial, and quality experts seamlessly with AI-powered project organization. 
+                  Structure 500+ page RFPs instantly and maintain complete compliance visibility—eliminating requirement gaps 
+                  and protecting team credibility.
+                </p>
+                
+                <Button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 w-fit">
+                  Learn more →
+                </Button>
+              </div>
+
+              {/* Right Side - UI Mockup */}
+              <div className="bg-gradient-to-br from-purple-50 to-blue-50 p-8 flex items-center justify-center relative">
+                
+                {/* Main Dashboard Mockup */}
+                <div className="bg-white rounded-xl shadow-2xl w-full max-w-md relative">
+                  
+                  {/* Header Bar */}
+                  <div className="bg-gray-900 text-white p-4 rounded-t-xl flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <span className="text-sm font-medium">AItenders Dashboard</span>
+                    <div className="text-sm text-gray-300">Live</div>
+                  </div>
+
+                  {/* Dashboard Content */}
+                  <div className="p-6">
+                    <div className="mb-6">
+                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Project Overview</h4>
+                      <div className="space-y-3">
+                        
+                        {/* Progress Bars */}
+                        <div className="bg-gray-50 rounded-lg p-3">
+                          <div className="flex justify-between items-center mb-2">
+                            <span className="text-sm text-gray-700">Requirements Analysis</span>
+                            <span className="text-sm font-medium text-green-600">100%</span>
+                          </div>
+                          <div className="w-full bg-gray-200 rounded-full h-2">
+                            <div className="bg-green-500 h-2 rounded-full w-full"></div>
+                          </div>
+                        </div>
+
+                        <div className="bg-gray-50 rounded-lg p-3">
+                          <div className="flex justify-between items-center mb-2">
+                            <span className="text-sm text-gray-700">Expert Coordination</span>
+                            <span className="text-sm font-medium text-blue-600">78%</span>
+                          </div>
+                          <div className="w-full bg-gray-200 rounded-full h-2">
+                            <div className="bg-blue-500 h-2 rounded-full w-3/4"></div>
+                          </div>
+                        </div>
+
+                        <div className="bg-gray-50 rounded-lg p-3">
+                          <div className="flex justify-between items-center mb-2">
+                            <span className="text-sm text-gray-700">Compliance Check</span>
+                            <span className="text-sm font-medium text-purple-600">92%</span>
+                          </div>
+                          <div className="w-full bg-gray-200 rounded-full h-2">
+                            <div className="bg-purple-500 h-2 rounded-full w-11/12"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Team Status */}
+                    <div className="border-t pt-4">
+                      <h5 className="text-sm font-semibold text-gray-700 mb-3">Team Status</h5>
+                      <div className="flex -space-x-2">
+                        <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center border-2 border-white">
+                          <span className="text-xs text-white font-medium">T</span>
+                        </div>
+                        <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center border-2 border-white">
+                          <span className="text-xs text-white font-medium">L</span>
+                        </div>
+                        <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center border-2 border-white">
+                          <span className="text-xs text-white font-medium">C</span>
+                        </div>
+                        <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center border-2 border-white">
+                          <span className="text-xs text-white font-medium">Q</span>
+                        </div>
+                        <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center border-2 border-white">
+                          <span className="text-xs text-gray-600 font-medium">+3</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Floating Notification */}
+                <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium animate-pulse">
+                  ✓ 500+ pages analyzed
+                </div>
+
+                {/* Floating Alert */}
+                <div className="absolute bottom-4 left-4 bg-blue-500 text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium">
+                  📊 Compliance: 92%
+                </div>
+              </div>
+            </div>
+          </Card>
         </div>
       </section>
 
