@@ -156,72 +156,61 @@ export default function HomePage() {
 
           {/* Chat UI */}
           <div className="max-w-2xl mx-auto mb-16">
-            <Card className="bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-              {/* Chat Header */}
-              <div className="bg-gradient-to-r from-blue-600 to-green-600 px-6 py-4">
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-green-400 rounded-full mr-2"></div>
-                  <span className="text-white font-medium">Ask our AI Assistant</span>
-                </div>
+            <div className="relative">
+              <Input
+                type="text"
+                placeholder="How can I help you today?"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                onKeyPress={handleKeyPress}
+                className="w-full pl-6 pr-24 py-4 text-base bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full shadow-sm focus:border-blue-300 focus:ring-2 focus:ring-blue-100 focus:outline-none transition-all duration-200"
+                disabled={sendMessageMutation.isPending}
+              />
+              <div className="absolute right-3 top-1/2 transform -translate-y-1/2 flex items-center space-x-2">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-8 w-8 rounded-full hover:bg-gray-100"
+                  disabled={sendMessageMutation.isPending}
+                >
+                  <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                  </svg>
+                </Button>
+                <Button
+                  onClick={handleSendMessage}
+                  disabled={!message.trim() || sendMessageMutation.isPending}
+                  size="icon"
+                  className="h-8 w-8 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-sm"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 11l5-5m0 0l5 5m-5-5v12" />
+                  </svg>
+                </Button>
               </div>
-              
-              {/* Chat Messages */}
-              <div className="h-64 overflow-y-auto p-6 space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Bot className="w-4 h-4 text-white" />
-                  </div>
-                  <div className="bg-gray-100 rounded-2xl rounded-tl-sm px-4 py-3 max-w-xs">
-                    <p className="text-gray-800">
-                      Hello! I'm here to help you with tender management questions. How can I assist you today?
-                    </p>
-                  </div>
-                </div>
-
+            </div>
+            
+            {/* Messages Display - Only show when there are messages */}
+            {messages.length > 0 && (
+              <div className="mt-6 space-y-4 max-h-64 overflow-y-auto">
                 {messages.map((msg) => (
                   <div key={msg.id} className="space-y-3">
-                    <div className="flex items-start space-x-3 justify-end">
-                      <div className="bg-blue-600 rounded-2xl rounded-tr-sm px-4 py-3 max-w-xs">
-                        <p className="text-white">{msg.message}</p>
+                    <div className="flex justify-end">
+                      <div className="bg-blue-600 text-white px-4 py-2 rounded-2xl rounded-tr-sm max-w-xs">
+                        <p className="text-sm">{msg.message}</p>
                       </div>
                     </div>
                     {msg.response && (
-                      <div className="flex items-start space-x-3">
-                        <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                          <Bot className="w-4 h-4 text-white" />
-                        </div>
-                        <div className="bg-gray-100 rounded-2xl rounded-tl-sm px-4 py-3 max-w-xs">
-                          <p className="text-gray-800">{msg.response}</p>
+                      <div className="flex justify-start">
+                        <div className="bg-gray-100 text-gray-800 px-4 py-2 rounded-2xl rounded-tl-sm max-w-xs">
+                          <p className="text-sm">{msg.response}</p>
                         </div>
                       </div>
                     )}
                   </div>
                 ))}
               </div>
-              
-              {/* Chat Input */}
-              <div className="border-t border-gray-200 p-4">
-                <div className="flex space-x-3">
-                  <Input
-                    type="text"
-                    placeholder="Ask about tender management, requirements extraction, or our platform..."
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    onKeyPress={handleKeyPress}
-                    className="flex-1 rounded-full"
-                    disabled={sendMessageMutation.isPending}
-                  />
-                  <Button
-                    onClick={handleSendMessage}
-                    disabled={!message.trim() || sendMessageMutation.isPending}
-                    size="icon"
-                    className="rounded-full bg-blue-600 hover:bg-blue-700"
-                  >
-                    <Send className="w-4 h-4" />
-                  </Button>
-                </div>
-              </div>
-            </Card>
+            )}
           </div>
         </div>
       </main>
