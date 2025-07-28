@@ -1,0 +1,345 @@
+1. Project Setup (Instructions for Your Team)
+
+First, ensure your project is set up with the necessary dependencies.
+Generated bash
+
+      
+# Using npm
+npm install react framer-motion lucide-react tailwindcss
+
+# Or using yarn
+yarn add react framer-motion lucide-react tailwindcss
+
+    
+
+IGNORE_WHEN_COPYING_START
+Use code with caution. Bash
+IGNORE_WHEN_COPYING_END
+
+Make sure your tailwind.config.js is configured to scan your component files:
+Generated javascript
+
+      
+// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}", // Adjust this path to match your project structure
+  ],
+  theme: {
+    extend: {
+      keyframes: {
+        'glow': {
+          '0%, 100%': { boxShadow: '0 0 5px #3b82f6, 0 0 10px #3b82f6' },
+          '50%': { boxShadow: '0 0 20px #3b82f6, 0 0 30px #3b82f6' },
+        },
+        'alert-glow': {
+          '0%, 100%': { filter: 'drop-shadow(0 0 2px #ef4444)' },
+          '50%': { filter: 'drop-shadow(0 0 5px #ef4444)' },
+        }
+      },
+      animation: {
+        glow: 'glow 2s ease-in-out infinite',
+        'alert-glow': 'alert-glow 1.5s ease-in-out infinite',
+      },
+    },
+  },
+  plugins: [],
+}
+
+    
+
+IGNORE_WHEN_COPYING_START
+Use code with caution. JavaScript
+IGNORE_WHEN_COPYING_END
+
+We've added custom keyframes and animation utilities for the glowing effects to keep our JSX clean.
+2. The React Component (UC3AnalysisCard.jsx)
+
+This single file contains the entire logic for the card. It's broken down into smaller, logical parts for readability.
+Generated jsx
+
+      
+// src/components/UC3AnalysisCard.jsx
+
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FileText, Users, ShieldAlert, Check, CheckCircle, FolderKanban, UsersRound, AlertTriangle } from 'lucide-react';
+
+// --- Configuration for the three animation phases ---
+const PHASES_CONFIG = [
+  {
+    key: 'start',
+    duration: 3000,
+    text: "From 500+ pages to a structured compliance base — instantly.",
+    Icon: FileText,
+  },
+  {
+    key: 'collaborate',
+    duration: 2500, // Slightly longer to allow for checkmark animation
+    text: "Experts collaborate in real-time — without Excel chaos.",
+    Icon: Users,
+  },
+  {
+    key: 'risk',
+    duration: 2500,
+    text: "Every change detected, every risk managed.",
+    Icon: ShieldAlert,
+  },
+];
+
+// --- Main Card Component ---
+const UC3AnalysisCard = () => {
+  const [phaseIndex, setPhaseIndex] = useState(0);
+
+  // The core animation loop controller
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setPhaseIndex((prevIndex) => (prevIndex + 1) % PHASES_CONFIG.length);
+    }, PHASES_CONFIG[phaseIndex].duration);
+
+    return () => clearTimeout(timer);
+  }, [phaseIndex]);
+
+  const currentPhase = PHASES_CONFIG[phaseIndex];
+
+  return (
+    <div className="bg-white rounded-2xl shadow-2xl overflow-hidden max-w-lg mx-auto font-sans flex flex-col h-[380px]">
+      
+      {/* === TOP: ANIMATION AREA === */}
+      <div className="w-full h-[210px] bg-slate-100/70 p-4 flex flex-col justify-center items-center relative overflow-hidden">
+        <AnimationScene phaseKey={currentPhase.key} />
+        <OverlayContent key={phaseIndex} phase={currentPhase} />
+      </div>
+
+      {/* === BOTTOM: CONTENT AREA === */}
+      <div className="p-6 bg-white flex-grow flex flex-col justify-between">
+        <div>
+          <h3 className="font-bold text-slate-800 text-lg">
+            Every requirement addressed, every risk under control.
+          </h3>
+          <ul className="mt-3 space-y-2 text-slate-600">
+            <MiniBullet Icon={FolderKanban} text="90% faster organization" />
+            <MiniBullet Icon={UsersRound} text="40% faster reviews" />
+            <MiniBullet Icon={AlertTriangle} text="0 compliance gaps" />
+          </ul>
+        </div>
+        <a 
+          href="/uc3" 
+          className="mt-4 w-full bg-blue-600 text-white font-semibold text-center py-2.5 rounded-lg shadow-md hover:bg-blue-700 transition-all duration-200 ease-in-out transform hover:-translate-y-0.5"
+        >
+          Explore UC3
+        </a>
+      </div>
+    </div>
+  );
+};
+
+// --- Sub-component for the main animation visuals ---
+const AnimationScene = ({ phaseKey }) => {
+  const mockRows = [1, 2, 3, 4]; // For the compliance matrix
+
+  return (
+    <div className="w-full h-full relative">
+      {/* Phase 1: Messy Docs to Clean Matrix */}
+      <AnimatePresence>
+        {phaseKey === 'start' && (
+          <motion.div
+            key="messy-docs"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1, transition: { duration: 0.5 } }}
+            exit={{ opacity: 0, scale: 0.8, transition: { duration: 0.5 } }}
+            className="absolute inset-0 flex items-center justify-center"
+          >
+            {/* The stack of messy documents */}
+            <motion.div
+              className="w-48 h-28 bg-white border border-slate-300 rounded-md shadow-md"
+              style={{ rotate: -15, x: -10, y: 10 }}
+            />
+            <motion.div
+              className="w-48 h-28 bg-white border border-slate-300 rounded-md shadow-lg"
+              style={{ rotate: 5, x: 10 }}
+            />
+            <motion.div
+              className="w-48 h-28 bg-white border border-slate-300 rounded-md shadow-xl flex items-center justify-center"
+              style={{ rotate: -2, y: -10 }}
+            >
+              <FileText className="text-slate-400" size={40} />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      
+      {/* The Clean Compliance Matrix (visible in all phases after the first) */}
+      <AnimatePresence>
+        {phaseKey !== 'start' && (
+          <motion.div
+            key="matrix"
+            className="absolute inset-0 flex items-center justify-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ 
+              opacity: 1, y: 0,
+              transition: { delay: 0.3, type: 'spring', stiffness: 100 } 
+            }}
+            exit={{ opacity: 0, y: 30, transition: { duration: 0.3 } }}
+          >
+            {/* The matrix itself with a glowing effect */}
+            <div className="w-64 bg-white rounded-lg shadow-xl p-2 animate-glow">
+              {mockRows.map((row, i) => (
+                <MatrixRow key={i} index={i} phaseKey={phaseKey} />
+              ))}
+            </div>
+            
+            {/* Avatars for Collaboration Phase */}
+            {phaseKey === 'collaborate' && <CollaborationAvatars />}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
+
+// --- A single row in the animated matrix ---
+const MatrixRow = ({ index, phaseKey }) => {
+  const isAlertRow = index === 2; // Let's make the 3rd row the one with the alert
+
+  return (
+    <div className={`flex items-center justify-between h-8 px-2 my-1 rounded-md transition-colors duration-500 ${
+      phaseKey === 'risk' && isAlertRow ? 'bg-red-100' : 'bg-slate-100'
+    }`}>
+      <div className="w-2/5 h-2 bg-slate-300 rounded-full" />
+      <div className="w-1/4 h-2 bg-slate-300 rounded-full" />
+      <div className="w-6 h-6 flex items-center justify-center">
+        {/* Collaboration checkmarks */}
+        {phaseKey === 'collaborate' && (
+          <motion.div
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1, transition: { delay: 0.8 + index * 0.2, type: 'spring', stiffness: 200 } }}
+          >
+            <Check className="text-green-500" size={20} />
+          </motion.div>
+        )}
+        {/* Risk alert and resolution */}
+        {phaseKey === 'risk' && isAlertRow && (
+          <AnimatePresence mode="wait">
+            <motion.div
+              key="alert"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1, transition: { delay: 0.5 } }}
+              exit={{ scale: 0 }}
+              className="absolute animate-alert-glow"
+            >
+              <ShieldAlert className="text-red-500" size={24} />
+            </motion.div>
+            <motion.div
+              key="resolved"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1, transition: { delay: 1.5 } }}
+            >
+              <CheckCircle className="text-green-600" size={24} />
+            </motion.div>
+          </AnimatePresence>
+        )}
+      </div>
+    </div>
+  );
+};
+
+// --- Avatars that appear during the collaboration phase ---
+const CollaborationAvatars = () => {
+  const avatars = [
+    { initials: 'AB', pos: 'top-0 -left-4', color: 'bg-sky-500' },
+    { initials: 'CD', pos: '-top-4 right-8', color: 'bg-fuchsia-500' },
+    { initials: 'EF', pos: 'bottom-0 -right-4', color: 'bg-emerald-500' },
+  ];
+  return (
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={{
+        visible: { transition: { staggerChildren: 0.2, delayChildren: 0.5 } }
+      }}
+    >
+      {avatars.map(avatar => (
+        <motion.div
+          key={avatar.initials}
+          variants={{
+            hidden: { opacity: 0, scale: 0.5 },
+            visible: { opacity: 1, scale: 1 }
+          }}
+          className={`absolute ${avatar.pos} w-10 h-10 ${avatar.color} text-white text-sm font-bold rounded-full flex items-center justify-center border-2 border-white shadow-lg`}
+        >
+          {avatar.initials}
+        </motion.div>
+      ))}
+    </motion.div>
+  );
+};
+
+// --- The text and icon overlay that changes each phase ---
+const OverlayContent = ({ phase }) => {
+  return (
+    <div className="absolute bottom-2 left-4 right-4">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={phase.key}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeInOut" } }}
+          exit={{ opacity: 0, y: -10, transition: { duration: 0.3, ease: "easeInOut" } }}
+          className="flex items-center justify-center text-center"
+        >
+          <phase.Icon className="w-5 h-5 mr-2 text-slate-600 flex-shrink-0" />
+          <p className="text-sm text-slate-700 font-medium">{phase.text}</p>
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  );
+};
+
+// --- Small utility component for the bottom bullet points ---
+const MiniBullet = ({ Icon, text }) => (
+  <li className="flex items-center text-sm">
+    <Icon className="w-4 h-4 mr-2.5 text-blue-500" />
+    <span>{text}</span>
+  </li>
+);
+
+
+export default UC3AnalysisCard;
+
+    
+
+IGNORE_WHEN_COPYING_START
+Use code with caution. Jsx
+IGNORE_WHEN_COPYING_END
+3. Rationale & Architecture Decisions
+
+As Head of Front-End, here's why I've structured the code this way:
+
+    Component-Based Architecture: The main component UC3AnalysisCard is a container. The complex parts—the animation AnimationScene, the OverlayContent, and even the small MiniBullet—are broken into their own components. This follows React best practices, making the code:
+
+        Readable: It's easy to understand what each part does.
+
+        Reusable: Components like MiniBullet could be used elsewhere.
+
+        Maintainable: If we need to change the collaboration animation, we only touch CollaborationAvatars and the relevant parts of MatrixRow, without affecting the rest of the card.
+
+    Configuration-Driven Animation: The PHASES_CONFIG array is the single source of truth for the animation loop. To change timing, text, or icons, a product manager or developer can simply modify this array. This is far superior to hardcoding values throughout the component, reducing the risk of errors and making updates trivial.
+
+    State Management: A simple useState and useEffect hook pattern is perfect for controlling the loop. It's lightweight, easy to understand, and avoids pulling in a heavier state management library for such a self-contained component. The useEffect cleanup function (return () => clearTimeout(timer)) is crucial to prevent memory leaks if the component unmounts.
+
+    Declarative Animations with Framer Motion:
+
+        AnimatePresence: This is the star of the show. It handles enter and exit animations gracefully, which is perfect for transitioning between our distinct visual phases (e.g., messy docs disappearing, matrix appearing). mode="wait" ensures one element finishes exiting before the next one enters, preventing visual overlap.
+
+        Variants: Using variants for the CollaborationAvatars allows for orchestrating complex animations like staggerChildren cleanly, separating the animation logic from the JSX.
+
+        Key Prop: The key prop is essential within AnimatePresence. By tying it to phaseIndex or phase.key, we tell React and Framer Motion that the component is genuinely new and should trigger the enter/exit animations.
+
+    Performance & Styling:
+
+        Tailwind CSS: We leverage Tailwind for rapid, consistent styling. The custom keyframes for glow effects are defined in tailwind.config.js to keep the JSX clean and the animation definitions reusable.
+
+        Hardware Acceleration: Framer Motion uses hardware-accelerated CSS properties (transform, opacity) by default, ensuring the animations are smooth and performant.
+
+        Lucide Icons: These are tree-shakable SVG icons, so we only bundle the icons we actually use, keeping the final package size small.

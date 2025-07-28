@@ -8,6 +8,7 @@ import {
 } from "react-icons/md";
 import { FaUsers, FaShieldAlt, FaChartBar, FaFileAlt, FaCogs } from "react-icons/fa";
 import ContactSection from "@/components/contact-section";
+import UC3AnalysisCard from "@/components/UC3AnalysisCard";
 
 export default function UC3Page() {
   const painPoints = [
@@ -103,30 +104,86 @@ export default function UC3Page() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-      {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <Badge className="mb-6 bg-purple-100 text-purple-800 border-purple-200">
-            Use Case: Complex Multi-Lot Bid Management
-          </Badge>
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Chaque exigence traitée, <span className="text-purple-600">chaque risque maîtrisé</span>
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Transform complex bid documentation into structured, compliant proposals. 
-            Master complex bids before they master you.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <Button size="lg" className="bg-purple-600 hover:bg-purple-700 px-8 py-4 text-lg">
-              Request a Demo
-            </Button>
-            <Button variant="outline" size="lg" className="border-purple-600 text-purple-600 hover:bg-purple-50 px-8 py-4 text-lg">
-              Download the Use Case
-            </Button>
-          </div>
-          <div className="flex items-center justify-center text-sm text-gray-500">
-            <MdSchedule className="w-4 h-4 mr-2" />
-            Perfect for multi-lot international mega-projects
+      {/* Hero Section - Redesigned with Animated Card */}
+      <section className="py-20 px-4 bg-gradient-to-br from-slate-50 via-white to-purple-50/30 min-h-[90vh] flex items-center">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            {/* Left Side - Content */}
+            <div className="text-left">
+              <Badge className="mb-6 bg-purple-100 text-purple-800 border-purple-200 text-sm font-medium px-4 py-2">
+                Use Case: Complex Multi-Lot Bid Management
+              </Badge>
+              
+              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Chaque exigence traitée, <span className="text-purple-600">chaque risque maîtrisé</span>
+              </h1>
+              
+              <p className="text-xl lg:text-2xl text-gray-600 mb-8 leading-relaxed">
+                Transform complex bid documentation into structured, compliant proposals. 
+                Master complex bids before they master you.
+              </p>
+              
+              {/* Key Benefits */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-gray-100 shadow-sm">
+                  <div className="text-2xl font-bold text-purple-600 mb-1">90%</div>
+                  <div className="text-sm text-gray-600">Faster organization</div>
+                </div>
+                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-gray-100 shadow-sm">
+                  <div className="text-2xl font-bold text-green-600 mb-1">0</div>
+                  <div className="text-sm text-gray-600">Compliance gaps</div>
+                </div>
+                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-gray-100 shadow-sm">
+                  <div className="text-2xl font-bold text-blue-600 mb-1">100%</div>
+                  <div className="text-sm text-gray-600">Coverage guaranteed</div>
+                </div>
+              </div>
+              
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="bg-purple-600 hover:bg-purple-700 px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                  Request a Demo
+                </Button>
+                <Button variant="outline" size="lg" className="border-purple-600 text-purple-600 hover:bg-purple-50 px-8 py-4 text-lg font-semibold rounded-xl border-2 hover:border-purple-700 transition-all duration-300">
+                  Download the Use Case
+                </Button>
+              </div>
+              
+              {/* Trust Indicators */}
+              <div className="mt-10 pt-8 border-t border-gray-200">
+                <p className="text-sm text-gray-500 mb-4">Trusted by expert teams managing multi-lot international projects</p>
+                <div className="flex items-center space-x-6">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <MdShield className="w-5 h-5 mr-2 text-green-500" />
+                    Enterprise-grade security
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <MdCheckCircle className="w-5 h-5 mr-2 text-blue-500" />
+                    ISO 27001 compliant
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side - Animated Card */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative">
+                <UC3AnalysisCard />
+                
+                {/* Floating Elements */}
+                <div className="absolute -top-4 -right-4 w-20 h-20 bg-purple-200/30 rounded-full blur-xl animate-pulse"></div>
+                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-200/20 rounded-full blur-2xl animate-pulse" style={{animationDelay: '1s'}}></div>
+                
+                {/* Success Indicators */}
+                <div className="absolute -top-8 left-8 bg-green-500 text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium animate-bounce">
+                  ✓ AI Analysis Complete
+                </div>
+                <div className="absolute -bottom-4 right-8 bg-blue-500 text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium animate-pulse">
+                  🚀 Ready for Review
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
