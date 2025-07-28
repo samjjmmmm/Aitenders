@@ -1,23 +1,28 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Clock, CheckCircle, AlertTriangle, Users, TrendingUp, Shield, Zap, ArrowRight, Target, FileCheck, BarChart3, Award, MessageCircle } from "lucide-react";
+import { 
+  MdSchedule, MdCheckCircle, MdWarning, MdPeople, MdTrendingUp, MdSecurity, 
+  MdFlashOn, MdArrowForward, MdGpsFixed, MdVerifiedUser, MdAnalytics, MdEmojiEvents, 
+  MdMessage, MdShield, MdGroups 
+} from "react-icons/md";
+import { FaUsers, FaShieldAlt, FaChartBar } from "react-icons/fa";
 import ContactSection from "@/components/contact-section";
 
 export default function UC1Page() {
   const painPoints = [
     {
-      icon: Clock,
-      title: "Time Pressure",
+      icon: MdSchedule,
+      title: "Time Pressure",  
       description: "Quick turnaround times leave little room for thorough proposal analysis"
     },
     {
-      icon: AlertTriangle,
+      icon: MdWarning,
       title: "Risk Oversight",
       description: "Missing critical requirements or compliance issues in fast-paced environments"
     },
     {
-      icon: Users,
+      icon: FaUsers,
       title: "Resource Constraints",
       description: "Limited team capacity to handle multiple simultaneous small projects"
     }
@@ -25,17 +30,17 @@ export default function UC1Page() {
 
   const solutions = [
     {
-      icon: Zap,
+      icon: MdFlashOn,
       title: "Instant Analysis",
       description: "AI-powered document analysis delivers insights in minutes, not hours"
     },
     {
-      icon: CheckCircle,
+      icon: MdCheckCircle,
       title: "Automated Validation",
       description: "Intelligent compliance checking ensures no critical requirements are missed"
     },
     {
-      icon: TrendingUp,
+      icon: MdTrendingUp,
       title: "Scalable Process",
       description: "Handle multiple projects simultaneously without compromising quality"
     }
@@ -114,7 +119,7 @@ export default function UC1Page() {
             that delivers insights in minutes, not hours.
           </p>
           <div className="flex items-center justify-center text-sm text-gray-500 mb-8">
-            <Clock className="w-4 h-4 mr-2" />
+            <MdSchedule className="w-4 h-4 mr-2" />
             Perfect for projects with 24-48 hour turnaround times
           </div>
         </div>
@@ -204,19 +209,19 @@ export default function UC1Page() {
               <h3 className="text-2xl font-bold text-green-800 mb-6">After Aitenders</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <CheckCircle className="w-6 h-6 text-green-600 mr-3 mt-1" />
+                  <MdCheckCircle className="w-6 h-6 text-green-600 mr-3 mt-1" />
                   <span className="text-gray-700">Complete analysis delivered in 15-30 minutes</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-6 h-6 text-green-600 mr-3 mt-1" />
+                  <MdCheckCircle className="w-6 h-6 text-green-600 mr-3 mt-1" />
                   <span className="text-gray-700">95% accuracy in requirement identification</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-6 h-6 text-green-600 mr-3 mt-1" />
+                  <MdCheckCircle className="w-6 h-6 text-green-600 mr-3 mt-1" />
                   <span className="text-gray-700">Handle 5-6 projects simultaneously with confidence</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-6 h-6 text-green-600 mr-3 mt-1" />
+                  <MdCheckCircle className="w-6 h-6 text-green-600 mr-3 mt-1" />
                   <span className="text-gray-700">Consistent, thorough analysis regardless of time pressure</span>
                 </li>
               </ul>
@@ -238,26 +243,26 @@ export default function UC1Page() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Your Profile</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center">
-                    <Target className="w-5 h-5 text-blue-600 mr-3" />
+                    <MdGpsFixed className="w-5 h-5 text-blue-600 mr-3" />
                     <span>Bid managers handling 10+ small projects monthly</span>
                   </li>
                   <li className="flex items-center">
-                    <Target className="w-5 h-5 text-blue-600 mr-3" />
+                    <MdGpsFixed className="w-5 h-5 text-blue-600 mr-3" />
                     <span>Small to medium enterprises in construction/services</span>
                   </li>
                   <li className="flex items-center">
-                    <Target className="w-5 h-5 text-blue-600 mr-3" />
+                    <MdGpsFixed className="w-5 h-5 text-blue-600 mr-3" />
                     <span>Teams with limited proposal resources</span>
                   </li>
                   <li className="flex items-center">
-                    <Target className="w-5 h-5 text-blue-600 mr-3" />
+                    <MdGpsFixed className="w-5 h-5 text-blue-600 mr-3" />
                     <span>Companies competing on speed-to-market</span>
                   </li>
                 </ul>
               </div>
               <div className="text-center">
                 <div className="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-12 h-12 text-blue-600" />
+                  <MdGroups className="w-12 h-12 text-blue-600" />
                 </div>
                 <p className="text-gray-600 font-medium">Designed for agile bid teams who value efficiency</p>
               </div>
@@ -284,7 +289,7 @@ export default function UC1Page() {
                   <p className="text-gray-600 text-sm">{step.description}</p>
                 </Card>
                 {index < userJourneySteps.length - 1 && (
-                  <ArrowRight className="hidden md:block absolute top-1/2 -right-3 transform -translate-y-1/2 w-6 h-6 text-gray-400" />
+                  <MdArrowForward className="hidden md:block absolute top-1/2 -right-3 transform -translate-y-1/2 w-6 h-6 text-gray-400" />
                 )}
               </div>
             ))}
@@ -321,7 +326,7 @@ export default function UC1Page() {
             {differentiators.map((diff, index) => (
               <Card key={index} className="p-6">
                 <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
-                  <Award className="w-6 h-6 text-blue-600" />
+                  <MdEmojiEvents className="w-6 h-6 text-blue-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{diff.title}</h3>
                 <p className="text-gray-600">{diff.description}</p>
@@ -337,24 +342,24 @@ export default function UC1Page() {
           <Card className="p-8 bg-green-50/50 border-green-100">
             <div className="text-center mb-8">
               <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-green-600" />
+                <MdSecurity className="w-8 h-8 text-green-600" />
               </div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Security & Compliance</h2>
               <p className="text-lg text-gray-600">Your data and projects are protected by enterprise-grade security</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div>
-                <FileCheck className="w-8 h-8 text-green-600 mx-auto mb-3" />
+                <MdVerifiedUser className="w-8 h-8 text-green-600 mx-auto mb-3" />
                 <h4 className="font-semibold text-gray-900 mb-2">ISO 27001 Certified</h4>
                 <p className="text-gray-600 text-sm">International security management standards</p>
               </div>
               <div>
-                <Shield className="w-8 h-8 text-green-600 mx-auto mb-3" />
+                <MdShield className="w-8 h-8 text-green-600 mx-auto mb-3" />
                 <h4 className="font-semibold text-gray-900 mb-2">GDPR Compliant</h4>
                 <p className="text-gray-600 text-sm">Full European data protection compliance</p>
               </div>
               <div>
-                <BarChart3 className="w-8 h-8 text-green-600 mx-auto mb-3" />
+                <MdAnalytics className="w-8 h-8 text-green-600 mx-auto mb-3" />
                 <h4 className="font-semibold text-gray-900 mb-2">99.9% Uptime</h4>
                 <p className="text-gray-600 text-sm">Reliable access when you need it most</p>
               </div>
@@ -372,7 +377,7 @@ export default function UC1Page() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg">
-              <MessageCircle className="w-5 h-5 mr-2" />
+              <MdMessage className="w-5 h-5 mr-2" />
               Request Demo
             </Button>
             <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg">

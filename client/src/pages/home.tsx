@@ -6,7 +6,12 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link, useLocation } from "wouter";
-import { ChartLine, Search, File, Lightbulb, TrendingUp, Shield, Users, Send, Bot, FileText, Settings, Award, Target, Clock, CheckCircle, UserCheck, Edit, BarChart3, ShieldCheck, Users2 } from "lucide-react";
+import { 
+  MdBarChart, MdSearch, MdDescription, MdLightbulb, MdTrendingUp, MdSecurity, MdPeople, 
+  MdSend, MdInsertDriveFile, MdSettings, MdEmojiEvents, MdGpsFixed, 
+  MdSchedule, MdCheckCircle, MdEdit, MdAnalytics, MdVerifiedUser, MdGroups, MdAccountCircle 
+} from "react-icons/md";
+import { FaRobot, FaChartLine, FaShieldAlt, FaUsers } from "react-icons/fa";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
@@ -82,7 +87,7 @@ export default function HomePage() {
     {
       id: "preparing-bid",
       title: "I am preparing a bid or proposal to submit",
-      icon: FileText,
+      icon: MdInsertDriveFile,
       color: "bg-blue-500/10 text-blue-600",
       useCases: ["UC1", "UC2", "UC3", "UC7"],
       nextStep: "bid"
@@ -90,7 +95,7 @@ export default function HomePage() {
     {
       id: "managing-execution",
       title: "I am managing a project that is already in execution",
-      icon: Settings,
+      icon: MdSettings,
       color: "bg-green-500/10 text-green-600",
       useCases: ["UC4", "UC5", "UC6", "UC8"],
       nextStep: "execution"
@@ -98,7 +103,7 @@ export default function HomePage() {
     {
       id: "drafting-compliance",
       title: "I need support to draft documents and prove compliance",
-      icon: Award,
+      icon: MdEmojiEvents,
       color: "bg-purple-500/10 text-purple-600",
       useCases: ["UC7", "UC8"],
       nextStep: "drafting"
@@ -106,7 +111,7 @@ export default function HomePage() {
     {
       id: "exploring-aitenders",
       title: "I am exploring how Aitenders can help before deciding",
-      icon: Target,
+      icon: MdGpsFixed,
       color: "bg-orange-500/10 text-orange-600",
       redirectTo: "/uc1"
     }
@@ -118,28 +123,28 @@ export default function HomePage() {
       {
         id: "small-frequent",
         title: "I handle small, frequent projects that need fast validation",
-        icon: Clock,
+        icon: MdSchedule,
         color: "bg-blue-500/10 text-blue-600",
         useCases: ["UC1"]
       },
       {
         id: "midsize-clauses",
         title: "I work on mid-size projects with multiple clauses and risks",
-        icon: CheckCircle,
+        icon: MdCheckCircle,
         color: "bg-green-500/10 text-green-600",
         useCases: ["UC2"]
       },
       {
         id: "large-complex",
         title: "I lead large, complex tenders with many contributors",
-        icon: Users,
+        icon: MdPeople,
         color: "bg-purple-500/10 text-purple-600",
         useCases: ["UC3"]
       },
       {
         id: "structured-drafting",
         title: "I mainly need structured drafting support for my responses",
-        icon: Edit,
+        icon: MdEdit,
         color: "bg-orange-500/10 text-orange-600",
         useCases: ["UC7"]
       }
@@ -148,28 +153,28 @@ export default function HomePage() {
       {
         id: "small-straightforward",
         title: "I run small, straightforward projects that require quick answers",
-        icon: Target,
+        icon: MdGpsFixed,
         color: "bg-blue-500/10 text-blue-600",
         useCases: ["UC4"]
       },
       {
         id: "midsize-evolving",
         title: "I manage mid-size projects with evolving commitments",
-        icon: UserCheck,
+        icon: MdAccountCircle,
         color: "bg-green-500/10 text-green-600",
         useCases: ["UC5"]
       },
       {
         id: "large-multidiscipline",
         title: "I oversee large, multi-discipline projects with high risk",
-        icon: Shield,
+        icon: MdSecurity,
         color: "bg-purple-500/10 text-purple-600",
         useCases: ["UC6"]
       },
       {
         id: "compliance-execution",
         title: "I need help drafting and justifying compliance during execution",
-        icon: Award,
+        icon: MdEmojiEvents,
         color: "bg-orange-500/10 text-orange-600",
         useCases: ["UC8"]
       }
@@ -178,14 +183,14 @@ export default function HomePage() {
       {
         id: "bid-coverage",
         title: "I draft responses for bids and need full coverage proof",
-        icon: Edit,
+        icon: MdEdit,
         color: "bg-blue-500/10 text-blue-600",
         useCases: ["UC7"]
       },
       {
         id: "execution-traceability",
         title: "I draft deliverables during execution and need traceability",
-        icon: Award,
+        icon: MdEmojiEvents,
         color: "bg-green-500/10 text-green-600",
         useCases: ["UC8"]
       }
@@ -197,28 +202,28 @@ export default function HomePage() {
     {
       id: "save-time-decide",
       title: "I need to save time and reach decisions faster",
-      icon: Clock,
+      icon: MdSchedule,
       color: "bg-blue-500/10 text-blue-600",
       useCases: ["UC1", "UC2"]
     },
     {
       id: "guarantee-compliance",
       title: "I need to guarantee compliance and avoid rejections",
-      icon: Shield,
+      icon: MdSecurity,
       color: "bg-green-500/10 text-green-600",
       useCases: ["UC2", "UC3", "UC6", "UC8"]
     },
     {
       id: "improve-collaboration",
       title: "I need to improve collaboration across multiple teams",
-      icon: Users,
+      icon: MdPeople,
       color: "bg-purple-500/10 text-purple-600",
       useCases: ["UC3", "UC5", "UC6"]
     },
     {
       id: "deliver-documents",
       title: "I need to deliver documents that cover everything, with proof",
-      icon: Edit,
+      icon: MdEdit,
       color: "bg-orange-500/10 text-orange-600",
       useCases: ["UC7", "UC8"]
     }
@@ -229,28 +234,28 @@ export default function HomePage() {
     {
       id: "offer-bid-team",
       title: "My offer management or bid team",
-      icon: FileText,
+      icon: MdInsertDriveFile,
       color: "bg-blue-500/10 text-blue-600",
       useCases: ["UC1", "UC2", "UC3", "UC7"]
     },
     {
       id: "contract-managers",
       title: "My contract or project managers",
-      icon: Settings,
+      icon: MdSettings,
       color: "bg-green-500/10 text-green-600",
       useCases: ["UC5", "UC6"]
     },
     {
       id: "field-operations",
       title: "My field or site operations team",
-      icon: Target,
+      icon: MdGpsFixed,
       color: "bg-purple-500/10 text-purple-600",
       useCases: ["UC4"]
     },
     {
       id: "compliance-writers",
       title: "My compliance or technical writers",
-      icon: Edit,
+      icon: MdEdit,
       color: "bg-orange-500/10 text-orange-600",
       useCases: ["UC7", "UC8"]
     }
@@ -261,28 +266,28 @@ export default function HomePage() {
     {
       id: "validated-bid-analysis",
       title: "A validated bid analysis ready to present to management",
-      icon: ChartLine,
+      icon: MdAnalytics,
       color: "bg-blue-500/10 text-blue-600",
       useCases: ["UC1", "UC2"]
     },
     {
       id: "compliance-matrix",
       title: "A complete compliance matrix with risks under control",
-      icon: Shield,
+      icon: MdSecurity,
       color: "bg-green-500/10 text-green-600",
       useCases: ["UC3", "UC6"]
     },
     {
       id: "contract-assistant",
       title: "A live contract assistant accessible to my field teams",
-      icon: Users,
+      icon: MdPeople,
       color: "bg-purple-500/10 text-purple-600",
       useCases: ["UC4", "UC5"]
     },
     {
       id: "drafted-deliverables",
       title: "Drafted deliverables with traceability and proof of coverage",
-      icon: Edit,
+      icon: MdEdit,
       color: "bg-orange-500/10 text-orange-600",
       useCases: ["UC7", "UC8"]
     }
@@ -445,19 +450,19 @@ export default function HomePage() {
 
   const stats = [
     {
-      icon: BarChart3,
+      icon: FaChartLine,
       title: "+50% Productivity",
       description: "Reduce time on each step of the tender process and detect information 95% faster",
       color: "bg-blue-500/10 text-blue-600",
     },
     {
-      icon: ShieldCheck,
+      icon: MdVerifiedUser,
       title: "Better Quality",
       description: "Improve the quality of review and deliverables with full traceability",
       color: "bg-green-500/10 text-green-600",
     },
     {
-      icon: Users2,
+      icon: MdGroups,
       title: "Team Efficiency",
       description: "Staff are less stressed and meetings are more focused on key subjects",
       color: "bg-purple-500/10 text-purple-600",
@@ -576,7 +581,7 @@ export default function HomePage() {
             <div className="relative">
               <div className="flex items-center bg-white border border-gray-200 rounded-full shadow-sm hover:shadow-md transition-all duration-200">
                 <div className="flex items-center justify-center w-12 h-12 ml-2">
-                  <Bot className="w-5 h-5 text-gray-400" />
+                  <FaRobot className="w-5 h-5 text-gray-400" />
                 </div>
                 <Input
                   type="text"
@@ -594,7 +599,7 @@ export default function HomePage() {
                     size="icon"
                     className="h-10 w-10 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-sm hover:shadow-md transition-all duration-200"
                   >
-                    <Send className="w-4 h-4" />
+                    <MdSend className="w-4 h-4" />
                   </Button>
                 </div>
               </div>
