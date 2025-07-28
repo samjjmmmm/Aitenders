@@ -1382,30 +1382,7 @@ export default function UC3Page() {
             </div>
           </div>
 
-          {/* Results Banner */}
-          <div className="mt-20 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 rounded-3xl p-10 text-white text-center shadow-2xl">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-              <div>
-                <div className="text-4xl font-bold mb-2">95%</div>
-                <div className="text-purple-100">Time Reduction</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold mb-2">100%</div>
-                <div className="text-purple-100">Requirement Coverage</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold mb-2">0</div>
-                <div className="text-purple-100">Manual Errors</div>
-              </div>
-            </div>
-            <h3 className="text-3xl font-bold mb-4">Ready to Transform Your Bid Management?</h3>
-            <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              Join teams who've eliminated compliance chaos and accelerated their success
-            </p>
-            <Button className="bg-white text-purple-600 hover:bg-gray-100 px-10 py-5 text-xl font-semibold rounded-2xl shadow-lg transform hover:-translate-y-1 transition-all duration-300">
-              Request Your Demo Today
-            </Button>
-          </div>
+
         </div>
       </section>
 
