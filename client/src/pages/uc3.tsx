@@ -189,84 +189,208 @@ export default function UC3Page() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-      {/* Hero Section - Redesigned with Animated Card */}
-      <section className="py-20 px-4 bg-gradient-to-br from-slate-50 via-white to-purple-50/30 min-h-[90vh] flex items-center">
+      {/* Hero Section - Professional SaaS Design */}
+      <section className="py-32 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             
             {/* Left Side - Content */}
             <div className="text-left">
-              <Badge className="mb-6 bg-purple-100 text-purple-800 border-purple-200 text-sm font-medium px-4 py-2">
-                Use Case: Complex Multi-Lot Bid Management
-              </Badge>
+              <div className="mb-8">
+                <Badge className="mb-8 bg-purple-50 text-purple-700 border-purple-200 text-sm font-medium px-4 py-2 rounded-full">
+                  Complex Multi-Lot Bid Management
+                </Badge>
+                
+                <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight tracking-tight">
+                  Master complex bids before <span className="text-purple-600">they master you</span>
+                </h1>
+                
+                <p className="text-2xl text-gray-600 mb-12 leading-relaxed font-light">
+                  AI-powered coordination for multi-lot projects. Structure 500+ page RFPs instantly, orchestrate expert teams seamlessly.
+                </p>
+              </div>
               
-              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Chaque exigence traitée, <span className="text-purple-600">chaque risque maîtrisé</span>
-              </h1>
-              
-              <p className="text-xl lg:text-2xl text-gray-600 mb-8 leading-relaxed">
-                Transform complex bid documentation into structured, compliant proposals. 
-                Master complex bids before they master you.
-              </p>
-              
-              {/* Key Benefits */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-gray-100 shadow-sm">
-                  <div className="text-2xl font-bold text-purple-600 mb-1">90%</div>
-                  <div className="text-sm text-gray-600">Faster organization</div>
-                </div>
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-gray-100 shadow-sm">
-                  <div className="text-2xl font-bold text-green-600 mb-1">0</div>
-                  <div className="text-sm text-gray-600">Compliance gaps</div>
-                </div>
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-gray-100 shadow-sm">
-                  <div className="text-2xl font-bold text-blue-600 mb-1">100%</div>
-                  <div className="text-sm text-gray-600">Coverage guaranteed</div>
+              {/* Single Key Metric */}
+              <div className="mb-12">
+                <div className="inline-flex items-center px-4 py-2 bg-green-50 rounded-full border border-green-200">
+                  <span className="text-2xl font-bold text-green-700 mr-2">90%</span>
+                  <span className="text-gray-700 text-lg">faster project organization</span>
                 </div>
               </div>
               
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-purple-600 hover:bg-purple-700 px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                  Request a Demo
-                </Button>
-                <Button variant="outline" size="lg" className="border-purple-600 text-purple-600 hover:bg-purple-50 px-8 py-4 text-lg font-semibold rounded-xl border-2 hover:border-purple-700 transition-all duration-300">
-                  Download the Use Case
+              {/* Primary CTA */}
+              <div className="mb-12">
+                <Button 
+                  size="lg" 
+                  className="bg-purple-600 hover:bg-purple-700 text-white px-12 py-6 text-xl font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 w-full sm:w-auto"
+                >
+                  Watch Demo
                 </Button>
               </div>
               
-              {/* Trust Indicators */}
-              <div className="mt-10 pt-8 border-t border-gray-200">
-                <p className="text-sm text-gray-500 mb-4">Trusted by expert teams managing multi-lot international projects</p>
-                <div className="flex items-center space-x-6">
+              {/* Secondary CTA - Less Prominent */}
+              <div className="mb-16">
+                <Button 
+                  variant="ghost" 
+                  className="text-purple-600 hover:text-purple-700 hover:bg-purple-50 px-0 py-2 text-lg font-medium underline decoration-2 underline-offset-4"
+                >
+                  Download Use Case →
+                </Button>
+              </div>
+              
+              {/* Trust Elements */}
+              <div className="border-t border-gray-100 pt-8">
+                <p className="text-sm text-gray-500 mb-6">Trusted by 100+ enterprise teams managing complex international projects</p>
+                
+                {/* Customer Logos / Trust Indicators */}
+                <div className="flex items-center space-x-8">
                   <div className="flex items-center text-sm text-gray-600">
-                    <MdShield className="w-5 h-5 mr-2 text-green-500" />
-                    Enterprise-grade security
+                    <div className="flex -space-x-2 mr-3">
+                      <div className="w-8 h-8 bg-blue-500 rounded-full border-2 border-white flex items-center justify-center">
+                        <span className="text-xs text-white font-medium">A</span>
+                      </div>
+                      <div className="w-8 h-8 bg-green-500 rounded-full border-2 border-white flex items-center justify-center">
+                        <span className="text-xs text-white font-medium">B</span>
+                      </div>
+                      <div className="w-8 h-8 bg-purple-500 rounded-full border-2 border-white flex items-center justify-center">
+                        <span className="text-xs text-white font-medium">C</span>
+                      </div>
+                    </div>
+                    <span>Used by Fortune 500 teams</span>
                   </div>
+                  
                   <div className="flex items-center text-sm text-gray-600">
-                    <MdCheckCircle className="w-5 h-5 mr-2 text-blue-500" />
-                    ISO 27001 compliant
+                    <MdSecurity className="w-5 h-5 mr-2 text-green-500" />
+                    <span>Enterprise-grade security</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Right Side - Animated Card */}
+            {/* Right Side - Realistic Product Mockup */}
             <div className="flex justify-center lg:justify-end">
-              <div className="relative">
-                <UC3AnalysisCard />
+              <div className="relative w-full max-w-lg">
                 
-                {/* Floating Elements */}
-                <div className="absolute -top-4 -right-4 w-20 h-20 bg-purple-200/30 rounded-full blur-xl animate-pulse"></div>
-                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-200/20 rounded-full blur-2xl animate-pulse" style={{animationDelay: '1s'}}></div>
+                {/* Main Dashboard Mockup */}
+                <div className="bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden">
+                  
+                  {/* Browser Header */}
+                  <div className="bg-gray-100 px-6 py-4 flex items-center justify-between border-b border-gray-200">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                      <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                    </div>
+                    <div className="text-sm text-gray-600 font-medium">AItenders - Project Dashboard</div>
+                    <div className="w-12"></div>
+                  </div>
+                  
+                  {/* Dashboard Content */}
+                  <div className="p-8">
+                    
+                    {/* Header */}
+                    <div className="flex items-center justify-between mb-8">
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2">Infrastructure Project RFP</h3>
+                        <p className="text-gray-600">Multi-lot tender • 8 expert teams</p>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                        <span className="text-sm text-gray-600">Live</span>
+                      </div>
+                    </div>
+                    
+                    {/* Progress Overview */}
+                    <div className="grid grid-cols-2 gap-6 mb-8">
+                      <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-100">
+                        <div className="text-3xl font-bold text-green-700 mb-2">127</div>
+                        <div className="text-sm text-gray-600">Requirements processed</div>
+                      </div>
+                      <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border border-blue-100">
+                        <div className="text-3xl font-bold text-blue-700 mb-2">8</div>
+                        <div className="text-sm text-gray-600">Expert teams coordinated</div>
+                      </div>
+                    </div>
+                    
+                    {/* Team Status */}
+                    <div className="space-y-4">
+                      <h4 className="text-lg font-semibold text-gray-900 mb-4">Team Progress</h4>
+                      
+                      <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
+                            <MdEngineering className="w-5 h-5 text-white" />
+                          </div>
+                          <div>
+                            <div className="font-medium text-gray-900">Technical Team</div>
+                            <div className="text-sm text-gray-600">24 requirements assigned</div>
+                          </div>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <div className="w-20 bg-gray-200 rounded-full h-2">
+                            <div className="bg-blue-500 h-2 rounded-full" style={{width: '85%'}}></div>
+                          </div>
+                          <span className="text-sm font-medium text-blue-600">85%</span>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center">
+                            <MdGavel className="w-5 h-5 text-white" />
+                          </div>
+                          <div>
+                            <div className="font-medium text-gray-900">Legal Team</div>
+                            <div className="text-sm text-gray-600">18 requirements assigned</div>
+                          </div>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <div className="w-20 bg-gray-200 rounded-full h-2">
+                            <div className="bg-purple-500 h-2 rounded-full" style={{width: '92%'}}></div>
+                          </div>
+                          <span className="text-sm font-medium text-purple-600">92%</span>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
+                            <MdBusiness className="w-5 h-5 text-white" />
+                          </div>
+                          <div>
+                            <div className="font-medium text-gray-900">Commercial Team</div>
+                            <div className="text-sm text-gray-600">31 requirements assigned</div>
+                          </div>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <div className="w-20 bg-gray-200 rounded-full h-2">
+                            <div className="bg-green-500 h-2 rounded-full" style={{width: '76%'}}></div>
+                          </div>
+                          <span className="text-sm font-medium text-green-600">76%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 
-                {/* Success Indicators */}
-                <div className="absolute -top-8 left-8 bg-green-500 text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium animate-bounce">
-                  ✓ AI Analysis Complete
+                {/* Floating Success Notifications */}
+                <div className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-medium animate-bounce">
+                  <div className="flex items-center space-x-2">
+                    <MdCheckCircle className="w-4 h-4" />
+                    <span>Requirements analyzed</span>
+                  </div>
                 </div>
-                <div className="absolute -bottom-4 right-8 bg-blue-500 text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium animate-pulse">
-                  🚀 Ready for Review
+                
+                <div className="absolute -bottom-4 -left-4 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-medium animate-pulse">
+                  <div className="flex items-center space-x-2">
+                    <MdNotifications className="w-4 h-4" />
+                    <span>Teams notified</span>
+                  </div>
                 </div>
+                
+                {/* Background Decorative Elements */}
+                <div className="absolute -top-8 -right-8 w-24 h-24 bg-purple-200/20 rounded-full blur-2xl"></div>
+                <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-blue-200/15 rounded-full blur-3xl"></div>
               </div>
             </div>
           </div>

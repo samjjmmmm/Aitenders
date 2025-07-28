@@ -1,0 +1,57 @@
+Objective:
+Revamp the hero section so it achieves the same clarity, professionalism, and conversion impact as the Livestorm example. Emphasize whitespace, concise value messaging, a dominant and realistic UI visualization, and a clear, action-oriented CTA with trust elements.
+
+Requirements:
+
+    Visual Hierarchy & Whitespace
+
+        Add ample whitespace between headline, subtext, stats, and CTA.
+
+        Ensure no crowding—each element should have breathing room and clear separation.
+
+        Use a modern SaaS-friendly color palette (soft backgrounds, minimal bold accents).
+
+    Copywriting & Content
+
+        Condense subtext for readability. Prefer short, pointed sentences or bulleted mini-lists.
+
+        Limit statistics to the most impactful (one or two max), presented subtly.
+
+        Only include a single, primary CTA above the fold (“Watch Demo” or “Request Demo”).
+
+        Move any secondary links (like “Download Use Case”) to a less prominent position or use outlined style.
+
+    UI Visual/Mockup
+
+        Replace the abstract UI card with a high-quality screenshot or realistic mockup of your actual product in use (dashboard, organized RFP process, team collaboration).
+
+        Add contextual cues: avatars, notification pop-ups, or a visual that tells the product’s story, not just abstract shapes.
+
+        Image should be sharply rendered and accessible (alt text).
+
+    CTA and Trust Elements
+
+        Design a large, visually-dominant primary CTA button. Use brand accent color and maintain high contrast.
+
+        Position the CTA right below value statements, not on the same line as secondary CTAs.
+
+        Add social proof below the CTA (e.g., star rating, customer logo strip, or “Trusted by 1,000+ teams”).
+
+    Design Consistency
+
+        Use one accent color across the hero for highlights and CTA, not for statistics or unnecessary accents.
+
+        Standardize font sizes, weights, and button treatments.
+
+        Ensure iconography (if used) matches product style and is not generic.
+
+    Accessibility & Responsiveness
+
+        Minimum 4.5:1 contrast for all interactive elements and text.
+
+        All important buttons and visuals keyboard navigable, with aria-labels/alt text.
+
+        On mobile: elements stack logically with spacing preserved, text remains easy to read.
+
+Implementation Note:
+Refer to the structure and polish in the Livestorm image—headline, simple subtext, realistic product UI, large CTA, trust logos—when designing and coding every element.
