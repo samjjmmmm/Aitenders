@@ -10,6 +10,7 @@ import {
 } from "react-icons/md";
 import { FaUsers, FaShieldAlt, FaChartBar, FaFileAlt, FaCogs } from "react-icons/fa";
 import ContactSection from "@/components/contact-section";
+import Header from "@/components/header";
 import UC3AnalysisCard from "@/components/UC3AnalysisCard";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -189,6 +190,8 @@ export default function UC3Page() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+      {/* Header/Navbar */}
+      <Header />
       {/* Hero Section - Professional SaaS Design */}
       <section className="py-32 px-4 bg-white">
         <div className="max-w-7xl mx-auto">

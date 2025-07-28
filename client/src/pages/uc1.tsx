@@ -8,6 +8,7 @@ import {
 } from "react-icons/md";
 import { FaUsers, FaShieldAlt, FaChartBar } from "react-icons/fa";
 import ContactSection from "@/components/contact-section";
+import Header from "@/components/header";
 
 export default function UC1Page() {
   const painPoints = [
@@ -105,6 +106,8 @@ export default function UC1Page() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+      {/* Header/Navbar */}
+      <Header />
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
