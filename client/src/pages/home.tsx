@@ -39,6 +39,7 @@ export default function HomePage() {
   const [currentStep, setCurrentStep] = useState(1);
   const [selections, setSelections] = useState<string[]>([]);
   const [availableUCs, setAvailableUCs] = useState<string[]>([]);
+  const [chatExpanded, setChatExpanded] = useState(false);
   const [, setLocation] = useLocation();
   const { toast } = useToast();
   const queryClient = useQueryClient();
@@ -576,56 +577,130 @@ export default function HomePage() {
             )}
           </div>
 
-          {/* Chat UI - Chatbot Bar */}
+          {/* Chat UI - Expandable Chatbot Interface */}
           <div className="max-w-3xl mx-auto mb-16">
             <div className="relative">
-              <div className="flex items-center bg-white border border-gray-200 rounded-full shadow-sm hover:shadow-md transition-all duration-200">
-                <div className="flex items-center justify-center w-12 h-12 ml-2">
-                  <FaRobot className="w-5 h-5 text-gray-400" />
+              {/* Chat Interface Container */}
+              <div 
+                className={`bg-white border border-gray-200 shadow-lg transition-all duration-300 ease-in-out ${
+                  chatExpanded 
+                    ? 'rounded-3xl p-6 max-h-96' 
+                    : 'rounded-full shadow-sm hover:shadow-md'
+                }`}
+              >
+                {/* Chat Input Bar */}
+                <div 
+                  className={`flex items-center ${chatExpanded ? 'mb-4' : ''}`}
+                  onClick={() => !chatExpanded && setChatExpanded(true)}
+                >
+                  <div className="flex items-center justify-center w-12 h-12 ml-2">
+                    <FaRobot className={`text-gray-400 ${chatExpanded ? 'w-6 h-6' : 'w-5 h-5'}`} />
+                  </div>
+                  <Input
+                    type="text"
+                    placeholder="How can I help you today?"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    onKeyPress={handleKeyPress}
+                    onFocus={() => setChatExpanded(true)}
+                    className={`flex-1 px-4 text-base bg-transparent border-0 focus:ring-0 focus:outline-none placeholder:text-gray-500 ${
+                      chatExpanded ? 'py-3' : 'py-6'
+                    }`}
+                    disabled={sendMessageMutation.isPending}
+                  />
+                  <div className="mr-2">
+                    <Button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleSendMessage();
+                      }}
+                      disabled={!message.trim() || sendMessageMutation.isPending}
+                      size="icon"
+                      className="h-12 w-12 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-sm hover:shadow-md transition-all duration-200"
+                    >
+                      <MdSend className="w-5 h-5" />
+                    </Button>
+                  </div>
                 </div>
-                <Input
-                  type="text"
-                  placeholder="How can I help you today?"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  onKeyPress={handleKeyPress}
-                  className="flex-1 py-4 px-4 text-base bg-transparent border-0 focus:ring-0 focus:outline-none placeholder:text-gray-500"
-                  disabled={sendMessageMutation.isPending}
-                />
-                <div className="mr-2">
-                  <Button
-                    onClick={handleSendMessage}
-                    disabled={!message.trim() || sendMessageMutation.isPending}
-                    size="icon"
-                    className="h-10 w-10 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-sm hover:shadow-md transition-all duration-200"
-                  >
-                    <MdSend className="w-4 h-4" />
-                  </Button>
-                </div>
+
+                {/* Expanded Chat Area */}
+                {chatExpanded && (
+                  <div className="space-y-4">
+                    {/* Close Button */}
+                    <div className="flex justify-between items-center">
+                      <h3 className="text-lg font-semibold text-gray-900">Chat with AI Assistant</h3>
+                      <Button
+                        onClick={() => setChatExpanded(false)}
+                        variant="ghost"
+                        size="sm"
+                        className="text-gray-400 hover:text-gray-600"
+                      >
+                        <span className="text-xl">×</span>
+                      </Button>
+                    </div>
+
+                    {/* Messages Display */}
+                    <div className="bg-gray-50 rounded-2xl p-4 min-h-[200px] max-h-64 overflow-y-auto">
+                      {messages.length === 0 ? (
+                        <div className="flex items-center justify-center h-full text-gray-500 text-sm">
+                          <div className="text-center">
+                            <FaRobot className="w-8 h-8 mx-auto mb-2 text-gray-300" />
+                            <p>Start a conversation by typing your question above</p>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="space-y-4">
+                          {messages.map((msg) => (
+                            <div key={msg.id} className="space-y-3">
+                              <div className="flex justify-end">
+                                <div className="bg-blue-600 text-white px-4 py-3 rounded-2xl rounded-tr-sm max-w-xs lg:max-w-sm">
+                                  <p className="text-sm">{msg.message}</p>
+                                </div>
+                              </div>
+                              {msg.response && (
+                                <div className="flex justify-start">
+                                  <div className="bg-white text-gray-800 px-4 py-3 rounded-2xl rounded-tl-sm max-w-xs lg:max-w-sm shadow-sm border border-gray-100">
+                                    <p className="text-sm">{msg.response}</p>
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Quick Actions */}
+                    <div className="flex flex-wrap gap-2">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => setMessage("What use cases do you offer?")}
+                        className="text-xs rounded-full border-gray-200 hover:bg-gray-50"
+                      >
+                        Our Use Cases
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => setMessage("How does the tender process work?")}
+                        className="text-xs rounded-full border-gray-200 hover:bg-gray-50"
+                      >
+                        Tender Process
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => setMessage("Can I schedule a demo?")}
+                        className="text-xs rounded-full border-gray-200 hover:bg-gray-50"
+                      >
+                        Schedule Demo
+                      </Button>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
-            
-            {/* Messages Display - Only show when there are messages */}
-            {messages.length > 0 && (
-              <div className="mt-6 space-y-4 max-h-64 overflow-y-auto">
-                {messages.map((msg) => (
-                  <div key={msg.id} className="space-y-3">
-                    <div className="flex justify-end">
-                      <div className="bg-blue-600 text-white px-4 py-2 rounded-2xl rounded-tr-sm max-w-xs">
-                        <p className="text-sm">{msg.message}</p>
-                      </div>
-                    </div>
-                    {msg.response && (
-                      <div className="flex justify-start">
-                        <div className="bg-gray-100 text-gray-800 px-4 py-2 rounded-2xl rounded-tl-sm max-w-xs">
-                          <p className="text-sm">{msg.response}</p>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
           </div>
         </div>
       </main>
