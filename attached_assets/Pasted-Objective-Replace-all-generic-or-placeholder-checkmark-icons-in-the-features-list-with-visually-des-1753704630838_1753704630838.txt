@@ -1,0 +1,49 @@
+Objective:
+Replace all generic or placeholder checkmark icons in the features list with visually descriptive, professional icons that clearly represent each point’s unique benefit. Match each icon to the specific process described, using a clean and modern B2B SaaS style.
+
+Guidelines:
+
+    Choose icons from reputable, high-quality libraries:
+    Use Heroicons, Feather Icons, Material Icons, or Font Awesome Pro. All icons must share a consistent visual style—either outlined or filled according to your product’s overall direction.
+
+    Avoid raw SVG code.
+    Use importable/icon font assets for better maintainability and design harmony with your system.
+
+    Maintain sizing, alignment, and color consistency:
+    Icons should appear left-aligned with feature titles, with uniform size and spacing.
+
+    Accessibility:
+    Set appropriate aria-label or alt text for each icon so they are screen reader friendly.
+
+Icon Mapping Suggestions:
+
+    Unified AI compliance dashboard for all teams
+    Suggested icon: Dashboard, layout grid, or analytics graph icon.
+
+    Instant requirement extraction and classification
+    Suggested icon: Lightning bolt, magic wand, or extract-document icon.
+
+    AI-guided writing with source verification
+    Suggested icon: Document-edit or pen, with a checkmark or shield overlay.
+
+    Real-time inconsistency detection and alerts
+    Suggested icon: Bell (notification), exclamation in triangle, or radar/search icon.
+
+    100% requirement coverage with proof trails
+    Suggested icon: Shield with checkmark, certificate, or audit trail/list icon.
+
+Sample Direction for Replit Agent:
+
+    “Replace all check icons in the features list with professional, descriptive icons matching each capability:
+
+        Dashboard icon for unified oversight
+
+        Lightning bolt or wand for instant extraction
+
+        Pen-with-check for AI-guided writing
+
+        Notification bell or alert triangle for real-time alerts
+
+        Shield/check or certificate for complete requirement coverage
+
+    All icons should be sourced from the same premium icon library (Heroicons, Feather, Material, or Font Awesome Pro), kept consistent in size, and left-aligned with each feature. Each icon must be accessible with aria-label or alt text describing the feature. No custom SVGs—use library assets only.”

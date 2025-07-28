@@ -5,7 +5,8 @@ import {
   MdSchedule, MdCheckCircle, MdWarning, MdPeople, MdTrendingUp, MdSecurity, 
   MdFlashOn, MdArrowForward, MdGpsFixed, MdVerifiedUser, MdAnalytics, MdEmojiEvents, 
   MdMessage, MdShield, MdGroups, MdDescription, MdSettings, MdAccountBox, MdBusiness, 
-  MdEngineering, MdGavel, MdTableChart, MdAccessTime, MdContentCopy, MdRefresh, MdSearch
+  MdEngineering, MdGavel, MdTableChart, MdAccessTime, MdContentCopy, MdRefresh, MdSearch,
+  MdDashboard, MdBolt, MdEdit, MdNotifications, MdVerified
 } from "react-icons/md";
 import { FaUsers, FaShieldAlt, FaChartBar, FaFileAlt, FaCogs } from "react-icons/fa";
 import ContactSection from "@/components/contact-section";
@@ -1008,7 +1009,7 @@ export default function UC3Page() {
                   <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 border border-green-200 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-lg">
                     <div className="flex items-start space-x-3">
                       <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <MdCheckCircle className="w-5 h-5 text-white" />
+                        <MdDashboard className="w-4 h-4 text-white" aria-label="Unified dashboard interface" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900 mb-1">Unified AI compliance dashboard for all teams</h4>
@@ -1020,7 +1021,7 @@ export default function UC3Page() {
                   <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 border border-green-200 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-lg">
                     <div className="flex items-start space-x-3">
                       <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <MdCheckCircle className="w-5 h-5 text-white" />
+                        <MdBolt className="w-4 h-4 text-white" aria-label="Instant processing speed" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900 mb-1">Instant requirement extraction and classification</h4>
@@ -1032,7 +1033,7 @@ export default function UC3Page() {
                   <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 border border-green-200 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-lg">
                     <div className="flex items-start space-x-3">
                       <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <MdCheckCircle className="w-5 h-5 text-white" />
+                        <MdEdit className="w-4 h-4 text-white" aria-label="AI-guided writing assistance" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900 mb-1">AI-guided writing with source verification</h4>
@@ -1044,7 +1045,7 @@ export default function UC3Page() {
                   <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 border border-green-200 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-lg">
                     <div className="flex items-start space-x-3">
                       <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <MdCheckCircle className="w-5 h-5 text-white" />
+                        <MdNotifications className="w-4 h-4 text-white" aria-label="Real-time alerts and notifications" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900 mb-1">Real-time inconsistency detection and alerts</h4>
@@ -1056,7 +1057,7 @@ export default function UC3Page() {
                   <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 border border-green-200 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-lg">
                     <div className="flex items-start space-x-3">
                       <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <MdCheckCircle className="w-5 h-5 text-white" />
+                        <MdVerified className="w-4 h-4 text-white" aria-label="Verified requirement coverage" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900 mb-1">100% requirement coverage with proof trails</h4>
