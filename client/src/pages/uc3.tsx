@@ -566,53 +566,162 @@ export default function UC3Page() {
         </div>
       </section>
 
-      {/* User Journey Section */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Three Steps to Compliant Project Success</h3>
+      {/* User Journey Section - High Conversion Design */}
+      <section className="py-24 px-4 bg-gradient-to-br from-slate-50 via-white to-purple-50/30">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Three Steps to Compliant Project Success</h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {userJourneySteps.map((step, index) => (
-              <div key={index} className="relative">
-                <Card className="p-6 text-center">
-                  <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <step.icon className="w-8 h-8 text-purple-600" />
+          
+          {/* Steps Flow */}
+          <div className="relative">
+            {/* Connection Line - Desktop Only */}
+            <div className="hidden lg:block absolute top-16 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-purple-200 via-purple-400 to-purple-200"></div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8">
+              
+              {/* Step 1 */}
+              <div className="relative group">
+                <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-purple-200 transform hover:-translate-y-2">
+                  
+                  {/* Step Number */}
+                  <div className="absolute -top-6 left-8">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-2xl flex items-center justify-center text-xl font-bold shadow-lg">
+                      1
+                    </div>
                   </div>
-                  <div className="w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-sm font-bold">
-                    {step.step}
+                  
+                  {/* Icon */}
+                  <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-200 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <MdDescription className="w-10 h-10 text-blue-600" />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{step.title}</h3>
-                  <p className="text-gray-600 text-sm">{step.description}</p>
-                </Card>
-                {index < userJourneySteps.length - 1 && (
-                  <MdArrowForward className="hidden md:block absolute top-1/2 -right-3 transform -translate-y-1/2 w-6 h-6 text-gray-400" />
-                )}
+                  
+                  {/* Content */}
+                  <div className="text-center">
+                    <h4 className="text-xl font-bold text-gray-900 mb-4">Upload Complex Documentation</h4>
+                    <p className="text-gray-600 leading-relaxed">Drop your project files and watch AI structure everything automatically</p>
+                  </div>
+                  
+                  {/* Subtle Animation Element */}
+                  <div className="absolute bottom-4 right-4 w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                </div>
               </div>
-            ))}
+
+              {/* Step 2 */}
+              <div className="relative group">
+                <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-purple-200 transform hover:-translate-y-2">
+                  
+                  {/* Step Number */}
+                  <div className="absolute -top-6 left-8">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-2xl flex items-center justify-center text-xl font-bold shadow-lg">
+                      2
+                    </div>
+                  </div>
+                  
+                  {/* Icon */}
+                  <div className="w-20 h-20 bg-gradient-to-br from-green-100 to-green-200 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <MdGroups className="w-10 h-10 text-green-600" />
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="text-center">
+                    <h4 className="text-xl font-bold text-gray-900 mb-4">Collaborate on Compliance</h4>
+                    <p className="text-gray-600 leading-relaxed">Generate matrices, allocate expert responsibilities, and build response strategy as a team</p>
+                  </div>
+                  
+                  {/* Subtle Animation Element */}
+                  <div className="absolute bottom-4 right-4 w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                </div>
+              </div>
+
+              {/* Step 3 */}
+              <div className="relative group">
+                <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-purple-200 transform hover:-translate-y-2">
+                  
+                  {/* Step Number */}
+                  <div className="absolute -top-6 left-8">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-2xl flex items-center justify-center text-xl font-bold shadow-lg">
+                      3
+                    </div>
+                  </div>
+                  
+                  {/* Icon */}
+                  <div className="w-20 h-20 bg-gradient-to-br from-orange-100 to-orange-200 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <MdSecurity className="w-10 h-10 text-orange-600" />
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="text-center">
+                    <h4 className="text-xl font-bold text-gray-900 mb-4">Control Every Evolution</h4>
+                    <p className="text-gray-600 leading-relaxed">Track changes, manage Q&As, and ensure zero gaps throughout the project lifecycle</p>
+                  </div>
+                  
+                  {/* Subtle Animation Element */}
+                  <div className="absolute bottom-4 right-4 w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="text-center mt-8">
-            <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-50">
+          
+          {/* CTA Button */}
+          <div className="text-center mt-16">
+            <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-10 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
               Watch a 2-Minute Demo
             </Button>
           </div>
         </div>
       </section>
 
-      {/* KPI Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Measurable Impact on Complex Projects</h2>
-            <p className="text-lg text-gray-600">Real results from teams managing multi-lot international projects</p>
+      {/* KPI Section - High Impact Design */}
+      <section className="py-24 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Measurable Impact on Complex Projects</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Real results from teams managing multi-lot international projects</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {kpis.map((kpi, index) => (
-              <Card key={index} className="p-6 text-center">
-                <div className="text-3xl font-bold text-purple-600 mb-2">{kpi.metric}</div>
-                <p className="text-gray-600 text-sm">{kpi.description}</p>
-              </Card>
-            ))}
+          
+          {/* KPI Grid */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            {/* KPI 1 */}
+            <div className="group">
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 text-center border border-green-100 hover:border-green-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                <div className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-green-600 to-emerald-600 bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform duration-300">
+                  90%
+                </div>
+                <p className="text-gray-700 font-medium leading-relaxed">Data organization completed immediately</p>
+              </div>
+            </div>
+
+            {/* KPI 2 */}
+            <div className="group">
+              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 text-center border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                <div className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform duration-300">
+                  40%
+                </div>
+                <p className="text-gray-700 font-medium leading-relaxed">Faster review organization</p>
+              </div>
+            </div>
+
+            {/* KPI 3 */}
+            <div className="group">
+              <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-3xl p-8 text-center border border-purple-100 hover:border-purple-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                <div className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-purple-600 to-violet-600 bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform duration-300">
+                  0
+                </div>
+                <p className="text-gray-700 font-medium leading-relaxed">Formal rejections for non-compliance</p>
+              </div>
+            </div>
+
+            {/* KPI 4 */}
+            <div className="group">
+              <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-3xl p-8 text-center border border-orange-100 hover:border-orange-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                <div className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-orange-600 to-amber-600 bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform duration-300">
+                  100%
+                </div>
+                <p className="text-gray-700 font-medium leading-relaxed">Requirement coverage guaranteed</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
