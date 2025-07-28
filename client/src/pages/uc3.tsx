@@ -5,7 +5,7 @@ import {
   MdSchedule, MdCheckCircle, MdWarning, MdPeople, MdTrendingUp, MdSecurity, 
   MdFlashOn, MdArrowForward, MdGpsFixed, MdVerifiedUser, MdAnalytics, MdEmojiEvents, 
   MdMessage, MdShield, MdGroups, MdDescription, MdSettings, MdAccountBox, MdBusiness, 
-  MdEngineering, MdGavel
+  MdEngineering, MdGavel, MdTableChart, MdAccessTime, MdContentCopy, MdRefresh, MdSearch
 } from "react-icons/md";
 import { FaUsers, FaShieldAlt, FaChartBar, FaFileAlt, FaCogs } from "react-icons/fa";
 import ContactSection from "@/components/contact-section";
@@ -924,7 +924,7 @@ export default function UC3Page() {
                   <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-red-200 transform hover:-translate-y-1 transition-all duration-300">
                     <div className="flex items-start space-x-3">
                       <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-white text-xs font-bold">✗</span>
+                        <MdTableChart className="w-4 h-4 text-white" aria-label="Excel spreadsheet chaos" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900 mb-1">Excel compliance chaos across 8+ experts</h4>
@@ -936,7 +936,7 @@ export default function UC3Page() {
                   <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-red-200 transform hover:-translate-y-1 transition-all duration-300">
                     <div className="flex items-start space-x-3">
                       <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-white text-xs font-bold">✗</span>
+                        <MdAccessTime className="w-4 h-4 text-white" aria-label="Time lost on manual processing" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900 mb-1">Days lost extracting requirements from 500+ pages</h4>
@@ -948,7 +948,7 @@ export default function UC3Page() {
                   <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-red-200 transform hover:-translate-y-1 transition-all duration-300">
                     <div className="flex items-start space-x-3">
                       <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-white text-xs font-bold">✗</span>
+                        <MdContentCopy className="w-4 h-4 text-white" aria-label="Copy-paste errors" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900 mb-1">Copy-paste errors risk million-euro exclusions</h4>
@@ -960,7 +960,7 @@ export default function UC3Page() {
                   <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-red-200 transform hover:-translate-y-1 transition-all duration-300">
                     <div className="flex items-start space-x-3">
                       <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-white text-xs font-bold">✗</span>
+                        <MdRefresh className="w-4 h-4 text-white" aria-label="Multiple review cycles" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900 mb-1">Multiple review cycles delay submission</h4>
@@ -972,7 +972,7 @@ export default function UC3Page() {
                   <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-red-200 transform hover:-translate-y-1 transition-all duration-300">
                     <div className="flex items-start space-x-3">
                       <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-white text-xs font-bold">✗</span>
+                        <MdSearch className="w-4 h-4 text-white" aria-label="Hidden requirement gaps" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900 mb-1">Hidden requirement gaps cause rejections</h4>

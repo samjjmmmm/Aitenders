@@ -1,0 +1,54 @@
+Instructions for Replit Agent: Pain Point Icons
+
+    Objective:
+    Replace all generic or placeholder icons in the "Manual Process Before" section with high-quality, professional icons that visually represent each specific pain point. The style must align with enterprise SaaS standards (clean, modern, and easy to understand at a glance).
+
+    Guidelines:
+
+        Use premium icon libraries such as Feather Icons, Heroicons, Font Awesome Pro, or Material Icons.
+
+        All icons must be consistent in style (outlined or filled, depending on overall UI direction).
+
+        Avoid custom SVG code—for maintainability and design consistency, use importable assets from trusted libraries.
+
+    Icon Matching — One Per Pain Point:
+
+        Excel compliance chaos across 8+ experts:
+        → Use a clear Excel file or spreadsheet icon.
+
+        Days lost extracting requirements from 500+ pages:
+        → Use a document stack or timer/hourglass icon.
+
+        Copy-paste errors risk million-euro exclusions:
+        → Use a clipboard with error, warning triangle, or exclamation mark icon.
+
+        Multiple review cycles delay submission:
+        → Use a circular arrows, cycle, or clock with looping arrow icon.
+
+        Hidden requirement gaps cause rejections:
+        → Use a magnifying glass, exclamation inside a document, or gap/missing puzzle piece icon.
+
+    Accessibility:
+    Every icon must have an appropriate aria-label or descriptive alt text for accessibility.
+
+    Sourcing:
+    If the library does not cover a specific concept (e.g., "missing puzzle piece"), use the closest available professional icon and suggest alternatives if needed.
+
+    Consistency:
+    Icons should all have the same line width, sizing, and alignment. Each icon placed to the left of the corresponding pain point headline.
+
+Example Instruction to Copy:
+
+    “Replace all placeholder icons in the manual process section with professional icons from a trusted B2B library (Heroicons, Feather, Material, or Font Awesome Pro). Match each pain point to an icon that conveys its meaning:
+
+        Excel/spreadsheet icon for compliance chaos,
+
+        Document stack or hourglass for lost days,
+
+        Clipboard error/exclamation for copy-paste errors,
+
+        Circular arrows or clock for review cycles,
+
+        Magnifying glass or missing puzzle piece for hidden gaps.
+
+    Keep all icons consistent in style and size, positioned left of the headline, and fully accessible (aria labels/alt text). Do not use raw SVG code—use importable assets.”
