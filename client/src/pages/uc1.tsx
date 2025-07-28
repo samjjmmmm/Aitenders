@@ -125,23 +125,158 @@ export default function UC1Page() {
         </div>
       </section>
 
-      {/* Pain Points Section */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">The Challenge</h2>
-            <p className="text-lg text-gray-600">When every hour counts, traditional analysis methods fall short</p>
+      {/* Pain Points Section - Modern Enterprise Design */}
+      <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-blue-50/30">
+        <div className="max-w-7xl mx-auto">
+          {/* Hero Headlines */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              Master complex bids before they master you
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Instantly resolve compliance chaos with AItenders
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {painPoints.map((pain, index) => (
-              <Card key={index} className="p-6 border-red-100 bg-red-50/50">
-                <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4">
-                  <pain.icon className="w-6 h-6 text-red-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{pain.title}</h3>
-                <p className="text-gray-600">{pain.description}</p>
-              </Card>
-            ))}
+
+          {/* Two-Column Problem vs Solution Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-12">
+            
+            {/* Problems Column */}
+            <div className="space-y-6">
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">Problems Without AItenders</h3>
+                <div className="w-16 h-1 bg-red-500 rounded-full"></div>
+              </div>
+              
+              <div className="space-y-6">
+                <Card className="p-6 border border-red-100 bg-red-50/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <MdSchedule className="w-6 h-6 text-red-600" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-2">Time Pressure Crisis</h4>
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        Quick turnaround times leave zero room for thorough analysis.<br/>
+                        Every minute counts but manual processes slow you down.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="p-6 border border-red-100 bg-red-50/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <MdWarning className="w-6 h-6 text-red-600" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-2">Compliance Nightmare</h4>
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        Missing critical requirements risks million-dollar exclusions.<br/>
+                        Manual oversight creates dangerous gaps in fast-paced environments.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="p-6 border border-red-100 bg-red-50/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <FaUsers className="w-6 h-6 text-red-600" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-2">Resource Overload</h4>
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        Limited team capacity struggles with multiple projects.<br/>
+                        Quality suffers when spreading resources too thin.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+            </div>
+
+            {/* Solutions Column */}
+            <div className="space-y-6">
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">How AItenders Fixes This</h3>
+                <div className="w-16 h-1 bg-blue-500 rounded-full"></div>
+              </div>
+              
+              <div className="space-y-6">
+                <Card className="p-6 border border-blue-100 bg-blue-50/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <MdFlashOn className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-blue-900 mb-2">Instant Analysis</h4>
+                      <ul className="text-gray-600 text-sm space-y-1">
+                        <li>• AI-powered document analysis in minutes</li>
+                        <li>• Complete insights delivered in 15-30 minutes</li>
+                        <li>• Zero setup time required</li>
+                      </ul>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="p-6 border border-green-100 bg-green-50/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <MdCheckCircle className="w-6 h-6 text-green-600" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-green-900 mb-2">Automated Validation</h4>
+                      <ul className="text-gray-600 text-sm space-y-1">
+                        <li>• 95% accuracy in requirement identification</li>
+                        <li>• Intelligent compliance checking</li>
+                        <li>• Zero critical requirements missed</li>
+                      </ul>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="p-6 border border-purple-100 bg-purple-50/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <MdTrendingUp className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-purple-900 mb-2">Scalable Process</h4>
+                      <ul className="text-gray-600 text-sm space-y-1">
+                        <li>• Handle 5-6 projects simultaneously</li>
+                        <li>• Consistent quality regardless of pressure</li>
+                        <li>• Team capacity multiplied without hiring</li>
+                      </ul>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="p-6 border border-orange-100 bg-orange-50/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <MdSecurity className="w-6 h-6 text-orange-600" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-orange-900 mb-2">Risk Protection</h4>
+                      <ul className="text-gray-600 text-sm space-y-1">
+                        <li>• Complete audit trails and documentation</li>
+                        <li>• Proactive risk identification</li>
+                        <li>• Enterprise-grade security compliance</li>
+                      </ul>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="text-center">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+              Learn More About Fast-Track Bidding
+            </Button>
+            <p className="text-sm text-gray-500 mt-4">See how teams save 40+ hours per project</p>
           </div>
         </div>
       </section>

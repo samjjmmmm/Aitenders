@@ -1,0 +1,72 @@
+Objective: Redesign the “Master complex bids before they master you” section for a modern, enterprise B2B SaaS landing page. The section should instantly communicate pain points and the core advantages of AI-powered RFP management, and drive engagement.
+
+Structure:
+
+    Hero Headline and Subheading:
+
+        Large, bold heading
+
+        Clear and concise subheading under it
+
+    Two-Column or Responsive Grid Layout:
+
+        Column 1: “Problems Without AItenders” — three cards with distress icons, short impactful headers, succinct 2-line explanation.
+
+        Column 2: “How AItenders Fixes This” — four cards with positive icons, benefit labels (e.g., “Automatic Organization”), brief supporting statements.
+
+        On mobile, stack cards vertically.
+
+    Visuals:
+
+        Custom icon per card, consistent style.
+
+        Mild card shadow, soft background tint per column.
+
+    Modern Details:
+
+        Subtle hover/entrance animation on cards.
+
+        Bullet points in solution cards for easy reading.
+
+        ‘Learn More’ or CTA link at the bottom.
+
+    Style:
+
+        Use your brand font, colors, and iconography.
+
+        Plenty of white space, 32px gutter between columns, 24px padding for cards.
+
+        Use #F6F7FB or similar light backgrounds; brand accent color (e.g., blue or purple) for icons and headers.
+
+    Accessibility:
+
+        Ensure 4.5:1 color contrast on all text.
+
+        All icons have alt text or ARIA labels as appropriate.
+
+Example Wireframe (for reference—team to improve as needed):
+
+    text
+    +--------------------------------------------------------+
+    |          Master complex bids before they master you     |
+    |    Instantly resolve compliance chaos with AItenders    |
+    |                                                        |
+    | +---------------------+  +--------------------------+  |
+    | |  [icon]             |  |  [icon]                 |  |
+    | | Excel Chaos         |  | Project Organization    |  |
+    | | Risky manual logs...|  | Structure RFPs in clicks|  |
+    | +---------------------+  +--------------------------+  |
+    | | ...other problems   |  | ...other solutions      |  |
+    | +---------------------+  +--------------------------+  |
+    |                            [Learn More / CTA Button]   |
+    +--------------------------------------------------------+
+
+    Goal: Section must be instantly understandable, feel premium/professional, and support conversion goals. Focus on clarity, whitespace, visual priority, and enterprise trust.
+
+Quick Wins Checklist
+
+    Use a 12-column grid (desktop), single-column stack (mobile).
+
+    Employ Material or Ant Design spacing and icon paradigms.
+
+    Tone: Confident, solution-focused, sharp.
