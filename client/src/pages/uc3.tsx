@@ -401,7 +401,7 @@ export default function UC3Page() {
       </section>
       {/* Pain Points Section - Livestorm-Style Card Design */}
       <section className="py-24 px-4 bg-gradient-to-br from-slate-50 via-gray-50 to-purple-50/20">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           
           {/* Large Feature Card with Faded Background */}
           <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-12 lg:p-16 shadow-2xl border border-gray-100/50 relative overflow-hidden">
