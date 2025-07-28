@@ -571,29 +571,32 @@ export default function HomePage() {
             )}
           </div>
 
-          {/* Chat UI */}
-          <div className="max-w-2xl mx-auto mb-16">
+          {/* Chat UI - Chatbot Bar */}
+          <div className="max-w-3xl mx-auto mb-16">
             <div className="relative">
-              <Input
-                type="text"
-                placeholder="How can I help you today?"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                onKeyPress={handleKeyPress}
-                className="w-full pl-6 pr-16 py-4 text-base bg-white border border-gray-200 rounded-full shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-100 focus:outline-none transition-all duration-200"
-                disabled={sendMessageMutation.isPending}
-              />
-              <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                <Button
-                  onClick={handleSendMessage}
-                  disabled={!message.trim() || sendMessageMutation.isPending}
-                  size="icon"
-                  className="h-10 w-10 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-md hover:shadow-lg transition-all duration-200"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                  </svg>
-                </Button>
+              <div className="flex items-center bg-white border border-gray-200 rounded-full shadow-sm hover:shadow-md transition-all duration-200">
+                <div className="flex items-center justify-center w-12 h-12 ml-2">
+                  <Bot className="w-5 h-5 text-gray-400" />
+                </div>
+                <Input
+                  type="text"
+                  placeholder="How can I help you today?"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  className="flex-1 py-4 px-4 text-base bg-transparent border-0 focus:ring-0 focus:outline-none placeholder:text-gray-500"
+                  disabled={sendMessageMutation.isPending}
+                />
+                <div className="mr-2">
+                  <Button
+                    onClick={handleSendMessage}
+                    disabled={!message.trim() || sendMessageMutation.isPending}
+                    size="icon"
+                    className="h-10 w-10 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-sm hover:shadow-md transition-all duration-200"
+                  >
+                    <Send className="w-4 h-4" />
+                  </Button>
+                </div>
               </div>
             </div>
             
