@@ -76,67 +76,76 @@ export default function HomePage() {
     }
   };
 
-  // Step 1: Identify the Context
+  // Step 1: Choose Your Goal
   const step1Cards: SelectionCard[] = [
     {
-      id: "prepare-offer",
-      title: "Je prépare une offre à déposer",
+      id: "bid-preparation",
+      title: "Bid Preparation",
+      description: "I'm preparing a tender response",
       icon: FileText,
       color: "bg-blue-500/10 text-blue-600",
-      useCases: ["UC1", "UC2", "UC3"],
+      useCases: ["UC1", "UC2", "UC3", "UC7"],
       nextStep: "offer"
     },
     {
-      id: "manage-project",
-      title: "Je pilote un projet en cours d'exécution",
+      id: "project-execution",
+      title: "Project Execution",
+      description: "I'm managing an ongoing project",
       icon: Settings,
       color: "bg-green-500/10 text-green-600",
-      useCases: ["UC4", "UC5", "UC6"],
+      useCases: ["UC4", "UC5", "UC6", "UC8"],
       nextStep: "execution"
     },
     {
-      id: "compliance-help",
-      title: "J'ai besoin d'aide pour rédiger et prouver ma conformité",
+      id: "drafting-compliance",
+      title: "Drafting & Compliance Proof",
+      description: "I need help with structured writing and compliance",
       icon: Award,
       color: "bg-purple-500/10 text-purple-600",
-      useCases: ["UC7", "UC8"]
+      useCases: ["UC7", "UC8"],
+      nextStep: "drafting"
     },
     {
-      id: "explore-capabilities",
-      title: "Je veux explorer vos capacités avant de choisir",
+      id: "explore-first",
+      title: "Explore Aitenders First",
+      description: "I want to see what you can do before choosing",
       icon: Target,
       color: "bg-orange-500/10 text-orange-600",
-      redirectTo: "/use-cases/bid-evaluation" // Default exploration page
+      redirectTo: "/use-cases/bid-evaluation" // LAND process simulation
     }
   ];
 
-  // Step 2: Qualify the Project Complexity
+  // Step 2: Define Project Complexity
   const step2Cards: { [key: string]: SelectionCard[] } = {
     offer: [
       {
-        id: "frequent-fast",
-        title: "Des projets fréquents et rapides",
+        id: "small-quick",
+        title: "Small, quick projects",
+        description: "Fast turnaround bids with standard requirements",
         icon: Clock,
         color: "bg-blue-500/10 text-blue-600",
         redirectTo: "/use-cases/bid-evaluation" // UC1
       },
       {
-        id: "medium-critical",
-        title: "Des projets moyens avec plusieurs clauses critiques",
+        id: "medium-complex",
+        title: "Medium projects with complex clauses",
+        description: "Moderate complexity with critical compliance requirements",
         icon: CheckCircle,
         color: "bg-green-500/10 text-green-600",
         redirectTo: "/use-cases/requirements-extraction" // UC2
       },
       {
-        id: "complex-multi",
-        title: "Des projets complexes et multi-acteurs",
+        id: "large-multi",
+        title: "Large multi-discipline tenders",
+        description: "Complex bids involving multiple stakeholders and disciplines",
         icon: Users,
         color: "bg-purple-500/10 text-purple-600",
         redirectTo: "/use-cases/contract-management" // UC3
       },
       {
-        id: "writing-need",
-        title: "Un besoin ponctuel de rédaction alignée et traçable",
+        id: "oneoff-drafting",
+        title: "One-off support for drafting responses",
+        description: "Specialized help with writing structured responses",
         icon: Edit,
         color: "bg-orange-500/10 text-orange-600",
         redirectTo: "/use-cases/tender-intelligence" // UC7
@@ -144,80 +153,118 @@ export default function HomePage() {
     ],
     execution: [
       {
-        id: "small-simple",
-        title: "Petits projets simples",
+        id: "simple-small",
+        title: "Simple small-scale projects",
+        description: "Straightforward project management needs",
         icon: Target,
         color: "bg-blue-500/10 text-blue-600",
         redirectTo: "/use-cases/bid-evaluation" // UC4
       },
       {
-        id: "medium-multi",
-        title: "Projets moyens multi-acteurs",
+        id: "medium-evolving",
+        title: "Medium projects with multiple evolving commitments",
+        description: "Projects with changing requirements and stakeholders",
         icon: UserCheck,
         color: "bg-green-500/10 text-green-600",
         redirectTo: "/use-cases/requirements-extraction" // UC5
       },
       {
-        id: "large-complex",
-        title: "Grands projets complexes",
+        id: "large-highrisk",
+        title: "Large, high-risk projects across disciplines",
+        description: "Complex multi-disciplinary projects with high stakes",
         icon: Shield,
         color: "bg-purple-500/10 text-purple-600",
         redirectTo: "/use-cases/contract-management" // UC6
       },
       {
-        id: "compliance-proof",
-        title: "Besoin de rédaction et preuve de conformité",
+        id: "execution-drafting",
+        title: "Execution support with structured drafting",
+        description: "Project execution with documentation and compliance needs",
         icon: Award,
         color: "bg-orange-500/10 text-orange-600",
+        redirectTo: "/use-cases/tender-intelligence" // UC8
+      }
+    ],
+    drafting: [
+      {
+        id: "bid-drafting",
+        title: "Bid response drafting support",
+        description: "Help with writing and structuring tender responses",
+        icon: Edit,
+        color: "bg-blue-500/10 text-blue-600",
+        redirectTo: "/use-cases/tender-intelligence" // UC7
+      },
+      {
+        id: "execution-compliance",
+        title: "Execution compliance documentation",
+        description: "Support with project execution documentation and proof",
+        icon: Award,
+        color: "bg-green-500/10 text-green-600",
         redirectTo: "/use-cases/tender-intelligence" // UC8
       }
     ]
   };
 
-  // Step 3: Identify the Main Business Driver
+  // Step 3: Identify Your Priority
   const step3Cards: SelectionCard[] = [
     {
       id: "save-time",
-      title: "Gagner du temps et décider plus vite",
+      title: "Save time & decide faster",
+      description: "Focus on speed and efficiency in decision-making",
       icon: Clock,
       color: "bg-blue-500/10 text-blue-600",
-      redirectTo: "/use-cases/bid-evaluation" // UC1/UC2
+      useCases: ["UC1", "UC2"]
     },
     {
-      id: "secure-compliance",
-      title: "Sécuriser la conformité et éviter tout rejet",
+      id: "ensure-compliance",
+      title: "Ensure compliance & avoid rejections",
+      description: "Prioritize accuracy and regulatory compliance",
       icon: Shield,
       color: "bg-green-500/10 text-green-600",
-      redirectTo: "/use-cases/requirements-extraction" // UC2/UC3/UC6
+      useCases: ["UC2", "UC3", "UC6"]
     },
     {
-      id: "team-collaboration",
-      title: "Fluidifier la collaboration entre équipes",
+      id: "improve-collaboration",
+      title: "Improve collaboration & alignment",
+      description: "Enhance team coordination and stakeholder alignment",
       icon: Users,
       color: "bg-purple-500/10 text-purple-600",
-      redirectTo: "/use-cases/contract-management" // UC3/UC5/UC6
+      useCases: ["UC3", "UC5", "UC6"]
     },
     {
-      id: "writing-deliverables",
-      title: "Rédiger des livrables sans rien oublier",
+      id: "draft-deliverables",
+      title: "Draft deliverables without missing anything",
+      description: "Comprehensive documentation and structured writing",
       icon: Edit,
       color: "bg-orange-500/10 text-orange-600",
-      redirectTo: "/use-cases/tender-intelligence" // UC7/UC8
+      useCases: ["UC7", "UC8"]
     }
   ];
+
+  // UC to page mapping
+  const ucToPageMapping: { [key: string]: string } = {
+    "UC1": "/use-cases/bid-evaluation",
+    "UC2": "/use-cases/requirements-extraction", 
+    "UC3": "/use-cases/contract-management",
+    "UC4": "/use-cases/bid-evaluation",
+    "UC5": "/use-cases/requirements-extraction",
+    "UC6": "/use-cases/contract-management",
+    "UC7": "/use-cases/tender-intelligence",
+    "UC8": "/use-cases/tender-intelligence"
+  };
 
   const handleCardSelection = (card: SelectionCard) => {
     const newSelections = [...selections, card.id];
     setSelections(newSelections);
 
-    // Track analytics (can be implemented later)
+    // Track analytics for sales qualification
     console.log("User path:", newSelections);
 
     if (card.redirectTo) {
-      // Direct redirect
+      // Direct redirect (immediate UC identification)
       toast({
-        title: "Voir ma solution personnalisée",
-        description: "Redirection vers votre cas d'usage optimal...",
+        title: "See My Recommended Solution",
+        description: "Redirecting to your optimal use case...",
       });
       setTimeout(() => setLocation(card.redirectTo!), 1000);
       return;
@@ -225,7 +272,25 @@ export default function HomePage() {
 
     if (card.nextStep) {
       // Move to next step
-      setCurrentStep(2);
+      if (card.nextStep === "drafting") {
+        // Special case: Drafting & Compliance goes to step 2 with limited choices
+        setCurrentStep(2);
+      } else {
+        setCurrentStep(2);
+      }
+      return;
+    }
+
+    // Step 3: Priority selection - filter UCs based on all previous choices
+    if (currentStep === 3) {
+      const finalUC = determineFinalUC(newSelections);
+      if (finalUC) {
+        toast({
+          title: "See My Recommended Solution",
+          description: `Redirecting to ${finalUC}...`,
+        });
+        setTimeout(() => setLocation(ucToPageMapping[finalUC]), 1000);
+      }
       return;
     }
 
@@ -233,6 +298,30 @@ export default function HomePage() {
     if (currentStep === 2) {
       setCurrentStep(3);
     }
+  };
+
+  const determineFinalUC = (userSelections: string[]): string | null => {
+    // Get possible UCs from first selection
+    const firstCard = step1Cards.find(card => card.id === userSelections[0]);
+    if (!firstCard?.useCases) return null;
+
+    // Get UCs from priority selection
+    const priorityCard = step3Cards.find(card => card.id === userSelections[userSelections.length - 1]);
+    if (!priorityCard?.useCases) return null;
+
+    // Find intersection of UCs
+    const validUCs = firstCard.useCases.filter(uc => priorityCard.useCases?.includes(uc));
+
+    if (validUCs.length === 1) {
+      return validUCs[0];
+    } else if (validUCs.length === 2) {
+      // Return higher-complexity UC according to the rules
+      const complexityOrder = ["UC1", "UC4", "UC2", "UC5", "UC3", "UC6", "UC7", "UC8"];
+      return validUCs.sort((a, b) => complexityOrder.indexOf(b) - complexityOrder.indexOf(a))[0];
+    }
+
+    // Fallback - shouldn't happen with proper logic
+    return validUCs[0] || null;
   };
 
   const getCurrentCards = (): SelectionCard[] => {
@@ -252,9 +341,9 @@ export default function HomePage() {
   };
 
   const getStepTitle = (): string => {
-    if (currentStep === 1) return "Identifiez votre contexte";
-    if (currentStep === 2) return "Qualifiez la complexité de votre projet";
-    if (currentStep === 3) return "Identifiez votre priorité business";
+    if (currentStep === 1) return "Choose Your Goal";
+    if (currentStep === 2) return "Define Project Complexity";
+    if (currentStep === 3) return "Identify Your Priority";
     return "";
   };
 
@@ -307,7 +396,7 @@ export default function HomePage() {
             {/* Step Progress Indicator */}
             <div className="flex items-center justify-between mb-6">
               <div className="text-sm text-gray-600">
-                Étape {currentStep} sur 3
+                Step {currentStep} of 3
               </div>
               {currentStep > 1 && (
                 <Button
@@ -316,7 +405,7 @@ export default function HomePage() {
                   onClick={resetSelection}
                   className="text-blue-600 hover:text-blue-700"
                 >
-                  Recommencer
+                  Start Over
                 </Button>
               )}
             </div>
@@ -357,7 +446,7 @@ export default function HomePage() {
             {/* Selection Path Display */}
             {selections.length > 0 && (
               <div className="mt-6 p-4 bg-blue-50 rounded-xl">
-                <p className="text-sm text-blue-800 mb-2">Votre parcours:</p>
+                <p className="text-sm text-blue-800 mb-2">Your Selection Path:</p>
                 <div className="flex flex-wrap gap-2">
                   {selections.map((selectionId, index) => {
                     const allCards = [...step1Cards, ...Object.values(step2Cards).flat(), ...step3Cards];
