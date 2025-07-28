@@ -260,7 +260,7 @@ export default function UC3Page() {
                   size="lg" 
                   className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto"
                 >
-                  Watch Demo
+                  Request a Demo
                 </Button>
               </div>
               
@@ -507,10 +507,14 @@ export default function UC3Page() {
                 With Aitenders, validation tracking and smart AI reading ensure nothing is overlooked — so you deliver on time with confidence.
               </p>
               
-              {/* CTA Button */}
-              <div className="mb-16">
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
                 <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
-                  Discover how it works
+                  Request a Demo
+                </Button>
+                <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white px-12 py-6 text-xl font-semibold rounded-3xl transition-all duration-300">
+                  <MdPlayArrow className="w-6 h-6 mr-2" />
+                  Watch Quick Demo
                 </Button>
               </div>
 
@@ -846,7 +850,7 @@ export default function UC3Page() {
                 </p>
                 
                 <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 text-lg font-semibold rounded-2xl w-fit transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
-                  Learn more →
+                  Request Demo →
                 </Button>
               </motion.div>
 
