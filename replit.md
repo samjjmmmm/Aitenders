@@ -42,12 +42,11 @@ The application follows a modern full-stack architecture with clear separation b
 - `GET /api/chat` - Retrieve chat messages
 
 ### Frontend Pages
-- **Home Page**: Main landing page with company overview and use case pathways
-- **Use Case Pages**: Dedicated pages for each service offering:
-  - Bid Evaluation & Qualification
-  - Requirements Extraction
-  - Contract Management
-  - Tender Intelligence
+- **Home Page**: Main landing page with intelligent 5-step decision tree questionnaire that classifies users into 8 specific use cases (UC1-UC8)
+- **Use Case Pages**: Comprehensive landing pages for each service offering:
+  - **UC1**: Fast-Track Small Project Bids - For teams handling small, frequent projects with quick turnaround times
+  - **UC2-UC8**: Additional use case pages (placeholder structure ready for expansion)
+  - Each UC page follows a complete template structure with 10 sections: Hero, Pain Points, Solution, Before/After, Target Audience, User Journey, KPIs, Differentiation, Trust & Compliance, and Call to Action
 
 ### UI Components
 - **Reusable Components**: Built on Radix UI primitives with consistent styling
