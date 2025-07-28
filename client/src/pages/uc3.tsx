@@ -6,7 +6,7 @@ import {
   MdFlashOn, MdArrowForward, MdGpsFixed, MdVerifiedUser, MdAnalytics, MdEmojiEvents, 
   MdMessage, MdShield, MdGroups, MdDescription, MdSettings, MdAccountBox, MdBusiness, 
   MdEngineering, MdGavel, MdTableChart, MdAccessTime, MdContentCopy, MdRefresh, MdSearch,
-  MdDashboard, MdBolt, MdEdit, MdNotifications, MdVerified
+  MdDashboard, MdBolt, MdEdit, MdNotifications, MdVerified, MdSwapHoriz
 } from "react-icons/md";
 import { FaUsers, FaShieldAlt, FaChartBar, FaFileAlt, FaCogs } from "react-icons/fa";
 import ContactSection from "@/components/contact-section";
@@ -894,22 +894,197 @@ export default function UC3Page() {
           </div>
         </div>
       </section>
-      {/* Comparison Section - High Conversion Design */}
-      <section className="py-24 px-4 bg-gradient-to-br from-gray-50 via-white to-slate-50">
-        <div className="max-w-7xl mx-auto">
+
+      {/* Comparison Section - Enterprise SaaS Design */}
+      <section className="py-32 px-4 bg-gradient-to-br from-slate-50 via-gray-50 to-white relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.05),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.04),transparent_50%)]"></div>
+        
+        <div className="max-w-7xl mx-auto relative">
+          {/* Section Header */}
           <div className="text-center mb-20">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">What Changes with AItenders</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">See the complete transformation from manual chaos to AI-powered precision</p>
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl mb-6 shadow-lg">
+              <MdSwapHoriz className="w-8 h-8 text-white" />
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+              What Changes with AItenders
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              See the complete transformation from manual chaos to AI-powered precision
+            </p>
           </div>
 
-          {/* Before vs After Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            
-            {/* Before - Manual Process */}
-            <div className="relative">
-              <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-3xl p-8 border-2 border-red-100 relative overflow-hidden">
-                
-                {/* Header */}
+          {/* Comparison Container */}
+          <div className="relative">
+            {/* Desktop Comparison Table */}
+            <div className="hidden lg:block">
+              <div className="bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden">
+                {/* Table Header */}
+                <div className="grid grid-cols-2 bg-gradient-to-r from-gray-50 to-gray-100 border-b border-gray-200">
+                  <div className="p-8 border-r border-gray-200">
+                    <div className="flex items-center">
+                      <div className="w-12 h-12 bg-red-100 rounded-2xl flex items-center justify-center mr-4">
+                        <MdWarning className="w-6 h-6 text-red-600" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-red-800 mb-1">Manual Process Before</h3>
+                        <p className="text-red-600 text-sm font-medium">Chaos, delays, and risks</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-8">
+                    <div className="flex items-center">
+                      <div className="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center mr-4">
+                        <MdCheckCircle className="w-6 h-6 text-green-600" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-green-800 mb-1">AI-Powered Process With AItenders</h3>
+                        <p className="text-green-600 text-sm font-medium">Automated, accurate, and efficient</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Comparison Rows */}
+                <div className="divide-y divide-gray-100">
+                  {/* Row 1 */}
+                  <div className="grid grid-cols-2 hover:bg-gray-50/50 transition-colors duration-200">
+                    <div className="p-6 border-r border-gray-100">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                          <MdTableChart className="w-5 h-5 text-white" aria-label="Excel spreadsheet chaos" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-2 text-lg">Excel compliance chaos across 8+ experts</h4>
+                          <p className="text-gray-600">Spreadsheets scattered across departments</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-6">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                          <MdDashboard className="w-5 h-5 text-white" aria-label="Unified dashboard interface" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-2 text-lg">Unified AI compliance dashboard for all teams</h4>
+                          <p className="text-gray-600">Single source of truth for all experts</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Row 2 */}
+                  <div className="grid grid-cols-2 hover:bg-gray-50/50 transition-colors duration-200">
+                    <div className="p-6 border-r border-gray-100">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                          <MdAccessTime className="w-5 h-5 text-white" aria-label="Time lost on manual processing" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-2 text-lg">Days lost extracting requirements from 500+ pages</h4>
+                          <p className="text-gray-600">Manual document analysis takes weeks</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-6">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                          <MdBolt className="w-5 h-5 text-white" aria-label="Instant processing speed" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-2 text-lg">Instant requirement extraction and classification</h4>
+                          <p className="text-gray-600">AI processes documents in minutes, not days</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Row 3 */}
+                  <div className="grid grid-cols-2 hover:bg-gray-50/50 transition-colors duration-200">
+                    <div className="p-6 border-r border-gray-100">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                          <MdContentCopy className="w-5 h-5 text-white" aria-label="Copy-paste errors" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-2 text-lg">Copy-paste errors risk million-euro exclusions</h4>
+                          <p className="text-gray-600">Human errors cost critical opportunities</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-6">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                          <MdEdit className="w-5 h-5 text-white" aria-label="AI-guided writing assistance" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-2 text-lg">AI-guided writing with source verification</h4>
+                          <p className="text-gray-600">Eliminate errors with intelligent assistance</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Row 4 */}
+                  <div className="grid grid-cols-2 hover:bg-gray-50/50 transition-colors duration-200">
+                    <div className="p-6 border-r border-gray-100">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                          <MdRefresh className="w-5 h-5 text-white" aria-label="Multiple review cycles" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-2 text-lg">Multiple review cycles delay submission</h4>
+                          <p className="text-gray-600">Endless back-and-forth coordination</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-6">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                          <MdNotifications className="w-5 h-5 text-white" aria-label="Real-time alerts and notifications" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-2 text-lg">Real-time inconsistency detection and alerts</h4>
+                          <p className="text-gray-600">Proactive quality control throughout the process</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Row 5 */}
+                  <div className="grid grid-cols-2 hover:bg-gray-50/50 transition-colors duration-200">
+                    <div className="p-6 border-r border-gray-100">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                          <MdSearch className="w-5 h-5 text-white" aria-label="Hidden requirement gaps" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-2 text-lg">Hidden requirement gaps cause rejections</h4>
+                          <p className="text-gray-600">Critical oversights discovered too late</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-6">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                          <MdVerified className="w-5 h-5 text-white" aria-label="Verified requirement coverage" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-2 text-lg">100% requirement coverage with proof trails</h4>
+                          <p className="text-gray-600">Complete audit trail ensures nothing is missed</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile Comparison Cards */}
+            <div className="lg:hidden space-y-8">
+              {/* Before Card */}
+              <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-3xl p-8 border-2 border-red-100 relative overflow-hidden shadow-xl">
                 <div className="flex items-center mb-8">
                   <div className="w-12 h-12 bg-red-100 rounded-2xl flex items-center justify-center mr-4">
                     <MdWarning className="w-6 h-6 text-red-600" />
@@ -920,9 +1095,8 @@ export default function UC3Page() {
                   </div>
                 </div>
 
-                {/* Problems List */}
                 <div className="space-y-4">
-                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-red-200 transform hover:-translate-y-1 transition-all duration-300">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-red-200">
                     <div className="flex items-start space-x-3">
                       <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                         <MdTableChart className="w-4 h-4 text-white" aria-label="Excel spreadsheet chaos" />
@@ -934,7 +1108,7 @@ export default function UC3Page() {
                     </div>
                   </div>
 
-                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-red-200 transform hover:-translate-y-1 transition-all duration-300">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-red-200">
                     <div className="flex items-start space-x-3">
                       <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                         <MdAccessTime className="w-4 h-4 text-white" aria-label="Time lost on manual processing" />
@@ -946,7 +1120,7 @@ export default function UC3Page() {
                     </div>
                   </div>
 
-                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-red-200 transform hover:-translate-y-1 transition-all duration-300">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-red-200">
                     <div className="flex items-start space-x-3">
                       <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                         <MdContentCopy className="w-4 h-4 text-white" aria-label="Copy-paste errors" />
@@ -958,7 +1132,7 @@ export default function UC3Page() {
                     </div>
                   </div>
 
-                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-red-200 transform hover:-translate-y-1 transition-all duration-300">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-red-200">
                     <div className="flex items-start space-x-3">
                       <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                         <MdRefresh className="w-4 h-4 text-white" aria-label="Multiple review cycles" />
@@ -970,7 +1144,7 @@ export default function UC3Page() {
                     </div>
                   </div>
 
-                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-red-200 transform hover:-translate-y-1 transition-all duration-300">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-red-200">
                     <div className="flex items-start space-x-3">
                       <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                         <MdSearch className="w-4 h-4 text-white" aria-label="Hidden requirement gaps" />
@@ -983,17 +1157,19 @@ export default function UC3Page() {
                   </div>
                 </div>
 
-                {/* Decorative Elements */}
                 <div className="absolute -top-2 -right-2 w-20 h-20 bg-red-200/30 rounded-full blur-xl"></div>
                 <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-orange-200/20 rounded-full blur-2xl"></div>
               </div>
-            </div>
 
-            {/* After - AI-Powered Process */}
-            <div className="relative">
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 border-2 border-green-200 relative overflow-hidden">
-                
-                {/* Header */}
+              {/* Transformation Arrow Mobile */}
+              <div className="flex justify-center">
+                <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full p-4 shadow-2xl">
+                  <MdArrowForward className="w-8 h-8 rotate-90" />
+                </div>
+              </div>
+
+              {/* After Card */}
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 border-2 border-green-200 relative overflow-hidden shadow-xl">
                 <div className="flex items-center mb-8">
                   <div className="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center mr-4">
                     <MdCheckCircle className="w-6 h-6 text-green-600" />
@@ -1004,9 +1180,8 @@ export default function UC3Page() {
                   </div>
                 </div>
 
-                {/* Solutions List */}
                 <div className="space-y-4">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 border border-green-200 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-lg">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 border border-green-200 shadow-sm">
                     <div className="flex items-start space-x-3">
                       <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                         <MdDashboard className="w-4 h-4 text-white" aria-label="Unified dashboard interface" />
@@ -1018,7 +1193,7 @@ export default function UC3Page() {
                     </div>
                   </div>
 
-                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 border border-green-200 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-lg">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 border border-green-200 shadow-sm">
                     <div className="flex items-start space-x-3">
                       <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                         <MdBolt className="w-4 h-4 text-white" aria-label="Instant processing speed" />
@@ -1030,7 +1205,7 @@ export default function UC3Page() {
                     </div>
                   </div>
 
-                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 border border-green-200 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-lg">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 border border-green-200 shadow-sm">
                     <div className="flex items-start space-x-3">
                       <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                         <MdEdit className="w-4 h-4 text-white" aria-label="AI-guided writing assistance" />
@@ -1042,7 +1217,7 @@ export default function UC3Page() {
                     </div>
                   </div>
 
-                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 border border-green-200 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-lg">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 border border-green-200 shadow-sm">
                     <div className="flex items-start space-x-3">
                       <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                         <MdNotifications className="w-4 h-4 text-white" aria-label="Real-time alerts and notifications" />
@@ -1054,7 +1229,7 @@ export default function UC3Page() {
                     </div>
                   </div>
 
-                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 border border-green-200 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-lg">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 border border-green-200 shadow-sm">
                     <div className="flex items-start space-x-3">
                       <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                         <MdVerified className="w-4 h-4 text-white" aria-label="Verified requirement coverage" />
@@ -1067,32 +1242,46 @@ export default function UC3Page() {
                   </div>
                 </div>
 
-                {/* Decorative Elements */}
                 <div className="absolute -top-2 -right-2 w-20 h-20 bg-green-200/30 rounded-full blur-xl"></div>
                 <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-emerald-200/20 rounded-full blur-2xl"></div>
               </div>
             </div>
-          </div>
 
-          {/* Transformation Arrow */}
-          <div className="hidden lg:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-            <div className="bg-purple-600 text-white rounded-full p-4 shadow-2xl">
-              <MdArrowForward className="w-8 h-8" />
+            {/* Desktop Transformation Arrow */}
+            <div className="hidden lg:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+              <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full p-5 shadow-2xl ring-4 ring-white">
+                <MdArrowForward className="w-10 h-10" />
+              </div>
             </div>
           </div>
 
-          {/* Bottom CTA */}
-          <div className="text-center mt-16">
-            <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Bid Management?</h3>
-              <p className="text-lg mb-6 opacity-90">Join teams who've eliminated compliance chaos and accelerated their success</p>
-              <Button className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-2xl shadow-lg transform hover:-translate-y-1 transition-all duration-300">
-                Request Your Demo Today
-              </Button>
+          {/* Results Banner */}
+          <div className="mt-20 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 rounded-3xl p-10 text-white text-center shadow-2xl">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+              <div>
+                <div className="text-4xl font-bold mb-2">95%</div>
+                <div className="text-purple-100">Time Reduction</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold mb-2">100%</div>
+                <div className="text-purple-100">Requirement Coverage</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold mb-2">0</div>
+                <div className="text-purple-100">Manual Errors</div>
+              </div>
             </div>
+            <h3 className="text-3xl font-bold mb-4">Ready to Transform Your Bid Management?</h3>
+            <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+              Join teams who've eliminated compliance chaos and accelerated their success
+            </p>
+            <Button className="bg-white text-purple-600 hover:bg-gray-100 px-10 py-5 text-xl font-semibold rounded-2xl shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+              Request Your Demo Today
+            </Button>
           </div>
         </div>
       </section>
+
       {/* Trust & Compliance */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
