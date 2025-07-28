@@ -16,6 +16,11 @@ import UC3AnalysisCard from "@/components/UC3AnalysisCard";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
+// Import client logos
+import equansLogo from "@assets/Equans_1753711339292.png";
+import bouyguesLogo from "@assets/Bouyges_1753711339292.png";
+import colasLogo from "@assets/Colas_1753711339292.png";
+
 export default function UC3Page() {
   // Target audience data with interactive content
   const targetAudiences = [
@@ -277,14 +282,26 @@ export default function UC3Page() {
                 <div className="flex items-center space-x-8">
                   <div className="flex items-center text-sm text-gray-600">
                     <div className="flex -space-x-2 mr-3">
-                      <div className="w-8 h-8 bg-blue-500 rounded-full border-2 border-white flex items-center justify-center">
-                        <span className="text-xs text-white font-medium">A</span>
+                      <div className="w-12 h-12 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center shadow-sm overflow-hidden">
+                        <img 
+                          src={equansLogo} 
+                          alt="Equans logo" 
+                          className="w-10 h-6 object-contain"
+                        />
                       </div>
-                      <div className="w-8 h-8 bg-green-500 rounded-full border-2 border-white flex items-center justify-center">
-                        <span className="text-xs text-white font-medium">B</span>
+                      <div className="w-12 h-12 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center shadow-sm overflow-hidden">
+                        <img 
+                          src={bouyguesLogo} 
+                          alt="Bouygues logo" 
+                          className="w-10 h-6 object-contain"
+                        />
                       </div>
-                      <div className="w-8 h-8 bg-purple-500 rounded-full border-2 border-white flex items-center justify-center">
-                        <span className="text-xs text-white font-medium">C</span>
+                      <div className="w-12 h-12 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center shadow-sm overflow-hidden">
+                        <img 
+                          src={colasLogo} 
+                          alt="Colas logo" 
+                          className="w-10 h-6 object-contain"
+                        />
                       </div>
                     </div>
                     <span>Used by Fortune 500 teams</span>
