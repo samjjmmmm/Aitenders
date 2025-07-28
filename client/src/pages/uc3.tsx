@@ -400,94 +400,114 @@ export default function UC3Page() {
           </div>
         </div>
       </section>
-      {/* Pain Points Section - Livestorm-Style Card Design */}
+      {/* Premium Pain Points Section - Large Feature Card Design */}
       <section className="py-24 px-4 bg-gradient-to-br from-slate-50 via-gray-50 to-purple-50/20">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           
-          {/* Optimized Feature Card with Better Proportions */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-8 lg:p-10 shadow-xl border border-gray-100/50 relative overflow-hidden">
+          {/* Premium Large Feature Card - Livestorm Inspired */}
+          <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-12 lg:p-16 shadow-2xl border border-gray-100/50 relative overflow-hidden mx-auto max-w-4xl">
             
-            {/* Subtle Background Pattern */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-50/20 via-transparent to-blue-50/15 rounded-2xl"></div>
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-purple-100/15 to-transparent rounded-full blur-2xl"></div>
-            <div className="absolute bottom-0 left-0 w-56 h-56 bg-gradient-to-tr from-blue-100/15 to-transparent rounded-full blur-2xl"></div>
+            {/* Multi-tone Faded Background Pattern */}
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-50/30 via-blue-50/20 to-indigo-50/25 rounded-3xl"></div>
+            <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-purple-100/25 to-transparent rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-blue-100/20 to-transparent rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
             
-            {/* Content Container */}
-            <div className="relative z-10">
+            {/* Content Container with Premium Spacing */}
+            <div className="relative z-10 text-center">
               
-              {/* Main Headline */}
-              <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight text-center">
+              {/* Extra Large Headline */}
+              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
                 Master complex bids before <span className="text-purple-600">they master you</span>
               </h1>
               
-              {/* Supporting Subtext */}
-              <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed text-center max-w-3xl mx-auto">
+              {/* Clear Subtext - Max 2 Lines */}
+              <p className="text-xl lg:text-2xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto font-light">
                 Complex multi-lot RFPs are a compliance nightmare for expert teams because manual Excel tracking creates dangerous gaps that cost million-euro opportunities. With AItenders, you receive:
               </p>
               
-              {/* Primary CTA */}
-              <div className="text-center mb-10">
-                <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              {/* Dominant CTA Button */}
+              <div className="mb-16">
+                <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-12 py-6 text-xl font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
                   Watch a 2-Minute Demo
                 </Button>
               </div>
               
-              {/* Pain Point Features Grid - More Compact */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+              {/* Premium Feature List - Vertical Stack */}
+              <div className="space-y-8 text-left max-w-2xl mx-auto">
                 
                 {/* Feature 1 */}
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <MdBolt className="w-5 h-5 text-white" />
+                <div className="flex items-start space-x-6 group">
+                  <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <MdBolt className="w-7 h-7 text-white" aria-label="Automatic Project Organization" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Automatic Project Organization</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      Intelligent organization that structures complex RFPs automatically, reducing setup time by 90%.
+                    <h2 className="text-2xl font-bold text-gray-900 mb-3">Automatic Project Organization</h2>
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      Intelligent project organization that structures complex RFPs automatically, eliminating days of manual document processing and reducing setup time by 90%.
                     </p>
                   </div>
                 </div>
                 
                 {/* Feature 2 */}
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <MdGroups className="w-5 h-5 text-white" />
+                <div className="flex items-start space-x-6 group">
+                  <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <MdGroups className="w-7 h-7 text-white" aria-label="Seamless Expert Coordination" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Seamless Expert Coordination</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      Coordinate technical, legal, commercial, and quality teams without bottlenecks.
+                    <h2 className="text-2xl font-bold text-gray-900 mb-3">Seamless Expert Coordination</h2>
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      Coordination across technical, legal, commercial, and quality teams without bottlenecks, ensuring every specialist has clear visibility and accountability.
                     </p>
                   </div>
                 </div>
                 
                 {/* Feature 3 */}
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <MdShield className="w-5 h-5 text-white" />
+                <div className="flex items-start space-x-6 group">
+                  <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <MdShield className="w-7 h-7 text-white" aria-label="Compliance Protection" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Compliance Protection</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      Prevents costly bid exclusions with real-time validation and comprehensive audit trails.
+                    <h2 className="text-2xl font-bold text-gray-900 mb-3">Compliance Protection</h2>
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      Prevents costly bid exclusions by ensuring full compliance automatically, with real-time validation and comprehensive audit trails for enterprise requirements.
                     </p>
                   </div>
                 </div>
                 
                 {/* Feature 4 */}
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <MdSecurity className="w-5 h-5 text-white" />
+                <div className="flex items-start space-x-6 group">
+                  <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <MdSecurity className="w-7 h-7 text-white" aria-label="Secure Team Effort" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Secure Team Effort</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      Enterprise-grade protection with version control and collaborative tracking systems.
+                    <h2 className="text-2xl font-bold text-gray-900 mb-3">Secure Team Effort</h2>
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      Preparation work security that safeguards months of your team's effort with enterprise-grade protection, version control, and collaborative tracking systems.
                     </p>
                   </div>
                 </div>
                 
               </div>
+
+              {/* Social Proof Section */}
+              <div className="mt-16 pt-12 border-t border-gray-200/50">
+                <div className="text-center">
+                  <p className="text-sm font-semibold text-gray-500 mb-6 uppercase tracking-wider">Trusted by 2,000+ Expert Teams</p>
+                  <div className="flex items-center justify-center space-x-8 opacity-60">
+                    <div className="w-32 h-8 bg-gradient-to-r from-gray-300 to-gray-400 rounded-lg flex items-center justify-center">
+                      <span className="text-xs font-bold text-white">Enterprise A</span>
+                    </div>
+                    <div className="w-32 h-8 bg-gradient-to-r from-gray-300 to-gray-400 rounded-lg flex items-center justify-center">
+                      <span className="text-xs font-bold text-white">Enterprise B</span>
+                    </div>
+                    <div className="w-32 h-8 bg-gradient-to-r from-gray-300 to-gray-400 rounded-lg flex items-center justify-center">
+                      <span className="text-xs font-bold text-white">Enterprise C</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
             </div>
           </div>
         </div>

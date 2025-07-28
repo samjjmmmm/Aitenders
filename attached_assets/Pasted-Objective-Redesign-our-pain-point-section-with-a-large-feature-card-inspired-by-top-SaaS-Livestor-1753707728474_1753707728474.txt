@@ -1,0 +1,104 @@
+Objective:
+Redesign our pain point section with a large feature card, inspired by top SaaS (Livestorm), focusing on premium whitespace, clear hierarchy, and emotional clarity.
+
+Implementation Specs:
+
+    Section/Card Structure
+
+        Center a single, large card/container on the page with a subtle multi-tone or gradient faded background.
+
+        “Float” the card with a soft drop shadow and generous outside margin.
+
+        Rounded corners; high max-width (900–1000px); 36–48px internal padding.
+
+    Content Hierarchy—Inside the Card
+
+        Headline (H1): Short, bold, top of card, centered or left for balance on desktop, always extra large.
+
+        Subtext: Place below headline, lighter color, max 2 lines, 18–20px, clear scan-ability.
+
+        CTA: Big, bold button directly beneath subtext, high-contrast accent color, sticky hover/focus effect, width auto.
+
+    Feature Listing Pattern
+
+        Each pain point or solution as its own mini-feature:
+
+            Start with a meaningful icon (select from Material, Heroicons, or Feather—never placeholders).
+
+            Mini-Heading (H2): Clear, concise, action-oriented (limit to 5–7 words).
+
+            1–2 line description: What’s the customer win?
+
+        Stack features vertically, at least 32px spacing between each.
+
+    Visual Style & Extras
+
+        Use a pale, brand-accented faded pattern or gradient in card background (not a flat fill).
+
+        Add mild effects: slight animation fade-in, button micro-interactions.
+
+        Card shadow should be neutral and never harsh.
+
+        Use a consistent icon color and sizing next to all feature headings.
+
+    Trust & Social Proof
+
+        Add a trusted-by logo array, metric (e.g., “Over 2,000+ teams trust us”), or client badge section just below the CTA or at the card’s base.
+
+    Mobile/Accessibility
+
+        Stack H1, subtext, CTA, then each feature, with full width on mobile, padding at least 24px.
+
+        All icons and buttons must have aria-labels or alt text.
+
+        Fonts minimum 18px, button at least 44px tall, no crowding.
+
+    Do NOT Use:
+
+        Flat one-color blocks or harsh separations.
+
+        Dense/fine-print paragraphs or generic iconography.
+
+        Slides or PowerPoint-like grouping—think web-native, not document-based.
+
+Sample JSX/HTML Structure for Reference:
+
+jsx
+<section className="main-pain-card-section">
+  <div className="big-feature-card faded-bg">
+    <h1>Master complex bids before they master you</h1>
+    <p className="feature-subtext">
+      Complex multi-lot RFPs are a compliance nightmare for expert teams because manual Excel tracking creates dangerous gaps that cost million-euro opportunities. With AItenders, you receive:
+    </p>
+    <button className="cta-btn">Watch a 2-Minute Demo</button>
+    <div className="features-list">
+      <div className="feature-item">
+        <Icon type="spreadsheet" aria-label="Automatic Project Organization" />
+        <h2>Automatic Project Organization</h2>
+        <p>Structures complex RFPs automatically for instant clarity.</p>
+      </div>
+      <div className="feature-item">
+        <Icon type="group_work" aria-label="Seamless Expert Coordination" />
+        <h2>Seamless Expert Coordination</h2>
+        <p>Coordinates technical, legal, and commercial teams effortlessly.</p>
+      </div>
+      <div className="feature-item">
+        <Icon type="shield" aria-label="Compliance Protection" />
+        <h2>Compliance Protection</h2>
+        <p>Prevents costly bid exclusions automatically.</p>
+      </div>
+      <div className="feature-item">
+        <Icon type="lock" aria-label="Team Effort Security" />
+        <h2>Secure Team Effort</h2>
+        <p>Safeguards team work across every project phase.</p>
+      </div>
+    </div>
+    <div className="social-proof">
+      {/* Trusted by... logos, badges, or testimonials */}
+    </div>
+  </div>
+</section>
+
+Summary for Dev/Designer:
+
+    “Rebuild our pain point section as a large, visually floating card with modern faded backgrounds and clear chunked typography. Use concise, bold headlines; split each point into its own visually distinct feature row with pro icons; make CTA dominant; and add social proof. The result must feel premium, web-native, and instantly trustworthy—no more PowerPoint-style density.”
