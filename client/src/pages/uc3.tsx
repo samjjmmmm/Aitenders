@@ -400,12 +400,12 @@ export default function UC3Page() {
           </div>
         </div>
       </section>
-      {/* Premium Pain Points Section - Large Feature Card Design */}
+      {/* Pain Points Section - Main Feature Card + Supporting Cards */}
       <section className="py-24 px-4 bg-gradient-to-br from-slate-50 via-gray-50 to-purple-50/20">
         <div className="max-w-7xl mx-auto">
           
-          {/* Premium Large Feature Card - Livestorm Inspired */}
-          <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-12 lg:p-16 shadow-2xl border border-gray-100/50 relative overflow-hidden">
+          {/* Main Feature Card */}
+          <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-12 lg:p-16 shadow-2xl border border-gray-100/50 relative overflow-hidden mb-16">
             
             {/* Multi-tone Faded Background Pattern */}
             <div className="absolute inset-0 bg-gradient-to-br from-purple-50/30 via-blue-50/20 to-indigo-50/25 rounded-3xl"></div>
@@ -413,102 +413,69 @@ export default function UC3Page() {
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-blue-100/20 to-transparent rounded-full blur-3xl"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
             
-            {/* Content Container with Premium Spacing */}
+            {/* Content Container */}
             <div className="relative z-10 text-center">
               
-              {/* Extra Large Headline */}
-              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
-                Master complex bids before <span className="text-purple-600">they master you</span>
-              </h1>
+              {/* Main Headline */}
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight">
+                Validate faster, without <span className="text-purple-600">risking credibility</span>
+              </h2>
               
-              {/* Clear Subtext - Max 2 Lines */}
-              <p className="text-xl lg:text-2xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto font-light">
-                Complex multi-lot RFPs are a compliance nightmare for expert teams because manual Excel tracking creates dangerous gaps that cost million-euro opportunities. With AItenders, you receive:
+              {/* Body Copy */}
+              <p className="text-xl lg:text-2xl text-gray-600 mb-12 leading-relaxed max-w-4xl mx-auto font-light">
+                Tight deadlines leave no room for error. Small teams manage manual reviews that are slow, repetitive, and prone to mistakes — with no legal or quality support. Each missed clause can cost internal trust and even derail your bid.
               </p>
               
-              {/* Dominant CTA Button */}
-              <div className="mb-16">
+              <p className="text-xl lg:text-2xl text-gray-600 mb-12 leading-relaxed max-w-4xl mx-auto font-light">
+                With Aitenders, validation tracking and smart AI reading ensure nothing is overlooked — so you deliver on time with confidence.
+              </p>
+              
+              {/* CTA Button */}
+              <div className="mb-8">
                 <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-12 py-6 text-xl font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
-                  Watch a 2-Minute Demo
+                  Discover how it works
                 </Button>
               </div>
               
-              {/* Premium Feature List - Vertical Stack */}
-              <div className="space-y-8 text-left max-w-2xl mx-auto">
-                
-                {/* Feature 1 */}
-                <div className="flex items-start space-x-6 group">
-                  <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <MdBolt className="w-7 h-7 text-white" aria-label="Automatic Project Organization" />
-                  </div>
-                  <div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-3">Automatic Project Organization</h2>
-                    <p className="text-lg text-gray-600 leading-relaxed">
-                      Intelligent project organization that structures complex RFPs automatically, eliminating days of manual document processing and reducing setup time by 90%.
-                    </p>
-                  </div>
-                </div>
-                
-                {/* Feature 2 */}
-                <div className="flex items-start space-x-6 group">
-                  <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <MdGroups className="w-7 h-7 text-white" aria-label="Seamless Expert Coordination" />
-                  </div>
-                  <div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-3">Seamless Expert Coordination</h2>
-                    <p className="text-lg text-gray-600 leading-relaxed">
-                      Coordination across technical, legal, commercial, and quality teams without bottlenecks, ensuring every specialist has clear visibility and accountability.
-                    </p>
-                  </div>
-                </div>
-                
-                {/* Feature 3 */}
-                <div className="flex items-start space-x-6 group">
-                  <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <MdShield className="w-7 h-7 text-white" aria-label="Compliance Protection" />
-                  </div>
-                  <div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-3">Compliance Protection</h2>
-                    <p className="text-lg text-gray-600 leading-relaxed">
-                      Prevents costly bid exclusions by ensuring full compliance automatically, with real-time validation and comprehensive audit trails for enterprise requirements.
-                    </p>
-                  </div>
-                </div>
-                
-                {/* Feature 4 */}
-                <div className="flex items-start space-x-6 group">
-                  <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <MdSecurity className="w-7 h-7 text-white" aria-label="Secure Team Effort" />
-                  </div>
-                  <div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-3">Secure Team Effort</h2>
-                    <p className="text-lg text-gray-600 leading-relaxed">
-                      Preparation work security that safeguards months of your team's effort with enterprise-grade protection, version control, and collaborative tracking systems.
-                    </p>
-                  </div>
-                </div>
-                
-              </div>
-
-              {/* Social Proof Section */}
-              <div className="mt-16 pt-12 border-t border-gray-200/50">
-                <div className="text-center">
-                  <p className="text-sm font-semibold text-gray-500 mb-6 uppercase tracking-wider">Trusted by 2,000+ Expert Teams</p>
-                  <div className="flex items-center justify-center space-x-8 opacity-60">
-                    <div className="w-32 h-8 bg-gradient-to-r from-gray-300 to-gray-400 rounded-lg flex items-center justify-center">
-                      <span className="text-xs font-bold text-white">Enterprise A</span>
-                    </div>
-                    <div className="w-32 h-8 bg-gradient-to-r from-gray-300 to-gray-400 rounded-lg flex items-center justify-center">
-                      <span className="text-xs font-bold text-white">Enterprise B</span>
-                    </div>
-                    <div className="w-32 h-8 bg-gradient-to-r from-gray-300 to-gray-400 rounded-lg flex items-center justify-center">
-                      <span className="text-xs font-bold text-white">Enterprise C</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
             </div>
+          </div>
+
+          {/* Supporting Cards - 3 Card Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            {/* Card 1: Stay compliant */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-purple-200 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                <MdSecurity className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Stay compliant</h3>
+              <p className="text-gray-600 leading-relaxed text-center">
+                Every review step is logged and traceable for instant proof of rigor.
+              </p>
+            </div>
+
+            {/* Card 2: Save hours */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-purple-200 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                <MdFlashOn className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Save hours</h3>
+              <p className="text-gray-600 leading-relaxed text-center">
+                Automated smart reading cuts down re‑reads and accelerates validation.
+              </p>
+            </div>
+
+            {/* Card 3: Protect credibility */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-purple-200 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                <MdShield className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Protect credibility</h3>
+              <p className="text-gray-600 leading-relaxed text-center">
+                Avoid costly oversights that damage trust inside your organization.
+              </p>
+            </div>
+
           </div>
         </div>
       </section>
