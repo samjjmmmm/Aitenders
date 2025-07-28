@@ -527,8 +527,8 @@ export default function HomePage() {
                     className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md cursor-pointer border border-gray-100 hover:border-blue-500 transition-all duration-200 ease-in-out hover:scale-105"
                   >
                     <div className="flex items-start space-x-4">
-                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${card.color}`}>
-                        <Icon className="w-6 h-6" strokeWidth={1.5} />
+                      <div className={`p-3 rounded-xl ${card.color}`}>
+                        <Icon className="h-6 w-6" />
                       </div>
                       <div className="flex-1">
                         <h3 className="text-base font-medium text-gray-800 leading-relaxed">
