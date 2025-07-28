@@ -190,53 +190,53 @@ export default function UC3Page() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-white">
       {/* Header/Navbar */}
       <Header />
       {/* Hero Section - Professional SaaS Design */}
-      <section className="py-32 px-4 bg-white">
+      <section className="py-40 px-8 bg-gradient-to-br from-white via-slate-50/30 to-purple-50/20">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
             
             {/* Left Side - Content */}
             <div className="text-left">
-              <div className="mb-8">
-                <Badge className="mb-8 bg-purple-50 text-purple-700 border-purple-200 text-sm font-medium px-4 py-2 rounded-full">
+              <div className="mb-12">
+                <Badge className="mb-12 bg-gradient-to-r from-purple-50 to-purple-100/80 text-purple-800 border-purple-200/50 text-base font-semibold px-6 py-3 rounded-full shadow-sm">
                   Complex Multi-Lot Bid Management
                 </Badge>
                 
-                <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight tracking-tight">
+                <h1 className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-[1.1] tracking-tight">
                   Master complex bids before <span className="text-purple-600">they master you</span>
                 </h1>
                 
-                <p className="text-2xl text-gray-600 mb-12 leading-relaxed font-light">
+                <p className="text-2xl lg:text-3xl text-gray-600 mb-16 leading-relaxed font-light">
                   AI-powered coordination for multi-lot projects. Structure 500+ page RFPs instantly, orchestrate expert teams seamlessly.
                 </p>
               </div>
               
               {/* Single Key Metric */}
-              <div className="mb-12">
-                <div className="inline-flex items-center px-4 py-2 bg-green-50 rounded-full border border-green-200">
-                  <span className="text-2xl font-bold text-green-700 mr-2">90%</span>
-                  <span className="text-gray-700 text-lg">faster project organization</span>
+              <div className="mb-16">
+                <div className="inline-flex items-center px-6 py-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl border border-green-200/50 shadow-sm">
+                  <span className="text-3xl font-bold text-green-700 mr-3">90%</span>
+                  <span className="text-gray-700 text-xl font-medium">faster project organization</span>
                 </div>
               </div>
               
               {/* Primary CTA */}
-              <div className="mb-12">
+              <div className="mb-16">
                 <Button 
                   size="lg" 
-                  className="bg-purple-600 hover:bg-purple-700 text-white px-12 py-6 text-xl font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 w-full sm:w-auto"
+                  className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto"
                 >
                   Watch Demo
                 </Button>
               </div>
               
               {/* Secondary CTA - Less Prominent */}
-              <div className="mb-16">
+              <div className="mb-20">
                 <Button 
                   variant="ghost" 
-                  className="text-purple-600 hover:text-purple-700 hover:bg-purple-50 px-0 py-2 text-lg font-medium underline decoration-2 underline-offset-4"
+                  className="text-purple-600 hover:text-purple-700 hover:bg-purple-50/80 px-6 py-4 text-xl font-medium underline decoration-2 underline-offset-4 rounded-2xl transition-all duration-300"
                 >
                   Download Use Case →
                 </Button>
@@ -276,7 +276,10 @@ export default function UC3Page() {
               <div className="relative w-full max-w-lg">
                 
                 {/* Main Dashboard Mockup */}
-                <div className="bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden">
+                <div className="bg-white rounded-3xl shadow-2xl border border-gray-100/50 overflow-hidden backdrop-blur-sm"
+                     style={{
+                       boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+                     }}>
                   
                   {/* Browser Header */}
                   <div className="bg-gray-100 px-6 py-4 flex items-center justify-between border-b border-gray-200">
@@ -401,11 +404,14 @@ export default function UC3Page() {
         </div>
       </section>
       {/* Pain Points Section - Main Feature Card + Supporting Cards */}
-      <section className="py-24 px-4 bg-gradient-to-br from-slate-50 via-gray-50 to-purple-50/20">
+      <section className="py-32 px-8 bg-gradient-to-br from-slate-50 via-gray-50 to-purple-50/20">
         <div className="max-w-7xl mx-auto">
           
           {/* Main Feature Card */}
-          <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-12 lg:p-16 shadow-2xl border border-gray-100/50 relative overflow-hidden mb-16">
+          <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20"
+               style={{
+                 boxShadow: '0 32px 64px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+               }}>
             
             {/* Multi-tone Faded Background Pattern */}
             <div className="absolute inset-0 bg-gradient-to-br from-purple-50/30 via-blue-50/20 to-indigo-50/25 rounded-3xl"></div>
@@ -417,58 +423,67 @@ export default function UC3Page() {
             <div className="relative z-10 text-center">
               
               {/* Main Headline */}
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight">
+              <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-12 leading-[1.1] tracking-tight">
                 Validate faster, without <span className="text-purple-600">risking credibility</span>
               </h2>
               
               {/* Body Copy */}
-              <p className="text-xl lg:text-2xl text-gray-600 mb-12 leading-relaxed max-w-4xl mx-auto font-light">
+              <p className="text-2xl lg:text-3xl text-gray-600 mb-16 leading-relaxed max-w-5xl mx-auto font-light">
                 Tight deadlines leave no room for error. Small teams manage manual reviews that are slow, repetitive, and prone to mistakes — with no legal or quality support. Each missed clause can cost internal trust and even derail your bid.
               </p>
               
-              <p className="text-xl lg:text-2xl text-gray-600 mb-12 leading-relaxed max-w-4xl mx-auto font-light">
+              <p className="text-2xl lg:text-3xl text-gray-600 mb-16 leading-relaxed max-w-5xl mx-auto font-light">
                 With Aitenders, validation tracking and smart AI reading ensure nothing is overlooked — so you deliver on time with confidence.
               </p>
               
               {/* CTA Button */}
-              <div className="mb-12">
-                <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-12 py-6 text-xl font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
+              <div className="mb-16">
+                <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
                   Discover how it works
                 </Button>
               </div>
 
               {/* Supporting Cards - 3 Card Grid Inside Main Card */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 
                 {/* Card 1: Stay compliant */}
-                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50 hover:border-purple-200 transform hover:-translate-y-2">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                    <MdSecurity className="w-6 h-6 text-white" />
+                <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-white/60 hover:border-purple-200/50 transform hover:-translate-y-2 transition-all duration-300"
+                     style={{
+                       boxShadow: '0 20px 40px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.1)'
+                     }}>
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
+                    <MdSecurity className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3 text-center">Stay compliant</h3>
-                  <p className="text-gray-600 leading-relaxed text-center text-sm">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Stay compliant</h3>
+                  <p className="text-gray-600 leading-relaxed text-center text-lg">
                     Every review step is logged and traceable for instant proof of rigor.
                   </p>
                 </div>
 
                 {/* Card 2: Save hours */}
-                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50 hover:border-purple-200 transform hover:-translate-y-2">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                    <MdFlashOn className="w-6 h-6 text-white" />
+                <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-white/60 hover:border-purple-200/50 transform hover:-translate-y-2 transition-all duration-300"
+                     style={{
+                       boxShadow: '0 20px 40px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.1)'
+                     }}>
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
+                    <MdFlashOn className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3 text-center">Save hours</h3>
-                  <p className="text-gray-600 leading-relaxed text-center text-sm">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Save hours</h3>
+                  <p className="text-gray-600 leading-relaxed text-center text-lg">
                     Automated smart reading cuts down re‑reads and accelerates validation.
                   </p>
                 </div>
 
                 {/* Card 3: Protect credibility */}
-                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50 hover:border-purple-200 transform hover:-translate-y-2">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                    <MdShield className="w-6 h-6 text-white" />
+                <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-white/60 hover:border-purple-200/50 transform hover:-translate-y-2 transition-all duration-300"
+                     style={{
+                       boxShadow: '0 20px 40px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.1)'
+                     }}>
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
+                    <MdShield className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3 text-center">Protect credibility</h3>
-                  <p className="text-gray-600 leading-relaxed text-center text-sm">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Protect credibility</h3>
+                  <p className="text-gray-600 leading-relaxed text-center text-lg">
                     Avoid costly oversights that damage trust inside your organization.
                   </p>
                 </div>
@@ -480,33 +495,36 @@ export default function UC3Page() {
         </div>
       </section>
       {/* Solution Section - Alternating Layout Design */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-32 px-8 bg-gradient-to-br from-white via-slate-50/20 to-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">AItenders empowers your team with AI-driven coordination and compliance for complex RFPs</h1>
-            <h3 className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <div className="text-center mb-24">
+            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-[1.1] tracking-tight">AItenders empowers your team with AI-driven coordination and compliance for complex RFPs</h1>
+            <h3 className="text-2xl lg:text-3xl text-gray-600 max-w-5xl mx-auto leading-relaxed font-light">
               Structure massive documentation instantly, orchestrate expert collaboration seamlessly, 
               and control every project evolution without gaps.
             </h3>
           </div>
 
           {/* Feature 1: Structure Complex Projects - Text Left, Card Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-24">
             <div className="order-1">
-              <div className="w-16 h-16 bg-blue-500 rounded-3xl flex items-center justify-center mb-6">
-                <MdFlashOn className="w-8 h-8 text-white" />
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
+                <MdFlashOn className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">Structure Complex Projects Instantly</h3>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+              <h3 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">Structure Complex Projects Instantly</h3>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                 Equipped with AI document analysis and intelligent requirement extraction, AItenders automatically organizes 500+ page RFPs into structured data, classified requirements, and actionable insights ready for expert analysis from day 1.
               </p>
-              <div className="flex items-center text-sm text-gray-500">
-                <MdCheckCircle className="w-5 h-5 mr-2 text-green-500" />
+              <div className="flex items-center text-lg text-gray-500">
+                <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
                 Save days of manual document processing
               </div>
             </div>
             <div className="order-2">
-              <Card className="p-8 bg-gradient-to-br from-blue-50 to-indigo-100 border border-blue-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+              <Card className="p-10 bg-gradient-to-br from-blue-50 to-indigo-100 border border-blue-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
+                   style={{
+                     boxShadow: '0 25px 50px -12px rgba(59, 130, 246, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+                   }}>
                 <div className="bg-white rounded-xl p-4 border border-blue-200 shadow-sm">
                   <div className="flex items-center justify-between mb-4">
                     <h4 className="text-sm font-semibold text-gray-700">Document Analysis</h4>
@@ -540,9 +558,12 @@ export default function UC3Page() {
           </div>
 
           {/* Feature 2: Orchestrate Expert Teams - Text Right, Card Left */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-24">
             <div className="order-2 lg:order-1">
-              <Card className="p-8 bg-gradient-to-br from-purple-50 to-pink-100 border border-purple-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+              <Card className="p-10 bg-gradient-to-br from-purple-50 to-pink-100 border border-purple-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
+                   style={{
+                     boxShadow: '0 25px 50px -12px rgba(147, 51, 234, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+                   }}>
                 <div className="bg-white rounded-xl p-4 border border-purple-200 shadow-sm">
                   <div className="flex items-center justify-between mb-4">
                     <h4 className="text-sm font-semibold text-gray-700">Expert Coordination</h4>
@@ -583,37 +604,40 @@ export default function UC3Page() {
               </Card>
             </div>
             <div className="order-1 lg:order-2">
-              <div className="w-16 h-16 bg-purple-500 rounded-3xl flex items-center justify-center mb-6">
-                <MdGroups className="w-8 h-8 text-white" />
+              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
+                <MdGroups className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">Orchestrate Expert Teams Seamlessly</h3>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+              <h3 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">Orchestrate Expert Teams Seamlessly</h3>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                 AItenders helps you coordinate technical, legal, commercial, and quality specialists by generating dynamic compliance matrices, allocating requirements to the right experts, and creating unified deliverable structures that eliminate silos.
               </p>
-              <div className="flex items-center text-sm text-gray-500">
-                <MdCheckCircle className="w-5 h-5 mr-2 text-green-500" />
+              <div className="flex items-center text-lg text-gray-500">
+                <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
                 Eliminate coordination bottlenecks across departments
               </div>
             </div>
           </div>
 
           {/* Feature 3: Control Every Evolution - Text Left, Card Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="order-1">
-              <div className="w-16 h-16 bg-green-500 rounded-3xl flex items-center justify-center mb-6">
-                <MdSecurity className="w-8 h-8 text-white" />
+              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
+                <MdSecurity className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">Control Every Project Evolution</h3>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+              <h3 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">Control Every Project Evolution</h3>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                 The platform automatically detects document changes, tracks version evolution, and instantly alerts relevant team members to prevent requirement gaps, ensuring zero oversight across the entire project lifecycle.
               </p>
-              <div className="flex items-center text-sm text-gray-500">
-                <MdCheckCircle className="w-5 h-5 mr-2 text-green-500" />
+              <div className="flex items-center text-lg text-gray-500">
+                <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
                 Guarantee 100% requirement coverage with audit trails
               </div>
             </div>
             <div className="order-2">
-              <Card className="p-8 bg-gradient-to-br from-green-50 to-emerald-100 border border-green-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+              <Card className="p-10 bg-gradient-to-br from-green-50 to-emerald-100 border border-green-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
+                   style={{
+                     boxShadow: '0 25px 50px -12px rgba(34, 197, 94, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+                   }}>
                 <div className="bg-white rounded-xl p-4 border border-green-200 shadow-sm">
                   <div className="flex items-center justify-between mb-4">
                     <h4 className="text-sm font-semibold text-gray-700">Version Control</h4>
@@ -644,25 +668,25 @@ export default function UC3Page() {
         </div>
       </section>
       {/* Target Audience Section - Interactive Design */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-32 px-8 bg-gradient-to-br from-gray-50 via-slate-50 to-gray-50">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
+          <div className="text-center mb-20">
+            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-12 leading-[1.1] tracking-tight">
               Bid management for <span className="text-purple-600">all your needs</span>
             </h1>
             
             {/* Interactive Navigation Tabs */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <div className="flex flex-wrap justify-center gap-6 mb-16">
               {targetAudiences.map((audience) => (
                 <button
                   key={audience.id}
                   onClick={() => setActiveAudience(audience)}
                   onMouseEnter={() => setActiveAudience(audience)}
-                  className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
+                  className={`px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 ${
                     activeAudience.id === audience.id
-                      ? 'bg-gray-900 text-white shadow-lg'
-                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                      ? 'bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-xl'
+                      : 'bg-white text-gray-700 hover:bg-gray-50 shadow-sm border border-gray-200'
                   }`}
                 >
                   {audience.title}
@@ -672,8 +696,11 @@ export default function UC3Page() {
           </div>
 
           {/* Interactive Content Card */}
-          <Card className="bg-white rounded-2xl shadow-lg overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
+          <Card className="bg-white rounded-3xl overflow-hidden border border-gray-100/50"
+               style={{
+                 boxShadow: '0 32px 64px -12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+               }}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
               
               {/* Left Side - Dynamic Content */}
               <motion.div 
@@ -681,19 +708,19 @@ export default function UC3Page() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
-                className="p-12 flex flex-col justify-center"
+                className="p-16 flex flex-col justify-center"
               >
-                <div className={`w-12 h-12 ${activeAudience.iconBg} rounded-xl flex items-center justify-center mb-6 transition-all duration-300`}>
-                  <activeAudience.icon className={`w-6 h-6 ${activeAudience.iconColor}`} />
+                <div className={`w-16 h-16 ${activeAudience.iconBg} rounded-2xl flex items-center justify-center mb-8 transition-all duration-300 shadow-lg`}>
+                  <activeAudience.icon className={`w-8 h-8 ${activeAudience.iconColor}`} />
                 </div>
                 
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">{activeAudience.title}</h3>
+                <h3 className="text-3xl font-bold text-gray-900 mb-8 leading-tight">{activeAudience.title}</h3>
                 
-                <p className="text-gray-700 text-lg leading-relaxed mb-8">
+                <p className="text-gray-700 text-xl leading-relaxed mb-10 font-light">
                   {activeAudience.description}
                 </p>
                 
-                <Button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 w-fit transition-all duration-300 hover:shadow-lg">
+                <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 text-lg font-semibold rounded-2xl w-fit transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
                   Learn more →
                 </Button>
               </motion.div>
@@ -832,43 +859,46 @@ export default function UC3Page() {
         </div>
       </section>
       {/* User Journey Section - High Conversion Design */}
-      <section className="py-24 px-4 bg-gradient-to-br from-slate-50 via-white to-purple-50/30">
+      <section className="py-32 px-8 bg-gradient-to-br from-slate-50 via-white to-purple-50/30">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Three Steps to Compliant Project Success</h3>
+          <div className="text-center mb-24">
+            <h3 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-[1.1] tracking-tight">Three Steps to Compliant Project Success</h3>
           </div>
           
           {/* Steps Flow */}
           <div className="relative">
             {/* Connection Line - Desktop Only */}
-            <div className="hidden lg:block absolute top-16 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-purple-200 via-purple-400 to-purple-200"></div>
+            <div className="hidden lg:block absolute top-20 left-1/4 right-1/4 h-1 bg-gradient-to-r from-purple-200 via-purple-400 to-purple-200 rounded-full"></div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-12">
               
               {/* Step 1 */}
               <div className="relative group">
-                <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-purple-200 transform hover:-translate-y-2">
+                <div className="bg-white rounded-3xl p-12 border border-gray-100/50 hover:border-purple-200/50 transform hover:-translate-y-3 transition-all duration-500"
+                     style={{
+                       boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+                     }}>
                   
                   {/* Step Number */}
-                  <div className="absolute -top-6 left-8">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-2xl flex items-center justify-center text-xl font-bold shadow-lg">
+                  <div className="absolute -top-8 left-12">
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-3xl flex items-center justify-center text-2xl font-bold shadow-xl">
                       1
                     </div>
                   </div>
                   
                   {/* Icon */}
-                  <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-200 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <MdDescription className="w-10 h-10 text-blue-600" />
+                  <div className="w-24 h-24 bg-gradient-to-br from-blue-100 to-blue-200 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <MdDescription className="w-12 h-12 text-blue-600" />
                   </div>
                   
                   {/* Content */}
                   <div className="text-center">
-                    <h4 className="text-xl font-bold text-gray-900 mb-4">Upload Complex Documentation</h4>
-                    <p className="text-gray-600 leading-relaxed">Drop your project files and watch AI structure everything automatically</p>
+                    <h4 className="text-2xl font-bold text-gray-900 mb-6 leading-tight">Upload Complex Documentation</h4>
+                    <p className="text-gray-600 leading-relaxed text-lg">Drop your project files and watch AI structure everything automatically</p>
                   </div>
                   
                   {/* Subtle Animation Element */}
-                  <div className="absolute bottom-4 right-4 w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                  <div className="absolute bottom-6 right-6 w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
                 </div>
               </div>
 

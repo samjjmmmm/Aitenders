@@ -1,0 +1,87 @@
+Objective:
+Redesign our page to achieve the same visual polish, harmony, and trustworthiness as Livestorm, while strictly keeping our original wireframe and all existing content.
+1. Whitespace & Layout Clarity
+
+    Generously increase outer spacing between major sections and internal padding within cards/blocks (32–48px on desktop, 20–32px on mobile).
+
+    Avoid crowding: Let each content block “breathe” and stand apart; no elements should touch container edges.
+
+    Align all content to a consistent grid with broad gutters for balance and predictability.
+
+2. Card & Section Presentation
+
+    Every card or section must:
+
+        Have soft, multi-layered drop shadows (subtle and neutral, not harsh),
+
+        Large rounded corners (20px+),
+
+        A gentle background: faded gradient or softly patterned (no solid, saturated color fills),
+
+        Centered or evenly offset within the page for focus.
+
+3. Typography & Scale
+
+    Use a contemporary sans-serif font (Inter, IBM Plex, etc.), applied consistently.
+
+    Establish a clear visual hierarchy:
+
+        Extra-large, bold headlines
+
+        Well-spaced, mid-size subheader text
+
+        All body copy at least 18px, 1.4 line-height
+
+    Keep accent colors for headlines or CTAs only; all other text is dark on very light backgrounds for maximum clarity.
+
+4. Iconography
+
+    Replace any generic or placeholder icons with a single, consistent professional set (e.g., Feather, Heroicons, Material, Font Awesome Pro).
+
+    Use icons thoughtfully: one per feature/benefit/point, left-aligned, uniform size and color.
+
+    Make every icon visually meaningful, never decorative only.
+
+5. CTA & Button Enhancement
+
+    Make primary action buttons stand out:
+
+        Large, bold, with brand accent background and white text,
+
+        Smooth border-radius, ample padding (min 18x48px),
+
+        Subtle elevation or color shift on hover/focus,
+
+        Only one primary CTA per major section.
+
+    Place the CTA with space around it, not crowded against text or list items.
+
+6. Visual Depth & Realism
+
+    Incorporate gentle gradients, faded overlays, or background patterns—always subtle and layered for dimensionality.
+
+    All visuals (UI mosaics, illustrations, images) must be crisp, embedded in context (e.g., device/browser frame if you show a product UI), not as flat screenshots or boxes.
+
+7. Trust & Social Proof
+
+    If allowed by wireframe, below main CTAs add a strip/logos of trusted brands, client testimonials, or key user numbers—rendered in tasteful grayscale or brand-muted color, never harsh or overpowering.
+
+8. Responsiveness & Accessibility
+
+    On mobile, all sections/cards stack vertically with preserved whitespace; font and icon sizes do not shrink below recommended minimums.
+
+    All interactive elements (buttons, cards) should be accessible via keyboard and screen reader (aria-labels, alt text, minimum 4.5:1 color contrast).
+
+9. General Style Rules
+
+    No flat color blocks, no excessive borders.
+
+    Never hard-align elements to screen edges.
+
+    Rely on depth, shadow, padding, and harmonious color transitions for separation.
+
+    All visuals, text, and UI must feel balanced, modern, and aspirational—not like a presentation slide.
+
+Example Instruction Summary
+
+    “Apply Livestorm-level polish: maximize and balance whitespace throughout the layout; use modern card and section styling with rounded corners and soft shadows; apply a premium, uniform icon set; ensure headlines and CTAs are bold, visually prominent, and spaced apart; layer backgrounds with gentle gradients/fades; and provide a responsive experience that’s just as beautiful and usable on mobile. Don’t change any of our actual wireframe or content blocks—only the visual style, spacing, and interactive feedback.”
