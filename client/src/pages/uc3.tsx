@@ -1513,22 +1513,6 @@ export default function UC3Page() {
                      boxShadow: '0 20px 40px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.1)'
                    }}>
                 
-                {/* Award badges section inspired by image */}
-                <div className="flex flex-wrap gap-3 mb-8">
-                  <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-lg">
-                    Enterprise
-                  </div>
-                  <div className="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-lg">
-                    Leader
-                  </div>
-                  <div className="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-lg">
-                    High Performer
-                  </div>
-                  <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-lg">
-                    Usability
-                  </div>
-                </div>
-
                 <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                   Master compliance in high-stakes tenders
                 </h2>
