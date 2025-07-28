@@ -45,7 +45,8 @@ The application follows a modern full-stack architecture with clear separation b
 - **Home Page**: Main landing page with intelligent 5-step decision tree questionnaire that classifies users into 8 specific use cases (UC1-UC8)
 - **Use Case Pages**: Comprehensive landing pages for each service offering:
   - **UC1**: Fast-Track Small Project Bids - For teams handling small, frequent projects with quick turnaround times
-  - **UC2-UC8**: Additional use case pages (placeholder structure ready for expansion)
+  - **UC3**: Complex Multi-Lot Bid Management - For expert teams managing large-scale, multi-lot international mega-projects with compliance coordination across technical, legal, commercial, and quality specialists
+  - **UC2, UC4-UC8**: Additional use case pages (placeholder structure ready for expansion)
   - Each UC page follows a complete template structure with 10 sections: Hero, Pain Points, Solution, Before/After, Target Audience, User Journey, KPIs, Differentiation, Trust & Compliance, and Call to Action
 
 ### UI Components

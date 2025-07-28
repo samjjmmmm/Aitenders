@@ -1,0 +1,133 @@
+## 1. Hero Section
+
+| Component | Content |
+| --- | --- |
+| **Headline (H1)** | Chaque exigence traitée, chaque risque maîtrisé. |
+| **Subtext** | Transform complex bid documentation into structured, compliant proposals.  |
+| **Primary CTA Button** | Request a Demo |
+| **Secondary CTA Button** | Download the Use Case |
+| **Tertiary CTA Link** | Watch a 2-Minute Demo |
+| **Trust Element** | Customer logos badge |
+
+## 2. Pain Point Section
+
+| Component | Content |
+| --- | --- |
+| **Headline (H1)** | **Master complex bids before they master you** |
+| **Subtext** | Complex multi-lot RFPs are a compliance nightmare for expert teams because manual Excel tracking creates dangerous gaps that cost million-euro opportunities. With AItenders, you receive - |
+| **Bullet Points** | **- Intelligent project organization** that structures complex RFPs automatically
+- **Seamless expert coordination** across technical, legal, commercial, and quality teams
+- **Compliance protection** that prevents costly bid exclusions
+- **Preparation work security** that safeguards months of team effort |
+| **UI Card** | Contrasting chaotic manual process visualization |
+| **CTA** | Watch a 2-Minute Demo |
+
+## 3. Solution Section
+
+| Component | Content |
+| --- | --- |
+| **Headline (H1)** | AItenders amplifies your team’s intelligence with AI-driven project coordination and compliance tools for complex, multi-lot RFPs. |
+| **Value Proposition (H3)** | Structure
+ massive documentation instantly, orchestrate expert collaboration 
+seamlessly, and control every project evolution without gaps. |
+
+| **Structure Complex Projects Instantly**
+
+Equipped with AI document analysis and intelligent requirement
+extraction, AItenders automatically organizes 500+ page RFPs into
+structured data, classified requirements, and actionable insights ready
+for expert analysis from day 1. | **Orchestrate Expert Teams Seamlessly**
+
+AItenders helps you coordinate technical, legal, commercial, and quality specialists by generating dynamic compliance matrices, allocating
+requirements to the right experts, and creating unified deliverable
+structures that eliminate silos. | **Control Every Project Evolution**
+
+The platform automatically detects document changes, tracks version
+evolution, and instantly alerts relevant team members to prevent
+requirement gaps, ensuring zero oversight across the entire project
+lifecycle. |
+| --- | --- | --- |
+|  |  |  |
+
+## 5. Target Audience Section
+
+| Component | Content |
+| --- | --- |
+| **Headline (H1)** | **Empower your expert teams to master complex bids with confidence** |
+
+| **For Bid Response Managers** | Coordinate technical, legal, commercial, and quality experts seamlessly with AI-powered project organization. Structure 500+ page RFPs instantly and maintain complete compliance visibility—eliminating requirement gaps and protecting team credibility. |
+| --- | --- |
+| **For Project Offer Leaders** | Lead winning strategies with intelligent project setup that eliminates weeks of manual preparation. Access real-time compliance tracking and automated change detection while demonstrating 100% requirement coverage to management. |
+| **For Contract Managers** | Ensure compliance across multi-departmental teams with dynamic requirement tracking and automated inconsistency detection. Maintain complete audit trails while preventing costly oversights on million-euro opportunities. |
+| **For Technical Directors** | Focus your specialists on solution development instead of administrative compliance. Provide pre-organized requirement structures that eliminate interpretation errors while ensuring every technical obligation is properly documented. |
+| **For Large Account Commercial Directors** | Pursue complex international opportunities with bulletproof compliance foundations. Demonstrate complete requirement coverage to senior management, protecting commercial reputation and maximizing win probability. |
+
+| **Testimonial** | "90% of our data organization is done on Day 1. We save days of manual work and eliminate interpretation errors." - [Customer testimonial] |
+| --- | --- |
+
+## 6. User Journey Section
+
+| Component | Content |
+| --- | --- |
+| **Headline (H3)** | Three Steps to Compliant Project Success |
+| **Step 1** | **Upload Complex Documentation**: Drop your project files and watch AI structure everything automatically. |
+| **Step 2** | **Collaborate on Compliance**: Generate matrices, allocate expert responsibilities, and build response strategy as a team. |
+| **Step 3** | **Control Every Evolution**: 
+Track changes, manage Q&As, and ensure zero gaps throughout the project lifecycle. |
+| **CTA** | Watch a 2-Minute Demo |
+
+## 7. KPI Section
+
+| Component | Content |
+| --- | --- |
+| **Headline (H2)** | Measurable Impact on Complex Projects |
+| **Metrics Grid (4 columns)** | **90% data organization** completed immediately
+**40% faster** review organization
+**0 formal rejections** for non-compliance
+**100% requirement coverage** guaranteed |
+
+## 4. Before and After Comparison
+
+**What Changes with AItenders**
+
+| **Manual Process Before** | **AI-Powered Process With AItenders** |
+| --- | --- |
+| **Excel compliance chaos across 8+ experts** | **Unified AI compliance dashboard for all teams** |
+| **Days lost extracting requirements from 500+ pages** | **Instant requirement extraction and classification** |
+| **Copy-paste errors risk million-euro exclusions** | **AI-guided writing with source verification** |
+| **Multiple review cycles delay submission** | **Real-time inconsistency detection and alerts** |
+| **Hidden requirement gaps cause rejections** | **100% requirement coverage with proof trails** |
+
+## 8. Differentiation Section
+
+| Component | Content |
+| --- | --- |
+| **Headline (H2)** | Purpose-Built for Large-Scale Complexity |
+| **Subheading** | Why AItenders Leads Complex Project Analysis: |
+| **Bullet Points** | -  First platform designed for multi-lot, international mega-projects
+
+-  Agile alternative to siloed internal tools with full traceability
+
+-  Native AI integration for analysis and guided content creation
+
+-  Dynamic linking between requirements, compliance, and deliverables |
+
+## 9. Trust & Compliance Section
+
+| Component | Content |
+| --- | --- |
+| **Headline (H2)** | Enterprise Security for Critical Projects |
+| **Section Headline** | Audit-Ready Compliance and Data Protection |
+| **Bullet Points** | -  Complete project audit trails and version control-  Multi-expert collaboration tracking and validation-  Integration with existing enterprise project systems |
+| **Trust Badges** | Enterprise security and compliance standard logos |
+
+## 10. Call to Action Section
+
+| Component | Content |
+| --- | --- |
+| **Headline** | Ready to Master Your Next Complex Project? |
+| **Primary CTA** | Request a Demo |
+| **Secondary CTA** | Contact Our Team |
+| **Closing Statement** | Join
+ the project teams who trust AItenders to secure their complex bids, 
+eliminate compliance risks, and win with complete confidence. |
