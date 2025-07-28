@@ -271,7 +271,7 @@ export default function UC3Page() {
               
               {/* Trust Elements */}
               <div className="border-t border-gray-100 pt-8">
-                <p className="text-sm text-gray-500 mb-6">Trusted by 100+ enterprise teams managing complex international projects</p>
+                <p className="text-sm text-gray-500 mb-6">Mentioned in one of top 25 AI/ML solutions</p>
                 
                 {/* Customer Logos / Trust Indicators */}
                 <div className="flex items-center space-x-8">
@@ -1154,7 +1154,6 @@ export default function UC3Page() {
           </div>
         </div>
       </section>
-
       {/* Comparison Section - High-Conversion Enterprise Design */}
       <section className="py-40 px-4 bg-gradient-to-br from-slate-50 via-white to-purple-50/30 relative overflow-hidden">
         {/* Enhanced Background Pattern */}
@@ -1462,7 +1461,6 @@ export default function UC3Page() {
 
         </div>
       </section>
-
       {/* Trust & Compliance */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
