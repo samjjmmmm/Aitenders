@@ -5,8 +5,8 @@ import ContactSection from "@/components/contact-section";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Link } from "wouter";
-import { ChartLine, Search, File, Lightbulb, TrendingUp, Shield, Users, Send, Bot } from "lucide-react";
+import { Link, useLocation } from "wouter";
+import { ChartLine, Search, File, Lightbulb, TrendingUp, Shield, Users, Send, Bot, FileText, Settings, Award, Target, Clock, CheckCircle, UserCheck, Edit } from "lucide-react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
@@ -18,8 +18,22 @@ interface ChatMessage {
   createdAt: Date;
 }
 
+interface SelectionCard {
+  id: string;
+  title: string;
+  description?: string;
+  icon: any;
+  color: string;
+  useCases?: string[];
+  nextStep?: string;
+  redirectTo?: string;
+}
+
 export default function HomePage() {
   const [message, setMessage] = useState("");
+  const [currentStep, setCurrentStep] = useState(1);
+  const [selections, setSelections] = useState<string[]>([]);
+  const [, setLocation] = useLocation();
   const { toast } = useToast();
   const queryClient = useQueryClient();
 
@@ -62,36 +76,192 @@ export default function HomePage() {
     }
   };
 
-  const pathwayOptions = [
+  // Step 1: Identify the Context
+  const step1Cards: SelectionCard[] = [
     {
-      title: "I need help with bid evaluation",
-      description: "Automate bid analysis and qualification",
-      icon: ChartLine,
-      href: "/use-cases/bid-evaluation",
+      id: "prepare-offer",
+      title: "Je prépare une offre à déposer",
+      icon: FileText,
       color: "bg-blue-500/10 text-blue-600",
+      useCases: ["UC1", "UC2", "UC3"],
+      nextStep: "offer"
     },
     {
-      title: "I want to extract requirements",
-      description: "Extract and manage requirements efficiently",
-      icon: Search,
-      href: "/use-cases/requirements-extraction",
+      id: "manage-project",
+      title: "Je pilote un projet en cours d'exécution",
+      icon: Settings,
       color: "bg-green-500/10 text-green-600",
+      useCases: ["UC4", "UC5", "UC6"],
+      nextStep: "execution"
     },
     {
-      title: "I need contract management support",
-      description: "Streamline contract lifecycle management",
-      icon: File,
-      href: "/use-cases/contract-management",
+      id: "compliance-help",
+      title: "J'ai besoin d'aide pour rédiger et prouver ma conformité",
+      icon: Award,
       color: "bg-purple-500/10 text-purple-600",
+      useCases: ["UC7", "UC8"]
     },
     {
-      title: "I'm looking for tender intelligence",
-      description: "Get insights and market intelligence",
-      icon: Lightbulb,
-      href: "/use-cases/tender-intelligence",
+      id: "explore-capabilities",
+      title: "Je veux explorer vos capacités avant de choisir",
+      icon: Target,
       color: "bg-orange-500/10 text-orange-600",
-    },
+      redirectTo: "/use-cases/bid-evaluation" // Default exploration page
+    }
   ];
+
+  // Step 2: Qualify the Project Complexity
+  const step2Cards: { [key: string]: SelectionCard[] } = {
+    offer: [
+      {
+        id: "frequent-fast",
+        title: "Des projets fréquents et rapides",
+        icon: Clock,
+        color: "bg-blue-500/10 text-blue-600",
+        redirectTo: "/use-cases/bid-evaluation" // UC1
+      },
+      {
+        id: "medium-critical",
+        title: "Des projets moyens avec plusieurs clauses critiques",
+        icon: CheckCircle,
+        color: "bg-green-500/10 text-green-600",
+        redirectTo: "/use-cases/requirements-extraction" // UC2
+      },
+      {
+        id: "complex-multi",
+        title: "Des projets complexes et multi-acteurs",
+        icon: Users,
+        color: "bg-purple-500/10 text-purple-600",
+        redirectTo: "/use-cases/contract-management" // UC3
+      },
+      {
+        id: "writing-need",
+        title: "Un besoin ponctuel de rédaction alignée et traçable",
+        icon: Edit,
+        color: "bg-orange-500/10 text-orange-600",
+        redirectTo: "/use-cases/tender-intelligence" // UC7
+      }
+    ],
+    execution: [
+      {
+        id: "small-simple",
+        title: "Petits projets simples",
+        icon: Target,
+        color: "bg-blue-500/10 text-blue-600",
+        redirectTo: "/use-cases/bid-evaluation" // UC4
+      },
+      {
+        id: "medium-multi",
+        title: "Projets moyens multi-acteurs",
+        icon: UserCheck,
+        color: "bg-green-500/10 text-green-600",
+        redirectTo: "/use-cases/requirements-extraction" // UC5
+      },
+      {
+        id: "large-complex",
+        title: "Grands projets complexes",
+        icon: Shield,
+        color: "bg-purple-500/10 text-purple-600",
+        redirectTo: "/use-cases/contract-management" // UC6
+      },
+      {
+        id: "compliance-proof",
+        title: "Besoin de rédaction et preuve de conformité",
+        icon: Award,
+        color: "bg-orange-500/10 text-orange-600",
+        redirectTo: "/use-cases/tender-intelligence" // UC8
+      }
+    ]
+  };
+
+  // Step 3: Identify the Main Business Driver
+  const step3Cards: SelectionCard[] = [
+    {
+      id: "save-time",
+      title: "Gagner du temps et décider plus vite",
+      icon: Clock,
+      color: "bg-blue-500/10 text-blue-600",
+      redirectTo: "/use-cases/bid-evaluation" // UC1/UC2
+    },
+    {
+      id: "secure-compliance",
+      title: "Sécuriser la conformité et éviter tout rejet",
+      icon: Shield,
+      color: "bg-green-500/10 text-green-600",
+      redirectTo: "/use-cases/requirements-extraction" // UC2/UC3/UC6
+    },
+    {
+      id: "team-collaboration",
+      title: "Fluidifier la collaboration entre équipes",
+      icon: Users,
+      color: "bg-purple-500/10 text-purple-600",
+      redirectTo: "/use-cases/contract-management" // UC3/UC5/UC6
+    },
+    {
+      id: "writing-deliverables",
+      title: "Rédiger des livrables sans rien oublier",
+      icon: Edit,
+      color: "bg-orange-500/10 text-orange-600",
+      redirectTo: "/use-cases/tender-intelligence" // UC7/UC8
+    }
+  ];
+
+  const handleCardSelection = (card: SelectionCard) => {
+    const newSelections = [...selections, card.id];
+    setSelections(newSelections);
+
+    // Track analytics (can be implemented later)
+    console.log("User path:", newSelections);
+
+    if (card.redirectTo) {
+      // Direct redirect
+      toast({
+        title: "Voir ma solution personnalisée",
+        description: "Redirection vers votre cas d'usage optimal...",
+      });
+      setTimeout(() => setLocation(card.redirectTo!), 1000);
+      return;
+    }
+
+    if (card.nextStep) {
+      // Move to next step
+      setCurrentStep(2);
+      return;
+    }
+
+    // If we reach here from step 2 without redirect, go to step 3
+    if (currentStep === 2) {
+      setCurrentStep(3);
+    }
+  };
+
+  const getCurrentCards = (): SelectionCard[] => {
+    if (currentStep === 1) {
+      return step1Cards;
+    }
+    if (currentStep === 2 && selections.length > 0) {
+      const firstSelection = step1Cards.find(card => card.id === selections[0]);
+      if (firstSelection?.nextStep && step2Cards[firstSelection.nextStep]) {
+        return step2Cards[firstSelection.nextStep];
+      }
+    }
+    if (currentStep === 3) {
+      return step3Cards;
+    }
+    return step1Cards;
+  };
+
+  const getStepTitle = (): string => {
+    if (currentStep === 1) return "Identifiez votre contexte";
+    if (currentStep === 2) return "Qualifiez la complexité de votre projet";
+    if (currentStep === 3) return "Identifiez votre priorité business";
+    return "";
+  };
+
+  const resetSelection = () => {
+    setCurrentStep(1);
+    setSelections([]);
+  };
 
   const stats = [
     {
@@ -132,26 +302,78 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Pathway Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 max-w-3xl mx-auto">
-            {pathwayOptions.map((option, index) => {
-              const Icon = option.icon;
-              return (
-                <Link key={index} href={option.href}>
-                  <Card className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-sm hover:shadow-md card-hover cursor-pointer border border-gray-200 hover:border-blue-300">
+          {/* Dynamic Selection Cards */}
+          <div className="mb-8 max-w-3xl mx-auto">
+            {/* Step Progress Indicator */}
+            <div className="flex items-center justify-between mb-6">
+              <div className="text-sm text-gray-600">
+                Étape {currentStep} sur 3
+              </div>
+              {currentStep > 1 && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={resetSelection}
+                  className="text-blue-600 hover:text-blue-700"
+                >
+                  Recommencer
+                </Button>
+              )}
+            </div>
+
+            {/* Step Title */}
+            <h2 className="text-xl font-semibold text-gray-900 mb-6 text-center">
+              {getStepTitle()}
+            </h2>
+
+            {/* Selection Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {getCurrentCards().map((card, index) => {
+                const Icon = card.icon;
+                return (
+                  <Card
+                    key={card.id}
+                    onClick={() => handleCardSelection(card)}
+                    className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-sm hover:shadow-md card-hover cursor-pointer border border-gray-200 hover:border-blue-300 transition-all duration-200"
+                  >
                     <div className="flex items-center space-x-4">
-                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${option.color}`}>
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${card.color}`}>
                         <Icon className="w-6 h-6" />
                       </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">{option.title}</h3>
-                        <p className="text-sm text-gray-600">{option.description}</p>
+                      <div className="flex-1">
+                        <h3 className="font-semibold text-gray-900 mb-1 text-sm leading-tight">
+                          {card.title}
+                        </h3>
+                        {card.description && (
+                          <p className="text-xs text-gray-600">{card.description}</p>
+                        )}
                       </div>
                     </div>
                   </Card>
-                </Link>
-              );
-            })}
+                );
+              })}
+            </div>
+
+            {/* Selection Path Display */}
+            {selections.length > 0 && (
+              <div className="mt-6 p-4 bg-blue-50 rounded-xl">
+                <p className="text-sm text-blue-800 mb-2">Votre parcours:</p>
+                <div className="flex flex-wrap gap-2">
+                  {selections.map((selectionId, index) => {
+                    const allCards = [...step1Cards, ...Object.values(step2Cards).flat(), ...step3Cards];
+                    const selectedCard = allCards.find(c => c.id === selectionId);
+                    return (
+                      <span
+                        key={selectionId}
+                        className="inline-flex items-center px-3 py-1 rounded-full text-xs bg-blue-100 text-blue-800"
+                      >
+                        {index + 1}. {selectedCard?.title.substring(0, 30)}...
+                      </span>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Chat UI */}

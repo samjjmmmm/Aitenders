@@ -1,0 +1,79 @@
+Implement a dynamic 3-step card selection flow (max 4 cards per step) to classify a visitor into the most relevant Aitenders Use Case (UC1 → UC8).
+At each step, show a new set of cards based on the user’s previous choice.
+After step 2 or 3, redirect the user to the corresponding Use Case page.
+Step 1: Identify the Context
+
+Show 4 cards with strategic content:
+
+    “Je prépare une offre à déposer”
+    → Candidate UC: UC1, UC2, UC3
+
+    “Je pilote un projet en cours d’exécution”
+    → Candidate UC: UC4, UC5, UC6
+
+    “J’ai besoin d’aide pour rédiger et prouver ma conformité”
+    → Candidate UC: UC7, UC8
+
+    “Je veux explorer vos capacités avant de choisir”
+    → Candidate UC: LAND process page / Impact Simulation
+
+Step 2: Qualify the Project Complexity
+
+Based on choice in Step 1:
+
+    If Offre → show:
+
+        “Des projets fréquents et rapides” → UC1
+
+        “Des projets moyens avec plusieurs clauses critiques” → UC2
+
+        “Des projets complexes et multi-acteurs” → UC3
+
+        “Un besoin ponctuel de rédaction alignée et traçable” → UC7
+
+    If Exécution → show:
+
+        “Petits projets simples” → UC4
+
+        “Projets moyens multi-acteurs” → UC5
+
+        “Grands projets complexes” → UC6
+
+        “Besoin de rédaction et preuve de conformité” → UC8
+
+Step 3: Identify the Main Business Driver
+
+Show 3–4 cards maximum:
+
+    “Gagner du temps et décider plus vite”
+    → Prioritize UC1 / UC2
+
+    “Sécuriser la conformité et éviter tout rejet”
+    → Prioritize UC2 / UC3 / UC6
+
+    “Fluidifier la collaboration entre équipes”
+    → Prioritize UC3 / UC5 / UC6
+
+    “Rédiger des livrables sans rien oublier”
+    → Prioritize UC7 / UC8
+
+Output Logic
+
+    After final selection, display CTA:
+    “Voir ma solution personnalisée”
+
+    Redirect the user to the matched Use Case page (UC1 → UC8).
+
+    Track selections for analytics.
+
+Implementation Notes
+
+    Max 3 steps. If a match is clear at step 2, skip step 3.
+
+    Always use clear, benefit-driven copy (no jargon).
+
+    Add icons / minimal visuals for each card.
+
+    Ensure each card is 1 sentence max for clarity.
+
+    Store user path for sales qualification (Land → Adopt → Expand → Scale tracking).
