@@ -1,0 +1,97 @@
+# Aitenders - AI-Powered Tender Management Platform
+
+## Overview
+
+Aitenders is a full-stack web application that provides AI-powered tender management solutions for enterprise clients in the construction and infrastructure industry. The platform helps companies streamline their tender processes through intelligent document analysis, bid evaluation, requirements extraction, contract management, and market intelligence.
+
+## User Preferences
+
+Preferred communication style: Simple, everyday language.
+
+## System Architecture
+
+The application follows a modern full-stack architecture with clear separation between frontend and backend components:
+
+### Frontend Architecture
+- **Framework**: React 18 with TypeScript
+- **Routing**: Wouter (lightweight React router)
+- **State Management**: TanStack Query (React Query) for server state
+- **UI Framework**: Radix UI with shadcn/ui component library
+- **Styling**: Tailwind CSS with custom design system
+- **Build Tool**: Vite for fast development and optimized builds
+
+### Backend Architecture
+- **Runtime**: Node.js with Express.js
+- **Language**: TypeScript with ES modules
+- **Database**: PostgreSQL with Drizzle ORM
+- **Database Provider**: Neon serverless PostgreSQL
+- **API Style**: RESTful API endpoints
+- **Development**: Hot reloading with Vite integration
+
+## Key Components
+
+### Database Schema (Drizzle ORM)
+- **Users**: Basic user management with username/password
+- **Contact Requests**: Customer inquiry management
+- **Chat Messages**: Interactive chat functionality for customer support
+
+### API Endpoints
+- `POST /api/contact` - Submit contact form requests
+- `GET /api/contact` - Retrieve contact requests
+- `POST /api/chat` - Submit chat messages
+- `GET /api/chat` - Retrieve chat messages
+
+### Frontend Pages
+- **Home Page**: Main landing page with company overview and use case pathways
+- **Use Case Pages**: Dedicated pages for each service offering:
+  - Bid Evaluation & Qualification
+  - Requirements Extraction
+  - Contract Management
+  - Tender Intelligence
+
+### UI Components
+- **Reusable Components**: Built on Radix UI primitives with consistent styling
+- **Custom Components**: Header, contact forms, chat interface, client logos
+- **Design System**: Custom color palette with Aitenders branding
+
+## Data Flow
+
+1. **User Interaction**: Users navigate through the marketing site and interact with contact/chat forms
+2. **API Communication**: Frontend makes HTTP requests to Express.js backend
+3. **Data Validation**: Zod schemas validate all incoming data
+4. **Database Operations**: Drizzle ORM handles PostgreSQL interactions
+5. **Response Handling**: TanStack Query manages caching and state updates
+
+## External Dependencies
+
+### Core Technologies
+- **Database**: Neon PostgreSQL (serverless)
+- **UI Library**: Radix UI for accessible components
+- **Validation**: Zod for type-safe schema validation
+- **Styling**: Tailwind CSS with PostCSS
+
+### Development Tools
+- **TypeScript**: Full type safety across frontend and backend
+- **ESBuild**: Fast production builds
+- **Vite**: Development server with HMR
+- **Replit Integration**: Development environment optimizations
+
+## Deployment Strategy
+
+The application is designed for deployment on platforms that support Node.js:
+
+### Build Process
+1. **Frontend**: Vite builds React app to `dist/public`
+2. **Backend**: ESBuild bundles server code to `dist/index.js`
+3. **Database**: Drizzle migrations applied via `drizzle-kit push`
+
+### Environment Requirements
+- Node.js runtime environment
+- PostgreSQL database (via DATABASE_URL)
+- Static file serving for frontend assets
+
+### Development vs Production
+- **Development**: Vite dev server with backend integration
+- **Production**: Express serves static files and API endpoints
+
+The architecture prioritizes developer experience with hot reloading, type safety, and modern tooling while maintaining production readiness with optimized builds and scalable deployment patterns.
