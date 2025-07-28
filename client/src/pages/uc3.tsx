@@ -4,13 +4,96 @@ import { Badge } from "@/components/ui/badge";
 import { 
   MdSchedule, MdCheckCircle, MdWarning, MdPeople, MdTrendingUp, MdSecurity, 
   MdFlashOn, MdArrowForward, MdGpsFixed, MdVerifiedUser, MdAnalytics, MdEmojiEvents, 
-  MdMessage, MdShield, MdGroups, MdDescription, MdSettings, MdAccountBox
+  MdMessage, MdShield, MdGroups, MdDescription, MdSettings, MdAccountBox, MdBusiness, 
+  MdEngineering, MdGavel
 } from "react-icons/md";
 import { FaUsers, FaShieldAlt, FaChartBar, FaFileAlt, FaCogs } from "react-icons/fa";
 import ContactSection from "@/components/contact-section";
 import UC3AnalysisCard from "@/components/UC3AnalysisCard";
+import { useState } from "react";
 
 export default function UC3Page() {
+  // Target audience data with interactive content
+  const targetAudiences = [
+    {
+      id: 'bid-response',
+      title: 'Bid Response Managers',
+      icon: MdAccountBox,
+      iconColor: 'text-purple-600',
+      iconBg: 'bg-purple-100',
+      description: 'Coordinate technical, legal, commercial, and quality experts seamlessly with AI-powered project organization. Structure 500+ page RFPs instantly and maintain complete compliance visibility—eliminating requirement gaps and protecting team credibility.',
+      dashboardData: {
+        requirements: { progress: 100, color: 'green' },
+        coordination: { progress: 78, color: 'blue' },
+        compliance: { progress: 92, color: 'purple' }
+      },
+      notification: '✓ 500+ pages analyzed',
+      alert: '📊 Compliance: 92%'
+    },
+    {
+      id: 'project-offer',
+      title: 'Project Offer Leaders',
+      icon: MdBusiness,
+      iconColor: 'text-blue-600',
+      iconBg: 'bg-blue-100',
+      description: 'Lead winning strategies with intelligent project setup that eliminates weeks of manual preparation. Access real-time compliance tracking and automated change detection while demonstrating 100% requirement coverage to management.',
+      dashboardData: {
+        requirements: { progress: 95, color: 'green' },
+        coordination: { progress: 88, color: 'blue' },
+        compliance: { progress: 100, color: 'purple' }
+      },
+      notification: '⚡ Setup Complete',
+      alert: '📈 Win Rate: 94%'
+    },
+    {
+      id: 'contract-managers',
+      title: 'Contract Managers',
+      icon: MdGavel,
+      iconColor: 'text-green-600',
+      iconBg: 'bg-green-100',
+      description: 'Ensure compliance across multi-departmental teams with dynamic requirement tracking and automated inconsistency detection. Maintain complete audit trails while preventing costly oversights on million-euro opportunities.',
+      dashboardData: {
+        requirements: { progress: 100, color: 'green' },
+        coordination: { progress: 95, color: 'blue' },
+        compliance: { progress: 100, color: 'purple' }
+      },
+      notification: '🔒 Audit Ready',
+      alert: '✅ Zero Gaps'
+    },
+    {
+      id: 'technical-directors',
+      title: 'Technical Directors',
+      icon: MdEngineering,
+      iconColor: 'text-orange-600',
+      iconBg: 'bg-orange-100',
+      description: 'Focus your specialists on solution development instead of administrative compliance. Provide pre-organized requirement structures that eliminate interpretation errors while ensuring every technical obligation is properly documented.',
+      dashboardData: {
+        requirements: { progress: 100, color: 'green' },
+        coordination: { progress: 85, color: 'blue' },
+        compliance: { progress: 98, color: 'purple' }
+      },
+      notification: '🔧 Tech Ready',
+      alert: '📋 All Specs Met'
+    },
+    {
+      id: 'commercial-directors',
+      title: 'Commercial Directors',
+      icon: MdAnalytics,
+      iconColor: 'text-indigo-600',
+      iconBg: 'bg-indigo-100',
+      description: 'Pursue complex international opportunities with bulletproof compliance foundations. Demonstrate complete requirement coverage to senior management, protecting commercial reputation and maximizing win probability.',
+      dashboardData: {
+        requirements: { progress: 100, color: 'green' },
+        coordination: { progress: 92, color: 'blue' },
+        compliance: { progress: 100, color: 'purple' }
+      },
+      notification: '💼 Exec Ready',
+      alert: '🎯 100% Coverage'
+    }
+  ];
+
+  const [activeAudience, setActiveAudience] = useState(targetAudiences[0]);
+
   const painPoints = [
     {
       icon: MdWarning,
@@ -472,51 +555,60 @@ export default function UC3Page() {
               Bid management for <span className="text-purple-600">all your needs</span>
             </h1>
             
-            {/* Navigation Tabs */}
+            {/* Interactive Navigation Tabs */}
             <div className="flex flex-wrap justify-center gap-4 mb-12">
-              <button className="px-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors">
-                Bid Response Managers
-              </button>
-              <button className="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors">
-                Project Offer Leaders
-              </button>
-              <button className="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors">
-                Contract Managers
-              </button>
-              <button className="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors">
-                Technical Directors
-              </button>
-              <button className="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors">
-                Commercial Directors
-              </button>
+              {targetAudiences.map((audience) => (
+                <button
+                  key={audience.id}
+                  onClick={() => setActiveAudience(audience)}
+                  onMouseEnter={() => setActiveAudience(audience)}
+                  className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
+                    activeAudience.id === audience.id
+                      ? 'bg-gray-900 text-white shadow-lg'
+                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                  }`}
+                >
+                  {audience.title}
+                </button>
+              ))}
             </div>
           </div>
 
-          {/* Content Card */}
+          {/* Interactive Content Card */}
           <Card className="bg-white rounded-2xl shadow-lg overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
               
-              {/* Left Side - Content */}
-              <div className="p-12 flex flex-col justify-center">
-                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
-                  <MdAccountBox className="w-6 h-6 text-purple-600" />
+              {/* Left Side - Dynamic Content */}
+              <motion.div 
+                key={activeAudience.id}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4 }}
+                className="p-12 flex flex-col justify-center"
+              >
+                <div className={`w-12 h-12 ${activeAudience.iconBg} rounded-xl flex items-center justify-center mb-6 transition-all duration-300`}>
+                  <activeAudience.icon className={`w-6 h-6 ${activeAudience.iconColor}`} />
                 </div>
                 
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Bid Response Managers</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">{activeAudience.title}</h3>
                 
                 <p className="text-gray-700 text-lg leading-relaxed mb-8">
-                  Coordinate technical, legal, commercial, and quality experts seamlessly with AI-powered project organization. 
-                  Structure 500+ page RFPs instantly and maintain complete compliance visibility—eliminating requirement gaps 
-                  and protecting team credibility.
+                  {activeAudience.description}
                 </p>
                 
-                <Button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 w-fit">
+                <Button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 w-fit transition-all duration-300 hover:shadow-lg">
                   Learn more →
                 </Button>
-              </div>
+              </motion.div>
 
-              {/* Right Side - UI Mockup */}
-              <div className="bg-gradient-to-br from-purple-50 to-blue-50 p-8 flex items-center justify-center relative">
+              {/* Right Side - Dynamic UI Mockup */}
+              <motion.div 
+                key={`${activeAudience.id}-ui`}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+                className="bg-gradient-to-br from-purple-50 to-blue-50 p-8 flex items-center justify-center relative"
+              >
                 
                 {/* Main Dashboard Mockup */}
                 <div className="bg-white rounded-xl shadow-2xl w-full max-w-md relative">
@@ -532,40 +624,61 @@ export default function UC3Page() {
                     <div className="text-sm text-gray-300">Live</div>
                   </div>
 
-                  {/* Dashboard Content */}
+                  {/* Dynamic Dashboard Content */}
                   <div className="p-6">
                     <div className="mb-6">
                       <h4 className="text-lg font-semibold text-gray-900 mb-3">Project Overview</h4>
                       <div className="space-y-3">
                         
-                        {/* Progress Bars */}
+                        {/* Dynamic Progress Bars */}
                         <div className="bg-gray-50 rounded-lg p-3">
                           <div className="flex justify-between items-center mb-2">
                             <span className="text-sm text-gray-700">Requirements Analysis</span>
-                            <span className="text-sm font-medium text-green-600">100%</span>
+                            <span className={`text-sm font-medium text-${activeAudience.dashboardData.requirements.color}-600`}>
+                              {activeAudience.dashboardData.requirements.progress}%
+                            </span>
                           </div>
                           <div className="w-full bg-gray-200 rounded-full h-2">
-                            <div className="bg-green-500 h-2 rounded-full w-full"></div>
+                            <motion.div 
+                              initial={{ width: 0 }}
+                              animate={{ width: `${activeAudience.dashboardData.requirements.progress}%` }}
+                              transition={{ duration: 0.8, delay: 0.3 }}
+                              className={`bg-${activeAudience.dashboardData.requirements.color}-500 h-2 rounded-full`}
+                            />
                           </div>
                         </div>
 
                         <div className="bg-gray-50 rounded-lg p-3">
                           <div className="flex justify-between items-center mb-2">
                             <span className="text-sm text-gray-700">Expert Coordination</span>
-                            <span className="text-sm font-medium text-blue-600">78%</span>
+                            <span className={`text-sm font-medium text-${activeAudience.dashboardData.coordination.color}-600`}>
+                              {activeAudience.dashboardData.coordination.progress}%
+                            </span>
                           </div>
                           <div className="w-full bg-gray-200 rounded-full h-2">
-                            <div className="bg-blue-500 h-2 rounded-full w-3/4"></div>
+                            <motion.div 
+                              initial={{ width: 0 }}
+                              animate={{ width: `${activeAudience.dashboardData.coordination.progress}%` }}
+                              transition={{ duration: 0.8, delay: 0.4 }}
+                              className={`bg-${activeAudience.dashboardData.coordination.color}-500 h-2 rounded-full`}
+                            />
                           </div>
                         </div>
 
                         <div className="bg-gray-50 rounded-lg p-3">
                           <div className="flex justify-between items-center mb-2">
                             <span className="text-sm text-gray-700">Compliance Check</span>
-                            <span className="text-sm font-medium text-purple-600">92%</span>
+                            <span className={`text-sm font-medium text-${activeAudience.dashboardData.compliance.color}-600`}>
+                              {activeAudience.dashboardData.compliance.progress}%
+                            </span>
                           </div>
                           <div className="w-full bg-gray-200 rounded-full h-2">
-                            <div className="bg-purple-500 h-2 rounded-full w-11/12"></div>
+                            <motion.div 
+                              initial={{ width: 0 }}
+                              animate={{ width: `${activeAudience.dashboardData.compliance.progress}%` }}
+                              transition={{ duration: 0.8, delay: 0.5 }}
+                              className={`bg-${activeAudience.dashboardData.compliance.color}-500 h-2 rounded-full`}
+                            />
                           </div>
                         </div>
                       </div>
@@ -595,16 +708,28 @@ export default function UC3Page() {
                   </div>
                 </div>
 
-                {/* Floating Notification */}
-                <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium animate-pulse">
-                  ✓ 500+ pages analyzed
-                </div>
+                {/* Dynamic Floating Notification */}
+                <motion.div 
+                  key={`${activeAudience.id}-notification`}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: 0.6 }}
+                  className="absolute top-4 right-4 bg-green-500 text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium"
+                >
+                  {activeAudience.notification}
+                </motion.div>
 
-                {/* Floating Alert */}
-                <div className="absolute bottom-4 left-4 bg-blue-500 text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium">
-                  📊 Compliance: 92%
-                </div>
-              </div>
+                {/* Dynamic Floating Alert */}
+                <motion.div 
+                  key={`${activeAudience.id}-alert`}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: 0.7 }}
+                  className="absolute bottom-4 left-4 bg-blue-500 text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium"
+                >
+                  {activeAudience.alert}
+                </motion.div>
+              </motion.div>
             </div>
           </Card>
         </div>
