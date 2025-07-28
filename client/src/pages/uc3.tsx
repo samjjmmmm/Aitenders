@@ -1478,6 +1478,166 @@ export default function UC3Page() {
 
         </div>
       </section>
+      
+      {/* Master Compliance Section - Inspired by Image Design */}
+      <section className="py-32 px-8 bg-gradient-to-br from-slate-50 via-white to-purple-50/20 relative overflow-hidden">
+        {/* Subtle Abstract Background Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Large atmospheric blob - center */}
+          <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] rounded-full opacity-15 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #F5F9FE 0%, #EBF2FD 40%, #C3D9F8 80%, transparent 100%)'
+               }}></div>
+          
+          {/* Flowing accent - bottom right */}
+          <div className="absolute bottom-10 -right-32 w-80 h-80 rounded-full opacity-20 blur-2xl"
+               style={{
+                 background: 'linear-gradient(135deg, #FBFCFF 0%, #C3D9F8 60%, transparent 100%)'
+               }}></div>
+          
+          {/* Directional accent - top left */}
+          <div className="absolute -top-20 -left-20 w-72 h-72 rounded-full opacity-12 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #3880E8 0%, #EBF2FD 50%, transparent 90%)'
+               }}></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            {/* Left Column - Content */}
+            <div className="order-2 lg:order-1">
+              {/* Header with subtle background */}
+              <div className="bg-gradient-to-br from-white/80 to-gray-50/60 rounded-3xl p-10 border border-gray-100/50 backdrop-blur-sm"
+                   style={{
+                     boxShadow: '0 20px 40px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.1)'
+                   }}>
+                
+                {/* Award badges section inspired by image */}
+                <div className="flex flex-wrap gap-3 mb-8">
+                  <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-lg">
+                    Enterprise
+                  </div>
+                  <div className="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-lg">
+                    Leader
+                  </div>
+                  <div className="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-lg">
+                    High Performer
+                  </div>
+                  <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-lg">
+                    Usability
+                  </div>
+                </div>
+
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                  Master compliance in high-stakes tenders
+                </h2>
+                
+                <p className="text-xl text-gray-600 mb-8 leading-relaxed font-light">
+                  The only "engineering light" platform designed for complex bids.
+                </p>
+
+                {/* Feature list */}
+                <div className="space-y-6">
+                  <div className="flex items-start">
+                    <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                      <span className="text-white text-sm font-bold">1</span>
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-1">
+                        1.500+ pages instantly structured into an intelligent base
+                      </h4>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                      <span className="text-white text-sm font-bold">2</span>
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-1">
+                        Live conformity matrix for expert collaboration - no Excel
+                      </h4>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                      <span className="text-white text-sm font-bold">3</span>
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-1">
+                        Automatic alerts on risks, inconsistencies, and updates
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="text-lg text-gray-700 mt-8 font-medium">
+                  A flexible alternative to siloed internal tools, guaranteeing 100% compliance.
+                </p>
+              </div>
+            </div>
+
+            {/* Right Column - Testimonial */}
+            <div className="order-1 lg:order-2">
+              <div className="bg-white rounded-3xl p-8 border border-gray-100/50 transform hover:-translate-y-2 transition-all duration-300"
+                   style={{
+                     boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+                   }}>
+                
+                {/* Company Logo Section */}
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mr-4">
+                    <span className="text-white font-bold text-lg">A</span>
+                  </div>
+                  <div className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-purple-700 bg-clip-text text-transparent">
+                    AItenders
+                  </div>
+                </div>
+
+                {/* Testimonial Quote */}
+                <blockquote className="text-lg text-gray-700 leading-relaxed mb-6 font-light italic">
+                  "With AItenders, the complexity of our multi-lot international projects becomes manageable. 99% of our compliance requirements are automatically tracked throughout the entire tender process."
+                </blockquote>
+
+                {/* CTA Link */}
+                <div className="mb-8">
+                  <a href="#" className="text-purple-600 hover:text-purple-700 font-semibold flex items-center transition-colors">
+                    Read the customer case →
+                  </a>
+                </div>
+
+                {/* Author Information */}
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mr-4">
+                    <span className="text-white font-semibold">PD</span>
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900">Pierre Dubois</div>
+                    <div className="text-gray-600 text-sm">Project Director</div>
+                  </div>
+                </div>
+
+                {/* Bottom navigation dots (inspired by image) */}
+                <div className="flex justify-center mt-8 space-x-2">
+                  <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
+                  <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+                  <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+                </div>
+
+                {/* Bottom link */}
+                <div className="text-center mt-6">
+                  <a href="#" className="text-gray-600 hover:text-gray-800 text-sm font-medium transition-colors">
+                    Read their testimonies →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* Trust & Compliance */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
