@@ -51,6 +51,15 @@ export default {
           "4": "var(--chart-4)",
           "5": "var(--chart-5)",
         },
+        aitenders: {
+          "dark-blue": "var(--aitenders-dark-blue)",
+          "white-blue": "var(--aitenders-white-blue)",
+          "primary-blue": "var(--aitenders-primary-blue)",
+          "pale-blue": "var(--aitenders-pale-blue)",
+          "pastel-blue": "var(--aitenders-pastel-blue)",
+          "light-blue": "var(--aitenders-light-blue)",
+          "black": "var(--aitenders-black)",
+        },
         sidebar: {
           DEFAULT: "var(--sidebar-background)",
           foreground: "var(--sidebar-foreground)",

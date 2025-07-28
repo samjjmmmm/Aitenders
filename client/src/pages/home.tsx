@@ -561,7 +561,7 @@ export default function HomePage() {
                     return (
                       <span
                         key={selectionId}
-                        className="inline-flex items-center px-3 py-1 rounded-full text-xs bg-white text-gray-700 border border-gray-200 shadow-sm"
+                        className="inline-flex items-center px-3 py-1 rounded-full text-xs bg-aitenders-white-blue text-aitenders-dark-blue border border-aitenders-light-blue shadow-sm"
                       >
                         {index + 1}. {selectedCard?.title.substring(0, 25)}...
                       </span>
@@ -569,7 +569,7 @@ export default function HomePage() {
                   })}
                 </div>
                 {availableUCs.length > 0 && (
-                  <p className="text-xs text-gray-500">
+                  <p className="text-xs text-aitenders-dark-blue/60">
                     Matching use cases: {availableUCs.join(', ')}
                   </p>
                 )}
@@ -583,12 +583,12 @@ export default function HomePage() {
               {!chatExpanded ? (
                 /* Collapsed Chat Bar */
                 <div 
-                  className="bg-white border border-gray-200 rounded-full shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
+                  className="bg-aitenders-white-blue border border-aitenders-light-blue rounded-full shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
                   onClick={() => setChatExpanded(true)}
                 >
                   <div className="flex items-center">
                     <div className="flex items-center justify-center w-12 h-12 ml-2">
-                      <FaRobot className="w-5 h-5 text-gray-400" />
+                      <FaRobot className="w-5 h-5 text-aitenders-primary-blue" />
                     </div>
                     <Input
                       type="text"
@@ -597,7 +597,7 @@ export default function HomePage() {
                       onChange={(e) => setMessage(e.target.value)}
                       onKeyPress={handleKeyPress}
                       onFocus={() => setChatExpanded(true)}
-                      className="flex-1 py-6 px-4 text-base bg-transparent border-0 focus:ring-0 focus:outline-none placeholder:text-gray-500"
+                      className="flex-1 py-6 px-4 text-base bg-transparent border-0 focus:ring-0 focus:outline-none placeholder:text-aitenders-dark-blue/60"
                       disabled={sendMessageMutation.isPending}
                     />
                     <div className="mr-2">
@@ -609,7 +609,7 @@ export default function HomePage() {
                         }}
                         disabled={!message.trim() || sendMessageMutation.isPending}
                         size="icon"
-                        className="h-12 w-12 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-sm hover:shadow-md transition-all duration-200"
+                        className="h-12 w-12 rounded-full bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-aitenders-white-blue shadow-sm hover:shadow-md transition-all duration-200"
                       >
                         <MdSend className="w-5 h-5" />
                       </Button>
@@ -618,15 +618,15 @@ export default function HomePage() {
                 </div>
               ) : (
                 /* Expanded Chat Interface */
-                <div className="bg-white border border-gray-200 rounded-3xl shadow-lg p-6 transition-all duration-300 ease-in-out">
+                <div className="bg-aitenders-white-blue border border-aitenders-light-blue rounded-3xl shadow-lg p-6 transition-all duration-300 ease-in-out">
                   {/* Chat Header */}
                   <div className="flex justify-between items-center mb-4">
-                    <h3 className="text-lg font-semibold text-gray-900">Chat with AI Assistant</h3>
+                    <h3 className="text-lg font-semibold text-aitenders-black">Chat with AI Assistant</h3>
                     <Button
                       onClick={() => setChatExpanded(false)}
                       variant="ghost"
                       size="sm"
-                      className="text-gray-400 hover:text-gray-600 -mr-2"
+                      className="text-aitenders-dark-blue/60 hover:text-aitenders-dark-blue -mr-2"
                     >
                       <span className="text-xl">×</span>
                     </Button>
@@ -635,7 +635,7 @@ export default function HomePage() {
                   {/* Chat Input Bar */}
                   <div className="flex items-center mb-4">
                     <div className="flex items-center justify-center w-12 h-12 ml-2">
-                      <FaRobot className="w-6 h-6 text-gray-400" />
+                      <FaRobot className="w-6 h-6 text-aitenders-primary-blue" />
                     </div>
                     <Input
                       type="text"
@@ -643,7 +643,7 @@ export default function HomePage() {
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       onKeyPress={handleKeyPress}
-                      className="flex-1 py-3 px-4 text-base bg-transparent border-0 focus:ring-0 focus:outline-none placeholder:text-gray-500"
+                      className="flex-1 py-3 px-4 text-base bg-transparent border-0 focus:ring-0 focus:outline-none placeholder:text-aitenders-dark-blue/60"
                       disabled={sendMessageMutation.isPending}
                       autoFocus
                     />
@@ -652,7 +652,7 @@ export default function HomePage() {
                         onClick={handleSendMessage}
                         disabled={!message.trim() || sendMessageMutation.isPending}
                         size="icon"
-                        className="h-12 w-12 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-sm hover:shadow-md transition-all duration-200"
+                        className="h-12 w-12 rounded-full bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-aitenders-white-blue shadow-sm hover:shadow-md transition-all duration-200"
                       >
                         <MdSend className="w-5 h-5" />
                       </Button>
@@ -660,11 +660,11 @@ export default function HomePage() {
                   </div>
 
                   {/* Messages Display */}
-                  <div className="bg-gray-50 rounded-2xl p-4 min-h-[200px] max-h-64 overflow-y-auto mb-4">
+                  <div className="bg-aitenders-pale-blue rounded-2xl p-4 min-h-[200px] max-h-64 overflow-y-auto mb-4">
                     {messages.length === 0 ? (
-                      <div className="flex items-center justify-center h-full text-gray-500 text-sm">
+                      <div className="flex items-center justify-center h-full text-aitenders-dark-blue/60 text-sm">
                         <div className="text-center">
-                          <FaRobot className="w-8 h-8 mx-auto mb-2 text-gray-300" />
+                          <FaRobot className="w-8 h-8 mx-auto mb-2 text-aitenders-light-blue" />
                           <p>Start a conversation by typing your question above</p>
                         </div>
                       </div>
@@ -673,13 +673,13 @@ export default function HomePage() {
                         {messages.map((msg) => (
                           <div key={msg.id} className="space-y-3">
                             <div className="flex justify-end">
-                              <div className="bg-blue-600 text-white px-4 py-3 rounded-2xl rounded-tr-sm max-w-xs lg:max-w-sm">
+                              <div className="bg-aitenders-primary-blue text-aitenders-white-blue px-4 py-3 rounded-2xl rounded-tr-sm max-w-xs lg:max-w-sm">
                                 <p className="text-sm">{msg.message}</p>
                               </div>
                             </div>
                             {msg.response && (
                               <div className="flex justify-start">
-                                <div className="bg-white text-gray-800 px-4 py-3 rounded-2xl rounded-tl-sm max-w-xs lg:max-w-sm shadow-sm border border-gray-100">
+                                <div className="bg-aitenders-white-blue text-aitenders-dark-blue px-4 py-3 rounded-2xl rounded-tl-sm max-w-xs lg:max-w-sm shadow-sm border border-aitenders-light-blue">
                                   <p className="text-sm">{msg.response}</p>
                                 </div>
                               </div>
@@ -696,7 +696,7 @@ export default function HomePage() {
                       variant="outline"
                       size="sm"
                       onClick={() => setMessage("What use cases do you offer?")}
-                      className="text-xs rounded-full border-gray-200 hover:bg-gray-50"
+                      className="text-xs rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
                     >
                       Our Use Cases
                     </Button>
@@ -704,7 +704,7 @@ export default function HomePage() {
                       variant="outline"
                       size="sm"
                       onClick={() => setMessage("How does the tender process work?")}
-                      className="text-xs rounded-full border-gray-200 hover:bg-gray-50"
+                      className="text-xs rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
                     >
                       Tender Process
                     </Button>
@@ -712,7 +712,7 @@ export default function HomePage() {
                       variant="outline"
                       size="sm"
                       onClick={() => setMessage("Can I schedule a demo?")}
-                      className="text-xs rounded-full border-gray-200 hover:bg-gray-50"
+                      className="text-xs rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
                     >
                       Schedule Demo
                     </Button>

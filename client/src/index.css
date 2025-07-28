@@ -3,55 +3,58 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(0, 0%, 100%);
-  --foreground: hsl(220, 13%, 18%);
-  --muted: hsl(220, 13%, 95%);
-  --muted-foreground: hsl(220, 9%, 46%);
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(220, 13%, 18%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(220, 13%, 18%);
-  --border: hsl(220, 13%, 91%);
-  --input: hsl(220, 13%, 91%);
-  --primary: hsl(221, 83%, 53%);
-  --primary-foreground: hsl(0, 0%, 98%);
-  --secondary: hsl(158, 64%, 52%);
-  --secondary-foreground: hsl(0, 0%, 98%);
-  --accent: hsl(220, 13%, 95%);
-  --accent-foreground: hsl(220, 13%, 18%);
+  /* Brand Colors - #112646, #FBFCFF, #3880E8, #F5F9FE, #EBF2FD, #C3D9F8, #0B1A2E */
+  --background: hsl(217, 100%, 99%); /* #FBFCFF */
+  --foreground: hsl(220, 62%, 9%); /* #0B1A2E */
+  --muted: hsl(218, 100%, 97%); /* #F5F9FE */
+  --muted-foreground: hsl(219, 52%, 24%); /* #112646 */
+  --popover: hsl(217, 100%, 99%); /* #FBFCFF */
+  --popover-foreground: hsl(220, 62%, 9%); /* #0B1A2E */
+  --card: hsl(217, 100%, 99%); /* #FBFCFF */
+  --card-foreground: hsl(220, 62%, 9%); /* #0B1A2E */
+  --border: hsl(218, 72%, 88%); /* #C3D9F8 */
+  --input: hsl(218, 72%, 88%); /* #C3D9F8 */
+  --primary: hsl(219, 79%, 70%); /* #3880E8 */
+  --primary-foreground: hsl(217, 100%, 99%); /* #FBFCFF */
+  --secondary: hsl(219, 52%, 24%); /* #112646 */
+  --secondary-foreground: hsl(217, 100%, 99%); /* #FBFCFF */
+  --accent: hsl(218, 100%, 97%); /* #F5F9FE */
+  --accent-foreground: hsl(220, 62%, 9%); /* #0B1A2E */
   --destructive: hsl(0, 84%, 60%);
-  --destructive-foreground: hsl(0, 0%, 98%);
-  --ring: hsl(221, 83%, 53%);
+  --destructive-foreground: hsl(217, 100%, 99%); /* #FBFCFF */
+  --ring: hsl(219, 79%, 70%); /* #3880E8 */
   --radius: 0.75rem;
   
-  /* Custom Aitenders colors */
-  --aitenders-primary: hsl(221, 83%, 53%);
-  --aitenders-secondary: hsl(158, 64%, 52%);
-  --aitenders-accent: hsl(262, 83%, 58%);
-  --aitenders-gradient-from: hsl(221, 100%, 97%);
-  --aitenders-gradient-to: hsl(158, 100%, 97%);
+  /* Custom Aitenders Brand Colors */
+  --aitenders-dark-blue: hsl(219, 52%, 24%); /* #112646 */
+  --aitenders-white-blue: hsl(217, 100%, 99%); /* #FBFCFF */
+  --aitenders-primary-blue: hsl(219, 79%, 70%); /* #3880E8 */
+  --aitenders-pale-blue: hsl(218, 100%, 97%); /* #F5F9FE */
+  --aitenders-pastel-blue: hsl(218, 85%, 94%); /* #EBF2FD */
+  --aitenders-light-blue: hsl(218, 72%, 88%); /* #C3D9F8 */
+  --aitenders-black: hsl(220, 62%, 9%); /* #0B1A2E */
 }
 
 .dark {
-  --background: hsl(220, 13%, 9%);
-  --foreground: hsl(0, 0%, 95%);
-  --muted: hsl(220, 13%, 14%);
-  --muted-foreground: hsl(220, 9%, 65%);
-  --popover: hsl(220, 13%, 9%);
-  --popover-foreground: hsl(0, 0%, 95%);
-  --card: hsl(220, 13%, 9%);
-  --card-foreground: hsl(0, 0%, 95%);
-  --border: hsl(220, 13%, 14%);
-  --input: hsl(220, 13%, 14%);
-  --primary: hsl(221, 83%, 53%);
-  --primary-foreground: hsl(0, 0%, 98%);
-  --secondary: hsl(158, 64%, 52%);
-  --secondary-foreground: hsl(0, 0%, 98%);
-  --accent: hsl(220, 13%, 14%);
-  --accent-foreground: hsl(0, 0%, 95%);
+  --background: hsl(220, 62%, 9%); /* #0B1A2E */
+  --foreground: hsl(217, 100%, 99%); /* #FBFCFF */
+  --muted: hsl(219, 52%, 24%); /* #112646 */
+  --muted-foreground: hsl(218, 72%, 88%); /* #C3D9F8 */
+  --popover: hsl(219, 52%, 24%); /* #112646 */
+  --popover-foreground: hsl(217, 100%, 99%); /* #FBFCFF */
+  --card: hsl(219, 52%, 24%); /* #112646 */
+  --card-foreground: hsl(217, 100%, 99%); /* #FBFCFF */
+  --border: hsl(218, 85%, 94%); /* #EBF2FD darker for dark mode */
+  --input: hsl(218, 85%, 94%); /* #EBF2FD darker for dark mode */
+  --primary: hsl(219, 79%, 70%); /* #3880E8 */
+  --primary-foreground: hsl(217, 100%, 99%); /* #FBFCFF */
+  --secondary: hsl(218, 72%, 88%); /* #C3D9F8 */
+  --secondary-foreground: hsl(220, 62%, 9%); /* #0B1A2E */
+  --accent: hsl(219, 52%, 24%); /* #112646 */
+  --accent-foreground: hsl(217, 100%, 99%); /* #FBFCFF */
   --destructive: hsl(0, 62%, 30%);
-  --destructive-foreground: hsl(0, 0%, 98%);
-  --ring: hsl(221, 83%, 53%);
+  --destructive-foreground: hsl(217, 100%, 99%); /* #FBFCFF */
+  --ring: hsl(219, 79%, 70%); /* #3880E8 */
 }
 
 @layer base {
@@ -67,7 +70,11 @@
 
 @layer utilities {
   .gradient-bg {
-    background: linear-gradient(135deg, var(--aitenders-gradient-from), var(--aitenders-gradient-to));
+    background: linear-gradient(135deg, var(--aitenders-pale-blue), var(--aitenders-pastel-blue));
+  }
+  
+  .brand-gradient {
+    background: linear-gradient(135deg, var(--aitenders-pale-blue) 0%, var(--aitenders-pastel-blue) 50%, var(--aitenders-light-blue) 100%);
   }
   
   .card-hover {
