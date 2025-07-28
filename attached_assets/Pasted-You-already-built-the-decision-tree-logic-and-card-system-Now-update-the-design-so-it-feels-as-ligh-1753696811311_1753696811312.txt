@@ -1,0 +1,79 @@
+You already built the decision-tree logic and card system.
+Now update the design so it feels as light and professional as a Figma mockup, with a modern, human‑centric look.
+Style Guidelines
+
+    Overall Layout
+
+        Use plenty of whitespace for a breathable design.
+
+        Center the content with a max-width container (max-w-4xl mx-auto px-6).
+
+        Background: light neutral gradient (from-gray-50 to-white) instead of flat blue.
+
+    Typography
+
+        Headline: text-4xl font-bold text-gray-900
+
+        Subtext: text-lg text-gray-600 max-w-2xl mx-auto mt-3
+
+        Step indicator: small, subtle, text-sm text-gray-500.
+
+    Cards
+
+        Rounded corners (rounded-2xl)
+
+        Soft shadow (shadow-sm hover:shadow-md)
+
+        Hover effect: slight lift + accent border (hover:border-blue-500)
+
+        Card text: text-base font-medium text-gray-800
+
+        Icons: minimal outline icons (Lucide/Heroicons), muted accent colors (green, blue, orange, purple).
+
+    Colors
+
+        Stick to one primary accent (blue) + secondary highlights (green, orange, purple).
+
+        Avoid heavy, full‑blue fills.
+
+        Use soft neutral backgrounds (bg-white, bg-gray-50) for cards.
+
+    Progress Indicator
+
+        Small step counter above cards: “Step 1 of 5”.
+
+        Optional: subtle progress bar (h-1 bg-gray-200 rounded-full with an accent fill for progress).
+
+    Animations
+
+        Smooth hover transitions (transition-all duration-200 ease-in-out).
+
+        Slight card scale on hover (hover:scale-105).
+
+        CTA button: pulse or subtle shadow on hover.
+
+    CTA
+
+        At the final step, button design:
+
+    bg-blue-600 text-white px-6 py-3 rounded-xl 
+    font-semibold shadow-md hover:bg-blue-700
+    transition-all
+
+    Position centered, with top margin for breathing space.
+
+Placeholder UC Pages
+
+    Each /uc1–/uc8 page should match this clean style:
+
+        <div className="flex flex-col items-center justify-center h-screen bg-gray-50 text-center">
+          <h1 className="text-4xl font-bold text-gray-900">Coming Soon</h1>
+          <p className="mt-3 text-lg text-gray-600 max-w-md">
+            This Use Case page is under construction. Check back soon.
+          </p>
+        </div>
+
+Key Goal
+
+The page should feel light, minimal, modern, and human‑friendly — closer to a Figma professional design than a raw developer prototype.
+Avoid heavy icons, blocky blue fills, or dense layouts.

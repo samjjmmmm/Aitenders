@@ -465,28 +465,28 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen gradient-bg">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       <Header />
       
       {/* Hero Section */}
       <main className="relative">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
+        <div className="max-w-4xl mx-auto px-6 pt-16 pb-12">
           {/* Main Heading */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+          <div className="text-center mb-16">
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">
               Welcome to Aitenders,<br />
               <span className="text-blue-600">How can we help you?</span>
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto mt-3">
               Transform complex tender and project contractual documents into intelligence with our AI-powered platform.
             </p>
           </div>
 
           {/* Dynamic Selection Cards */}
-          <div className="mb-8 max-w-3xl mx-auto">
+          <div className="mb-12 max-w-3xl mx-auto">
             {/* Step Progress Indicator */}
-            <div className="flex items-center justify-between mb-6">
-              <div className="text-sm text-gray-600">
+            <div className="flex items-center justify-between mb-8">
+              <div className="text-sm text-gray-500">
                 Step {currentStep} of 5
               </div>
               {currentStep > 1 && (
@@ -494,38 +494,48 @@ export default function HomePage() {
                   variant="ghost"
                   size="sm"
                   onClick={resetSelection}
-                  className="text-blue-600 hover:text-blue-700"
+                  className="text-blue-600 hover:text-blue-700 transition-all duration-200"
                 >
                   Start Over
                 </Button>
               )}
             </div>
 
+            {/* Progress Bar */}
+            <div className="mb-8">
+              <div className="h-1 bg-gray-200 rounded-full">
+                <div 
+                  className="h-1 bg-blue-600 rounded-full transition-all duration-300 ease-in-out"
+                  style={{ width: `${(currentStep / 5) * 100}%` }}
+                ></div>
+              </div>
+            </div>
+
             {/* Step Title */}
-            <h2 className="text-xl font-semibold text-gray-900 mb-6 text-center">
+            <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
               {getStepTitle()}
             </h2>
 
             {/* Selection Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {getCurrentCards().map((card, index) => {
                 const Icon = card.icon;
                 return (
                   <Card
                     key={card.id}
                     onClick={() => handleCardSelection(card)}
-                    className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-sm hover:shadow-md card-hover cursor-pointer border border-gray-200 hover:border-blue-300 transition-all duration-200"
+                    className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md cursor-pointer border border-gray-100 hover:border-blue-500 transition-all duration-200 ease-in-out hover:scale-105"
                   >
-                    <div className="flex items-center space-x-4">
+                    <div className="flex items-start space-x-4">
                       <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${card.color}`}>
-                        <Icon className="w-6 h-6" />
+                        <Icon className="w-6 h-6" strokeWidth={1.5} />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-semibold text-gray-900 mb-1 text-sm leading-tight">
+                        <h3 className="text-base font-medium text-gray-800 leading-relaxed">
                           {card.title}
                         </h3>
                         {card.description && (
-                          <p className="text-xs text-gray-600">{card.description}</p>
+                          <p className="text-sm text-gray-600 mt-1">{card.description}</p>
                         )}
                       </div>
                     </div>
@@ -536,8 +546,8 @@ export default function HomePage() {
 
             {/* Selection Path Display */}
             {selections.length > 0 && (
-              <div className="mt-6 p-4 bg-blue-50 rounded-xl">
-                <p className="text-sm text-blue-800 mb-2">Your Selection Path:</p>
+              <div className="mt-8 p-6 bg-gray-50 rounded-2xl border border-gray-100">
+                <p className="text-sm text-gray-700 mb-3 font-medium">Your Selection Path:</p>
                 <div className="flex flex-wrap gap-2 mb-3">
                   {selections.map((selectionId, index) => {
                     const allCards = [...step1Cards, ...Object.values(step2Cards).flat(), ...step3Cards, ...step4Cards, ...step5Cards];
@@ -545,7 +555,7 @@ export default function HomePage() {
                     return (
                       <span
                         key={selectionId}
-                        className="inline-flex items-center px-3 py-1 rounded-full text-xs bg-blue-100 text-blue-800"
+                        className="inline-flex items-center px-3 py-1 rounded-full text-xs bg-white text-gray-700 border border-gray-200 shadow-sm"
                       >
                         {index + 1}. {selectedCard?.title.substring(0, 25)}...
                       </span>
@@ -553,7 +563,7 @@ export default function HomePage() {
                   })}
                 </div>
                 {availableUCs.length > 0 && (
-                  <p className="text-xs text-blue-600">
+                  <p className="text-xs text-gray-500">
                     Matching use cases: {availableUCs.join(', ')}
                   </p>
                 )}
@@ -570,28 +580,18 @@ export default function HomePage() {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 onKeyPress={handleKeyPress}
-                className="w-full pl-6 pr-24 py-4 text-base bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full shadow-sm focus:border-blue-300 focus:ring-2 focus:ring-blue-100 focus:outline-none transition-all duration-200"
+                className="w-full pl-6 pr-16 py-4 text-base bg-white border border-gray-200 rounded-full shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-100 focus:outline-none transition-all duration-200"
                 disabled={sendMessageMutation.isPending}
               />
-              <div className="absolute right-3 top-1/2 transform -translate-y-1/2 flex items-center space-x-2">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="h-8 w-8 rounded-full hover:bg-gray-100"
-                  disabled={sendMessageMutation.isPending}
-                >
-                  <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                  </svg>
-                </Button>
+              <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
                 <Button
                   onClick={handleSendMessage}
                   disabled={!message.trim() || sendMessageMutation.isPending}
                   size="icon"
-                  className="h-8 w-8 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-sm"
+                  className="h-10 w-10 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-md hover:shadow-lg transition-all duration-200"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 11l5-5m0 0l5 5m-5-5v12" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                   </svg>
                 </Button>
               </div>
