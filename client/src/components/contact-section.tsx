@@ -9,6 +9,9 @@ import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 
+// Import Aitenders logo
+import aitendersLogo from "@assets/Untitled(4)_1753712731718.png";
+
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
@@ -171,7 +174,7 @@ export default function ContactSection() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-4 md:mb-0">
               <img 
-                src="/attached_assets/Untitled(4)_1753704411700.png" 
+                src={aitendersLogo} 
                 alt="Aitenders" 
                 className="h-8 w-auto"
               />
