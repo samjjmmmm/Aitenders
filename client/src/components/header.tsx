@@ -13,10 +13,11 @@ export default function Header() {
           {/* Logo */}
           <Link href="/">
             <div className="flex items-center cursor-pointer">
-              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">A</span>
-              </div>
-              <span className="ml-3 text-xl font-bold text-gray-900">Aitenders</span>
+              <img 
+                src="/attached_assets/Untitled(4)_1753693197532.png" 
+                alt="Aitenders" 
+                className="h-8 w-auto"
+              />
             </div>
           </Link>
           
