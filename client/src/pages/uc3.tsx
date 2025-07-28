@@ -253,10 +253,10 @@ export default function UC3Page() {
         </div>
       </section>
 
-      {/* Solution Section - Detailed Card Design */}
+      {/* Solution Section - Alternating Layout Design */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-20">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               AItenders amplifies your team's intelligence with AI-driven project coordination and compliance tools for complex, multi-lot RFPs.
             </h1>
@@ -266,149 +266,156 @@ export default function UC3Page() {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Card 1: Structure Complex Projects Instantly */}
-            <Card className="p-8 bg-gradient-to-br from-blue-50 to-indigo-100 border border-blue-200 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="mb-6">
-                <div className="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mb-4">
-                  <MdFlashOn className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Structure Complex Projects Instantly</h3>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  Equipped with AI document analysis and intelligent requirement extraction, AItenders automatically organizes 500+ page RFPs into structured data, classified requirements, and actionable insights ready for expert analysis from day 1.
-                </p>
+          {/* Feature 1: Structure Complex Projects - Text Left, Card Right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+            <div className="order-1">
+              <div className="w-16 h-16 bg-blue-500 rounded-3xl flex items-center justify-center mb-6">
+                <MdFlashOn className="w-8 h-8 text-white" />
               </div>
-
-              {/* Detailed UI Mockup */}
-              <div className="bg-white rounded-xl p-4 border border-blue-200 shadow-sm">
-                <div className="flex items-center justify-between mb-4">
-                  <h4 className="text-sm font-semibold text-gray-700">Document Analysis</h4>
-                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <MdDescription className="w-4 h-4 text-blue-600" />
-                  </div>
-                </div>
-                
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                    <span className="text-sm text-gray-700">Requirements extraction</span>
-                    <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
-                      <MdCheckCircle className="w-3 h-3 text-white" />
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">Structure Complex Projects Instantly</h3>
+              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                Equipped with AI document analysis and intelligent requirement extraction, AItenders automatically organizes 500+ page RFPs into structured data, classified requirements, and actionable insights ready for expert analysis from day 1.
+              </p>
+              <div className="flex items-center text-sm text-gray-500">
+                <MdCheckCircle className="w-5 h-5 mr-2 text-green-500" />
+                Save days of manual document processing
+              </div>
+            </div>
+            <div className="order-2">
+              <Card className="p-8 bg-gradient-to-br from-blue-50 to-indigo-100 border border-blue-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                <div className="bg-white rounded-xl p-4 border border-blue-200 shadow-sm">
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className="text-sm font-semibold text-gray-700">Document Analysis</h4>
+                    <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                      <MdDescription className="w-4 h-4 text-blue-600" />
                     </div>
                   </div>
-                  
-                  <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                    <span className="text-sm text-gray-700">Data classification</span>
-                    <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
-                      <MdCheckCircle className="w-3 h-3 text-white" />
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
-                    <span className="text-sm text-gray-700">Insight generation</span>
-                    <div className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
-                      <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Card>
-
-            {/* Card 2: Orchestrate Expert Teams Seamlessly */}
-            <Card className="p-8 bg-gradient-to-br from-purple-50 to-pink-100 border border-purple-200 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="mb-6">
-                <div className="w-16 h-16 bg-purple-500 rounded-2xl flex items-center justify-center mb-4">
-                  <MdGroups className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Orchestrate Expert Teams Seamlessly</h3>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  AItenders helps you coordinate technical, legal, commercial, and quality specialists by generating dynamic compliance matrices, allocating requirements to the right experts, and creating unified deliverable structures that eliminate silos.
-                </p>
-              </div>
-
-              {/* Detailed UI Mockup */}
-              <div className="bg-white rounded-xl p-4 border border-purple-200 shadow-sm">
-                <div className="flex items-center justify-between mb-4">
-                  <h4 className="text-sm font-semibold text-gray-700">Expert Coordination</h4>
-                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-                    <MdAccountBox className="w-4 h-4 text-purple-600" />
-                  </div>
-                </div>
-                
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
-                        <span className="text-xs text-white font-medium">T</span>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
+                      <span className="text-sm text-gray-700">Requirements extraction</span>
+                      <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
+                        <MdCheckCircle className="w-3 h-3 text-white" />
                       </div>
-                      <span className="text-sm text-gray-700">Technical specialist</span>
                     </div>
-                    <span className="text-xs text-gray-500">24 tasks</span>
-                  </div>
-                  
-                  <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                        <span className="text-xs text-white font-medium">L</span>
+                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
+                      <span className="text-sm text-gray-700">Data classification</span>
+                      <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
+                        <MdCheckCircle className="w-3 h-3 text-white" />
                       </div>
-                      <span className="text-sm text-gray-700">Legal specialist</span>
                     </div>
-                    <span className="text-xs text-gray-500">18 tasks</span>
-                  </div>
-                  
-                  <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center">
-                        <span className="text-xs text-white font-medium">C</span>
+                    <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
+                      <span className="text-sm text-gray-700">Insight generation</span>
+                      <div className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
+                        <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                       </div>
-                      <span className="text-sm text-gray-700">Commercial specialist</span>
-                    </div>
-                    <span className="text-xs text-gray-500">31 tasks</span>
-                  </div>
-                </div>
-              </div>
-            </Card>
-
-            {/* Card 3: Control Every Project Evolution */}
-            <Card className="p-8 bg-gradient-to-br from-green-50 to-emerald-100 border border-green-200 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="mb-6">
-                <div className="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mb-4">
-                  <MdSecurity className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Control Every Project Evolution</h3>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  The platform automatically detects document changes, tracks version evolution, and instantly alerts relevant team members to prevent requirement gaps, ensuring zero oversight across the entire project lifecycle.
-                </p>
-              </div>
-
-              {/* Detailed UI Mockup */}
-              <div className="bg-white rounded-xl p-4 border border-green-200 shadow-sm">
-                <div className="flex items-center justify-between mb-4">
-                  <h4 className="text-sm font-semibold text-gray-700">Version Control</h4>
-                  <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-                    <MdSettings className="w-4 h-4 text-green-600" />
-                  </div>
-                </div>
-                
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                    <span className="text-sm text-gray-700">Document v2.3 detected</span>
-                    <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">New</span>
-                  </div>
-                  
-                  <div className="flex items-center justify-between py-2 px-3 bg-yellow-50 rounded-lg border border-yellow-200">
-                    <span className="text-sm text-gray-700">3 requirements updated</span>
-                    <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full">Alert</span>
-                  </div>
-                  
-                  <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
-                    <span className="text-sm text-gray-700">Team notification sent</span>
-                    <div className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
-                      <MdMessage className="w-3 h-3 text-white" />
                     </div>
                   </div>
                 </div>
+              </Card>
+            </div>
+          </div>
+
+          {/* Feature 2: Orchestrate Expert Teams - Text Right, Card Left */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+            <div className="order-2 lg:order-1">
+              <Card className="p-8 bg-gradient-to-br from-purple-50 to-pink-100 border border-purple-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                <div className="bg-white rounded-xl p-4 border border-purple-200 shadow-sm">
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className="text-sm font-semibold text-gray-700">Expert Coordination</h4>
+                    <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                      <MdAccountBox className="w-4 h-4 text-purple-600" />
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+                          <span className="text-xs text-white font-medium">T</span>
+                        </div>
+                        <span className="text-sm text-gray-700">Technical specialist</span>
+                      </div>
+                      <span className="text-xs text-gray-500">24 tasks</span>
+                    </div>
+                    <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                          <span className="text-xs text-white font-medium">L</span>
+                        </div>
+                        <span className="text-sm text-gray-700">Legal specialist</span>
+                      </div>
+                      <span className="text-xs text-gray-500">18 tasks</span>
+                    </div>
+                    <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center">
+                          <span className="text-xs text-white font-medium">C</span>
+                        </div>
+                        <span className="text-sm text-gray-700">Commercial specialist</span>
+                      </div>
+                      <span className="text-xs text-gray-500">31 tasks</span>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
+            <div className="order-1 lg:order-2">
+              <div className="w-16 h-16 bg-purple-500 rounded-3xl flex items-center justify-center mb-6">
+                <MdGroups className="w-8 h-8 text-white" />
               </div>
-            </Card>
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">Orchestrate Expert Teams Seamlessly</h3>
+              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                AItenders helps you coordinate technical, legal, commercial, and quality specialists by generating dynamic compliance matrices, allocating requirements to the right experts, and creating unified deliverable structures that eliminate silos.
+              </p>
+              <div className="flex items-center text-sm text-gray-500">
+                <MdCheckCircle className="w-5 h-5 mr-2 text-green-500" />
+                Eliminate coordination bottlenecks across departments
+              </div>
+            </div>
+          </div>
+
+          {/* Feature 3: Control Every Evolution - Text Left, Card Right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="order-1">
+              <div className="w-16 h-16 bg-green-500 rounded-3xl flex items-center justify-center mb-6">
+                <MdSecurity className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">Control Every Project Evolution</h3>
+              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                The platform automatically detects document changes, tracks version evolution, and instantly alerts relevant team members to prevent requirement gaps, ensuring zero oversight across the entire project lifecycle.
+              </p>
+              <div className="flex items-center text-sm text-gray-500">
+                <MdCheckCircle className="w-5 h-5 mr-2 text-green-500" />
+                Guarantee 100% requirement coverage with audit trails
+              </div>
+            </div>
+            <div className="order-2">
+              <Card className="p-8 bg-gradient-to-br from-green-50 to-emerald-100 border border-green-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                <div className="bg-white rounded-xl p-4 border border-green-200 shadow-sm">
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className="text-sm font-semibold text-gray-700">Version Control</h4>
+                    <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                      <MdSettings className="w-4 h-4 text-green-600" />
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
+                      <span className="text-sm text-gray-700">Document v2.3 detected</span>
+                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">New</span>
+                    </div>
+                    <div className="flex items-center justify-between py-2 px-3 bg-yellow-50 rounded-lg border border-yellow-200">
+                      <span className="text-sm text-gray-700">3 requirements updated</span>
+                      <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full">Alert</span>
+                    </div>
+                    <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
+                      <span className="text-sm text-gray-700">Team notification sent</span>
+                      <div className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
+                        <MdMessage className="w-3 h-3 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
