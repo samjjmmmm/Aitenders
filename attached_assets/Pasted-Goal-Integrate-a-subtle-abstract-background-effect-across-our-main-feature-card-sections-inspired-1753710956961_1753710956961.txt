@@ -1,0 +1,72 @@
+Goal:
+Integrate a subtle, abstract background effect across our main feature/card sections, inspired by Livestorm’s modern SaaS style. The effect must never distract from the core content, but should lend depth, polish, and visual interest using our brand colors.
+Design Requirements
+
+    Placement & Prominence
+
+        The abstract background must be layered behind the main card/feature section, not touch or overlay text or content blocks.
+
+        It should remain a tangible presence—visible around, not behind, the main card edges—but always secondary to the content.
+
+        No part of the accent should reduce legibility or compete with content.
+
+    Style & Composition
+
+        Use a soft, flowing composition: consider gradients, gentle waves, curves, blobs, or geometric forms.
+
+        Incorporate transparency, blurring, or blending so the effect is “felt” rather than seen directly.
+
+        Layer multiple shapes for depth: e.g., a large faded gradient blob, plus smaller, semi-transparent accents.
+
+        Avoid heavy, solid shapes or busy patterns.
+
+        The design must feel ultra-modern and “airy” (not static, blocky, or noisy).
+
+    Color Usage
+
+        Main colors for gradients or large shapes:
+
+            #F5F9FE (bleu pâle)
+
+            #EBF2FD (bleu pastel)
+
+            #C3D9F8 (bleu clair)
+
+        Accent or inner gradient stops (sparingly, for depth or direction):
+
+            #3880E8 (bleu primaire)
+
+            #FBFCFF (bleu blanc, for light highlights)
+
+        Never use #112646 (bleu foncé) or #0B1A2E (noir) in the background accent—reserve these for text/CTA/focus.
+
+        Use opacity and blur to keep everything light and non-distracting.
+
+    Responsiveness
+
+        Ensure the background adjusts and scales smoothly across screen sizes, remaining visible but unobtrusive on mobile.
+
+        On smaller screens, simplify or fade out some shapes for space.
+
+    Implementation Guidance
+
+        Use CSS gradients and/or blurred SVG shapes layered with absolute or fixed positioning behind the main card container.
+
+        If using SVG, use filter: blur() to increase atmospheric effect.
+
+        Never allow background layers to overlap main content area or CTA.
+
+    Accessibility
+
+        Maintain full contrast for all interactive elements and text over the accent.
+
+        Test that color and pattern never interfere with reading or selection, even for users with vision challenges.
+
+Example Implementation Concept (for the Developer)
+
+    “Layer a large, subtle background ‘atmosphere’ of overlapping, blurred, semi-transparent blobs and gentle gradients. Place them behind the card, shifting from pale blue pastel at the top-left (e.g., #F5F9FE, #EBF2FD) through to a faint blue primary (#3880E8) as a directional accent. Use no more than 10% accent opacity in any spot. On mobile, reduce the number and density of shapes. All main content must sit in front of this background on a white or ultra-light card for full clarity.”
+
+Summary Line for Your Agent:
+“Add a non-distracting, layered abstract background in soft blue gradients and pale accents, always behind the main content, as seen in world-class SaaS like Livestorm. Keep it subtle, scalable, never interfering with readability—a touch of high-end flair, not a backdrop.”
+
+This approach will instantly raise your page’s perceived value and visual credibility while respecting your brand identity and user focus.

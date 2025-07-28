@@ -194,8 +194,35 @@ export default function UC3Page() {
       {/* Header/Navbar */}
       <Header />
       {/* Hero Section - Professional SaaS Design */}
-      <section className="py-40 px-8 bg-gradient-to-br from-white via-slate-50/30 to-purple-50/20">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-40 px-8 bg-gradient-to-br from-white via-slate-50/30 to-purple-50/20 relative overflow-hidden">
+        {/* Subtle Abstract Background Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Large flowing gradient blob - top left */}
+          <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full opacity-30 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #F5F9FE 0%, #EBF2FD 40%, #C3D9F8 70%, transparent 100%)'
+               }}></div>
+          
+          {/* Medium accent blob - center right */}
+          <div className="absolute top-1/3 -right-16 w-80 h-80 rounded-full opacity-20 blur-2xl"
+               style={{
+                 background: 'radial-gradient(circle, #C3D9F8 0%, #3880E8 30%, transparent 70%)'
+               }}></div>
+          
+          {/* Small atmospheric accent - bottom */}
+          <div className="absolute -bottom-16 left-1/4 w-64 h-64 rounded-full opacity-25 blur-3xl"
+               style={{
+                 background: 'linear-gradient(135deg, #FBFCFF 0%, #F5F9FE 50%, #EBF2FD 100%)'
+               }}></div>
+          
+          {/* Flowing wave accent - mobile optimized */}
+          <div className="absolute top-1/2 left-0 w-full h-32 opacity-15 blur-xl lg:opacity-20"
+               style={{
+                 background: 'linear-gradient(90deg, transparent 0%, #F5F9FE 20%, #C3D9F8 40%, #EBF2FD 60%, transparent 100%)'
+               }}></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
             
             {/* Left Side - Content */}
@@ -404,8 +431,35 @@ export default function UC3Page() {
         </div>
       </section>
       {/* Pain Points Section - Main Feature Card + Supporting Cards */}
-      <section className="py-32 px-8 bg-gradient-to-br from-slate-50 via-gray-50 to-purple-50/20">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-32 px-8 bg-gradient-to-br from-slate-50 via-gray-50 to-purple-50/20 relative overflow-hidden">
+        {/* Subtle Abstract Background Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Large atmospheric blob - right side */}
+          <div className="absolute top-16 -right-40 w-[500px] h-[500px] rounded-full opacity-25 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #F5F9FE 0%, #C3D9F8 50%, #EBF2FD 80%, transparent 100%)'
+               }}></div>
+          
+          {/* Flowing accent - left side */}
+          <div className="absolute top-1/3 -left-24 w-72 h-72 rounded-full opacity-20 blur-2xl"
+               style={{
+                 background: 'linear-gradient(135deg, #EBF2FD 0%, #C3D9F8 60%, transparent 100%)'
+               }}></div>
+          
+          {/* Small directional accent */}
+          <div className="absolute bottom-20 right-1/4 w-48 h-48 rounded-full opacity-15 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #3880E8 0%, #C3D9F8 40%, transparent 80%)'
+               }}></div>
+          
+          {/* Mobile-optimized wave */}
+          <div className="absolute bottom-0 left-0 w-full h-24 opacity-10 blur-xl lg:opacity-15"
+               style={{
+                 background: 'linear-gradient(90deg, #F5F9FE 0%, transparent 30%, #FBFCFF 70%, #EBF2FD 100%)'
+               }}></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           
           {/* Main Feature Card */}
           <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20"
@@ -495,8 +549,35 @@ export default function UC3Page() {
         </div>
       </section>
       {/* Solution Section - Alternating Layout Design */}
-      <section className="py-32 px-8 bg-gradient-to-br from-white via-slate-50/20 to-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-32 px-8 bg-gradient-to-br from-white via-slate-50/20 to-white relative overflow-hidden">
+        {/* Subtle Abstract Background Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Large flowing accent - top center */}
+          <div className="absolute -top-20 left-1/3 w-96 h-96 rounded-full opacity-20 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #FBFCFF 0%, #F5F9FE 30%, #C3D9F8 70%, transparent 100%)'
+               }}></div>
+          
+          {/* Medium directional blob - middle left */}
+          <div className="absolute top-1/2 -left-32 w-80 h-80 rounded-full opacity-15 blur-2xl"
+               style={{
+                 background: 'linear-gradient(45deg, #EBF2FD 0%, #C3D9F8 50%, #3880E8 90%, transparent 100%)'
+               }}></div>
+          
+          {/* Atmospheric accent - bottom right */}
+          <div className="absolute -bottom-24 -right-32 w-[400px] h-[400px] rounded-full opacity-25 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #F5F9FE 0%, #EBF2FD 40%, transparent 100%)'
+               }}></div>
+          
+          {/* Subtle flowing wave - center */}
+          <div className="absolute top-1/2 left-0 w-full h-40 opacity-10 blur-xl lg:opacity-15"
+               style={{
+                 background: 'linear-gradient(90deg, transparent 0%, #C3D9F8 25%, #F5F9FE 50%, #EBF2FD 75%, transparent 100%)'
+               }}></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-24">
             <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-[1.1] tracking-tight">AItenders empowers your team with AI-driven coordination and compliance for complex RFPs</h1>
             <h3 className="text-2xl lg:text-3xl text-gray-600 max-w-5xl mx-auto leading-relaxed font-light">
@@ -668,8 +749,35 @@ export default function UC3Page() {
         </div>
       </section>
       {/* Target Audience Section - Interactive Design */}
-      <section className="py-32 px-8 bg-gradient-to-br from-gray-50 via-slate-50 to-gray-50">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-32 px-8 bg-gradient-to-br from-gray-50 via-slate-50 to-gray-50 relative overflow-hidden">
+        {/* Subtle Abstract Background Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Large atmospheric presence - left side */}
+          <div className="absolute top-10 -left-40 w-[450px] h-[450px] rounded-full opacity-20 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #F5F9FE 0%, #EBF2FD 60%, #C3D9F8 85%, transparent 100%)'
+               }}></div>
+          
+          {/* Medium flowing accent - right top */}
+          <div className="absolute top-1/4 -right-24 w-72 h-72 rounded-full opacity-18 blur-2xl"
+               style={{
+                 background: 'linear-gradient(135deg, #FBFCFF 0%, #C3D9F8 40%, #EBF2FD 100%)'
+               }}></div>
+          
+          {/* Directional accent with brand primary */}
+          <div className="absolute bottom-1/3 left-1/4 w-56 h-56 rounded-full opacity-12 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #3880E8 0%, #C3D9F8 50%, transparent 90%)'
+               }}></div>
+          
+          {/* Subtle horizontal flow */}
+          <div className="absolute bottom-16 left-0 w-full h-28 opacity-8 blur-xl lg:opacity-12"
+               style={{
+                 background: 'linear-gradient(90deg, #EBF2FD 0%, #F5F9FE 30%, transparent 50%, #FBFCFF 80%, #C3D9F8 100%)'
+               }}></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           {/* Header */}
           <div className="text-center mb-20">
             <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-12 leading-[1.1] tracking-tight">
@@ -859,8 +967,35 @@ export default function UC3Page() {
         </div>
       </section>
       {/* User Journey Section - High Conversion Design */}
-      <section className="py-32 px-8 bg-gradient-to-br from-slate-50 via-white to-purple-50/30">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-32 px-8 bg-gradient-to-br from-slate-50 via-white to-purple-50/30 relative overflow-hidden">
+        {/* Subtle Abstract Background Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Large atmospheric blob - center top */}
+          <div className="absolute -top-32 left-1/2 transform -translate-x-1/2 w-[500px] h-[500px] rounded-full opacity-22 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #FBFCFF 0%, #F5F9FE 35%, #C3D9F8 70%, transparent 100%)'
+               }}></div>
+          
+          {/* Flowing accent - bottom left */}
+          <div className="absolute bottom-10 -left-32 w-80 h-80 rounded-full opacity-18 blur-2xl"
+               style={{
+                 background: 'linear-gradient(45deg, #EBF2FD 0%, #C3D9F8 60%, transparent 100%)'
+               }}></div>
+          
+          {/* Directional accent - right side */}
+          <div className="absolute top-1/3 -right-28 w-72 h-72 rounded-full opacity-15 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #3880E8 0%, #EBF2FD 40%, transparent 80%)'
+               }}></div>
+          
+          {/* Subtle connecting flow */}
+          <div className="absolute top-2/3 left-0 w-full h-24 opacity-10 blur-xl lg:opacity-14"
+               style={{
+                 background: 'linear-gradient(90deg, #F5F9FE 0%, transparent 20%, #C3D9F8 50%, transparent 80%, #FBFCFF 100%)'
+               }}></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-24">
             <h3 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-[1.1] tracking-tight">Three Steps to Compliant Project Success</h3>
           </div>
