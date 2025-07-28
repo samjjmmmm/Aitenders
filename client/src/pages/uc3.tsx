@@ -297,32 +297,7 @@ export default function UC3Page() {
             </div>
           </div>
 
-          {/* Bottom CTA Section */}
-          <div className="mt-20 text-center">
-            <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-gray-100 max-w-4xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-                <div className="text-center lg:text-left">
-                  <div className="text-3xl font-bold text-gray-900 mb-2">500+</div>
-                  <div className="text-gray-600">Pages processed instantly</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600 mb-2">0</div>
-                  <div className="text-gray-600">Compliance gaps tolerated</div>
-                </div>
-                <div className="text-center lg:text-right">
-                  <div className="text-3xl font-bold text-green-600 mb-2">100%</div>
-                  <div className="text-gray-600">Requirement coverage</div>
-                </div>
-              </div>
-              
-              <div className="mt-8 pt-8 border-t border-gray-200">
-                <p className="text-gray-600 mb-6">Join enterprise teams already streamlining their complex bid processes</p>
-                <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-10 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                  Start Your Success Story
-                </Button>
-              </div>
-            </div>
-          </div>
+
         </div>
       </section>
 
