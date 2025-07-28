@@ -108,7 +108,7 @@ export default function HomePage() {
       title: "I am exploring how Aitenders can help before deciding",
       icon: Target,
       color: "bg-orange-500/10 text-orange-600",
-      redirectTo: "/use-cases/bid-evaluation"
+      redirectTo: "/uc1"
     }
   ];
 
@@ -290,22 +290,27 @@ export default function HomePage() {
 
   // UC to page mapping
   const ucToPageMapping: { [key: string]: string } = {
-    "UC1": "/use-cases/bid-evaluation",
-    "UC2": "/use-cases/requirements-extraction", 
-    "UC3": "/use-cases/contract-management",
-    "UC4": "/use-cases/bid-evaluation",
-    "UC5": "/use-cases/requirements-extraction",
-    "UC6": "/use-cases/contract-management",
-    "UC7": "/use-cases/tender-intelligence",
-    "UC8": "/use-cases/tender-intelligence"
+    "UC1": "/uc1",
+    "UC2": "/uc2", 
+    "UC3": "/uc3",
+    "UC4": "/uc4",
+    "UC5": "/uc5",
+    "UC6": "/uc6",
+    "UC7": "/uc7",
+    "UC8": "/uc8"
   };
 
   const handleCardSelection = (card: SelectionCard) => {
     const newSelections = [...selections, card.id];
     setSelections(newSelections);
 
-    // Track analytics for sales qualification  
-    console.log("User path:", newSelections);
+    // Track analytics for sales qualification - log selection path
+    console.log("User selection path:", {
+      step: currentStep,
+      selections: newSelections,
+      currentCard: card.id,
+      timestamp: new Date().toISOString()
+    });
 
     if (card.redirectTo) {
       // Direct redirect for exploration option
@@ -338,6 +343,17 @@ export default function HomePage() {
       // Check if we have a single UC match - if so, redirect immediately
       if (newAvailableUCs.length === 1) {
         const finalUC = newAvailableUCs[0];
+        
+        // Log final UC analytics (hidden from user)
+        console.log("FINAL UC DETERMINATION:", {
+          finalUC: finalUC,
+          completePath: newSelections,
+          stepsCompleted: currentStep,
+          decisionPoint: "single_match_found",
+          timestamp: new Date().toISOString(),
+          redirectTo: ucToPageMapping[finalUC]
+        });
+        
         toast({
           title: "See My Recommended Solution",
           description: `Perfect match found: ${finalUC}`,
@@ -355,6 +371,18 @@ export default function HomePage() {
       // At step 5 or if only one UC remains, make final decision
       if (newAvailableUCs.length > 0) {
         const finalUC = newAvailableUCs[0]; // Take the first remaining UC
+        
+        // Log final UC analytics (hidden from user)
+        console.log("FINAL UC DETERMINATION:", {
+          finalUC: finalUC,
+          completePath: newSelections,
+          stepsCompleted: currentStep,
+          decisionPoint: "end_of_flow",
+          remainingUCs: newAvailableUCs,
+          timestamp: new Date().toISOString(),
+          redirectTo: ucToPageMapping[finalUC]
+        });
+        
         toast({
           title: "See My Recommended Solution",
           description: `Final recommendation: ${finalUC}`,
