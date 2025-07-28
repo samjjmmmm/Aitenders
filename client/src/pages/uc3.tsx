@@ -675,207 +675,192 @@ export default function UC3Page() {
           </div>
         </div>
       </section>
-      {/* Target Audience Section - Livestorm-Inspired Clean Design */}
-      <section className="py-32 px-4 bg-white">
+      {/* Target Audience Section - Interactive Design */}
+      <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          
-          {/* Clean Header with Generous Spacing */}
-          <div className="text-center mb-20">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 tracking-tight">
-              Built for every team in your organization
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              From technical experts to project managers—everyone works together seamlessly
-            </p>
-          </div>
-
-          {/* Three Clean Role Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
+              Bid management for <span className="text-purple-600">all your needs</span>
+            </h1>
             
-            {/* Project Manager Card */}
-            <div className="text-center group">
-              <div className="w-20 h-20 bg-blue-50 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-transform duration-300">
-                <MdAccountBox className="w-10 h-10 text-blue-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Project Managers</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Orchestrate multi-lot projects with AI-powered coordination and real-time visibility
-              </p>
-            </div>
-
-            {/* Technical Expert Card */}
-            <div className="text-center group">
-              <div className="w-20 h-20 bg-green-50 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-transform duration-300">
-                <MdEngineering className="w-10 h-10 text-green-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Technical Experts</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Focus on expertise while AI handles requirement extraction and compliance mapping
-              </p>
-            </div>
-
-            {/* Legal/Compliance Card */}
-            <div className="text-center group">
-              <div className="w-20 h-20 bg-purple-50 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-transform duration-300">
-                <MdGavel className="w-10 h-10 text-purple-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Legal & Compliance</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Ensure zero gaps with automated compliance verification and risk assessment
-              </p>
+            {/* Interactive Navigation Tabs */}
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              {targetAudiences.map((audience) => (
+                <button
+                  key={audience.id}
+                  onClick={() => setActiveAudience(audience)}
+                  onMouseEnter={() => setActiveAudience(audience)}
+                  className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
+                    activeAudience.id === audience.id
+                      ? 'bg-gray-900 text-white shadow-lg'
+                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                  }`}
+                >
+                  {audience.title}
+                </button>
+              ))}
             </div>
           </div>
 
-          {/* Clean Product Visualization */}
-          <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-16">
-            <div className="max-w-4xl mx-auto">
+          {/* Interactive Content Card */}
+          <Card className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
               
-              {/* Browser Frame with Realistic Product UI */}
-              <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
-                
-                {/* Browser Header */}
-                <div className="bg-gray-100 px-6 py-4 flex items-center justify-between border-b border-gray-200">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                    <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                  </div>
-                  <div className="text-sm text-gray-600 font-medium">AItenders - Team Collaboration</div>
-                  <div className="w-12"></div>
-                </div>
-
-                {/* Realistic Team Dashboard */}
-                <div className="p-8">
-                  
-                  {/* Header with Live Indicator */}
-                  <div className="flex items-center justify-between mb-8">
-                    <div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">Multi-Lot Infrastructure Project</h3>
-                      <p className="text-gray-600">8 expert teams • Real-time collaboration</p>
-                    </div>
-                    <div className="flex items-center space-x-2 bg-green-50 px-3 py-2 rounded-full">
-                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                      <span className="text-sm text-green-700 font-medium">Live</span>
-                    </div>
-                  </div>
-
-                  {/* Team Activity Feed */}
-                  <div className="grid grid-cols-2 gap-8">
-                    
-                    {/* Left Column - Active Tasks */}
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-6">Active Tasks</h4>
-                      <div className="space-y-4">
-                        
-                        <div className="flex items-start space-x-4 p-4 bg-blue-50 rounded-xl border border-blue-100">
-                          <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
-                            <MdEngineering className="w-5 h-5 text-white" />
-                          </div>
-                          <div className="flex-1">
-                            <div className="flex items-center justify-between mb-1">
-                              <span className="font-medium text-gray-900">Technical Specifications</span>
-                              <span className="text-sm text-blue-600 font-medium">85% complete</span>
-                            </div>
-                            <p className="text-sm text-gray-600">24 requirements assigned to technical team</p>
-                          </div>
-                        </div>
-
-                        <div className="flex items-start space-x-4 p-4 bg-green-50 rounded-xl border border-green-100">
-                          <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                            <MdGavel className="w-5 h-5 text-white" />
-                          </div>
-                          <div className="flex-1">
-                            <div className="flex items-center justify-between mb-1">
-                              <span className="font-medium text-gray-900">Legal Compliance</span>
-                              <span className="text-sm text-green-600 font-medium">92% complete</span>
-                            </div>
-                            <p className="text-sm text-gray-600">18 legal requirements under review</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Right Column - Recent Activity */}
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-6">Recent Activity</h4>
-                      <div className="space-y-4">
-                        
-                        <div className="flex items-center space-x-3">
-                          <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
-                            <span className="text-xs text-white font-medium">SB</span>
-                          </div>
-                          <div className="flex-1">
-                            <p className="text-sm text-gray-900">Sarah B. completed risk assessment</p>
-                            <p className="text-xs text-gray-500">2 minutes ago</p>
-                          </div>
-                        </div>
-
-                        <div className="flex items-center space-x-3">
-                          <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-                            <span className="text-xs text-white font-medium">MK</span>
-                          </div>
-                          <div className="flex-1">
-                            <p className="text-sm text-gray-900">Mike K. updated technical drawings</p>
-                            <p className="text-xs text-gray-500">5 minutes ago</p>
-                          </div>
-                        </div>
-
-                        <div className="flex items-center space-x-3">
-                          <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                            <span className="text-xs text-white font-medium">AL</span>
-                          </div>
-                          <div className="flex-1">
-                            <p className="text-sm text-gray-900">Anna L. approved compliance matrix</p>
-                            <p className="text-xs text-gray-500">8 minutes ago</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Trust Elements & CTA */}
-          <div className="text-center mt-20">
-            
-            {/* Social Proof */}
-            <div className="mb-8">
-              <p className="text-gray-600 mb-4">Trusted by 100+ enterprise teams managing complex projects</p>
-              <div className="flex items-center justify-center space-x-6">
-                <div className="flex -space-x-2">
-                  <div className="w-10 h-10 bg-blue-500 rounded-full border-2 border-white flex items-center justify-center">
-                    <span className="text-sm text-white font-medium">A</span>
-                  </div>
-                  <div className="w-10 h-10 bg-green-500 rounded-full border-2 border-white flex items-center justify-center">
-                    <span className="text-sm text-white font-medium">B</span>
-                  </div>
-                  <div className="w-10 h-10 bg-purple-500 rounded-full border-2 border-white flex items-center justify-center">
-                    <span className="text-sm text-white font-medium">C</span>
-                  </div>
-                  <div className="w-10 h-10 bg-orange-500 rounded-full border-2 border-white flex items-center justify-center">
-                    <span className="text-sm text-white font-medium">+97</span>
-                  </div>
-                </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <MdSecurity className="w-4 h-4 mr-2 text-green-500" />
-                  <span>Enterprise-grade security</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Primary CTA */}
-            <div className="space-y-4">
-              <Button 
-                size="lg" 
-                className="bg-purple-600 hover:bg-purple-700 text-white px-12 py-6 text-xl font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              {/* Left Side - Dynamic Content */}
+              <motion.div 
+                key={activeAudience.id}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4 }}
+                className="p-12 flex flex-col justify-center"
               >
-                Start Free Trial
-              </Button>
-              <p className="text-sm text-gray-500">No credit card required • 14-day free trial</p>
+                <div className={`w-12 h-12 ${activeAudience.iconBg} rounded-xl flex items-center justify-center mb-6 transition-all duration-300`}>
+                  <activeAudience.icon className={`w-6 h-6 ${activeAudience.iconColor}`} />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">{activeAudience.title}</h3>
+                
+                <p className="text-gray-700 text-lg leading-relaxed mb-8">
+                  {activeAudience.description}
+                </p>
+                
+                <Button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 w-fit transition-all duration-300 hover:shadow-lg">
+                  Learn more →
+                </Button>
+              </motion.div>
+
+              {/* Right Side - Dynamic UI Mockup */}
+              <motion.div 
+                key={`${activeAudience.id}-ui`}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+                className="bg-gradient-to-br from-purple-50 to-blue-50 p-8 flex items-center justify-center relative"
+              >
+                
+                {/* Main Dashboard Mockup */}
+                <div className="bg-white rounded-xl shadow-2xl w-full max-w-md relative">
+                  
+                  {/* Header Bar */}
+                  <div className="bg-gray-900 text-white p-4 rounded-t-xl flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <span className="text-sm font-medium">AItenders Dashboard</span>
+                    <div className="text-sm text-gray-300">Live</div>
+                  </div>
+
+                  {/* Dynamic Dashboard Content */}
+                  <div className="p-6">
+                    <div className="mb-6">
+                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Project Overview</h4>
+                      <div className="space-y-3">
+                        
+                        {/* Dynamic Progress Bars */}
+                        <div className="bg-gray-50 rounded-lg p-3">
+                          <div className="flex justify-between items-center mb-2">
+                            <span className="text-sm text-gray-700">Requirements Analysis</span>
+                            <span className={`text-sm font-medium text-${activeAudience.dashboardData.requirements.color}-600`}>
+                              {activeAudience.dashboardData.requirements.progress}%
+                            </span>
+                          </div>
+                          <div className="w-full bg-gray-200 rounded-full h-2">
+                            <motion.div 
+                              initial={{ width: 0 }}
+                              animate={{ width: `${activeAudience.dashboardData.requirements.progress}%` }}
+                              transition={{ duration: 0.8, delay: 0.3 }}
+                              className={`bg-${activeAudience.dashboardData.requirements.color}-500 h-2 rounded-full`}
+                            />
+                          </div>
+                        </div>
+
+                        <div className="bg-gray-50 rounded-lg p-3">
+                          <div className="flex justify-between items-center mb-2">
+                            <span className="text-sm text-gray-700">Expert Coordination</span>
+                            <span className={`text-sm font-medium text-${activeAudience.dashboardData.coordination.color}-600`}>
+                              {activeAudience.dashboardData.coordination.progress}%
+                            </span>
+                          </div>
+                          <div className="w-full bg-gray-200 rounded-full h-2">
+                            <motion.div 
+                              initial={{ width: 0 }}
+                              animate={{ width: `${activeAudience.dashboardData.coordination.progress}%` }}
+                              transition={{ duration: 0.8, delay: 0.4 }}
+                              className={`bg-${activeAudience.dashboardData.coordination.color}-500 h-2 rounded-full`}
+                            />
+                          </div>
+                        </div>
+
+                        <div className="bg-gray-50 rounded-lg p-3">
+                          <div className="flex justify-between items-center mb-2">
+                            <span className="text-sm text-gray-700">Compliance Check</span>
+                            <span className={`text-sm font-medium text-${activeAudience.dashboardData.compliance.color}-600`}>
+                              {activeAudience.dashboardData.compliance.progress}%
+                            </span>
+                          </div>
+                          <div className="w-full bg-gray-200 rounded-full h-2">
+                            <motion.div 
+                              initial={{ width: 0 }}
+                              animate={{ width: `${activeAudience.dashboardData.compliance.progress}%` }}
+                              transition={{ duration: 0.8, delay: 0.5 }}
+                              className={`bg-${activeAudience.dashboardData.compliance.color}-500 h-2 rounded-full`}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Team Status */}
+                    <div className="border-t pt-4">
+                      <h5 className="text-sm font-semibold text-gray-700 mb-3">Team Status</h5>
+                      <div className="flex -space-x-2">
+                        <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center border-2 border-white">
+                          <span className="text-xs text-white font-medium">T</span>
+                        </div>
+                        <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center border-2 border-white">
+                          <span className="text-xs text-white font-medium">L</span>
+                        </div>
+                        <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center border-2 border-white">
+                          <span className="text-xs text-white font-medium">C</span>
+                        </div>
+                        <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center border-2 border-white">
+                          <span className="text-xs text-white font-medium">Q</span>
+                        </div>
+                        <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center border-2 border-white">
+                          <span className="text-xs text-gray-600 font-medium">+3</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Dynamic Floating Notification */}
+                <motion.div 
+                  key={`${activeAudience.id}-notification`}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: 0.6 }}
+                  className="absolute top-4 right-4 bg-green-500 text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium"
+                >
+                  {activeAudience.notification}
+                </motion.div>
+
+                {/* Dynamic Floating Alert */}
+                <motion.div 
+                  key={`${activeAudience.id}-alert`}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: 0.7 }}
+                  className="absolute bottom-4 left-4 bg-blue-500 text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium"
+                >
+                  {activeAudience.alert}
+                </motion.div>
+              </motion.div>
             </div>
-          </div>
+          </Card>
         </div>
       </section>
       {/* User Journey Section - High Conversion Design */}
