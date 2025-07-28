@@ -402,10 +402,10 @@ export default function UC3Page() {
       </section>
       {/* Premium Pain Points Section - Large Feature Card Design */}
       <section className="py-24 px-4 bg-gradient-to-br from-slate-50 via-gray-50 to-purple-50/20">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           
           {/* Premium Large Feature Card - Livestorm Inspired */}
-          <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-12 lg:p-16 shadow-2xl border border-gray-100/50 relative overflow-hidden mx-auto max-w-4xl">
+          <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-12 lg:p-16 shadow-2xl border border-gray-100/50 relative overflow-hidden">
             
             {/* Multi-tone Faded Background Pattern */}
             <div className="absolute inset-0 bg-gradient-to-br from-purple-50/30 via-blue-50/20 to-indigo-50/25 rounded-3xl"></div>
