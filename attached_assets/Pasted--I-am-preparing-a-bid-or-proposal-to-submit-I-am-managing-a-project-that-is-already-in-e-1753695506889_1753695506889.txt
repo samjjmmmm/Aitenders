@@ -1,0 +1,75 @@
+    “I am preparing a bid or proposal to submit.”
+
+    “I am managing a project that is already in execution.”
+
+    “I need support to draft documents and prove compliance.”
+
+    “I am exploring how Aitenders can help before deciding.”
+
+Step 2 – The Type of Project You Handle
+
+If preparing a bid:
+
+    “I handle small, frequent projects that need fast validation.” → UC1
+
+    “I work on mid-size projects with multiple clauses and risks.” → UC2
+
+    “I lead large, complex tenders with many contributors.” → UC3
+
+    “I mainly need structured drafting support for my responses.” → UC7
+
+If managing a project in execution:
+
+    “I run small, straightforward projects that require quick answers.” → UC4
+
+    “I manage mid-size projects with evolving commitments.” → UC5
+
+    “I oversee large, multi-discipline projects with high risk.” → UC6
+
+    “I need help drafting and justifying compliance during execution.” → UC8
+
+If drafting & compliance from Step 1:
+
+    “I draft responses for bids and need full coverage proof.” → UC7
+
+    “I draft deliverables during execution and need traceability.” → UC8
+
+Step 3 – Your Main Priority
+
+    “I need to save time and reach decisions faster.” → UC1 / UC2
+
+    “I need to guarantee compliance and avoid rejections.” → UC2 / UC3 / UC6 / UC8
+
+    “I need to improve collaboration across multiple teams.” → UC3 / UC5 / UC6
+
+    “I need to deliver documents that cover everything, with proof.” → UC7 / UC8
+
+Step 4 – Who Will Use Aitenders Most
+
+    “My offer management or bid team.” → UC1 / UC2 / UC3 / UC7
+
+    “My contract or project managers.” → UC5 / UC6
+
+    “My field or site operations team.” → UC4
+
+    “My compliance or technical writers.” → UC7 / UC8
+
+Step 5 – The Outcome You Expect
+
+    “A validated bid analysis ready to present to management.” → UC1 / UC2
+
+    “A complete compliance matrix with risks under control.” → UC3 / UC6
+
+    “A live contract assistant accessible to my field teams.” → UC4 / UC5
+
+    “Drafted deliverables with traceability and proof of coverage.” → UC7 / UC8
+
+🔹 How It Works
+
+    Each sentence card = a self-description of the user’s situation.
+
+    After each step, options are narrowed.
+
+    By Step 5, only one UC (UC1–UC8) matches.
+
+    Show CTA: “See My Recommended Solution” → redirect to Use Case page.

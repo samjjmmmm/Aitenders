@@ -33,6 +33,7 @@ export default function HomePage() {
   const [message, setMessage] = useState("");
   const [currentStep, setCurrentStep] = useState(1);
   const [selections, setSelections] = useState<string[]>([]);
+  const [availableUCs, setAvailableUCs] = useState<string[]>([]);
   const [, setLocation] = useLocation();
   const { toast } = useToast();
   const queryClient = useQueryClient();
@@ -76,21 +77,19 @@ export default function HomePage() {
     }
   };
 
-  // Step 1: Choose Your Goal
+  // Step 1: Current Situation
   const step1Cards: SelectionCard[] = [
     {
-      id: "bid-preparation",
-      title: "Bid Preparation",
-      description: "I'm preparing a tender response",
+      id: "preparing-bid",
+      title: "I am preparing a bid or proposal to submit",
       icon: FileText,
       color: "bg-blue-500/10 text-blue-600",
       useCases: ["UC1", "UC2", "UC3", "UC7"],
-      nextStep: "offer"
+      nextStep: "bid"
     },
     {
-      id: "project-execution",
-      title: "Project Execution",
-      description: "I'm managing an ongoing project",
+      id: "managing-execution",
+      title: "I am managing a project that is already in execution",
       icon: Settings,
       color: "bg-green-500/10 text-green-600",
       useCases: ["UC4", "UC5", "UC6", "UC8"],
@@ -98,143 +97,191 @@ export default function HomePage() {
     },
     {
       id: "drafting-compliance",
-      title: "Drafting & Compliance Proof",
-      description: "I need help with structured writing and compliance",
+      title: "I need support to draft documents and prove compliance",
       icon: Award,
       color: "bg-purple-500/10 text-purple-600",
       useCases: ["UC7", "UC8"],
       nextStep: "drafting"
     },
     {
-      id: "explore-first",
-      title: "Explore Aitenders First",
-      description: "I want to see what you can do before choosing",
+      id: "exploring-aitenders",
+      title: "I am exploring how Aitenders can help before deciding",
       icon: Target,
       color: "bg-orange-500/10 text-orange-600",
-      redirectTo: "/use-cases/bid-evaluation" // LAND process simulation
+      redirectTo: "/use-cases/bid-evaluation"
     }
   ];
 
-  // Step 2: Define Project Complexity
+  // Step 2: The Type of Project You Handle
   const step2Cards: { [key: string]: SelectionCard[] } = {
-    offer: [
+    bid: [
       {
-        id: "small-quick",
-        title: "Small, quick projects",
-        description: "Fast turnaround bids with standard requirements",
+        id: "small-frequent",
+        title: "I handle small, frequent projects that need fast validation",
         icon: Clock,
         color: "bg-blue-500/10 text-blue-600",
-        redirectTo: "/use-cases/bid-evaluation" // UC1
+        useCases: ["UC1"]
       },
       {
-        id: "medium-complex",
-        title: "Medium projects with complex clauses",
-        description: "Moderate complexity with critical compliance requirements",
+        id: "midsize-clauses",
+        title: "I work on mid-size projects with multiple clauses and risks",
         icon: CheckCircle,
         color: "bg-green-500/10 text-green-600",
-        redirectTo: "/use-cases/requirements-extraction" // UC2
+        useCases: ["UC2"]
       },
       {
-        id: "large-multi",
-        title: "Large multi-discipline tenders",
-        description: "Complex bids involving multiple stakeholders and disciplines",
+        id: "large-complex",
+        title: "I lead large, complex tenders with many contributors",
         icon: Users,
         color: "bg-purple-500/10 text-purple-600",
-        redirectTo: "/use-cases/contract-management" // UC3
+        useCases: ["UC3"]
       },
       {
-        id: "oneoff-drafting",
-        title: "One-off support for drafting responses",
-        description: "Specialized help with writing structured responses",
+        id: "structured-drafting",
+        title: "I mainly need structured drafting support for my responses",
         icon: Edit,
         color: "bg-orange-500/10 text-orange-600",
-        redirectTo: "/use-cases/tender-intelligence" // UC7
+        useCases: ["UC7"]
       }
     ],
     execution: [
       {
-        id: "simple-small",
-        title: "Simple small-scale projects",
-        description: "Straightforward project management needs",
+        id: "small-straightforward",
+        title: "I run small, straightforward projects that require quick answers",
         icon: Target,
         color: "bg-blue-500/10 text-blue-600",
-        redirectTo: "/use-cases/bid-evaluation" // UC4
+        useCases: ["UC4"]
       },
       {
-        id: "medium-evolving",
-        title: "Medium projects with multiple evolving commitments",
-        description: "Projects with changing requirements and stakeholders",
+        id: "midsize-evolving",
+        title: "I manage mid-size projects with evolving commitments",
         icon: UserCheck,
         color: "bg-green-500/10 text-green-600",
-        redirectTo: "/use-cases/requirements-extraction" // UC5
+        useCases: ["UC5"]
       },
       {
-        id: "large-highrisk",
-        title: "Large, high-risk projects across disciplines",
-        description: "Complex multi-disciplinary projects with high stakes",
+        id: "large-multidiscipline",
+        title: "I oversee large, multi-discipline projects with high risk",
         icon: Shield,
         color: "bg-purple-500/10 text-purple-600",
-        redirectTo: "/use-cases/contract-management" // UC6
+        useCases: ["UC6"]
       },
       {
-        id: "execution-drafting",
-        title: "Execution support with structured drafting",
-        description: "Project execution with documentation and compliance needs",
+        id: "compliance-execution",
+        title: "I need help drafting and justifying compliance during execution",
         icon: Award,
         color: "bg-orange-500/10 text-orange-600",
-        redirectTo: "/use-cases/tender-intelligence" // UC8
+        useCases: ["UC8"]
       }
     ],
     drafting: [
       {
-        id: "bid-drafting",
-        title: "Bid response drafting support",
-        description: "Help with writing and structuring tender responses",
+        id: "bid-coverage",
+        title: "I draft responses for bids and need full coverage proof",
         icon: Edit,
         color: "bg-blue-500/10 text-blue-600",
-        redirectTo: "/use-cases/tender-intelligence" // UC7
+        useCases: ["UC7"]
       },
       {
-        id: "execution-compliance",
-        title: "Execution compliance documentation",
-        description: "Support with project execution documentation and proof",
+        id: "execution-traceability",
+        title: "I draft deliverables during execution and need traceability",
         icon: Award,
         color: "bg-green-500/10 text-green-600",
-        redirectTo: "/use-cases/tender-intelligence" // UC8
+        useCases: ["UC8"]
       }
     ]
   };
 
-  // Step 3: Identify Your Priority
+  // Step 3: Your Main Priority
   const step3Cards: SelectionCard[] = [
     {
-      id: "save-time",
-      title: "Save time & decide faster",
-      description: "Focus on speed and efficiency in decision-making",
+      id: "save-time-decide",
+      title: "I need to save time and reach decisions faster",
       icon: Clock,
       color: "bg-blue-500/10 text-blue-600",
       useCases: ["UC1", "UC2"]
     },
     {
-      id: "ensure-compliance",
-      title: "Ensure compliance & avoid rejections",
-      description: "Prioritize accuracy and regulatory compliance",
+      id: "guarantee-compliance",
+      title: "I need to guarantee compliance and avoid rejections",
       icon: Shield,
       color: "bg-green-500/10 text-green-600",
-      useCases: ["UC2", "UC3", "UC6"]
+      useCases: ["UC2", "UC3", "UC6", "UC8"]
     },
     {
       id: "improve-collaboration",
-      title: "Improve collaboration & alignment",
-      description: "Enhance team coordination and stakeholder alignment",
+      title: "I need to improve collaboration across multiple teams",
       icon: Users,
       color: "bg-purple-500/10 text-purple-600",
       useCases: ["UC3", "UC5", "UC6"]
     },
     {
-      id: "draft-deliverables",
-      title: "Draft deliverables without missing anything",
-      description: "Comprehensive documentation and structured writing",
+      id: "deliver-documents",
+      title: "I need to deliver documents that cover everything, with proof",
+      icon: Edit,
+      color: "bg-orange-500/10 text-orange-600",
+      useCases: ["UC7", "UC8"]
+    }
+  ];
+
+  // Step 4: Who Will Use Aitenders Most
+  const step4Cards: SelectionCard[] = [
+    {
+      id: "offer-bid-team",
+      title: "My offer management or bid team",
+      icon: FileText,
+      color: "bg-blue-500/10 text-blue-600",
+      useCases: ["UC1", "UC2", "UC3", "UC7"]
+    },
+    {
+      id: "contract-managers",
+      title: "My contract or project managers",
+      icon: Settings,
+      color: "bg-green-500/10 text-green-600",
+      useCases: ["UC5", "UC6"]
+    },
+    {
+      id: "field-operations",
+      title: "My field or site operations team",
+      icon: Target,
+      color: "bg-purple-500/10 text-purple-600",
+      useCases: ["UC4"]
+    },
+    {
+      id: "compliance-writers",
+      title: "My compliance or technical writers",
+      icon: Edit,
+      color: "bg-orange-500/10 text-orange-600",
+      useCases: ["UC7", "UC8"]
+    }
+  ];
+
+  // Step 5: The Outcome You Expect
+  const step5Cards: SelectionCard[] = [
+    {
+      id: "validated-bid-analysis",
+      title: "A validated bid analysis ready to present to management",
+      icon: ChartLine,
+      color: "bg-blue-500/10 text-blue-600",
+      useCases: ["UC1", "UC2"]
+    },
+    {
+      id: "compliance-matrix",
+      title: "A complete compliance matrix with risks under control",
+      icon: Shield,
+      color: "bg-green-500/10 text-green-600",
+      useCases: ["UC3", "UC6"]
+    },
+    {
+      id: "contract-assistant",
+      title: "A live contract assistant accessible to my field teams",
+      icon: Users,
+      color: "bg-purple-500/10 text-purple-600",
+      useCases: ["UC4", "UC5"]
+    },
+    {
+      id: "drafted-deliverables",
+      title: "Drafted deliverables with traceability and proof of coverage",
       icon: Edit,
       color: "bg-orange-500/10 text-orange-600",
       useCases: ["UC7", "UC8"]
@@ -257,99 +304,115 @@ export default function HomePage() {
     const newSelections = [...selections, card.id];
     setSelections(newSelections);
 
-    // Track analytics for sales qualification
+    // Track analytics for sales qualification  
     console.log("User path:", newSelections);
 
     if (card.redirectTo) {
-      // Direct redirect (immediate UC identification)
+      // Direct redirect for exploration option
       toast({
         title: "See My Recommended Solution",
-        description: "Redirecting to your optimal use case...",
+        description: "Redirecting to exploration page...",
       });
       setTimeout(() => setLocation(card.redirectTo!), 1000);
       return;
     }
 
-    if (card.nextStep) {
-      // Move to next step
-      if (card.nextStep === "drafting") {
-        // Special case: Drafting & Compliance goes to step 2 with limited choices
-        setCurrentStep(2);
-      } else {
-        setCurrentStep(2);
-      }
+    // Update available UCs based on current selection
+    let newAvailableUCs = [...availableUCs];
+    
+    if (currentStep === 1) {
+      // Initialize available UCs from step 1 selection
+      newAvailableUCs = card.useCases || [];
+      setAvailableUCs(newAvailableUCs);
+      setCurrentStep(2);
       return;
     }
 
-    // Step 3: Priority selection - filter UCs based on all previous choices
-    if (currentStep === 3) {
-      const finalUC = determineFinalUC(newSelections);
-      if (finalUC) {
+    if (currentStep >= 2) {
+      // Filter UCs based on intersection with current card's UCs
+      if (card.useCases) {
+        newAvailableUCs = availableUCs.filter(uc => card.useCases!.includes(uc));
+        setAvailableUCs(newAvailableUCs);
+      }
+
+      // Check if we have a single UC match - if so, redirect immediately
+      if (newAvailableUCs.length === 1) {
+        const finalUC = newAvailableUCs[0];
         toast({
           title: "See My Recommended Solution",
-          description: `Redirecting to ${finalUC}...`,
+          description: `Perfect match found: ${finalUC}`,
+        });
+        setTimeout(() => setLocation(ucToPageMapping[finalUC]), 1000);
+        return;
+      }
+
+      // Continue to next step if we haven't reached step 5 and have multiple UCs
+      if (currentStep < 5 && newAvailableUCs.length > 1) {
+        setCurrentStep(currentStep + 1);
+        return;
+      }
+
+      // At step 5 or if only one UC remains, make final decision
+      if (newAvailableUCs.length > 0) {
+        const finalUC = newAvailableUCs[0]; // Take the first remaining UC
+        toast({
+          title: "See My Recommended Solution",
+          description: `Final recommendation: ${finalUC}`,
         });
         setTimeout(() => setLocation(ucToPageMapping[finalUC]), 1000);
       }
-      return;
     }
-
-    // If we reach here from step 2 without redirect, go to step 3
-    if (currentStep === 2) {
-      setCurrentStep(3);
-    }
-  };
-
-  const determineFinalUC = (userSelections: string[]): string | null => {
-    // Get possible UCs from first selection
-    const firstCard = step1Cards.find(card => card.id === userSelections[0]);
-    if (!firstCard?.useCases) return null;
-
-    // Get UCs from priority selection
-    const priorityCard = step3Cards.find(card => card.id === userSelections[userSelections.length - 1]);
-    if (!priorityCard?.useCases) return null;
-
-    // Find intersection of UCs
-    const validUCs = firstCard.useCases.filter(uc => priorityCard.useCases?.includes(uc));
-
-    if (validUCs.length === 1) {
-      return validUCs[0];
-    } else if (validUCs.length === 2) {
-      // Return higher-complexity UC according to the rules
-      const complexityOrder = ["UC1", "UC4", "UC2", "UC5", "UC3", "UC6", "UC7", "UC8"];
-      return validUCs.sort((a, b) => complexityOrder.indexOf(b) - complexityOrder.indexOf(a))[0];
-    }
-
-    // Fallback - shouldn't happen with proper logic
-    return validUCs[0] || null;
   };
 
   const getCurrentCards = (): SelectionCard[] => {
     if (currentStep === 1) {
       return step1Cards;
     }
+    
     if (currentStep === 2 && selections.length > 0) {
       const firstSelection = step1Cards.find(card => card.id === selections[0]);
       if (firstSelection?.nextStep && step2Cards[firstSelection.nextStep]) {
         return step2Cards[firstSelection.nextStep];
       }
     }
+    
     if (currentStep === 3) {
-      return step3Cards;
+      // Filter step 3 cards to only show those with UCs that match available UCs
+      return step3Cards.filter(card => 
+        card.useCases?.some(uc => availableUCs.includes(uc))
+      );
     }
+    
+    if (currentStep === 4) {
+      // Filter step 4 cards to only show those with UCs that match available UCs
+      return step4Cards.filter(card => 
+        card.useCases?.some(uc => availableUCs.includes(uc))
+      );
+    }
+    
+    if (currentStep === 5) {
+      // Filter step 5 cards to only show those with UCs that match available UCs
+      return step5Cards.filter(card => 
+        card.useCases?.some(uc => availableUCs.includes(uc))
+      );
+    }
+    
     return step1Cards;
   };
 
   const getStepTitle = (): string => {
-    if (currentStep === 1) return "Choose Your Goal";
-    if (currentStep === 2) return "Define Project Complexity";
-    if (currentStep === 3) return "Identify Your Priority";
+    if (currentStep === 1) return "What describes your current situation?";
+    if (currentStep === 2) return "What type of project do you handle?";
+    if (currentStep === 3) return "What is your main priority?";
+    if (currentStep === 4) return "Who will use Aitenders most?";
+    if (currentStep === 5) return "What outcome do you expect?";
     return "";
   };
 
   const resetSelection = () => {
     setCurrentStep(1);
     setSelections([]);
+    setAvailableUCs([]);
   };
 
   const stats = [
@@ -396,7 +459,7 @@ export default function HomePage() {
             {/* Step Progress Indicator */}
             <div className="flex items-center justify-between mb-6">
               <div className="text-sm text-gray-600">
-                Step {currentStep} of 3
+                Step {currentStep} of 5
               </div>
               {currentStep > 1 && (
                 <Button
@@ -447,20 +510,25 @@ export default function HomePage() {
             {selections.length > 0 && (
               <div className="mt-6 p-4 bg-blue-50 rounded-xl">
                 <p className="text-sm text-blue-800 mb-2">Your Selection Path:</p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-3">
                   {selections.map((selectionId, index) => {
-                    const allCards = [...step1Cards, ...Object.values(step2Cards).flat(), ...step3Cards];
+                    const allCards = [...step1Cards, ...Object.values(step2Cards).flat(), ...step3Cards, ...step4Cards, ...step5Cards];
                     const selectedCard = allCards.find(c => c.id === selectionId);
                     return (
                       <span
                         key={selectionId}
                         className="inline-flex items-center px-3 py-1 rounded-full text-xs bg-blue-100 text-blue-800"
                       >
-                        {index + 1}. {selectedCard?.title.substring(0, 30)}...
+                        {index + 1}. {selectedCard?.title.substring(0, 25)}...
                       </span>
                     );
                   })}
                 </div>
+                {availableUCs.length > 0 && (
+                  <p className="text-xs text-blue-600">
+                    Matching use cases: {availableUCs.join(', ')}
+                  </p>
+                )}
               </div>
             )}
           </div>
