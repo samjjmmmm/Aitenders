@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link, useLocation } from "wouter";
-import { ChartLine, Search, File, Lightbulb, TrendingUp, Shield, Users, Send, Bot, FileText, Settings, Award, Target, Clock, CheckCircle, UserCheck, Edit } from "lucide-react";
+import { ChartLine, Search, File, Lightbulb, TrendingUp, Shield, Users, Send, Bot, FileText, Settings, Award, Target, Clock, CheckCircle, UserCheck, Edit, BarChart3, ShieldCheck, Users2 } from "lucide-react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
@@ -445,19 +445,19 @@ export default function HomePage() {
 
   const stats = [
     {
-      icon: TrendingUp,
+      icon: BarChart3,
       title: "+50% Productivity",
       description: "Reduce time on each step of the tender process and detect information 95% faster",
       color: "bg-blue-500/10 text-blue-600",
     },
     {
-      icon: Shield,
+      icon: ShieldCheck,
       title: "Better Quality",
       description: "Improve the quality of review and deliverables with full traceability",
       color: "bg-green-500/10 text-green-600",
     },
     {
-      icon: Users,
+      icon: Users2,
       title: "Team Efficiency",
       description: "Staff are less stressed and meetings are more focused on key subjects",
       color: "bg-purple-500/10 text-purple-600",
