@@ -600,7 +600,7 @@ export default function UC3Page() {
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-24">
-            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-[1.1] tracking-tight">AItenders empowers your team with AI-driven coordination and compliance for complex RFPs</h1>
+            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-[1.1] tracking-tight">Your AI co-pilot that simplifies complex RFP management</h1>
             <h3 className="text-2xl lg:text-3xl text-gray-600 max-w-5xl mx-auto leading-relaxed font-light">
               Structure massive documentation instantly, orchestrate expert collaboration seamlessly, 
               and control every project evolution without gaps.
@@ -1482,7 +1482,6 @@ export default function UC3Page() {
 
         </div>
       </section>
-      
       {/* Master Compliance Section - Inspired by Image Design */}
       <section className="py-32 px-8 bg-gradient-to-br from-slate-50 via-white to-purple-50/20 relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
@@ -1625,7 +1624,6 @@ export default function UC3Page() {
           </div>
         </div>
       </section>
-      
       {/* Trust & Compliance */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
