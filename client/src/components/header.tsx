@@ -3,6 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { Link } from "wouter";
 
+// Import Aitenders logo
+import aitendersLogo from "@assets/Untitled(4)_1753712731718.png";
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -14,7 +17,7 @@ export default function Header() {
           <Link href="/">
             <div className="flex items-center cursor-pointer">
               <img 
-                src="/attached_assets/Untitled(4)_1753693197532.png" 
+                src={aitendersLogo} 
                 alt="Aitenders" 
                 className="h-8 w-auto"
               />
