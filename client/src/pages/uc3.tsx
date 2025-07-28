@@ -854,7 +854,7 @@ export default function UC3Page() {
             
             {/* KPI 1 */}
             <div className="group">
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 text-center border border-green-100 hover:border-green-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 text-center border border-green-100 hover:border-green-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[200px]">
                 <div className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-green-600 to-emerald-600 bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform duration-300">
                   90%
                 </div>
@@ -864,7 +864,7 @@ export default function UC3Page() {
 
             {/* KPI 2 */}
             <div className="group">
-              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 text-center border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 text-center border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[200px]">
                 <div className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform duration-300">
                   40%
                 </div>
@@ -874,7 +874,7 @@ export default function UC3Page() {
 
             {/* KPI 3 */}
             <div className="group">
-              <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-3xl p-8 text-center border border-purple-100 hover:border-purple-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+              <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-3xl p-8 text-center border border-purple-100 hover:border-purple-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[200px]">
                 <div className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-purple-600 to-violet-600 bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform duration-300">
                   0
                 </div>
@@ -884,7 +884,7 @@ export default function UC3Page() {
 
             {/* KPI 4 */}
             <div className="group">
-              <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-3xl p-8 text-center border border-orange-100 hover:border-orange-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+              <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-3xl p-8 text-center border border-orange-100 hover:border-orange-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[200px]">
                 <div className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-orange-600 to-amber-600 bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform duration-300">
                   100%
                 </div>
