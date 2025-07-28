@@ -726,23 +726,202 @@ export default function UC3Page() {
         </div>
       </section>
 
-      {/* Differentiation */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Purpose-Built for Large-Scale Complexity</h2>
-            <p className="text-lg text-gray-600">Why AItenders Leads Complex Project Analysis</p>
+      {/* Comparison Section - High Conversion Design */}
+      <section className="py-24 px-4 bg-gradient-to-br from-gray-50 via-white to-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">What Changes with AItenders</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">See the complete transformation from manual chaos to AI-powered precision</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {differentiators.map((diff, index) => (
-              <Card key={index} className="p-6">
-                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
-                  <MdEmojiEvents className="w-6 h-6 text-purple-600" />
+
+          {/* Before vs After Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            
+            {/* Before - Manual Process */}
+            <div className="relative">
+              <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-3xl p-8 border-2 border-red-100 relative overflow-hidden">
+                
+                {/* Header */}
+                <div className="flex items-center mb-8">
+                  <div className="w-12 h-12 bg-red-100 rounded-2xl flex items-center justify-center mr-4">
+                    <MdWarning className="w-6 h-6 text-red-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-red-800 mb-1">Manual Process Before</h3>
+                    <p className="text-red-600 text-sm">Chaos, delays, and risks</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{diff.title}</h3>
-                <p className="text-gray-600">{diff.description}</p>
-              </Card>
-            ))}
+
+                {/* Problems List */}
+                <div className="space-y-4">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-red-200 transform hover:-translate-y-1 transition-all duration-300">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-white text-xs font-bold">✗</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">Excel compliance chaos across 8+ experts</h4>
+                        <p className="text-gray-600 text-sm">Spreadsheets scattered across departments</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-red-200 transform hover:-translate-y-1 transition-all duration-300">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-white text-xs font-bold">✗</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">Days lost extracting requirements from 500+ pages</h4>
+                        <p className="text-gray-600 text-sm">Manual document analysis takes weeks</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-red-200 transform hover:-translate-y-1 transition-all duration-300">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-white text-xs font-bold">✗</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">Copy-paste errors risk million-euro exclusions</h4>
+                        <p className="text-gray-600 text-sm">Human errors cost critical opportunities</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-red-200 transform hover:-translate-y-1 transition-all duration-300">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-white text-xs font-bold">✗</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">Multiple review cycles delay submission</h4>
+                        <p className="text-gray-600 text-sm">Endless back-and-forth coordination</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-red-200 transform hover:-translate-y-1 transition-all duration-300">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-white text-xs font-bold">✗</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">Hidden requirement gaps cause rejections</h4>
+                        <p className="text-gray-600 text-sm">Critical oversights discovered too late</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Decorative Elements */}
+                <div className="absolute -top-2 -right-2 w-20 h-20 bg-red-200/30 rounded-full blur-xl"></div>
+                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-orange-200/20 rounded-full blur-2xl"></div>
+              </div>
+            </div>
+
+            {/* After - AI-Powered Process */}
+            <div className="relative">
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 border-2 border-green-200 relative overflow-hidden">
+                
+                {/* Header */}
+                <div className="flex items-center mb-8">
+                  <div className="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center mr-4">
+                    <MdCheckCircle className="w-6 h-6 text-green-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-green-800 mb-1">AI-Powered Process With AItenders</h3>
+                    <p className="text-green-600 text-sm">Automated, accurate, and efficient</p>
+                  </div>
+                </div>
+
+                {/* Solutions List */}
+                <div className="space-y-4">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 border border-green-200 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-lg">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <MdCheckCircle className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">Unified AI compliance dashboard for all teams</h4>
+                        <p className="text-gray-600 text-sm">Single source of truth for all experts</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 border border-green-200 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-lg">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <MdCheckCircle className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">Instant requirement extraction and classification</h4>
+                        <p className="text-gray-600 text-sm">AI processes documents in minutes, not days</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 border border-green-200 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-lg">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <MdCheckCircle className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">AI-guided writing with source verification</h4>
+                        <p className="text-gray-600 text-sm">Eliminate errors with intelligent assistance</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 border border-green-200 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-lg">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <MdCheckCircle className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">Real-time inconsistency detection and alerts</h4>
+                        <p className="text-gray-600 text-sm">Proactive quality control throughout the process</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 border border-green-200 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-lg">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <MdCheckCircle className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">100% requirement coverage with proof trails</h4>
+                        <p className="text-gray-600 text-sm">Complete audit trail ensures nothing is missed</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Decorative Elements */}
+                <div className="absolute -top-2 -right-2 w-20 h-20 bg-green-200/30 rounded-full blur-xl"></div>
+                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-emerald-200/20 rounded-full blur-2xl"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Transformation Arrow */}
+          <div className="hidden lg:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+            <div className="bg-purple-600 text-white rounded-full p-4 shadow-2xl">
+              <MdArrowForward className="w-8 h-8" />
+            </div>
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="text-center mt-16">
+            <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl p-8 text-white">
+              <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Bid Management?</h3>
+              <p className="text-lg mb-6 opacity-90">Join teams who've eliminated compliance chaos and accelerated their success</p>
+              <Button className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-2xl shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                Request Your Demo Today
+              </Button>
+            </div>
           </div>
         </div>
       </section>
