@@ -403,85 +403,85 @@ export default function UC3Page() {
       <section className="py-24 px-4 bg-gradient-to-br from-slate-50 via-gray-50 to-purple-50/20">
         <div className="max-w-6xl mx-auto">
           
-          {/* Large Feature Card with Faded Background */}
-          <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-12 lg:p-16 shadow-2xl border border-gray-100/50 relative overflow-hidden">
+          {/* Optimized Feature Card with Better Proportions */}
+          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-8 lg:p-10 shadow-xl border border-gray-100/50 relative overflow-hidden">
             
             {/* Subtle Background Pattern */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-50/30 via-transparent to-blue-50/20 rounded-3xl"></div>
-            <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-purple-100/20 to-transparent rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-blue-100/20 to-transparent rounded-full blur-3xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-50/20 via-transparent to-blue-50/15 rounded-2xl"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-purple-100/15 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute bottom-0 left-0 w-56 h-56 bg-gradient-to-tr from-blue-100/15 to-transparent rounded-full blur-2xl"></div>
             
             {/* Content Container */}
             <div className="relative z-10">
               
               {/* Main Headline */}
-              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight text-center">
+              <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight text-center">
                 Master complex bids before <span className="text-purple-600">they master you</span>
               </h1>
               
               {/* Supporting Subtext */}
-              <p className="text-xl lg:text-2xl text-gray-600 mb-12 leading-relaxed text-center max-w-3xl mx-auto">
+              <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed text-center max-w-3xl mx-auto">
                 Complex multi-lot RFPs are a compliance nightmare for expert teams because manual Excel tracking creates dangerous gaps that cost million-euro opportunities. With AItenders, you receive:
               </p>
               
               {/* Primary CTA */}
-              <div className="text-center mb-16">
-                <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-12 py-6 text-xl font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="text-center mb-10">
+                <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                   Watch a 2-Minute Demo
                 </Button>
               </div>
               
-              {/* Pain Point Features List */}
-              <div className="space-y-12">
+              {/* Pain Point Features Grid - More Compact */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                 
                 {/* Feature 1 */}
-                <div className="flex items-start space-x-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <MdBolt className="w-6 h-6 text-white" />
+                <div className="flex items-start space-x-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <MdBolt className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-3">Automatic Project Organization</h2>
-                    <p className="text-lg text-gray-600 leading-relaxed">
-                      Intelligent project organization that structures complex RFPs automatically, eliminating days of manual document processing and reducing setup time by 90%.
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">Automatic Project Organization</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      Intelligent organization that structures complex RFPs automatically, reducing setup time by 90%.
                     </p>
                   </div>
                 </div>
                 
                 {/* Feature 2 */}
-                <div className="flex items-start space-x-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <MdGroups className="w-6 h-6 text-white" />
+                <div className="flex items-start space-x-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <MdGroups className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-3">Seamless Expert Coordination</h2>
-                    <p className="text-lg text-gray-600 leading-relaxed">
-                      Coordination across technical, legal, commercial, and quality teams without bottlenecks, ensuring every specialist has clear visibility and accountability.
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">Seamless Expert Coordination</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      Coordinate technical, legal, commercial, and quality teams without bottlenecks.
                     </p>
                   </div>
                 </div>
                 
                 {/* Feature 3 */}
-                <div className="flex items-start space-x-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <MdShield className="w-6 h-6 text-white" />
+                <div className="flex items-start space-x-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <MdShield className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-3">Compliance Protection</h2>
-                    <p className="text-lg text-gray-600 leading-relaxed">
-                      Prevents costly bid exclusions by ensuring full compliance automatically, with real-time validation and comprehensive audit trails for enterprise requirements.
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">Compliance Protection</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      Prevents costly bid exclusions with real-time validation and comprehensive audit trails.
                     </p>
                   </div>
                 </div>
                 
                 {/* Feature 4 */}
-                <div className="flex items-start space-x-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <MdSecurity className="w-6 h-6 text-white" />
+                <div className="flex items-start space-x-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <MdSecurity className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-3">Secure Team Effort</h2>
-                    <p className="text-lg text-gray-600 leading-relaxed">
-                      Preparation work security that safeguards months of your team's effort with enterprise-grade protection, version control, and collaborative tracking systems.
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">Secure Team Effort</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      Enterprise-grade protection with version control and collaborative tracking systems.
                     </p>
                   </div>
                 </div>
