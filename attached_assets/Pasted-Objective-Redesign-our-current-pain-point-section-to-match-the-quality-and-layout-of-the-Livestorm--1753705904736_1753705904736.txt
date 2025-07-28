@@ -1,0 +1,108 @@
+Objective:
+Redesign our current pain point section to match the quality and layout of the Livestorm card-style feature section. After the hero, create a large, visually appealing card with a subtle/faded background effect. Arrange headline, subtext, and CTA at the top inside this card, then list key pain point features as concise H2s with supporting bodies below.
+Implementation Instructions
+
+    Section Layout
+
+        Place a single, large “card” container centered in the viewport, with generous padding and a subtle faded/gradient background effect (like Livestorm's).
+
+        The card must feel spacious, modern, and framed in white or very light neutral, casting a soft shadow.
+
+        On desktop: The card is centered with max-width (e.g., 800–1000px), with 32–48px padding inside.
+
+        On mobile: The card becomes full-width with slightly less padding but retains all content structure.
+
+    Content Structure (Top of Card)
+
+        H1: Place the main headline at the top, bold, with extra large font size.
+
+            Text: Master complex bids before they master you
+
+        Subtext: Add a supporting paragraph immediately under the H1 in a muted or secondary color, 18–20px, limited to ~2 lines on desktop.
+
+            Text: Complex multi-lot RFPs are a compliance nightmare for expert teams because manual Excel tracking creates dangerous gaps that cost million-euro opportunities. With AItenders, you receive:
+
+        CTA Button: Place a large, high-contrast CTA button directly under the subtext, centered or left-aligned for balance.
+
+            Text: Watch a 2-Minute Demo
+
+            Add hover and focus states.
+
+    Visual Design (Background Fade)
+
+        Give the card a subtle background fade, gradient, or patterned overlay inspired by Livestorm. Avoid heavy solid color blocks—use a pale accent or gentle swirl.
+
+        If possible, add a faint drop shadow or elevate the card with soft edges.
+
+    Pain Point Feature Listing (Below Hero Content in Card)
+
+        For each major pain point/benefit, create a mini-section within the card:
+
+            H2 (Feature Heading): Bold, concise, and action-oriented (e.g., “Automatic Project Organization”).
+
+            Body Paragraph: 1–2 lines describing the impact/value, written clearly and with a customer benefit outcome.
+
+        Present features vertically (not as a dense grid or bullets):
+
+            Add space between each for scan-ability.
+
+            Optionally, include a relevant icon left of each H2 to visually cue the theme.
+
+        Use proper HTML structure: <h2>, <p>, <button>, etc.
+
+    Additional Interaction & Accessibility
+
+        Everything should be keyboard navigable; all icons must have aria-label or alt text.
+
+        Minimal animation: Fade in the card, subtle hover/press on buttons.
+
+        Maintain at least 4.5:1 color contrast on all text and interactive elements.
+
+    Responsiveness
+
+        On small screens, stack all elements vertically in this order: H1 → Subtext → CTA → Each pain point (H2 + body).
+
+        Generous vertical spacing to aid readability/touch targets.
+
+Example Structure (Pseudocode/JSX for Reference only)
+
+jsx
+<section className="pain-card-section">
+  <div className="big-feature-card faded-bg">
+    <h1>Master complex bids before they master you</h1>
+    <p className="card-subtext">
+      Complex multi-lot RFPs are a compliance nightmare for expert teams because manual Excel tracking creates dangerous gaps that cost million-euro opportunities. With AItenders, you receive:
+    </p>
+    <button className="cta-btn">Watch a 2-Minute Demo</button>
+    <div className="features-list">
+      <div className="feature-item">
+        <h2>Automatic Project Organization</h2>
+        <p>Intelligent project organization that structures complex RFPs automatically.</p>
+      </div>
+      <div className="feature-item">
+        <h2>Seamless Expert Coordination</h2>
+        <p>Coordination across technical, legal, commercial, and quality teams without bottlenecks.</p>
+      </div>
+      <div className="feature-item">
+        <h2>Compliance Protection</h2>
+        <p>Prevents costly bid exclusions by ensuring full compliance automatically.</p>
+      </div>
+      <div className="feature-item">
+        <h2>Secure Team Effort</h2>
+        <p>Preparation work security that safeguards months of your team's effort.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+Summary for Replit Developer
+
+    Large center card after hero with faded background design (not harsh color block).
+
+    H1, subtext, and CTA at the top, visually prominent—mirroring the inviting structure of Livestorm’s example.
+
+    List each core pain point as a mini-section inside the card, with H2 title and succinct description, optional icon.
+
+    Prioritize whitespace, font hierarchy, and touch-friendly spacing.
+
+    All styling, interaction, and HTML structure must follow best practices in accessibility and B2B SaaS standards.
