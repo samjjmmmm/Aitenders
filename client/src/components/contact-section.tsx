@@ -170,7 +170,11 @@ export default function ContactSection() {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-4 md:mb-0">
-              <span className="text-xl font-bold">Aitenders</span>
+              <img 
+                src="/attached_assets/Untitled(4)_1753704411700.png" 
+                alt="Aitenders" 
+                className="h-8 w-auto"
+              />
               <span className="ml-4 text-gray-400">© 2024 Aitenders. All rights reserved.</span>
             </div>
             <div className="flex space-x-6 text-sm text-gray-400">
