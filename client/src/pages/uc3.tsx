@@ -187,7 +187,6 @@ export default function UC3Page() {
           </div>
         </div>
       </section>
-
       {/* Pain Points Section - Clean Modern High-Conversion Design */}
       <section className="py-24 px-4 bg-gradient-to-br from-slate-50 via-gray-50 to-purple-50/20">
         <div className="max-w-7xl mx-auto">
@@ -300,14 +299,11 @@ export default function UC3Page() {
 
         </div>
       </section>
-
       {/* Solution Section - Alternating Layout Design */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              AItenders amplifies your team's intelligence with AI-driven project coordination and compliance tools for complex, multi-lot RFPs.
-            </h1>
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">AItenders empowers your team with AI-driven coordination and compliance for complex RFPs</h1>
             <h3 className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Structure massive documentation instantly, orchestrate expert collaboration seamlessly, 
               and control every project evolution without gaps.
@@ -467,9 +463,6 @@ export default function UC3Page() {
           </div>
         </div>
       </section>
-
-
-
       {/* Target Audience Section - Interactive Design */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
@@ -616,7 +609,6 @@ export default function UC3Page() {
           </Card>
         </div>
       </section>
-
       {/* User Journey Section - High Conversion Design */}
       <section className="py-24 px-4 bg-gradient-to-br from-slate-50 via-white to-purple-50/30">
         <div className="max-w-7xl mx-auto">
@@ -722,7 +714,6 @@ export default function UC3Page() {
           </div>
         </div>
       </section>
-
       {/* KPI Section - High Impact Design */}
       <section className="py-24 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -776,7 +767,6 @@ export default function UC3Page() {
           </div>
         </div>
       </section>
-
       {/* Comparison Section - High Conversion Design */}
       <section className="py-24 px-4 bg-gradient-to-br from-gray-50 via-white to-slate-50">
         <div className="max-w-7xl mx-auto">
@@ -976,7 +966,6 @@ export default function UC3Page() {
           </div>
         </div>
       </section>
-
       {/* Trust & Compliance */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
@@ -1008,7 +997,6 @@ export default function UC3Page() {
           </Card>
         </div>
       </section>
-
       {/* Call to Action */}
       <section className="py-20 px-4 bg-purple-600">
         <div className="max-w-4xl mx-auto text-center text-white">
@@ -1029,7 +1017,6 @@ export default function UC3Page() {
           <p className="text-sm mt-6 opacity-80">Enterprise-grade security • Multi-expert collaboration • Complete audit trails</p>
         </div>
       </section>
-
       {/* Contact Section */}
       <ContactSection />
     </div>
