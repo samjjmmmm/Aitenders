@@ -45,18 +45,18 @@ export default function UC2Page() {
       <Header />
       
       {/* Hero Section - Professional SaaS Design */}
-      <section className="py-40 px-8 bg-gradient-to-br from-white via-slate-50/30 to-purple-50/20 relative overflow-hidden">
+      <section className="py-40 px-8 bg-gradient-to-br from-aitenders-white-blue via-aitenders-pale-blue/30 to-aitenders-pastel-blue/20 relative overflow-hidden">
         <div className="max-w-6xl mx-auto text-center relative z-10">
-          <Badge className="mb-8 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 border-blue-200/50 px-6 py-3 text-lg font-medium rounded-full shadow-sm">
+          <Badge className="mb-8 bg-gradient-to-r from-aitenders-pastel-blue to-aitenders-light-blue text-aitenders-dark-blue border-aitenders-light-blue/50 px-6 py-3 text-lg font-medium rounded-full shadow-sm">
             Use Case 2 • Medium Project Management
           </Badge>
           
-          <h1 className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-[1.1] tracking-tight">
+          <h1 className="text-6xl lg:text-7xl font-bold text-aitenders-black mb-12 leading-[1.1] tracking-tight">
             Content will be <br/>
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">added later</span>
+            <span className="bg-gradient-to-r from-aitenders-primary-blue to-aitenders-dark-blue bg-clip-text text-transparent">added later</span>
           </h1>
           
-          <p className="text-2xl lg:text-3xl text-gray-600 max-w-4xl mx-auto mb-16 leading-relaxed font-light">
+          <p className="text-2xl lg:text-3xl text-aitenders-dark-blue max-w-4xl mx-auto mb-16 leading-relaxed font-light">
             Placeholder content for UC2 - same structure as UC3
           </p>
           
@@ -64,7 +64,7 @@ export default function UC2Page() {
           <div className="mb-16">
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto"
+              className="bg-gradient-to-r from-aitenders-primary-blue to-aitenders-dark-blue hover:from-aitenders-dark-blue hover:to-aitenders-black text-aitenders-white-blue px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto"
             >
               Request a Demo
             </Button>
@@ -74,7 +74,7 @@ export default function UC2Page() {
           <div className="mb-20">
             <Button 
               variant="ghost" 
-              className="text-purple-600 hover:text-purple-700 hover:bg-purple-50/80 px-6 py-4 text-xl font-medium underline decoration-2 underline-offset-4 rounded-2xl transition-all duration-300"
+              className="text-aitenders-primary-blue hover:text-aitenders-dark-blue hover:bg-aitenders-pale-blue/80 px-6 py-4 text-xl font-medium underline decoration-2 underline-offset-4 rounded-2xl transition-all duration-300"
             >
               Download Use Case →
             </Button>
@@ -83,24 +83,24 @@ export default function UC2Page() {
       </section>
 
       {/* Pain Points Section - Main Feature Card + Supporting Cards */}
-      <section className="py-32 px-8 bg-gradient-to-br from-slate-50 via-gray-50 to-purple-50/20 relative overflow-hidden">
+      <section className="py-32 px-8 bg-gradient-to-br from-aitenders-pale-blue via-aitenders-pastel-blue to-aitenders-light-blue/20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20">
+          <div className="bg-aitenders-white-blue/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-aitenders-light-blue/50 relative overflow-hidden mb-20">
             <div className="relative z-10 text-center">
-              <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-12 leading-[1.1] tracking-tight">
-                Pain Point Content <span className="text-purple-600">Placeholder</span>
+              <h2 className="text-5xl lg:text-6xl font-bold text-aitenders-black mb-12 leading-[1.1] tracking-tight">
+                Pain Point Content <span className="text-aitenders-primary-blue">Placeholder</span>
               </h2>
               
-              <p className="text-2xl lg:text-3xl text-gray-600 mb-16 leading-relaxed max-w-5xl mx-auto font-light">
+              <p className="text-2xl lg:text-3xl text-aitenders-dark-blue mb-16 leading-relaxed max-w-5xl mx-auto font-light">
                 Content will be added later - same structure as UC3 pain points section.
               </p>
               
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-                <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
+                <Button className="bg-gradient-to-r from-aitenders-primary-blue to-aitenders-dark-blue hover:from-aitenders-dark-blue hover:to-aitenders-black text-aitenders-white-blue px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
                   Request a Demo
                 </Button>
-                <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white px-12 py-6 text-xl font-semibold rounded-3xl transition-all duration-300">
+                <Button variant="outline" className="border-aitenders-primary-blue text-aitenders-primary-blue hover:bg-aitenders-primary-blue hover:text-aitenders-white-blue px-12 py-6 text-xl font-semibold rounded-3xl transition-all duration-300">
                   <MdPlayArrow className="w-6 h-6 mr-2" />
                   Watch Quick Demo
                 </Button>
@@ -129,7 +129,7 @@ export default function UC2Page() {
                 </div>
 
                 <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-white/60">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
+                  <div className="w-16 h-16 bg-gradient-to-br from-aitenders-primary-blue to-aitenders-dark-blue rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
                     <MdShield className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Feature 3</h3>

@@ -8,6 +8,19 @@ Aitenders is a full-stack web application that provides AI-powered tender manage
 
 Preferred communication style: Simple, everyday language.
 
+## Brand Identity & Design System
+
+**Aitenders Color Palette** (Implemented July 2025):
+- **Primary Blue**: #3880E8 (aitenders-primary-blue) - Main brand color for buttons, links, accents
+- **Dark Blue**: #112646 (aitenders-dark-blue) - Deep navy for headers, text, backgrounds  
+- **White Blue**: #FBFCFF (aitenders-white-blue) - Premium white-blue for backgrounds, text on dark
+- **Pale Blue**: #F5F9FE (aitenders-pale-blue) - Light backgrounds, subtle sections
+- **Pastel Blue**: #EBF2FD (aitenders-pastel-blue) - Gentle backgrounds, gradients
+- **Light Blue**: #C3D9F8 (aitenders-light-blue) - Borders, dividers, secondary elements
+- **Black**: #0B1A2E (aitenders-black) - Premium deep black for contrast
+
+**Design Philosophy**: Enterprise B2B SaaS aesthetic with Livestorm-level visual polish, professional trustworthiness, and sophisticated multi-layered shadows with generous spacing.
+
 ## System Architecture
 
 The application follows a modern full-stack architecture with clear separation between frontend and backend components:

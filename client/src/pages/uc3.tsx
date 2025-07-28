@@ -1654,19 +1654,19 @@ export default function UC3Page() {
         </div>
       </section>
       {/* Call to Action */}
-      <section className="py-20 px-4 bg-purple-600">
-        <div className="max-w-4xl mx-auto text-center text-white">
+      <section className="py-20 px-4 bg-aitenders-dark-blue">
+        <div className="max-w-4xl mx-auto text-center text-aitenders-white-blue">
           <h2 className="text-4xl font-bold mb-6">Ready to Master Your Next Complex Project?</h2>
           <p className="text-xl mb-8 opacity-90">
             Join the project teams who trust AItenders to secure their complex bids, eliminate compliance risks, 
             and win with complete confidence.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 text-lg">
+            <Button size="lg" className="bg-aitenders-primary-blue text-aitenders-white-blue hover:bg-aitenders-primary-blue/90 px-8 py-4 text-lg">
               <MdMessage className="w-5 h-5 mr-2" />
               Request a Demo
             </Button>
-            <Button variant="outline" size="lg" className="border-white/80 text-white bg-white/10 hover:bg-white hover:text-purple-600 px-8 py-4 text-lg backdrop-blur-sm">
+            <Button variant="outline" size="lg" className="border-aitenders-white-blue/80 text-aitenders-white-blue bg-aitenders-white-blue/10 hover:bg-aitenders-white-blue hover:text-aitenders-dark-blue px-8 py-4 text-lg backdrop-blur-sm">
               Contact Our Team
             </Button>
           </div>

@@ -46,19 +46,19 @@ export default function UC1Page() {
       <Header />
       
       {/* Hero Section - Professional SaaS Design */}
-      <section className="py-40 px-8 bg-gradient-to-br from-white via-slate-50/30 to-purple-50/20 relative overflow-hidden">
+      <section className="py-40 px-8 bg-gradient-to-br from-aitenders-white-blue via-aitenders-pale-blue/30 to-aitenders-pastel-blue/20 relative overflow-hidden">
         {/* Subtitle placeholder - exact same structure as UC3 */}
         <div className="max-w-6xl mx-auto text-center relative z-10">
-          <Badge className="mb-8 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 border-blue-200/50 px-6 py-3 text-lg font-medium rounded-full shadow-sm">
+          <Badge className="mb-8 bg-gradient-to-r from-aitenders-pastel-blue to-aitenders-light-blue text-aitenders-dark-blue border-aitenders-light-blue/50 px-6 py-3 text-lg font-medium rounded-full shadow-sm">
             Use Case 1 • Fast-Track Small Project Bids
           </Badge>
           
-          <h1 className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-[1.1] tracking-tight">
+          <h1 className="text-6xl lg:text-7xl font-bold text-aitenders-black mb-12 leading-[1.1] tracking-tight">
             Content will be <br/>
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">added later</span>
+            <span className="bg-gradient-to-r from-aitenders-primary-blue to-aitenders-dark-blue bg-clip-text text-transparent">added later</span>
           </h1>
           
-          <p className="text-2xl lg:text-3xl text-gray-600 max-w-4xl mx-auto mb-16 leading-relaxed font-light">
+          <p className="text-2xl lg:text-3xl text-aitenders-dark-blue max-w-4xl mx-auto mb-16 leading-relaxed font-light">
             Placeholder content for UC1 - same structure as UC3
           </p>
           

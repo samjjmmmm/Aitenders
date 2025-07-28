@@ -20,9 +20,9 @@ export default function UC8Page() {
     <div className="min-h-screen bg-white">
       <Header />
       
-      <section className="py-40 px-8 bg-gradient-to-br from-white via-slate-50/30 to-purple-50/20 relative overflow-hidden">
+      <section className="py-40 px-8 bg-gradient-to-br from-aitenders-white-blue via-aitenders-pale-blue/30 to-aitenders-pastel-blue/20 relative overflow-hidden">
         <div className="max-w-6xl mx-auto text-center relative z-10">
-          <Badge className="mb-8 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 border-blue-200/50 px-6 py-3 text-lg font-medium rounded-full shadow-sm">
+          <Badge className="mb-8 bg-gradient-to-r from-aitenders-pastel-blue to-aitenders-light-blue text-aitenders-dark-blue border-aitenders-light-blue/50 px-6 py-3 text-lg font-medium rounded-full shadow-sm">
             Use Case 8 • Content Coming Soon
           </Badge>
           
