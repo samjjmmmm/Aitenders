@@ -11,6 +11,7 @@ import { FaUsers, FaShieldAlt, FaChartBar, FaFileAlt, FaCogs } from "react-icons
 import ContactSection from "@/components/contact-section";
 import UC3AnalysisCard from "@/components/UC3AnalysisCard";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function UC3Page() {
   // Target audience data with interactive content
