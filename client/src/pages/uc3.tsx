@@ -356,68 +356,7 @@ export default function UC3Page() {
         </div>
       </section>
 
-      {/* Before and After Comparison */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">What Changes with AItenders</h2>
-            <p className="text-lg text-gray-600">See the transformation in complex project management</p>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <Card className="p-8 border-red-100 bg-red-50/30">
-              <h3 className="text-2xl font-bold text-red-800 mb-6">Manual Process Before</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <MdWarning className="w-6 h-6 text-red-600 mr-3 mt-1" />
-                  <span className="text-gray-700">Excel compliance chaos across 8+ experts</span>
-                </li>
-                <li className="flex items-start">
-                  <MdWarning className="w-6 h-6 text-red-600 mr-3 mt-1" />
-                  <span className="text-gray-700">Days lost extracting requirements from 500+ pages</span>
-                </li>
-                <li className="flex items-start">
-                  <MdWarning className="w-6 h-6 text-red-600 mr-3 mt-1" />
-                  <span className="text-gray-700">Copy-paste errors risk million-euro exclusions</span>
-                </li>
-                <li className="flex items-start">
-                  <MdWarning className="w-6 h-6 text-red-600 mr-3 mt-1" />
-                  <span className="text-gray-700">Multiple review cycles delay submission</span>
-                </li>
-                <li className="flex items-start">
-                  <MdWarning className="w-6 h-6 text-red-600 mr-3 mt-1" />
-                  <span className="text-gray-700">Hidden requirement gaps cause rejections</span>
-                </li>
-              </ul>
-            </Card>
 
-            <Card className="p-8 border-green-100 bg-green-50/30">
-              <h3 className="text-2xl font-bold text-green-800 mb-6">AI-Powered Process With AItenders</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <MdCheckCircle className="w-6 h-6 text-green-600 mr-3 mt-1" />
-                  <span className="text-gray-700">Unified AI compliance dashboard for all teams</span>
-                </li>
-                <li className="flex items-start">
-                  <MdCheckCircle className="w-6 h-6 text-green-600 mr-3 mt-1" />
-                  <span className="text-gray-700">Instant requirement extraction and classification</span>
-                </li>
-                <li className="flex items-start">
-                  <MdCheckCircle className="w-6 h-6 text-green-600 mr-3 mt-1" />
-                  <span className="text-gray-700">AI-guided writing with source verification</span>
-                </li>
-                <li className="flex items-start">
-                  <MdCheckCircle className="w-6 h-6 text-green-600 mr-3 mt-1" />
-                  <span className="text-gray-700">Real-time inconsistency detection and alerts</span>
-                </li>
-                <li className="flex items-start">
-                  <MdCheckCircle className="w-6 h-6 text-green-600 mr-3 mt-1" />
-                  <span className="text-gray-700">100% requirement coverage with proof trails</span>
-                </li>
-              </ul>
-            </Card>
-          </div>
-        </div>
-      </section>
 
       {/* Target Audience Section - Interactive Design */}
       <section className="py-20 px-4 bg-gray-50">
