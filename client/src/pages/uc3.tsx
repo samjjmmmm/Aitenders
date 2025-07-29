@@ -499,7 +499,7 @@ export default function UC3Page() {
               {/* Body Copy */}
               <p className="text-2xl lg:text-3xl text-gray-600 mb-16 leading-relaxed max-w-5xl mx-auto font-light">Managing large tenders means handling thousands of documents, multiple contributors, and strict compliance standards. Without the right tools, oversights and version errors can delay submissions and jeopardize multi million contracts. </p>
               
-              <p className="text-2xl lg:text-3xl text-gray-600 mb-16 leading-relaxed max-w-5xl mx-auto font-light">With Aitenders, validation tracking and smart AI reading ensure nothing is overlooked so you deliver on time with confidence.</p>
+              <p className="text-2xl lg:text-3xl text-gray-600 mb-16 leading-relaxed max-w-5xl mx-auto font-light">With Aitenders, you gain enterprise-level compliance tracking, bulk versioning, and AI-powered requirement detection to ensure every clause is addressed and every deadline met.</p>
               
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
