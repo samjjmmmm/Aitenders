@@ -22,7 +22,7 @@ import bouyguesLogo from "@assets/Bouyges_1753711339292.png";
 import colasLogo from "@assets/Colas_1753711339292.png";
 
 export default function UC3Page() {
-  // Target toppin data with interactive content
+  // Target audience data with interactive content
   const targetToppins = [
     {
       id: 'bid-response',
@@ -101,7 +101,7 @@ export default function UC3Page() {
     }
   ];
 
-  const [activeToppin, setActiveToppin] = useState(targetToppins[0]);
+  const [activeAudience, setActiveAudience] = useState(targetToppins[0]);
 
   const painPoints = [
     {
@@ -927,18 +927,18 @@ export default function UC3Page() {
 
             {/* Interactive Navigation Tabs */}
             <div className="flex flex-wrap justify-center gap-6 mb-16">
-              {targetToppins.map((toppin) => (
+              {targetToppins.map((audience) => (
                 <button
-                  key={toppin.id}
-                  onClick={() => setActiveToppin(toppin)}
-                  onMouseEnter={() => setActiveToppin(toppin)}
+                  key={audience.id}
+                  onClick={() => setActiveAudience(audience)}
+                  onMouseEnter={() => setActiveAudience(audience)}
                   className={`px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 ${
-                    activeToppin.id === toppin.id
+                    activeAudience.id === audience.id
                       ? 'bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-xl'
                       : 'bg-white text-gray-700 hover:bg-gray-50 shadow-sm border border-gray-200'
                   }`}
                 >
-                  {toppin.title}
+                  {audience.title}
                 </button>
               ))}
             </div>
@@ -953,20 +953,20 @@ export default function UC3Page() {
 
               {/* Left Side - Dynamic Content */}
               <motion.div 
-                key={activeToppin.id}
+                key={activeAudience.id}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
                 className="p-16 flex flex-col justify-center"
               >
-                <div className={`w-16 h-16 ${activeToppin.iconBg} rounded-2xl flex items-center justify-center mb-8 transition-all duration-300 shadow-lg`}>
-                  <activeToppin.icon className={`w-8 h-8 ${activeToppin.iconColor}`} />
+                <div className={`w-16 h-16 ${activeAudience.iconBg} rounded-2xl flex items-center justify-center mb-8 transition-all duration-300 shadow-lg`}>
+                  <activeAudience.icon className={`w-8 h-8 ${activeAudience.iconColor}`} />
                 </div>
 
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">{activeToppin.title}</h3>
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">{activeAudience.title}</h3>
 
                 <p className="text-gray-700 text-xl leading-relaxed mb-10 font-light">
-                  {activeToppin.description}
+                  {activeAudience.description}
                 </p>
 
                 <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 text-lg font-semibold rounded-2xl w-fit transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
@@ -976,7 +976,7 @@ export default function UC3Page() {
 
               {/* Right Side - Dynamic UI Mockup */}
               <motion.div 
-                key={`${activeToppin.id}-ui`}
+                key={`${activeAudience.id}-ui`}
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
@@ -1007,16 +1007,16 @@ export default function UC3Page() {
                         <div className="bg-gray-50 rounded-lg p-3">
                           <div className="flex justify-between items-center mb-2">
                             <span className="text-sm text-gray-700">Requirements Analysis</span>
-                            <span className={`text-sm font-medium text-${activeToppin.dashboardData.requirements.color}-600`}>
-                              {activeToppin.dashboardData.requirements.progress}%
+                            <span className={`text-sm font-medium text-${activeAudience.dashboardData.requirements.color}-600`}>
+                              {activeAudience.dashboardData.requirements.progress}%
                             </span>
                           </div>
                           <div className="w-full bg-gray-200 rounded-full h-2">
                             <motion.div 
                               initial={{ width: 0 }}
-                              animate={{ width: `${activeToppin.dashboardData.requirements.progress}%` }}
+                              animate={{ width: `${activeAudience.dashboardData.requirements.progress}%` }}
                               transition={{ duration: 0.8, delay: 0.3 }}
-                              className={`bg-${activeToppin.dashboardData.requirements.color}-500 h-2 rounded-full`}
+                              className={`bg-${activeAudience.dashboardData.requirements.color}-500 h-2 rounded-full`}
                             />
                           </div>
                         </div>
@@ -1024,16 +1024,16 @@ export default function UC3Page() {
                         <div className="bg-gray-50 rounded-lg p-3">
                           <div className="flex justify-between items-center mb-2">
                             <span className="text-sm text-gray-700">Expert Coordination</span>
-                            <span className={`text-sm font-medium text-${activeToppin.dashboardData.coordination.color}-600`}>
-                              {activeToppin.dashboardData.coordination.progress}%
+                            <span className={`text-sm font-medium text-${activeAudience.dashboardData.coordination.color}-600`}>
+                              {activeAudience.dashboardData.coordination.progress}%
                             </span>
                           </div>
                           <div className="w-full bg-gray-200 rounded-full h-2">
                             <motion.div 
                               initial={{ width: 0 }}
-                              animate={{ width: `${activeToppin.dashboardData.coordination.progress}%` }}
+                              animate={{ width: `${activeAudience.dashboardData.coordination.progress}%` }}
                               transition={{ duration: 0.8, delay: 0.4 }}
-                              className={`bg-${activeToppin.dashboardData.coordination.color}-500 h-2 rounded-full`}
+                              className={`bg-${activeAudience.dashboardData.coordination.color}-500 h-2 rounded-full`}
                             />
                           </div>
                         </div>
@@ -1041,16 +1041,16 @@ export default function UC3Page() {
                         <div className="bg-gray-50 rounded-lg p-3">
                           <div className="flex justify-between items-center mb-2">
                             <span className="text-sm text-gray-700">Compliance Check</span>
-                            <span className={`text-sm font-medium text-${activeToppin.dashboardData.compliance.color}-600`}>
-                              {activeToppin.dashboardData.compliance.progress}%
+                            <span className={`text-sm font-medium text-${activeAudience.dashboardData.compliance.color}-600`}>
+                              {activeAudience.dashboardData.compliance.progress}%
                             </span>
                           </div>
                           <div className="w-full bg-gray-200 rounded-full h-2">
                             <motion.div 
                               initial={{ width: 0 }}
-                              animate={{ width: `${activeToppin.dashboardData.compliance.progress}%` }}
+                              animate={{ width: `${activeAudience.dashboardData.compliance.progress}%` }}
                               transition={{ duration: 0.8, delay: 0.5 }}
-                              className={`bg-${activeToppin.dashboardData.compliance.color}-500 h-2 rounded-full`}
+                              className={`bg-${activeAudience.dashboardData.compliance.color}-500 h-2 rounded-full`}
                             />
                           </div>
                         </div>
@@ -1083,24 +1083,24 @@ export default function UC3Page() {
 
                 {/* Dynamic Floating Notification */}
                 <motion.div 
-                  key={`${activeToppin.id}-notification`}
+                  key={`${activeAudience.id}-notification`}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3, delay: 0.6 }}
                   className="absolute top-4 right-4 bg-green-500 text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium"
                 >
-                  {activeToppin.notification}
+                  {activeAudience.notification}
                 </motion.div>
 
                 {/* Dynamic Floating Alert */}
                 <motion.div 
-                  key={`${activeToppin.id}-alert`}
+                  key={`${activeAudience.id}-alert`}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3, delay: 0.7 }}
                   className="absolute bottom-4 left-4 bg-blue-500 text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium"
                 >
-                  {activeToppin.alert}
+                  {activeAudience.alert}
                 </motion.div>
               </motion.div>
             </div>
