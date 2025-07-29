@@ -241,7 +241,7 @@ export default function UC3Page() {
                   Chaque exigence traitée, <span className="text-purple-600">chaque risque maîtrisé</span>
                 </h1>
                 
-                <p className="text-lg md:text-xl text-gray-600 mb-16 leading-relaxed font-light">Conçue pour les grands projets multi‑lots, Aitenders transforme des appels d’offres de plusieurs centaines de pages en une base intelligente et exploitable dès le premier jour.</p>
+                <p className="text-lg md:text-xl text-gray-600 mb-16 leading-relaxed font-light">La seule plateforme pensée pour orchestrer les grands appels d’offres complexes :</p>
               </div>
               
               
