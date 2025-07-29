@@ -1,0 +1,122 @@
+I already have a homepage with 4 decision cards (see screenshot). I want to update this page into a guided 2-step flow that leads users to one or more predefined Use Cases (UC1 to UC8).
+1. Hero Section
+
+Keep headline and style consistent with current design.
+
+    Headline: “Trouvez la solution adaptée à votre projet en quelques clics”
+
+    Subheadline: “Choisissez vos besoins et la taille de votre projet pour accéder à un cas d’usage personnalisé.”
+
+2. Step 1 – Domain Selection
+
+Replace the 4 existing cards with 3 multi-select cards.
+Users can select 1, 2, or all 3.
+
+Cards:
+
+    Tender Management
+
+        Subtitle: Optimisez vos réponses aux appels d’offres.
+
+        Description: Analyse IA, collaboration et suivi de conformité pour maximiser vos chances de succès.
+
+    Contract & Project Execution
+
+        Subtitle: Pilotez vos projets et contrats en toute confiance.
+
+        Description: Suivi des livrables, conformité et gestion proactive des changements.
+
+    Knowledge Management
+
+        Subtitle: Capitalisez sur vos savoirs et expériences passées.
+
+        Description: Accès rapide aux références, modèles et comparables pour chaque nouveau projet.
+
+Logic:
+As soon as the user selects at least one card, display Step 2 below.
+3. Step 2 – Project Size Selection
+
+Display 3 exclusive selection cards (single-select).
+
+Cards:
+
+    Petit Projet
+
+        Subtitle: Idéal pour les petites équipes et besoins ciblés.
+
+        Description: Mise en place rapide, fonctionnalités essentielles.
+
+    Projet Moyen
+
+        Subtitle: Un équilibre entre flexibilité et puissance.
+
+        Description: Outils complets pour des projets structurés et collaboratifs.
+
+    Grand Projet
+
+        Subtitle: Conçu pour les organisations complexes et à grande échelle.
+
+        Description: Solutions avancées, IA sur mesure et sécurité renforcée.
+
+Logic:
+Once a size is chosen, map the combination of Step 1 + Step 2 to UC(s).
+4. UC Mapping Logic
+
+Map to predefined UCs (UC1–UC8).
+Each combination of domain(s) + project size leads to a UC or a set of UCs.
+
+Decision Table (example – adjust with your official UC list):
+
+    Tender Management + Small → UC1
+
+    Tender Management + Medium → UC2
+
+    Tender Management + Large → UC3
+
+    Execution + Small → UC4
+
+    Execution + Medium → UC5
+
+    Execution + Large → UC6
+
+    Knowledge Management + Small → UC7
+
+    Knowledge Management + Medium → UC8
+
+    Knowledge Management + Large → UC8
+
+    Tender + Execution → UC2 & UC5 (show both)
+
+    Tender + Knowledge → UC3 & UC7
+
+    Execution + Knowledge → UC6 & UC7
+
+    All 3 → UC8
+
+Logic Handling:
+
+    If only one UC matches → redirect directly to that UC page.
+
+    If two or more UCs match → display UC cards for each, with:
+
+        UC Title (e.g. UC1, UC2)
+
+        Short description (provided from UC library)
+
+        CTA button: “Découvrir ce cas d’usage”
+
+5. UI/UX Requirements
+
+    Use the current clean card style.
+
+    Step 2 cards appear dynamically after Step 1 selection.
+
+    Multi-select for Step 1, single-select for Step 2.
+
+    Smooth animations (fade/slide) for Step 2 and UC results.
+
+    UC cards styled consistently with Step 1 & Step 2.
+
+    “Back” buttons to allow revising Step 1 or Step 2 choices.
+
+    Keep Aitenders branding as shown in the current page.

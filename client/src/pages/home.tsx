@@ -36,9 +36,6 @@ interface SelectionCard {
 
 export default function HomePage() {
   const [message, setMessage] = useState("");
-  const [currentStep, setCurrentStep] = useState(1);
-  const [selections, setSelections] = useState<string[]>([]);
-  const [availableUCs, setAvailableUCs] = useState<string[]>([]);
   const [chatExpanded, setChatExpanded] = useState(false);
   const [, setLocation] = useLocation();
   const { toast } = useToast();
@@ -83,216 +80,102 @@ export default function HomePage() {
     }
   };
 
-  // Step 1: Current Situation
+  // Step 1: Domain Selection (Multi-select)
   const step1Cards: SelectionCard[] = [
     {
-      id: "preparing-bid",
-      title: "I am preparing a bid or proposal to submit",
+      id: "tender-management",
+      title: "Tender Management",
+      description: "Optimisez vos réponses aux appels d'offres. Analyse IA, collaboration et suivi de conformité pour maximiser vos chances de succès.",
       icon: MdInsertDriveFile,
-      color: "bg-blue-500/10 text-blue-600",
-      useCases: ["UC1", "UC2", "UC3", "UC7"],
-      nextStep: "bid"
+      color: "bg-aitenders-primary-blue/10 text-aitenders-primary-blue"
     },
     {
-      id: "managing-execution",
-      title: "I am managing a project that is already in execution",
+      id: "contract-execution",
+      title: "Contract & Project Execution",
+      description: "Pilotez vos projets et contrats en toute confiance. Suivi des livrables, conformité et gestion proactive des changements.",
       icon: MdSettings,
-      color: "bg-green-500/10 text-green-600",
-      useCases: ["UC4", "UC5", "UC6", "UC8"],
-      nextStep: "execution"
+      color: "bg-aitenders-dark-blue/10 text-aitenders-dark-blue"
     },
     {
-      id: "drafting-compliance",
-      title: "I need support to draft documents and prove compliance",
-      icon: MdEmojiEvents,
-      color: "bg-purple-500/10 text-purple-600",
-      useCases: ["UC7", "UC8"],
-      nextStep: "drafting"
-    },
-    {
-      id: "exploring-aitenders",
-      title: "I am exploring how Aitenders can help before deciding",
-      icon: MdGpsFixed,
-      color: "bg-orange-500/10 text-orange-600",
-      redirectTo: "/uc1"
+      id: "knowledge-management",
+      title: "Knowledge Management",
+      description: "Capitalisez sur vos savoirs et expériences passées. Accès rapide aux références, modèles et comparables pour chaque nouveau projet.",
+      icon: MdLightbulb,
+      color: "bg-aitenders-primary-blue/10 text-aitenders-primary-blue"
     }
   ];
 
-  // Step 2: The Type of Project You Handle
-  const step2Cards: { [key: string]: SelectionCard[] } = {
-    bid: [
-      {
-        id: "small-frequent",
-        title: "I handle small, frequent projects that need fast validation",
-        icon: MdSchedule,
-        color: "bg-blue-500/10 text-blue-600",
-        useCases: ["UC1"]
-      },
-      {
-        id: "midsize-clauses",
-        title: "I work on mid-size projects with multiple clauses and risks",
-        icon: MdCheckCircle,
-        color: "bg-green-500/10 text-green-600",
-        useCases: ["UC2"]
-      },
-      {
-        id: "large-complex",
-        title: "I lead large, complex tenders with many contributors",
-        icon: MdPeople,
-        color: "bg-purple-500/10 text-purple-600",
-        useCases: ["UC3"]
-      },
-      {
-        id: "structured-drafting",
-        title: "I mainly need structured drafting support for my responses",
-        icon: MdEdit,
-        color: "bg-orange-500/10 text-orange-600",
-        useCases: ["UC7"]
+  // Step 2: Project Size Selection (Single-select)
+  const step2Cards: SelectionCard[] = [
+    {
+      id: "petit-projet",
+      title: "Petit Projet",
+      description: "Idéal pour les petites équipes et besoins ciblés. Mise en place rapide, fonctionnalités essentielles.",
+      icon: MdSchedule,
+      color: "bg-aitenders-primary-blue/10 text-aitenders-primary-blue"
+    },
+    {
+      id: "projet-moyen",
+      title: "Projet Moyen",
+      description: "Un équilibre entre flexibilité et puissance. Outils complets pour des projets structurés et collaboratifs.",
+      icon: MdCheckCircle,
+      color: "bg-aitenders-dark-blue/10 text-aitenders-dark-blue"
+    },
+    {
+      id: "grand-projet",
+      title: "Grand Projet",
+      description: "Conçu pour les organisations complexes et à grande échelle. Solutions avancées, IA sur mesure et sécurité renforcée.",
+      icon: MdPeople,
+      color: "bg-aitenders-primary-blue/10 text-aitenders-primary-blue"
+    }
+  ];
+
+  // UC mapping logic based on domain + project size combinations
+  const getUCsFromSelection = (domainSelections: string[], projectSize: string): string[] => {
+    const domains = new Set(domainSelections);
+    
+    // Single domain mappings
+    if (domains.size === 1) {
+      if (domains.has('tender-management')) {
+        if (projectSize === 'petit-projet') return ['UC1'];
+        if (projectSize === 'projet-moyen') return ['UC2'];
+        if (projectSize === 'grand-projet') return ['UC3'];
       }
-    ],
-    execution: [
-      {
-        id: "small-straightforward",
-        title: "I run small, straightforward projects that require quick answers",
-        icon: MdGpsFixed,
-        color: "bg-blue-500/10 text-blue-600",
-        useCases: ["UC4"]
-      },
-      {
-        id: "midsize-evolving",
-        title: "I manage mid-size projects with evolving commitments",
-        icon: MdAccountCircle,
-        color: "bg-green-500/10 text-green-600",
-        useCases: ["UC5"]
-      },
-      {
-        id: "large-multidiscipline",
-        title: "I oversee large, multi-discipline projects with high risk",
-        icon: MdSecurity,
-        color: "bg-purple-500/10 text-purple-600",
-        useCases: ["UC6"]
-      },
-      {
-        id: "compliance-execution",
-        title: "I need help drafting and justifying compliance during execution",
-        icon: MdEmojiEvents,
-        color: "bg-orange-500/10 text-orange-600",
-        useCases: ["UC8"]
+      if (domains.has('contract-execution')) {
+        if (projectSize === 'petit-projet') return ['UC4'];
+        if (projectSize === 'projet-moyen') return ['UC5'];
+        if (projectSize === 'grand-projet') return ['UC6'];
       }
-    ],
-    drafting: [
-      {
-        id: "bid-coverage",
-        title: "I draft responses for bids and need full coverage proof",
-        icon: MdEdit,
-        color: "bg-blue-500/10 text-blue-600",
-        useCases: ["UC7"]
-      },
-      {
-        id: "execution-traceability",
-        title: "I draft deliverables during execution and need traceability",
-        icon: MdEmojiEvents,
-        color: "bg-green-500/10 text-green-600",
-        useCases: ["UC8"]
+      if (domains.has('knowledge-management')) {
+        if (projectSize === 'petit-projet') return ['UC7'];
+        if (projectSize === 'projet-moyen') return ['UC8'];
+        if (projectSize === 'grand-projet') return ['UC8'];
       }
-    ]
+    }
+    
+    // Multi-domain combinations
+    if (domains.has('tender-management') && domains.has('contract-execution')) {
+      return ['UC2', 'UC5'];
+    }
+    if (domains.has('tender-management') && domains.has('knowledge-management')) {
+      return ['UC3', 'UC7'];
+    }
+    if (domains.has('contract-execution') && domains.has('knowledge-management')) {
+      return ['UC6', 'UC7'];
+    }
+    if (domains.size === 3) {
+      return ['UC8'];
+    }
+    
+    return ['UC1']; // Default fallback
   };
 
-  // Step 3: Your Main Priority
-  const step3Cards: SelectionCard[] = [
-    {
-      id: "save-time-decide",
-      title: "I need to save time and reach decisions faster",
-      icon: MdSchedule,
-      color: "bg-blue-500/10 text-blue-600",
-      useCases: ["UC1", "UC2"]
-    },
-    {
-      id: "guarantee-compliance",
-      title: "I need to guarantee compliance and avoid rejections",
-      icon: MdSecurity,
-      color: "bg-green-500/10 text-green-600",
-      useCases: ["UC2", "UC3", "UC6", "UC8"]
-    },
-    {
-      id: "improve-collaboration",
-      title: "I need to improve collaboration across multiple teams",
-      icon: MdPeople,
-      color: "bg-purple-500/10 text-purple-600",
-      useCases: ["UC3", "UC5", "UC6"]
-    },
-    {
-      id: "deliver-documents",
-      title: "I need to deliver documents that cover everything, with proof",
-      icon: MdEdit,
-      color: "bg-orange-500/10 text-orange-600",
-      useCases: ["UC7", "UC8"]
-    }
-  ];
-
-  // Step 4: Who Will Use Aitenders Most
-  const step4Cards: SelectionCard[] = [
-    {
-      id: "offer-bid-team",
-      title: "My offer management or bid team",
-      icon: MdInsertDriveFile,
-      color: "bg-blue-500/10 text-blue-600",
-      useCases: ["UC1", "UC2", "UC3", "UC7"]
-    },
-    {
-      id: "contract-managers",
-      title: "My contract or project managers",
-      icon: MdSettings,
-      color: "bg-green-500/10 text-green-600",
-      useCases: ["UC5", "UC6"]
-    },
-    {
-      id: "field-operations",
-      title: "My field or site operations team",
-      icon: MdGpsFixed,
-      color: "bg-purple-500/10 text-purple-600",
-      useCases: ["UC4"]
-    },
-    {
-      id: "compliance-writers",
-      title: "My compliance or technical writers",
-      icon: MdEdit,
-      color: "bg-orange-500/10 text-orange-600",
-      useCases: ["UC7", "UC8"]
-    }
-  ];
-
-  // Step 5: The Outcome You Expect
-  const step5Cards: SelectionCard[] = [
-    {
-      id: "validated-bid-analysis",
-      title: "A validated bid analysis ready to present to management",
-      icon: MdAnalytics,
-      color: "bg-blue-500/10 text-blue-600",
-      useCases: ["UC1", "UC2"]
-    },
-    {
-      id: "compliance-matrix",
-      title: "A complete compliance matrix with risks under control",
-      icon: MdSecurity,
-      color: "bg-green-500/10 text-green-600",
-      useCases: ["UC3", "UC6"]
-    },
-    {
-      id: "contract-assistant",
-      title: "A live contract assistant accessible to my field teams",
-      icon: MdPeople,
-      color: "bg-purple-500/10 text-purple-600",
-      useCases: ["UC4", "UC5"]
-    },
-    {
-      id: "drafted-deliverables",
-      title: "Drafted deliverables with traceability and proof of coverage",
-      icon: MdEdit,
-      color: "bg-orange-500/10 text-orange-600",
-      useCases: ["UC7", "UC8"]
-    }
-  ];
+  // State management for the 2-step flow
+  const [step1Selections, setStep1Selections] = useState<string[]>([]);
+  const [step2Selection, setStep2Selection] = useState<string>('');
+  const [showStep2, setShowStep2] = useState(false);
+  const [showUCResults, setShowUCResults] = useState(false);
+  const [resultUCs, setResultUCs] = useState<string[]>([]);
 
   // UC to page mapping
   const ucToPageMapping: { [key: string]: string } = {
@@ -306,147 +189,98 @@ export default function HomePage() {
     "UC8": "/uc8"
   };
 
-  const handleCardSelection = (card: SelectionCard) => {
-    const newSelections = [...selections, card.id];
-    setSelections(newSelections);
+  // New 2-step flow handlers
+  const handleStep1Selection = (cardId: string) => {
+    let newSelections = [...step1Selections];
+    
+    if (newSelections.includes(cardId)) {
+      // Remove if already selected (multi-select toggle)
+      newSelections = newSelections.filter(id => id !== cardId);
+    } else {
+      // Add to selections
+      newSelections.push(cardId);
+    }
+    
+    setStep1Selections(newSelections);
+    
+    // Show Step 2 as soon as at least one domain is selected
+    if (newSelections.length > 0 && !showStep2) {
+      setShowStep2(true);
+    } else if (newSelections.length === 0) {
+      setShowStep2(false);
+      setShowUCResults(false);
+      setStep2Selection('');
+    }
+  };
 
-    // Track analytics for sales qualification - log selection path
-    console.log("User selection path:", {
-      step: currentStep,
-      selections: newSelections,
-      currentCard: card.id,
-      timestamp: new Date().toISOString()
-    });
-
-    if (card.redirectTo) {
-      // Direct redirect for exploration option
+  const handleStep2Selection = (cardId: string) => {
+    setStep2Selection(cardId);
+    
+    // Calculate UCs based on Step 1 + Step 2 combination
+    const ucs = getUCsFromSelection(step1Selections, cardId);
+    setResultUCs(ucs);
+    
+    // If only one UC, redirect directly
+    if (ucs.length === 1) {
+      const finalUC = ucs[0];
       toast({
-        title: "See My Recommended Solution",
-        description: "Redirecting to exploration page...",
+        title: "Solution trouvée",
+        description: `Redirection vers ${finalUC}...`,
       });
-      setTimeout(() => setLocation(card.redirectTo!), 1000);
-      return;
-    }
-
-    // Update available UCs based on current selection
-    let newAvailableUCs = [...availableUCs];
-    
-    if (currentStep === 1) {
-      // Initialize available UCs from step 1 selection
-      newAvailableUCs = card.useCases || [];
-      setAvailableUCs(newAvailableUCs);
-      setCurrentStep(2);
-      return;
-    }
-
-    if (currentStep >= 2) {
-      // Filter UCs based on intersection with current card's UCs
-      if (card.useCases) {
-        newAvailableUCs = availableUCs.filter(uc => card.useCases!.includes(uc));
-        setAvailableUCs(newAvailableUCs);
-      }
-
-      // Check if we have a single UC match - if so, redirect immediately
-      if (newAvailableUCs.length === 1) {
-        const finalUC = newAvailableUCs[0];
-        
-        // Log final UC analytics (hidden from user)
-        console.log("FINAL UC DETERMINATION:", {
-          finalUC: finalUC,
-          completePath: newSelections,
-          stepsCompleted: currentStep,
-          decisionPoint: "single_match_found",
-          timestamp: new Date().toISOString(),
-          redirectTo: ucToPageMapping[finalUC]
-        });
-        
-        toast({
-          title: "See My Recommended Solution",
-          description: `Perfect match found: ${finalUC}`,
-        });
-        setTimeout(() => setLocation(ucToPageMapping[finalUC]), 1000);
-        return;
-      }
-
-      // Continue to next step if we haven't reached step 5 and have multiple UCs
-      if (currentStep < 5 && newAvailableUCs.length > 1) {
-        setCurrentStep(currentStep + 1);
-        return;
-      }
-
-      // At step 5 or if only one UC remains, make final decision
-      if (newAvailableUCs.length > 0) {
-        const finalUC = newAvailableUCs[0]; // Take the first remaining UC
-        
-        // Log final UC analytics (hidden from user)
-        console.log("FINAL UC DETERMINATION:", {
-          finalUC: finalUC,
-          completePath: newSelections,
-          stepsCompleted: currentStep,
-          decisionPoint: "end_of_flow",
-          remainingUCs: newAvailableUCs,
-          timestamp: new Date().toISOString(),
-          redirectTo: ucToPageMapping[finalUC]
-        });
-        
-        toast({
-          title: "See My Recommended Solution",
-          description: `Final recommendation: ${finalUC}`,
-        });
-        setTimeout(() => setLocation(ucToPageMapping[finalUC]), 1000);
-      }
+      setTimeout(() => setLocation(ucToPageMapping[finalUC]), 1000);
+    } else {
+      // Show UC selection cards if multiple UCs
+      setShowUCResults(true);
     }
   };
 
-  const getCurrentCards = (): SelectionCard[] => {
-    if (currentStep === 1) {
-      return step1Cards;
-    }
-    
-    if (currentStep === 2 && selections.length > 0) {
-      const firstSelection = step1Cards.find(card => card.id === selections[0]);
-      if (firstSelection?.nextStep && step2Cards[firstSelection.nextStep]) {
-        return step2Cards[firstSelection.nextStep];
-      }
-    }
-    
-    if (currentStep === 3) {
-      // Filter step 3 cards to only show those with UCs that match available UCs
-      return step3Cards.filter(card => 
-        card.useCases?.some(uc => availableUCs.includes(uc))
-      );
-    }
-    
-    if (currentStep === 4) {
-      // Filter step 4 cards to only show those with UCs that match available UCs
-      return step4Cards.filter(card => 
-        card.useCases?.some(uc => availableUCs.includes(uc))
-      );
-    }
-    
-    if (currentStep === 5) {
-      // Filter step 5 cards to only show those with UCs that match available UCs
-      return step5Cards.filter(card => 
-        card.useCases?.some(uc => availableUCs.includes(uc))
-      );
-    }
-    
-    return step1Cards;
+  const handleUCSelection = (uc: string) => {
+    toast({
+      title: "Découvrir ce cas d'usage",
+      description: `Redirection vers ${uc}...`,
+    });
+    setTimeout(() => setLocation(ucToPageMapping[uc]), 1000);
   };
 
-  const getStepTitle = (): string => {
-    if (currentStep === 1) return "What describes your current situation?";
-    if (currentStep === 2) return "What type of project do you handle?";
-    if (currentStep === 3) return "What is your main priority?";
-    if (currentStep === 4) return "Who will use Aitenders most?";
-    if (currentStep === 5) return "What outcome do you expect?";
-    return "";
+  const handleBackToStep1 = () => {
+    setShowStep2(false);
+    setShowUCResults(false);
+    setStep1Selections([]);
+    setStep2Selection('');
+  };
+
+  const handleBackToStep2 = () => {
+    setShowUCResults(false);
+    setStep2Selection('');
+  };
+
+  // UC information for display
+  const ucInfo: { [key: string]: { title: string; description: string } } = {
+    "UC1": { title: "Fast-Track Small Project Bids", description: "Solutions rapides pour petits projets" },
+    "UC2": { title: "Medium Project Management", description: "Gestion complète de projets moyens" },
+    "UC3": { title: "Complex Multi-Lot Bid Management", description: "Gestion de grands appels d'offres complexes" },
+    "UC4": { title: "Small Project Execution", description: "Exécution de petits projets" },
+    "UC5": { title: "Medium Project Execution", description: "Exécution de projets moyens" },
+    "UC6": { title: "Large Project Execution", description: "Exécution de grands projets" },
+    "UC7": { title: "Knowledge Management Small", description: "Gestion des connaissances pour petites structures" },
+    "UC8": { title: "Knowledge Management Large", description: "Gestion des connaissances pour grandes organisations" }
   };
 
   const resetSelection = () => {
-    setCurrentStep(1);
-    setSelections([]);
-    setAvailableUCs([]);
+    setStep1Selections([]);
+    setStep2Selection('');
+    setShowStep2(false);
+    setShowUCResults(false);
+  };
+
+  const getStepTitle = () => {
+    if (!showStep2) {
+      return "Sélectionnez vos domaines d'activité";
+    } else if (!showUCResults) {
+      return "Quelle est la taille de vos projets ?";
+    } else {
+      return "Choisissez votre cas d'usage";
+    }
   };
 
   
@@ -460,12 +294,12 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto px-6 pt-16 pb-12">
           {/* Main Heading */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Welcome to Aitenders,<br />
-              <span className="text-blue-600">How can we help you?</span>
+            <h1 className="text-4xl font-bold text-aitenders-black mb-4">
+              Trouvez la solution adaptée à votre projet<br />
+              <span className="text-aitenders-primary-blue">en quelques clics</span>
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto mt-3">
-              Transform complex tender and project contractual documents into intelligence with our AI-powered platform.
+            <p className="text-lg text-aitenders-dark-blue max-w-2xl mx-auto mt-3">
+              Choisissez vos besoins et la taille de votre projet pour accéder à un cas d'usage personnalisé.
             </p>
           </div>
 
@@ -474,59 +308,150 @@ export default function HomePage() {
 
 
             {/* Step Title */}
-            <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+            <h2 className="text-2xl font-bold text-aitenders-black mb-8 text-center">
               {getStepTitle()}
             </h2>
 
-            {/* Selection Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {getCurrentCards().map((card, index) => {
-                const Icon = card.icon;
-                return (
-                  <Card
-                    key={card.id}
-                    onClick={() => handleCardSelection(card)}
-                    className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md cursor-pointer border border-gray-100 hover:border-blue-500 transition-all duration-200 ease-in-out hover:scale-105"
-                  >
-                    <div className="flex items-start space-x-4">
-                      <div className={`p-3 rounded-xl ${card.color}`}>
-                        <Icon className="h-6 w-6" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-base font-medium text-gray-800 leading-relaxed">
+            {/* Step 1: Domain Selection */}
+            {!showUCResults && (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                {step1Cards.map((card) => {
+                  const Icon = card.icon;
+                  const isSelected = step1Selections.includes(card.id);
+                  return (
+                    <Card
+                      key={card.id}
+                      onClick={() => handleStep1Selection(card.id)}
+                      className={`rounded-2xl p-6 shadow-sm hover:shadow-md cursor-pointer border transition-all duration-200 ease-in-out hover:scale-105 ${
+                        isSelected 
+                          ? 'border-aitenders-primary-blue bg-aitenders-pale-blue' 
+                          : 'border-aitenders-light-blue bg-aitenders-white-blue hover:border-aitenders-primary-blue'
+                      }`}
+                    >
+                      <div className="text-center">
+                        <div className={`p-4 rounded-xl mb-4 mx-auto w-fit ${card.color}`}>
+                          <Icon className="h-8 w-8" />
+                        </div>
+                        <h3 className="text-lg font-semibold text-aitenders-black mb-2">
                           {card.title}
                         </h3>
-                        {card.description && (
-                          <p className="text-sm text-gray-600 mt-1">{card.description}</p>
-                        )}
+                        <p className="text-sm text-aitenders-dark-blue">
+                          {card.description}
+                        </p>
                       </div>
-                    </div>
-                  </Card>
-                );
-              })}
-            </div>
+                    </Card>
+                  );
+                })}
+              </div>
+            )}
 
-            {/* Selection Path Display */}
-            {selections.length > 0 && (
-              <div className="mt-8 p-6 bg-gray-50 rounded-2xl border border-gray-100">
-                <p className="text-sm text-gray-700 mb-3 font-medium">Your Selection Path:</p>
+            {/* Step 2: Project Size Selection */}
+            {showStep2 && !showUCResults && (
+              <div className="animate-in fade-in duration-300">
+                <div className="flex justify-between items-center mb-6">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={handleBackToStep1}
+                    className="text-aitenders-primary-blue hover:text-aitenders-dark-blue"
+                  >
+                    ← Retour
+                  </Button>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {step2Cards.map((card) => {
+                    const Icon = card.icon;
+                    const isSelected = step2Selection === card.id;
+                    return (
+                      <Card
+                        key={card.id}
+                        onClick={() => handleStep2Selection(card.id)}
+                        className={`rounded-2xl p-6 shadow-sm hover:shadow-md cursor-pointer border transition-all duration-200 ease-in-out hover:scale-105 ${
+                          isSelected 
+                            ? 'border-aitenders-primary-blue bg-aitenders-pale-blue' 
+                            : 'border-aitenders-light-blue bg-aitenders-white-blue hover:border-aitenders-primary-blue'
+                        }`}
+                      >
+                        <div className="text-center">
+                          <div className={`p-4 rounded-xl mb-4 mx-auto w-fit ${card.color}`}>
+                            <Icon className="h-8 w-8" />
+                          </div>
+                          <h3 className="text-lg font-semibold text-aitenders-black mb-2">
+                            {card.title}
+                          </h3>
+                          <p className="text-sm text-aitenders-dark-blue">
+                            {card.description}
+                          </p>
+                        </div>
+                      </Card>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {/* UC Results */}
+            {showUCResults && (
+              <div className="animate-in fade-in duration-300">
+                <div className="flex justify-between items-center mb-6">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={handleBackToStep2}
+                    className="text-aitenders-primary-blue hover:text-aitenders-dark-blue"
+                  >
+                    ← Retour
+                  </Button>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {resultUCs.map((uc) => (
+                    <Card
+                      key={uc}
+                      onClick={() => handleUCSelection(uc)}
+                      className="rounded-2xl p-6 shadow-sm hover:shadow-md cursor-pointer border border-aitenders-light-blue bg-aitenders-white-blue hover:border-aitenders-primary-blue transition-all duration-200 ease-in-out hover:scale-105"
+                    >
+                      <div className="text-center">
+                        <h3 className="text-lg font-semibold text-aitenders-black mb-2">
+                          {uc}
+                        </h3>
+                        <p className="text-sm text-aitenders-dark-blue mb-4">
+                          {ucInfo[uc]?.description}
+                        </p>
+                        <Button className="bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-aitenders-white-blue">
+                          Découvrir ce cas d'usage
+                        </Button>
+                      </div>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Selection Summary */}
+            {(step1Selections.length > 0 || step2Selection) && (
+              <div className="mt-8 p-6 bg-aitenders-pale-blue rounded-2xl border border-aitenders-light-blue">
+                <p className="text-sm text-aitenders-dark-blue mb-3 font-medium">Votre sélection :</p>
                 <div className="flex flex-wrap gap-2 mb-3">
-                  {selections.map((selectionId, index) => {
-                    const allCards = [...step1Cards, ...Object.values(step2Cards).flat(), ...step3Cards, ...step4Cards, ...step5Cards];
-                    const selectedCard = allCards.find(c => c.id === selectionId);
+                  {step1Selections.map((selectionId) => {
+                    const selectedCard = step1Cards.find(c => c.id === selectionId);
                     return (
                       <span
                         key={selectionId}
                         className="inline-flex items-center px-3 py-1 rounded-full text-xs bg-aitenders-white-blue text-aitenders-dark-blue border border-aitenders-light-blue shadow-sm"
                       >
-                        {index + 1}. {selectedCard?.title.substring(0, 25)}...
+                        {selectedCard?.title}
                       </span>
                     );
                   })}
+                  {step2Selection && (
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs bg-aitenders-primary-blue/10 text-aitenders-primary-blue border border-aitenders-primary-blue/20 shadow-sm">
+                      {step2Cards.find(c => c.id === step2Selection)?.title}
+                    </span>
+                  )}
                 </div>
-                {availableUCs.length > 0 && (
+                {resultUCs.length > 0 && (
                   <p className="text-xs text-aitenders-dark-blue/60">
-                    Matching use cases: {availableUCs.join(', ')}
+                    Cas d'usage disponibles : {resultUCs.join(', ')}
                   </p>
                 )}
               </div>
