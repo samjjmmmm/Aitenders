@@ -26,11 +26,11 @@ export default function UC3Page() {
   const targetAudiences = [
     {
       id: 'bid-response',
-      title: 'Bid Response Managers',
+      title: 'Responsables des réponses aux appels d\'offres',
       icon: MdAccountBox,
       iconColor: 'text-purple-600',
       iconBg: 'bg-purple-100',
-      description: 'Coordinate technical, legal, commercial, and quality experts seamlessly with AI-powered project organization. Structure 500+ page RFPs instantly and maintain complete compliance visibility—eliminating requirement gaps and protecting team credibility.',
+      description: 'Coordonnez en toute fluidité les experts techniques, juridiques, commerciaux et qualité. Grâce à l\'analyse IA, structurez instantanément des appels d\'offres complexes de plus de 500 pages et assurez une traçabilité complète qui élimine tout écart et protège la crédibilité de l\'équipe.',
       dashboardData: {
         requirements: { progress: 100, color: 'green' },
         coordination: { progress: 78, color: 'blue' },
@@ -41,11 +41,11 @@ export default function UC3Page() {
     },
     {
       id: 'project-offer',
-      title: 'Project Offer Leaders',
+      title: 'Chefs de propositions de projets',
       icon: MdBusiness,
       iconColor: 'text-blue-600',
       iconBg: 'bg-blue-100',
-      description: 'Lead winning strategies with intelligent project setup that eliminates weeks of manual preparation. Access real-time compliance tracking and automated change detection while demonstrating 100% requirement coverage to management.',
+      description: 'Menez des stratégies gagnantes grâce à une pré‑organisation intelligente par IA qui supprime des semaines de préparation manuelle. Accédez au suivi de conformité en temps réel, détectez automatiquement les évolutions et démontrez à la direction une couverture intégrale des exigences.',
       dashboardData: {
         requirements: { progress: 95, color: 'green' },
         coordination: { progress: 88, color: 'blue' },
@@ -56,11 +56,11 @@ export default function UC3Page() {
     },
     {
       id: 'contract-managers',
-      title: 'Contract Managers',
+      title: 'Gestionnaires de contrats',
       icon: MdGavel,
       iconColor: 'text-green-600',
       iconBg: 'bg-green-100',
-      description: 'Ensure compliance across multi-departmental teams with dynamic requirement tracking and automated inconsistency detection. Maintain complete audit trails while preventing costly oversights on million-euro opportunities.',
+      description: 'Assurez la conformité pluridisciplinaire avec un suivi dynamique du cycle de vie et une détection proactive des incohérences. Évitez les négligences coûteuses et prouvez votre rigueur grâce à des pistes d\'audit complètes sur des opportunités à plusieurs millions d\'euros.',
       dashboardData: {
         requirements: { progress: 100, color: 'green' },
         coordination: { progress: 95, color: 'blue' },
@@ -71,11 +71,11 @@ export default function UC3Page() {
     },
     {
       id: 'technical-directors',
-      title: 'Technical Directors',
+      title: 'Directeurs techniques',
       icon: MdEngineering,
       iconColor: 'text-orange-600',
       iconBg: 'bg-orange-100',
-      description: 'Focus your specialists on solution development instead of administrative compliance. Provide pre-organized requirement structures that eliminate interpretation errors while ensuring every technical obligation is properly documented.',
+      description: 'Libérez vos spécialistes des contraintes administratives. Profitez de structures d\'exigences pré‑organisées et conformes qui réduisent les erreurs d\'interprétation tout en documentant chaque obligation technique de manière irréprochable.',
       dashboardData: {
         requirements: { progress: 100, color: 'green' },
         coordination: { progress: 85, color: 'blue' },
@@ -86,11 +86,11 @@ export default function UC3Page() {
     },
     {
       id: 'commercial-directors',
-      title: 'Commercial Directors',
+      title: 'Directeurs commerciaux',
       icon: MdAnalytics,
       iconColor: 'text-indigo-600',
       iconBg: 'bg-indigo-100',
-      description: 'Pursue complex international opportunities with bulletproof compliance foundations. Demonstrate complete requirement coverage to senior management, protecting commercial reputation and maximizing win probability.',
+      description: 'Ciblez et sécurisez des opportunités internationales complexes grâce à des bases de conformité infaillibles et évolutives. Démontrez une couverture intégrale des exigences, protégez la réputation commerciale et maximisez vos chances de succès.',
       dashboardData: {
         requirements: { progress: 100, color: 'green' },
         coordination: { progress: 92, color: 'blue' },
