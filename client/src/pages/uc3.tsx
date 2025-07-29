@@ -892,6 +892,64 @@ export default function UC3Page() {
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Des résultats concrets pour les équipes gérant des appels d'offres stratégiques.</p>
           </div>
           
+          {/* User-Focused Results Section - Before KPIs */}
+          <div className="mb-20 md:mb-24 lg:mb-28">
+            <div className="text-center mb-12 md:mb-16">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Ce que nos utilisateurs obtiennent concrètement</h3>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Des résultats mesurables pour chaque profil d'utilisateur</p>
+            </div>
+            
+            {/* Results Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+              
+              {/* Responsable d'offre Results */}
+              <div className="group">
+                <Card className="h-full p-8 bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200/50 hover:border-purple-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4">
+                      <MdAccountBox className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900">Responsable d'offre</h4>
+                      <p className="text-sm text-gray-600">Réponse techniquement conforme et traçable</p>
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-700 text-base leading-relaxed mb-4">
+                    Obtenez une réponse d'offre techniquement conforme, collaborative, traçable, et vérifiable à tout moment. Cette approche garantit la couverture des exigences critiques et sécurise le dépôt d'une offre sans risque d'exclusion.
+                  </p>
+                  
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Réduction des risques juridiques grâce à la conformité garantie, visibilité totale avec matrice dynamique des exigences, alignement parfait avec le cahier des charges, et traçabilité multi-expert avec historique complet de validation.
+                  </p>
+                </Card>
+              </div>
+              
+              {/* Experts métiers Results */}
+              <div className="group">
+                <Card className="h-full p-8 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50 hover:border-green-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-4">
+                      <MdEngineering className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900">Experts métiers</h4>
+                      <p className="text-sm text-gray-600">Extraction et traitement collaboratif des exigences</p>
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-700 text-base leading-relaxed mb-4">
+                    Extrayez automatiquement les exigences clés, traitez-les de manière collaborative, puis générez des contenus fiables qui répondent point par point aux exigences sans oublier ou reformuler à côté.
+                  </p>
+                  
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Moins de stress et de relectures manuelles, pilotage clair avec historique et alertes, rédaction guidée sans repartir de zéro, et capacité à prouver que tout a été couvert de manière exhaustive.
+                  </p>
+                </Card>
+              </div>
+            </div>
+          </div>
+          
           {/* KPI Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
@@ -922,108 +980,6 @@ export default function UC3Page() {
                   0 rejet
                 </div>
                 <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Aucune non‑conformité formelle pour sécuriser vos soumissions</p>
-              </div>
-            </div>
-            
-            {/* User-Focused Results Section */}
-            <div className="mt-20 md:mt-24 lg:mt-28">
-              <div className="text-center mb-12 md:mb-16">
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Ce que nos utilisateurs obtiennent concrètement</h3>
-                <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Des résultats mesurables pour chaque profil d'utilisateur</p>
-              </div>
-              
-              {/* Results Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-                
-                {/* Responsable d'offre Results */}
-                <div className="group">
-                  <Card className="h-full p-8 bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200/50 hover:border-purple-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
-                    <div className="flex items-center mb-6">
-                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4">
-                        <MdAccountBox className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <h4 className="text-xl font-bold text-gray-900">Responsable d'offre</h4>
-                        <p className="text-sm text-gray-600">Réponse techniquement conforme et traçable</p>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-4">
-                      <div className="flex items-start space-x-3">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <MdCheckCircle className="w-4 h-4 text-green-600" />
-                        </div>
-                        <p className="text-gray-700 text-sm leading-relaxed">Réduction des risques juridiques grâce à la conformité garantie</p>
-                      </div>
-                      
-                      <div className="flex items-start space-x-3">
-                        <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <MdTableChart className="w-4 h-4 text-blue-600" />
-                        </div>
-                        <p className="text-gray-700 text-sm leading-relaxed">Visibilité totale avec matrice dynamique des exigences</p>
-                      </div>
-                      
-                      <div className="flex items-start space-x-3">
-                        <div className="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <MdVerified className="w-4 h-4 text-orange-600" />
-                        </div>
-                        <p className="text-gray-700 text-sm leading-relaxed">Alignement parfait avec le cahier des charges</p>
-                      </div>
-                      
-                      <div className="flex items-start space-x-3">
-                        <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <MdGroups className="w-4 h-4 text-purple-600" />
-                        </div>
-                        <p className="text-gray-700 text-sm leading-relaxed">Traçabilité multi-expert avec historique complet</p>
-                      </div>
-                    </div>
-                  </Card>
-                </div>
-                
-                {/* Experts métiers Results */}
-                <div className="group">
-                  <Card className="h-full p-8 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50 hover:border-green-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
-                    <div className="flex items-center mb-6">
-                      <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-4">
-                        <MdEngineering className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <h4 className="text-xl font-bold text-gray-900">Experts métiers</h4>
-                        <p className="text-sm text-gray-600">Extraction et traitement collaboratif des exigences</p>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-4">
-                      <div className="flex items-start space-x-3">
-                        <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <MdFlashOn className="w-4 h-4 text-blue-600" />
-                        </div>
-                        <p className="text-gray-700 text-sm leading-relaxed">Moins de stress et de relectures manuelles</p>
-                      </div>
-                      
-                      <div className="flex items-start space-x-3">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <MdDashboard className="w-4 h-4 text-green-600" />
-                        </div>
-                        <p className="text-gray-700 text-sm leading-relaxed">Pilotage clair avec historique et alertes</p>
-                      </div>
-                      
-                      <div className="flex items-start space-x-3">
-                        <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <MdEdit className="w-4 h-4 text-purple-600" />
-                        </div>
-                        <p className="text-gray-700 text-sm leading-relaxed">Rédaction guidée sans repartir de zéro</p>
-                      </div>
-                      
-                      <div className="flex items-start space-x-3">
-                        <div className="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <MdSecurity className="w-4 h-4 text-orange-600" />
-                        </div>
-                        <p className="text-gray-700 text-sm leading-relaxed">Preuve de couverture complète des exigences</p>
-                      </div>
-                    </div>
-                  </Card>
-                </div>
               </div>
             </div>
 
