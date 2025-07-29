@@ -299,10 +299,7 @@ export default function UC3Page() {
                     <span>Plébiscité par les leaders du secteur</span>
                   </div>
                   
-                  <div className="flex items-center text-sm text-gray-600">
-                    <MdSecurity className="w-5 h-5 mr-2 text-green-500" />
-                    <span>Enterprise-grade security</span>
-                  </div>
+                  
                 </div>
               </div>
             </div>
