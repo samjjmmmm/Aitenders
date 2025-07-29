@@ -939,9 +939,24 @@ export default function UC3Page() {
                     Extrayez automatiquement les exigences clés, traitez-les de manière collaborative, puis générez des contenus fiables qui répondent point par point aux exigences sans oublier ou reformuler à côté.
                   </p>
                   
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    Moins de stress et de relectures manuelles, pilotage clair avec historique et alertes, rédaction guidée sans repartir de zéro, et capacité à prouver que tout a été couvert de manière exhaustive.
-                  </p>
+                  <div className="text-gray-600 text-sm leading-relaxed space-y-2">
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Moins de stress, moins de relectures manuelles, moins de copier-coller hasardeux.</span>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Un pilotage clair de qui traite quoi, avec historique et alertes.</span>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Une rédaction guidée et intelligente, sans repartir de zéro.</span>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Une capacité à prouver que tout a été couvert.</span>
+                    </div>
+                  </div>
                 </Card>
               </div>
             </div>
