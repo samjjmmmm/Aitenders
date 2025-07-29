@@ -37,6 +37,7 @@ interface SelectionCard {
 export default function HomePage() {
   const [message, setMessage] = useState("");
   const [chatExpanded, setChatExpanded] = useState(false);
+  const [language, setLanguage] = useState<'en' | 'fr'>('fr');
   const [, setLocation] = useLocation();
   const { toast } = useToast();
   const queryClient = useQueryClient();
@@ -80,26 +81,94 @@ export default function HomePage() {
     }
   };
 
+  // Translations
+  const t = {
+    fr: {
+      mainTitle: "Trouvez la solution adaptée à votre projet",
+      mainSubtitle: "en quelques clics",
+      description: "Choisissez vos besoins et la taille de votre projet pour accéder à un cas d'usage personnalisé.",
+      domainSelection: "Sélectionnez vos domaines d'activité",
+      projectSize: "Quelle est la taille de vos projets ?",
+      chooseUseCase: "Choisissez votre cas d'usage",
+      yourSelection: "Votre sélection :",
+      availableUseCases: "Cas d'usage disponibles :",
+      back: "← Retour",
+      tenderManagement: "Tender Management",
+      tenderDescription: "Optimisez vos réponses aux appels d'offres. Analyse IA, collaboration et suivi de conformité pour maximiser vos chances de succès.",
+      contractExecution: "Contract & Project Execution", 
+      contractDescription: "Pilotez vos projets et contrats en toute confiance. Suivi des livrables, conformité et gestion proactive des changements.",
+      knowledgeManagement: "Knowledge Management",
+      knowledgeDescription: "Capitalisez sur vos savoirs et expériences passées. Accès rapide aux références, modèles et comparables pour chaque nouveau projet.",
+      smallProject: "Petit Projet",
+      smallDescription: "Idéal pour les petites équipes et besoins ciblés. Mise en place rapide, fonctionnalités essentielles.",
+      mediumProject: "Projet Moyen",
+      mediumDescription: "Un équilibre entre flexibilité et puissance. Outils complets pour des projets structurés et collaboratifs.",
+      largeProject: "Grand Projet", 
+      largeDescription: "Conçu pour les organisations complexes et à grande échelle. Solutions avancées, IA sur mesure et sécurité renforcée.",
+      learnMore: "Je veux en savoir plus sur Aitenders",
+      learnMoreDescription: "Découvrez toutes nos fonctionnalités et comment Aitenders peut transformer votre gestion des appels d'offres et projets.",
+      exploreSolutions: "Explorer nos solutions",
+      discoverUseCase: "Découvrir ce cas d'usage",
+      chatPlaceholder: "Comment puis-je vous aider aujourd'hui ?",
+      chatTitle: "Chat avec l'Assistant IA",
+      ourUseCases: "Nos Cas d'Usage",
+      tenderProcess: "Processus d'Appel d'Offres",
+      scheduleDemo: "Planifier une Démo"
+    },
+    en: {
+      mainTitle: "Find the solution adapted to your project",
+      mainSubtitle: "in just a few clicks",
+      description: "Choose your needs and project size to access a personalized use case.",
+      domainSelection: "Select your business domains",
+      projectSize: "What is the size of your projects?",
+      chooseUseCase: "Choose your use case",
+      yourSelection: "Your selection:",
+      availableUseCases: "Available use cases:",
+      back: "← Back",
+      tenderManagement: "Tender Management",
+      tenderDescription: "Optimize your tender responses. AI analysis, collaboration and compliance tracking to maximize your chances of success.",
+      contractExecution: "Contract & Project Execution",
+      contractDescription: "Manage your projects and contracts with confidence. Deliverables tracking, compliance and proactive change management.",
+      knowledgeManagement: "Knowledge Management", 
+      knowledgeDescription: "Capitalize on your knowledge and past experiences. Quick access to references, templates and comparables for each new project.",
+      smallProject: "Small Project",
+      smallDescription: "Ideal for small teams and targeted needs. Quick setup, essential features.",
+      mediumProject: "Medium Project",
+      mediumDescription: "A balance between flexibility and power. Complete tools for structured and collaborative projects.",
+      largeProject: "Large Project",
+      largeDescription: "Designed for complex and large-scale organizations. Advanced solutions, custom AI and enhanced security.",
+      learnMore: "I want to learn more about Aitenders",
+      learnMoreDescription: "Discover all our features and how Aitenders can transform your tender and project management.",
+      exploreSolutions: "Explore our solutions",
+      discoverUseCase: "Discover this use case",
+      chatPlaceholder: "How can I help you today?",
+      chatTitle: "Chat with AI Assistant",
+      ourUseCases: "Our Use Cases",
+      tenderProcess: "Tender Process", 
+      scheduleDemo: "Schedule Demo"
+    }
+  };
+
   // Step 1: Domain Selection (Multi-select)
   const step1Cards: SelectionCard[] = [
     {
       id: "tender-management",
-      title: "Tender Management",
-      description: "Optimisez vos réponses aux appels d'offres. Analyse IA, collaboration et suivi de conformité pour maximiser vos chances de succès.",
+      title: t[language].tenderManagement,
+      description: t[language].tenderDescription,
       icon: MdInsertDriveFile,
       color: "bg-aitenders-primary-blue/10 text-aitenders-primary-blue"
     },
     {
       id: "contract-execution",
-      title: "Contract & Project Execution",
-      description: "Pilotez vos projets et contrats en toute confiance. Suivi des livrables, conformité et gestion proactive des changements.",
+      title: t[language].contractExecution,
+      description: t[language].contractDescription,
       icon: MdSettings,
       color: "bg-aitenders-dark-blue/10 text-aitenders-dark-blue"
     },
     {
       id: "knowledge-management",
-      title: "Knowledge Management",
-      description: "Capitalisez sur vos savoirs et expériences passées. Accès rapide aux références, modèles et comparables pour chaque nouveau projet.",
+      title: t[language].knowledgeManagement,
+      description: t[language].knowledgeDescription,
       icon: MdLightbulb,
       color: "bg-aitenders-primary-blue/10 text-aitenders-primary-blue"
     }
@@ -109,22 +178,22 @@ export default function HomePage() {
   const step2Cards: SelectionCard[] = [
     {
       id: "petit-projet",
-      title: "Petit Projet",
-      description: "Idéal pour les petites équipes et besoins ciblés. Mise en place rapide, fonctionnalités essentielles.",
+      title: t[language].smallProject,
+      description: t[language].smallDescription,
       icon: MdSchedule,
       color: "bg-aitenders-primary-blue/10 text-aitenders-primary-blue"
     },
     {
       id: "projet-moyen",
-      title: "Projet Moyen",
-      description: "Un équilibre entre flexibilité et puissance. Outils complets pour des projets structurés et collaboratifs.",
+      title: t[language].mediumProject,
+      description: t[language].mediumDescription,
       icon: MdCheckCircle,
       color: "bg-aitenders-dark-blue/10 text-aitenders-dark-blue"
     },
     {
       id: "grand-projet",
-      title: "Grand Projet",
-      description: "Conçu pour les organisations complexes et à grande échelle. Solutions avancées, IA sur mesure et sécurité renforcée.",
+      title: t[language].largeProject,
+      description: t[language].largeDescription,
       icon: MdPeople,
       color: "bg-aitenders-primary-blue/10 text-aitenders-primary-blue"
     }
@@ -275,11 +344,11 @@ export default function HomePage() {
 
   const getStepTitle = () => {
     if (!showStep2) {
-      return "Sélectionnez vos domaines d'activité";
+      return t[language].domainSelection;
     } else if (!showUCResults) {
-      return "Quelle est la taille de vos projets ?";
+      return t[language].projectSize;
     } else {
-      return "Choisissez votre cas d'usage";
+      return t[language].chooseUseCase;
     }
   };
 
@@ -287,7 +356,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-      <Header />
+      <Header language={language} onLanguageChange={setLanguage} />
       
       {/* Hero Section */}
       <main className="relative">
@@ -295,11 +364,11 @@ export default function HomePage() {
           {/* Main Heading */}
           <div className="text-center mb-16">
             <h1 className="text-4xl font-bold text-aitenders-black mb-4">
-              Trouvez la solution adaptée à votre projet<br />
-              <span className="text-aitenders-primary-blue">en quelques clics</span>
+              {t[language].mainTitle}<br />
+              <span className="text-aitenders-primary-blue">{t[language].mainSubtitle}</span>
             </h1>
             <p className="text-lg text-aitenders-dark-blue max-w-2xl mx-auto mt-3">
-              Choisissez vos besoins et la taille de votre projet pour accéder à un cas d'usage personnalisé.
+              {t[language].description}
             </p>
           </div>
 
@@ -355,7 +424,7 @@ export default function HomePage() {
                     onClick={handleBackToStep1}
                     className="text-aitenders-primary-blue hover:text-aitenders-dark-blue"
                   >
-                    ← Retour
+                    {t[language].back}
                   </Button>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -400,7 +469,7 @@ export default function HomePage() {
                     onClick={handleBackToStep2}
                     className="text-aitenders-primary-blue hover:text-aitenders-dark-blue"
                   >
-                    ← Retour
+                    {t[language].back}
                   </Button>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -418,7 +487,7 @@ export default function HomePage() {
                           {ucInfo[uc]?.description}
                         </p>
                         <Button className="bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-aitenders-white-blue">
-                          Découvrir ce cas d'usage
+                          {t[language].discoverUseCase}
                         </Button>
                       </div>
                     </Card>
@@ -430,7 +499,7 @@ export default function HomePage() {
             {/* Selection Summary */}
             {(step1Selections.length > 0 || step2Selection) && (
               <div className="mt-8 p-6 bg-aitenders-pale-blue rounded-2xl border border-aitenders-light-blue">
-                <p className="text-sm text-aitenders-dark-blue mb-3 font-medium">Votre sélection :</p>
+                <p className="text-sm text-aitenders-dark-blue mb-3 font-medium">{t[language].yourSelection}</p>
                 <div className="flex flex-wrap gap-2 mb-3">
                   {step1Selections.map((selectionId) => {
                     const selectedCard = step1Cards.find(c => c.id === selectionId);
@@ -451,7 +520,7 @@ export default function HomePage() {
                 </div>
                 {resultUCs.length > 0 && (
                   <p className="text-xs text-aitenders-dark-blue/60">
-                    Cas d'usage disponibles : {resultUCs.join(', ')}
+                    {t[language].availableUseCases} {resultUCs.join(', ')}
                   </p>
                 )}
               </div>
@@ -473,7 +542,7 @@ export default function HomePage() {
                     </div>
                     <Input
                       type="text"
-                      placeholder="How can I help you today?"
+                      placeholder={t[language].chatPlaceholder}
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       onKeyPress={handleKeyPress}
@@ -502,7 +571,7 @@ export default function HomePage() {
                 <div className="bg-aitenders-white-blue border border-aitenders-light-blue rounded-3xl shadow-lg p-6 transition-all duration-300 ease-in-out">
                   {/* Chat Header */}
                   <div className="flex justify-between items-center mb-4">
-                    <h3 className="text-lg font-semibold text-aitenders-black">Chat with AI Assistant</h3>
+                    <h3 className="text-lg font-semibold text-aitenders-black">{t[language].chatTitle}</h3>
                     <Button
                       onClick={() => setChatExpanded(false)}
                       variant="ghost"
@@ -520,7 +589,7 @@ export default function HomePage() {
                     </div>
                     <Input
                       type="text"
-                      placeholder="How can I help you today?"
+                      placeholder={t[language].chatPlaceholder}
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       onKeyPress={handleKeyPress}
@@ -576,26 +645,26 @@ export default function HomePage() {
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => setMessage("What use cases do you offer?")}
+                      onClick={() => setMessage(language === 'fr' ? "Quels cas d'usage proposez-vous ?" : "What use cases do you offer?")}
                       className="text-xs rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
                     >
-                      Our Use Cases
+                      {t[language].ourUseCases}
                     </Button>
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => setMessage("How does the tender process work?")}
+                      onClick={() => setMessage(language === 'fr' ? "Comment fonctionne le processus d'appel d'offres ?" : "How does the tender process work?")}
                       className="text-xs rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
                     >
-                      Tender Process
+                      {t[language].tenderProcess}
                     </Button>
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => setMessage("Can I schedule a demo?")}
+                      onClick={() => setMessage(language === 'fr' ? "Puis-je planifier une démo ?" : "Can I schedule a demo?")}
                       className="text-xs rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
                     >
-                      Schedule Demo
+                      {t[language].scheduleDemo}
                     </Button>
                   </div>
                 </div>
@@ -604,25 +673,31 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Learn More Card */}
-        <div className="max-w-3xl mx-auto px-6 pb-16">
+        {/* Learn More Card - More Rectangular */}
+        <div className="max-w-4xl mx-auto px-6 pb-16">
           <Card 
             onClick={() => setLocation("/uc1")}
-            className="bg-gradient-to-r from-aitenders-white-blue to-aitenders-pale-blue border border-aitenders-light-blue rounded-2xl p-8 shadow-sm hover:shadow-md cursor-pointer transition-all duration-200 ease-in-out hover:scale-105"
+            className="bg-gradient-to-r from-aitenders-white-blue to-aitenders-pale-blue border border-aitenders-light-blue rounded-2xl p-6 shadow-sm hover:shadow-md cursor-pointer transition-all duration-200 ease-in-out hover:scale-105"
           >
-            <div className="text-center">
-              <div className="p-4 rounded-xl mb-4 mx-auto w-fit bg-aitenders-primary-blue/10">
-                <MdLightbulb className="h-8 w-8 text-aitenders-primary-blue" />
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-6">
+                <div className="p-3 rounded-xl bg-aitenders-primary-blue/10 flex-shrink-0">
+                  <MdLightbulb className="h-6 w-6 text-aitenders-primary-blue" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold text-aitenders-black mb-2">
+                    {t[language].learnMore}
+                  </h3>
+                  <p className="text-sm text-aitenders-dark-blue">
+                    {t[language].learnMoreDescription}
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-aitenders-black mb-3">
-                Je veux en savoir plus sur Aitenders
-              </h3>
-              <p className="text-aitenders-dark-blue mb-6">
-                Découvrez toutes nos fonctionnalités et comment Aitenders peut transformer votre gestion des appels d'offres et projets.
-              </p>
-              <Button className="bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-aitenders-white-blue px-8 py-3 text-base font-medium rounded-xl shadow-sm">
-                Explorer nos solutions
-              </Button>
+              <div className="flex-shrink-0 ml-6">
+                <Button className="bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-aitenders-white-blue px-6 py-2 text-sm font-medium rounded-xl shadow-sm">
+                  {t[language].exploreSolutions}
+                </Button>
+              </div>
             </div>
           </Card>
         </div>

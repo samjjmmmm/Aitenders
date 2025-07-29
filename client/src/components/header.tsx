@@ -1,14 +1,20 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, ChevronRight, Home } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight, Home, Globe } from "lucide-react";
 import { Link } from "wouter";
 
 // Import Aitenders logo
 import aitendersLogo from "@assets/Untitled(4)_1753712731718.png";
 
-export default function Header() {
+interface HeaderProps {
+  language?: 'en' | 'fr';
+  onLanguageChange?: (lang: 'en' | 'fr') => void;
+}
+
+export default function Header({ language = 'fr', onLanguageChange }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isUseCasesOpen, setIsUseCasesOpen] = useState(false);
+  const [showLanguageMenu, setShowLanguageMenu] = useState(false);
   
   const closeMenu = () => {
     setIsMenuOpen(false);
@@ -30,15 +36,54 @@ export default function Header() {
             </div>
           </Link>
           
-          {/* Menu Button */}
-          <Button 
-            variant="outline" 
-            size="icon" 
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
-          >
-            {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </Button>
+          {/* Right Section */}
+          <div className="flex items-center space-x-3">
+            {/* Language Switcher */}
+            <div className="relative">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setShowLanguageMenu(!showLanguageMenu)}
+                className="rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue px-3 py-1 h-8 text-xs font-medium"
+              >
+                <Globe className="w-3 h-3 mr-1" />
+                {language?.toUpperCase()}
+              </Button>
+              
+              {showLanguageMenu && (
+                <div className="absolute right-0 top-full mt-1 bg-aitenders-white-blue border border-aitenders-light-blue rounded-lg shadow-lg py-1 z-50">
+                  <button
+                    onClick={() => {
+                      onLanguageChange?.('fr');
+                      setShowLanguageMenu(false);
+                    }}
+                    className={`block w-full text-left px-3 py-1 text-xs hover:bg-aitenders-pale-blue ${language === 'fr' ? 'bg-aitenders-pale-blue font-medium' : ''}`}
+                  >
+                    FR - Français
+                  </button>
+                  <button
+                    onClick={() => {
+                      onLanguageChange?.('en');
+                      setShowLanguageMenu(false);
+                    }}
+                    className={`block w-full text-left px-3 py-1 text-xs hover:bg-aitenders-pale-blue ${language === 'en' ? 'bg-aitenders-pale-blue font-medium' : ''}`}
+                  >
+                    EN - English
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* Menu Button */}
+            <Button 
+              variant="outline" 
+              size="icon" 
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
+            >
+              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </Button>
+          </div>
         </div>
       </div>
 
