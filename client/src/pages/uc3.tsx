@@ -1472,51 +1472,51 @@ export default function UC3Page() {
                    }}>
                 
                 <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                  Master compliance in high-stakes tenders
+                  Maîtrisez la conformité dans vos appels d'offres stratégiques
                 </h2>
                 
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed font-light">
-                  The only "engineering light" platform designed for complex bids.
+                  La seule plateforme "d'engineering light" conçue pour les projets complexes.
                 </p>
 
                 {/* Feature list */}
                 <div className="space-y-6">
                   <div className="flex items-start">
                     <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                      <span className="text-white text-sm font-bold">1</span>
+                      <span className="text-white text-sm font-bold">1️⃣</span>
                     </div>
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-1">
-                        1.500+ pages instantly structured into an intelligent base
+                        1 500+ pages instantanément structurées en une base intelligente
                       </h4>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
                     <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                      <span className="text-white text-sm font-bold">2</span>
+                      <span className="text-white text-sm font-bold">2️⃣</span>
                     </div>
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-1">
-                        Live conformity matrix for expert collaboration - no Excel
+                        Matrice de conformité collaborative en direct — sans Excel
                       </h4>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
                     <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                      <span className="text-white text-sm font-bold">3</span>
+                      <span className="text-white text-sm font-bold">3️⃣</span>
                     </div>
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-1">
-                        Automatic alerts on risks, inconsistencies, and updates
+                        Alertes automatiques sur les risques, incohérences et mises à jour
                       </h4>
                     </div>
                   </div>
                 </div>
 
                 <p className="text-lg text-gray-700 mt-8 font-medium">
-                  A flexible alternative to siloed internal tools, guaranteeing 100% compliance.
+                  Une alternative agile aux outils cloisonnés, garantissant 100 % de conformité et éliminant les risques de rejet coûteux.
                 </p>
               </div>
             </div>
