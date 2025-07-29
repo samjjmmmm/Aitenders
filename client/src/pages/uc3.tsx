@@ -239,7 +239,8 @@ export default function UC3Page() {
                   Chaque exigence traitée, <span className="text-purple-600">chaque risque maîtrisé</span>
                 </h1>
                 
-                <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]">La seule plateforme pensée pour orchestrer les grands appels d’offres complexes : analyse IA de milliers de pages, capture et validation des exigences, cohérence multi‑équipes et pilotage sans faille. Vous éliminez les angles morts, sécurisez la conformité et gagnez des jours critiques pour livrer une offre solide et compétitive.</p>
+                <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]">La seule plateforme pensée pour orchestrer les grands appels d’offres complexes : analyse IA de milliers de pages, capture et validation des exigences, cohérence multi‑équipes et pilotage sans faille. 
+                Vous éliminez les angles morts, sécurisez la conformité et gagnez des jours critiques pour livrer une offre solide et compétitive.</p>
               </div>
               
               
