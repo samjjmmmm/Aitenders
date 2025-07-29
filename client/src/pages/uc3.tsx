@@ -665,7 +665,7 @@ export default function UC3Page() {
               <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdSecurity className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">	Pilotez chaque évolution de l’offre,<span className="text-purple-600">sans rien laisser passer</span> </h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">       Pilotez chaque évolution de l’offre,<span className="text-purple-600">sans rien laisser passer</span> </h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">Les changements documentaires sont détectés et versionnés automatiquement, avec comparaison instantanée. Le pilotage intégré des Q&A signale chaque écart, permettant à l’équipe d’en mesurer l’impact et d’agir sans délai. <p>               <span className="text-purple-600"> Le responsable de l'offre </span> s'assure ainsi d'identifier en amont les erreurs de version, les oublis et les non‑conformités : plus de “trous dans la raquette”...</p> </p>
                <div className="flex items-center text-lg font-bold  text-blue-500">
                 <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
@@ -706,224 +706,7 @@ export default function UC3Page() {
           </div>
         </div>
       </section>
-      {/* Target Audience Section - Interactive Design */}
-      <section className="py-32 px-8 bg-gradient-to-br from-gray-50 via-slate-50 to-gray-50 relative overflow-hidden">
-        {/* Subtle Abstract Background Effects */}
-        <div className="absolute inset-0 pointer-events-none">
-          {/* Large atmospheric presence - left side */}
-          <div className="absolute top-10 -left-40 w-[450px] h-[450px] rounded-full opacity-20 blur-3xl"
-               style={{
-                 background: 'radial-gradient(circle, #F5F9FE 0%, #EBF2FD 60%, #C3D9F8 85%, transparent 100%)'
-               }}></div>
-          
-          {/* Medium flowing accent - right top */}
-          <div className="absolute top-1/4 -right-24 w-72 h-72 rounded-full opacity-18 blur-2xl"
-               style={{
-                 background: 'linear-gradient(135deg, #FBFCFF 0%, #C3D9F8 40%, #EBF2FD 100%)'
-               }}></div>
-          
-          {/* Directional accent with brand primary */}
-          <div className="absolute bottom-1/3 left-1/4 w-56 h-56 rounded-full opacity-12 blur-3xl"
-               style={{
-                 background: 'radial-gradient(circle, #3880E8 0%, #C3D9F8 50%, transparent 90%)'
-               }}></div>
-          
-          {/* Subtle horizontal flow */}
-          <div className="absolute bottom-16 left-0 w-full h-28 opacity-8 blur-xl lg:opacity-12"
-               style={{
-                 background: 'linear-gradient(90deg, #EBF2FD 0%, #F5F9FE 30%, transparent 50%, #FBFCFF 80%, #C3D9F8 100%)'
-               }}></div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          {/* Header */}
-          <div className="text-center mb-20">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-              Maîtrisez vos appels d'offres complexes avec une <span className="text-purple-600">conformité totale</span>
-            </h2>
-            
-            {/* Interactive Navigation Tabs */}
-            <div className="flex flex-wrap justify-center gap-6 mb-16">
-              {targetAudiences.map((audience) => (
-                <button
-                  key={audience.id}
-                  onClick={() => setActiveAudience(audience)}
-                  onMouseEnter={() => setActiveAudience(audience)}
-                  className={`px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 ${
-                    activeAudience.id === audience.id
-                      ? 'bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-xl'
-                      : 'bg-white text-gray-700 hover:bg-gray-50 shadow-sm border border-gray-200'
-                  }`}
-                >
-                  {audience.title}
-                </button>
-              ))}
-            </div>
-          </div>
 
-          {/* Interactive Content Card */}
-          <Card className="bg-white rounded-3xl overflow-hidden border border-gray-100/50"
-               style={{
-                 boxShadow: '0 32px 64px -12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-               }}>
-            <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
-              
-              {/* Left Side - Dynamic Content */}
-              <motion.div 
-                key={activeAudience.id}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4 }}
-                className="p-16 flex flex-col justify-center"
-              >
-                <div className={`w-16 h-16 ${activeAudience.iconBg} rounded-2xl flex items-center justify-center mb-8 transition-all duration-300 shadow-lg`}>
-                  <activeAudience.icon className={`w-8 h-8 ${activeAudience.iconColor}`} />
-                </div>
-                
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">{activeAudience.title}</h3>
-                
-                <p className="text-gray-700 text-xl leading-relaxed mb-10 font-light">
-                  {activeAudience.description}
-                </p>
-                
-                <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 text-lg font-semibold rounded-2xl w-fit transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
-                  Request Demo →
-                </Button>
-              </motion.div>
-
-              {/* Right Side - Dynamic UI Mockup */}
-              <motion.div 
-                key={`${activeAudience.id}-ui`}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: 0.1 }}
-                className="bg-gradient-to-br from-purple-50 to-blue-50 p-8 flex items-center justify-center relative"
-              >
-                
-                {/* Main Dashboard Mockup */}
-                <div className="bg-white rounded-xl shadow-2xl w-full max-w-md relative">
-                  
-                  {/* Header Bar */}
-                  <div className="bg-gray-900 text-white p-4 rounded-t-xl flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                      <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                    </div>
-                    <span className="text-sm font-medium">AItenders Dashboard</span>
-                    <div className="text-sm text-gray-300">Live</div>
-                  </div>
-
-                  {/* Dynamic Dashboard Content */}
-                  <div className="p-6">
-                    <div className="mb-6">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Project Overview</h4>
-                      <div className="space-y-3">
-                        
-                        {/* Dynamic Progress Bars */}
-                        <div className="bg-gray-50 rounded-lg p-3">
-                          <div className="flex justify-between items-center mb-2">
-                            <span className="text-sm text-gray-700">Requirements Analysis</span>
-                            <span className={`text-sm font-medium text-${activeAudience.dashboardData.requirements.color}-600`}>
-                              {activeAudience.dashboardData.requirements.progress}%
-                            </span>
-                          </div>
-                          <div className="w-full bg-gray-200 rounded-full h-2">
-                            <motion.div 
-                              initial={{ width: 0 }}
-                              animate={{ width: `${activeAudience.dashboardData.requirements.progress}%` }}
-                              transition={{ duration: 0.8, delay: 0.3 }}
-                              className={`bg-${activeAudience.dashboardData.requirements.color}-500 h-2 rounded-full`}
-                            />
-                          </div>
-                        </div>
-
-                        <div className="bg-gray-50 rounded-lg p-3">
-                          <div className="flex justify-between items-center mb-2">
-                            <span className="text-sm text-gray-700">Expert Coordination</span>
-                            <span className={`text-sm font-medium text-${activeAudience.dashboardData.coordination.color}-600`}>
-                              {activeAudience.dashboardData.coordination.progress}%
-                            </span>
-                          </div>
-                          <div className="w-full bg-gray-200 rounded-full h-2">
-                            <motion.div 
-                              initial={{ width: 0 }}
-                              animate={{ width: `${activeAudience.dashboardData.coordination.progress}%` }}
-                              transition={{ duration: 0.8, delay: 0.4 }}
-                              className={`bg-${activeAudience.dashboardData.coordination.color}-500 h-2 rounded-full`}
-                            />
-                          </div>
-                        </div>
-
-                        <div className="bg-gray-50 rounded-lg p-3">
-                          <div className="flex justify-between items-center mb-2">
-                            <span className="text-sm text-gray-700">Compliance Check</span>
-                            <span className={`text-sm font-medium text-${activeAudience.dashboardData.compliance.color}-600`}>
-                              {activeAudience.dashboardData.compliance.progress}%
-                            </span>
-                          </div>
-                          <div className="w-full bg-gray-200 rounded-full h-2">
-                            <motion.div 
-                              initial={{ width: 0 }}
-                              animate={{ width: `${activeAudience.dashboardData.compliance.progress}%` }}
-                              transition={{ duration: 0.8, delay: 0.5 }}
-                              className={`bg-${activeAudience.dashboardData.compliance.color}-500 h-2 rounded-full`}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Team Status */}
-                    <div className="border-t pt-4">
-                      <h5 className="text-sm font-semibold text-gray-700 mb-3">Team Status</h5>
-                      <div className="flex -space-x-2">
-                        <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center border-2 border-white">
-                          <span className="text-xs text-white font-medium">T</span>
-                        </div>
-                        <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center border-2 border-white">
-                          <span className="text-xs text-white font-medium">L</span>
-                        </div>
-                        <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center border-2 border-white">
-                          <span className="text-xs text-white font-medium">C</span>
-                        </div>
-                        <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center border-2 border-white">
-                          <span className="text-xs text-white font-medium">Q</span>
-                        </div>
-                        <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center border-2 border-white">
-                          <span className="text-xs text-gray-600 font-medium">+3</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Dynamic Floating Notification */}
-                <motion.div 
-                  key={`${activeAudience.id}-notification`}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, delay: 0.6 }}
-                  className="absolute top-4 right-4 bg-green-500 text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium"
-                >
-                  {activeAudience.notification}
-                </motion.div>
-
-                {/* Dynamic Floating Alert */}
-                <motion.div 
-                  key={`${activeAudience.id}-alert`}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, delay: 0.7 }}
-                  className="absolute bottom-4 left-4 bg-blue-500 text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium"
-                >
-                  {activeAudience.alert}
-                </motion.div>
-              </motion.div>
-            </div>
-          </Card>
-        </div>
-      </section>
       {/* User Journey Section - High Conversion Design */}
       <section className="py-32 px-8 bg-gradient-to-br from-slate-50 via-white to-purple-50/30 relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
@@ -1139,6 +922,108 @@ export default function UC3Page() {
                   0 rejet
                 </div>
                 <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Aucune non‑conformité formelle pour sécuriser vos soumissions</p>
+              </div>
+            </div>
+            
+            {/* User-Focused Results Section */}
+            <div className="mt-20 md:mt-24 lg:mt-28">
+              <div className="text-center mb-12 md:mb-16">
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Ce que nos utilisateurs obtiennent concrètement</h3>
+                <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Des résultats mesurables pour chaque profil d'utilisateur</p>
+              </div>
+              
+              {/* Results Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                
+                {/* Responsable d'offre Results */}
+                <div className="group">
+                  <Card className="h-full p-8 bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200/50 hover:border-purple-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                    <div className="flex items-center mb-6">
+                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4">
+                        <MdAccountBox className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-bold text-gray-900">Responsable d'offre</h4>
+                        <p className="text-sm text-gray-600">Réponse techniquement conforme et traçable</p>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <div className="flex items-start space-x-3">
+                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <MdCheckCircle className="w-4 h-4 text-green-600" />
+                        </div>
+                        <p className="text-gray-700 text-sm leading-relaxed">Réduction des risques juridiques grâce à la conformité garantie</p>
+                      </div>
+                      
+                      <div className="flex items-start space-x-3">
+                        <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <MdTableChart className="w-4 h-4 text-blue-600" />
+                        </div>
+                        <p className="text-gray-700 text-sm leading-relaxed">Visibilité totale avec matrice dynamique des exigences</p>
+                      </div>
+                      
+                      <div className="flex items-start space-x-3">
+                        <div className="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <MdVerified className="w-4 h-4 text-orange-600" />
+                        </div>
+                        <p className="text-gray-700 text-sm leading-relaxed">Alignement parfait avec le cahier des charges</p>
+                      </div>
+                      
+                      <div className="flex items-start space-x-3">
+                        <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <MdGroups className="w-4 h-4 text-purple-600" />
+                        </div>
+                        <p className="text-gray-700 text-sm leading-relaxed">Traçabilité multi-expert avec historique complet</p>
+                      </div>
+                    </div>
+                  </Card>
+                </div>
+                
+                {/* Experts métiers Results */}
+                <div className="group">
+                  <Card className="h-full p-8 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50 hover:border-green-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                    <div className="flex items-center mb-6">
+                      <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-4">
+                        <MdEngineering className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-bold text-gray-900">Experts métiers</h4>
+                        <p className="text-sm text-gray-600">Extraction et traitement collaboratif des exigences</p>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <div className="flex items-start space-x-3">
+                        <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <MdFlashOn className="w-4 h-4 text-blue-600" />
+                        </div>
+                        <p className="text-gray-700 text-sm leading-relaxed">Moins de stress et de relectures manuelles</p>
+                      </div>
+                      
+                      <div className="flex items-start space-x-3">
+                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <MdDashboard className="w-4 h-4 text-green-600" />
+                        </div>
+                        <p className="text-gray-700 text-sm leading-relaxed">Pilotage clair avec historique et alertes</p>
+                      </div>
+                      
+                      <div className="flex items-start space-x-3">
+                        <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <MdEdit className="w-4 h-4 text-purple-600" />
+                        </div>
+                        <p className="text-gray-700 text-sm leading-relaxed">Rédaction guidée sans repartir de zéro</p>
+                      </div>
+                      
+                      <div className="flex items-start space-x-3">
+                        <div className="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <MdSecurity className="w-4 h-4 text-orange-600" />
+                        </div>
+                        <p className="text-gray-700 text-sm leading-relaxed">Preuve de couverture complète des exigences</p>
+                      </div>
+                    </div>
+                  </Card>
+                </div>
               </div>
             </div>
 
@@ -1581,7 +1466,7 @@ export default function UC3Page() {
       {/* Call to Action */}
       <section className="py-20 px-4 bg-aitenders-dark-blue">
         <div className="max-w-4xl mx-auto text-center text-aitenders-white-blue">
-          <h2 className="text-4xl font-bold mb-6">Prêt à Maîtriser Votre Prochain Projet Complexe ?</h2>
+          <h2 className="text-4xl font-bold mb-6">Prêt à Maîtriser Votre Prochaine Offre Complexe ?</h2>
           <p className="text-xl mb-8 opacity-90">
             Rejoignez les équipes de projet qui font confiance à AItenders pour sécuriser leurs offres complexes, éliminer les risques de conformité, 
             et gagner en toute confiance.
