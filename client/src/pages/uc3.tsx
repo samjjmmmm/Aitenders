@@ -1483,9 +1483,7 @@ export default function UC3Page() {
                       <span className="text-white text-sm font-bold">1️⃣</span>
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-1">
-                        1 500+ pages instantanément structurées en une base intelligente
-                      </h4>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-1">500+ pages instantanément structurées en une base intelligente</h4>
                     </div>
                   </div>
                   
