@@ -916,9 +916,24 @@ export default function UC3Page() {
                     Obtenez une réponse d'offre techniquement conforme, collaborative, traçable, et vérifiable à tout moment. Cette approche garantit la couverture des exigences critiques et sécurise le dépôt d'une offre sans risque d'exclusion.
                   </p>
                   
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    Réduction des risques juridiques grâce à la conformité garantie, visibilité totale avec matrice dynamique des exigences, alignement parfait avec le cahier des charges, et traçabilité multi-expert avec historique complet de validation.
-                  </p>
+                  <ul className="text-gray-600 text-sm leading-relaxed space-y-2">
+                    <li className="flex items-start">
+                      <span className="inline-block w-1.5 h-1.5 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span>Réduction des risques juridiques grâce à la conformité garantie</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="inline-block w-1.5 h-1.5 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span>Visibilité totale avec matrice dynamique des exigences</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="inline-block w-1.5 h-1.5 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span>Alignement parfait avec le cahier des charges</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="inline-block w-1.5 h-1.5 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span>Traçabilité multi-expert avec historique complet de validation</span>
+                    </li>
+                  </ul>
                 </Card>
               </div>
               
