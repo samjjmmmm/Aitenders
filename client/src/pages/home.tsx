@@ -603,6 +603,29 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+
+        {/* Learn More Card */}
+        <div className="max-w-3xl mx-auto px-6 pb-16">
+          <Card 
+            onClick={() => setLocation("/uc1")}
+            className="bg-gradient-to-r from-aitenders-white-blue to-aitenders-pale-blue border border-aitenders-light-blue rounded-2xl p-8 shadow-sm hover:shadow-md cursor-pointer transition-all duration-200 ease-in-out hover:scale-105"
+          >
+            <div className="text-center">
+              <div className="p-4 rounded-xl mb-4 mx-auto w-fit bg-aitenders-primary-blue/10">
+                <MdLightbulb className="h-8 w-8 text-aitenders-primary-blue" />
+              </div>
+              <h3 className="text-xl font-semibold text-aitenders-black mb-3">
+                Je veux en savoir plus sur Aitenders
+              </h3>
+              <p className="text-aitenders-dark-blue mb-6">
+                Découvrez toutes nos fonctionnalités et comment Aitenders peut transformer votre gestion des appels d'offres et projets.
+              </p>
+              <Button className="bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-aitenders-white-blue px-8 py-3 text-base font-medium rounded-xl shadow-sm">
+                Explorer nos solutions
+              </Button>
+            </div>
+          </Card>
+        </div>
       </main>
 
       {/* Client Logos */}
