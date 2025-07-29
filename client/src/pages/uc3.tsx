@@ -296,7 +296,7 @@ export default function UC3Page() {
                         />
                       </div>
                     </div>
-                    <span>Used by Fortune 500 teams</span>
+                    <span>Plébiscité par les leaders du secteur</span>
                   </div>
                   
                   <div className="flex items-center text-sm text-gray-600">
