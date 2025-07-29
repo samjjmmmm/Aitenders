@@ -1089,20 +1089,20 @@ export default function UC3Page() {
       <section className="py-24 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Measurable Impact on Complex Projects</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Real results from teams managing multi-lot international projects</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Impact Mesurable sur Vos Projets Complexes</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Des résultats concrets pour les équipes gérant des appels d'offres stratégiques.</p>
           </div>
           
           {/* KPI Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
             {/* KPI 1 */}
             <div className="group">
               <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 text-center border border-green-100 hover:border-green-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[200px]">
                 <div className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-green-600 to-emerald-600 bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform duration-300">
-                  90%
+                  90 %
                 </div>
-                <p className="text-gray-700 font-medium leading-relaxed">Data organization completed immediately</p>
+                <p className="text-gray-700 font-medium leading-relaxed">Travail d'organisation des données et du projet réalisé immédiatement</p>
               </div>
             </div>
 
@@ -1110,9 +1110,9 @@ export default function UC3Page() {
             <div className="group">
               <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 text-center border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[200px]">
                 <div className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform duration-300">
-                  40%
+                  Cohérence
                 </div>
-                <p className="text-gray-700 font-medium leading-relaxed">Faster review organization</p>
+                <p className="text-gray-700 font-medium leading-relaxed">Organisation homogène des réponses pour une crédibilité renforcée</p>
               </div>
             </div>
 
@@ -1120,21 +1120,13 @@ export default function UC3Page() {
             <div className="group">
               <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-3xl p-8 text-center border border-purple-100 hover:border-purple-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[200px]">
                 <div className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-purple-600 to-violet-600 bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform duration-300">
-                  0
+                  0 rejet
                 </div>
-                <p className="text-gray-700 font-medium leading-relaxed">Formal rejections for non-compliance</p>
+                <p className="text-gray-700 font-medium leading-relaxed">Aucune non‑conformité formelle pour sécuriser vos soumissions</p>
               </div>
             </div>
 
-            {/* KPI 4 */}
-            <div className="group">
-              <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-3xl p-8 text-center border border-orange-100 hover:border-orange-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[200px]">
-                <div className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-orange-600 to-amber-600 bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform duration-300">
-                  100%
-                </div>
-                <p className="text-gray-700 font-medium leading-relaxed">Requirement coverage guaranteed</p>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>
