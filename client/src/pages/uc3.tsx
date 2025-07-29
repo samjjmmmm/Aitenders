@@ -493,7 +493,7 @@ export default function UC3Page() {
               
               {/* Main Headline */}
               <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-12 leading-[1.1] tracking-tight">
-                Validate faster, without <span className="text-purple-600">risking credibility</span>
+                Coordinate complexity, <span className="text-purple-600">win with confidence</span>
               </h2>
               
               {/* Body Copy */}
