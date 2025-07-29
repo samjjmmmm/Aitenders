@@ -1536,24 +1536,24 @@ export default function UC3Page() {
               <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <MdSecurity className="w-8 h-8 text-green-600" />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Enterprise Security for Critical Projects</h2>
-              <p className="text-lg text-gray-600">Audit-Ready Compliance and Data Protection</p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Sécurité d'Entreprise pour Projets Critiques</h2>
+              <p className="text-lg text-gray-600">Conformité et Protection des Données Prêtes pour l'Audit</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div>
                 <MdVerifiedUser className="w-8 h-8 text-green-600 mx-auto mb-3" />
-                <h4 className="font-semibold text-gray-900 mb-2">Complete Project Audit Trails</h4>
-                <p className="text-gray-600 text-sm">Full version control and collaboration tracking</p>
+                <h4 className="font-semibold text-gray-900 mb-2">Pistes d'Audit Complètes du Projet</h4>
+                <p className="text-gray-600 text-sm">Contrôle de version complet et suivi de collaboration</p>
               </div>
               <div>
                 <MdShield className="w-8 h-8 text-green-600 mx-auto mb-3" />
-                <h4 className="font-semibold text-gray-900 mb-2">Multi-Expert Validation</h4>
-                <p className="text-gray-600 text-sm">Collaborative tracking across all team members</p>
+                <h4 className="font-semibold text-gray-900 mb-2">Validation Multi-Experts</h4>
+                <p className="text-gray-600 text-sm">Suivi collaboratif de tous les membres de l'équipe</p>
               </div>
               <div>
                 <MdAnalytics className="w-8 h-8 text-green-600 mx-auto mb-3" />
-                <h4 className="font-semibold text-gray-900 mb-2">Enterprise Integration</h4>
-                <p className="text-gray-600 text-sm">Seamless connection with existing project systems</p>
+                <h4 className="font-semibold text-gray-900 mb-2">Intégration d'Entreprise</h4>
+                <p className="text-gray-600 text-sm">Connexion transparente avec les systèmes de projet existants</p>
               </div>
             </div>
           </Card>
@@ -1562,21 +1562,21 @@ export default function UC3Page() {
       {/* Call to Action */}
       <section className="py-20 px-4 bg-aitenders-dark-blue">
         <div className="max-w-4xl mx-auto text-center text-aitenders-white-blue">
-          <h2 className="text-4xl font-bold mb-6">Ready to Master Your Next Complex Project?</h2>
+          <h2 className="text-4xl font-bold mb-6">Prêt à Maîtriser Votre Prochain Projet Complexe ?</h2>
           <p className="text-xl mb-8 opacity-90">
-            Join the project teams who trust AItenders to secure their complex bids, eliminate compliance risks, 
-            and win with complete confidence.
+            Rejoignez les équipes de projet qui font confiance à AItenders pour sécuriser leurs offres complexes, éliminer les risques de conformité, 
+            et gagner en toute confiance.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button size="lg" className="bg-aitenders-primary-blue text-aitenders-white-blue hover:bg-aitenders-primary-blue/90 px-8 py-4 text-lg">
               <MdMessage className="w-5 h-5 mr-2" />
-              Request a Demo
+              Demander une Démo
             </Button>
             <Button variant="outline" size="lg" className="border-aitenders-white-blue/80 text-aitenders-white-blue bg-aitenders-white-blue/10 hover:bg-aitenders-white-blue hover:text-aitenders-dark-blue px-8 py-4 text-lg backdrop-blur-sm">
-              Contact Our Team
+              Contacter Notre Équipe
             </Button>
           </div>
-          <p className="text-sm mt-6 opacity-80">Enterprise-grade security • Multi-expert collaboration • Complete audit trails</p>
+          <p className="text-sm mt-6 opacity-80">Sécurité de niveau entreprise • Collaboration multi-experts • Pistes d'audit complètes</p>
         </div>
       </section>
       {/* Contact Section */}
