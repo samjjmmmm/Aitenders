@@ -564,7 +564,7 @@ export default function UC3Page() {
               </div>
               <h3 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">Structure Complex Projects Instantly</h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Equipped with AI document analysis and intelligent requirement extraction, AItenders automatically organizes 500+ page RFPs into structured data, classified requirements, and actionable insights ready for expert analysis from day 1.
+                Équipé d'une analyse IA et d'une extraction intelligente des exigences, Aitenders transforme vos AO de 500+ pages en exigences classifiées et insights actionnables — prêts pour l'analyse experte et la conformité dès le jour 1.
               </p>
               <div className="flex items-center text-lg text-gray-500">
                 <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
