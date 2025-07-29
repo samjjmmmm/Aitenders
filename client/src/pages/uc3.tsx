@@ -199,7 +199,7 @@ export default function UC3Page() {
       {/* Header/Navbar */}
       <Header />
       {/* Hero Section - Professional SaaS Design */}
-      <section className="py-16 md:py-24 lg:py-32 xl:py-40 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-white via-slate-50/30 to-purple-50/20 relative overflow-hidden">
+      <section className="py-12 md:py-16 lg:py-20 xl:py-24 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-white via-slate-50/30 to-purple-50/20 relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Large flowing gradient blob - top left */}
@@ -241,7 +241,7 @@ export default function UC3Page() {
                   Chaque exigence traitée, <span className="text-purple-600">chaque risque maîtrisé</span>
                 </h1>
                 
-                <p className="text-2xl lg:text-3xl text-gray-600 mb-16 leading-relaxed font-light">Conçue pour les grands projets multi‑lots, Aitenders transforme des appels d’offres de plusieurs centaines de pages en une base intelligente et exploitable dès le premier jour.</p>
+                <p className="text-lg md:text-xl text-gray-600 mb-16 leading-relaxed font-light">Conçue pour les grands projets multi‑lots, Aitenders transforme des appels d’offres de plusieurs centaines de pages en une base intelligente et exploitable dès le premier jour.</p>
               </div>
               
               {/* Single Key Metric */}
@@ -446,7 +446,7 @@ export default function UC3Page() {
         </div>
       </section>
       {/* Pain Points Section - Main Feature Card + Supporting Cards */}
-      <section className="py-32 px-8 bg-gradient-to-br from-slate-50 via-gray-50 to-purple-50/20 relative overflow-hidden">
+      <section className="py-16 md:py-20 lg:py-24 px-8 bg-gradient-to-br from-slate-50 via-gray-50 to-purple-50/20 relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Large atmospheric blob - right side */}
