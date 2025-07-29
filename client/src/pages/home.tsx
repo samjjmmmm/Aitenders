@@ -490,32 +490,7 @@ export default function HomePage() {
 
           {/* Dynamic Selection Cards */}
           <div className="mb-12 max-w-3xl mx-auto">
-            {/* Step Progress Indicator */}
-            <div className="flex items-center justify-between mb-8">
-              <div className="text-sm text-gray-500">
-                Step {currentStep} of 5
-              </div>
-              {currentStep > 1 && (
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={resetSelection}
-                  className="text-blue-600 hover:text-blue-700 transition-all duration-200"
-                >
-                  Start Over
-                </Button>
-              )}
-            </div>
 
-            {/* Progress Bar */}
-            <div className="mb-8">
-              <div className="h-1 bg-gray-200 rounded-full">
-                <div 
-                  className="h-1 bg-blue-600 rounded-full transition-all duration-300 ease-in-out"
-                  style={{ width: `${(currentStep / 5) * 100}%` }}
-                ></div>
-              </div>
-            </div>
 
             {/* Step Title */}
             <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
