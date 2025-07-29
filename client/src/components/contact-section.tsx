@@ -12,7 +12,11 @@ import { useToast } from "@/hooks/use-toast";
 // Import Aitenders logo
 import aitendersLogo from "@assets/Untitled(4)_1753712731718.png";
 
-export default function ContactSection() {
+interface ContactSectionProps {
+  language?: 'en' | 'fr';
+}
+
+export default function ContactSection({ language = 'fr' }: ContactSectionProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,14 +34,14 @@ export default function ContactSection() {
     onSuccess: () => {
       setFormData({ name: "", email: "", company: "", message: "" });
       toast({
-        title: "Message sent successfully!",
-        description: "We'll get back to you as soon as possible.",
+        title: language === 'fr' ? "Message envoyé avec succès !" : "Message sent successfully!",
+        description: language === 'fr' ? "Nous vous répondrons dans les plus brefs délais." : "We'll get back to you as soon as possible.",
       });
     },
     onError: () => {
       toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
+        title: language === 'fr' ? "Erreur" : "Error",
+        description: language === 'fr' ? "Échec de l'envoi du message. Veuillez réessayer." : "Failed to send message. Please try again.",
         variant: "destructive",
       });
     },
@@ -57,6 +61,49 @@ export default function ContactSection() {
     }
   };
 
+  const t = {
+    fr: {
+      title: "Nous Contacter",
+      subtitle: "Prêt à transformer votre processus de gestion d'appels d'offres ? Discutons de la façon dont Aitenders peut aider votre organisation à remporter plus de contrats et à optimiser les opérations.",
+      email: "Email",
+      location: "Localisation",
+      linkedin: "LinkedIn",
+      followLinkedIn: "Suivez-nous sur LinkedIn",
+      requestMeeting: "Demander un Rendez-vous",
+      yourName: "Votre Nom",
+      yourEmail: "Votre Email", 
+      company: "Entreprise",
+      messagePlaceholder: "Parlez-nous de vos défis en gestion d'appels d'offres...",
+      sending: "Envoi...",
+      requestMeetingBtn: "Demander un Rendez-vous",
+      copyright: "© 2024 Aitenders. Tous droits réservés.",
+      privacy: "Confidentialité",
+      terms: "Conditions",
+      products: "Produits",
+      about: "À propos"
+    },
+    en: {
+      title: "Contact Us",
+      subtitle: "Ready to transform your tender management process? Let's discuss how Aitenders can help your organization win more bids and streamline operations.",
+      email: "Email",
+      location: "Location",
+      linkedin: "LinkedIn",
+      followLinkedIn: "Follow us on LinkedIn",
+      requestMeeting: "Request a Meeting",
+      yourName: "Your Name",
+      yourEmail: "Your Email",
+      company: "Company",
+      messagePlaceholder: "Tell us about your tender management challenges...",
+      sending: "Sending...",
+      requestMeetingBtn: "Request a Meeting",
+      copyright: "© 2024 Aitenders. All rights reserved.",
+      privacy: "Privacy",
+      terms: "Terms", 
+      products: "Products",
+      about: "About"
+    }
+  };
+
   return (
     <footer className="bg-aitenders-black text-aitenders-white-blue py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,9 +111,9 @@ export default function ContactSection() {
           <div className="w-16 h-16 bg-aitenders-primary-blue rounded-2xl flex items-center justify-center mx-auto mb-6">
             <MessageCircle className="w-8 h-8 text-aitenders-white-blue" />
           </div>
-          <h2 className="text-3xl font-bold mb-4">Contact Us</h2>
+          <h2 className="text-3xl font-bold mb-4">{t[language].title}</h2>
           <p className="text-aitenders-light-blue max-w-2xl mx-auto">
-            Ready to transform your tender management process? Let's discuss how Aitenders can help your organization win more bids and streamline operations.
+            {t[language].subtitle}
           </p>
         </div>
         
@@ -78,7 +125,7 @@ export default function ContactSection() {
                 <Mail className="w-6 h-6 text-aitenders-primary-blue" />
               </div>
               <div>
-                <h4 className="font-semibold">Email</h4>
+                <h4 className="font-semibold">{t[language].email}</h4>
                 <p className="text-aitenders-light-blue">contact@aitenders.com</p>
               </div>
             </div>
@@ -88,7 +135,7 @@ export default function ContactSection() {
                 <MapPin className="w-6 h-6 text-aitenders-primary-blue" />
               </div>
               <div>
-                <h4 className="font-semibold">Location</h4>
+                <h4 className="font-semibold">{t[language].location}</h4>
                 <p className="text-aitenders-light-blue">Saint-Etienne | 42100</p>
               </div>
             </div>
@@ -98,14 +145,14 @@ export default function ContactSection() {
                 <SiLinkedin className="w-6 h-6 text-aitenders-primary-blue" />
               </div>
               <div>
-                <h4 className="font-semibold">LinkedIn</h4>
+                <h4 className="font-semibold">{t[language].linkedin}</h4>
                 <a 
                   href="https://www.linkedin.com/company/aitenders/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-aitenders-primary-blue hover:text-aitenders-light-blue transition-colors"
                 >
-                  Follow us on LinkedIn
+                  {t[language].followLinkedIn}
                 </a>
               </div>
             </div>
@@ -113,13 +160,13 @@ export default function ContactSection() {
           
           {/* Contact Form */}
           <Card className="bg-aitenders-dark-blue border-aitenders-primary-blue/30 rounded-2xl p-6">
-            <h3 className="text-xl font-semibold mb-6 text-aitenders-white-blue">Request a Meeting</h3>
+            <h3 className="text-xl font-semibold mb-6 text-aitenders-white-blue">{t[language].requestMeeting}</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <Input
                   type="text"
                   name="name"
-                  placeholder="Your Name"
+                  placeholder={t[language].yourName}
                   value={formData.name}
                   onChange={handleInputChange}
                   className="bg-aitenders-black border-aitenders-primary-blue/50 text-aitenders-white-blue placeholder-aitenders-light-blue"
@@ -130,7 +177,7 @@ export default function ContactSection() {
                 <Input
                   type="email"
                   name="email"
-                  placeholder="Your Email"
+                  placeholder={t[language].yourEmail}
                   value={formData.email}
                   onChange={handleInputChange}
                   className="bg-aitenders-black border-aitenders-primary-blue/50 text-aitenders-white-blue placeholder-aitenders-light-blue"
@@ -141,7 +188,7 @@ export default function ContactSection() {
                 <Input
                   type="text"
                   name="company"
-                  placeholder="Company"
+                  placeholder={t[language].company}
                   value={formData.company}
                   onChange={handleInputChange}
                   className="bg-aitenders-black border-aitenders-primary-blue/50 text-aitenders-white-blue placeholder-aitenders-light-blue"
@@ -150,7 +197,7 @@ export default function ContactSection() {
               <div>
                 <Textarea
                   name="message"
-                  placeholder="Tell us about your tender management challenges..."
+                  placeholder={t[language].messagePlaceholder}
                   rows={4}
                   value={formData.message}
                   onChange={handleInputChange}
@@ -163,7 +210,7 @@ export default function ContactSection() {
                 disabled={submitContactMutation.isPending}
                 className="w-full bg-aitenders-primary-blue text-aitenders-white-blue hover:bg-aitenders-dark-blue"
               >
-                {submitContactMutation.isPending ? "Sending..." : "Request a Meeting"}
+                {submitContactMutation.isPending ? t[language].sending : t[language].requestMeetingBtn}
               </Button>
             </form>
           </Card>
@@ -178,13 +225,13 @@ export default function ContactSection() {
                 alt="Aitenders" 
                 className="h-8 w-auto"
               />
-              <span className="ml-4 text-aitenders-light-blue">© 2024 Aitenders. All rights reserved.</span>
+              <span className="ml-4 text-aitenders-light-blue">{t[language].copyright}</span>
             </div>
             <div className="flex space-x-6 text-sm text-aitenders-light-blue">
-              <a href="/privacy" className="hover:text-aitenders-white-blue transition-colors">Privacy</a>
-              <a href="/terms" className="hover:text-aitenders-white-blue transition-colors">Terms</a>
-              <a href="#products" className="hover:text-aitenders-white-blue transition-colors">Products</a>
-              <a href="#about" className="hover:text-aitenders-white-blue transition-colors">About</a>
+              <a href="/privacy" className="hover:text-aitenders-white-blue transition-colors">{t[language].privacy}</a>
+              <a href="/terms" className="hover:text-aitenders-white-blue transition-colors">{t[language].terms}</a>
+              <a href="#products" className="hover:text-aitenders-white-blue transition-colors">{t[language].products}</a>
+              <a href="#about" className="hover:text-aitenders-white-blue transition-colors">{t[language].about}</a>
             </div>
           </div>
         </div>

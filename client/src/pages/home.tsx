@@ -704,12 +704,12 @@ export default function HomePage() {
       </main>
 
       {/* Client Logos */}
-      <ClientLogos />
+      <ClientLogos language={language} />
 
       
 
       {/* Contact Section */}
-      <ContactSection />
+      <ContactSection language={language} />
     </div>
   );
 }

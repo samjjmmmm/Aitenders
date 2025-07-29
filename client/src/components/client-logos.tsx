@@ -1,4 +1,8 @@
-export default function ClientLogos() {
+interface ClientLogosProps {
+  language?: 'en' | 'fr';
+}
+
+export default function ClientLogos({ language = 'fr' }: ClientLogosProps) {
   const logos = [
     {
       name: "Vinci",
@@ -29,13 +33,24 @@ export default function ClientLogos() {
   // Duplicate logos for seamless scroll
   const duplicatedLogos = [...logos, ...logos];
 
+  const t = {
+    fr: {
+      title: "Approuvé par les Leaders de l'Industrie",
+      subtitle: "Rejoignez les entreprises de premier plan qui font confiance à Aitenders pour leur gestion d'appels d'offres"
+    },
+    en: {
+      title: "Trusted by Industry Leaders",
+      subtitle: "Join leading companies who trust Aitenders for their tender management"
+    }
+  };
+
   return (
     <section className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-aitenders-black mb-4">Trusted by Industry Leaders</h2>
+          <h2 className="text-3xl font-bold text-aitenders-black mb-4">{t[language].title}</h2>
           <p className="text-lg text-aitenders-dark-blue">
-            Join leading companies who trust Aitenders for their tender management
+            {t[language].subtitle}
           </p>
         </div>
         
