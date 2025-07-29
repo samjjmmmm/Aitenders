@@ -239,7 +239,7 @@ export default function UC3Page() {
                   Chaque exigence traitée, <span className="text-purple-600">chaque risque maîtrisé</span>
                 </h1>
                 
-                <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]">La seule plateforme pensée pour orchestrer les grands appels d’offres complexes : analyse IA de milliers de pages, capture et validation des exigences, cohérence multi‑équipes et pilotage sans faille. 
+                <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]"> <span className="text-purple-300">La seule plateforme pensée pour orchestrer les grands appels d’offres complexes :</span> analyse IA de milliers de pages, capture et validation des exigences, cohérence multi‑équipes et pilotage sans faille. 
                 Vous éliminez les angles morts, sécurisez la conformité et gagnez des jours critiques pour livrer une offre solide et compétitive.</p>
               </div>
               
@@ -251,7 +251,7 @@ export default function UC3Page() {
                   size="lg" 
                   className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto"
                 >
-                  Request a Demo
+                  Réservez une Démo
                 </Button>
               </div>
               
@@ -261,7 +261,7 @@ export default function UC3Page() {
                   variant="ghost" 
                   className="text-purple-600 hover:text-purple-700 hover:bg-purple-50/80 px-6 py-4 text-xl font-medium underline decoration-2 underline-offset-4 rounded-2xl transition-all duration-300"
                 >
-                  Download Use Case →
+                  Téléchargez le cas d'usage →
                 </Button>
               </div>
               
@@ -487,14 +487,14 @@ export default function UC3Page() {
               </h2>
               
               {/* Body Copy */}
-              <p className="text-2xl lg:text-3xl text-gray-600 mb-16 leading-relaxed max-w-5xl mx-auto font-light">Dans les grands appels d’offres, les équipes gaspillent un temps critique à vérifier manuellement la conformité, avec des risques d’oubli, d’incohérence et de rejet.</p>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">Dans les grands appels d’offres, les équipes gaspillent un <span className="text-grey-500 font-bold">temps critique</span> à vérifier manuellement la conformité, avec des risques d’oubli, d’incohérence et de rejet.</p>
               
-              <p className="text-2xl lg:text-3xl text-gray-600 mb-16 leading-relaxed max-w-5xl mx-auto font-light">Avec Aitenders, démarrez sur une donnée intelligente, collaborez sans friction et pilotez chaque évolution de l’offre pour garantir une réponse conforme et compétitive, sans mauvaise surprise.</p>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">Avec Aitenders, démarrez sur une donnée intelligente dès le premier jour, collaborez sans friction et pilotez chaque évolution de l’offre pour garantir une réponse conforme et compétitive, sans mauvaise surprise.</p>
               
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
                 <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
-                  Request a Demo
+                  Contactez nous!
                 </Button>
                 <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white px-12 py-6 text-xl font-semibold rounded-3xl transition-all duration-300">
                   <MdPlayArrow className="w-6 h-6 mr-2" />
@@ -539,7 +539,7 @@ export default function UC3Page() {
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre copilote IA qui simplifie la gestion des appels d’offres complexes</h1>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-purple-600">copilote IA </span> qui simplifie la gestion des appels d’offres complexes</h1>
             <h3 className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">Structurez, collaborez et maîtrisez vos appels d’offres complexes, sans aucun angle mort.</h3>
           </div>
 
@@ -549,13 +549,14 @@ export default function UC3Page() {
               <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdFlashOn className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Structurez les Projets Complexes Instantanément</h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Démarrez le projet sur une donnée pré-organisée et intelligente <span className="text-purple-600">dès le jour 1</span></h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Équipé d'une analyse IA et d'une extraction intelligente des exigences, Aitenders transforme vos AO de 500+ pages en exigences classifiées et insights actionnables — prêts pour l'analyse experte et la conformité dès le jour 1.
+                Grâce aux assistants IA, les documents sont automatiquement structurés en base de données, les informations classifiés, les exigences identifiées, les points clés résumés, les contradictions et similitudes détectées etc ... 
+        <p>      <span className="text-purple-600">Le responsable d'offre mets à disposition de l’équipe projet</span> une base propre, intelligible, prête à l’analyse, sans aucun traitement manuel initial.</p>  
               </p>
-              <div className="flex items-center text-lg text-gray-500">
+              <div className="flex items-center text-lg font-bold  text-blue-500">
                 <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
-                Gagnez plusieurs jours dès la phase de cadrage
+                Base intelligente experte prête dès le premier jour!
               </div>
             </div>
             <div className="order-2">
@@ -645,11 +646,15 @@ export default function UC3Page() {
               <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdGroups className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Orchestrez les Équipes d'Experts Sans Friction</h3>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">Aitenders vous aide à coordonner les spécialistes techniques, juridiques, commerciaux et qualité en générant des matrices de conformité dynamiques, en allouant les exigences aux bons experts, et en créant des structures de livrables unifiées qui éliminent les silos.</p>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Collaborez entre experts <span className="text-purple-600">sans friction</span>, assurez la conformité initiale <span className="text-purple-600">sans effort.</span></h3>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">Aitenders permet de générer de manière collaborative et structurée la matrice de conformité, l’allocation des exigences aux experts, et une structuration des livrables à produire. 
+                <p>
+                  <span className="text-purple-600"> Chaque expert </span> 
+                  sait ce qu’il doit faire, les angles morts sont visibles, la stratégie de réponse se construit en équipe, sans perte d’information. </p>
+</p>
               <div className="flex items-center text-lg text-gray-500">
                 <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
-                Eliminate coordination bottlenecks across departments
+                <span className="font-bold text-blue-500">Collaboration structurée et pilotée (exit les fichiers Excel)</span>
               </div>
             </div>
           </div>
@@ -660,11 +665,11 @@ export default function UC3Page() {
               <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdSecurity className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Contrôlez Chaque Évolution de Projet</h3>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">La plateforme détecte automatiquement les changements documentaires, suit l'évolution des versions, et alerte instantanément les membres d'équipe concernés pour prévenir les lacunes d'exigences, garantissant zéro oubli sur l'ensemble du cycle de vie du projet.</p>
-              <div className="flex items-center text-lg text-gray-500">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">	Pilotez chaque évolution de l’offre,<span className="text-purple-600">sans rien laisser passer</span> </h3>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">Les changements documentaires sont détectés et versionnés automatiquement, avec comparaison instantanée. Le pilotage intégré des Q&A signale chaque écart, permettant à l’équipe d’en mesurer l’impact et d’agir sans délai. <p>               <span className="text-purple-600"> Le responsable de l'offre </span> s'assure ainsi d'identifier en amont les erreurs de version, les oublis et les non‑conformités : plus de “trous dans la raquette”...</p> </p>
+               <div className="flex items-center text-lg font-bold  text-blue-500">
                 <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
-                Garantissez 100 % de couverture des exigences avec des pistes d'audit complètes
+                 Pilotage des évolutions sans faille
               </div>
             </div>
             <div className="order-2">
