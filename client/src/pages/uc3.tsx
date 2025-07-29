@@ -674,7 +674,7 @@ export default function UC3Page() {
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">La plateforme détecte automatiquement les changements documentaires, suit l'évolution des versions, et alerte instantanément les membres d'équipe concernés pour prévenir les lacunes d'exigences, garantissant zéro oubli sur l'ensemble du cycle de vie du projet.</p>
               <div className="flex items-center text-lg text-gray-500">
                 <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
-                Guarantee 100% requirement coverage with audit trails
+                Garantissez 100 % de couverture des exigences avec des pistes d'audit complètes
               </div>
             </div>
             <div className="order-2">
