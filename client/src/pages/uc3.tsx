@@ -268,7 +268,7 @@ export default function UC3Page() {
               
               {/* Trust Elements */}
               <div className="border-t border-gray-100 pt-8">
-                <p className="text-sm text-gray-500 mb-6">Mentioned in one of top 25 AI/ML solutions</p>
+                <p className="text-sm text-gray-500 mb-6">Mentionné parmi les 25 meilleures solutions d’IA et de ML</p>
                 
                 {/* Customer Logos / Trust Indicators */}
                 <div className="flex items-center space-x-8">
