@@ -568,7 +568,7 @@ export default function UC3Page() {
               </p>
               <div className="flex items-center text-lg text-gray-500">
                 <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
-                Save days of manual document processing
+                Gagnez plusieurs jours dès la phase de cadrage
               </div>
             </div>
             <div className="order-2">
