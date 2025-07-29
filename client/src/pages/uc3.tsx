@@ -658,7 +658,7 @@ export default function UC3Page() {
               <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdGroups className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">Orchestrate Expert Teams Seamlessly</h3>
+              <h3 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">Orchestrez les Équipes d'Experts Sans Friction</h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                 AItenders helps you coordinate technical, legal, commercial, and quality specialists by generating dynamic compliance matrices, allocating requirements to the right experts, and creating unified deliverable structures that eliminate silos.
               </p>
