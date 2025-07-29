@@ -237,7 +237,7 @@ export default function UC3Page() {
                   Complex Multi-Lot Bid Management
                 </Badge>
                 
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 md:mb-8 lg:mb-12 leading-[1.1] tracking-tight">
                   Chaque exigence traitée, <span className="text-purple-600">chaque risque maîtrisé</span>
                 </h1>
                 
@@ -549,17 +549,17 @@ export default function UC3Page() {
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre copilote IA qui simplifie la gestion des appels d’offres complexes</h1>
-            <h3 className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">Structurez, collaborez et maîtrisez vos appels d’offres complexes, sans aucun angle mort.</h3>
+            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-[1.1] tracking-tight">Votre copilote IA qui simplifie la gestion des appels d’offres complexes</h1>
+            <h3 className="text-2xl lg:text-3xl text-gray-600 max-w-5xl mx-auto leading-relaxed font-light">Structurez, collaborez et maîtrisez vos appels d’offres complexes, sans aucun angle mort.</h3>
           </div>
 
           {/* Feature 1: Structure Complex Projects - Text Left, Card Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-24">
             <div className="order-1">
               <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdFlashOn className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Structurez les Projets Complexes Instantanément</h3>
+              <h3 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">Structurez les Projets Complexes Instantanément</h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                 Équipé d'une analyse IA et d'une extraction intelligente des exigences, Aitenders transforme vos AO de 500+ pages en exigences classifiées et insights actionnables — prêts pour l'analyse experte et la conformité dès le jour 1.
               </p>
@@ -606,7 +606,7 @@ export default function UC3Page() {
           </div>
 
           {/* Feature 2: Orchestrate Expert Teams - Text Right, Card Left */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-24">
             <div className="order-2 lg:order-1">
               <Card className="p-10 bg-gradient-to-br from-purple-50 to-pink-100 border border-purple-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
                    style={{
@@ -655,7 +655,7 @@ export default function UC3Page() {
               <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdGroups className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Orchestrez les Équipes d'Experts Sans Friction</h3>
+              <h3 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">Orchestrez les Équipes d'Experts Sans Friction</h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">Aitenders vous aide à coordonner les spécialistes techniques, juridiques, commerciaux et qualité en générant des matrices de conformité dynamiques, en allouant les exigences aux bons experts, et en créant des structures de livrables unifiées qui éliminent les silos.</p>
               <div className="flex items-center text-lg text-gray-500">
                 <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
@@ -670,7 +670,7 @@ export default function UC3Page() {
               <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdSecurity className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Contrôlez Chaque Évolution de Projet</h3>
+              <h3 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">Contrôlez Chaque Évolution de Projet</h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">La plateforme détecte automatiquement les changements documentaires, suit l'évolution des versions, et alerte instantanément les membres d'équipe concernés pour prévenir les lacunes d'exigences, garantissant zéro oubli sur l'ensemble du cycle de vie du projet.</p>
               <div className="flex items-center text-lg text-gray-500">
                 <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
@@ -743,9 +743,9 @@ export default function UC3Page() {
         <div className="max-w-7xl mx-auto relative z-10">
           {/* Header */}
           <div className="text-center mb-20">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-12 leading-[1.1] tracking-tight">
               Bid management for <span className="text-purple-600">all your needs</span>
-            </h2>
+            </h1>
             
             {/* Interactive Navigation Tabs */}
             <div className="flex flex-wrap justify-center gap-6 mb-16">
@@ -785,7 +785,7 @@ export default function UC3Page() {
                   <activeAudience.icon className={`w-8 h-8 ${activeAudience.iconColor}`} />
                 </div>
                 
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">{activeAudience.title}</h3>
+                <h3 className="text-3xl font-bold text-gray-900 mb-8 leading-tight">{activeAudience.title}</h3>
                 
                 <p className="text-gray-700 text-xl leading-relaxed mb-10 font-light">
                   {activeAudience.description}
@@ -960,7 +960,7 @@ export default function UC3Page() {
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16 md:mb-20 lg:mb-24">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Réussissez Vos Projets Complexes en 3 Étapes</h2>
+            <h3 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 md:mb-8 leading-[1.1] tracking-tight">Réussissez vos projets complexes en 3 étapes</h3>
           </div>
           
           {/* Steps Flow */}
@@ -1003,7 +1003,7 @@ export default function UC3Page() {
                   
                   {/* Content */}
                   <div className="text-center">
-                    <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4 leading-tight">Téléversez votre documentation complexe</h4>
+                    <h4 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">Téléversez votre documentation complexe</h4>
                     <p className="text-gray-600 leading-relaxed text-base md:text-lg mb-4 md:mb-6">Déposez vos appels d'offres de plus de 500 pages et laissez l'IA structurer instantanément chaque exigence dans une base claire et exploitable.</p>
                     
                     {/* Enhanced Blue Highlight Box */}
@@ -1041,7 +1041,7 @@ export default function UC3Page() {
                   
                   {/* Content */}
                   <div className="text-center">
-                    <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4 leading-tight">Collaborez sur la conformité</h4>
+                    <h4 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">Collaborez sur la conformité</h4>
                     <p className="text-gray-600 leading-relaxed text-base md:text-lg mb-4 md:mb-6">Générez des matrices de conformité dynamiques, assignez les responsabilités aux équipes juridiques, techniques et commerciales, et alignez votre stratégie de réponse en temps réel.</p>
                     
                     {/* Enhanced Blue Highlight Box */}
@@ -1079,7 +1079,7 @@ export default function UC3Page() {
                   
                   {/* Content */}
                   <div className="text-center">
-                    <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4 leading-tight">Maîtrisez chaque évolution</h4>
+                    <h4 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">Maîtrisez chaque évolution</h4>
                     <p className="text-gray-600 leading-relaxed text-base md:text-lg mb-4 md:mb-6">Suivez les changements documentaires, gérez les Q&A et recevez des alertes proactives sur les mises à jour ou les risques afin de garantir une conformité totale.</p>
                     
                     {/* Enhanced Blue Highlight Box */}
@@ -1448,7 +1448,7 @@ export default function UC3Page() {
                      boxShadow: '0 20px 40px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.1)'
                    }}>
                 
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Maîtrisez la conformité de vos appels d’offres</h2>
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">Maîtrisez la conformité de vos appels d’offres</h2>
                 
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed font-light">
                   La seule plateforme "d'engineering light" conçue pour les projets complexes.
