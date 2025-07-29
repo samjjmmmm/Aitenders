@@ -499,7 +499,7 @@ export default function UC3Page() {
               {/* Body Copy */}
               <p className="text-2xl lg:text-3xl text-gray-600 mb-16 leading-relaxed max-w-5xl mx-auto font-light">Dans les grands appels d’offres, les équipes gaspillent un temps critique à vérifier manuellement la conformité, avec des risques d’oubli, d’incohérence et de rejet.</p>
               
-              <p className="text-2xl lg:text-3xl text-gray-600 mb-16 leading-relaxed max-w-5xl mx-auto font-light">With Aitenders, you gain enterprise-level compliance tracking, bulk versioning, and AI-powered requirement detection to ensure every clause is addressed and every deadline met.</p>
+              <p className="text-2xl lg:text-3xl text-gray-600 mb-16 leading-relaxed max-w-5xl mx-auto font-light">Avec Aitenders, démarrez sur une donnée intelligente, collaborez sans friction et pilotez chaque évolution de l’offre pour garantir une réponse conforme et compétitive, sans mauvaise surprise.</p>
               
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
