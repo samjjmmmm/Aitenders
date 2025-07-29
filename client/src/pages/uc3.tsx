@@ -512,52 +512,7 @@ export default function UC3Page() {
                 </Button>
               </div>
 
-              {/* Supporting Cards - 3 Card Grid Inside Main Card */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                
-                {/* Card 1: Stay compliant */}
-                <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-white/60 hover:border-purple-200/50 transform hover:-translate-y-2 transition-all duration-300"
-                     style={{
-                       boxShadow: '0 20px 40px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.1)'
-                     }}>
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
-                    <MdSecurity className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Stay compliant</h3>
-                  <p className="text-gray-600 leading-relaxed text-center text-lg">
-                    Every review step is logged and traceable for instant proof of rigor.
-                  </p>
-                </div>
-
-                {/* Card 2: Save hours */}
-                <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-white/60 hover:border-purple-200/50 transform hover:-translate-y-2 transition-all duration-300"
-                     style={{
-                       boxShadow: '0 20px 40px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.1)'
-                     }}>
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
-                    <MdFlashOn className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Save hours</h3>
-                  <p className="text-gray-600 leading-relaxed text-center text-lg">
-                    Automated smart reading cuts down re‑reads and accelerates validation.
-                  </p>
-                </div>
-
-                {/* Card 3: Protect credibility */}
-                <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-white/60 hover:border-purple-200/50 transform hover:-translate-y-2 transition-all duration-300"
-                     style={{
-                       boxShadow: '0 20px 40px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.1)'
-                     }}>
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
-                    <MdShield className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Protect credibility</h3>
-                  <p className="text-gray-600 leading-relaxed text-center text-lg">
-                    Avoid costly oversights that damage trust inside your organization.
-                  </p>
-                </div>
-
-              </div>
+              
               
             </div>
           </div>
