@@ -1468,9 +1468,7 @@ export default function UC3Page() {
                      boxShadow: '0 20px 40px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.1)'
                    }}>
                 
-                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                  Maîtrisez la conformité dans vos appels d'offres stratégiques
-                </h2>
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">Maîtrisez la conformité de vos appels d’offres</h2>
                 
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed font-light">
                   La seule plateforme "d'engineering light" conçue pour les projets complexes.
