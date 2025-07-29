@@ -550,10 +550,7 @@ export default function UC3Page() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-24">
             <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-[1.1] tracking-tight">Votre copilote IA qui simplifie la gestion des appels d’offres complexes</h1>
-            <h3 className="text-2xl lg:text-3xl text-gray-600 max-w-5xl mx-auto leading-relaxed font-light">
-              Structure massive documentation instantly, orchestrate expert collaboration seamlessly, 
-              and control every project evolution without gaps.
-            </h3>
+            <h3 className="text-2xl lg:text-3xl text-gray-600 max-w-5xl mx-auto leading-relaxed font-light">Structurez, collaborez et maîtrisez vos appels d’offres complexes, sans aucun angle mort.</h3>
           </div>
 
           {/* Feature 1: Structure Complex Projects - Text Left, Card Right */}
