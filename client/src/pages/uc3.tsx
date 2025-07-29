@@ -239,7 +239,7 @@ export default function UC3Page() {
                   Chaque exigence traitée, <span className="text-purple-600">chaque risque maîtrisé</span>
                 </h1>
                 
-                <p className="text-lg md:text-xl text-gray-600 mb-16 leading-relaxed font-light">La seule plateforme pensée pour orchestrer les grands appels d’offres complexes :</p>
+                <p className="text-lg md:text-xl mb-16 leading-relaxed font-bold text-[#220ac9]">La seule plateforme pensée pour orchestrer les grands appels d’offres complexes :</p>
               </div>
               
               
