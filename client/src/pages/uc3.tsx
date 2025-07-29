@@ -199,7 +199,7 @@ export default function UC3Page() {
       {/* Header/Navbar */}
       <Header />
       {/* Hero Section - Professional SaaS Design */}
-      <section className="py-40 px-8 bg-gradient-to-br from-white via-slate-50/30 to-purple-50/20 relative overflow-hidden">
+      <section className="py-16 md:py-24 lg:py-32 xl:py-40 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-white via-slate-50/30 to-purple-50/20 relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Large flowing gradient blob - top left */}
@@ -228,16 +228,16 @@ export default function UC3Page() {
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 xl:gap-32 items-center">
             
             {/* Left Side - Content */}
             <div className="text-left">
               <div className="mb-12">
-                <Badge className="mb-12 bg-gradient-to-r from-purple-50 to-purple-100/80 text-purple-800 border-purple-200/50 text-base font-semibold px-6 py-3 rounded-full shadow-sm">
+                <Badge className="mb-6 md:mb-8 lg:mb-12 bg-gradient-to-r from-purple-50 to-purple-100/80 text-purple-800 border-purple-200/50 text-sm md:text-base font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm">
                   Complex Multi-Lot Bid Management
                 </Badge>
                 
-                <h1 className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-[1.1] tracking-tight">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 md:mb-8 lg:mb-12 leading-[1.1] tracking-tight">
                   Chaque exigence traitée, <span className="text-purple-600">chaque risque maîtrisé</span>
                 </h1>
                 
@@ -959,8 +959,8 @@ export default function UC3Page() {
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-24">
-            <h3 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-[1.1] tracking-tight">Réussissez vos projets complexes en 3 étapes</h3>
+          <div className="text-center mb-16 md:mb-20 lg:mb-24">
+            <h3 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 md:mb-8 leading-[1.1] tracking-tight">Réussissez vos projets complexes en 3 étapes</h3>
           </div>
           
           {/* Steps Flow */}
@@ -980,36 +980,36 @@ export default function UC3Page() {
               <div className="text-xs font-medium text-purple-600 bg-purple-50 px-3 py-1 rounded-full">ÉTAPE 3</div>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
               
               {/* Step 1 */}
               <div className="relative group">
-                <div className="bg-white rounded-3xl p-12 border border-gray-100/50 hover:border-purple-200/50 transform hover:-translate-y-3 transition-all duration-500"
+                <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-12 border border-gray-100/50 hover:border-purple-200/50 transform hover:-translate-y-3 transition-all duration-500"
                      style={{
                        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05)'
                      }}>
                   
                   {/* Step Number */}
-                  <div className="absolute -top-8 left-12">
-                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-3xl flex items-center justify-center text-2xl font-bold shadow-xl">
+                  <div className="absolute -top-6 md:-top-8 left-6 md:left-8 lg:left-12">
+                    <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-3xl flex items-center justify-center text-lg md:text-2xl font-bold shadow-xl">
                       1
                     </div>
                   </div>
                   
                   {/* Icon */}
-                  <div className="w-24 h-24 bg-gradient-to-br from-blue-100 to-blue-200 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <MdDescription className="w-12 h-12 text-blue-600" />
+                  <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-blue-100 to-blue-200 rounded-3xl flex items-center justify-center mx-auto mb-6 md:mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <MdDescription className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-blue-600" />
                   </div>
                   
                   {/* Content */}
                   <div className="text-center">
-                    <h4 className="text-2xl font-bold text-gray-900 mb-6 leading-tight">Téléversez votre documentation complexe</h4>
-                    <p className="text-gray-600 leading-relaxed text-lg mb-6">Déposez vos appels d'offres de plus de 500 pages et laissez l'IA structurer instantanément chaque exigence dans une base claire et exploitable.</p>
+                    <h4 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">Téléversez votre documentation complexe</h4>
+                    <p className="text-gray-600 leading-relaxed text-base md:text-lg mb-4 md:mb-6">Déposez vos appels d'offres de plus de 500 pages et laissez l'IA structurer instantanément chaque exigence dans une base claire et exploitable.</p>
                     
                     {/* Enhanced Blue Highlight Box */}
-                    <div className="bg-gradient-to-r from-blue-50 to-blue-100 border-l-4 border-blue-500 rounded-lg p-4 mx-auto">
-                      <div className="flex items-center justify-center text-blue-700 font-semibold text-base">
-                        <MdFlashOn className="w-5 h-5 mr-3 text-blue-600" />
+                    <div className="bg-gradient-to-r from-blue-50 to-blue-100 border-l-4 border-blue-500 rounded-lg p-3 md:p-4 mx-auto">
+                      <div className="flex items-center justify-center text-blue-700 font-semibold text-sm md:text-base">
+                        <MdFlashOn className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 text-blue-600" />
                         <span className="text-blue-800">Gagnez des semaines de préparation manuelle et assurez‑vous qu'aucune clause ne soit oubliée dès le premier jour.</span>
                       </div>
                     </div>
@@ -1022,32 +1022,32 @@ export default function UC3Page() {
 
               {/* Step 2 */}
               <div className="relative group">
-                <div className="bg-white rounded-3xl p-12 border border-gray-100/50 hover:border-purple-200/50 transform hover:-translate-y-3 transition-all duration-500"
+                <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-12 border border-gray-100/50 hover:border-purple-200/50 transform hover:-translate-y-3 transition-all duration-500"
                      style={{
                        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05)'
                      }}>
                   
                   {/* Step Number */}
-                  <div className="absolute -top-8 left-12">
-                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-3xl flex items-center justify-center text-2xl font-bold shadow-xl">
+                  <div className="absolute -top-6 md:-top-8 left-6 md:left-8 lg:left-12">
+                    <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-3xl flex items-center justify-center text-lg md:text-2xl font-bold shadow-xl">
                       2
                     </div>
                   </div>
                   
                   {/* Icon */}
-                  <div className="w-24 h-24 bg-gradient-to-br from-green-100 to-green-200 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <MdGroups className="w-12 h-12 text-green-600" />
+                  <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-green-100 to-green-200 rounded-3xl flex items-center justify-center mx-auto mb-6 md:mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <MdGroups className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-green-600" />
                   </div>
                   
                   {/* Content */}
                   <div className="text-center">
-                    <h4 className="text-2xl font-bold text-gray-900 mb-6 leading-tight">Collaborez sur la conformité</h4>
-                    <p className="text-gray-600 leading-relaxed text-lg mb-6">Générez des matrices de conformité dynamiques, assignez les responsabilités aux équipes juridiques, techniques et commerciales, et alignez votre stratégie de réponse en temps réel.</p>
+                    <h4 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">Collaborez sur la conformité</h4>
+                    <p className="text-gray-600 leading-relaxed text-base md:text-lg mb-4 md:mb-6">Générez des matrices de conformité dynamiques, assignez les responsabilités aux équipes juridiques, techniques et commerciales, et alignez votre stratégie de réponse en temps réel.</p>
                     
                     {/* Enhanced Blue Highlight Box */}
-                    <div className="bg-gradient-to-r from-green-50 to-green-100 border-l-4 border-green-500 rounded-lg p-4 mx-auto">
-                      <div className="flex items-center justify-center text-green-700 font-semibold text-base">
-                        <MdFlashOn className="w-5 h-5 mr-3 text-green-600" />
+                    <div className="bg-gradient-to-r from-green-50 to-green-100 border-l-4 border-green-500 rounded-lg p-3 md:p-4 mx-auto">
+                      <div className="flex items-center justify-center text-green-700 font-semibold text-sm md:text-base">
+                        <MdFlashOn className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 text-green-600" />
                         <span className="text-green-800">Supprimez les silos et réduisez les cycles de relecture de 40 %.</span>
                       </div>
                     </div>
@@ -1060,32 +1060,32 @@ export default function UC3Page() {
 
               {/* Step 3 */}
               <div className="relative group">
-                <div className="bg-white rounded-3xl p-12 border border-gray-100/50 hover:border-purple-200/50 transform hover:-translate-y-3 transition-all duration-500"
+                <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-12 border border-gray-100/50 hover:border-purple-200/50 transform hover:-translate-y-3 transition-all duration-500"
                      style={{
                        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05)'
                      }}>
                   
                   {/* Step Number */}
-                  <div className="absolute -top-8 left-12">
-                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-3xl flex items-center justify-center text-2xl font-bold shadow-xl">
+                  <div className="absolute -top-6 md:-top-8 left-6 md:left-8 lg:left-12">
+                    <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-3xl flex items-center justify-center text-lg md:text-2xl font-bold shadow-xl">
                       3
                     </div>
                   </div>
                   
                   {/* Icon */}
-                  <div className="w-24 h-24 bg-gradient-to-br from-orange-100 to-orange-200 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <MdSecurity className="w-12 h-12 text-orange-600" />
+                  <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-orange-100 to-orange-200 rounded-3xl flex items-center justify-center mx-auto mb-6 md:mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <MdSecurity className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-orange-600" />
                   </div>
                   
                   {/* Content */}
                   <div className="text-center">
-                    <h4 className="text-2xl font-bold text-gray-900 mb-6 leading-tight">Maîtrisez chaque évolution</h4>
-                    <p className="text-gray-600 leading-relaxed text-lg mb-6">Suivez les changements documentaires, gérez les Q&A et recevez des alertes proactives sur les mises à jour ou les risques afin de garantir une conformité totale.</p>
+                    <h4 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">Maîtrisez chaque évolution</h4>
+                    <p className="text-gray-600 leading-relaxed text-base md:text-lg mb-4 md:mb-6">Suivez les changements documentaires, gérez les Q&A et recevez des alertes proactives sur les mises à jour ou les risques afin de garantir une conformité totale.</p>
                     
                     {/* Enhanced Blue Highlight Box */}
-                    <div className="bg-gradient-to-r from-orange-50 to-orange-100 border-l-4 border-orange-500 rounded-lg p-4 mx-auto">
-                      <div className="flex items-center justify-center text-orange-700 font-semibold text-base">
-                        <MdFlashOn className="w-5 h-5 mr-3 text-orange-600" />
+                    <div className="bg-gradient-to-r from-orange-50 to-orange-100 border-l-4 border-orange-500 rounded-lg p-3 md:p-4 mx-auto">
+                      <div className="flex items-center justify-center text-orange-700 font-semibold text-sm md:text-base">
+                        <MdFlashOn className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 text-orange-600" />
                         <span className="text-orange-800">Protégez‑vous contre les rejets coûteux et démontrez une couverture à 100 % des exigences.</span>
                       </div>
                     </div>
@@ -1099,19 +1099,19 @@ export default function UC3Page() {
           </div>
           
           {/* CTA Button */}
-          <div className="text-center mt-16">
-            <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-10 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          <div className="text-center mt-12 md:mt-16">
+            <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-6 md:px-8 lg:px-10 py-3 md:py-4 text-base md:text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
               Regardez une démo de 2 minutes
             </Button>
           </div>
         </div>
       </section>
       {/* KPI Section - High Impact Design */}
-      <section className="py-24 px-4 bg-white">
+      <section className="py-16 md:py-20 lg:py-24 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Impact Mesurable sur Vos Projets Complexes</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Des résultats concrets pour les équipes gérant des appels d'offres stratégiques.</p>
+          <div className="text-center mb-12 md:mb-16 lg:mb-20">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Impact Mesurable sur Vos Projets Complexes</h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Des résultats concrets pour les équipes gérant des appels d'offres stratégiques.</p>
           </div>
           
           {/* KPI Grid */}
@@ -1119,31 +1119,31 @@ export default function UC3Page() {
             
             {/* KPI 1 */}
             <div className="group">
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 text-center border border-green-100 hover:border-green-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[200px]">
-                <div className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-green-600 to-emerald-600 bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-6 md:p-8 text-center border border-green-100 hover:border-green-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
+                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-green-600 to-emerald-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
                   90 %
                 </div>
-                <p className="text-gray-700 font-medium leading-relaxed">Travail d'organisation des données et du projet réalisé immédiatement</p>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Travail d'organisation des données et du projet réalisé immédiatement</p>
               </div>
             </div>
 
             {/* KPI 2 */}
             <div className="group">
-              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 text-center border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[200px]">
-                <div className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-6 md:p-8 text-center border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
+                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
                   Cohérence
                 </div>
-                <p className="text-gray-700 font-medium leading-relaxed">Organisation homogène des réponses pour une crédibilité renforcée</p>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Organisation homogène des réponses pour une crédibilité renforcée</p>
               </div>
             </div>
 
             {/* KPI 3 */}
             <div className="group">
-              <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-3xl p-8 text-center border border-purple-100 hover:border-purple-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[200px]">
-                <div className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-purple-600 to-violet-600 bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-3xl p-6 md:p-8 text-center border border-purple-100 hover:border-purple-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
+                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-purple-600 to-violet-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
                   0 rejet
                 </div>
-                <p className="text-gray-700 font-medium leading-relaxed">Aucune non‑conformité formelle pour sécuriser vos soumissions</p>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Aucune non‑conformité formelle pour sécuriser vos soumissions</p>
               </div>
             </div>
 
@@ -1152,7 +1152,7 @@ export default function UC3Page() {
         </div>
       </section>
       {/* Comparison Section - High-Conversion Enterprise Design */}
-      <section className="py-40 px-4 bg-gradient-to-br from-slate-50 via-white to-purple-50/30 relative overflow-hidden">
+      <section className="py-20 md:py-28 lg:py-32 xl:py-40 px-4 bg-gradient-to-br from-slate-50 via-white to-purple-50/30 relative overflow-hidden">
         {/* Enhanced Background Pattern */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(139,92,246,0.08),transparent_60%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(59,130,246,0.06),transparent_60%)]"></div>
@@ -1161,11 +1161,11 @@ export default function UC3Page() {
         
         <div className="max-w-6xl mx-auto relative">
           {/* Clean Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
               Ce qui change avec Aitenders
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
               Découvrez la transformation complète, du chaos manuel à la précision pilotée par l'IA.
             </p>
           </div>
