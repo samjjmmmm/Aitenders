@@ -744,7 +744,7 @@ export default function UC3Page() {
           {/* Header */}
           <div className="text-center mb-20">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-              Bid management for <span className="text-purple-600">all your needs</span>
+              Maîtrisez vos appels d'offres complexes avec une <span className="text-purple-600">conformité totale</span>
             </h2>
             
             {/* Interactive Navigation Tabs */}
