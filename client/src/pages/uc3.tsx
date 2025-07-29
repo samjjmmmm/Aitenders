@@ -673,7 +673,7 @@ export default function UC3Page() {
               <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdSecurity className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">Control Every Project Evolution</h3>
+              <h3 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">Contrôlez Chaque Évolution de Projet</h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                 The platform automatically detects document changes, tracks version evolution, and instantly alerts relevant team members to prevent requirement gaps, ensuring zero oversight across the entire project lifecycle.
               </p>
