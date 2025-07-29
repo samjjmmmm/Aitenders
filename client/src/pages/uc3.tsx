@@ -887,10 +887,7 @@ export default function UC3Page() {
       {/* KPI Section - High Impact Design */}
       <section className="py-16 md:py-20 lg:py-24 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12 md:mb-16 lg:mb-20">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Impact Mesurable sur Vos Projets Complexes</h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Des résultats concrets pour les équipes gérant des appels d'offres stratégiques.</p>
-          </div>
+
           
           {/* User-Focused Results Section - Before KPIs */}
           <div className="mb-20 md:mb-24 lg:mb-28">
