@@ -965,8 +965,20 @@ export default function UC3Page() {
           
           {/* Steps Flow */}
           <div className="relative">
-            {/* Connection Line - Desktop Only */}
-            <div className="hidden lg:block absolute top-20 left-1/4 right-1/4 h-1 bg-gradient-to-r from-purple-200 via-purple-400 to-purple-200 rounded-full"></div>
+            {/* Enhanced Connection Flow - Desktop Only */}
+            <div className="hidden lg:block absolute top-20 left-1/4 right-1/4">
+              <div className="h-1 bg-gradient-to-r from-purple-200 via-purple-400 to-purple-200 rounded-full"></div>
+              {/* Directional arrows */}
+              <div className="absolute top-1/2 left-1/3 transform -translate-y-1/2 w-3 h-3 bg-purple-400 rotate-45"></div>
+              <div className="absolute top-1/2 right-1/3 transform -translate-y-1/2 w-3 h-3 bg-purple-400 rotate-45"></div>
+            </div>
+            
+            {/* Step indicators */}
+            <div className="hidden lg:flex absolute top-16 left-0 right-0 justify-between items-center px-12">
+              <div className="text-xs font-medium text-purple-600 bg-purple-50 px-3 py-1 rounded-full">ÉTAPE 1</div>
+              <div className="text-xs font-medium text-purple-600 bg-purple-50 px-3 py-1 rounded-full">ÉTAPE 2</div>
+              <div className="text-xs font-medium text-purple-600 bg-purple-50 px-3 py-1 rounded-full">ÉTAPE 3</div>
+            </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-12">
               
@@ -992,10 +1004,14 @@ export default function UC3Page() {
                   {/* Content */}
                   <div className="text-center">
                     <h4 className="text-2xl font-bold text-gray-900 mb-6 leading-tight">Téléversez votre documentation complexe</h4>
-                    <p className="text-gray-600 leading-relaxed text-lg mb-4">Déposez vos appels d'offres de plus de 500 pages et laissez l'IA structurer instantanément chaque exigence dans une base claire et exploitable.</p>
-                    <div className="flex items-center justify-center text-sm text-purple-600 font-medium bg-purple-50 rounded-lg px-4 py-2">
-                      <MdFlashOn className="w-4 h-4 mr-2" />
-                      Gagnez des semaines de préparation manuelle et assurez‑vous qu'aucune clause ne soit oubliée dès le premier jour.
+                    <p className="text-gray-600 leading-relaxed text-lg mb-6">Déposez vos appels d'offres de plus de 500 pages et laissez l'IA structurer instantanément chaque exigence dans une base claire et exploitable.</p>
+                    
+                    {/* Enhanced Blue Highlight Box */}
+                    <div className="bg-gradient-to-r from-blue-50 to-blue-100 border-l-4 border-blue-500 rounded-lg p-4 mx-auto">
+                      <div className="flex items-center justify-center text-blue-700 font-semibold text-base">
+                        <MdFlashOn className="w-5 h-5 mr-3 text-blue-600" />
+                        <span className="text-blue-800">Gagnez des semaines de préparation manuelle et assurez‑vous qu'aucune clause ne soit oubliée dès le premier jour.</span>
+                      </div>
                     </div>
                   </div>
                   
@@ -1026,10 +1042,14 @@ export default function UC3Page() {
                   {/* Content */}
                   <div className="text-center">
                     <h4 className="text-2xl font-bold text-gray-900 mb-6 leading-tight">Collaborez sur la conformité</h4>
-                    <p className="text-gray-600 leading-relaxed text-lg mb-4">Générez des matrices de conformité dynamiques, assignez les responsabilités aux équipes juridiques, techniques et commerciales, et alignez votre stratégie de réponse en temps réel.</p>
-                    <div className="flex items-center justify-center text-sm text-purple-600 font-medium bg-purple-50 rounded-lg px-4 py-2">
-                      <MdFlashOn className="w-4 h-4 mr-2" />
-                      Supprimez les silos et réduisez les cycles de relecture de 40 %.
+                    <p className="text-gray-600 leading-relaxed text-lg mb-6">Générez des matrices de conformité dynamiques, assignez les responsabilités aux équipes juridiques, techniques et commerciales, et alignez votre stratégie de réponse en temps réel.</p>
+                    
+                    {/* Enhanced Blue Highlight Box */}
+                    <div className="bg-gradient-to-r from-green-50 to-green-100 border-l-4 border-green-500 rounded-lg p-4 mx-auto">
+                      <div className="flex items-center justify-center text-green-700 font-semibold text-base">
+                        <MdFlashOn className="w-5 h-5 mr-3 text-green-600" />
+                        <span className="text-green-800">Supprimez les silos et réduisez les cycles de relecture de 40 %.</span>
+                      </div>
                     </div>
                   </div>
                   
@@ -1060,10 +1080,14 @@ export default function UC3Page() {
                   {/* Content */}
                   <div className="text-center">
                     <h4 className="text-2xl font-bold text-gray-900 mb-6 leading-tight">Maîtrisez chaque évolution</h4>
-                    <p className="text-gray-600 leading-relaxed text-lg mb-4">Suivez les changements documentaires, gérez les Q&A et recevez des alertes proactives sur les mises à jour ou les risques afin de garantir une conformité totale.</p>
-                    <div className="flex items-center justify-center text-sm text-purple-600 font-medium bg-purple-50 rounded-lg px-4 py-2">
-                      <MdFlashOn className="w-4 h-4 mr-2" />
-                      Protégez‑vous contre les rejets coûteux et démontrez une couverture à 100 % des exigences.
+                    <p className="text-gray-600 leading-relaxed text-lg mb-6">Suivez les changements documentaires, gérez les Q&A et recevez des alertes proactives sur les mises à jour ou les risques afin de garantir une conformité totale.</p>
+                    
+                    {/* Enhanced Blue Highlight Box */}
+                    <div className="bg-gradient-to-r from-orange-50 to-orange-100 border-l-4 border-orange-500 rounded-lg p-4 mx-auto">
+                      <div className="flex items-center justify-center text-orange-700 font-semibold text-base">
+                        <MdFlashOn className="w-5 h-5 mr-3 text-orange-600" />
+                        <span className="text-orange-800">Protégez‑vous contre les rejets coûteux et démontrez une couverture à 100 % des exigences.</span>
+                      </div>
                     </div>
                   </div>
                   
