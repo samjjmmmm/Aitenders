@@ -449,26 +449,7 @@ export default function HomePage() {
     setAvailableUCs([]);
   };
 
-  const stats = [
-    {
-      icon: FaChartLine,
-      title: "+50% Productivity",
-      description: "Reduce time on each step of the tender process and detect information 95% faster",
-      color: "bg-blue-500/10 text-blue-600",
-    },
-    {
-      icon: MdVerifiedUser,
-      title: "Better Quality",
-      description: "Improve the quality of review and deliverables with full traceability",
-      color: "bg-green-500/10 text-green-600",
-    },
-    {
-      icon: MdGroups,
-      title: "Team Efficiency",
-      description: "Staff are less stressed and meetings are more focused on key subjects",
-      color: "bg-purple-500/10 text-purple-600",
-    },
-  ];
+  
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
@@ -702,29 +683,7 @@ export default function HomePage() {
       {/* Client Logos */}
       <ClientLogos />
 
-      {/* Stats Section */}
-      <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose Aitenders?</h2>
-            <p className="text-lg text-gray-600">See the measurable impact on your tender management process</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            {stats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <div key={index} className="space-y-4">
-                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto ${stat.color}`}>
-                    <Icon className="w-8 h-8" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">{stat.title}</h3>
-                  <p className="text-gray-600">{stat.description}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Contact Section */}
       <ContactSection />
