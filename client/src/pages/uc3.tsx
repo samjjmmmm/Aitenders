@@ -242,7 +242,55 @@ export default function UC3Page() {
                 <p className="text-lg md:text-xl mb-16 leading-relaxed font-bold text-[#8e35ed]">La seule plateforme pensée pour orchestrer les grands appels d’offres complexes :</p>
               </div>
               
-              
+              {/* Feature Highlight Box */}
+              <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 border border-purple-200/30 mb-16 relative overflow-hidden"
+                   style={{
+                     boxShadow: '0 20px 40px -12px rgba(147, 51, 234, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+                   }}>
+                
+                {/* Subtle background gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-50/40 via-blue-50/20 to-indigo-50/30 rounded-2xl"></div>
+                
+                {/* Content */}
+                <div className="relative z-10">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    {/* Multi-lot Coordination */}
+                    <div className="flex items-start space-x-3">
+                      <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <MdGroups className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="text-base font-semibold text-gray-900 mb-1">Multi-lot coordination</h4>
+                        <p className="text-sm text-gray-600 leading-relaxed">Orchestrez 8+ équipes expertes sur des projets internationaux</p>
+                      </div>
+                    </div>
+                    
+                    {/* AI-Powered Analysis */}
+                    <div className="flex items-start space-x-3">
+                      <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <MdFlashOn className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="text-base font-semibold text-gray-900 mb-1">Analyse IA instantanée</h4>
+                        <p className="text-sm text-gray-600 leading-relaxed">Structurez 500+ pages d'AO en quelques minutes</p>
+                      </div>
+                    </div>
+                    
+                    {/* Zero-Gap Compliance */}
+                    <div className="flex items-start space-x-3">
+                      <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <MdSecurity className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="text-base font-semibold text-gray-900 mb-1">Conformité zéro défaut</h4>
+                        <p className="text-sm text-gray-600 leading-relaxed">Traçabilité complète et détection proactive</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
               
               {/* Primary CTA */}
               <div className="mb-16">
