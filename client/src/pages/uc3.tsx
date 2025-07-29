@@ -497,9 +497,7 @@ export default function UC3Page() {
               </h2>
               
               {/* Body Copy */}
-              <p className="text-2xl lg:text-3xl text-gray-600 mb-16 leading-relaxed max-w-5xl mx-auto font-light">
-                Tight deadlines leave no room for error. Small teams manage manual reviews that are slow, repetitive, and prone to mistakes — with no legal or quality support. Each missed clause can cost internal trust and even derail your bid.
-              </p>
+              <p className="text-2xl lg:text-3xl text-gray-600 mb-16 leading-relaxed max-w-5xl mx-auto font-light">Tight deadlines leave no room for error. Small teams manage manual reviews that are slow, repetitive, and prone to mistakes, with no legal or quality support. Each missed clause can cost internal trust and even derail your bid.</p>
               
               <p className="text-2xl lg:text-3xl text-gray-600 mb-16 leading-relaxed max-w-5xl mx-auto font-light">With Aitenders, validation tracking and smart AI reading ensure nothing is overlooked so you deliver on time with confidence.</p>
               
