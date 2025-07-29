@@ -244,13 +244,7 @@ export default function UC3Page() {
                 <p className="text-lg md:text-xl text-gray-600 mb-16 leading-relaxed font-light">Conçue pour les grands projets multi‑lots, Aitenders transforme des appels d’offres de plusieurs centaines de pages en une base intelligente et exploitable dès le premier jour.</p>
               </div>
               
-              {/* Single Key Metric */}
-              <div className="mb-16">
-                <div className="inline-flex items-center px-6 py-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl border border-green-200/50 shadow-sm">
-                  <span className="text-3xl font-bold text-green-700 mr-3">90%</span>
-                  <span className="text-gray-700 text-xl font-medium">faster project organization</span>
-                </div>
-              </div>
+              
               
               {/* Primary CTA */}
               <div className="mb-16">
