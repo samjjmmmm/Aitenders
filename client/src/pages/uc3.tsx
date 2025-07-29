@@ -1139,10 +1139,10 @@ export default function UC3Page() {
           {/* Clean Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              What Changes with AItenders
+              Ce qui change avec Aitenders
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              See the complete transformation from manual chaos to AI-powered precision
+              Découvrez la transformation complète, du chaos manuel à la précision pilotée par l'IA.
             </p>
           </div>
 
@@ -1159,8 +1159,8 @@ export default function UC3Page() {
                         <MdWarning className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-gray-900">Manual Process Before</h3>
-                        <p className="text-sm text-gray-600">Chaos, delays, and risks</p>
+                        <h3 className="text-xl font-bold text-gray-900">AS‑IS (Aujourd'hui)</h3>
+                        <p className="text-sm text-gray-600">Chaos, retards et risques</p>
                       </div>
                     </div>
                   </div>
@@ -1170,8 +1170,8 @@ export default function UC3Page() {
                         <MdCheckCircle className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-gray-900">AI-Powered AItenders</h3>
-                        <p className="text-sm text-gray-600">Automated, accurate, efficient</p>
+                        <h3 className="text-xl font-bold text-gray-900">TO‑BE (Avec Aitenders)</h3>
+                        <p className="text-sm text-gray-600">Automatisé, précis, efficace</p>
                       </div>
                     </div>
                   </div>
@@ -1187,8 +1187,8 @@ export default function UC3Page() {
                           <MdClose className="w-4 h-4 text-white" />
                         </div>
                         <div>
-                          <h4 className="font-medium text-gray-900 text-sm mb-1">Excel compliance chaos across 8+ experts</h4>
-                          <p className="text-gray-600 text-xs">Spreadsheets scattered across departments with no central coordination</p>
+                          <h4 className="font-medium text-gray-900 text-sm mb-1">Excel manuel pour conformité</h4>
+                          <p className="text-gray-600 text-xs">Tableaux dispersés entre départements sans coordination centrale</p>
                         </div>
                       </div>
                     </div>
@@ -1198,8 +1198,8 @@ export default function UC3Page() {
                           <MdCheck className="w-4 h-4 text-white" />
                         </div>
                         <div>
-                          <h4 className="font-medium text-gray-900 text-sm mb-1">Unified AI compliance dashboard for all teams</h4>
-                          <p className="text-gray-600 text-xs">Single source of truth with real-time collaboration for all experts</p>
+                          <h4 className="font-medium text-gray-900 text-sm mb-1">Matrice IA dynamique</h4>
+                          <p className="text-gray-600 text-xs">Source unique de vérité avec collaboration temps réel pour tous les experts</p>
                         </div>
                       </div>
                     </div>
@@ -1213,8 +1213,8 @@ export default function UC3Page() {
                           <MdClose className="w-4 h-4 text-white" />
                         </div>
                         <div>
-                          <h4 className="font-medium text-gray-900 text-sm mb-1">Days lost extracting requirements from 500+ pages</h4>
-                          <p className="text-gray-600 text-xs">Manual document analysis consumes weeks of expert time</p>
+                          <h4 className="font-medium text-gray-900 text-sm mb-1">Copier‑coller hasardeux</h4>
+                          <p className="text-gray-600 text-xs">Erreurs humaines dans les processus manuels coûtent des opportunités critiques</p>
                         </div>
                       </div>
                     </div>
@@ -1224,8 +1224,8 @@ export default function UC3Page() {
                           <MdCheck className="w-4 h-4 text-white" />
                         </div>
                         <div>
-                          <h4 className="font-medium text-gray-900 text-sm mb-1">Instant requirement extraction and classification</h4>
-                          <p className="text-gray-600 text-xs">AI processes complex documents in minutes, not weeks</p>
+                          <h4 className="font-medium text-gray-900 text-sm mb-1">Rédaction guidée par exigences</h4>
+                          <p className="text-gray-600 text-xs">L'IA traite les documents complexes en minutes, pas en semaines</p>
                         </div>
                       </div>
                     </div>
@@ -1239,8 +1239,8 @@ export default function UC3Page() {
                           <MdClose className="w-4 h-4 text-white" />
                         </div>
                         <div>
-                          <h4 className="font-medium text-gray-900 text-sm mb-1">Copy-paste errors risk million-euro exclusions</h4>
-                          <p className="text-gray-600 text-xs">Human errors in manual processes cost critical opportunities</p>
+                          <h4 className="font-medium text-gray-900 text-sm mb-1">Relectures longues et multiples</h4>
+                          <p className="text-gray-600 text-xs">Coordination interminable ralentit tout le processus</p>
                         </div>
                       </div>
                     </div>
@@ -1250,8 +1250,8 @@ export default function UC3Page() {
                           <MdCheck className="w-4 h-4 text-white" />
                         </div>
                         <div>
-                          <h4 className="font-medium text-gray-900 text-sm mb-1">AI-guided writing with source verification</h4>
-                          <p className="text-gray-600 text-xs">Intelligent assistance eliminates errors with automated checks</p>
+                          <h4 className="font-medium text-gray-900 text-sm mb-1">Détection automatique des incohérences</h4>
+                          <p className="text-gray-600 text-xs">Contrôle qualité proactif avec notifications instantanées à l'équipe</p>
                         </div>
                       </div>
                     </div>
@@ -1265,8 +1265,8 @@ export default function UC3Page() {
                           <MdClose className="w-4 h-4 text-white" />
                         </div>
                         <div>
-                          <h4 className="font-medium text-gray-900 text-sm mb-1">Multiple review cycles delay submission</h4>
-                          <p className="text-gray-600 text-xs">Endless back-and-forth coordination slows everything down</p>
+                          <h4 className="font-medium text-gray-900 text-sm mb-1">Risque d'exclusion / d'oublis d'exigences</h4>
+                          <p className="text-gray-600 text-xs">Oublis critiques découverts trop tard dans le processus</p>
                         </div>
                       </div>
                     </div>
@@ -1276,34 +1276,8 @@ export default function UC3Page() {
                           <MdCheck className="w-4 h-4 text-white" />
                         </div>
                         <div>
-                          <h4 className="font-medium text-gray-900 text-sm mb-1">Real-time inconsistency detection and alerts</h4>
-                          <p className="text-gray-600 text-xs">Proactive quality control with instant team notifications</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Row 5 */}
-                  <div className="grid grid-cols-2">
-                    <div className="p-4 border-r border-gray-200">
-                      <div className="flex items-center">
-                        <div className="w-6 h-6 bg-red-500 rounded flex items-center justify-center mr-3 flex-shrink-0">
-                          <MdClose className="w-4 h-4 text-white" />
-                        </div>
-                        <div>
-                          <h4 className="font-medium text-gray-900 text-sm mb-1">Hidden requirement gaps cause rejections</h4>
-                          <p className="text-gray-600 text-xs">Critical oversights discovered too late in the process</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="p-4">
-                      <div className="flex items-center">
-                        <div className="w-6 h-6 bg-green-500 rounded flex items-center justify-center mr-3 flex-shrink-0">
-                          <MdCheck className="w-4 h-4 text-white" />
-                        </div>
-                        <div>
-                          <h4 className="font-medium text-gray-900 text-sm mb-1">100% requirement coverage with proof trails</h4>
-                          <p className="text-gray-600 text-xs">Complete audit trail ensures nothing is ever missed</p>
+                          <h4 className="font-medium text-gray-900 text-sm mb-1">Preuve de couverture conforme à 100 %</h4>
+                          <p className="text-gray-600 text-xs">Audit complet garantit qu'aucune exigence n'est jamais manquée</p>
                         </div>
                       </div>
                     </div>
@@ -1320,7 +1294,7 @@ export default function UC3Page() {
                   <div className="w-6 h-6 bg-red-500 rounded mr-3">
                     <MdWarning className="w-4 h-4 text-white m-1" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900">Manual Process Before</h3>
+                  <h3 className="text-lg font-bold text-gray-900">AS‑IS (Aujourd'hui)</h3>
                 </div>
                 <div className="space-y-3">
                   {/* Mobile comparison items with same content */}
@@ -1329,8 +1303,8 @@ export default function UC3Page() {
                       <MdClose className="w-2 h-2 m-1 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-sm text-gray-900">Excel compliance chaos across 8+ experts</h4>
-                      <p className="text-xs text-gray-600">Spreadsheets scattered across departments</p>
+                      <h4 className="font-medium text-sm text-gray-900">Excel manuel pour conformité</h4>
+                      <p className="text-xs text-gray-600">Tableaux dispersés entre départements</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -1338,8 +1312,8 @@ export default function UC3Page() {
                       <MdClose className="w-2 h-2 m-1 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-sm text-gray-900">Days lost extracting requirements from 500+ pages</h4>
-                      <p className="text-xs text-gray-600">Manual document analysis takes weeks</p>
+                      <h4 className="font-medium text-sm text-gray-900">Copier‑coller hasardeux</h4>
+                      <p className="text-xs text-gray-600">Erreurs humaines coûtent des opportunités</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -1347,8 +1321,8 @@ export default function UC3Page() {
                       <MdClose className="w-2 h-2 m-1 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-sm text-gray-900">Copy-paste errors risk million-euro exclusions</h4>
-                      <p className="text-xs text-gray-600">Human errors cost opportunities</p>
+                      <h4 className="font-medium text-sm text-gray-900">Relectures longues et multiples</h4>
+                      <p className="text-xs text-gray-600">Coordination interminable</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -1356,17 +1330,8 @@ export default function UC3Page() {
                       <MdClose className="w-2 h-2 m-1 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-sm text-gray-900">Multiple review cycles delay submission</h4>
-                      <p className="text-xs text-gray-600">Endless coordination</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-4 h-4 bg-red-500 rounded-full mr-3 mt-1 flex-shrink-0">
-                      <MdClose className="w-2 h-2 m-1 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-sm text-gray-900">Hidden requirement gaps cause rejections</h4>
-                      <p className="text-xs text-gray-600">Critical oversights discovered too late</p>
+                      <h4 className="font-medium text-sm text-gray-900">Risque d'exclusion / d'oublis d'exigences</h4>
+                      <p className="text-xs text-gray-600">Oublis critiques découverts trop tard</p>
                     </div>
                   </div>
                 </div>
@@ -1378,7 +1343,7 @@ export default function UC3Page() {
                   <div className="w-6 h-6 bg-green-500 rounded mr-3">
                     <MdCheckCircle className="w-4 h-4 text-white m-1" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900">AI-Powered AItenders</h3>
+                  <h3 className="text-lg font-bold text-gray-900">TO‑BE (Avec Aitenders)</h3>
                 </div>
                 <div className="space-y-3">
                   <div className="flex items-start">
@@ -1386,8 +1351,8 @@ export default function UC3Page() {
                       <MdCheck className="w-2 h-2 m-1 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-sm text-gray-900">Unified AI compliance dashboard for all teams</h4>
-                      <p className="text-xs text-gray-600">Single source of truth for all experts</p>
+                      <h4 className="font-medium text-sm text-gray-900">Matrice IA dynamique</h4>
+                      <p className="text-xs text-gray-600">Source unique de vérité pour tous les experts</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -1395,8 +1360,8 @@ export default function UC3Page() {
                       <MdCheck className="w-2 h-2 m-1 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-sm text-gray-900">Instant requirement extraction and classification</h4>
-                      <p className="text-xs text-gray-600">AI processes documents in minutes</p>
+                      <h4 className="font-medium text-sm text-gray-900">Rédaction guidée par exigences</h4>
+                      <p className="text-xs text-gray-600">L'IA traite les documents en minutes</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -1404,8 +1369,8 @@ export default function UC3Page() {
                       <MdCheck className="w-2 h-2 m-1 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-sm text-gray-900">AI-guided writing with source verification</h4>
-                      <p className="text-xs text-gray-600">Eliminate errors with intelligent assistance</p>
+                      <h4 className="font-medium text-sm text-gray-900">Détection automatique des incohérences</h4>
+                      <p className="text-xs text-gray-600">Contrôle qualité proactif</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -1413,17 +1378,8 @@ export default function UC3Page() {
                       <MdCheck className="w-2 h-2 m-1 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-sm text-gray-900">Real-time inconsistency detection and alerts</h4>
-                      <p className="text-xs text-gray-600">Proactive quality control</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-4 h-4 bg-green-500 rounded-full mr-3 mt-1 flex-shrink-0">
-                      <MdCheck className="w-2 h-2 m-1 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-sm text-gray-900">100% requirement coverage with proof trails</h4>
-                      <p className="text-xs text-gray-600">Complete audit trail ensures nothing is missed</p>
+                      <h4 className="font-medium text-sm text-gray-900">Preuve de couverture conforme à 100 %</h4>
+                      <p className="text-xs text-gray-600">Audit complet garantit qu'aucune exigence n'est manquée</p>
                     </div>
                   </div>
                 </div>
