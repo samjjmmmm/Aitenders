@@ -23,7 +23,7 @@ import colasLogo from "@assets/Colas_1753711339292.png";
 
 export default function UC3Page() {
   // Target audience data with interactive content
-  const targetToppins = [
+  const targetAudiences = [
     {
       id: 'bid-response',
       title: 'Responsables des réponses aux appels d\'offres',
@@ -101,7 +101,7 @@ export default function UC3Page() {
     }
   ];
 
-  const [activeAudience, setActiveAudience] = useState(targetToppins[0]);
+  const [activeAudience, setActiveAudience] = useState(targetAudiences[0]);
 
   const painPoints = [
     {
@@ -889,7 +889,8 @@ export default function UC3Page() {
 
       {/*Toppin Section  */}
 
-
+      
+      {/* Target Audience Section - Interactive Design */}
       <section className="py-32 px-8 bg-gradient-to-br from-gray-50 via-slate-50 to-gray-50 relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
@@ -922,12 +923,12 @@ export default function UC3Page() {
           {/* Header */}
           <div className="text-center mb-20">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-             Allez plus loin  <span className="text-purple-600">dans vos Usages</span>
+              Maîtrisez vos appels d'offres complexes avec une <span className="text-purple-600">conformité totale</span>
             </h2>
 
             {/* Interactive Navigation Tabs */}
             <div className="flex flex-wrap justify-center gap-6 mb-16">
-              {targetToppins.map((audience) => (
+              {targetAudiences.map((audience) => (
                 <button
                   key={audience.id}
                   onClick={() => setActiveAudience(audience)}
@@ -1239,6 +1240,209 @@ export default function UC3Page() {
           </div>
         </div>
       </section>
+
+      {/* Toppings Section - Wow Features & Additional Functionalities */}
+      <section className="py-16 md:py-20 lg:py-24 px-4 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          {/* Animated gradient orbs */}
+          <div className="absolute top-20 left-10 w-96 h-96 rounded-full opacity-20 blur-3xl animate-pulse"
+               style={{
+                 background: 'linear-gradient(135deg, #8B5CF6 0%, #3B82F6 50%, #06B6D4 100%)'
+               }}></div>
+          <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full opacity-15 blur-3xl animate-pulse delay-1000"
+               style={{
+                 background: 'linear-gradient(135deg, #EC4899 0%, #8B5CF6 50%, #3B82F6 100%)'
+               }}></div>
+          
+          {/* Subtle grid pattern */}
+          <div className="absolute inset-0 opacity-5"
+               style={{
+                 backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)',
+                 backgroundSize: '40px 40px'
+               }}></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-16 md:mb-20 lg:mb-24">
+            <div className="inline-flex items-center justify-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6 md:mb-8">
+              <MdStars className="w-5 h-5 text-yellow-400 mr-2" />
+              <span className="text-white font-semibold text-sm md:text-base">Fonctionnalités Wow</span>
+            </div>
+            
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:mb-8 leading-[1.1] tracking-tight">
+              Des <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-400 to-cyan-400">toppings additionnels</span> qui transforment votre expérience
+            </h2>
+            
+            <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed font-light">
+              Au-delà du parcours habituel, découvrez des fonctionnalités avancées qui ajoutent une dimension stratégique à votre gestion d'appels d'offres complexes.
+            </p>
+          </div>
+
+          {/* Toppings Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+            
+            {/* Bulk Versioning */}
+            <div className="group">
+              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <MdCloudSync className="w-8 h-8 text-white" />
+                </div>
+                
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Bulk Versioning</h3>
+                <p className="text-gray-200 leading-relaxed mb-6">
+                  Gérez simultanément plusieurs versions de vos documents d'offre avec synchronisation automatique et traçabilité complète des modifications multi-équipes.
+                </p>
+                
+                <div className="flex items-center text-cyan-400 font-medium">
+                  <span className="text-sm">Gestion avancée</span>
+                  <MdTrendingUp className="w-4 h-4 ml-2" />
+                </div>
+              </div>
+            </div>
+
+            {/* Écriture des réponses */}
+            <div className="group">
+              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <MdCreate className="w-8 h-8 text-white" />
+                </div>
+                
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Écriture des réponses</h3>
+                <p className="text-gray-200 leading-relaxed mb-6">
+                  IA générative contextuelle qui rédige des réponses précises et conformes en s'appuyant sur votre base de connaissances et les exigences spécifiques.
+                </p>
+                
+                <div className="flex items-center text-green-400 font-medium">
+                  <span className="text-sm">IA contextuelle</span>
+                  <MdAutoAwesome className="w-4 h-4 ml-2" />
+                </div>
+              </div>
+            </div>
+
+            {/* Back to Back */}
+            <div className="group">
+              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <MdSwapHoriz className="w-8 h-8 text-white" />
+                </div>
+                
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Back to Back</h3>
+                <p className="text-gray-200 leading-relaxed mb-6">
+                  Établissez des liens automatisés entre contrats clients et sous-traitants avec mise en correspondance des clauses et gestion des flux contractuels.
+                </p>
+                
+                <div className="flex items-center text-orange-400 font-medium">
+                  <span className="text-sm">Automatisation</span>
+                  <MdLink className="w-4 h-4 ml-2" />
+                </div>
+              </div>
+            </div>
+
+            {/* Lien avec les livrables */}
+            <div className="group">
+              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <MdAccountTree className="w-8 h-8 text-white" />
+                </div>
+                
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Lien avec les livrables</h3>
+                <p className="text-gray-200 leading-relaxed mb-6">
+                  Connectez automatiquement chaque exigence aux livrables correspondants avec suivi en temps réel et validation de la complétude du projet.
+                </p>
+                
+                <div className="flex items-center text-purple-400 font-medium">
+                  <span className="text-sm">Traçabilité</span>
+                  <MdTrackChanges className="w-4 h-4 ml-2" />
+                </div>
+              </div>
+            </div>
+
+            {/* Exigences Filles */}
+            <div className="group">
+              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <MdCallSplit className="w-8 h-8 text-white" />
+                </div>
+                
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Exigences Filles</h3>
+                <p className="text-gray-200 leading-relaxed mb-6">
+                  Décomposez intelligemment les exigences complexes en sous-exigences managérables avec hiérarchisation automatique et répartition par expertise.
+                </p>
+                
+                <div className="flex items-center text-pink-400 font-medium">
+                  <span className="text-sm">Décomposition</span>
+                  <MdSchema className="w-4 h-4 ml-2" />
+                </div>
+              </div>
+            </div>
+
+            {/* Contrôles de non-conformité */}
+            <div className="group">
+              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-red-400 to-red-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <MdGppBad className="w-8 h-8 text-white" />
+                </div>
+                
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Contrôles de non-conformité</h3>
+                <p className="text-gray-200 leading-relaxed mb-6">
+                  Détection proactive des écarts et non-conformités avec alertes intelligentes et suggestions de correction avant soumission.
+                </p>
+                
+                <div className="flex items-center text-red-400 font-medium">
+                  <span className="text-sm">Prévention</span>
+                  <MdWarning className="w-4 h-4 ml-2" />
+                </div>
+              </div>
+            </div>
+
+            {/* Ouverture et fermeture de phases */}
+            <div className="group md:col-span-2 lg:col-span-3">
+              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2">
+                <div className="flex flex-col md:flex-row items-start md:items-center gap-8">
+                  <div className="w-16 h-16 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <MdPhase className="w-8 h-8 text-white" />
+                  </div>
+                  
+                  <div className="flex-1">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Ouverture et fermeture de phases</h3>
+                    <p className="text-gray-200 text-lg leading-relaxed mb-6">
+                      Orchestrez le cycle de vie complet de vos appels d'offres avec gestion automatisée des phases de projet, jalons intelligents et validation des étapes critiques. Contrôlez l'accès aux informations selon la phase active.
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-4">
+                      <div className="flex items-center text-indigo-400 font-medium bg-white/10 px-4 py-2 rounded-lg">
+                        <span className="text-sm">Gestion de cycle</span>
+                        <MdRotateRight className="w-4 h-4 ml-2" />
+                      </div>
+                      <div className="flex items-center text-cyan-400 font-medium bg-white/10 px-4 py-2 rounded-lg">
+                        <span className="text-sm">Jalons automatisés</span>
+                        <MdFlag className="w-4 h-4 ml-2" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="text-center mt-16 md:mt-20 lg:mt-24">
+            <p className="text-gray-200 text-lg mb-8">
+              Chaque fonctionnalité ajoute une dimension stratégique à votre processus
+            </p>
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-yellow-400 via-pink-500 to-cyan-500 hover:from-yellow-500 hover:via-pink-600 hover:to-cyan-600 text-white px-12 py-6 text-xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
+            >
+              Explorer tous les toppings →
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Comparison Section - High-Conversion Enterprise Design */}
       <section className="py-20 md:py-28 lg:py-32 xl:py-40 px-4 bg-gradient-to-br from-slate-50 via-white to-purple-50/30 relative overflow-hidden">
         {/* Enhanced Background Pattern */}
