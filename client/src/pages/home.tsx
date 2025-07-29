@@ -676,7 +676,7 @@ export default function HomePage() {
         {/* Learn More Card - More Rectangular */}
         <div className="max-w-4xl mx-auto px-6 pb-16">
           <Card 
-            onClick={() => setLocation("/uc1")}
+            onClick={() => window.open("https://replit.com/@aitendersdev/SimpleSaaS", "_blank")}
             className="bg-gradient-to-r from-aitenders-white-blue to-aitenders-pale-blue border border-aitenders-light-blue rounded-2xl p-6 shadow-sm hover:shadow-md cursor-pointer transition-all duration-200 ease-in-out hover:scale-105"
           >
             <div className="flex items-center justify-between">
@@ -694,7 +694,13 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="flex-shrink-0 ml-6">
-                <Button className="bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-aitenders-white-blue px-6 py-2 text-sm font-medium rounded-xl shadow-sm">
+                <Button 
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.open("https://replit.com/@aitendersdev/SimpleSaaS", "_blank");
+                  }}
+                  className="bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-aitenders-white-blue px-6 py-2 text-sm font-medium rounded-xl shadow-sm"
+                >
                   {t[language].exploreSolutions}
                 </Button>
               </div>
