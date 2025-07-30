@@ -108,3 +108,19 @@ The application is designed for deployment on platforms that support Node.js:
 - **Production**: Express serves static files and API endpoints
 
 The architecture prioritizes developer experience with hot reloading, type safety, and modern tooling while maintaining production readiness with optimized builds and scalable deployment patterns.
+
+## Recent Changes (January 2025)
+
+### ChatGPT-Style Chat Interface Implementation
+- **Date**: January 30, 2025
+- **Change**: Redesigned anchored chat interface to match ChatGPT design patterns
+- **Details**: 
+  - White rounded container with subtle border and shadow
+  - Borderless input field with "Poser une question" placeholder
+  - Action buttons integrated inside chat container below input
+  - "Outils" button with settings icon matching reference design
+  - Plus icon for use cases button
+  - Right-side utility icons for additional functionality
+  - Clean gray color scheme with hover effects
+- **Technical**: Fixed positioning at bottom with backdrop blur effect
+- **User Preference**: User specifically requested ChatGPT-style anchored design to replace previous chat implementations

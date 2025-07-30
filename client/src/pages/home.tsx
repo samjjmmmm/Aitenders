@@ -538,12 +538,12 @@ export default function HomePage() {
 
 
       
-      {/* ChatGPT-Style Anchored Chat Interface */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-xl">
+
+
+      {/* CHATGPT STYLE CHAT - DO NOT REVERT */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-2xl">
         <div className="max-w-4xl mx-auto p-6">
-          {/* ChatGPT-Style Input Container */}
-          <div className="relative bg-white border border-gray-300 rounded-3xl shadow-lg p-4">
-            {/* Input Field */}
+          <div className="bg-white border border-gray-300 rounded-3xl shadow-lg p-4">
             <div className="flex items-start gap-3 mb-3">
               <Input
                 type="text"
@@ -551,22 +551,19 @@ export default function HomePage() {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 onKeyPress={handleKeyPress}
-                className="flex-1 text-base bg-transparent border-0 focus:ring-0 focus:outline-none placeholder:text-gray-500 resize-none min-h-[24px]"
+                className="flex-1 text-base bg-transparent border-0 focus:ring-0 focus:outline-none placeholder:text-gray-500 min-h-[24px]"
                 disabled={sendMessageMutation.isPending}
               />
               <Button
                 onClick={handleSendMessage}
                 disabled={!message.trim() || sendMessageMutation.isPending}
                 size="sm"
-                className="h-8 w-8 rounded-lg bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-white shadow-sm transition-all duration-200 flex-shrink-0"
+                className="h-8 w-8 rounded-lg bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-white shadow-sm transition-all"
               >
                 <MdSend className="w-4 h-4" />
               </Button>
             </div>
-
-            {/* Internal Action Buttons Row */}
             <div className="flex items-center justify-between border-t border-gray-200 pt-3">
-              {/* Left Side - Action Buttons */}
               <div className="flex items-center gap-2">
                 <Button
                   variant="ghost"
@@ -577,7 +574,6 @@ export default function HomePage() {
                   <span className="text-gray-400">+</span>
                   {t[language].ourUseCases}
                 </Button>
-                
                 <Button
                   variant="ghost"
                   size="sm"
@@ -588,21 +584,11 @@ export default function HomePage() {
                   Outils
                 </Button>
               </div>
-
-              {/* Right Side - Additional Icons */}
               <div className="flex items-center gap-2">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="h-8 w-8 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg"
-                >
+                <Button variant="ghost" size="sm" className="h-8 w-8 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg">
                   <FaRobot className="w-4 h-4" />
                 </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="h-8 w-8 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg"
-                >
+                <Button variant="ghost" size="sm" className="h-8 w-8 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg">
                   <MdBarChart className="w-4 h-4" />
                 </Button>
               </div>
