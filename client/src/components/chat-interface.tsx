@@ -299,7 +299,7 @@ export default function ChatInterface({
     {
       label: language === 'fr' ? 'Simulateur ROI' : 'ROI Simulator',
       icon: <MdCalculate className="w-3 h-3 text-gray-400" />,
-      onClick: () => handleSendMessage("Lancer le simulateur ROI")
+      onClick: () => handleSendMessage("lancer le simulateur")
     },
     {
       label: language === 'fr' ? 'Sécurité' : 'Security', 
@@ -322,6 +322,12 @@ export default function ChatInterface({
   const enhancedCustomActions = customActions.map(action => ({
     ...action,
     onClick: () => {
+      // Special handling for simulator button
+      if (action.label.toLowerCase().includes('simulateur') || action.label.toLowerCase().includes('simulator')) {
+        handleSendMessage("lancer le simulateur");
+        return;
+      }
+      
       const question = getButtonQuestion(action.label);
       if (question) {
         setMessage(question);
