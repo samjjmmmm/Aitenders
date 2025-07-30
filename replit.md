@@ -195,24 +195,33 @@ The architecture prioritizes developer experience with hot reloading, type safet
   - Real-time AI conversation instead of static knowledge base
 - **User Experience**: Aitenders Copilot - Branded AI assistant with specialized tender management expertise
 
-### Advanced RAG Knowledge System
+### Advanced RAG Knowledge System with Configurable Routing
 - **Date**: January 30, 2025
-- **Change**: Replaced simple fallback with sophisticated RAG (Retrieval-Augmented Generation) system
-- **Technical Implementation**:
-  - **Knowledge Base**: Comprehensive JSON database with 15 content chunks across 7 categories
-  - **Semantic Search**: Multi-criteria scoring algorithm with keyword matching, content analysis, and priority weighting
-  - **Context Window**: 4,987 characters with capacity for 3,000+ more characters
-  - **Intelligent Chunking**: Company, security, use cases (UC1-UC3), AI agents, ROI, contact, and pricing information
-  - **Smart Responses**: Contextual call-to-action generation based on query category
+- **Change**: Implemented sophisticated RAG system with intelligent query routing and configuration management
+- **Core System**:
+  - **Knowledge Base**: 15 content chunks across 7 categories (4,987 characters)
+  - **Semantic Search**: Multi-criteria scoring with keyword matching and priority weighting
+  - **Intelligent Routing**: Configurable system for query analysis and response routing
+- **Configuration System (`rag-config.json`)**:
+  - **Blocked Queries**: Keywords triggering security/privacy protection responses
+  - **Direct ChatGPT**: Creative queries routed directly to OpenAI (keywords: créatif, rédige, génère)
+  - **Category Redirections**: Smart routing to specific knowledge base categories
+  - **Response Templates**: Configurable multilingual response formats
+  - **Analytics Tracking**: Real-time monitoring of query types and routing decisions
+- **Routing Capabilities**:
+  - **Contact Queries**: contact, demo, commercial → targeted contact information
+  - **Security Queries**: sécurité, rgpd, données → comprehensive security details
+  - **Pricing Queries**: prix, tarif, abonnement → pricing tier information
+  - **Feature Queries**: fonctionnalités, agents, ia → AI capabilities description
+  - **Use Case Queries**: cas d'usage, uc1-uc3 → specific use case details
+  - **ROI Queries**: roi, économies, performance → ROI metrics and benefits
+- **API Endpoints**:
+  - `/api/rag/stats`: Complete analytics (knowledge base, routing, configuration)
+  - `/api/rag/test`: Query routing testing without execution
+  - Enhanced `/api/chat`: Automatic routing integration with fallback chains
 - **Advanced Features**:
-  - **Bilingual Support**: French/English knowledge base with automatic language detection
-  - **Priority System**: 1-10 scoring with critical information (contact, security) receiving highest priority
-  - **Multi-Result Synthesis**: Combines up to 2 relevant chunks for comprehensive responses
-  - **Performance Monitoring**: Built-in statistics endpoint for knowledge base analytics
-- **Content Coverage**:
-  - Complete security and compliance details (GDPR, ISO 27001, SOC2)
-  - Detailed use case descriptions with ROI metrics and target audiences
-  - AI agent capabilities and technical specifications
-  - Pricing tiers and feature comparisons
-  - Contact information and support channels
-- **User Experience**: Rich, detailed responses with emojis, structured formatting, and personalized call-to-actions instead of generic fallback messages
+  - **Request Blocking**: Protection against inappropriate queries with custom responses
+  - **Performance Monitoring**: Real-time analytics on query routing and system usage
+  - **Category-Specific Search**: Targeted knowledge base searches for better accuracy
+  - **Bilingual Configuration**: French/English routing rules and response templates
+- **User Experience**: Context-aware responses with intelligent routing ensuring users get the most relevant information source (knowledge base vs ChatGPT) based on query intent

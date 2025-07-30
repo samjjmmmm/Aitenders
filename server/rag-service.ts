@@ -27,9 +27,18 @@ interface SearchResult {
 class RAGService {
   private chunks: ContentChunk[] = [];
   private knowledgeBase: any = {};
+  private config: any = {};
+  private analytics = {
+    totalQueries: 0,
+    blockedQueries: 0,
+    redirections: 0,
+    openAIQueries: 0,
+    directCalls: 0
+  };
 
   constructor() {
     this.loadKnowledgeBase();
+    this.loadConfig();
     this.createChunks();
   }
 
@@ -43,6 +52,25 @@ class RAGService {
     } catch (error) {
       console.error('Error loading knowledge base:', error);
       this.knowledgeBase = {};
+    }
+  }
+
+  // Charger la configuration RAG depuis le fichier JSON
+  private loadConfig(): void {
+    try {
+      const configPath = path.join(__dirname, 'rag-config.json');
+      const data = fs.readFileSync(configPath, 'utf8');
+      this.config = JSON.parse(data);
+      console.log('RAG config loaded successfully');
+    } catch (error) {
+      console.error('Error loading RAG config:', error);
+      this.config = {
+        settings: { enableOpenAI: true, enableFallback: true },
+        routing: { directToOpenAI: { keywords: [] }, blockedQueries: { keywords: [] }, redirections: {} },
+        responses: { templates: {} },
+        filters: { preprocessing: {}, postprocessing: {} },
+        analytics: { trackQueries: true }
+      };
     }
   }
 
@@ -229,6 +257,65 @@ class RAGService {
       .slice(0, maxResults);
   }
 
+  // Router la requête selon la configuration
+  public routeQuery(query: string, language: 'fr' | 'en' = 'fr'): { action: string; response?: string; category?: string; shouldUseOpenAI?: boolean } {
+    this.analytics.totalQueries++;
+    
+    const queryLower = query.toLowerCase();
+    
+    // 1. Vérifier les requêtes bloquées
+    if (this.config.routing?.blockedQueries) {
+      const blocked = this.config.routing.blockedQueries.keywords.some((keyword: string) => 
+        queryLower.includes(keyword.toLowerCase())
+      );
+      
+      if (blocked) {
+        this.analytics.blockedQueries++;
+        return {
+          action: 'blocked',
+          response: this.config.routing.blockedQueries.response[language] || this.config.responses.templates.blocked[language]
+        };
+      }
+    }
+    
+    // 2. Vérifier les appels directs à OpenAI
+    if (this.config.routing?.directToOpenAI) {
+      const directCall = this.config.routing.directToOpenAI.keywords.some((keyword: string) => 
+        queryLower.includes(keyword.toLowerCase())
+      );
+      
+      if (directCall) {
+        this.analytics.directCalls++;
+        return {
+          action: 'openai_direct',
+          shouldUseOpenAI: true
+        };
+      }
+    }
+    
+    // 3. Vérifier les redirections configurées
+    if (this.config.routing?.redirections) {
+      for (const [name, redirect] of Object.entries(this.config.routing.redirections)) {
+        const matchesKeyword = redirect.keywords.some((keyword: string) => 
+          queryLower.includes(keyword.toLowerCase())
+        );
+        
+        if (matchesKeyword) {
+          this.analytics.redirections++;
+          return {
+            action: redirect.action,
+            category: redirect.category
+          };
+        }
+      }
+    }
+    
+    // 4. Par défaut, utiliser la base de connaissances
+    return {
+      action: 'knowledge_base'
+    };
+  }
+
   // Générer une réponse basée sur les résultats de recherche
   public generateResponse(query: string, language: 'fr' | 'en' = 'fr'): string {
     const searchResults = this.search(query, 2);
@@ -266,7 +353,34 @@ class RAGService {
     return response;
   }
 
-  // Obtenir des statistiques sur la base de connaissances
+  // Recherche avec filtrage par catégorie
+  public searchByCategory(query: string, category: string, maxResults: number = 3): SearchResult[] {
+    const filteredChunks = this.chunks.filter(chunk => chunk.metadata.category === category);
+    const results: SearchResult[] = [];
+
+    // Calculer le score pour chaque chunk de la catégorie
+    for (const chunk of filteredChunks) {
+      const score = this.calculateSimilarity(query, chunk);
+      
+      if (score > 0) {
+        let relevance: 'high' | 'medium' | 'low' = 'low';
+        if (score >= 50) relevance = 'high';
+        else if (score >= 20) relevance = 'medium';
+
+        results.push({
+          chunk,
+          score,
+          relevance
+        });
+      }
+    }
+
+    return results
+      .sort((a, b) => b.score - a.score)
+      .slice(0, maxResults);
+  }
+
+  // Obtenir des statistiques sur la base de connaissances et l'analytics
   public getStats() {
     const categoryStats = this.chunks.reduce((acc, chunk) => {
       acc[chunk.metadata.category] = (acc[chunk.metadata.category] || 0) + 1;
@@ -274,9 +388,22 @@ class RAGService {
     }, {} as Record<string, number>);
 
     return {
-      totalChunks: this.chunks.length,
-      categories: categoryStats,
-      contextWindow: this.chunks.reduce((total, chunk) => total + chunk.content.length, 0)
+      knowledgeBase: {
+        totalChunks: this.chunks.length,
+        categories: categoryStats,
+        contextWindow: this.chunks.reduce((total, chunk) => total + chunk.content.length, 0)
+      },
+      analytics: {
+        ...this.analytics,
+        configLoaded: !!this.config.settings
+      },
+      configuration: {
+        openAIEnabled: this.config.settings?.enableOpenAI || false,
+        fallbackEnabled: this.config.settings?.enableFallback || false,
+        blockedKeywords: this.config.routing?.blockedQueries?.keywords?.length || 0,
+        redirectionRules: Object.keys(this.config.routing?.redirections || {}).length,
+        directOpenAIKeywords: this.config.routing?.directToOpenAI?.keywords?.length || 0
+      }
     };
   }
 }

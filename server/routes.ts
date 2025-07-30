@@ -69,13 +69,49 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       let aiResponse: string;
       
-      try {
-        // Try OpenAI first
-        aiResponse = await generateAitendersResponse(message, language);
-      } catch (openaiError) {
-        console.warn("OpenAI failed, using fallback:", openaiError instanceof Error ? openaiError.message : 'Unknown error');
-        // Use fallback knowledge base
-        aiResponse = getFallbackResponse(message, language);
+      // Route the query using the new configuration system
+      const routing = ragService.routeQuery(message, language);
+      
+      switch (routing.action) {
+        case 'blocked':
+          aiResponse = routing.response!;
+          break;
+          
+        case 'openai_direct':
+          try {
+            aiResponse = await generateAitendersResponse(message, language);
+          } catch (openaiError) {
+            console.warn("OpenAI failed for direct call:", openaiError instanceof Error ? openaiError.message : 'Unknown error');
+            aiResponse = getFallbackResponse(message, language);
+          }
+          break;
+          
+        case 'knowledge_base':
+          if (routing.category) {
+            // Search specific category
+            const categoryResults = ragService.searchByCategory(message, routing.category, 2);
+            if (categoryResults.length > 0) {
+              aiResponse = categoryResults[0].chunk.content;
+              if (categoryResults.length > 1 && categoryResults[1].relevance !== 'low') {
+                aiResponse += '\n\n---\n\n' + categoryResults[1].chunk.content;
+              }
+            } else {
+              aiResponse = ragService.generateResponse(message, language);
+            }
+          } else {
+            // Use general knowledge base search
+            aiResponse = ragService.generateResponse(message, language);
+          }
+          break;
+          
+        default:
+          // Fallback to OpenAI then knowledge base
+          try {
+            aiResponse = await generateAitendersResponse(message, language);
+          } catch (openaiError) {
+            console.warn("OpenAI failed, using fallback:", openaiError instanceof Error ? openaiError.message : 'Unknown error');
+            aiResponse = getFallbackResponse(message, language);
+          }
       }
       
       // Save both user message and AI response with session
@@ -126,6 +162,36 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json(stats);
     } catch (error) {
       res.status(500).json({ message: "Failed to fetch RAG stats" });
+    }
+  });
+
+  // RAG Configuration testing endpoint
+  app.post('/api/rag/test', (req, res) => {
+    try {
+      const { query, language = 'fr' } = req.body;
+      
+      if (!query) {
+        return res.status(400).json({ message: "Query is required" });
+      }
+
+      const routing = ragService.routeQuery(query, language);
+      const searchResults = ragService.search(query, 3);
+      
+      res.json({
+        query,
+        language,
+        routing,
+        searchResults: searchResults.map(r => ({
+          category: r.chunk.metadata.category,
+          score: r.score,
+          relevance: r.relevance,
+          preview: r.chunk.content.substring(0, 100) + '...'
+        })),
+        timestamp: new Date().toISOString()
+      });
+    } catch (error) {
+      console.error("Error testing RAG routing:", error);
+      res.status(500).json({ message: "Failed to test RAG routing" });
     }
   });
 
