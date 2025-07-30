@@ -293,7 +293,7 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto px-4 pt-8 pb-6">
           {/* Main Heading */}
           <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold text-aitenders-black mb-2">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-aitenders-black mb-4 leading-tight">
               {t[language].mainTitle}<br />
               <span className="text-aitenders-primary-blue">{t[language].mainSubtitle}</span>
             </h1>
