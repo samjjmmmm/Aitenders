@@ -538,60 +538,75 @@ export default function HomePage() {
 
 
       
-      {/* Anchored Chat Interface at Bottom */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-t border-aitenders-light-blue shadow-xl">
-        <div className="max-w-4xl mx-auto p-4">
-          
-          {/* Chat Input Bar */}
-          <div className="flex items-center gap-4 mb-3">
-            <div className="flex items-center justify-center w-12 h-12 bg-aitenders-primary-blue rounded-full flex-shrink-0">
-   
+      {/* ChatGPT-Style Anchored Chat Interface */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-xl">
+        <div className="max-w-4xl mx-auto p-6">
+          {/* ChatGPT-Style Input Container */}
+          <div className="relative bg-white border border-gray-300 rounded-3xl shadow-lg p-4">
+            {/* Input Field */}
+            <div className="flex items-start gap-3 mb-3">
+              <Input
+                type="text"
+                placeholder={language === 'fr' ? "Poser une question" : "Ask a question"}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                onKeyPress={handleKeyPress}
+                className="flex-1 text-base bg-transparent border-0 focus:ring-0 focus:outline-none placeholder:text-gray-500 resize-none min-h-[24px]"
+                disabled={sendMessageMutation.isPending}
+              />
+              <Button
+                onClick={handleSendMessage}
+                disabled={!message.trim() || sendMessageMutation.isPending}
+                size="sm"
+                className="h-8 w-8 rounded-lg bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-white shadow-sm transition-all duration-200 flex-shrink-0"
+              >
+                <MdSend className="w-4 h-4" />
+              </Button>
             </div>
-            <Input
-              type="text"
-              placeholder={t[language].chatPlaceholder}
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              onKeyPress={handleKeyPress}
-              className="flex-1 py-3 px-6 text-base bg-aitenders-pale-blue border border-aitenders-light-blue rounded-full focus:ring-2 focus:ring-aitenders-primary-blue focus:border-aitenders-primary-blue placeholder:text-aitenders-dark-blue/60"
-              disabled={sendMessageMutation.isPending}
-            />
-            <Button
-              onClick={handleSendMessage}
-              disabled={!message.trim() || sendMessageMutation.isPending}
-              size="sm"
-              className="h-12 w-12 rounded-full bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-aitenders-white-blue shadow-lg hover:shadow-xl transition-all duration-200"
-            >
-              <MdSend className="w-5 h-5" />
-            </Button>
-          </div>
 
-          {/* Quick Actions */}
-          <div className="flex flex-wrap gap-2 justify-center">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => setMessage(language === 'fr' ? "Nos Cas d'Usage" : "Our Use Cases")}
-              className="text-xs rounded-full border border-aitenders-light-blue hover:bg-aitenders-pale-blue px-4 py-1.5"
-            >
-              {t[language].ourUseCases}
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => setMessage(language === 'fr' ? "Processus d'Appel d'Offres" : "Tender Process")}
-              className="text-xs rounded-full border border-aitenders-light-blue hover:bg-aitenders-pale-blue px-4 py-1.5"
-            >
-              {t[language].tenderProcess}
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => setMessage(language === 'fr' ? "Planifier une Démo" : "Schedule Demo")}
-              className="text-xs rounded-full border border-aitenders-light-blue hover:bg-aitenders-pale-blue px-4 py-1.5"
-            >
-              {t[language].scheduleDemo}
-            </Button>
+            {/* Internal Action Buttons Row */}
+            <div className="flex items-center justify-between border-t border-gray-200 pt-3">
+              {/* Left Side - Action Buttons */}
+              <div className="flex items-center gap-2">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setMessage(language === 'fr' ? "Nos Cas d'Usage" : "Our Use Cases")}
+                  className="h-8 px-3 text-xs text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg flex items-center gap-1"
+                >
+                  <span className="text-gray-400">+</span>
+                  {t[language].ourUseCases}
+                </Button>
+                
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setMessage(language === 'fr' ? "Processus d'Appel d'Offres" : "Tender Process")}
+                  className="h-8 px-3 text-xs text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg flex items-center gap-1"
+                >
+                  <MdSettings className="w-3 h-3 text-gray-400" />
+                  Outils
+                </Button>
+              </div>
+
+              {/* Right Side - Additional Icons */}
+              <div className="flex items-center gap-2">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-8 w-8 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg"
+                >
+                  <FaRobot className="w-4 h-4" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-8 w-8 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg"
+                >
+                  <MdBarChart className="w-4 h-4" />
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
