@@ -83,12 +83,32 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
               )}
             </div>
 
-            {/* Menu Button */}
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center space-x-6">
+              <Link href="/">
+                <span className="text-sm font-medium text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors cursor-pointer">
+                  Home
+                </span>
+              </Link>
+              <a href="#products" className="text-sm font-medium text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors">
+                Products
+              </a>
+              <Link href="/uc1">
+                <span className="text-sm font-medium text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors cursor-pointer">
+                  Use Cases
+                </span>
+              </Link>
+              <a href="#about" className="text-sm font-medium text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors">
+                About
+              </a>
+            </nav>
+
+            {/* Mobile Menu Button - Only show on smaller screens */}
             <Button 
               variant="outline" 
               size="icon" 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
+              className="lg:hidden rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
             >
               {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </Button>
