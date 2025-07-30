@@ -264,6 +264,11 @@ class RAGService {
     this.analytics.totalQueries++;
 
     const queryLower = query.toLowerCase();
+    
+    // Détecter les commandes d'analyse avancée
+    const isAdvancedStartCommand = queryLower.includes('oui avancée') || queryLower.includes('oui avancee') || 
+        queryLower === 'avancée' || queryLower === 'avancee' || queryLower === 'avancé' || queryLower === 'avance' ||
+        queryLower === 'analyse avancée' || queryLower === 'analyse avancee';
 
     // 0. Vérifier les commandes de redémarrage simulateur en priorité
     const restartKeywords = ['redemarr', 'restart', 'reset', 'recommenc', 'nouveau simulat', 'refaire', 'reini'];
@@ -298,8 +303,10 @@ Cette analyse prend environ 8-10 minutes mais fournit des insights beaucoup plus
       };
     }
 
-    // 0.2. Gérer le démarrage de l'analyse avancée
-    if (queryLower.includes('oui avancée') || queryLower.includes('oui avancee')) {
+    // 0.2. Gérer le démarrage de l'analyse avancée (priorité haute)
+    if (queryLower.includes('oui avancée') || queryLower.includes('oui avancee') || 
+        queryLower === 'avancée' || queryLower === 'avancee' || queryLower === 'avancé' || queryLower === 'avance' ||
+        queryLower === 'analyse avancée' || queryLower === 'analyse avancee') {
       if (sessionId) {
         const firstQuestion = await advancedAnalysisService.startSession(sessionId);
         return {
@@ -324,8 +331,8 @@ ${firstQuestion}`
       };
     }
 
-    // 0.3. Gérer les réponses d'analyse avancée en cours
-    if (sessionId) {
+    // 0.3. Gérer les réponses d'analyse avancée en cours (APRÈS la détection des commandes)
+    if (sessionId && !isAdvancedStartCommand) {
       const advancedSession = advancedAnalysisService.getSessionInfo(sessionId);
       if (advancedSession && !advancedSession.completed) {
         // L'utilisateur est dans un processus d'analyse avancée
@@ -355,15 +362,42 @@ ${firstQuestion}`
     const isSimulatorQuery = simulatorKeywords.some(keyword => queryLower.includes(keyword));
 
     if (isSimulatorQuery && sessionId) {
+      // Proposer choix entre analyse standard et avancée
+      return {
+        action: 'simulator_choice',
+        response: `🎯 **SIMULATEUR ROI AITENDERS**
+
+Choisissez votre type d'analyse :
+
+**📊 ANALYSE STANDARD** (6 questions - 3 minutes)
+• Questions rapides sur vos processus actuels
+• Calcul ROI de base avec métriques essentielles
+• Idéal pour un aperçu rapide
+
+**🔬 ANALYSE AVANCÉE** (15+ questions - 8 minutes) 
+• Questionnaire détaillé couvrant tous les aspects
+• Calculs sophistiqués par catégorie de processus
+• Recommandations personnalisées selon votre industrie
+• Analyse de ROI monétisée avec revenus additionnels
+
+**Comment souhaitez-vous procéder ?**
+• Tapez **"standard"** pour l'analyse rapide
+• Tapez **"avancée"** pour l'analyse complète (recommandé)`,
+        simulatorData: { sessionId, status: 'choice_offered' }
+      };
+    }
+    
+    // Gérer les choix d'analyse standard
+    if ((queryLower.includes('standard') || queryLower.includes('rapide')) && sessionId) {
       // Vérifier s'il y a une session active
       const sessionInfo = simulatorService.getSessionInfo(sessionId);
 
       if (!sessionInfo) {
-        // Démarrer une nouvelle session
+        // Démarrer une nouvelle session standard
         const firstQuestion = await simulatorService.startSession(sessionId);
         return {
           action: 'simulator_start',
-          response: `🎯 **Simulateur ROI Aitenders**\n\nCalculez votre retour sur investissement personnalisé en répondant à quelques questions.\n\n${firstQuestion}`,
+          response: `🎯 **Simulateur ROI Aitenders - Analyse Standard**\n\nCalculez votre retour sur investissement en 6 questions rapides.\n\n${firstQuestion}`,
           simulatorData: { sessionId, status: 'started' }
         };
       } else if (!sessionInfo.completed) {

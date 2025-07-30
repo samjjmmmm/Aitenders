@@ -111,20 +111,27 @@ The architecture prioritizes developer experience with hot reloading, type safet
 
 ## Recent Changes (January 2025)
 
-### Complete Uncertainty Response Handling for ROI Simulator  
+### Dual-Tier ROI Simulator System with Advanced Integration
 - **Date**: January 30, 2025
-- **Change**: Implemented comprehensive uncertainty response handling with estimation prompts instead of default values
-- **Technical Implementation**:
-  - **Smart Detection**: Handles all uncertainty expressions ("je ne sais pas", "incertain", "aucune idée", "pas sûr", etc.) with accent normalization
-  - **Estimation Prompts**: Instead of using default values, system asks for approximate estimates with encouraging messages
-  - **Multi-Type Support**: Works for select, number, and range question types with dedicated handling logic
-  - **User Experience**: "💡 Nous comprenons que vous n'êtes pas certain. Pouvez-vous donner une estimation approximative ?"
+- **Change**: Implemented complete dual-tier simulator system with imported advanced calculator and uncertainty handling
+- **Dual Simulator Architecture**:
+  - **Standard Simulator**: 6 questions, 3 minutes, basic ROI calculations from original system
+  - **Advanced Simulator**: 15+ questions, 8 minutes, sophisticated calculations from imported Python module
+  - **Smart Routing**: Simulateur button now offers choice between standard and advanced analysis
+  - **Priority System**: Proper command detection prevents session conflicts
+- **Complete Uncertainty Handling** (Both Simulators):
+  - **Smart Detection**: All uncertainty expressions ("je ne sais pas", "incertain", "aucune idée") with accent normalization  
+  - **Estimation Prompts**: Re-asks questions with encouragement instead of using default values
   - **Flexible Parsing**: Accepts estimates with qualifiers ("environ", "peut-être", "approximativement")
-- **Business Benefits**: 
-  - **Accurate ROI**: Real user estimates provide more meaningful calculations than default values
-  - **User Engagement**: Encouraging tone helps users provide better data without feeling pressured
-  - **Data Quality**: All responses remain obligatory while accommodating natural uncertainty
-- **User Experience**: Seamless workflow where uncertainty expressions trigger helpful re-prompting instead of workflow interruption
+  - **Multi-Type Support**: Works for select, number, range, choice, and multiple_choice question types
+- **Advanced Calculator Integration**:
+  - **16 Question Categories**: Tender profile, document complexity, Q&A management, contract admin, knowledge management, business profile
+  - **Industry-Specific Analysis**: Personalized recommendations based on company sector and priorities
+  - **Comprehensive Validation**: Number extraction with regex, choice matching, multiple selection support
+- **User Experience**:
+  - **Progressive Disclosure**: Standard simulator offers option to upgrade to advanced analysis
+  - **Natural Language**: Uncertainty expressions trigger helpful estimation requests
+  - **No Workflow Interruption**: All responses remain obligatory while accommodating natural hesitation
 
 ### Advanced Tender Calculator Integration with Full LLM Module
 - **Date**: January 30, 2025  
