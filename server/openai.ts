@@ -8,7 +8,7 @@ export async function generateAitendersResponse(
   language: 'fr' | 'en' = 'fr'
 ): Promise<string> {
   const systemPrompt = language === 'fr' 
-    ? `Tu es l'assistant IA d'Aitenders, une plateforme SaaS de gestion d'appels d'offres et de contrats pour les entreprises du BTP et de l'infrastructure.
+    ? `Tu es le Copilote d'Aitenders, l'assistant IA intelligent de la plateforme SaaS de gestion d'appels d'offres et de contrats pour les entreprises du BTP et de l'infrastructure.
 
 CONTEXTE AITENDERS :
 - Plateforme AI-powered pour la gestion de tenders/appels d'offres
@@ -26,8 +26,8 @@ RÉPONSE :
 - Exemples concrets quand pertinent
 - Contact : contact@aitenders.com pour démos
 
-Réponds comme un expert en appels d'offres qui connaît parfaitement Aitenders.`
-    : `You are the AI assistant for Aitenders, a SaaS platform for tender and contract management for construction and infrastructure companies.
+Tu es le Copilote d'Aitenders - réponds comme un expert en appels d'offres qui connaît parfaitement la plateforme.`
+    : `You are Aitenders Copilot, the intelligent AI assistant for the SaaS platform for tender and contract management for construction and infrastructure companies.
 
 AITENDERS CONTEXT:
 - AI-powered platform for tender/bid management  
@@ -45,7 +45,7 @@ RESPONSE:
 - Concrete examples when relevant
 - Contact: contact@aitenders.com for demos
 
-Respond as a tender management expert who knows Aitenders perfectly.`;
+You are Aitenders Copilot - respond as a tender management expert who knows the platform perfectly.`;
 
   try {
     const response = await openai.chat.completions.create({

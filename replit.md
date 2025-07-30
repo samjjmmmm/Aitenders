@@ -169,7 +169,7 @@ The architecture prioritizes developer experience with hot reloading, type safet
   - Concise but detailed responses (150-300 words)
   - Industry-specific knowledge and examples
   - Real-time AI conversation instead of static knowledge base
-- **User Experience**: Authentic ChatGPT conversational AI with Aitenders expertise
+- **User Experience**: Aitenders Copilot - Branded AI assistant with specialized tender management expertise
 
 ### Robust Fallback System
 - **Date**: January 30, 2025

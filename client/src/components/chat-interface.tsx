@@ -55,10 +55,10 @@ export default function ChatInterface({
         onMessageSend(message);
       }
       toast({
-        title: language === 'fr' ? "Réponse ChatGPT générée" : "ChatGPT response generated",
+        title: language === 'fr' ? "Réponse générée" : "Response generated",
         description: language === 'fr' 
-          ? "Votre question a été traitée par ChatGPT."
-          : "Your question has been processed by ChatGPT.",
+          ? "Votre question a été traitée par le Copilote d'Aitenders."
+          : "Your question has been processed by Aitenders Copilot.",
       });
     },
     onError: () => {
