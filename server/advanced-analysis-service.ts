@@ -82,7 +82,42 @@ class AdvancedAnalysisService {
     
     // Validation par type de question
     if (question.questionType === 'number') {
-      // Essayer d'extraire un nombre même avec des mots approximatifs
+      // Détecter les plages de valeurs (ex: "entre 3 et 7", "3-7", "de 5 à 10")
+      const rangePatterns = [
+        /entre\s+(\d+(?:\.\d+)?)\s+et\s+(\d+(?:\.\d+)?)/i,
+        /de\s+(\d+(?:\.\d+)?)\s+[àa]\s+(\d+(?:\.\d+)?)/i,
+        /(\d+(?:\.\d+)?)\s*[-à]\s*(\d+(?:\.\d+)?)/i,
+        /(\d+(?:\.\d+)?)\s*[,;]\s*(\d+(?:\.\d+)?)/i
+      ];
+      
+      for (const pattern of rangePatterns) {
+        const rangeMatch = cleanAnswer.match(pattern);
+        if (rangeMatch) {
+          const minValue = parseFloat(rangeMatch[1]);
+          const maxValue = parseFloat(rangeMatch[2]);
+          
+          if (!isNaN(minValue) && !isNaN(maxValue) && minValue <= maxValue) {
+            // Validation des bornes
+            if (question.validationRules.min !== undefined && minValue < question.validationRules.min) {
+              return { error: `❌ La valeur minimum doit être au moins ${question.validationRules.min}.` };
+            }
+            if (question.validationRules.max !== undefined && maxValue > question.validationRules.max) {
+              return { error: `❌ La valeur maximum ne peut dépasser ${question.validationRules.max}.` };
+            }
+            
+            return { 
+              value: { 
+                type: 'range', 
+                min: minValue, 
+                max: maxValue,
+                average: (minValue + maxValue) / 2
+              } 
+            };
+          }
+        }
+      }
+      
+      // Essayer d'extraire un nombre unique avec des mots approximatifs
       let numValue = parseFloat(cleanAnswer);
       
       // Si parsing direct échoue, essayer avec regex pour extraire le nombre
@@ -94,7 +129,7 @@ class AdvancedAnalysisService {
       }
       
       if (isNaN(numValue)) {
-        return { error: "❌ Veuillez entrer un nombre valide." };
+        return { error: "❌ Veuillez entrer un nombre valide ou une plage (ex: 'entre 3 et 7')." };
       }
       if (question.validationRules.min !== undefined && numValue < question.validationRules.min) {
         return { error: `❌ La valeur doit être au minimum ${question.validationRules.min}.` };

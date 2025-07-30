@@ -348,6 +348,12 @@ export class AdvancedTenderCalculator {
   }
 
   public addResponse(questionId: string, response: any): { success: boolean; error?: string } {
+    // Gérer les plages directement sans validation si c'est un objet range
+    if (typeof response === 'object' && response?.type === 'range') {
+      this.responses[questionId] = response;
+      return { success: true };
+    }
+    
     const validation = this.validateResponse(questionId, response);
     if (validation.valid) {
       this.responses[questionId] = validation.parsedValue;
@@ -367,19 +373,29 @@ export class AdvancedTenderCalculator {
       'Always': 0.9
     };
 
-    const tendersPerYear = this.responses['tenders_per_year'] || 0;
-    const avgTenderValue = this.responses['avg_tender_value'] || 0;
-    const responseWeeks = this.responses['response_weeks'] || 0;
-    const docsPerTender = this.responses['docs_per_tender'] || 0;
-    const pagesPerDoc = this.responses['pages_per_doc'] || 0;
-    const versionsPerDoc = this.responses['versions_per_doc'] || 0;
-    const qaRounds = this.responses['qa_rounds'] || 0;
-    const qaHours = this.responses['qa_hours'] || 0;
-    const contractsTracked = this.responses['contracts_tracked'] || 0;
-    const hoursPerContract = this.responses['hours_per_contract'] || 0;
+    // Helper function pour extraire la valeur (gère les plages)
+    const getValue = (key: string, defaultValue: number = 0) => {
+      const response = this.responses[key];
+      if (!response) return defaultValue;
+      if (typeof response === 'object' && response.type === 'range') {
+        return response.average; // Utilise la moyenne pour le calcul principal
+      }
+      return response;
+    };
+
+    const tendersPerYear = getValue('tenders_per_year', 0);
+    const avgTenderValue = getValue('avg_tender_value', 0);
+    const responseWeeks = getValue('response_weeks', 0);
+    const docsPerTender = getValue('docs_per_tender', 0);
+    const pagesPerDoc = getValue('pages_per_doc', 0);
+    const versionsPerDoc = getValue('versions_per_doc', 0);
+    const qaRounds = getValue('qa_rounds', 0);
+    const qaHours = getValue('qa_hours', 0);
+    const contractsTracked = getValue('contracts_tracked', 0);
+    const hoursPerContract = getValue('hours_per_contract', 0);
     const reuseFrequency = this.responses['reuse_frequency'] || 'Sometimes';
-    const scratchTenders = this.responses['scratch_tenders'] || 0;
-    const winRate = this.responses['win_rate'] || 20;
+    const scratchTenders = getValue('scratch_tenders', 0);
+    const winRate = getValue('win_rate', 20);
 
     const reuseFactor = reuseMapping[reuseFrequency];
 
@@ -472,6 +488,49 @@ export class AdvancedTenderCalculator {
     };
   }
 
+  // Calculer les estimations basse et haute pour les plages
+  public calculateRangeEstimates(): { hasRanges: boolean; lowEstimate?: CalculationResult; highEstimate?: CalculationResult } {
+    // Vérifier s'il y a des plages dans les réponses
+    const hasRanges = Object.values(this.responses).some(
+      response => typeof response === 'object' && response?.type === 'range'
+    );
+
+    if (!hasRanges) {
+      return { hasRanges: false };
+    }
+
+    // Sauvegarder les réponses originales
+    const originalResponses = { ...this.responses };
+
+    try {
+      // Calculer l'estimation basse
+      this.adjustResponsesForEstimate('low');
+      const lowEstimate = this.calculateEfficiency();
+
+      // Calculer l'estimation haute
+      this.adjustResponsesForEstimate('high');
+      const highEstimate = this.calculateEfficiency();
+
+      // Restaurer les réponses originales
+      this.responses = originalResponses;
+
+      return { hasRanges: true, lowEstimate, highEstimate };
+    } catch (error) {
+      // Restaurer les réponses en cas d'erreur
+      this.responses = originalResponses;
+      return { hasRanges: false };
+    }
+  }
+
+  private adjustResponsesForEstimate(type: 'low' | 'high'): void {
+    Object.keys(this.responses).forEach(key => {
+      const response = this.responses[key];
+      if (typeof response === 'object' && response?.type === 'range') {
+        this.responses[key] = type === 'low' ? response.min : response.max;
+      }
+    });
+  }
+
   private generateRecommendations(): string[] {
     const recommendations: string[] = [];
     const priorities = this.responses['priorities'] || [];
@@ -527,15 +586,16 @@ export class AdvancedTenderCalculator {
 
   public generateDetailedReport(language: 'fr' | 'en' = 'fr'): string {
     const result = this.calculateEfficiency();
+    const rangeEstimates = this.calculateRangeEstimates();
     
     if (language === 'fr') {
-      return this.generateFrenchReport(result);
+      return this.generateFrenchReport(result, rangeEstimates);
     } else {
-      return this.generateEnglishReport(result);
+      return this.generateEnglishReport(result, rangeEstimates);
     }
   }
 
-  private generateFrenchReport(result: CalculationResult): string {
+  private generateFrenchReport(result: CalculationResult, rangeEstimates?: { hasRanges: boolean; lowEstimate?: CalculationResult; highEstimate?: CalculationResult }): string {
     const formatNumber = (value: number, decimals: number = 0) => 
       new Intl.NumberFormat('fr-FR', { maximumFractionDigits: decimals }).format(value);
 
@@ -545,10 +605,32 @@ export class AdvancedTenderCalculator {
       maximumFractionDigits: 0
     }).format(value);
 
-    return `
-🎯 **ANALYSE COMPLÈTE - CALCULATEUR AVANCÉ DE TEMPS**
+    let reportContent = `🎯 **ANALYSE COMPLÈTE - CALCULATEUR AVANCÉ DE TEMPS**
 
-**📊 SITUATION ACTUELLE**
+`;
+
+    // Ajouter les estimations de plage si disponibles
+    if (rangeEstimates?.hasRanges && rangeEstimates.lowEstimate && rangeEstimates.highEstimate) {
+      reportContent += `**📈 FOURCHETTE D'ESTIMATIONS** (basée sur vos plages de valeurs)
+
+**📊 ESTIMATION BASSE**
+• Heures économisées : ${formatNumber(rangeEstimates.lowEstimate.hoursSaved)} h/an
+• Amélioration : ${formatNumber(rangeEstimates.lowEstimate.savingsPercentage, 1)}%
+• Revenus additionnels : ${formatCurrency(rangeEstimates.lowEstimate.monetizedValue)}
+
+**📊 ESTIMATION HAUTE**
+• Heures économisées : ${formatNumber(rangeEstimates.highEstimate.hoursSaved)} h/an
+• Amélioration : ${formatNumber(rangeEstimates.highEstimate.savingsPercentage, 1)}%
+• Revenus additionnels : ${formatCurrency(rangeEstimates.highEstimate.monetizedValue)}
+
+**📊 ESTIMATION MOYENNE**
+• Heures économisées : ${formatNumber(result.hoursSaved)} h/an
+• Amélioration : ${formatNumber(result.savingsPercentage, 1)}%
+• Revenus additionnels : ${formatCurrency(result.monetizedValue)}
+
+`;
+    } else {
+      reportContent += `**📊 SITUATION ACTUELLE**
 • Temps total annuel : ${formatNumber(result.currentHours)} heures
 • Temps optimisé possible : ${formatNumber(result.optimizedHours)} heures
 • **Heures économisées : ${formatNumber(result.hoursSaved)} heures/an**
@@ -557,7 +639,10 @@ export class AdvancedTenderCalculator {
 **💰 VALEUR MONÉTISÉE**
 • **Potentiel de revenus additionnels : ${formatCurrency(result.monetizedValue)}**
 
-**⚡ DÉTAIL DES GAINS PAR CATÉGORIE**
+`;
+    }
+
+    reportContent += `**⚡ DÉTAIL DES GAINS PAR CATÉGORIE**
 
 **Préparation des documents :**
 • Avant : ${formatNumber(result.breakdown.document_prep.before)} h/an
@@ -587,11 +672,12 @@ export class AdvancedTenderCalculator {
 **🎯 RECOMMANDATIONS PERSONNALISÉES**
 ${result.recommendations.map((rec, i) => `${i + 1}. ${rec}`).join('\n')}
 
-**🎉 Veuillez fournir vos informations pour recevoir votre rapport détaillé !**
-    `.trim();
+**🎉 Veuillez fournir vos informations pour recevoir votre rapport détaillé !**`;
+
+    return reportContent;
   }
 
-  private generateEnglishReport(result: CalculationResult): string {
+  private generateEnglishReport(result: CalculationResult, rangeEstimates?: { hasRanges: boolean; lowEstimate?: CalculationResult; highEstimate?: CalculationResult }): string {
     const formatNumber = (value: number, decimals: number = 0) => 
       new Intl.NumberFormat('en-US', { maximumFractionDigits: decimals }).format(value);
 
