@@ -314,8 +314,8 @@ export default function ChatInterface({
   }
 
   return (
-    <div className={`fixed ${isExpanded ? 'inset-0 bg-transparent' : 'bottom-0 left-0 right-0'} z-50 ${transparent || isExpanded ? 'bg-transparent' : 'bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-2xl'}`}>
-      <div className={`${isExpanded ? 'w-[75%] h-[75%] mt-[12.5%]' : 'max-w-4xl'} mx-auto p-6 ${isExpanded ? 'flex flex-col' : ''}`}>
+    <div className={`fixed bottom-0 left-0 right-0 z-50 ${transparent || isExpanded ? 'bg-transparent' : 'bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-2xl'}`}>
+      <div className={`${isExpanded ? 'w-[75%] h-[75vh]' : 'max-w-4xl'} mx-auto p-6 ${isExpanded ? 'flex flex-col' : ''}`}>
         <div className={`bg-white border border-gray-300 ${isExpanded ? 'rounded-2xl flex-1 flex flex-col shadow-2xl' : 'rounded-3xl'} shadow-lg p-4 relative`}>
           {/* Expand/Collapse Button */}
           <button
