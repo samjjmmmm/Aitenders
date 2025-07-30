@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, ChevronRight, Home, Globe } from "lucide-react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 
 // Import Aitenders logo
 import aitendersLogo from "@assets/Untitled(4)_1753712731718.png";
@@ -15,10 +15,19 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isUseCasesOpen, setIsUseCasesOpen] = useState(false);
   const [showLanguageMenu, setShowLanguageMenu] = useState(false);
+  const [location] = useLocation();
+  
+  // Close menu when location changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+    setIsUseCasesOpen(false);
+    setShowLanguageMenu(false);
+  }, [location]);
   
   const closeMenu = () => {
     setIsMenuOpen(false);
     setIsUseCasesOpen(false);
+    setShowLanguageMenu(false);
   };
 
   return (
