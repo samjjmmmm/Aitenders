@@ -20,6 +20,7 @@ export interface IStorage {
   createSimulatorSession(session: InsertSimulatorSession): Promise<SimulatorSession>;
   updateSimulatorSession(sessionId: string, updates: Partial<SimulatorSession>): Promise<SimulatorSession | undefined>;
   getSimulatorSession(sessionId: string): Promise<SimulatorSession | undefined>;
+  deleteSimulatorSession(sessionId: string): Promise<void>;
 }
 
 export class MemStorage implements IStorage {
@@ -234,6 +235,10 @@ export class MemStorage implements IStorage {
 
   async getSimulatorSession(sessionId: string): Promise<SimulatorSession | undefined> {
     return this.simulatorSessions.get(sessionId);
+  }
+
+  async deleteSimulatorSession(sessionId: string): Promise<void> {
+    this.simulatorSessions.delete(sessionId);
   }
 
   async getAllSimulatorSessions(): Promise<SimulatorSession[]> {

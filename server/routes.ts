@@ -225,6 +225,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       switch (routing.action) {
         case 'simulator_start':
+        case 'simulator_restart':
         case 'simulator_continue':
         case 'simulator_completed':
         case 'simulator_answer':

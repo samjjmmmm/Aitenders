@@ -264,7 +264,21 @@ class RAGService {
 
     const queryLower = query.toLowerCase();
 
-    // 0. Vérifier les commandes simulateur en priorité
+    // 0. Vérifier les commandes de redémarrage simulateur en priorité
+    const restartKeywords = ['redemarr', 'restart', 'reset', 'recommenc', 'nouveau simulat', 'refaire', 'reini'];
+    const isRestartQuery = restartKeywords.some(keyword => queryLower.includes(keyword));
+
+    if (isRestartQuery && sessionId) {
+      // Redémarrer le simulateur
+      const firstQuestion = await simulatorService.restartSession(sessionId);
+      return {
+        action: 'simulator_restart',
+        response: `🔄 **Simulateur redémarré**\n\nNous repartons depuis le début !\n\n${firstQuestion}`,
+        simulatorData: { sessionId, status: 'restarted' }
+      };
+    }
+
+    // 1. Vérifier les commandes simulateur en priorité
     const simulatorKeywords = ['simulateur', 'simulation', 'simulator', 'roi calculer', 'calculator', 'calcul roi', 'économies', 'gains'];
     const isSimulatorQuery = simulatorKeywords.some(keyword => queryLower.includes(keyword));
 

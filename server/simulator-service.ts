@@ -99,6 +99,24 @@ class SimulatorService {
     return this.formatQuestion(firstQuestion, 1, this.config.questions.length);
   }
 
+  // Redémarrer le simulateur (effacer la session et recommencer)
+  async restartSession(sessionId: string): Promise<string> {
+    // Effacer la session existante
+    this.sessions.delete(sessionId);
+    
+    // Effacer en base de données
+    try {
+      await storage.deleteSimulatorSession(sessionId);
+    } catch (error) {
+      console.error('Error deleting simulator session from database:', error);
+    }
+    
+    console.log(`Simulator session ${sessionId} restarted`);
+    
+    // Redémarrer une nouvelle session
+    return await this.startSession(sessionId);
+  }
+
   // Obtenir la question courante
   getCurrentQuestion(sessionId: string): string | null {
     const session = this.sessions.get(sessionId);
