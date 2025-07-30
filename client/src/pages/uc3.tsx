@@ -1513,6 +1513,9 @@ export default function UC3Page() {
           <p className="text-sm mt-6 opacity-80">Sécurité de niveau entreprise • Collaboration multi-experts • Pistes d'audit complètes</p>
         </div>
       </section>
+
+
+      
       {/* Chat Interface with UC3-specific actions */}
       <ChatInterface 
         language="fr"
