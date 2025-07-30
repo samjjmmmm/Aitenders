@@ -87,6 +87,14 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
         </div>
       </div>
 
+      {/* Menu Backdrop */}
+      {isMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
+          onClick={closeMenu}
+        />
+      )}
+
       {/* Slide-out Menu */}
       <div className={`fixed top-0 right-0 h-full w-80 bg-aitenders-white-blue shadow-2xl transform transition-transform duration-300 ease-in-out z-50 ${
         isMenuOpen ? 'translate-x-0' : 'translate-x-full'
