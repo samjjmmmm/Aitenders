@@ -9,7 +9,8 @@ import { Link, useLocation } from "wouter";
 import { 
   MdBarChart, MdSearch, MdDescription, MdLightbulb, MdTrendingUp, MdSecurity, MdPeople, 
   MdSend, MdInsertDriveFile, MdSettings, MdEmojiEvents, MdGpsFixed, 
-  MdSchedule, MdCheckCircle, MdEdit, MdAnalytics, MdVerifiedUser, MdGroups, MdAccountCircle 
+  MdSchedule, MdCheckCircle, MdEdit, MdAnalytics, MdVerifiedUser, MdGroups, MdAccountCircle, 
+  MdMail
 } from "react-icons/md";
 import { FaRobot, FaChartLine, FaShieldAlt, FaUsers } from "react-icons/fa";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
@@ -94,11 +95,11 @@ export default function HomePage() {
         availableUseCases: "Cas d'usage disponibles :",
         back: "← Retour",
         tenderManagement: "Je réponds à des appels d'offres",
-        tenderDescription: "Optimisez vos réponses aux appels d'offres. Analyse IA, collaboration et suivi de conformité pour maximiser vos chances de succès.",
+       
         contractExecution: "Je pilote des projets en exécution", 
-        contractDescription: "Pilotez vos projets et contrats en toute confiance. Suivi des livrables, conformité et gestion proactive des changements.",
-        knowledgeManagement: "Je cherche a structurer la connaissance de mes projets",
-        knowledgeDescription: "Capitalisez sur vos savoirs et expériences passées. Accès rapide aux références, modèles et comparables pour chaque nouveau projet.",
+        
+        knowledgeManagement: "Je structure la connaissance de mes experts",
+       
         smallProject: "Petit Projets, régulier",
         smallDescription: "Idéal pour les petites équipes et besoins ciblés. Mise en place rapide, fonctionnalités essentielles.",
         mediumProject: "Projets moyennement complexe ",
@@ -568,7 +569,7 @@ export default function HomePage() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  onClick={() => setMessage(language === 'fr' ? "Nos Cas d'Usage" : "Our Use Cases")}
+                  onClick={() => setMessage(language === 'fr' ? "Montrez moi tous vos cas d'usage" : "Show me all your Use Cases")}
                   className="h-8 px-3 text-xs text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg flex items-center gap-1"
                 >
                   <span className="text-gray-400">+</span>
@@ -577,19 +578,22 @@ export default function HomePage() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  onClick={() => setMessage(language === 'fr' ? "Processus d'Appel d'Offres" : "Tender Process")}
+                  onClick={() => setMessage(language === 'fr' ? "Lance la simulation d'impact pour recevoir votre ROI personnalisé" : "Launch the simulator to get your personalised ROI report")}
                   className="h-8 px-3 text-xs text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg flex items-center gap-1"
                 >
                   <MdSettings className="w-3 h-3 text-gray-400" />
-                  Outils
+                  Simulation / ROI
                 </Button>
               </div>
               <div className="flex items-center gap-2">
-                <Button variant="ghost" size="sm" className="h-8 w-8 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg">
-                  <FaRobot className="w-4 h-4" />
-                </Button>
-                <Button variant="ghost" size="sm" className="h-8 w-8 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg">
-                  <MdBarChart className="w-4 h-4" />
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setMessage(language === 'fr' ? "contactez nous" : "Launch the simulator to get your personalised ROI report")}
+                  className="h-8 px-3 text-xs text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg flex items-center gap-1"
+                >
+                  <MdMail className="w-3 h-3 text-gray-400" />
+                  Contactez nous
                 </Button>
               </div>
             </div>
@@ -598,7 +602,7 @@ export default function HomePage() {
       </div>
 
       {/* Add padding to body to account for fixed chat */}
-      <div className="h-32"></div>
+      <div className="h-28"></div>
     </div>
   );
 }
