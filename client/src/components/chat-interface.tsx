@@ -311,22 +311,34 @@ export default function ChatInterface({
     {
       label: language === 'fr' ? 'Simulateur ROI' : 'ROI Simulator',
       icon: <MdCalculate className="w-3 h-3 text-gray-400" />,
-      onClick: startSimulator
+      onClick: () => {
+        setIsExpanded(true);
+        startSimulator();
+      }
     },
     {
       label: language === 'fr' ? 'Sécurité' : 'Security', 
       icon: <MdSecurity className="w-3 h-3 text-gray-400" />,
-      onClick: () => sendMessageMutation.mutate("Que fait Aitenders pour la sécurité des données ?")
+      onClick: () => {
+        setIsExpanded(true);
+        sendMessageMutation.mutate("Que fait Aitenders pour la sécurité des données ?");
+      }
     },
     {
       label: 'ROI',
       icon: <MdTrendingUp className="w-3 h-3 text-gray-400" />,
-      onClick: startSimulator
+      onClick: () => {
+        setIsExpanded(true);
+        startSimulator();
+      }
     },
     {
       label: 'Contact',
       icon: <MdContactMail className="w-3 h-3 text-gray-400" />,
-      onClick: () => sendMessageMutation.mutate("Comment contacter l'équipe Aitenders pour une démonstration ?")
+      onClick: () => {
+        setIsExpanded(true);
+        sendMessageMutation.mutate("Comment contacter l'équipe Aitenders pour une démonstration ?");
+      }
     }
   ];
 
@@ -334,6 +346,9 @@ export default function ChatInterface({
   const enhancedCustomActions = customActions.map(action => ({
     ...action,
     onClick: () => {
+      // Auto-expand chat when button is clicked
+      setIsExpanded(true);
+      
       // Special handling for simulator button
       if (action.label.toLowerCase().includes('simulateur') || 
           action.label.toLowerCase().includes('simulator') ||
