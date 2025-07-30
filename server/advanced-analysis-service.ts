@@ -51,10 +51,11 @@ class AdvancedAnalysisService {
       formatted += `\n\n*${question.helpText}*`;
     }
 
-    // Ajouter des contraintes de validation
+    // Ajouter des exemples de réponses naturelles au lieu de contraintes de validation
     if (question.questionType === 'number') {
-      if (question.validationRules.min !== undefined || question.validationRules.max !== undefined) {
-        formatted += `\n\n📊 Valeur entre ${question.validationRules.min || 'min'} et ${question.validationRules.max || 'max'}`;
+      const examples = this.getExampleForQuestion(question.id);
+      if (examples) {
+        formatted += `\n\n📊 Exemple de réponse: ${examples}`;
       }
     } else if (question.questionType === 'choice') {
       formatted += `\n\n**Options :**\n${question.validationRules.choices.map((c: string, i: number) => `${i + 1}. ${c}`).join('\n')}`;
@@ -64,6 +65,26 @@ class AdvancedAnalysisService {
     }
 
     return formatted;
+  }
+
+  // Obtenir des exemples naturels par question
+  private getExampleForQuestion(questionId: string): string | null {
+    const examples: Record<string, string> = {
+      'tenders_per_year': 'environ 250, entre 100 et 200',
+      'avg_tender_value': '500000€, entre 200K et 2M€',
+      'response_weeks': '4 semaines, entre 2 et 6',
+      'docs_per_tender': 'environ 15, entre 5 et 25',
+      'pages_per_doc': '30 pages, entre 10 et 50',
+      'versions_per_doc': '3 versions, entre 2 et 5',
+      'qa_rounds': '2 rounds, entre 1 et 4',
+      'hours_per_qa': '8 heures, entre 4 et 15',
+      'contracts_to_track': '50 contrats, entre 20 et 100',
+      'setup_hours': '40h, entre 20 et 80',
+      'reuse_frequency': '60%, entre 30 et 80%',
+      'from_scratch': '25%, entre 10 et 40%'
+    };
+    
+    return examples[questionId] || null;
   }
 
   // Valider et gérer les incertitudes pour une réponse
@@ -82,29 +103,35 @@ class AdvancedAnalysisService {
     
     // Validation par type de question
     if (question.questionType === 'number') {
-      // Détecter les plages de valeurs (ex: "entre 3 et 7", "3-7", "de 5 à 10")
+      // Fonction pour convertir les abréviations (K, M, €) en nombres
+      const parseValueWithSuffix = (value: string): number => {
+        const cleanValue = value.replace(/[€$,]/g, '').trim();
+        const match = cleanValue.match(/(\d+(?:\.\d+)?)\s*([KkMm])?/);
+        if (!match) return NaN;
+        
+        const baseValue = parseFloat(match[1]);
+        const suffix = match[2]?.toUpperCase();
+        
+        if (suffix === 'K') return baseValue * 1000;
+        if (suffix === 'M') return baseValue * 1000000;
+        return baseValue;
+      };
+
+      // Détecter les plages de valeurs avec support des abréviations
       const rangePatterns = [
-        /entre\s+(\d+(?:\.\d+)?)\s+et\s+(\d+(?:\.\d+)?)/i,
-        /de\s+(\d+(?:\.\d+)?)\s+[àa]\s+(\d+(?:\.\d+)?)/i,
-        /(\d+(?:\.\d+)?)\s*[-à]\s*(\d+(?:\.\d+)?)/i,
-        /(\d+(?:\.\d+)?)\s*[,;]\s*(\d+(?:\.\d+)?)/i
+        /entre\s+([0-9.,KkMm€$\s]+)\s+et\s+([0-9.,KkMm€$\s]+)/i,
+        /de\s+([0-9.,KkMm€$\s]+)\s+[àa]\s+([0-9.,KkMm€$\s]+)/i,
+        /([0-9.,KkMm€$\s]+)\s*[-–]\s*([0-9.,KkMm€$\s]+)/i,
+        /([0-9.,KkMm€$\s]+)\s*[,;]\s*([0-9.,KkMm€$\s]+)/i
       ];
       
       for (const pattern of rangePatterns) {
         const rangeMatch = cleanAnswer.match(pattern);
         if (rangeMatch) {
-          const minValue = parseFloat(rangeMatch[1]);
-          const maxValue = parseFloat(rangeMatch[2]);
+          const minValue = parseValueWithSuffix(rangeMatch[1]);
+          const maxValue = parseValueWithSuffix(rangeMatch[2]);
           
           if (!isNaN(minValue) && !isNaN(maxValue) && minValue <= maxValue) {
-            // Validation des bornes
-            if (question.validationRules.min !== undefined && minValue < question.validationRules.min) {
-              return { error: `❌ La valeur minimum doit être au moins ${question.validationRules.min}.` };
-            }
-            if (question.validationRules.max !== undefined && maxValue > question.validationRules.max) {
-              return { error: `❌ La valeur maximum ne peut dépasser ${question.validationRules.max}.` };
-            }
-            
             return { 
               value: { 
                 type: 'range', 
@@ -117,26 +144,18 @@ class AdvancedAnalysisService {
         }
       }
       
-      // Essayer d'extraire un nombre unique avec des mots approximatifs
-      let numValue = parseFloat(cleanAnswer);
+      // Essayer d'extraire un nombre unique avec support des abréviations
+      let numValue = parseValueWithSuffix(cleanAnswer);
       
-      // Si parsing direct échoue, essayer avec regex pour extraire le nombre
+      // Si parsing échoue, essayer d'extraire juste le nombre
       if (isNaN(numValue)) {
-        const numberMatch = cleanAnswer.match(/(\d+(?:\.\d+)?)/);
-        if (numberMatch) {
-          numValue = parseFloat(numberMatch[1]);
-        }
+        numValue = parseFloat(cleanAnswer.replace(/[^0-9.]/g, ''));
       }
       
       if (isNaN(numValue)) {
         return { error: "❌ Veuillez entrer un nombre valide ou une plage (ex: 'entre 3 et 7')." };
       }
-      if (question.validationRules.min !== undefined && numValue < question.validationRules.min) {
-        return { error: `❌ La valeur doit être au minimum ${question.validationRules.min}.` };
-      }
-      if (question.validationRules.max !== undefined && numValue > question.validationRules.max) {
-        return { error: `❌ La valeur doit être au maximum ${question.validationRules.max}.` };
-      }
+      // Accepter toutes les valeurs numériques sans validation stricte
       return { value: numValue };
     }
     

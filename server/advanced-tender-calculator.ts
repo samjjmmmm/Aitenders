@@ -348,19 +348,9 @@ export class AdvancedTenderCalculator {
   }
 
   public addResponse(questionId: string, response: any): { success: boolean; error?: string } {
-    // Gérer les plages directement sans validation si c'est un objet range
-    if (typeof response === 'object' && response?.type === 'range') {
-      this.responses[questionId] = response;
-      return { success: true };
-    }
-    
-    const validation = this.validateResponse(questionId, response);
-    if (validation.valid) {
-      this.responses[questionId] = validation.parsedValue;
-      return { success: true };
-    } else {
-      return { success: false, error: validation.error };
-    }
+    // Accepter toutes les réponses sans validation stricte - permettre les estimations
+    this.responses[questionId] = response;
+    return { success: true };
   }
 
   public calculateEfficiency(): CalculationResult {
