@@ -77,56 +77,101 @@
   "calculationRules": [
     {
       "id": "1",
-      "name": "Heures économisées par mois",
-      "formula": "questions.2 * questions.3 * 0.35",
-      "description": "Calcule les heures économisées par mois (35% d'amélioration d'efficacité)",
+      "name": "Temps total passé par mois",
+      "formula": "questions.2 * questions.3",
+      "description": "Temps total consacré aux AO par mois (nombre d'AO × temps par AO)",
       "outputUnit": "heures/mois",
       "conditions": ["questions.2 > 0", "questions.3 > 0"],
       "active": true
     },
     {
-      "id": "2",
-      "name": "Économie financière mensuelle",
-      "formula": "calculationRules.1 * 85",
-      "description": "Convertit les heures économisées en économies financières (85€/h coût moyen)",
+      "id": "2", 
+      "name": "Coût de la perte de temps actuelle",
+      "formula": "calculationRules.1 * 85 * (1 - questions.5 / 100) * 0.6",
+      "description": "Coût des heures perdues sur AO non gagnés (60% du temps est considéré comme perte)",
       "outputUnit": "€/mois",
-      "conditions": ["calculationRules.1 > 0"],
+      "conditions": ["calculationRules.1 > 0", "questions.5 > 0"],
       "active": true
     },
     {
       "id": "3",
-      "name": "Économie annuelle totale",
-      "formula": "calculationRules.2 * 12",
-      "description": "Économies financières sur une année complète",
-      "outputUnit": "€/an",
-      "conditions": ["calculationRules.2 > 0"],
+      "name": "Heures économisées par mois avec Aitenders",
+      "formula": "calculationRules.1 * 0.35",
+      "description": "Heures économisées grâce à l'automatisation et l'IA (35% d'efficacité en plus)",
+      "outputUnit": "heures/mois",
+      "conditions": ["calculationRules.1 > 0"],
       "active": true
     },
     {
       "id": "4",
+      "name": "Économie financière mensuelle directe",
+      "formula": "calculationRules.3 * 85",
+      "description": "Valeur des heures économisées convertie en économies financières",
+      "outputUnit": "€/mois",
+      "conditions": ["calculationRules.3 > 0"],
+      "active": true
+    },
+    {
+      "id": "5",
       "name": "Amélioration taux de succès",
-      "formula": "questions.5 * 1.25",
-      "description": "Augmentation estimée du taux de succès avec Aitenders (+25%)",
+      "formula": "Math.min(questions.5 * 1.25, 80)",
+      "description": "Nouveau taux de succès avec Aitenders (+25% mais plafonné à 80%)",
       "outputUnit": "%",
       "conditions": ["questions.5 > 0"],
       "active": true
     },
     {
-      "id": "5",
-      "name": "Chiffre d'affaires additionnel",
-      "formula": "questions.1 * questions.2 * 12 * (calculationRules.4 - questions.5) / 100",
-      "description": "CA supplémentaire généré par l'amélioration du taux de succès",
-      "outputUnit": "€/an",
-      "conditions": ["questions.1 > 0", "questions.2 > 0", "calculationRules.4 > questions.5"],
+      "id": "6",
+      "name": "Réduction des coûts de perte de temps",
+      "formula": "calculationRules.2 * (calculationRules.5 - questions.5) / (100 - questions.5)",
+      "description": "Réduction des coûts liés aux AO perdus grâce au meilleur taux de succès",
+      "outputUnit": "€/mois",
+      "conditions": ["calculationRules.2 > 0", "calculationRules.5 > questions.5"],
       "active": true
     },
     {
-      "id": "6",
+      "id": "7",
+      "name": "Chiffre d'affaires additionnel",
+      "formula": "questions.1 * questions.2 * 12 * (calculationRules.5 - questions.5) / 100",
+      "description": "CA supplémentaire généré par l'amélioration du taux de succès",
+      "outputUnit": "€/an",
+      "conditions": ["questions.1 > 0", "questions.2 > 0", "calculationRules.5 > questions.5"],
+      "active": true
+    },
+    {
+      "id": "8",
+      "name": "Économie totale mensuelle",
+      "formula": "calculationRules.4 + calculationRules.6",
+      "description": "Économies totales par mois (temps économisé + réduction pertes)",
+      "outputUnit": "€/mois",
+      "conditions": ["calculationRules.4 > 0"],
+      "active": true
+    },
+    {
+      "id": "9",
+      "name": "Économie annuelle totale",
+      "formula": "calculationRules.8 * 12",
+      "description": "Économies financières totales sur une année complète",
+      "outputUnit": "€/an",
+      "conditions": ["calculationRules.8 > 0"],
+      "active": true
+    },
+    {
+      "id": "10",
       "name": "ROI Aitenders",
-      "formula": "(calculationRules.3 + calculationRules.5) / (150000)",
-      "description": "Retour sur investissement par rapport au coût d'Aitenders (150K€/an moyen)",
+      "formula": "(calculationRules.9 + calculationRules.7) / 150000",
+      "description": "Retour sur investissement total (économies + CA additionnel) / coût Aitenders",
       "outputUnit": "x",
-      "conditions": ["calculationRules.3 > 0"],
+      "conditions": ["calculationRules.9 > 0"],
+      "active": true
+    },
+    {
+      "id": "11",
+      "name": "Temps de retour sur investissement",
+      "formula": "150000 / (calculationRules.8 + calculationRules.7 / 12)",
+      "description": "Nombre de mois nécessaires pour amortir l'investissement Aitenders",
+      "outputUnit": "mois",
+      "conditions": ["calculationRules.8 > 0"],
       "active": true
     }
   ],

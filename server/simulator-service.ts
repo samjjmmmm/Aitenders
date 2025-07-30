@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { storage } from './storage';
 import { hubspotService } from './hubspot-service';
+import { tenderTimeCalculator } from './tender-time-calculator';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -191,7 +192,7 @@ class SimulatorService {
       console.log(`Simulator completed! Total questions answered: ${session.responses.length}`);
       return { 
         completed: true, 
-        message: this.getCompletionMessage() 
+        message: this.getCompletionMessage(sessionId) 
       };
     }
 
@@ -390,9 +391,39 @@ class SimulatorService {
     return formatted;
   }
 
-  // Message de fin de simulateur
-  private getCompletionMessage(): string {
-    return `🎉 **Simulateur terminé !**\n\nPour recevoir votre rapport personnalisé avec vos résultats ROI détaillés, veuillez fournir vos informations :\n\n**Format requis :**\n- Nom: [Votre nom]\n- Email: [votre@email.com]\n- Entreprise: [Nom de votre entreprise]\n\n📧 Votre rapport sera envoyé par email avec tous les calculs et recommandations personnalisés !`;
+  // Message de fin de simulateur avec calculs avancés
+  private getCompletionMessage(sessionId: string): string {
+    const session = this.sessions.get(sessionId);
+    if (!session || session.responses.length === 0) {
+      return `🎉 **Simulateur terminé !**\n\n**Veuillez fournir vos informations pour recevoir votre rapport détaillé !**`;
+    }
+
+    // Extraire les réponses
+    const responses = session.responses;
+    const averageTenderValue = responses.find(r => r.questionId === '1')?.numericValue || 0;
+    const tendersPerMonth = responses.find(r => r.questionId === '2')?.numericValue || 0;
+    const hoursPerTender = responses.find(r => r.questionId === '3')?.numericValue || 0;
+    const teamSize = responses.find(r => r.questionId === '4')?.numericValue || 1;
+    const currentSuccessRate = responses.find(r => r.questionId === '5')?.numericValue || 0;
+    const hasCurrentTools = responses.find(r => r.questionId === '6')?.numericValue === 1;
+
+    try {
+      // Utiliser le calculateur avancé de perte de temps
+      const metrics = tenderTimeCalculator.calculateMetrics(
+        averageTenderValue,
+        tendersPerMonth,
+        hoursPerTender,
+        teamSize,
+        currentSuccessRate,
+        hasCurrentTools
+      );
+
+      // Générer le rapport détaillé avec les nouvelles métriques
+      return tenderTimeCalculator.generateAnalysisReport(metrics, 'fr');
+    } catch (error) {
+      console.error('Error calculating advanced metrics:', error);
+      return `🎉 **Simulateur terminé !**\n\n**📋 Vos réponses ont été enregistrées avec succès !**\n\n**Veuillez fournir vos informations pour recevoir votre rapport ROI détaillé !**`;
+    }
   }
 
   // Traiter les informations utilisateur et générer le rapport
