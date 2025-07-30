@@ -87,7 +87,10 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
             <Button 
               variant="outline" 
               size="icon" 
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={() => {
+                console.log('Menu button clicked, current state:', isMenuOpen);
+                setIsMenuOpen(!isMenuOpen);
+              }}
               className="rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
             >
               {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
