@@ -54,6 +54,12 @@
         "priority": 8,
         "action": "knowledge_base",
         "category": "roi"
+      },
+      "simulator": {
+        "keywords": ["simulateur", "simulator", "simulation", "lancer le simulateur", "démarrer le simulateur", "calculer roi", "calcul roi", "calculateur roi", "start simulator", "launch simulator"],
+        "priority": 10,
+        "action": "simulator_start",
+        "category": "simulator"
       }
     }
   },

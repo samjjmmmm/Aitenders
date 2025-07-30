@@ -303,14 +303,24 @@ class RAGService {
     // Vérifier si c'est une réponse à une question de simulateur
     if (sessionId) {
       const sessionInfo = simulatorService.getSessionInfo(sessionId);
+      
       if (sessionInfo && !sessionInfo.completed) {
-        // C'est probablement une réponse à une question de simulateur
+        // Traiter la réponse utilisateur
         const result = simulatorService.processAnswer(sessionId, query);
-        return {
-          action: 'simulator_answer',
-          response: result,
-          simulatorData: { sessionId, status: sessionInfo.completed ? 'completed' : 'in_progress' }
-        };
+        
+        if (result.nextQuestion) {
+          return {
+            action: 'simulator_continue',
+            response: result.nextQuestion,
+            simulatorData: { sessionId, status: 'in_progress' }
+          };
+        } else if (result.completed) {
+          return {
+            action: 'simulator_completed',
+            response: result.message,
+            simulatorData: { sessionId, status: 'completed' }
+          };
+        }
       }
     }
     
