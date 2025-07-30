@@ -22,6 +22,11 @@ export class MemStorage implements IStorage {
     this.chatMessages = new Map();
   }
 
+  // Clear all chat messages for testing
+  async clearChatMessages(): Promise<void> {
+    this.chatMessages.clear();
+  }
+
   async getUser(id: string): Promise<User | undefined> {
     return this.users.get(id);
   }
@@ -44,6 +49,7 @@ export class MemStorage implements IStorage {
     const request: ContactRequest = { 
       ...insertRequest, 
       id, 
+      company: insertRequest.company ?? null,
       createdAt: new Date() 
     };
     this.contactRequests.set(id, request);
@@ -59,7 +65,7 @@ export class MemStorage implements IStorage {
     const message: ChatMessage = { 
       ...insertMessage, 
       id, 
-      response: "Thank you for your message. Our AI assistant is being integrated to provide better responses about tender management and our platform capabilities.",
+      response: insertMessage.response ?? null,
       createdAt: new Date() 
     };
     this.chatMessages.set(id, message);

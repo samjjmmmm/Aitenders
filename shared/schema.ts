@@ -39,6 +39,7 @@ export const insertContactRequestSchema = createInsertSchema(contactRequests).pi
 
 export const insertChatMessageSchema = createInsertSchema(chatMessages).pick({
   message: true,
+  response: true,
 });
 
 export type InsertUser = z.infer<typeof insertUserSchema>;
