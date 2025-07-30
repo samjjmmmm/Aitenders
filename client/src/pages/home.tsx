@@ -473,8 +473,8 @@ export default function HomePage() {
         ]}
       />
 
-      {/* Add padding to body to account for fixed chat */}
-      <div className="h-16"></div>
+      {/* Reduced padding for chat alignment */}
+      <div className="h-4"></div>
     </div>
   );
 }
