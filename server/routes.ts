@@ -6,7 +6,7 @@ import { z } from "zod";
 import { generateAitendersResponse } from "./openai";
 import { ragService } from "./rag-service";
 import { hubspotService } from "./hubspot-service";
-import { simulatorService } from "./simulator-service";
+
 import fs from 'fs';
 import path from 'path';
 
@@ -224,12 +224,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const routing = await ragService.routeQuery(message, language, sessionId);
       
       switch (routing.action) {
-        case 'simulator_start':
-        case 'simulator_restart':
-        case 'simulator_continue':
-        case 'simulator_completed':
-        case 'simulator_answer':
-        case 'simulator_error':
         case 'advanced_analysis_offer':
         case 'advanced_analysis_start':
         case 'advanced_analysis_continue':
@@ -269,24 +263,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
           break;
           
         default:
-          // For responses without clear routing, check if user is in an active simulator
-          if (sessionId) {
-            const simulatorSession = simulatorService.getSessionInfo(sessionId);
-            if (simulatorSession && !simulatorSession.completed) {
-              // User is in an active simulator - treat as answer
-              const simulatorResult = await simulatorService.processAnswer(sessionId, message);
-              if (simulatorResult.error) {
-                aiResponse = simulatorResult.error;
-              } else if (simulatorResult.nextQuestion) {
-                aiResponse = simulatorResult.nextQuestion;
-              } else if (simulatorResult.completed) {
-                aiResponse = simulatorResult.message!;
-              } else {
-                aiResponse = "❌ Erreur lors du traitement de votre réponse.";
-              }
-              break;
-            }
-          }
           
           // Fallback to OpenAI then knowledge base
           try {

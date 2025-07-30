@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { simulatorService } from './simulator-service.js';
 import { advancedAnalysisService } from './advanced-analysis-service.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -270,17 +269,16 @@ class RAGService {
         queryLower === 'avancée' || queryLower === 'avancee' || queryLower === 'avancé' || queryLower === 'avance' ||
         queryLower === 'analyse avancée' || queryLower === 'analyse avancee';
 
-    // 0. Vérifier les commandes de redémarrage simulateur en priorité
+    // 0. Vérifier les commandes de redémarrage en priorité
     const restartKeywords = ['redemarr', 'restart', 'reset', 'recommenc', 'nouveau simulat', 'refaire', 'reini'];
     const isRestartQuery = restartKeywords.some(keyword => queryLower.includes(keyword));
 
     if (isRestartQuery && sessionId) {
-      // Redémarrer le simulateur
-      const firstQuestion = await simulatorService.restartSession(sessionId);
+      // Redémarrer l'analyse avancée
+      const firstQuestion = await advancedAnalysisService.startSession(sessionId);
       return {
-        action: 'simulator_restart',
-        response: `🔄 **Simulateur redémarré**\n\nNous repartons depuis le début !\n\n${firstQuestion}`,
-        simulatorData: { sessionId, status: 'restarted' }
+        action: 'advanced_analysis_start',
+        response: `🔄 **Analyse redémarrée**\n\nNous repartons depuis le début !\n\n${firstQuestion}`
       };
     }
 
@@ -357,86 +355,32 @@ ${firstQuestion}`
       }
     }
 
-    // 1. Vérifier les commandes simulateur en priorité
+    // 1. Vérifier les commandes simulateur en priorité - rediriger vers analyse avancée
     const simulatorKeywords = ['simulateur', 'simulation', 'simulator', 'roi calculer', 'calculator', 'calcul roi', 'économies', 'gains'];
     const isSimulatorQuery = simulatorKeywords.some(keyword => queryLower.includes(keyword));
 
     if (isSimulatorQuery && sessionId) {
-      // Démarrer directement le simulateur standard
-      const firstQuestion = await simulatorService.startSession(sessionId);
+      // Démarrer directement l'analyse avancée
+      const firstQuestion = await advancedAnalysisService.startSession(sessionId);
       return {
-        action: 'simulator_start',
-        response: firstQuestion
+        action: 'advanced_analysis_start',
+        response: `🚀 **SIMULATEUR ROI AITENDERS - ANALYSE COMPLÈTE**
+
+Nous allons explorer vos processus en détail avec 15 questions couvrant :
+
+**📋 Profil des appels d'offres** (3 questions)
+**📄 Complexité documentaire** (3 questions)  
+**❓ Gestion Q&A** (2 questions)
+**📝 Administration contrats** (2 questions)
+**🧠 Gestion des connaissances** (2 questions)
+**🎯 Profil d'entreprise** (3 questions)
+
+${firstQuestion}`
       };
     }
-    
-    // Gérer les choix d'analyse standard
-    if ((queryLower.includes('standard') || queryLower.includes('rapide')) && sessionId) {
-      // Vérifier s'il y a une session active
-      const sessionInfo = simulatorService.getSessionInfo(sessionId);
 
-      if (!sessionInfo) {
-        // Démarrer une nouvelle session standard
-        const firstQuestion = await simulatorService.startSession(sessionId);
-        return {
-          action: 'simulator_start',
-          response: `🎯 **Simulateur ROI Aitenders - Analyse Standard**\n\nCalculez votre retour sur investissement en 6 questions rapides.\n\n${firstQuestion}`,
-          simulatorData: { sessionId, status: 'started' }
-        };
-      } else if (!sessionInfo.completed) {
-        // Session en cours - afficher la question courante
-        const currentQuestion = simulatorService.getCurrentQuestion(sessionId);
-        if (currentQuestion) {
-          return {
-            action: 'simulator_continue',
-            response: `📊 **Simulateur en cours**\n\n${currentQuestion}`,
-            simulatorData: { sessionId, status: 'in_progress' }
-          };
-        }
-      } else {
-        // Session terminée
-        return {
-          action: 'simulator_completed',
-          response: 'Simulation terminée avec succès!',
-          simulatorData: { sessionId, status: 'completed' }
-        };
-      }
-    }
 
-    // Vérifier si c'est une réponse à une question de simulateur (PRIORITAIRE)
-    if (sessionId) {
-      const sessionInfo = simulatorService.getSessionInfo(sessionId);
 
-      if (sessionInfo && !sessionInfo.completed) {
-        console.log(`[RAG] Active simulator session detected for ${sessionId}, processing answer: "${query}"`);
-        
-        // Traiter la réponse utilisateur pour le simulateur actif
-        const result = await simulatorService.processAnswer(sessionId, query);
-
-        if (result.error) {
-          console.log(`[RAG] Simulator error: ${result.error}`);
-          return {
-            action: 'simulator_error',
-            response: result.error,
-            simulatorData: { sessionId, status: 'error' }
-          };
-        } else if (result.nextQuestion) {
-          console.log(`[RAG] Simulator continuing to next question`);
-          return {
-            action: 'simulator_continue',
-            response: result.nextQuestion,
-            simulatorData: { sessionId, status: 'in_progress' }
-          };
-        } else if (result.completed) {
-          console.log(`[RAG] Simulator completed successfully`);
-          return {
-            action: 'simulator_completed',
-            response: result.message,
-            simulatorData: { sessionId, status: 'completed' }
-          };
-        }
-      }
-    }
 
     // 1. Vérifier les requêtes bloquées
     if (this.config.routing?.blockedQueries) {
