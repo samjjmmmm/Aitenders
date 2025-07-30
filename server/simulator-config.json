@@ -1,0 +1,157 @@
+{
+  "questions": [
+    {
+      "id": "1",
+      "text": "Quel est le montant moyen de vos appels d'offres ?",
+      "type": "select",
+      "options": ["< 100K€", "100K-500K€", "500K-2M€", "2M-10M€", "> 10M€"],
+      "weight": 10,
+      "category": "projet",
+      "required": true,
+      "mapping": {
+        "< 100K€": 50000,
+        "100K-500K€": 300000,
+        "500K-2M€": 1250000,
+        "2M-10M€": 6000000,
+        "> 10M€": 15000000
+      }
+    },
+    {
+      "id": "2",
+      "text": "Combien d'appels d'offres traitez-vous par mois ?",
+      "type": "number",
+      "min": 1,
+      "max": 100,
+      "unit": "AO/mois",
+      "weight": 8,
+      "category": "volume",
+      "required": true
+    },
+    {
+      "id": "3",
+      "text": "Temps moyen passé sur un appel d'offres (en heures)",
+      "type": "range",
+      "min": 10,
+      "max": 200,
+      "unit": "heures",
+      "weight": 9,
+      "category": "temps",
+      "required": true
+    },
+    {
+      "id": "4",
+      "text": "Taille de votre équipe dédiée aux appels d'offres",
+      "type": "select",
+      "options": ["1-2 personnes", "3-5 personnes", "6-10 personnes", "11-20 personnes", "> 20 personnes"],
+      "weight": 7,
+      "category": "équipe",
+      "required": true,
+      "mapping": {
+        "1-2 personnes": 1.5,
+        "3-5 personnes": 4,
+        "6-10 personnes": 8,
+        "11-20 personnes": 15,
+        "> 20 personnes": 25
+      }
+    },
+    {
+      "id": "5",
+      "text": "Votre taux de succès actuel sur les appels d'offres (%)",
+      "type": "range",
+      "min": 5,
+      "max": 80,
+      "unit": "%",
+      "weight": 9,
+      "category": "performance",
+      "required": true
+    },
+    {
+      "id": "6",
+      "text": "Utilisez-vous actuellement des outils de gestion d'AO ?",
+      "type": "boolean",
+      "weight": 5,
+      "category": "processus",
+      "required": false
+    }
+  ],
+  "calculationRules": [
+    {
+      "id": "1",
+      "name": "Heures économisées par mois",
+      "formula": "questions.2 * questions.3 * 0.35",
+      "description": "Calcule les heures économisées par mois (35% d'amélioration d'efficacité)",
+      "outputUnit": "heures/mois",
+      "conditions": ["questions.2 > 0", "questions.3 > 0"],
+      "active": true
+    },
+    {
+      "id": "2",
+      "name": "Économie financière mensuelle",
+      "formula": "calculationRules.1 * 85",
+      "description": "Convertit les heures économisées en économies financières (85€/h coût moyen)",
+      "outputUnit": "€/mois",
+      "conditions": ["calculationRules.1 > 0"],
+      "active": true
+    },
+    {
+      "id": "3",
+      "name": "Économie annuelle totale",
+      "formula": "calculationRules.2 * 12",
+      "description": "Économies financières sur une année complète",
+      "outputUnit": "€/an",
+      "conditions": ["calculationRules.2 > 0"],
+      "active": true
+    },
+    {
+      "id": "4",
+      "name": "Amélioration taux de succès",
+      "formula": "questions.5 * 1.25",
+      "description": "Augmentation estimée du taux de succès avec Aitenders (+25%)",
+      "outputUnit": "%",
+      "conditions": ["questions.5 > 0"],
+      "active": true
+    },
+    {
+      "id": "5",
+      "name": "Chiffre d'affaires additionnel",
+      "formula": "questions.1 * questions.2 * 12 * (calculationRules.4 - questions.5) / 100",
+      "description": "CA supplémentaire généré par l'amélioration du taux de succès",
+      "outputUnit": "€/an",
+      "conditions": ["questions.1 > 0", "questions.2 > 0", "calculationRules.4 > questions.5"],
+      "active": true
+    },
+    {
+      "id": "6",
+      "name": "ROI Aitenders",
+      "formula": "(calculationRules.3 + calculationRules.5) / (150000)",
+      "description": "Retour sur investissement par rapport au coût d'Aitenders (150K€/an moyen)",
+      "outputUnit": "x",
+      "conditions": ["calculationRules.3 > 0"],
+      "active": true
+    }
+  ],
+  "categories": [
+    "projet",
+    "volume", 
+    "temps",
+    "équipe",
+    "performance",
+    "processus"
+  ],
+  "settings": {
+    "maxScore": 100,
+    "passingThreshold": 60,
+    "showDetailedResults": true,
+    "allowSkipQuestions": false,
+    "costPerHour": 85,
+    "aitendersCostAnnual": 150000,
+    "efficiencyImprovement": 0.35,
+    "successRateImprovement": 0.25
+  },
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "2025-07-30T15:47:00.000Z",
+    "description": "Configuration du simulateur ROI Aitenders",
+    "author": "Aitenders Admin"
+  }
+}

@@ -5,6 +5,8 @@ import { insertContactRequestSchema, insertChatMessageSchema } from "@shared/sch
 import { z } from "zod";
 import { generateAitendersResponse } from "./openai";
 import { ragService } from "./rag-service";
+import fs from 'fs';
+import path from 'path';
 
 export async function registerRoutes(app: Express): Promise<Server> {
   
@@ -211,6 +213,121 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json({ success: true, message: 'Copy tracked successfully' });
     } catch (error) {
       res.status(500).json({ message: "Failed to track copy" });
+    }
+  });
+
+  // Simulator configuration endpoints
+  app.get('/api/simulator/config', (req, res) => {
+    try {
+      const configPath = path.join(__dirname, 'simulator-config.json');
+      const data = fs.readFileSync(configPath, 'utf8');
+      const config = JSON.parse(data);
+      res.json(config);
+    } catch (error) {
+      console.error('Error loading simulator config:', error);
+      res.status(500).json({ message: 'Failed to load simulator configuration' });
+    }
+  });
+
+  app.put('/api/simulator/config', (req, res) => {
+    try {
+      const configPath = path.join(__dirname, 'simulator-config.json');
+      const newConfig = {
+        ...req.body,
+        metadata: {
+          ...req.body.metadata,
+          lastUpdated: new Date().toISOString()
+        }
+      };
+      
+      fs.writeFileSync(configPath, JSON.stringify(newConfig, null, 2));
+      res.json({ message: 'Configuration saved successfully', config: newConfig });
+    } catch (error) {
+      console.error('Error saving simulator config:', error);
+      res.status(500).json({ message: 'Failed to save simulator configuration' });
+    }
+  });
+
+  // Simulator calculation endpoint
+  app.post('/api/simulator/calculate', (req, res) => {
+    try {
+      const { answers } = req.body;
+      
+      // Load current configuration
+      const configPath = path.join(__dirname, 'simulator-config.json');
+      const data = fs.readFileSync(configPath, 'utf8');
+      const config = JSON.parse(data);
+      
+      // Process answers and apply mapping
+      const processedAnswers: Record<string, number> = {};
+      
+      config.questions.forEach((question: any) => {
+        const answer = answers[question.id];
+        if (answer !== undefined) {
+          if (question.type === 'select' && question.mapping) {
+            processedAnswers[question.id] = question.mapping[answer] || 0;
+          } else if (question.type === 'boolean') {
+            processedAnswers[question.id] = answer ? 1 : 0;
+          } else {
+            processedAnswers[question.id] = parseFloat(answer) || 0;
+          }
+        }
+      });
+      
+      // Calculate results based on rules
+      const results: Record<string, number> = {};
+      const calculationOrder = config.calculationRules
+        .filter((rule: any) => rule.active)
+        .sort((a: any, b: any) => parseInt(a.id) - parseInt(b.id));
+      
+      calculationOrder.forEach((rule: any) => {
+        try {
+          // Simple formula evaluation (replace with proper evaluator in production)
+          let formula = rule.formula;
+          
+          // Replace question references
+          Object.keys(processedAnswers).forEach(qId => {
+            const regex = new RegExp(`questions\\.${qId}`, 'g');
+            formula = formula.replace(regex, processedAnswers[qId].toString());
+          });
+          
+          // Replace calculation rule references
+          Object.keys(results).forEach(rId => {
+            const regex = new RegExp(`calculationRules\\.${rId}`, 'g');
+            formula = formula.replace(regex, results[rId].toString());
+          });
+          
+          // Evaluate the formula (basic math operations only)
+          const result = eval(formula);
+          results[rule.id] = isNaN(result) ? 0 : Math.round(result * 100) / 100;
+        } catch (error) {
+          console.error(`Error calculating rule ${rule.id}:`, error);
+          results[rule.id] = 0;
+        }
+      });
+      
+      // Format results for response
+      const formattedResults = calculationOrder.map((rule: any) => ({
+        id: rule.id,
+        name: rule.name,
+        value: results[rule.id],
+        unit: rule.outputUnit,
+        description: rule.description
+      }));
+      
+      res.json({
+        results: formattedResults,
+        summary: {
+          totalSavings: results['3'] || 0,
+          additionalRevenue: results['5'] || 0,
+          roi: results['6'] || 0,
+          timestamp: new Date().toISOString()
+        }
+      });
+      
+    } catch (error) {
+      console.error('Error calculating simulator results:', error);
+      res.status(500).json({ message: 'Failed to calculate results' });
     }
   });
 
