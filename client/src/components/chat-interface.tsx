@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MdSend, MdSettings, MdBarChart, MdExpandMore, MdExpandLess, MdClose, MdContentCopy, MdDelete, MdCalculate, MdSecurity, MdTrendingUp, MdContactMail } from "react-icons/md";
@@ -44,6 +44,7 @@ export default function ChatInterface({
   const [showUserInfoModal, setShowUserInfoModal] = useState(false);
   const [userInfo, setUserInfo] = useState({ name: '', email: '', company: '' });
   const queryClient = useQueryClient();
+  const inputRef = useRef<HTMLInputElement>(null);
 
   // Function to scroll chat to bottom
   const scrollToBottom = () => {
@@ -53,6 +54,15 @@ export default function ChatInterface({
         chatContainer.scrollTop = chatContainer.scrollHeight;
       }
     }, 50); // Reduced timeout for faster scrolling
+  };
+
+  // Function to focus input field
+  const focusInput = () => {
+    setTimeout(() => {
+      if (inputRef.current && !isClosed) {
+        inputRef.current.focus();
+      }
+    }, 100);
   };
 
   const { data: messages = [] } = useQuery<ChatMessage[]>({
@@ -66,12 +76,20 @@ export default function ChatInterface({
     }
   });
 
-  // Auto-scroll to bottom whenever messages change
+  // Auto-scroll to bottom and focus input whenever messages change
   useEffect(() => {
     if (messages && messages.length > 0) {
       scrollToBottom();
+      focusInput();
     }
   }, [messages]);
+
+  // Focus input when chat opens or expands
+  useEffect(() => {
+    if (!isClosed) {
+      focusInput();
+    }
+  }, [isClosed, isExpanded]);
 
   // Initialize browser fingerprint
   useEffect(() => {
@@ -200,8 +218,11 @@ export default function ChatInterface({
       if (onMessageSend) {
         onMessageSend(message);
       }
-      // Auto-scroll to bottom after response (with slightly longer delay for loading)
-      setTimeout(() => scrollToBottom(), 100);
+      // Auto-scroll to bottom and focus input after response
+      setTimeout(() => {
+        scrollToBottom();
+        focusInput();
+      }, 100);
     },
     onError: (error) => {
       console.error('Message send error:', error);
@@ -470,6 +491,7 @@ export default function ChatInterface({
           {/* Input Field */}
           <div className={`flex items-start gap-3 mb-3 ${isExpanded ? 'mt-auto' : ''}`}>
             <Input
+              ref={inputRef}
               type="text"
               placeholder={language === 'fr' ? "       Poser une question" : "      Ask a question"}
               value={message}
