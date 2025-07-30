@@ -324,7 +324,7 @@ export default function ChatInterface({
     onClick: () => {
       // Special handling for simulator button
       if (action.label.toLowerCase().includes('simulateur') || action.label.toLowerCase().includes('simulator')) {
-        startSimulator();
+        handleSendMessage("lancer le simulateur");
         return;
       }
       
