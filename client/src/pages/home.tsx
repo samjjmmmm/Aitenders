@@ -35,8 +35,8 @@ export default function HomePage() {
   // Translations
   const t = {
     fr: {
-      mainTitle: "L’intelligence de vos équipes projets,",
-      mainSubtitle: "démultipliée par l’IA",
+      mainTitle: "L'intelligence de vos équipes projets,",
+      mainSubtitle: "démultipliée par l'IA",
       description: "Aitenders, votre coéquipier digital pour gagner les appels d'offres, piloter les contrats et structurer la connaissance et l'expertise de vos projets.",
       domainSelection: "Comment puis-je vous aider? ",
       projectSize: "Quelle est la taille de vos projets ?",
@@ -50,15 +50,15 @@ export default function HomePage() {
         contractDescription: "Pilotez vos projets en toute confiance. Suivi des livrables, conformité et gestion proactive des changements.",
         knowledgeManagement: "Je structure la connaissance de mes experts",
         knowledgeDescription: "Capitalisez sur vos savoirs et expériences passées. Accès rapide aux références, modèles et comparables pour chaque nouveau projet.",
-       
         smallProject: "Petit Projets, régulier",
         smallDescription: "Idéal pour les petites équipes et besoins ciblés. Mise en place rapide, fonctionnalités essentielles.",
         mediumProject: "Projets moyennement complexe ",
         mediumDescription: "Un équilibre entre flexibilité et puissance. Outils complets pour des projets structurés et collaboratifs.",
-        largeProject: "Grand Projets complexes", 
-        largeDescription: "Conçu pour les organisations complexes et à grande échelle. Solutions avancées, IA sur mesure et sécurité renforcée.",
+        largeProject: "Grand Projets complexes",
+        largeDescription: "Conçu pour les organisations complexes et à grande échelle. Solutions avancées, IA personnalisée et sécurité renforcée.",
+
         learnMore: "Je veux en savoir plus sur Aitenders",
-      learnMoreDescription: "Découvrez toutes nos fonctionnalités et comment Aitenders peut transformer votre gestion des appels d'offres et projets.",
+ 
       exploreSolutions: "Explorer nos solutions",
       discoverUseCase: "Découvrir ce cas d'usage",
       chatPlaceholder: "Interagisez avec le Chat Questions / Lancer le simulateur / Information  ?",
@@ -174,104 +174,90 @@ export default function HomePage() {
       }
     }
     
-    // Multi-domain combinations
-    if (domains.has('tender-management') && domains.has('contract-execution')) {
-      return ['UC2', 'UC5'];
+
+    // Multiple domain combinations
+    if (domains.size === 2) {
+      if (domains.has('tender-management') && domains.has('contract-execution')) {
+        if (projectSize === 'petit-projet') return ['UC1', 'UC4'];
+        if (projectSize === 'projet-moyen') return ['UC2', 'UC5'];
+        if (projectSize === 'grand-projet') return ['UC3', 'UC6'];
+      }
+      if (domains.has('tender-management') && domains.has('knowledge-management')) {
+        if (projectSize === 'petit-projet') return ['UC1', 'UC7'];
+        if (projectSize === 'projet-moyen') return ['UC2', 'UC8'];
+        if (projectSize === 'grand-projet') return ['UC3', 'UC8'];
+      }
+      if (domains.has('contract-execution') && domains.has('knowledge-management')) {
+        if (projectSize === 'petit-projet') return ['UC4', 'UC7'];
+        if (projectSize === 'projet-moyen') return ['UC5', 'UC8'];
+        if (projectSize === 'grand-projet') return ['UC6', 'UC8'];
+      }
     }
-    if (domains.has('tender-management') && domains.has('knowledge-management')) {
-      return ['UC3', 'UC7'];
-    }
-    if (domains.has('contract-execution') && domains.has('knowledge-management')) {
-      return ['UC6', 'UC7'];
-    }
+
+    // All three domains
     if (domains.size === 3) {
-      return ['UC8'];
+      if (projectSize === 'petit-projet') return ['UC1', 'UC4', 'UC7'];
+      if (projectSize === 'projet-moyen') return ['UC2', 'UC5', 'UC8'];
+      if (projectSize === 'grand-projet') return ['UC3', 'UC6', 'UC8'];
     }
-    
-    return ['UC1']; // Default fallback
+
+    return [];
   };
 
-  // State management for the 2-step flow
+  // State management
   const [step1Selections, setStep1Selections] = useState<string[]>([]);
   const [step2Selection, setStep2Selection] = useState<string>('');
-  const [showStep2, setShowStep2] = useState(false);
-  const [showUCResults, setShowUCResults] = useState(false);
-  const [resultUCs, setResultUCs] = useState<string[]>([]);
+  const [showStep2, setShowStep2] = useState<boolean>(false);
+  const [showUCResults, setShowUCResults] = useState<boolean>(false);
 
-  // UC to page mapping
-  const ucToPageMapping: { [key: string]: string } = {
-    "UC1": "/uc1",
-    "UC2": "/uc2", 
-    "UC3": "/uc3",
-    "UC4": "/uc4",
-    "UC5": "/uc5",
-    "UC6": "/uc6",
-    "UC7": "/uc7",
-    "UC8": "/uc8"
-  };
-
-  // New 2-step flow handlers
+  // Handle Step 1 card selection (multi-select)
   const handleStep1Selection = (cardId: string) => {
-    let newSelections = [...step1Selections];
-    
-    if (newSelections.includes(cardId)) {
-      // Remove if already selected (multi-select toggle)
-      newSelections = newSelections.filter(id => id !== cardId);
+    let newSelections;
+    if (step1Selections.includes(cardId)) {
+      newSelections = step1Selections.filter(id => id !== cardId);
     } else {
-      // Add to selections
-      newSelections.push(cardId);
+      newSelections = [...step1Selections, cardId];
     }
-    
     setStep1Selections(newSelections);
     
-    // Show Step 2 as soon as at least one domain is selected
-    if (newSelections.length > 0 && !showStep2) {
+    // Show step 2 if at least one selection
+    if (newSelections.length > 0) {
       setShowStep2(true);
-    } else if (newSelections.length === 0) {
+    } else {
       setShowStep2(false);
-      setShowUCResults(false);
       setStep2Selection('');
+      setShowUCResults(false);
     }
   };
 
+  // Handle Step 2 card selection (single-select)
   const handleStep2Selection = (cardId: string) => {
     setStep2Selection(cardId);
-    
-    // Calculate UCs based on Step 1 + Step 2 combination
-    const ucs = getUCsFromSelection(step1Selections, cardId);
-    setResultUCs(ucs);
-    
-    // If only one UC, redirect directly
-    if (ucs.length === 1) {
-      const finalUC = ucs[0];
-      setTimeout(() => setLocation(ucToPageMapping[finalUC]), 1000);
-    } else {
-      // Show UC selection cards if multiple UCs
-      setShowUCResults(true);
-    }
+    setShowUCResults(true);
   };
 
-  const handleUCSelection = (uc: string) => {
-    setTimeout(() => setLocation(ucToPageMapping[uc]), 1000);
+  // Get results based on current selections
+  const resultUCs = step1Selections.length > 0 && step2Selection 
+    ? getUCsFromSelection(step1Selections, step2Selection)
+    : [];
+
+  // Handle UC card click - navigate to UC page
+  const handleUCSelection = (ucId: string) => {
+    setLocation(`/${ucId.toLowerCase()}`);
   };
 
+  // Handle back to step 1
   const handleBackToStep1 = () => {
     setShowStep2(false);
-    setShowUCResults(false);
-    setStep1Selections([]);
     setStep2Selection('');
+    setShowUCResults(false);
   };
 
-  const handleBackToStep2 = () => {
-    setShowUCResults(false);
-    setStep2Selection('');
-  };
-
-  // UC information for display
-  const ucInfo: { [key: string]: { title: string; description: string } } = {
-    "UC1": { title: "Fast-Track Small Project Bids", description: "Solutions rapides pour petits projets" },
-    "UC2": { title: "Medium Project Management", description: "Gestion complète de projets moyens" },
-    "UC3": { title: "Complex Multi-Lot Bid Management", description: "Gestion de grands appels d'offres complexes" },
+  // UC Metadata for display
+  const ucMetadata = {
+    "UC1": { title: "Fast-Track Small Bids", description: "Appels d'offres petits projets" },
+    "UC2": { title: "Medium Bid Management", description: "Gestion d'appels d'offres moyens" },
+    "UC3": { title: "Complex Multi-Lot Bids", description: "Appels d'offres multi-lots complexes" },
     "UC4": { title: "Small Project Execution", description: "Exécution de petits projets" },
     "UC5": { title: "Medium Project Execution", description: "Exécution de projets moyens" },
     "UC6": { title: "Large Project Execution", description: "Exécution de grands projets" },
@@ -304,30 +290,29 @@ export default function HomePage() {
       
       {/* Hero Section */}
       <main className="relative">
-        <div className="max-w-4xl mx-auto px-6 pt-16 pb-12">
+        <div className="max-w-6xl mx-auto px-4 pt-12 pb-8">
           {/* Main Heading */}
-          <div className="text-center mb-16">
-            <h1 className="text-4xl font-bold text-aitenders-black mb-4">
+          <div className="text-center mb-12">
+            <h1 className="text-3xl font-bold text-aitenders-black mb-3">
               {t[language].mainTitle}<br />
               <span className="text-aitenders-primary-blue">{t[language].mainSubtitle}</span>
             </h1>
-            <p className="text-lg text-aitenders-dark-blue max-w-2xl mx-auto mt-3">
+            <p className="text-base text-aitenders-dark-blue max-w-2xl mx-auto mt-2">
               {t[language].description}
             </p>
           </div>
 
           {/* Dynamic Selection Cards */}
-          <div className="mb-12 max-w-3xl mx-auto">
-
+          <div className="mb-8 max-w-5xl mx-auto">
 
             {/* Step Title */}
-            <h2 className="text-2xl font-bold text-aitenders-black mb-8 text-center">
+            <h2 className="text-xl font-bold text-aitenders-black mb-6 text-center">
               {getStepTitle()}
             </h2>
 
             {/* Step 1: Domain Selection */}
             {!showUCResults && (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                 {step1Cards.map((card) => {
                   const Icon = card.icon;
                   const isSelected = step1Selections.includes(card.id);
@@ -335,20 +320,20 @@ export default function HomePage() {
                     <Card
                       key={card.id}
                       onClick={() => handleStep1Selection(card.id)}
-                      className={`rounded-2xl p-6 shadow-sm hover:shadow-md cursor-pointer border transition-all duration-200 ease-in-out hover:scale-105 ${
+                      className={`rounded-xl p-4 shadow-sm hover:shadow-md cursor-pointer border transition-all duration-200 ease-in-out hover:scale-105 ${
                         isSelected 
                           ? 'border-aitenders-primary-blue bg-aitenders-pale-blue' 
                           : 'border-aitenders-light-blue bg-aitenders-white-blue hover:border-aitenders-primary-blue'
                       }`}
                     >
                       <div className="text-center">
-                        <div className={`p-4 rounded-xl mb-4 mx-auto w-fit ${card.color}`}>
-                          <Icon className="h-8 w-8" />
+                        <div className={`p-3 rounded-lg mb-3 mx-auto w-fit ${card.color}`}>
+                          <Icon className="h-6 w-6" />
                         </div>
-                        <h3 className="text-lg font-semibold text-aitenders-black mb-2">
+                        <h3 className="text-base font-semibold text-aitenders-black mb-1">
                           {card.title}
                         </h3>
-                        <p className="text-sm text-aitenders-dark-blue">
+                        <p className="text-xs text-aitenders-dark-blue leading-tight">
                           {card.description}
                         </p>
                       </div>
@@ -371,7 +356,7 @@ export default function HomePage() {
                     {t[language].back}
                   </Button>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {step2Cards.map((card) => {
                     const Icon = card.icon;
                     const isSelected = step2Selection === card.id;
@@ -379,20 +364,20 @@ export default function HomePage() {
                       <Card
                         key={card.id}
                         onClick={() => handleStep2Selection(card.id)}
-                        className={`rounded-2xl p-6 shadow-sm hover:shadow-md cursor-pointer border transition-all duration-200 ease-in-out hover:scale-105 ${
+                        className={`rounded-xl p-4 shadow-sm hover:shadow-md cursor-pointer border transition-all duration-200 ease-in-out hover:scale-105 ${
                           isSelected 
                             ? 'border-aitenders-primary-blue bg-aitenders-pale-blue' 
                             : 'border-aitenders-light-blue bg-aitenders-white-blue hover:border-aitenders-primary-blue'
                         }`}
                       >
                         <div className="text-center">
-                          <div className={`p-4 rounded-xl mb-4 mx-auto w-fit ${card.color}`}>
-                            <Icon className="h-8 w-8" />
+                          <div className={`p-3 rounded-lg mb-3 mx-auto w-fit ${card.color}`}>
+                            <Icon className="h-6 w-6" />
                           </div>
-                          <h3 className="text-lg font-semibold text-aitenders-black mb-2">
+                          <h3 className="text-base font-semibold text-aitenders-black mb-1">
                             {card.title}
                           </h3>
-                          <p className="text-sm text-aitenders-dark-blue">
+                          <p className="text-xs text-aitenders-dark-blue leading-tight">
                             {card.description}
                           </p>
                         </div>
@@ -403,61 +388,70 @@ export default function HomePage() {
               </div>
             )}
 
-            {/* UC Results */}
-            {showUCResults && (
+            {/* UC Results Display */}
+            {showUCResults && resultUCs.length > 0 && (
               <div className="animate-in fade-in duration-300">
                 <div className="flex justify-between items-center mb-6">
                   <Button
                     variant="ghost"
                     size="sm"
-                    onClick={handleBackToStep2}
+                    onClick={resetSelection}
                     className="text-aitenders-primary-blue hover:text-aitenders-dark-blue"
                   >
                     {t[language].back}
                   </Button>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {resultUCs.map((uc) => (
-                    <Card
-                      key={uc}
-                      onClick={() => handleUCSelection(uc)}
-                      className="rounded-2xl p-6 shadow-sm hover:shadow-md cursor-pointer border border-aitenders-light-blue bg-aitenders-white-blue hover:border-aitenders-primary-blue transition-all duration-200 ease-in-out hover:scale-105"
-                    >
-                      <div className="text-center">
-                        <h3 className="text-lg font-semibold text-aitenders-black mb-2">
-                          {uc}
-                        </h3>
-                        <p className="text-sm text-aitenders-dark-blue mb-4">
-                          {ucInfo[uc]?.description}
-                        </p>
-                        <Button className="bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-aitenders-white-blue">
-                          {t[language].discoverUseCase}
-                        </Button>
-                      </div>
-                    </Card>
-                  ))}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                  {resultUCs.map((ucId) => {
+                    const ucData = ucMetadata[ucId as keyof typeof ucMetadata];
+                    return (
+                      <Card
+                        key={ucId}
+                        onClick={() => handleUCSelection(ucId)}
+                        className="rounded-xl p-4 shadow-sm hover:shadow-md cursor-pointer border border-aitenders-light-blue bg-aitenders-white-blue hover:border-aitenders-primary-blue transition-all duration-200 ease-in-out hover:scale-105"
+                      >
+                        <div className="text-center">
+                          <div className="p-3 rounded-lg mb-3 mx-auto w-fit bg-aitenders-primary-blue/10 text-aitenders-primary-blue">
+                            <MdEmojiEvents className="h-6 w-6" />
+                          </div>
+                          <h3 className="text-base font-semibold text-aitenders-black mb-1">
+                            {ucData.title}
+                          </h3>
+                          <p className="text-xs text-aitenders-dark-blue leading-tight mb-3">
+                            {ucData.description}
+                          </p>
+                          <Button 
+                            size="sm" 
+                            className="w-full bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-aitenders-white-blue"
+                          >
+                            {t[language].discoverUseCase}
+                          </Button>
+                        </div>
+                      </Card>
+                    );
+                  })}
                 </div>
               </div>
             )}
 
             {/* Selection Summary */}
-            {(step1Selections.length > 0 || step2Selection) && (
-              <div className="mt-8 p-6 bg-aitenders-pale-blue rounded-2xl border border-aitenders-light-blue">
-                <p className="text-sm text-aitenders-dark-blue mb-3 font-medium">{t[language].yourSelection}</p>
-                <div className="flex flex-wrap gap-2 mb-3">
+            {showUCResults && (
+              <div className="mt-6 p-4 bg-aitenders-pale-blue rounded-xl border border-aitenders-light-blue">
+                <p className="text-sm text-aitenders-dark-blue mb-2 font-medium">{t[language].yourSelection}</p>
+                <div className="flex flex-wrap gap-2 mb-2">
                   {step1Selections.map((selectionId) => {
                     const selectedCard = step1Cards.find(c => c.id === selectionId);
                     return (
                       <span
                         key={selectionId}
-                        className="inline-flex items-center px-3 py-1 rounded-full text-xs bg-aitenders-white-blue text-aitenders-dark-blue border border-aitenders-light-blue shadow-sm"
+                        className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-aitenders-white-blue text-aitenders-dark-blue border border-aitenders-light-blue shadow-sm"
                       >
                         {selectedCard?.title}
                       </span>
                     );
                   })}
                   {step2Selection && (
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs bg-aitenders-primary-blue/10 text-aitenders-primary-blue border border-aitenders-primary-blue/20 shadow-sm">
+                    <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-aitenders-primary-blue/10 text-aitenders-primary-blue border border-aitenders-primary-blue/20 shadow-sm">
                       {step2Cards.find(c => c.id === step2Selection)?.title}
                     </span>
                   )}
@@ -470,19 +464,8 @@ export default function HomePage() {
               </div>
             )}
           </div>
-
-
         </div>
-
-       
       </main>
-
-
-      
-
-
-      
-
 
       {/* Reusable Chat Interface Component */}  
       <ChatInterface 
@@ -517,7 +500,7 @@ export default function HomePage() {
       />
 
       {/* Add padding to body to account for fixed chat */}
-      <div className="h-32"></div>
+      <div className="h-20"></div>
     </div>
   );
 }
