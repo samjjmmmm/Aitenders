@@ -34,6 +34,7 @@ export default function ChatInterface({
   const [message, setMessage] = useState("");
   const [currentPage, setCurrentPage] = useState("");
   const [currentIP, setCurrentIP] = useState<string | null>(null);
+  const [sessionInitialized, setSessionInitialized] = useState(false);
   const { toast } = useToast();
   const queryClient = useQueryClient();
 
@@ -58,7 +59,16 @@ export default function ChatInterface({
     },
   });
 
-  // Clear chat on page change
+  // Force clear on component mount (each page load/reload)
+  useEffect(() => {
+    if (!sessionInitialized) {
+      clearChatMutation.mutate();
+      setSessionInitialized(true);
+      console.log('Chat cleared on component mount');
+    }
+  }, [sessionInitialized, clearChatMutation]);
+
+  // Clear chat on page change and page load
   useEffect(() => {
     const handlePageChange = () => {
       const newPage = window.location.pathname;
@@ -70,9 +80,27 @@ export default function ChatInterface({
       setCurrentPage(newPage);
     };
 
-    // Set initial page
+    // Clear chat on initial load and page reload
+    const handlePageLoad = () => {
+      const currentTime = Date.now();
+      const lastLoadTime = localStorage.getItem('lastChatLoadTime');
+      
+      // If more than 1 second has passed or no previous load time, clear chat
+      if (!lastLoadTime || currentTime - parseInt(lastLoadTime) > 1000) {
+        clearChatMutation.mutate();
+        console.log('Chat cleared due to page reload/new session');
+      }
+      
+      localStorage.setItem('lastChatLoadTime', currentTime.toString());
+    };
+
+    // Set initial page and handle page load
     if (!currentPage) {
       setCurrentPage(window.location.pathname);
+      if (!sessionInitialized) {
+        handlePageLoad();
+        setSessionInitialized(true);
+      }
     }
 
     // Listen for page changes
@@ -92,8 +120,16 @@ export default function ChatInterface({
       handlePageChange();
     };
 
+    // Listen for page reload/refresh
+    window.addEventListener('beforeunload', () => {
+      localStorage.removeItem('chatSessionId');
+    });
+
     return () => {
       window.removeEventListener('popstate', handlePageChange);
+      window.removeEventListener('beforeunload', () => {
+        localStorage.removeItem('chatSessionId');
+      });
       history.pushState = originalPushState;
       history.replaceState = originalReplaceState;
     };
