@@ -83,32 +83,12 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
               )}
             </div>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-6">
-              <Link href="/">
-                <span className="text-sm font-medium text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors cursor-pointer">
-                  Home
-                </span>
-              </Link>
-              <a href="#products" className="text-sm font-medium text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors">
-                Products
-              </a>
-              <Link href="/uc1">
-                <span className="text-sm font-medium text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors cursor-pointer">
-                  Use Cases
-                </span>
-              </Link>
-              <a href="#about" className="text-sm font-medium text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors">
-                About
-              </a>
-            </nav>
-
-            {/* Mobile Menu Button - Only show on smaller screens */}
+            {/* Menu Button */}
             <Button 
               variant="outline" 
               size="icon" 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
+              className="rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
             >
               {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </Button>
@@ -124,8 +104,8 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
         />
       )}
 
-      {/* Mobile Slide-out Menu - Hidden on desktop */}
-      <div className={`lg:hidden fixed top-0 right-0 h-full w-80 bg-aitenders-white-blue shadow-2xl transform transition-transform duration-300 ease-in-out z-50 ${
+      {/* Slide-out Menu */}
+      <div className={`fixed top-0 right-0 h-full w-80 bg-aitenders-white-blue shadow-2xl transform transition-transform duration-300 ease-in-out z-50 ${
         isMenuOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
         <div className="p-6">
