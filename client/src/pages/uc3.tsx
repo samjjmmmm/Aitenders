@@ -23,6 +23,7 @@ import equansLogo from "@assets/Equans_1753711339292.png";
 import bouyguesLogo from "@assets/Bouyges_1753711339292.png";
 import colasLogo from "@assets/Colas_1753711339292.png";
 import ChatSection from "@/components/chat-section";
+import ChatInterface from "@/components/chat-interface";
 
 export default function UC3Page() {
   // Target audience data with interactive content
@@ -1512,8 +1513,35 @@ export default function UC3Page() {
           <p className="text-sm mt-6 opacity-80">Sécurité de niveau entreprise • Collaboration multi-experts • Pistes d'audit complètes</p>
         </div>
       </section>
-      {/* Chat */}
-      <ChatSection />
+      {/* Chat Interface with UC3-specific actions */}
+      <ChatInterface 
+        language="fr"
+        customActions={[
+          {
+            label: "Nos cas d'usage",
+            icon: <span className="text-gray-400">+</span>,
+            onClick: () => {} // Navigate to use cases
+          },
+          {
+            label: "Demo UC3",
+            icon: <MdPlayArrow className="w-3 h-3 text-gray-400" />,
+            onClick: () => {} // Launch UC3 demo
+          },
+          {
+            label: "ROI Calculator", 
+            icon: <MdAnalytics className="w-3 h-3 text-gray-400" />,
+            onClick: () => {} // Open ROI calculator
+          },
+          {
+            label: "Contact Expert",
+            icon: <MdMail className="w-3 h-3 text-gray-400" />,
+            onClick: () => {} // Contact form
+          }
+        ]}
+      />
+
+      {/* Add padding to body to account for fixed chat */}
+      <div className="h-32"></div>
     </div>
   );
 }

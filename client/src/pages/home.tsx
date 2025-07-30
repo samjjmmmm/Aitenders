@@ -2,7 +2,7 @@ import { useState } from "react";
 import Header from "@/components/header";
 import ClientLogos from "@/components/client-logos";
 import ContactSection from "@/components/contact-section";
-import ChatSection from "@/components/chat-section";
+import ChatInterface from "@/components/chat-interface";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
@@ -484,8 +484,40 @@ export default function HomePage() {
       
 
 
-      {/* Chat Section */}
-      <ChatSection />
+      {/* Reusable Chat Interface Component */}  
+      <ChatInterface 
+        language={language}
+        customActions={[
+          {
+            label: t[language].ourUseCases,
+            icon: <span className="text-gray-400">+</span>,
+            onClick: () => {} // The component handles this internally
+          },
+          {
+            label: "Simulation / ROI", 
+            icon: <MdSettings className="w-3 h-3 text-gray-400" />,
+            onClick: () => {} // Launch ROI simulator
+          },
+          {
+            label: "AI Agents",
+            icon: <MdStarOutline className="w-3 h-3 text-gray-400" />,
+            onClick: () => {} // Learn about AI agents
+          },
+          {
+            label: "Data Security",
+            icon: <MdSecurity className="w-3 h-3 text-gray-400" />,
+            onClick: () => {} // Security information
+          },
+          {
+            label: "Contactez nous", 
+            icon: <MdMail className="w-3 h-3 text-gray-400" />,
+            onClick: () => {} // Contact form
+          }
+        ]}
+      />
+
+      {/* Add padding to body to account for fixed chat */}
+      <div className="h-32"></div>
     </div>
   );
 }
