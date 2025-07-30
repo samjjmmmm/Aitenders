@@ -5,7 +5,7 @@ import { MdSend, MdSettings, MdBarChart } from "react-icons/md";
 import { FaRobot } from "react-icons/fa";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
-import { useToast } from "@/hooks/use-toast";
+// Toast removed to prevent UI blocking
 import { BrowserFingerprint } from "@/lib/browser-fingerprint";
 
 interface ChatMessage {
@@ -36,7 +36,6 @@ export default function ChatInterface({
   const [currentPage, setCurrentPage] = useState("");
   const [browserFingerprint, setBrowserFingerprint] = useState<string | null>(null);
   const [sessionInitialized, setSessionInitialized] = useState(false);
-  const { toast } = useToast();
   const queryClient = useQueryClient();
 
   const { data: messages = [] } = useQuery<ChatMessage[]>({
@@ -74,7 +73,7 @@ export default function ChatInterface({
       return response.json();
     },
     onSuccess: (data) => {
-      queryClient.invalidateQueries({ queryKey: ["/api/chat", browserFingerprint] });
+      queryClient.refetchQueries({ queryKey: ["/api/chat", browserFingerprint] });
       console.log('Session cleared:', data.sessionId);
     },
   });
@@ -148,25 +147,15 @@ export default function ChatInterface({
     },
     onSuccess: () => {
       setMessage("");
-      queryClient.invalidateQueries({ queryKey: ["/api/chat", browserFingerprint] });
+      // Use refetch instead of invalidate to avoid blocking UI
+      queryClient.refetchQueries({ queryKey: ["/api/chat", browserFingerprint] });
       if (onMessageSend) {
         onMessageSend(message);
       }
-      toast({
-        title: language === 'fr' ? "Réponse générée" : "Response generated",
-        description: language === 'fr' 
-          ? "Votre question a été traitée par le Copilote d'Aitenders."
-          : "Your question has been processed by Aitenders Copilot.",
-      });
     },
-    onError: () => {
-      toast({
-        title: language === 'fr' ? "Erreur" : "Error",
-        description: language === 'fr'
-          ? "Échec de l'envoi du message. Veuillez réessayer."
-          : "Failed to send message. Please try again.",
-        variant: "destructive",
-      });
+    onError: (error) => {
+      console.error('Message send error:', error);
+      // Error handling without blocking toast
     },
   });
 
