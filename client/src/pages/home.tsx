@@ -290,29 +290,29 @@ export default function HomePage() {
       
       {/* Hero Section */}
       <main className="relative">
-        <div className="max-w-6xl mx-auto px-4 pt-12 pb-8">
+        <div className="max-w-5xl mx-auto px-4 pt-8 pb-6">
           {/* Main Heading */}
-          <div className="text-center mb-12">
-            <h1 className="text-3xl font-bold text-aitenders-black mb-3">
+          <div className="text-center mb-8">
+            <h1 className="text-2xl font-bold text-aitenders-black mb-2">
               {t[language].mainTitle}<br />
               <span className="text-aitenders-primary-blue">{t[language].mainSubtitle}</span>
             </h1>
-            <p className="text-base text-aitenders-dark-blue max-w-2xl mx-auto mt-2">
+            <p className="text-sm text-aitenders-dark-blue max-w-2xl mx-auto mt-1">
               {t[language].description}
             </p>
           </div>
 
           {/* Dynamic Selection Cards */}
-          <div className="mb-8 max-w-5xl mx-auto">
+          <div className="mb-6 max-w-4xl mx-auto">
 
             {/* Step Title */}
-            <h2 className="text-xl font-bold text-aitenders-black mb-6 text-center">
+            <h2 className="text-lg font-bold text-aitenders-black mb-4 text-center">
               {getStepTitle()}
             </h2>
 
             {/* Step 1: Domain Selection */}
             {!showUCResults && (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
                 {step1Cards.map((card) => {
                   const Icon = card.icon;
                   const isSelected = step1Selections.includes(card.id);
@@ -320,22 +320,19 @@ export default function HomePage() {
                     <Card
                       key={card.id}
                       onClick={() => handleStep1Selection(card.id)}
-                      className={`rounded-xl p-4 shadow-sm hover:shadow-md cursor-pointer border transition-all duration-200 ease-in-out hover:scale-105 ${
+                      className={`rounded-lg p-3 shadow-sm hover:shadow-md cursor-pointer border transition-all duration-200 ease-in-out hover:scale-105 ${
                         isSelected 
                           ? 'border-aitenders-primary-blue bg-aitenders-pale-blue' 
                           : 'border-aitenders-light-blue bg-aitenders-white-blue hover:border-aitenders-primary-blue'
                       }`}
                     >
                       <div className="text-center">
-                        <div className={`p-3 rounded-lg mb-3 mx-auto w-fit ${card.color}`}>
-                          <Icon className="h-6 w-6" />
+                        <div className={`p-2 rounded-lg mb-2 mx-auto w-fit ${card.color}`}>
+                          <Icon className="h-5 w-5" />
                         </div>
-                        <h3 className="text-base font-semibold text-aitenders-black mb-1">
+                        <h3 className="text-sm font-semibold text-aitenders-black">
                           {card.title}
                         </h3>
-                        <p className="text-xs text-aitenders-dark-blue leading-tight">
-                          {card.description}
-                        </p>
                       </div>
                     </Card>
                   );
@@ -346,7 +343,7 @@ export default function HomePage() {
             {/* Step 2: Project Size Selection */}
             {showStep2 && !showUCResults && (
               <div className="animate-in fade-in duration-300">
-                <div className="flex justify-between items-center mb-6">
+                <div className="flex justify-between items-center mb-4">
                   <Button
                     variant="ghost"
                     size="sm"
@@ -356,7 +353,7 @@ export default function HomePage() {
                     {t[language].back}
                   </Button>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                   {step2Cards.map((card) => {
                     const Icon = card.icon;
                     const isSelected = step2Selection === card.id;
@@ -364,22 +361,19 @@ export default function HomePage() {
                       <Card
                         key={card.id}
                         onClick={() => handleStep2Selection(card.id)}
-                        className={`rounded-xl p-4 shadow-sm hover:shadow-md cursor-pointer border transition-all duration-200 ease-in-out hover:scale-105 ${
+                        className={`rounded-lg p-3 shadow-sm hover:shadow-md cursor-pointer border transition-all duration-200 ease-in-out hover:scale-105 ${
                           isSelected 
                             ? 'border-aitenders-primary-blue bg-aitenders-pale-blue' 
                             : 'border-aitenders-light-blue bg-aitenders-white-blue hover:border-aitenders-primary-blue'
                         }`}
                       >
                         <div className="text-center">
-                          <div className={`p-3 rounded-lg mb-3 mx-auto w-fit ${card.color}`}>
-                            <Icon className="h-6 w-6" />
+                          <div className={`p-2 rounded-lg mb-2 mx-auto w-fit ${card.color}`}>
+                            <Icon className="h-5 w-5" />
                           </div>
-                          <h3 className="text-base font-semibold text-aitenders-black mb-1">
+                          <h3 className="text-sm font-semibold text-aitenders-black">
                             {card.title}
                           </h3>
-                          <p className="text-xs text-aitenders-dark-blue leading-tight">
-                            {card.description}
-                          </p>
                         </div>
                       </Card>
                     );
@@ -436,9 +430,9 @@ export default function HomePage() {
 
             {/* Selection Summary */}
             {showUCResults && (
-              <div className="mt-6 p-4 bg-aitenders-pale-blue rounded-xl border border-aitenders-light-blue">
-                <p className="text-sm text-aitenders-dark-blue mb-2 font-medium">{t[language].yourSelection}</p>
-                <div className="flex flex-wrap gap-2 mb-2">
+              <div className="mt-4 p-3 bg-aitenders-pale-blue rounded-lg border border-aitenders-light-blue">
+                <p className="text-xs text-aitenders-dark-blue mb-2 font-medium">{t[language].yourSelection}</p>
+                <div className="flex flex-wrap gap-1 mb-2">
                   {step1Selections.map((selectionId) => {
                     const selectedCard = step1Cards.find(c => c.id === selectionId);
                     return (
@@ -500,7 +494,7 @@ export default function HomePage() {
       />
 
       {/* Add padding to body to account for fixed chat */}
-      <div className="h-20"></div>
+      <div className="h-16"></div>
     </div>
   );
 }
