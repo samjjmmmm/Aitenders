@@ -1,4 +1,4 @@
-import { type User, type InsertUser, type ContactRequest, type InsertContactRequest, type ChatMessage, type InsertChatMessage } from "@shared/schema";
+import { type User, type InsertUser, type ContactRequest, type InsertContactRequest, type ChatMessage, type InsertChatMessage, type EmailLog, type InsertEmailLog } from "@shared/schema";
 import { randomUUID } from "crypto";
 
 export interface IStorage {
@@ -7,12 +7,16 @@ export interface IStorage {
   createUser(user: InsertUser): Promise<User>;
   createContactRequest(request: InsertContactRequest): Promise<ContactRequest>;
   getContactRequests(): Promise<ContactRequest[]>;
+  updateContactRequest(id: string, updates: Partial<ContactRequest>): Promise<ContactRequest | undefined>;
   createChatMessage(message: InsertChatMessage): Promise<ChatMessage>;
   getChatMessages(): Promise<ChatMessage[]>;
   clearChatMessages(): Promise<void>;
   getChatMessagesBySession(sessionId: string): Promise<ChatMessage[]>;
   createChatMessageWithSession(message: InsertChatMessage, sessionId: string): Promise<ChatMessage>;
   clearSessionMessages(sessionId: string): Promise<void>;
+  createEmailLog(emailLog: InsertEmailLog): Promise<EmailLog>;
+  getEmailLogs(): Promise<EmailLog[]>;
+  updateEmailLog(id: string, updates: Partial<EmailLog>): Promise<EmailLog | undefined>;
 }
 
 export class MemStorage implements IStorage {
@@ -21,6 +25,7 @@ export class MemStorage implements IStorage {
   private chatMessages: Map<string, ChatMessage>;
   private sessionMessages: Map<string, ChatMessage[]>;
   private sessionLastActivity: Map<string, number>;
+  private emailLogs: Map<string, EmailLog>;
 
   constructor() {
     this.users = new Map();
@@ -28,6 +33,7 @@ export class MemStorage implements IStorage {
     this.chatMessages = new Map();
     this.sessionMessages = new Map();
     this.sessionLastActivity = new Map();
+    this.emailLogs = new Map();
     
     // Clean inactive sessions every 5 minutes
     setInterval(() => {
@@ -119,6 +125,16 @@ export class MemStorage implements IStorage {
       ...insertRequest, 
       id, 
       company: insertRequest.company ?? null,
+      firstName: insertRequest.firstName ?? null,
+      lastName: insertRequest.lastName ?? null,
+      phone: insertRequest.phone ?? null,
+      website: insertRequest.website ?? null,
+      useCase: insertRequest.useCase ?? null,
+      industry: insertRequest.industry ?? null,
+      requestType: insertRequest.requestType ?? "contact",
+      hubspotContactId: null,
+      hubspotDealId: null,
+      emailSent: "pending",
       createdAt: new Date() 
     };
     this.contactRequests.set(id, request);
@@ -127,6 +143,43 @@ export class MemStorage implements IStorage {
 
   async getContactRequests(): Promise<ContactRequest[]> {
     return Array.from(this.contactRequests.values());
+  }
+
+  async updateContactRequest(id: string, updates: Partial<ContactRequest>): Promise<ContactRequest | undefined> {
+    const existing = this.contactRequests.get(id);
+    if (!existing) return undefined;
+    
+    const updated = { ...existing, ...updates };
+    this.contactRequests.set(id, updated);
+    return updated;
+  }
+
+  async createEmailLog(insertEmailLog: InsertEmailLog): Promise<EmailLog> {
+    const id = randomUUID();
+    const emailLog: EmailLog = {
+      ...insertEmailLog,
+      id,
+      status: insertEmailLog.status ?? "pending",
+      hubspotContactId: insertEmailLog.hubspotContactId ?? null,
+      errorMessage: insertEmailLog.errorMessage ?? null,
+      sentAt: null,
+      createdAt: new Date()
+    };
+    this.emailLogs.set(id, emailLog);
+    return emailLog;
+  }
+
+  async getEmailLogs(): Promise<EmailLog[]> {
+    return Array.from(this.emailLogs.values());
+  }
+
+  async updateEmailLog(id: string, updates: Partial<EmailLog>): Promise<EmailLog | undefined> {
+    const existing = this.emailLogs.get(id);
+    if (!existing) return undefined;
+    
+    const updated = { ...existing, ...updates };
+    this.emailLogs.set(id, updated);
+    return updated;
   }
 
   async createChatMessage(insertMessage: InsertChatMessage): Promise<ChatMessage> {

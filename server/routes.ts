@@ -5,16 +5,58 @@ import { insertContactRequestSchema, insertChatMessageSchema } from "@shared/sch
 import { z } from "zod";
 import { generateAitendersResponse } from "./openai";
 import { ragService } from "./rag-service";
+import { hubspotService } from "./hubspot-service";
 import fs from 'fs';
 import path from 'path';
 
 export async function registerRoutes(app: Express): Promise<Server> {
   
-  // Contact form submission
+  // Enhanced contact form submission with HubSpot integration
   app.post("/api/contact", async (req, res) => {
     try {
       const validatedData = insertContactRequestSchema.parse(req.body);
+      
+      // Create contact request in database
       const contactRequest = await storage.createContactRequest(validatedData);
+      
+      // Prepare HubSpot contact data
+      const hubspotContactData = {
+        email: validatedData.email,
+        firstName: validatedData.firstName,
+        lastName: validatedData.lastName,
+        company: validatedData.company,
+        phone: validatedData.phone,
+        website: validatedData.website,
+        message: validatedData.message,
+        useCase: validatedData.useCase,
+        industry: validatedData.industry,
+      };
+      
+      // Create/update contact in HubSpot and send emails
+      try {
+        const hubspotContact = await hubspotService.createOrUpdateContact(hubspotContactData);
+        
+        // Send notification email to team
+        await hubspotService.sendNotificationEmail(hubspotContactData, validatedData.requestType as 'contact' | 'demo' | 'support');
+        
+        // Send confirmation email to user
+        await hubspotService.sendConfirmationEmail(hubspotContactData, validatedData.requestType as 'contact' | 'demo' | 'support');
+        
+        // Update contact request with HubSpot ID
+        await storage.updateContactRequest(contactRequest.id, {
+          hubspotContactId: hubspotContact.id,
+          emailSent: 'sent'
+        });
+        
+        console.log(`Contact created in HubSpot: ${hubspotContact.id} for ${validatedData.email}`);
+      } catch (hubspotError) {
+        console.error('HubSpot integration error:', hubspotError);
+        // Update contact request as failed but don't fail the entire request
+        await storage.updateContactRequest(contactRequest.id, {
+          emailSent: 'failed'
+        });
+      }
+      
       res.json({ success: true, id: contactRequest.id });
     } catch (error) {
       if (error instanceof z.ZodError) {
@@ -32,6 +74,112 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json(requests);
     } catch (error) {
       res.status(500).json({ message: "Failed to fetch contact requests" });
+    }  
+  });
+
+  // Mailing system endpoints
+  
+  // Create and send emails manually
+  app.post("/api/mailing/send", async (req, res) => {
+    try {
+      const { to, subject, type, contactData } = req.body;
+      
+      if (!to || !subject || !type) {
+        return res.status(400).json({ message: "Missing required fields: to, subject, type" });
+      }
+
+      // Send email based on type
+      let success = false;
+      if (type === 'notification') {
+        success = await hubspotService.sendNotificationEmail(contactData, 'contact');
+      } else if (type === 'confirmation') {
+        success = await hubspotService.sendConfirmationEmail(contactData, 'contact');
+      }
+
+      // Log email attempt
+      await storage.createEmailLog({
+        to,
+        from: 'noreply@aitenders.com',
+        subject,
+        content: JSON.stringify(contactData),
+        type,
+        status: success ? 'sent' : 'failed',
+      });
+
+      res.json({ success, message: success ? 'Email sent successfully' : 'Failed to send email' });
+    } catch (error) {
+      console.error('Manual email send error:', error);
+      res.status(500).json({ message: "Failed to send email" });
+    }
+  });
+
+  // Get email logs
+  app.get("/api/mailing/logs", async (req, res) => {
+    try {
+      const logs = await storage.getEmailLogs();
+      res.json(logs);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch email logs" });
+    }
+  });
+
+  // Retry failed email
+  app.post("/api/mailing/retry/:id", async (req, res) => {
+    try {
+      const { id } = req.params;
+      const logs = await storage.getEmailLogs();
+      const emailLog = logs.find(log => log.id === id);
+      
+      if (!emailLog) {
+        return res.status(404).json({ message: "Email log not found" });
+      }
+
+      // Parse contact data from content
+      const contactData = JSON.parse(emailLog.content);
+      
+      // Retry sending based on type
+      let success = false;
+      if (emailLog.type === 'notification') {
+        success = await hubspotService.sendNotificationEmail(contactData, 'contact');
+      } else if (emailLog.type === 'confirmation') {
+        success = await hubspotService.sendConfirmationEmail(contactData, 'contact');
+      }
+
+      // Update log status
+      await storage.updateEmailLog(id, {
+        status: success ? 'sent' : 'failed',
+        sentAt: success ? new Date() : null,
+        errorMessage: success ? null : 'Retry failed'
+      });
+
+      res.json({ success, message: success ? 'Email resent successfully' : 'Retry failed' });
+    } catch (error) {
+      console.error('Email retry error:', error);
+      res.status(500).json({ message: "Failed to retry email" });
+    }
+  });
+
+  // HubSpot contact creation endpoint
+  app.post("/api/hubspot/contact", async (req, res) => {
+    try {
+      const contactData = req.body;
+      const hubspotContact = await hubspotService.createOrUpdateContact(contactData);
+      res.json({ success: true, contact: hubspotContact });
+    } catch (error) {
+      console.error('HubSpot contact creation error:', error);
+      res.status(500).json({ message: "Failed to create HubSpot contact" });
+    }
+  });
+
+  // HubSpot deal creation endpoint
+  app.post("/api/hubspot/deal", async (req, res) => {
+    try {
+      const { contactData, dealName, amount } = req.body;
+      const deal = await hubspotService.createDeal(contactData, dealName, amount);
+      res.json({ success: true, deal });
+    } catch (error) {
+      console.error('HubSpot deal creation error:', error);
+      res.status(500).json({ message: "Failed to create HubSpot deal" });
     }
   });
 
