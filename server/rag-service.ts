@@ -308,7 +308,13 @@ class RAGService {
         // Traiter la réponse utilisateur
         const result = simulatorService.processAnswer(sessionId, query);
         
-        if (result.nextQuestion) {
+        if (result.error) {
+          return {
+            action: 'simulator_error',
+            response: result.error,
+            simulatorData: { sessionId, status: 'error' }
+          };
+        } else if (result.nextQuestion) {
           return {
             action: 'simulator_continue',
             response: result.nextQuestion,

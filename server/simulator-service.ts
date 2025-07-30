@@ -102,21 +102,21 @@ class SimulatorService {
   }
 
   // Traiter une réponse à une question
-  processAnswer(sessionId: string, answer: string): string {
+  processAnswer(sessionId: string, answer: string): { nextQuestion?: string; completed?: boolean; message?: string; error?: string } {
     const session = this.sessions.get(sessionId);
     if (!session || session.completed) {
-      return "❌ Session non trouvée ou déjà terminée.";
+      return { error: "❌ Session non trouvée ou déjà terminée." };
     }
 
     const currentQuestion = this.config.questions[session.currentQuestionIndex];
     if (!currentQuestion) {
-      return "❌ Question non trouvée.";
+      return { error: "❌ Question non trouvée." };
     }
 
     // Valider et convertir la réponse
     const validatedAnswer = this.validateAndConvertAnswer(currentQuestion, answer);
     if (validatedAnswer.error) {
-      return `❌ ${validatedAnswer.error}`;
+      return { error: `❌ ${validatedAnswer.error}` };
     }
 
     // Enregistrer la réponse
@@ -132,12 +132,17 @@ class SimulatorService {
     // Vérifier si c'est la dernière question
     if (session.currentQuestionIndex >= this.config.questions.length) {
       session.completed = true;
-      return this.getCompletionMessage();
+      return { 
+        completed: true, 
+        message: this.getCompletionMessage() 
+      };
     }
 
     // Passer à la question suivante
     const nextQuestion = this.config.questions[session.currentQuestionIndex];
-    return `✅ Réponse enregistrée !\n\n${this.formatQuestion(nextQuestion, session.currentQuestionIndex + 1, this.config.questions.length)}`;
+    return { 
+      nextQuestion: `✅ Réponse enregistrée !\n\n${this.formatQuestion(nextQuestion, session.currentQuestionIndex + 1, this.config.questions.length)}` 
+    };
   }
 
   // Valider et convertir une réponse
