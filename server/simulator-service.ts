@@ -425,6 +425,8 @@ class SimulatorService {
       // Ajouter une option pour un rapport plus détaillé
       return `${basicReport}
 
+🎉 **Veuillez fournir vos informations pour recevoir votre rapport détaillé !**
+
 **🔬 ANALYSE AVANCÉE DISPONIBLE**
 Pour une analyse encore plus poussée avec 15+ questions détaillées et recommandations personnalisées par industrie, tapez "**analyse avancée**"`;
     } catch (error) {

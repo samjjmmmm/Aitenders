@@ -41,37 +41,37 @@ export class AdvancedTenderCalculator {
       // Tender Profile
       {
         id: 'tenders_per_year',
-        question: 'How many tenders do you process per year?',
+        question: 'Combien d\'appels d\'offres traitez-vous par année ?',
         questionType: 'number',
         validationRules: { min: 1, max: 1000 },
-        helpText: 'Include all tender submissions your team handles annually',
+        helpText: 'Incluez toutes les soumissions que votre équipe gère annuellement',
         followUpQuestions: [
-          'Is this number increasing or decreasing year over year?',
-          'Do these include both public and private sector tenders?'
+          'Ce nombre augmente-t-il ou diminue-t-il d\'année en année ?',
+          'Cela inclut-il les appels d\'offres publics et privés ?'
         ],
         category: 'tender_profile'
       },
       {
         id: 'avg_tender_value',
-        question: "What's the average value of each tender in euros?",
+        question: 'Quelle est la valeur moyenne de chaque appel d\'offres en euros ?',
         questionType: 'number',
         validationRules: { min: 10000, max: 100000000 },
-        helpText: 'Estimated contract value per tender opportunity',
+        helpText: 'Valeur estimée du contrat par opportunité d\'appel d\'offres',
         followUpQuestions: [
-          'Does this vary significantly by sector or client type?',
-          "What's your largest typical tender value?"
+          'Cela varie-t-il considérablement selon le secteur ou le type de client ?',
+          'Quelle est votre plus grande valeur d\'appel d\'offres typique ?'
         ],
         category: 'tender_profile'
       },
       {
         id: 'response_weeks',
-        question: 'How many weeks on average does it take to prepare a tender response?',
+        question: 'Combien de semaines faut-il en moyenne pour préparer une réponse d\'appel d\'offres ?',
         questionType: 'number',
         validationRules: { min: 1, max: 20 },
-        helpText: 'From RFP receipt to final submission',
+        helpText: 'De la réception du cahier des charges à la soumission finale',
         followUpQuestions: [
-          'Does this include time for approvals and reviews?',
-          "What's the shortest and longest preparation time you've had?"
+          'Cela inclut-il le temps pour les approbations et révisions ?',
+          'Quel est le temps de préparation le plus court et le plus long que vous ayez eu ?'
         ],
         category: 'tender_profile'
       },
@@ -79,37 +79,37 @@ export class AdvancedTenderCalculator {
       // Document Complexity
       {
         id: 'docs_per_tender',
-        question: 'How many documents are typically submitted per tender?',
+        question: 'Combien de documents sont généralement soumis par appel d\'offres ?',
         questionType: 'number',
         validationRules: { min: 1, max: 100 },
-        helpText: 'Technical specs, proposals, compliance docs, certifications, etc.',
+        helpText: 'Spécifications techniques, propositions, documents de conformité, certifications, etc.',
         followUpQuestions: [
-          'Which types of documents take the most time to prepare?',
-          'Do you have standard templates for most documents?'
+          'Quels types de documents prennent le plus de temps à préparer ?',
+          'Avez-vous des modèles standards pour la plupart des documents ?'
         ],
         category: 'document_complexity'
       },
       {
         id: 'pages_per_doc',
-        question: "What's the average number of pages per document?",
+        question: 'Quel est le nombre moyen de pages par document ?',
         questionType: 'number',
         validationRules: { min: 1, max: 500 },
-        helpText: 'Typical length of your tender documents',
+        helpText: 'Longueur typique de vos documents d\'appel d\'offres',
         followUpQuestions: [
-          'Are there page limits imposed by clients?',
-          'Do you find longer documents perform better?'
+          'Y a-t-il des limites de pages imposées par les clients ?',
+          'Trouvez-vous que les documents plus longs performent mieux ?'
         ],
         category: 'document_complexity'
       },
       {
         id: 'versions_per_doc',
-        question: 'How many versions does each document typically go through before submission?',
+        question: 'Combien de versions chaque document traverse-t-il généralement avant soumission ?',
         questionType: 'number',
         validationRules: { min: 1, max: 15 },
-        helpText: 'Review cycles, revisions, approvals',
+        helpText: 'Cycles de révision, révisions, approbations',
         followUpQuestions: [
-          'Who are the key reviewers in your approval process?',
-          'What causes the most revisions - content, formatting, or compliance?'
+          'Qui sont les principaux réviseurs dans votre processus d\'approbation ?',
+          'Qu\'est-ce qui cause le plus de révisions - contenu, formatage ou conformité ?'
         ],
         category: 'document_complexity'
       },
@@ -117,25 +117,25 @@ export class AdvancedTenderCalculator {
       // Q&A Management  
       {
         id: 'qa_rounds',
-        question: 'How many Q&A or change order cycles do you typically handle per tender?',
+        question: 'Combien de cycles de Q&R ou d\'ordres de modification gérez-vous généralement par appel d\'offres ?',
         questionType: 'number',
         validationRules: { min: 0, max: 15 },
-        helpText: 'Clarification rounds, addenda, change requests from clients',
+        helpText: 'Rounds de clarification, avenants, demandes de changement des clients',
         followUpQuestions: [
-          'Do these usually come from the client or internal stakeholders?',
-          'What percentage of tenders have no Q&A rounds?'
+          'Ceux-ci viennent-ils généralement du client ou des parties prenantes internes ?',
+          'Quel pourcentage d\'appels d\'offres n\'ont aucun round de Q&R ?'
         ],
         category: 'qa_management'
       },
       {
         id: 'qa_hours',
-        question: 'How many hours on average do you spend managing each Q&A round?',
+        question: 'Combien d\'heures en moyenne passez-vous à gérer chaque round de Q&R ?',
         questionType: 'number',
         validationRules: { min: 0.5, max: 20.0 },
-        helpText: 'Processing, coordinating, responding to changes and clarifications',
+        helpText: 'Traitement, coordination, réponse aux changements et clarifications',
         followUpQuestions: [
-          'Does this include coordination time with technical teams?',
-          'How many people are typically involved in each response?'
+          'Cela inclut-il le temps de coordination avec les équipes techniques ?',
+          'Combien de personnes sont généralement impliquées dans chaque réponse ?'
         ],
         category: 'qa_management'
       },
