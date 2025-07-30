@@ -1,6 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { storage } from './storage';
+import { hubspotService } from './hubspot-service';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -67,7 +69,7 @@ class SimulatorService {
   }
 
   // Démarrer une nouvelle session de simulateur
-  startSession(sessionId: string): string {
+  async startSession(sessionId: string): Promise<string> {
     const session: SimulatorSession = {
       sessionId,
       currentQuestionIndex: 0,
@@ -77,6 +79,18 @@ class SimulatorService {
     };
     
     this.sessions.set(sessionId, session);
+    
+    // Sauvegarder en base de données
+    try {
+      await storage.createSimulatorSession({
+        sessionId,
+        responses: [],
+        completed: false,
+        startedAt: new Date()
+      });
+    } catch (error) {
+      console.error('Error saving simulator session to database:', error);
+    }
     
     const firstQuestion = this.config.questions[0];
     if (!firstQuestion) {
@@ -102,7 +116,7 @@ class SimulatorService {
   }
 
   // Traiter une réponse à une question
-  processAnswer(sessionId: string, answer: string): { nextQuestion?: string; completed?: boolean; message?: string; error?: string } {
+  async processAnswer(sessionId: string, answer: string): Promise<{ nextQuestion?: string; completed?: boolean; message?: string; error?: string }> {
     const session = this.sessions.get(sessionId);
     if (!session || session.completed) {
       return { error: "❌ Session non trouvée ou déjà terminée." };
@@ -132,11 +146,31 @@ class SimulatorService {
     session.responses.push(response);
     console.log(`Response saved for question ${currentQuestion.id}:`, response);
     
+    // Sauvegarder les réponses en base de données
+    try {
+      await storage.updateSimulatorSession(sessionId, {
+        responses: session.responses
+      });
+    } catch (error) {
+      console.error('Error updating simulator session in database:', error);
+    }
+    
     session.currentQuestionIndex++;
 
     // Vérifier si c'est la dernière question
     if (session.currentQuestionIndex >= this.config.questions.length) {
       session.completed = true;
+      
+      // Marquer comme terminé en base
+      try {
+        await storage.updateSimulatorSession(sessionId, {
+          completed: true,
+          completedAt: new Date()
+        });
+      } catch (error) {
+        console.error('Error marking simulator session as completed:', error);
+      }
+      
       console.log(`Simulator completed! Total questions answered: ${session.responses.length}`);
       return { 
         completed: true, 
@@ -223,8 +257,8 @@ class SimulatorService {
         if (['non', 'no', 'false', '0'].includes(boolAnswer)) {
           return { value: false, numericValue: 0 };
         }
-        const optionalNote = !question.required ? ' (ou "passer" pour ignorer)' : '';
-        return { error: `Veuillez répondre par "oui" ou "non"${optionalNote}.` };
+        const boolOptionalNote = !question.required ? ' (ou "passer" pour ignorer)' : '';
+        return { error: `Veuillez répondre par "oui" ou "non"${boolOptionalNote}.` };
 
       default:
         return { error: 'Type de question non supporté.' };
@@ -282,11 +316,11 @@ class SimulatorService {
   }
 
   // Traiter les informations utilisateur et générer le rapport
-  processUserInfo(sessionId: string, userInfo: { name: string; email: string; company: string }): {
+  async processUserInfo(sessionId: string, userInfo: { name: string; email: string; company: string }): Promise<{
     success: boolean;
     message: string;
     reportData?: any;
-  } {
+  }> {
     const session = this.sessions.get(sessionId);
     if (!session || !session.completed) {
       return { success: false, message: "Session non trouvée ou non terminée." };
@@ -297,15 +331,80 @@ class SimulatorService {
     // Calculer les résultats
     const results = this.calculateResults(session);
     
+    let hubspotContactId: string | null = null;
+    let hubspotDealId: string | null = null;
+
+    try {
+      // Créer le contact dans HubSpot avec toutes les réponses du simulateur
+      const hubspotContactData = {
+        email: userInfo.email,
+        firstName: userInfo.name.split(' ')[0],
+        lastName: userInfo.name.split(' ').slice(1).join(' ') || '',
+        company: userInfo.company,
+        leadSource: 'Simulateur ROI',
+        customProperties: {
+          simulator_completed: 'true',
+          simulator_responses: JSON.stringify(session.responses),
+          simulator_results: JSON.stringify(results),
+          roi_calculated: results.find(r => r.id === '6')?.value.toString() || '0',
+          project_value: this.extractProjectValue(session.responses),
+          completion_date: new Date().toISOString()
+        }
+      };
+
+      // Créer ou mettre à jour le contact
+      const hubspotContact = await hubspotService.createOrUpdateContact(hubspotContactData);
+      hubspotContactId = hubspotContact.id;
+
+      // Créer un deal pour ce simulateur
+      const dealValue = results.find(r => r.id === '5')?.value || 150000; // Revenue additionnel ou valeur par défaut
+      const deal = await hubspotService.createDeal(
+        hubspotContactData, 
+        `Simulateur ROI - ${userInfo.company}`, 
+        dealValue
+      );
+      hubspotDealId = deal.id;
+
+      console.log(`HubSpot integration successful: Contact ${hubspotContactId}, Deal ${hubspotDealId}`);
+    } catch (error) {
+      console.error('Error creating HubSpot contact/deal:', error);
+    }
+
+    // Sauvegarder les informations utilisateur et les résultats en base
+    try {
+      await storage.updateSimulatorSession(sessionId, {
+        userName: userInfo.name,
+        userEmail: userInfo.email,
+        userCompany: userInfo.company,
+        hubspotContactId,
+        hubspotDealId,
+        calculatedResults: results
+      });
+    } catch (error) {
+      console.error('Error updating simulator session with user info:', error);
+    }
+    
     return {
       success: true,
       message: `✅ Rapport généré avec succès ! Vous recevrez bientôt vos résultats par email à ${userInfo.email}.`,
       reportData: {
         session,
         results,
-        userInfo
+        userInfo,
+        hubspotContactId,
+        hubspotDealId
       }
     };
+  }
+
+  // Extraire la valeur du projet depuis les réponses
+  private extractProjectValue(responses: SimulatorResponse[]): string {
+    // Chercher la première question (montant des projets)
+    const firstResponse = responses.find(r => r.questionId === '1');
+    if (firstResponse && typeof firstResponse.answer === 'string') {
+      return firstResponse.answer;
+    }
+    return 'Non spécifié';
   }
 
   // Mapper une réponse utilisateur à une option valide

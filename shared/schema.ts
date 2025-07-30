@@ -1,5 +1,5 @@
 import { sql } from "drizzle-orm";
-import { pgTable, text, varchar, timestamp } from "drizzle-orm/pg-core";
+import { pgTable, text, varchar, timestamp, json, boolean } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -27,19 +27,41 @@ export const contactRequests = pgTable("contact_requests", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
-export const emailLogs = pgTable("email_logs", {
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  to: text("to").notNull(),
-  from: text("from").notNull(),
-  subject: text("subject").notNull(),
-  content: text("content").notNull(),
-  type: text("type").notNull(), // notification, confirmation, marketing
-  status: text("status").notNull().default("pending"), // pending, sent, failed
-  hubspotContactId: text("hubspot_contact_id"),
-  errorMessage: text("error_message"),
-  sentAt: timestamp("sent_at"),
-  createdAt: timestamp("created_at").defaultNow(),
+export const emailLogs = pgTable('email_logs', {
+  id: text('id').primaryKey().default(sql`gen_random_uuid()`),
+  to: text('to').notNull(),
+  from: text('from').notNull(),
+  subject: text('subject').notNull(),
+  content: text('content').notNull(),
+  type: text('type').notNull(), // 'notification', 'confirmation', etc.
+  status: text('status').notNull().default('pending'), // 'pending', 'sent', 'failed'
+  sentAt: timestamp('sent_at'),
+  errorMessage: text('error_message'),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
 });
+
+export type EmailLog = typeof emailLogs.$inferSelect;
+export type InsertEmailLog = typeof emailLogs.$inferInsert;
+
+// Simulator Sessions
+export const simulatorSessions = pgTable('simulator_sessions', {
+  id: text('id').primaryKey().default(sql`gen_random_uuid()`),
+  sessionId: text('session_id').notNull().unique(),
+  responses: json('responses').notNull(), // JSON array of all responses
+  completed: boolean('completed').notNull().default(false),
+  userName: text('user_name'),
+  userEmail: text('user_email'),
+  userCompany: text('user_company'),
+  hubspotContactId: text('hubspot_contact_id'),
+  hubspotDealId: text('hubspot_deal_id'),
+  calculatedResults: json('calculated_results'), // JSON of calculation results
+  startedAt: timestamp('started_at').notNull().defaultNow(),
+  completedAt: timestamp('completed_at'),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+});
+
+export type SimulatorSession = typeof simulatorSessions.$inferSelect;
+export type InsertSimulatorSession = typeof simulatorSessions.$inferInsert;
 
 export const chatMessages = pgTable("chat_messages", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),

@@ -34,7 +34,7 @@ export class MemStorage implements IStorage {
     this.sessionMessages = new Map();
     this.sessionLastActivity = new Map();
     this.emailLogs = new Map();
-    
+
     // Clean inactive sessions every 5 minutes
     setInterval(() => {
       this.cleanInactiveSessions();
@@ -77,19 +77,19 @@ export class MemStorage implements IStorage {
       response: insertMessage.response ?? null,
       createdAt: new Date() 
     };
-    
+
     // Store in global messages
     this.chatMessages.set(id, message);
-    
+
     // Store in session-specific messages
     if (!this.sessionMessages.has(sessionId)) {
       this.sessionMessages.set(sessionId, []);
     }
     this.sessionMessages.get(sessionId)!.push(message);
-    
+
     // Update session activity
     this.sessionLastActivity.set(sessionId, Date.now());
-    
+
     return message;
   }
 
@@ -148,7 +148,7 @@ export class MemStorage implements IStorage {
   async updateContactRequest(id: string, updates: Partial<ContactRequest>): Promise<ContactRequest | undefined> {
     const existing = this.contactRequests.get(id);
     if (!existing) return undefined;
-    
+
     const updated = { ...existing, ...updates };
     this.contactRequests.set(id, updated);
     return updated;
@@ -176,7 +176,7 @@ export class MemStorage implements IStorage {
   async updateEmailLog(id: string, updates: Partial<EmailLog>): Promise<EmailLog | undefined> {
     const existing = this.emailLogs.get(id);
     if (!existing) return undefined;
-    
+
     const updated = { ...existing, ...updates };
     this.emailLogs.set(id, updated);
     return updated;

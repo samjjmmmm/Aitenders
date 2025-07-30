@@ -497,36 +497,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
 
       const userInfo = { name, email, company };
-      const result = simulatorService.processUserInfo(sessionId, userInfo);
+      const result = await simulatorService.processUserInfo(sessionId, userInfo);
       
       if (result.success && result.reportData) {
-        // Send the report via HubSpot email
+        // Send the ROI report email
         try {
-          // Create or update contact in HubSpot
-          const hubspotContactData = {
-            email: email,
-            firstName: name.split(' ')[0],
-            lastName: name.split(' ').slice(1).join(' ') || '',
-            company: company,
-            leadSource: 'Simulateur ROI',
-            customProperties: {
-              simulator_completed: 'true',
-              roi_report_sent: new Date().toISOString()
-            }
-          };
-          
-          await hubspotService.createOrUpdateContact(hubspotContactData);
-          
-          // Create a deal for the simulator completion
-          await hubspotService.createDeal(hubspotContactData, `Simulateur ROI - ${company}`, 150000);
-          
-          // Send the ROI report email
           await hubspotService.sendROIReport(result.reportData);
           
           res.json({ 
             success: true, 
             message: result.message,
-            reportSent: true
+            reportSent: true,
+            hubspotContactId: result.reportData.hubspotContactId,
+            hubspotDealId: result.reportData.hubspotDealId
           });
         } catch (emailError) {
           console.error('Failed to send ROI report:', emailError);
@@ -534,7 +517,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
             success: true, 
             message: result.message,
             reportSent: false,
-            warning: "Rapport généré mais l'envoi email a échoué"
+            warning: "Rapport généré mais l'envoi email a échoué",
+            hubspotContactId: result.reportData.hubspotContactId,
+            hubspotDealId: result.reportData.hubspotDealId
           });
         }
       } else {
@@ -560,6 +545,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error('Simulator session info error:', error);
       res.status(500).json({ message: "Failed to fetch session info" });
+    }
+  });
+
+  // Get all simulator sessions from database
+  app.get("/api/simulator/sessions", async (req, res) => {
+    try {
+      const sessions = await storage.getAllSimulatorSessions();
+      res.json(sessions);
+    } catch (error) {
+      console.error('Error fetching simulator sessions:', error);
+      res.status(500).json({ message: "Failed to fetch simulator sessions" });
     }
   });
 

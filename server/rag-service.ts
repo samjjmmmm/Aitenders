@@ -214,7 +214,7 @@ class RAGService {
     // Score basé sur la correspondance de contenu
     const words = queryLower.split(' ').filter(word => word.length > 2);
     const contentLower = chunk.content.toLowerCase();
-    
+
     const contentMatches = words.filter(word => 
       contentLower.includes(word)
     ).length;
@@ -238,7 +238,7 @@ class RAGService {
     // Calculer le score pour chaque chunk
     for (const chunk of this.chunks) {
       const score = this.calculateSimilarity(query, chunk);
-      
+
       if (score > 0) {
         let relevance: 'high' | 'medium' | 'low' = 'low';
         if (score >= 50) relevance = 'high';
@@ -261,17 +261,17 @@ class RAGService {
   // Router la requête selon la configuration
   public routeQuery(query: string, language: 'fr' | 'en' = 'fr', sessionId?: string): { action: string; response?: string; category?: string; shouldUseOpenAI?: boolean; simulatorData?: any } {
     this.analytics.totalQueries++;
-    
+
     const queryLower = query.toLowerCase();
-    
+
     // 0. Vérifier les commandes simulateur en priorité
     const simulatorKeywords = ['simulateur', 'simulation', 'simulator', 'roi calculer', 'calculator', 'calcul roi', 'économies', 'gains'];
     const isSimulatorQuery = simulatorKeywords.some(keyword => queryLower.includes(keyword));
-    
+
     if (isSimulatorQuery && sessionId) {
       // Vérifier s'il y a une session active
       const sessionInfo = simulatorService.getSessionInfo(sessionId);
-      
+
       if (!sessionInfo) {
         // Démarrer une nouvelle session
         const firstQuestion = simulatorService.startSession(sessionId);
@@ -299,15 +299,15 @@ class RAGService {
         };
       }
     }
-    
+
     // Vérifier si c'est une réponse à une question de simulateur
     if (sessionId) {
       const sessionInfo = simulatorService.getSessionInfo(sessionId);
-      
+
       if (sessionInfo && !sessionInfo.completed) {
         // Traiter la réponse utilisateur
         const result = simulatorService.processAnswer(sessionId, query);
-        
+
         if (result.error) {
           return {
             action: 'simulator_error',
@@ -329,13 +329,13 @@ class RAGService {
         }
       }
     }
-    
+
     // 1. Vérifier les requêtes bloquées
     if (this.config.routing?.blockedQueries) {
       const blocked = this.config.routing.blockedQueries.keywords.some((keyword: string) => 
         queryLower.includes(keyword.toLowerCase())
       );
-      
+
       if (blocked) {
         this.analytics.blockedQueries++;
         return {
@@ -344,13 +344,13 @@ class RAGService {
         };
       }
     }
-    
+
     // 2. Vérifier les appels directs à OpenAI
     if (this.config.routing?.directToOpenAI) {
       const directCall = this.config.routing.directToOpenAI.keywords.some((keyword: string) => 
         queryLower.includes(keyword.toLowerCase())
       );
-      
+
       if (directCall) {
         this.analytics.directCalls++;
         return {
@@ -359,14 +359,14 @@ class RAGService {
         };
       }
     }
-    
+
     // 3. Vérifier les redirections configurées
     if (this.config.routing?.redirections) {
       for (const [name, redirect] of Object.entries(this.config.routing.redirections)) {
         const matchesKeyword = redirect.keywords.some((keyword: string) => 
           queryLower.includes(keyword.toLowerCase())
         );
-        
+
         if (matchesKeyword) {
           this.analytics.redirections++;
           return {
@@ -376,7 +376,7 @@ class RAGService {
         }
       }
     }
-    
+
     // 4. Par défaut, utiliser la base de connaissances
     return {
       action: 'knowledge_base'
@@ -395,7 +395,7 @@ class RAGService {
 
     // Construire la réponse à partir des meilleurs résultats
     let response = '';
-    
+
     // Ajouter le contenu du meilleur résultat
     const topResult = searchResults[0];
     response += topResult.chunk.content;
@@ -428,7 +428,7 @@ class RAGService {
     // Calculer le score pour chaque chunk de la catégorie
     for (const chunk of filteredChunks) {
       const score = this.calculateSimilarity(query, chunk);
-      
+
       if (score > 0) {
         let relevance: 'high' | 'medium' | 'low' = 'low';
         if (score >= 50) relevance = 'high';
