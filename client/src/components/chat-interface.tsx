@@ -320,13 +320,13 @@ export default function ChatInterface({
           {/* Expand/Collapse Button */}
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="absolute top-3 left-3 p-3 hover:bg-yellow-100 rounded-lg transition-colors z-10 bg-yellow-50"
+            className="absolute top-3 left-3 p-2 hover:bg-purple-100 rounded-lg transition-colors z-10 bg-purple-50"
             title={isExpanded ? (language === 'fr' ? 'Réduire' : 'Collapse') : (language === 'fr' ? 'Agrandir' : 'Expand')}
           >
             {isExpanded ? (
-              <MdExpandMore className="w-6 h-6 text-yellow-600" />
+              <MdExpandMore className="w-5 h-5 text-purple-600 font-bold" style={{strokeWidth: '2.5'}} />
             ) : (
-              <MdExpandLess className="w-6 h-6 text-yellow-600" />
+              <MdExpandLess className="w-5 h-5 text-purple-600 font-bold" style={{strokeWidth: '2.5'}} />
             )}
           </button>
           {/* Recent Messages Display */}
