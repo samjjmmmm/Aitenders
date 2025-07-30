@@ -221,7 +221,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       let aiResponse: string;
       
       // Route the query using the new configuration system with session ID for simulator
-      const routing = ragService.routeQuery(message, language, sessionId);
+      const routing = await ragService.routeQuery(message, language, sessionId);
       
       switch (routing.action) {
         case 'simulator_start':
@@ -331,7 +331,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ message: "Query is required" });
       }
 
-      const routing = ragService.routeQuery(query, language);
+      const routing = await ragService.routeQuery(query, language);
       const searchResults = ragService.search(query, 3);
       
       res.json({

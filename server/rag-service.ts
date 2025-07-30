@@ -259,7 +259,7 @@ class RAGService {
   }
 
   // Router la requête selon la configuration
-  public routeQuery(query: string, language: 'fr' | 'en' = 'fr', sessionId?: string): { action: string; response?: string; category?: string; shouldUseOpenAI?: boolean; simulatorData?: any } {
+  public async routeQuery(query: string, language: 'fr' | 'en' = 'fr', sessionId?: string): Promise<{ action: string; response?: string; category?: string; shouldUseOpenAI?: boolean; simulatorData?: any }> {
     this.analytics.totalQueries++;
 
     const queryLower = query.toLowerCase();
@@ -274,7 +274,7 @@ class RAGService {
 
       if (!sessionInfo) {
         // Démarrer une nouvelle session
-        const firstQuestion = simulatorService.startSession(sessionId);
+        const firstQuestion = await simulatorService.startSession(sessionId);
         return {
           action: 'simulator_start',
           response: `🎯 **Simulateur ROI Aitenders**\n\nCalculez votre retour sur investissement personnalisé en répondant à quelques questions.\n\n${firstQuestion}`,
@@ -306,7 +306,7 @@ class RAGService {
 
       if (sessionInfo && !sessionInfo.completed) {
         // Traiter la réponse utilisateur
-        const result = simulatorService.processAnswer(sessionId, query);
+        const result = await simulatorService.processAnswer(sessionId, query);
 
         if (result.error) {
           return {
