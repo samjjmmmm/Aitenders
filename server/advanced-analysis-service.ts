@@ -62,6 +62,11 @@ class AdvancedAnalysisService {
     } else if (question.questionType === 'multiple_choice') {
       formatted += `\n\n**Choisissez jusqu'à ${question.validationRules.maxSelections || 3} options :**\n${question.validationRules.choices.map((c: string, i: number) => `${i + 1}. ${c}`).join('\n')}`;
       formatted += `\n\n*Séparez vos réponses par des virgules (ex: 1,3,5)*`;
+    } else if (question.questionType === 'text') {
+      const examples = this.getExampleForQuestion(question.id);
+      if (examples) {
+        formatted += `\n\n📊 Exemple de réponse: ${examples}`;
+      }
     }
 
     return formatted;
@@ -70,9 +75,7 @@ class AdvancedAnalysisService {
   // Obtenir des exemples naturels par question
   private getExampleForQuestion(questionId: string): string | null {
     const examples: Record<string, string> = {
-      'tenders_per_year': 'environ 250, entre 100 et 200',
-      'avg_tender_value': '500000€, entre 200K et 2M€',
-      'response_weeks': '4 semaines, entre 2 et 6',
+      'tender_profile_combined': 'Nous traitons 300 appels d\'offres complexes par an, avec une équipe de 30 personnes, valeur moyenne 10M€, préparation 6-8 semaines',
       'docs_per_tender': 'environ 15, entre 5 et 25',
       'pages_per_doc': '30 pages, entre 10 et 50',
       'versions_per_doc': '3 versions, entre 2 et 5',
@@ -101,7 +104,7 @@ class AdvancedAnalysisService {
       return { error: `💡 **Nous comprenons que vous n'êtes pas certain.**\n\nPouvez-vous donner une **estimation approximative** ?\n\nMême une estimation vous aidera à obtenir une analyse plus précise.\n\n${this.formatQuestion(question, 0, 0).replace(/\*\*Question.*?\*\*/, '**Question**')}` };
     }
 
-    // Vérification de cohérence pour les réponses illisibles ou incohérentes
+    // Vérification de cohérence pour les réponses illisibles ou incohérentes (seulement pour les questions numériques)
     if (question.questionType === 'number') {
       const hasIncoherentChars = /[àæøœç:;]{2,}|[^\w\s€$KkMm.,\-àé]+/.test(cleanAnswer);
       const hasRandomSymbols = /[:;]{2,}|[àà]{2,}/.test(cleanAnswer);
@@ -112,7 +115,13 @@ class AdvancedAnalysisService {
     }
     
     // Validation par type de question
-    if (question.questionType === 'number') {
+    if (question.questionType === 'text') {
+      // Pour les questions textuelles, validation minimale
+      if (cleanAnswer.length < 10) {
+        return { error: "❌ Veuillez donner une réponse plus détaillée (minimum 10 caractères)." };
+      }
+      return { value: cleanAnswer };
+    } else if (question.questionType === 'number') {
       // Fonction pour convertir les abréviations (K, M, €) en nombres
       const parseValueWithSuffix = (value: string): number => {
         const cleanValue = value.replace(/[€$,]/g, '').trim();

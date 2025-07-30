@@ -38,40 +38,16 @@ export class AdvancedTenderCalculator {
 
   private initializeQuestions(): QuestionConfig[] {
     return [
-      // Tender Profile
+      // Tender Profile (merged into one comprehensive question)
       {
-        id: 'tenders_per_year',
-        question: 'Combien d\'appels d\'offres traitez-vous par année ?',
-        questionType: 'number',
-        validationRules: { min: 1, max: 1000 },
-        helpText: 'Incluez toutes les soumissions que votre équipe gère annuellement',
+        id: 'tender_profile_combined',
+        question: 'Décrivez votre profil d\'appels d\'offres : nombre par an, valeur moyenne en euros, et durée de préparation en semaines',
+        questionType: 'text',
+        validationRules: { minLength: 10, maxLength: 500 },
+        helpText: 'Donnez-nous une vue d\'ensemble de votre activité appels d\'offres',
         followUpQuestions: [
-          'Ce nombre augmente-t-il ou diminue-t-il d\'année en année ?',
-          'Cela inclut-il les appels d\'offres publics et privés ?'
-        ],
-        category: 'tender_profile'
-      },
-      {
-        id: 'avg_tender_value',
-        question: 'Quelle est la valeur moyenne de chaque appel d\'offres en euros ?',
-        questionType: 'number',
-        validationRules: { min: 10000, max: 100000000 },
-        helpText: 'Valeur estimée du contrat par opportunité d\'appel d\'offres',
-        followUpQuestions: [
-          'Cela varie-t-il considérablement selon le secteur ou le type de client ?',
-          'Quelle est votre plus grande valeur d\'appel d\'offres typique ?'
-        ],
-        category: 'tender_profile'
-      },
-      {
-        id: 'response_weeks',
-        question: 'Combien de semaines faut-il en moyenne pour préparer une réponse d\'appel d\'offres ?',
-        questionType: 'number',
-        validationRules: { min: 1, max: 20 },
-        helpText: 'De la réception du cahier des charges à la soumission finale',
-        followUpQuestions: [
-          'Cela inclut-il le temps pour les approbations et révisions ?',
-          'Quel est le temps de préparation le plus court et le plus long que vous ayez eu ?'
+          'Ces chiffres varient-ils selon les secteurs ou types de clients ?',
+          'Votre volume d\'affaires augmente-t-il d\'année en année ?'
         ],
         category: 'tender_profile'
       },
@@ -348,9 +324,66 @@ export class AdvancedTenderCalculator {
   }
 
   public addResponse(questionId: string, response: any): { success: boolean; error?: string } {
-    // Accepter toutes les réponses sans validation stricte - permettre les estimations
-    this.responses[questionId] = response;
+    // Traitement spécial pour la question combinée du profil d'appels d'offres
+    if (questionId === 'tender_profile_combined') {
+      const parsed = this.parseTenderProfile(response as string);
+      if (parsed) {
+        // Stocker les valeurs parsées séparément pour les calculs
+        this.responses['tenders_per_year'] = parsed.tendersPerYear;
+        this.responses['avg_tender_value'] = parsed.avgTenderValue;
+        this.responses['response_weeks'] = parsed.responseWeeks;
+      }
+      this.responses[questionId] = response; // Stocker aussi la réponse originale
+    } else {
+      // Accepter toutes les réponses sans validation stricte - permettre les estimations
+      this.responses[questionId] = response;
+    }
     return { success: true };
+  }
+
+  // Parser la réponse combinée du profil d'appels d'offres
+  private parseTenderProfile(response: string): { tendersPerYear: number; avgTenderValue: number; responseWeeks: number } | null {
+    try {
+      const text = response.toLowerCase();
+      
+      // Extraire le nombre d'appels d'offres
+      const tendersMatch = text.match(/(\d+)\s*appels?\s*d['']?offres?/);
+      const tendersPerYear = tendersMatch ? parseInt(tendersMatch[1]) : 150;
+      
+      // Extraire la valeur moyenne (chercher des montants en K, M, ou €)
+      const valueMatch = text.match(/(\d+(?:[.,]\d+)?)\s*([km]?)€?\s*(?:en\s+moyenne|moyenne)/i) || 
+                        text.match(/valeur?\s+(?:moyenne\s+)?(\d+(?:[.,]\d+)?)\s*([km]?)€?/i) ||
+                        text.match(/(\d+(?:[.,]\d+)?)\s*([km]?)€/i);
+      
+      let avgTenderValue = 500000; // Valeur par défaut
+      if (valueMatch) {
+        const baseValue = parseFloat(valueMatch[1].replace(',', '.'));
+        const multiplier = valueMatch[2]?.toLowerCase();
+        if (multiplier === 'k') {
+          avgTenderValue = baseValue * 1000;
+        } else if (multiplier === 'm') {
+          avgTenderValue = baseValue * 1000000;
+        } else {
+          avgTenderValue = baseValue;
+        }
+      }
+      
+      // Extraire la durée de préparation
+      const weeksMatch = text.match(/(\d+(?:[.,]\d+)?)\s*(?:à\s*)?(\d+(?:[.,]\d+)?)?\s*semaines?/i) ||
+                        text.match(/préparation?\s+(\d+(?:[.,]\d+)?)\s*(?:à\s*)?(\d+(?:[.,]\d+)?)?\s*semaines?/i) ||
+                        text.match(/durée?\s+(\d+(?:[.,]\d+)?)\s*(?:à\s*)?(\d+(?:[.,]\d+)?)?\s*semaines?/i);
+      
+      let responseWeeks = 4; // Valeur par défaut
+      if (weeksMatch) {
+        const minWeeks = parseFloat(weeksMatch[1].replace(',', '.'));
+        const maxWeeks = weeksMatch[2] ? parseFloat(weeksMatch[2].replace(',', '.')) : minWeeks;
+        responseWeeks = (minWeeks + maxWeeks) / 2;
+      }
+      
+      return { tendersPerYear, avgTenderValue, responseWeeks };
+    } catch (error) {
+      return null;
+    }
   }
 
   public calculateEfficiency(): CalculationResult {
