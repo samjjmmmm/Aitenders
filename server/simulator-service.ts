@@ -233,14 +233,8 @@ class SimulatorService {
         const normalizeTextSelect = (text: string) => text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
         const normalizedAnswerSelect = normalizeTextSelect(cleanAnswer);
         if (unknownAnswers.some(phrase => normalizedAnswerSelect.includes(normalizeTextSelect(phrase)))) {
-          // Prendre une option par défaut (celle du milieu)
-          if (question.options && question.options.length > 0) {
-            const middleIndex = Math.floor(question.options.length / 2);
-            const defaultOption = question.options[middleIndex];
-            const numericValue = question.mapping?.[defaultOption];
-            console.log(`User doesn't know answer, using default option: ${defaultOption}`);
-            return { value: defaultOption, numericValue };
-          }
+          console.log(`User doesn't know select answer, asking for estimation`);
+          return { error: `💡 **Nous comprenons que vous n'êtes pas certain.**\n\nPouvez-vous donner une **estimation approximative** ?\n\nMême une estimation vous aidera à obtenir un calcul ROI plus précis.\n\n${this.formatQuestion(question, 0, 0).replace(/📊.*?Obligatoire\*\*\n\n/, '')}` };
         }
 
         // Vérification directe d'abord
@@ -303,12 +297,8 @@ class SimulatorService {
         });
         console.log(`Unknown pattern detected: ${hasUnknownPattern}`);
         if (hasUnknownPattern) {
-          // Utiliser une valeur moyenne entre min et max
-          const defaultValue = question.min !== undefined && question.max !== undefined 
-            ? (question.min + question.max) / 2 
-            : question.min || question.max || 10;
-          console.log(`User doesn't know numeric answer, using default: ${defaultValue}`);
-          return { value: defaultValue, numericValue: defaultValue };
+          console.log(`User doesn't know numeric answer, asking for estimation`);
+          return { error: `💡 **Nous comprenons que vous n'êtes pas certain.**\n\nPouvez-vous donner une **estimation approximative** ?\n\nMême une estimation vous aidera à obtenir un calcul ROI plus précis.\n\n${this.formatQuestion(question, 0, 0).replace(/📊.*?Obligatoire\*\*\n\n/, '')}` };
         }
 
         // Si rien ne fonctionne, retourner l'erreur
@@ -359,12 +349,8 @@ class SimulatorService {
         });
         console.log(`Unknown range pattern detected: ${hasUnknownRangePattern}`);
         if (hasUnknownRangePattern) {
-          // Utiliser une valeur moyenne entre min et max
-          const defaultValue = question.min !== undefined && question.max !== undefined 
-            ? (question.min + question.max) / 2 
-            : question.min || question.max || 10;
-          console.log(`User doesn't know range answer, using default: ${defaultValue}`);
-          return { value: defaultValue, numericValue: defaultValue };
+          console.log(`User doesn't know range answer, asking for estimation`);
+          return { error: `💡 **Nous comprenons que vous n'êtes pas certain.**\n\nPouvez-vous donner une **estimation approximative** ?\n\nMême une estimation vous aidera à obtenir un calcul ROI plus précis.\n\n${this.formatQuestion(question, 0, 0).replace(/📊.*?Obligatoire\*\*\n\n/, '')}` };
         }
 
         // Si rien ne fonctionne, retourner l'erreur

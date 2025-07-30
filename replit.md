@@ -111,8 +111,23 @@ The architecture prioritizes developer experience with hot reloading, type safet
 
 ## Recent Changes (January 2025)
 
-### Advanced Tender Calculator Integration with Full LLM Module
+### Complete Uncertainty Response Handling for ROI Simulator  
 - **Date**: January 30, 2025
+- **Change**: Implemented comprehensive uncertainty response handling with estimation prompts instead of default values
+- **Technical Implementation**:
+  - **Smart Detection**: Handles all uncertainty expressions ("je ne sais pas", "incertain", "aucune idée", "pas sûr", etc.) with accent normalization
+  - **Estimation Prompts**: Instead of using default values, system asks for approximate estimates with encouraging messages
+  - **Multi-Type Support**: Works for select, number, and range question types with dedicated handling logic
+  - **User Experience**: "💡 Nous comprenons que vous n'êtes pas certain. Pouvez-vous donner une estimation approximative ?"
+  - **Flexible Parsing**: Accepts estimates with qualifiers ("environ", "peut-être", "approximativement")
+- **Business Benefits**: 
+  - **Accurate ROI**: Real user estimates provide more meaningful calculations than default values
+  - **User Engagement**: Encouraging tone helps users provide better data without feeling pressured
+  - **Data Quality**: All responses remain obligatory while accommodating natural uncertainty
+- **User Experience**: Seamless workflow where uncertainty expressions trigger helpful re-prompting instead of workflow interruption
+
+### Advanced Tender Calculator Integration with Full LLM Module
+- **Date**: January 30, 2025  
 - **Change**: Integrated comprehensive 15+ question advanced tender calculator from Python LLM module
 - **Technical Implementation**:
   - **Advanced Calculator**: `server/advanced-tender-calculator.ts` - Complete TypeScript port with sophisticated calculation logic
