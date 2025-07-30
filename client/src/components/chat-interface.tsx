@@ -183,6 +183,13 @@ export default function ChatInterface({
       if (onMessageSend) {
         onMessageSend(message);
       }
+      // Auto-scroll to bottom after response
+      setTimeout(() => {
+        const chatContainer = document.querySelector('.chat-messages-container');
+        if (chatContainer) {
+          chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+      }, 100);
     },
     onError: (error) => {
       console.error('Message send error:', error);
@@ -390,7 +397,7 @@ export default function ChatInterface({
           </button>
           {/* Recent Messages Display */}
           {messages.length > 0 && (
-            <div className={`mb-4 ${isExpanded ? 'flex-1 min-h-0 max-h-none overflow-y-scroll scrollbar-visible' : 'max-h-40 overflow-y-auto'} space-y-2 ${isExpanded ? 'mt-12 pr-2' : ''}`}>
+            <div className={`chat-messages-container mb-4 ${isExpanded ? 'flex-1 min-h-0 max-h-none overflow-y-scroll scrollbar-visible' : 'max-h-40 overflow-y-auto'} space-y-2 ${isExpanded ? 'mt-12 pr-2' : ''}`}>
               {(isExpanded ? messages : messages.slice(-2)).map((msg) => (
                 <div key={msg.id} className="space-y-2">
                   <div className="text-right">
