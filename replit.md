@@ -153,3 +153,20 @@ The architecture prioritizes developer experience with hot reloading, type safet
   - Button "Data Security" → Question: "Que fait Aitenders pour la sécurité des données?"
   - RAG Response: Detailed security features with encryption, GDPR compliance, etc.
 - **User Experience**: Chat functions as intelligent search tool rather than static information display
+
+### ChatGPT Integration
+- **Date**: January 30, 2025
+- **Change**: Replaced local RAG system with authentic ChatGPT (GPT-4o) integration
+- **Technical Implementation**:
+  - **Backend Service**: `server/openai.ts` with specialized Aitenders system prompts
+  - **OpenAI Model**: GPT-4o (latest model as of May 2024)
+  - **API Integration**: Direct OpenAI API calls from backend routes
+  - **Context-Aware**: System prompts with complete Aitenders business context
+  - **Bilingual Responses**: French/English support with professional B2B tone
+- **Key Features**:
+  - Expert-level responses about tender management and Aitenders platform
+  - Professional formatting with emojis and structured content
+  - Concise but detailed responses (150-300 words)
+  - Industry-specific knowledge and examples
+  - Real-time AI conversation instead of static knowledge base
+- **User Experience**: Authentic ChatGPT conversational AI with Aitenders expertise
