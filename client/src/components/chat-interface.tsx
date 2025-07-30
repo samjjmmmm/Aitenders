@@ -138,23 +138,7 @@ export default function ChatInterface({
               ))}
             </div>
 
-            {/* Right Side - Utility Icons */}
-            <div className="flex items-center gap-2">
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                className="h-8 w-8 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg"
-              >
-                <FaRobot className="w-4 h-4" />
-              </Button>
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                className="h-8 w-8 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg"
-              >
-                <MdBarChart className="w-4 h-4" />
-              </Button>
-            </div>
+
           </div>
         </div>
       </div>
