@@ -100,6 +100,16 @@ class AdvancedAnalysisService {
     if (unknownAnswers.some(phrase => normalizedAnswer.includes(normalizeText(phrase)))) {
       return { error: `💡 **Nous comprenons que vous n'êtes pas certain.**\n\nPouvez-vous donner une **estimation approximative** ?\n\nMême une estimation vous aidera à obtenir une analyse plus précise.\n\n${this.formatQuestion(question, 0, 0).replace(/\*\*Question.*?\*\*/, '**Question**')}` };
     }
+
+    // Vérification de cohérence pour les réponses illisibles ou incohérentes
+    if (question.questionType === 'number') {
+      const hasIncoherentChars = /[àæøœç:;]{2,}|[^\w\s€$KkMm.,\-àé]+/.test(cleanAnswer);
+      const hasRandomSymbols = /[:;]{2,}|[àà]{2,}/.test(cleanAnswer);
+      
+      if (hasIncoherentChars || hasRandomSymbols) {
+        return { error: `🤔 **Votre réponse semble contenir des caractères inattendus : "${cleanAnswer}"**\n\nPourriez-vous la reformuler ?\n\n${this.formatQuestion(question, 0, 0).replace(/\*\*Question.*?\*\*/, '**Question**')}` };
+      }
+    }
     
     // Validation par type de question
     if (question.questionType === 'number') {
@@ -155,7 +165,13 @@ class AdvancedAnalysisService {
       if (isNaN(numValue)) {
         return { error: "❌ Veuillez entrer un nombre valide ou une plage (ex: 'entre 3 et 7')." };
       }
-      // Accepter toutes les valeurs numériques sans validation stricte
+
+      // Validation de cohérence contextuelle
+      const coherenceCheck = this.checkAnswerCoherence(question.id, numValue, cleanAnswer);
+      if (coherenceCheck.needsConfirmation) {
+        return { error: coherenceCheck.message };
+      }
+
       return { value: numValue };
     }
     
@@ -218,6 +234,36 @@ class AdvancedAnalysisService {
     }
     
     return { value: cleanAnswer };
+  }
+
+  // Vérifier la cohérence contextuelle des réponses
+  private checkAnswerCoherence(questionId: string, value: number, originalAnswer: string): { needsConfirmation: boolean; message?: string } {
+    const coherenceRules: Record<string, { min?: number; max?: number; unit?: string }> = {
+      'tenders_per_year': { min: 1, max: 2000 },
+      'avg_tender_value': { min: 1000, max: 1000000000 },
+      'response_weeks': { min: 0.1, max: 104 }, // 2 ans max
+      'docs_per_tender': { min: 1, max: 500 },
+      'pages_per_doc': { min: 1, max: 2000 },
+      'versions_per_doc': { min: 1, max: 50 },
+      'qa_rounds': { min: 0, max: 50 },
+      'hours_per_qa': { min: 0.5, max: 200 },
+      'contracts_to_track': { min: 0, max: 10000 },
+      'setup_hours': { min: 1, max: 1000 },
+      'win_rate': { min: 0, max: 100 }
+    };
+
+    const rule = coherenceRules[questionId];
+    if (!rule) return { needsConfirmation: false };
+
+    if ((rule.min !== undefined && value < rule.min) || (rule.max !== undefined && value > rule.max)) {
+      const questionText = this.questions.find(q => q.id === questionId)?.question || 'cette question';
+      return {
+        needsConfirmation: true,
+        message: `🤔 **Votre réponse "${originalAnswer}" semble inhabituelle pour ${questionText}**\n\nPouvez-vous confirmer ou corriger votre réponse ?`
+      };
+    }
+
+    return { needsConfirmation: false };
   }
 
   // Traiter une réponse

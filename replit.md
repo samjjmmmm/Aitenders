@@ -355,3 +355,9 @@ The architecture prioritizes developer experience with hot reloading, type safet
   - **Natural Examples**: Each question shows example responses instead of technical validation rules
   - **No Validation Barriers**: All estimations accepted without strict boundary enforcement
   - **User-Friendly Language**: Examples like "environ 250, entre 100 et 200" encourage natural responses
+- **Coherence Validation System**:
+  - **Character Detection**: Identifies incoherent character patterns like "1à:m€" or "3à pages"
+  - **Contextual Validation**: Checks if numerical answers make sense for specific question types
+  - **Range Validation**: Ensures values fall within reasonable bounds (e.g., 1-2000 tenders per year)
+  - **Helpful Error Messages**: Clear requests for reformulation with examples included
+  - **Smart Acceptance**: Valid variations like "50000€" or "environ 150" are accepted normally
