@@ -22,12 +22,14 @@ interface ChatInterfaceProps {
     icon?: React.ReactNode;
     onClick: () => void;
   }>;
+  transparent?: boolean;
 }
 
 export default function ChatInterface({ 
   language = 'fr', 
   onMessageSend,
-  customActions = []
+  customActions = [],
+  transparent = false
 }: ChatInterfaceProps) {
   const [message, setMessage] = useState("");
   const { toast } = useToast();
@@ -96,7 +98,7 @@ export default function ChatInterface({
   const actions = customActions.length > 0 ? customActions : defaultActions;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-2xl">
+    <div className={`fixed bottom-0 left-0 right-0 z-50 ${transparent ? 'bg-transparent' : 'bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-2xl'}`}>
       <div className="max-w-4xl mx-auto p-6">
         <div className="bg-white border border-gray-300 rounded-3xl shadow-lg p-4">
           {/* Input Field */}

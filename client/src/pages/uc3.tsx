@@ -1516,6 +1516,7 @@ export default function UC3Page() {
       {/* Chat Interface with UC3-specific actions */}
       <ChatInterface 
         language="fr"
+        transparent={true}
         customActions={[
           {
             label: "Nos cas d'usage",
