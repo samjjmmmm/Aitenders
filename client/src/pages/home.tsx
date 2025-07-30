@@ -594,8 +594,8 @@ export default function HomePage() {
         {/* Main Chat Container */}
         <div className="flex-1 flex flex-col max-w-6xl mx-auto w-full p-6">
           
-          {/* Messages Display - Takes most of the screen */}
-          <div className="flex-1 bg-aitenders-white-blue border border-aitenders-light-blue rounded-3xl shadow-xl p-8 mb-6 overflow-hidden flex flex-col">
+          {/* Messages Display - Takes 80% of the screen */}
+          <div className="h-[80vh] bg-aitenders-white-blue border border-aitenders-light-blue rounded-3xl shadow-xl p-8 mb-6 overflow-hidden flex flex-col">
             <div className="flex-1 bg-aitenders-pale-blue rounded-2xl p-6 overflow-y-auto">
               {messages.length === 0 ? (
                 <div className="flex items-center justify-center h-full text-aitenders-dark-blue/60">
@@ -635,10 +635,10 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Input Area - Fixed at bottom */}
-          <div className="bg-aitenders-white-blue border border-aitenders-light-blue rounded-3xl shadow-xl p-6">
+          {/* Input Area - Takes 20% of bottom */}
+          <div className="h-[20vh] bg-aitenders-white-blue border border-aitenders-light-blue rounded-3xl shadow-xl p-6 flex flex-col justify-center">
             {/* Chat Input Bar */}
-            <div className="flex items-center gap-6 mb-6">
+            <div className="flex items-center gap-6 mb-4">
               <div className="flex items-center justify-center w-16 h-16 bg-aitenders-primary-blue rounded-full flex-shrink-0">
                 <FaRobot className="w-8 h-8 text-aitenders-white-blue" />
               </div>
@@ -662,28 +662,28 @@ export default function HomePage() {
             </div>
 
             {/* Quick Actions */}
-            <div className="flex flex-wrap gap-4 justify-center">
+            <div className="flex flex-wrap gap-3 justify-center">
               <Button
                 variant="outline"
-                size="lg"
+                size="sm"
                 onClick={() => setMessage(language === 'fr' ? "Quels cas d'usage proposez-vous ?" : "What use cases do you offer?")}
-                className="text-base rounded-full border-2 border-aitenders-light-blue hover:bg-aitenders-pale-blue px-8 py-3"
+                className="text-sm rounded-full border-2 border-aitenders-light-blue hover:bg-aitenders-pale-blue px-4 py-2"
               >
                 {t[language].ourUseCases}
               </Button>
               <Button
                 variant="outline"
-                size="lg"
+                size="sm"
                 onClick={() => setMessage(language === 'fr' ? "Comment fonctionne le processus d'appel d'offres ?" : "How does the tender process work?")}
-                className="text-base rounded-full border-2 border-aitenders-light-blue hover:bg-aitenders-pale-blue px-8 py-3"
+                className="text-sm rounded-full border-2 border-aitenders-light-blue hover:bg-aitenders-pale-blue px-4 py-2"
               >
                 {t[language].tenderProcess}
               </Button>
               <Button
                 variant="outline"
-                size="lg"
+                size="sm"
                 onClick={() => setMessage(language === 'fr' ? "Puis-je planifier une démo ?" : "Can I schedule a demo?")}
-                className="text-base rounded-full border-2 border-aitenders-light-blue hover:bg-aitenders-pale-blue px-8 py-3"
+                className="text-sm rounded-full border-2 border-aitenders-light-blue hover:bg-aitenders-pale-blue px-4 py-2"
               >
                 {t[language].scheduleDemo}
               </Button>
