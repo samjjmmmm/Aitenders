@@ -294,7 +294,7 @@ class RAGService {
         // Session terminée
         return {
           action: 'simulator_completed',
-          response: simulatorService.getCompletionMessage(),
+          response: 'Simulation terminée avec succès!',
           simulatorData: { sessionId, status: 'completed' }
         };
       }
@@ -363,15 +363,16 @@ class RAGService {
     // 3. Vérifier les redirections configurées
     if (this.config.routing?.redirections) {
       for (const [name, redirect] of Object.entries(this.config.routing.redirections)) {
-        const matchesKeyword = redirect.keywords.some((keyword: string) => 
+        const redirectConfig = redirect as any; // Type assertion for unknown redirect config
+        const matchesKeyword = redirectConfig.keywords?.some((keyword: string) => 
           queryLower.includes(keyword.toLowerCase())
         );
 
         if (matchesKeyword) {
           this.analytics.redirections++;
           return {
-            action: redirect.action,
-            category: redirect.category
+            action: redirectConfig.action,
+            category: redirectConfig.category
           };
         }
       }

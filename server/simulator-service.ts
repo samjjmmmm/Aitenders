@@ -85,8 +85,7 @@ class SimulatorService {
       await storage.createSimulatorSession({
         sessionId,
         responses: [],
-        completed: false,
-        startedAt: new Date()
+        completed: false
       });
     } catch (error) {
       console.error('Error saving simulator session to database:', error);
@@ -199,7 +198,7 @@ class SimulatorService {
     if (!question.required) {
       const skipAnswers = ['passer', 'skip', 'suivant', 'next', '-', ''];
       if (skipAnswers.includes(cleanAnswer.toLowerCase())) {
-        return { value: null, numericValue: 0 };
+        return { value: undefined, numericValue: 0 };
       }
     }
 

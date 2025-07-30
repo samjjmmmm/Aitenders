@@ -40,9 +40,6 @@ export const emailLogs = pgTable('email_logs', {
   createdAt: timestamp('created_at').notNull().defaultNow(),
 });
 
-export type EmailLog = typeof emailLogs.$inferSelect;
-export type InsertEmailLog = typeof emailLogs.$inferInsert;
-
 // Simulator Sessions
 export const simulatorSessions = pgTable('simulator_sessions', {
   id: text('id').primaryKey().default(sql`gen_random_uuid()`),
@@ -59,9 +56,6 @@ export const simulatorSessions = pgTable('simulator_sessions', {
   completedAt: timestamp('completed_at'),
   createdAt: timestamp('created_at').notNull().defaultNow(),
 });
-
-export type SimulatorSession = typeof simulatorSessions.$inferSelect;
-export type InsertSimulatorSession = typeof simulatorSessions.$inferInsert;
 
 export const chatMessages = pgTable("chat_messages", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
@@ -95,8 +89,19 @@ export const insertEmailLogSchema = createInsertSchema(emailLogs).pick({
   content: true,
   type: true,
   status: true,
-  hubspotContactId: true,
   errorMessage: true,
+});
+
+export const insertSimulatorSessionSchema = createInsertSchema(simulatorSessions).pick({
+  sessionId: true,
+  responses: true,
+  completed: true,
+  userName: true,
+  userEmail: true,
+  userCompany: true,
+  hubspotContactId: true,
+  hubspotDealId: true,
+  calculatedResults: true,
 });
 
 export const insertChatMessageSchema = createInsertSchema(chatMessages).pick({
@@ -112,3 +117,5 @@ export type InsertChatMessage = z.infer<typeof insertChatMessageSchema>;
 export type ChatMessage = typeof chatMessages.$inferSelect;
 export type InsertEmailLog = z.infer<typeof insertEmailLogSchema>;
 export type EmailLog = typeof emailLogs.$inferSelect;
+export type InsertSimulatorSession = z.infer<typeof insertSimulatorSessionSchema>;
+export type SimulatorSession = typeof simulatorSessions.$inferSelect;

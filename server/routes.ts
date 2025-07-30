@@ -23,14 +23,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Prepare HubSpot contact data
       const hubspotContactData = {
         email: validatedData.email,
-        firstName: validatedData.firstName,
-        lastName: validatedData.lastName,
-        company: validatedData.company,
-        phone: validatedData.phone,
-        website: validatedData.website,
+        firstName: validatedData.firstName || undefined,
+        lastName: validatedData.lastName || undefined,
+        company: validatedData.company || undefined,
+        phone: validatedData.phone || undefined,
+        website: validatedData.website || undefined,
         message: validatedData.message,
-        useCase: validatedData.useCase,
-        industry: validatedData.industry,
+        useCase: validatedData.useCase || undefined,
+        industry: validatedData.industry || undefined,
       };
       
       // Create/update contact in HubSpot and send emails
@@ -38,10 +38,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
         const hubspotContact = await hubspotService.createOrUpdateContact(hubspotContactData);
         
         // Send notification email to team
-        await hubspotService.sendNotificationEmail(hubspotContactData, validatedData.requestType as 'contact' | 'demo' | 'support');
+        await hubspotService.sendNotificationEmail(hubspotContactData, (validatedData.requestType || 'contact') as 'contact' | 'demo' | 'support');
         
         // Send confirmation email to user
-        await hubspotService.sendConfirmationEmail(hubspotContactData, validatedData.requestType as 'contact' | 'demo' | 'support');
+        await hubspotService.sendConfirmationEmail(hubspotContactData, (validatedData.requestType || 'contact') as 'contact' | 'demo' | 'support');
         
         // Update contact request with HubSpot ID
         await storage.updateContactRequest(contactRequest.id, {
@@ -323,7 +323,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // RAG Configuration testing endpoint
-  app.post('/api/rag/test', (req, res) => {
+  app.post('/api/rag/test', async (req, res) => {
     try {
       const { query, language = 'fr' } = req.body;
       

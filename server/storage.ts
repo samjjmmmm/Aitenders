@@ -1,4 +1,4 @@
-import { type User, type InsertUser, type ContactRequest, type InsertContactRequest, type ChatMessage, type InsertChatMessage, type EmailLog, type InsertEmailLog } from "@shared/schema";
+import { type User, type InsertUser, type ContactRequest, type InsertContactRequest, type ChatMessage, type InsertChatMessage, type EmailLog, type InsertEmailLog, type SimulatorSession, type InsertSimulatorSession } from "@shared/schema";
 import { randomUUID } from "crypto";
 
 export interface IStorage {
@@ -17,6 +17,9 @@ export interface IStorage {
   createEmailLog(emailLog: InsertEmailLog): Promise<EmailLog>;
   getEmailLogs(): Promise<EmailLog[]>;
   updateEmailLog(id: string, updates: Partial<EmailLog>): Promise<EmailLog | undefined>;
+  createSimulatorSession(session: InsertSimulatorSession): Promise<SimulatorSession>;
+  updateSimulatorSession(sessionId: string, updates: Partial<SimulatorSession>): Promise<SimulatorSession | undefined>;
+  getSimulatorSession(sessionId: string): Promise<SimulatorSession | undefined>;
 }
 
 export class MemStorage implements IStorage {
@@ -26,6 +29,7 @@ export class MemStorage implements IStorage {
   private sessionMessages: Map<string, ChatMessage[]>;
   private sessionLastActivity: Map<string, number>;
   private emailLogs: Map<string, EmailLog>;
+  private simulatorSessions: Map<string, SimulatorSession>;
 
   constructor() {
     this.users = new Map();
@@ -34,6 +38,7 @@ export class MemStorage implements IStorage {
     this.sessionMessages = new Map();
     this.sessionLastActivity = new Map();
     this.emailLogs = new Map();
+    this.simulatorSessions = new Map();
 
     // Clean inactive sessions every 5 minutes
     setInterval(() => {
@@ -160,7 +165,7 @@ export class MemStorage implements IStorage {
       ...insertEmailLog,
       id,
       status: insertEmailLog.status ?? "pending",
-      hubspotContactId: insertEmailLog.hubspotContactId ?? null,
+
       errorMessage: insertEmailLog.errorMessage ?? null,
       sentAt: null,
       createdAt: new Date()
@@ -196,6 +201,43 @@ export class MemStorage implements IStorage {
 
   async getChatMessages(): Promise<ChatMessage[]> {
     return Array.from(this.chatMessages.values());
+  }
+
+  async createSimulatorSession(insertSession: InsertSimulatorSession): Promise<SimulatorSession> {
+    const id = randomUUID();
+    const session: SimulatorSession = {
+      ...insertSession,
+      id,
+      hubspotContactId: insertSession.hubspotContactId ?? null,
+      hubspotDealId: insertSession.hubspotDealId ?? null,
+      userName: insertSession.userName ?? null,
+      userEmail: insertSession.userEmail ?? null,
+      userCompany: insertSession.userCompany ?? null,
+      calculatedResults: insertSession.calculatedResults ?? null,
+      completed: insertSession.completed ?? false,
+      completedAt: null,
+      startedAt: new Date(),
+      createdAt: new Date()
+    };
+    this.simulatorSessions.set(insertSession.sessionId, session);
+    return session;
+  }
+
+  async updateSimulatorSession(sessionId: string, updates: Partial<SimulatorSession>): Promise<SimulatorSession | undefined> {
+    const existing = this.simulatorSessions.get(sessionId);
+    if (!existing) return undefined;
+
+    const updated = { ...existing, ...updates };
+    this.simulatorSessions.set(sessionId, updated);
+    return updated;
+  }
+
+  async getSimulatorSession(sessionId: string): Promise<SimulatorSession | undefined> {
+    return this.simulatorSessions.get(sessionId);
+  }
+
+  async getAllSimulatorSessions(): Promise<SimulatorSession[]> {
+    return Array.from(this.simulatorSessions.values());
   }
 }
 
