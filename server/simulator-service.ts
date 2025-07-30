@@ -113,6 +113,9 @@ class SimulatorService {
       return { error: "❌ Question non trouvée." };
     }
 
+    console.log(`Processing question ${session.currentQuestionIndex + 1}/${this.config.questions.length}: ${currentQuestion.text}`);
+    console.log(`User answer: ${answer}`);
+
     // Valider et convertir la réponse
     const validatedAnswer = this.validateAndConvertAnswer(currentQuestion, answer);
     if (validatedAnswer.error) {
@@ -127,11 +130,14 @@ class SimulatorService {
     };
     
     session.responses.push(response);
+    console.log(`Response saved for question ${currentQuestion.id}:`, response);
+    
     session.currentQuestionIndex++;
 
     // Vérifier si c'est la dernière question
     if (session.currentQuestionIndex >= this.config.questions.length) {
       session.completed = true;
+      console.log(`Simulator completed! Total questions answered: ${session.responses.length}`);
       return { 
         completed: true, 
         message: this.getCompletionMessage() 
@@ -140,8 +146,10 @@ class SimulatorService {
 
     // Passer à la question suivante
     const nextQuestion = this.config.questions[session.currentQuestionIndex];
+    console.log(`Moving to next question ${session.currentQuestionIndex + 1}/${this.config.questions.length}`);
+    
     return { 
-      nextQuestion: `✅ Réponse enregistrée !\n\n${this.formatQuestion(nextQuestion, session.currentQuestionIndex + 1, this.config.questions.length)}` 
+      nextQuestion: `✅ Réponse enregistrée ! (${session.currentQuestionIndex}/${this.config.questions.length})\n\n${this.formatQuestion(nextQuestion, session.currentQuestionIndex + 1, this.config.questions.length)}` 
     };
   }
 
@@ -152,6 +160,14 @@ class SimulatorService {
     error?: string;
   } {
     const cleanAnswer = answer.trim();
+
+    // Pour les questions optionnelles, permettre de passer avec "passer", "skip", etc.
+    if (!question.required) {
+      const skipAnswers = ['passer', 'skip', 'suivant', 'next', '-', ''];
+      if (skipAnswers.includes(cleanAnswer.toLowerCase())) {
+        return { value: null, numericValue: 0 };
+      }
+    }
 
     switch (question.type) {
       case 'select':
@@ -168,12 +184,14 @@ class SimulatorService {
           return { value: mappedOption, numericValue };
         }
 
-        return { error: `Veuillez choisir une option parmi: ${question.options?.join(', ')}` };
+        const optionalNote = !question.required ? ' (ou "passer" pour ignorer)' : '';
+        return { error: `Veuillez choisir une option parmi: ${question.options?.join(', ')}${optionalNote}` };
 
       case 'number':
         const num = parseFloat(cleanAnswer);
         if (isNaN(num)) {
-          return { error: 'Veuillez saisir un nombre valide.' };
+          const optionalNote = !question.required ? ' (ou "passer" pour ignorer)' : '';
+          return { error: `Veuillez saisir un nombre valide${optionalNote}.` };
         }
         if (question.min !== undefined && num < question.min) {
           return { error: `La valeur doit être supérieure ou égale à ${question.min}.` };
@@ -186,7 +204,8 @@ class SimulatorService {
       case 'range':
         const rangeNum = parseFloat(cleanAnswer);
         if (isNaN(rangeNum)) {
-          return { error: 'Veuillez saisir un nombre valide.' };
+          const optionalNote = !question.required ? ' (ou "passer" pour ignorer)' : '';
+          return { error: `Veuillez saisir un nombre valide${optionalNote}.` };
         }
         if (question.min !== undefined && rangeNum < question.min) {
           return { error: `La valeur doit être entre ${question.min} et ${question.max}.` };
@@ -204,7 +223,8 @@ class SimulatorService {
         if (['non', 'no', 'false', '0'].includes(boolAnswer)) {
           return { value: false, numericValue: 0 };
         }
-        return { error: 'Veuillez répondre par "oui" ou "non".' };
+        const optionalNote = !question.required ? ' (ou "passer" pour ignorer)' : '';
+        return { error: `Veuillez répondre par "oui" ou "non"${optionalNote}.` };
 
       default:
         return { error: 'Type de question non supporté.' };
@@ -213,7 +233,8 @@ class SimulatorService {
 
   // Formater une question pour l'affichage
   private formatQuestion(question: SimulatorQuestion, questionNumber: number, totalQuestions: number): string {
-    let formatted = `📊 **Question ${questionNumber}/${totalQuestions}**\n\n`;
+    const requiredLabel = question.required ? '**Obligatoire**' : '*Optionnelle*';
+    let formatted = `📊 **Question ${questionNumber}/${totalQuestions}** - ${requiredLabel}\n\n`;
     formatted += `**${question.text}**\n\n`;
 
     switch (question.type) {
@@ -246,6 +267,10 @@ class SimulatorService {
       case 'boolean':
         formatted += `Répondez par "oui" ou "non"\n`;
         break;
+    }
+
+    if (!question.required) {
+      formatted += `\n💡 *Cette question est optionnelle. Vous pouvez taper "passer" pour l'ignorer.*\n`;
     }
 
     return formatted;
