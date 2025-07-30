@@ -6,6 +6,7 @@ import { z } from "zod";
 import { generateAitendersResponse } from "./openai";
 import { ragService } from "./rag-service";
 import { hubspotService } from "./hubspot-service";
+import { simulatorService } from "./simulator-service";
 import fs from 'fs';
 import path from 'path';
 
@@ -219,10 +220,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       let aiResponse: string;
       
-      // Route the query using the new configuration system
-      const routing = ragService.routeQuery(message, language);
+      // Route the query using the new configuration system with session ID for simulator
+      const routing = ragService.routeQuery(message, language, sessionId);
       
       switch (routing.action) {
+        case 'simulator_start':
+        case 'simulator_continue':
+        case 'simulator_completed':
+        case 'simulator_answer':
+          aiResponse = routing.response!;
+          break;
         case 'blocked':
           aiResponse = routing.response!;
           break;
@@ -476,6 +483,83 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error('Error calculating simulator results:', error);
       res.status(500).json({ message: 'Failed to calculate results' });
+    }
+  });
+
+  // Simulator user info submission
+  app.post("/api/simulator/user-info", async (req, res) => {
+    try {
+      const { name, email, company, fingerprint } = req.body;
+      const sessionId = getSessionId(req);
+      
+      if (!name || !email || !company) {
+        return res.status(400).json({ message: "Name, email, and company are required" });
+      }
+
+      const userInfo = { name, email, company };
+      const result = simulatorService.processUserInfo(sessionId, userInfo);
+      
+      if (result.success && result.reportData) {
+        // Send the report via HubSpot email
+        try {
+          // Create or update contact in HubSpot
+          const hubspotContactData = {
+            email: email,
+            firstName: name.split(' ')[0],
+            lastName: name.split(' ').slice(1).join(' ') || '',
+            company: company,
+            leadSource: 'Simulateur ROI',
+            customProperties: {
+              simulator_completed: 'true',
+              roi_report_sent: new Date().toISOString()
+            }
+          };
+          
+          await hubspotService.createOrUpdateContact(hubspotContactData);
+          
+          // Create a deal for the simulator completion
+          await hubspotService.createDeal(hubspotContactData, `Simulateur ROI - ${company}`, 150000);
+          
+          // Send the ROI report email
+          await hubspotService.sendROIReport(result.reportData);
+          
+          res.json({ 
+            success: true, 
+            message: result.message,
+            reportSent: true
+          });
+        } catch (emailError) {
+          console.error('Failed to send ROI report:', emailError);
+          res.json({ 
+            success: true, 
+            message: result.message,
+            reportSent: false,
+            warning: "Rapport généré mais l'envoi email a échoué"
+          });
+        }
+      } else {
+        res.status(400).json({ success: false, message: result.message });
+      }
+    } catch (error) {
+      console.error('Simulator user info error:', error);
+      res.status(500).json({ message: "Failed to process user information" });
+    }
+  });
+
+  // Get simulator session info
+  app.get("/api/simulator/session/:sessionId", async (req, res) => {
+    try {
+      const { sessionId } = req.params;
+      const sessionInfo = simulatorService.getSessionInfo(sessionId);
+      
+      if (!sessionInfo) {
+        return res.status(404).json({ message: "Session not found" });
+      }
+      
+      res.json(sessionInfo);
+    } catch (error) {
+      console.error('Simulator session info error:', error);
+      res.status(500).json({ message: "Failed to fetch session info" });
     }
   });
 

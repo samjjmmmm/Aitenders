@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { MdSend, MdSettings, MdBarChart, MdExpandMore, MdExpandLess, MdClose, MdContentCopy } from "react-icons/md";
+import { MdSend, MdSettings, MdBarChart, MdExpandMore, MdExpandLess, MdClose, MdContentCopy, MdDelete, MdCalculate, MdSecurity, MdTrendingUp, MdContactMail } from "react-icons/md";
 import { FaRobot } from "react-icons/fa";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
@@ -41,6 +41,8 @@ export default function ChatInterface({
   const [showEmailModal, setShowEmailModal] = useState(false);
   const [copyData, setCopyData] = useState("");
   const [email, setEmail] = useState("");
+  const [showUserInfoModal, setShowUserInfoModal] = useState(false);
+  const [userInfo, setUserInfo] = useState({ name: '', email: '', company: '' });
   const queryClient = useQueryClient();
 
   const { data: messages = [] } = useQuery<ChatMessage[]>({
@@ -81,6 +83,30 @@ export default function ChatInterface({
       queryClient.refetchQueries({ queryKey: ["/api/chat", browserFingerprint] });
       console.log('Session cleared:', data.sessionId);
     },
+  });
+
+  // Mutation to submit user info for simulator
+  const submitUserInfoMutation = useMutation({
+    mutationFn: async (userData: { name: string; email: string; company: string }) => {
+      const response = await apiRequest("POST", "/api/simulator/user-info", {
+        ...userData,
+        fingerprint: browserFingerprint
+      });
+      return response.json();
+    },
+    onSuccess: (data) => {
+      console.log('User info submitted successfully:', data);
+      setShowUserInfoModal(false);
+      setUserInfo({ name: '', email: '', company: '' });
+      // Send confirmation message to chat
+      const confirmationMessage = `✅ Merci ${userInfo.name} ! Votre rapport ROI personnalisé sera envoyé à ${userInfo.email}. Vous devriez le recevoir dans quelques minutes.`;
+      // Add confirmation message to chat
+      queryClient.refetchQueries({ queryKey: ["/api/chat", browserFingerprint] });
+    },
+    onError: (error) => {
+      console.error('Failed to submit user info:', error);
+      alert('Erreur lors de l\'envoi des informations. Veuillez réessayer.');
+    }
   });
 
   // Clear session only on new browser fingerprint (different user/device)
@@ -271,20 +297,24 @@ export default function ChatInterface({
   // Default actions
   const defaultActions = [
     {
-      label: language === 'fr' ? "Nos Cas d'Usage" : "Our Use Cases",
-      icon: <span className="text-gray-400">+</span>,
-      onClick: () => {
-        const question = getButtonQuestion(language === 'fr' ? "Nos cas d'usage" : "Our Use Cases");
-        setMessage(question);
-      }
+      label: language === 'fr' ? 'Simulateur ROI' : 'ROI Simulator',
+      icon: <MdCalculate className="w-3 h-3 text-gray-400" />,
+      onClick: () => handleSendMessage("Lancer le simulateur ROI")
     },
     {
-      label: "Outils",
-      icon: <MdSettings className="w-3 h-3 text-gray-400" />,
-      onClick: () => {
-        const question = getButtonQuestion("Outils");
-        setMessage(question);
-      }
+      label: language === 'fr' ? 'Sécurité' : 'Security', 
+      icon: <MdSecurity className="w-3 h-3 text-gray-400" />,
+      onClick: () => handleSendMessage("Que fait Aitenders pour la sécurité des données ?")
+    },
+    {
+      label: 'ROI',
+      icon: <MdTrendingUp className="w-3 h-3 text-gray-400" />,
+      onClick: () => handleSendMessage("Comment calculer le retour sur investissement d'Aitenders pour mon organisation ?")
+    },
+    {
+      label: 'Contact',
+      icon: <MdContactMail className="w-3 h-3 text-gray-400" />,
+      onClick: () => handleSendMessage("Comment contacter l'équipe Aitenders pour une démonstration ?")
     }
   ];
 
@@ -358,6 +388,19 @@ export default function ChatInterface({
                             __html: formatResponse(msg.response) 
                           }} 
                         />
+                        
+                        {/* Show User Info Button when simulator completed */}
+                        {msg.response.includes('Veuillez fournir vos informations') && (
+                          <div className="mt-3 pt-3 border-t border-aitenders-light-blue">
+                            <Button
+                              onClick={() => setShowUserInfoModal(true)}
+                              size="sm"
+                              className="bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-white text-xs"
+                            >
+                              📧 Saisir mes informations
+                            </Button>
+                          </div>
+                        )}
                       </div>
                     </div>
                   )}
@@ -435,6 +478,71 @@ export default function ChatInterface({
           </div>
         </div>
       </div>
+
+      {/* User Info Modal for Simulator */}
+      {showUserInfoModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[60]">
+          <div className="bg-white rounded-2xl p-6 max-w-md w-full mx-4 shadow-2xl">
+            <h3 className="text-lg font-semibold text-aitenders-dark-blue mb-4">
+              📊 Recevoir votre rapport ROI personnalisé
+            </h3>
+            <p className="text-gray-600 mb-4 text-sm">
+              Merci d'avoir terminé le simulateur ! Veuillez fournir vos informations pour recevoir votre rapport détaillé par email.
+            </p>
+            
+            <div className="space-y-4">
+              <Input
+                type="text"
+                placeholder="Nom complet"
+                value={userInfo.name}
+                onChange={(e) => setUserInfo({ ...userInfo, name: e.target.value })}
+                className="w-full"
+                autoFocus
+              />
+              <Input
+                type="email"
+                placeholder="votre@email.com"
+                value={userInfo.email}
+                onChange={(e) => setUserInfo({ ...userInfo, email: e.target.value })}
+                className="w-full"
+              />
+              <Input
+                type="text"
+                placeholder="Nom de votre entreprise"
+                value={userInfo.company}
+                onChange={(e) => setUserInfo({ ...userInfo, company: e.target.value })}
+                className="w-full"
+              />
+            </div>
+            
+            <div className="flex gap-3 justify-end mt-6">
+              <Button
+                variant="outline"
+                onClick={() => {
+                  setShowUserInfoModal(false);
+                  setUserInfo({ name: '', email: '', company: '' });
+                }}
+                disabled={submitUserInfoMutation.isPending}
+              >
+                Annuler
+              </Button>
+              <Button
+                onClick={() => {
+                  if (userInfo.name && userInfo.email && userInfo.company) {
+                    submitUserInfoMutation.mutate(userInfo);
+                  } else {
+                    alert('Veuillez remplir tous les champs obligatoires.');
+                  }
+                }}
+                disabled={submitUserInfoMutation.isPending || !userInfo.name || !userInfo.email || !userInfo.company}
+                className="bg-aitenders-primary-blue hover:bg-aitenders-dark-blue"
+              >
+                {submitUserInfoMutation.isPending ? 'Envoi...' : '📧 Recevoir le rapport'}
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Email Modal for Copy */}
       {showEmailModal && (

@@ -271,6 +271,74 @@ export class HubSpotService {
       </html>
     `;
   }
+
+  // Send ROI report email
+  async sendROIReport(reportData: any): Promise<boolean> {
+    try {
+      const { session, results, userInfo } = reportData;
+      
+      // Format results for email
+      const resultsSummary = results.map((result: any) => 
+        `• ${result.name}: ${result.value.toLocaleString('fr-FR')} ${result.unit}`
+      ).join('\n');
+      
+      const emailSubject = `Votre Rapport ROI Personnalisé Aitenders - ${userInfo.company}`;
+      
+      const htmlContent = `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <div style="background: linear-gradient(135deg, #3880E8, #112646); color: white; padding: 40px 20px; text-align: center;">
+            <h1 style="margin: 0; font-size: 28px;">🎯 Votre Rapport ROI Aitenders</h1>
+            <p style="margin: 10px 0 0 0; opacity: 0.9;">Analyse personnalisée pour ${userInfo.company}</p>
+          </div>
+          
+          <div style="padding: 40px 20px; background: #f8f9fa;">
+            <h2 style="color: #112646; border-bottom: 2px solid #3880E8; padding-bottom: 10px;">📊 Vos Résultats</h2>
+            
+            <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin: 20px 0;">
+              <h3 style="color: #3880E8; margin-top: 0;">Gains Calculés avec Aitenders</h3>
+              <div style="font-size: 16px; line-height: 1.8; color: #333;">
+                ${resultsSummary.replace(/\n/g, '<br>')}
+              </div>
+            </div>
+            
+            <div style="background: #e8f4fd; padding: 20px; border-radius: 8px; border-left: 4px solid #3880E8; margin: 20px 0;">
+              <p style="margin: 0; color: #112646;">
+                <strong>💡 Ces calculs sont basés sur vos réponses spécifiques et notre expertise du secteur.</strong>
+                Nos algorithmes d'IA analysent vos processus actuels pour identifier les gains d'efficacité optimaux.
+              </p>
+            </div>
+            
+            <div style="text-align: center; margin: 40px 0;">
+              <a href="mailto:commercial@aitenders.com?subject=Démonstration%20Aitenders%20-%20${encodeURIComponent(userInfo.company)}" 
+                 style="background: #3880E8; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">
+                📞 Réserver une Démonstration Personnalisée
+              </a>
+            </div>
+          </div>
+          
+          <div style="background: #112646; color: white; padding: 30px 20px; text-align: center;">
+            <p style="margin: 0; opacity: 0.8;">Aitenders - Votre partenaire pour optimiser vos appels d'offres</p>
+            <p style="margin: 10px 0 0 0; font-size: 14px; opacity: 0.6;">Ce rapport a été généré automatiquement par notre simulateur ROI.</p>
+          </div>  
+        </div>
+      `;
+
+      // Send email using HubSpot
+      const emailData = {
+        from: { email: 'noreply@aitenders.com', name: 'Aitenders' },
+        to: [{ email: userInfo.email, name: userInfo.name }],
+        subject: emailSubject,
+        htmlContent: htmlContent
+      };
+
+      await this.client.communications.email.send(emailData);
+      console.log(`ROI report sent to ${userInfo.email} for ${userInfo.company}`);
+      return true;
+    } catch (error) {
+      console.error('Failed to send ROI report:', error);
+      return false;
+    }
+  }
 }
 
 export const hubspotService = new HubSpotService();

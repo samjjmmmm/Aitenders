@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { simulatorService } from './simulator-service.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -258,10 +259,60 @@ class RAGService {
   }
 
   // Router la requête selon la configuration
-  public routeQuery(query: string, language: 'fr' | 'en' = 'fr'): { action: string; response?: string; category?: string; shouldUseOpenAI?: boolean } {
+  public routeQuery(query: string, language: 'fr' | 'en' = 'fr', sessionId?: string): { action: string; response?: string; category?: string; shouldUseOpenAI?: boolean; simulatorData?: any } {
     this.analytics.totalQueries++;
     
     const queryLower = query.toLowerCase();
+    
+    // 0. Vérifier les commandes simulateur en priorité
+    const simulatorKeywords = ['simulateur', 'simulation', 'simulator', 'roi calculer', 'calculator', 'calcul roi', 'économies', 'gains'];
+    const isSimulatorQuery = simulatorKeywords.some(keyword => queryLower.includes(keyword));
+    
+    if (isSimulatorQuery && sessionId) {
+      // Vérifier s'il y a une session active
+      const sessionInfo = simulatorService.getSessionInfo(sessionId);
+      
+      if (!sessionInfo) {
+        // Démarrer une nouvelle session
+        const firstQuestion = simulatorService.startSession(sessionId);
+        return {
+          action: 'simulator_start',
+          response: `🎯 **Simulateur ROI Aitenders**\n\nCalculez votre retour sur investissement personnalisé en répondant à quelques questions.\n\n${firstQuestion}`,
+          simulatorData: { sessionId, status: 'started' }
+        };
+      } else if (!sessionInfo.completed) {
+        // Session en cours - afficher la question courante
+        const currentQuestion = simulatorService.getCurrentQuestion(sessionId);
+        if (currentQuestion) {
+          return {
+            action: 'simulator_continue',
+            response: `📊 **Simulateur en cours**\n\n${currentQuestion}`,
+            simulatorData: { sessionId, status: 'in_progress' }
+          };
+        }
+      } else {
+        // Session terminée
+        return {
+          action: 'simulator_completed',
+          response: simulatorService.getCompletionMessage(),
+          simulatorData: { sessionId, status: 'completed' }
+        };
+      }
+    }
+    
+    // Vérifier si c'est une réponse à une question de simulateur
+    if (sessionId) {
+      const sessionInfo = simulatorService.getSessionInfo(sessionId);
+      if (sessionInfo && !sessionInfo.completed) {
+        // C'est probablement une réponse à une question de simulateur
+        const result = simulatorService.processAnswer(sessionId, query);
+        return {
+          action: 'simulator_answer',
+          response: result,
+          simulatorData: { sessionId, status: sessionInfo.completed ? 'completed' : 'in_progress' }
+        };
+      }
+    }
     
     // 1. Vérifier les requêtes bloquées
     if (this.config.routing?.blockedQueries) {
