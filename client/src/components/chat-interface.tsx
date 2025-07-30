@@ -419,7 +419,7 @@ export default function ChatInterface({
           <div className={`flex items-start gap-3 mb-3 ${isExpanded ? 'mt-auto' : ''}`}>
             <Input
               type="text"
-              placeholder={language === 'fr' ? "Poser une question" : "Ask a question"}
+              placeholder={language === 'fr' ? "       Poser une question" : "      Ask a question"}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               onKeyPress={handleKeyPress}
