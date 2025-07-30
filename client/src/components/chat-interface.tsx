@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { MdSend, MdSettings, MdBarChart, MdExpandMore, MdExpandLess } from "react-icons/md";
+import { MdSend, MdSettings, MdBarChart, MdExpandMore, MdExpandLess, MdClose } from "react-icons/md";
 import { FaRobot } from "react-icons/fa";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
@@ -37,6 +37,7 @@ export default function ChatInterface({
   const [browserFingerprint, setBrowserFingerprint] = useState<string | null>(null);
   const [sessionInitialized, setSessionInitialized] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isClosed, setIsClosed] = useState(false);
   const queryClient = useQueryClient();
 
   const { data: messages = [] } = useQuery<ChatMessage[]>({
@@ -248,6 +249,19 @@ export default function ChatInterface({
       .replace(/•/g, '&bull;');
   };
 
+  // Don't render if closed
+  if (isClosed) {
+    return (
+      <button
+        onClick={() => setIsClosed(false)}
+        className="fixed bottom-6 right-6 z-50 bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-white p-3 rounded-full shadow-lg transition-all"
+        title={language === 'fr' ? 'Ouvrir le chat' : 'Open chat'}
+      >
+        <FaRobot className="w-6 h-6" />
+      </button>
+    );
+  }
+
   return (
     <div className={`fixed ${isExpanded ? 'top-0 left-0 right-0 bottom-0' : 'bottom-0 left-0 right-0'} z-50 ${transparent ? 'bg-transparent' : 'bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-2xl'}`}>
       <div className={`${isExpanded ? 'w-[70%] h-full' : 'max-w-4xl'} mx-auto p-6 ${isExpanded ? 'flex flex-col' : ''}`}>
@@ -263,6 +277,15 @@ export default function ChatInterface({
             ) : (
               <MdExpandMore className="w-4 h-4 text-gray-600" />
             )}
+          </button>
+
+          {/* Close Button */}
+          <button
+            onClick={() => setIsClosed(true)}
+            className="absolute top-3 right-3 p-2 hover:bg-gray-100 rounded-lg transition-colors z-10"
+            title={language === 'fr' ? 'Fermer le chat' : 'Close chat'}
+          >
+            <MdClose className="w-4 h-4 text-gray-600" />
           </button>
           {/* Recent Messages Display */}
           {messages.length > 0 && (

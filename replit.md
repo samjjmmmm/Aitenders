@@ -111,19 +111,22 @@ The architecture prioritizes developer experience with hot reloading, type safet
 
 ## Recent Changes (January 2025)
 
-### ChatGPT-Style Chat Interface Implementation
+### Advanced Chat Interface with Multi-State Design
 - **Date**: January 30, 2025
-- **Change**: Redesigned anchored chat interface to match ChatGPT design patterns
-- **Details**: 
-  - White rounded container with subtle border and shadow
-  - Borderless input field with "Poser une question" placeholder
-  - Action buttons integrated inside chat container below input
-  - "Outils" button with settings icon matching reference design
-  - Plus icon for use cases button
-  - Right-side utility icons for additional functionality
-  - Clean gray color scheme with hover effects
-- **Technical**: Fixed positioning at bottom with backdrop blur effect
-- **User Preference**: User specifically requested ChatGPT-style anchored design to replace previous chat implementations
+- **Change**: Implemented comprehensive chat interface with three interactive states
+- **Features**:
+  - **Normal Mode**: ChatGPT-style anchored interface at bottom
+  - **Expanded Mode**: 70% page coverage with full message history and enlarged bubbles
+  - **Closed Mode**: Floating robot button for easy reopening
+- **Controls**:
+  - Chevron button (top-left): Toggle between normal and expanded modes
+  - Close button (top-right): Hide chat with floating reopen option
+  - Responsive design with optimized message display per mode
+- **Technical**: 
+  - Fixed positioning with dynamic sizing and flex layouts
+  - Seamless state transitions with preserved session data
+  - Enhanced readability in expanded mode (max-w-2xl bubbles)
+- **User Experience**: Flexible interface adapting to user reading preferences and workflow needs
 
 ### Reusable Chat Component Creation
 - **Date**: January 30, 2025
