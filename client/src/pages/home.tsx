@@ -484,7 +484,7 @@ export default function HomePage() {
       
 
 
-      {/* Reusable Chat Interface Component */}
+      {/* Reusable Chat Interface Component */}  
       <ChatInterface 
         language={language}
         customActions={[
@@ -494,14 +494,24 @@ export default function HomePage() {
             onClick: () => {} // The component handles this internally
           },
           {
-            label: "Simulation / ROI",
+            label: "Simulation / ROI", 
             icon: <MdSettings className="w-3 h-3 text-gray-400" />,
-            onClick: () => {} // Can be customized for specific actions
+            onClick: () => {} // Launch ROI simulator
           },
           {
             label: "AI Agents",
             icon: <MdStarOutline className="w-3 h-3 text-gray-400" />,
-            onClick: () => {} // Can be customized for specific actions
+            onClick: () => {} // Learn about AI agents
+          },
+          {
+            label: "Data Security",
+            icon: <MdSecurity className="w-3 h-3 text-gray-400" />,
+            onClick: () => {} // Security information
+          },
+          {
+            label: "Contactez nous", 
+            icon: <MdMail className="w-3 h-3 text-gray-400" />,
+            onClick: () => {} // Contact form
           }
         ]}
       />
