@@ -177,9 +177,21 @@ export default function ChatInterface({
     }
   };
 
-  // Handle copy with email validation
-  const handleCopy = (messageResponse: string) => {
-    setCopyData(messageResponse);
+  // Handle copy entire conversation with email validation
+  const handleCopyConversation = () => {
+    if (messages.length === 0) {
+      alert(language === 'fr' ? 'Aucune conversation à copier' : 'No conversation to copy');
+      return;
+    }
+    
+    // Format entire conversation
+    const conversationText = messages.map((msg, index) => {
+      const questionText = `Q${index + 1}: ${msg.message}`;
+      const responseText = msg.response ? `R${index + 1}: ${msg.response.replace(/<[^>]*>/g, '').replace(/&bull;/g, '•')}` : '';
+      return responseText ? `${questionText}\n\n${responseText}` : questionText;
+    }).join('\n\n---\n\n');
+    
+    setCopyData(conversationText);
     setShowEmailModal(true);
   };
 
@@ -328,7 +340,7 @@ export default function ChatInterface({
                     </div>
                   </div>
                   {msg.response && (
-                    <div className="text-left relative group">
+                    <div className="text-left">
                       <div className={`inline-block bg-aitenders-pale-blue text-aitenders-dark-blue px-3 py-2 rounded-2xl rounded-tl-sm text-sm ${isExpanded ? 'max-w-2xl' : 'max-w-md'}`}>
                         <div 
                           dangerouslySetInnerHTML={{ 
@@ -336,14 +348,6 @@ export default function ChatInterface({
                           }} 
                         />
                       </div>
-                      {/* Copy Button */}
-                      <button
-                        onClick={() => handleCopy(msg.response!)}
-                        className="absolute top-1 right-1 p-1 bg-white/80 hover:bg-white rounded-lg opacity-0 group-hover:opacity-100 transition-opacity shadow-sm"
-                        title={language === 'fr' ? 'Copier la réponse' : 'Copy response'}
-                      >
-                        <MdContentCopy className="w-3 h-3 text-gray-600" />
-                      </button>
                     </div>
                   )}
                 </div>
@@ -390,7 +394,21 @@ export default function ChatInterface({
               ))}
             </div>
 
-
+            {/* Right Side - Copy Button */}
+            <div className="flex items-center gap-2">
+              {messages.length > 0 && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={handleCopyConversation}
+                  className="h-8 px-3 text-xs text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg flex items-center gap-1"
+                  title={language === 'fr' ? 'Copier la conversation complète' : 'Copy full conversation'}
+                >
+                  <MdContentCopy className="w-3 h-3" />
+                  {language === 'fr' ? 'Copier' : 'Copy'}
+                </Button>
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -404,8 +422,8 @@ export default function ChatInterface({
             </h3>
             <p className="text-gray-600 mb-4 text-sm">
               {language === 'fr' 
-                ? 'Veuillez saisir votre adresse email pour copier les données.'
-                : 'Please enter your email address to copy the data.'
+                ? 'Veuillez saisir votre adresse email pour copier l\'ensemble de la conversation.'
+                : 'Please enter your email address to copy the full conversation.'
               }
             </p>
             <Input
