@@ -52,195 +52,72 @@ export class AdvancedTenderCalculator {
         category: 'tender_profile'
       },
 
-      // Document Complexity
+      // Document Complexity (merged)
       {
-        id: 'docs_per_tender',
-        question: 'Combien de documents sont généralement soumis par appel d\'offres ?',
-        questionType: 'number',
-        validationRules: { min: 1, max: 100 },
-        helpText: 'Spécifications techniques, propositions, documents de conformité, certifications, etc.',
+        id: 'document_complexity_combined',
+        question: 'Décrivez la complexité documentaire : nombre de documents par appel d\'offres, pages moyennes par document, et versions créées avant soumission',
+        questionType: 'text',
+        validationRules: { minLength: 10, maxLength: 500 },
+        helpText: 'Vue d\'ensemble de votre charge documentaire et processus de révision',
         followUpQuestions: [
-          'Quels types de documents prennent le plus de temps à préparer ?',
-          'Avez-vous des modèles standards pour la plupart des documents ?'
-        ],
-        category: 'document_complexity'
-      },
-      {
-        id: 'pages_per_doc',
-        question: 'Quel est le nombre moyen de pages par document ?',
-        questionType: 'number',
-        validationRules: { min: 1, max: 500 },
-        helpText: 'Longueur typique de vos documents d\'appel d\'offres',
-        followUpQuestions: [
-          'Y a-t-il des limites de pages imposées par les clients ?',
-          'Trouvez-vous que les documents plus longs performent mieux ?'
-        ],
-        category: 'document_complexity'
-      },
-      {
-        id: 'versions_per_doc',
-        question: 'Combien de versions chaque document traverse-t-il généralement avant soumission ?',
-        questionType: 'number',
-        validationRules: { min: 1, max: 15 },
-        helpText: 'Cycles de révision, révisions, approbations',
-        followUpQuestions: [
-          'Qui sont les principaux réviseurs dans votre processus d\'approbation ?',
-          'Qu\'est-ce qui cause le plus de révisions - contenu, formatage ou conformité ?'
+          'Quelle proportion de documents est standardisée vs sur-mesure ?',
+          'Combien de personnes interviennent dans le processus de révision ?'
         ],
         category: 'document_complexity'
       },
 
-      // Q&A Management  
+      // Q&A Management (merged)
       {
-        id: 'qa_rounds',
-        question: 'Combien de cycles de Q&R ou d\'ordres de modification gérez-vous généralement par appel d\'offres ?',
-        questionType: 'number',
-        validationRules: { min: 0, max: 15 },
-        helpText: 'Rounds de clarification, avenants, demandes de changement des clients',
+        id: 'qa_management_combined',
+        question: 'Décrivez la gestion Q&A : nombre de cycles de questions/réponses par appel d\'offres et heures passées par cycle',
+        questionType: 'text',
+        validationRules: { minLength: 10, maxLength: 500 },
+        helpText: 'Rounds de clarification, modifications client, temps de coordination',
         followUpQuestions: [
-          'Ceux-ci viennent-ils généralement du client ou des parties prenantes internes ?',
-          'Quel pourcentage d\'appels d\'offres n\'ont aucun round de Q&R ?'
-        ],
-        category: 'qa_management'
-      },
-      {
-        id: 'qa_hours',
-        question: 'Combien d\'heures en moyenne passez-vous à gérer chaque round de Q&R ?',
-        questionType: 'number',
-        validationRules: { min: 0.5, max: 20.0 },
-        helpText: 'Traitement, coordination, réponse aux changements et clarifications',
-        followUpQuestions: [
-          'Cela inclut-il le temps de coordination avec les équipes techniques ?',
-          'Combien de personnes sont généralement impliquées dans chaque réponse ?'
+          'Ces demandes viennent-elles plus du client ou des équipes internes ?',
+          'Combien de personnes interviennent typiquement dans chaque réponse ?'
         ],
         category: 'qa_management'
       },
 
-      // Contract Administration
+      // Contract Administration (merged)
       {
-        id: 'contracts_tracked',
-        question: 'How many contracts do you actively track or create per year?',
-        questionType: 'number',
-        validationRules: { min: 1, max: 1000 },
-        helpText: 'Active contracts requiring ongoing management and compliance tracking',
+        id: 'contract_admin_combined',
+        question: 'Décrivez l\'administration contrats : nombre de contrats gérés par an et heures de setup initial par contrat',
+        questionType: 'text',
+        validationRules: { minLength: 10, maxLength: 500 },
+        helpText: 'Gestion active, suivi de conformité, mise en place initiale',
         followUpQuestions: [
-          'Do you track obligations and milestones for all of these?',
-          'How do you currently manage contract renewals?'
-        ],
-        category: 'contract_admin'
-      },
-      {
-        id: 'hours_per_contract',
-        question: 'How many hours do you spend on initial contract setup, formatting, and review?',
-        questionType: 'number',
-        validationRules: { min: 1, max: 50 },
-        helpText: 'Initial setup, formatting, compliance review per contract',
-        followUpQuestions: [
-          'Does this include legal review time?',
-          'How much ongoing time is spent on contract maintenance?'
+          'Incluez-vous le temps de révision juridique ?',
+          'Comment gérez-vous les renouvellements de contrats ?'
         ],
         category: 'contract_admin'
       },
 
-      // Knowledge Management
+      // Knowledge Management (merged)
       {
-        id: 'reuse_frequency',
-        question: 'How often do you reuse answers, content, or templates from past tenders?',
-        questionType: 'choice',
-        validationRules: {
-          choices: ['Never', 'Rarely', 'Sometimes', 'Often', 'Always']
-        },
-        helpText: 'Reusing content, templates, responses from previous submissions',
+        id: 'knowledge_management_combined',
+        question: 'Décrivez la gestion des connaissances : fréquence de réutilisation de contenu passé et pourcentage d\'appels d\'offres créés entièrement from scratch',
+        questionType: 'text',
+        validationRules: { minLength: 10, maxLength: 500 },
+        helpText: 'Réutilisation de templates, réponses passées, standardisation vs création sur-mesure',
         followUpQuestions: [
-          'What prevents you from reusing content more often?',
-          'Do you have a centralized repository of past responses?'
-        ],
-        category: 'knowledge_management'
-      },
-      {
-        id: 'scratch_tenders',
-        question: 'How many tenders per year are done completely from scratch with minimal reuse?',
-        questionType: 'number',
-        validationRules: { min: 0, max: 500 },
-        helpText: 'Tenders with minimal reuse of past content or templates',
-        followUpQuestions: [
-          'What makes these tenders unique enough to start from scratch?',
-          'Could some of these benefit from more standardization?'
+          'Qu\'est-ce qui vous empêche de réutiliser plus souvent ?',
+          'Avez-vous un dépôt centralisé de réponses passées ?'
         ],
         category: 'knowledge_management'
       },
 
-      // Business Profile
+      // Business Profile (merged)
       {
-        id: 'priorities',
-        question: 'What are your top 3 business priorities for the next 6 months?',
-        questionType: 'multiple_choice',
-        validationRules: {
-          choices: [
-            'Reduce cost',
-            'Improve compliance',
-            'Faster submissions',
-            'Increase win rate',
-            'Improve team wellbeing',
-            'Improve document quality',
-            'Better client relationships',
-            'Risk management'
-          ],
-          maxSelections: 3
-        },
-        helpText: 'Choose the most important objectives for your organization',
+        id: 'business_profile_combined',
+        question: 'Décrivez votre profil d\'entreprise : secteur d\'activité, chiffre d\'affaires annuel en euros, taux de réussite appels d\'offres en %, et 3 priorités business',
+        questionType: 'text',
+        validationRules: { minLength: 10, maxLength: 500 },
+        helpText: 'Vue d\'ensemble de votre organisation et objectifs stratégiques',
         followUpQuestions: [
-          'Which of these is the most urgent?',
-          'How do you currently measure success in these areas?'
-        ],
-        category: 'business_profile'
-      },
-      {
-        id: 'industry',
-        question: 'What industry does your company operate in?',
-        questionType: 'choice',
-        validationRules: {
-          choices: [
-            'Construction',
-            'Engineering',
-            'Pharma',
-            'IT/Technology',
-            'Aerospace',
-            'Manufacturing',
-            'Consulting',
-            'Energy',
-            'Healthcare',
-            'Other'
-          ]
-        },
-        helpText: 'Your primary industry sector',
-        followUpQuestions: [
-          'Do you work across multiple industry sectors?',
-          'Are there industry-specific compliance requirements you must meet?'
-        ],
-        category: 'business_profile'
-      },
-      {
-        id: 'turnover',
-        question: "What's your business unit's annual turnover in euros?",
-        questionType: 'number',
-        validationRules: { min: 1000000, max: 10000000000 },
-        helpText: 'Annual revenue of the business unit handling tenders',
-        followUpQuestions: [
-          'Is this growing or stable year over year?',
-          'What percentage comes from tender-won contracts?'
-        ],
-        category: 'business_profile'
-      },
-      {
-        id: 'win_rate',
-        question: "What's your typical win rate as a percentage?",
-        questionType: 'number',
-        validationRules: { min: 5, max: 100 },
-        helpText: 'Percentage of tenders you typically win',
-        followUpQuestions: [
-          'Has this improved or declined in recent years?',
-          'Do you track win rates by tender size or client type?'
+          'Travaillez-vous dans plusieurs secteurs d\'activité ?',
+          'Quelles sont vos exigences de conformité spécifiques ?'
         ],
         category: 'business_profile'
       }
@@ -406,19 +283,36 @@ export class AdvancedTenderCalculator {
       return response;
     };
 
-    const tendersPerYear = getValue('tenders_per_year', 0);
-    const avgTenderValue = getValue('avg_tender_value', 0);
-    const responseWeeks = getValue('response_weeks', 0);
-    const docsPerTender = getValue('docs_per_tender', 0);
-    const pagesPerDoc = getValue('pages_per_doc', 0);
-    const versionsPerDoc = getValue('versions_per_doc', 0);
-    const qaRounds = getValue('qa_rounds', 0);
-    const qaHours = getValue('qa_hours', 0);
-    const contractsTracked = getValue('contracts_tracked', 0);
-    const hoursPerContract = getValue('hours_per_contract', 0);
-    const reuseFrequency = this.responses['reuse_frequency'] || 'Sometimes';
-    const scratchTenders = getValue('scratch_tenders', 0);
-    const winRate = getValue('win_rate', 20);
+    // Parse combined tender profile question
+    const tenderProfile = this.parseTenderProfile(this.responses['tender_profile_combined'] || '');
+    const tendersPerYear = tenderProfile.tendersPerYear || 0;
+    const avgTenderValue = tenderProfile.avgTenderValue || 0;
+    const responseWeeks = tenderProfile.responseWeeks || 0;
+
+    // Parse combined document complexity question
+    const docComplexity = this.parseDocumentComplexity(this.responses['document_complexity_combined'] || '');
+    const docsPerTender = docComplexity.docsPerTender || 0;
+    const pagesPerDoc = docComplexity.pagesPerDoc || 0;
+    const versionsPerDoc = docComplexity.versionsPerDoc || 0;
+
+    // Parse combined Q&A management question
+    const qaManagement = this.parseQAManagement(this.responses['qa_management_combined'] || '');
+    const qaRounds = qaManagement.qaRounds || 0;
+    const qaHours = qaManagement.qaHours || 0;
+
+    // Parse combined contract administration question
+    const contractAdmin = this.parseContractAdmin(this.responses['contract_admin_combined'] || '');
+    const contractsTracked = contractAdmin.contractsTracked || 0;
+    const hoursPerContract = contractAdmin.hoursPerContract || 0;
+
+    // Parse combined knowledge management question
+    const knowledgeManagement = this.parseKnowledgeManagement(this.responses['knowledge_management_combined'] || '');
+    const reuseFrequency = knowledgeManagement.reuseFrequency || 'Sometimes';
+    const scratchTenders = knowledgeManagement.scratchTenders || 0;
+
+    // Parse combined business profile question
+    const businessProfile = this.parseBusinessProfile(this.responses['business_profile_combined'] || '');
+    const winRate = businessProfile.winRate || 20;
 
     const reuseFactor = reuseMapping[reuseFrequency];
 
@@ -543,6 +437,177 @@ export class AdvancedTenderCalculator {
       this.responses = originalResponses;
       return { hasRanges: false };
     }
+  }
+
+  // Parser functions for combined questions
+  private parseTenderProfile(response: string): { tendersPerYear: number; avgTenderValue: number; responseWeeks: number } {
+    const numbers = this.extractNumbers(response);
+    
+    // Chercher des patterns spécifiques
+    let tendersPerYear = 0;
+    let avgTenderValue = 0;
+    let responseWeeks = 0;
+
+    // Pattern pour les appels d'offres par an
+    const tenderMatches = response.match(/(\d+)\s*(?:appels?|tenders?|AO)/i);
+    if (tenderMatches) tendersPerYear = parseInt(tenderMatches[1]);
+
+    // Pattern pour les valeurs monétaires
+    const valueMatches = response.match(/(\d+(?:\.\d+)?)\s*[Mm]€?/i);
+    if (valueMatches) avgTenderValue = parseFloat(valueMatches[1]) * 1000000;
+
+    // Pattern pour les semaines
+    const weekMatches = response.match(/(\d+(?:-\d+)?)\s*semaines?/i);
+    if (weekMatches) {
+      const weekStr = weekMatches[1];
+      if (weekStr.includes('-')) {
+        const [min, max] = weekStr.split('-').map(Number);
+        responseWeeks = (min + max) / 2;
+      } else {
+        responseWeeks = parseInt(weekStr);
+      }
+    }
+
+    // Fallback avec les nombres extraits
+    if (!tendersPerYear && numbers.length > 0) tendersPerYear = numbers[0];
+    if (!avgTenderValue && numbers.length > 1) avgTenderValue = numbers[1] * (numbers[1] < 1000 ? 1000000 : 1);
+    if (!responseWeeks && numbers.length > 2) responseWeeks = numbers[2];
+
+    return { tendersPerYear, avgTenderValue, responseWeeks };
+  }
+
+  private parseDocumentComplexity(response: string): { docsPerTender: number; pagesPerDoc: number; versionsPerDoc: number } {
+    const numbers = this.extractNumbers(response);
+    
+    let docsPerTender = 0;
+    let pagesPerDoc = 0;
+    let versionsPerDoc = 0;
+
+    // Pattern pour les documents
+    const docMatches = response.match(/(\d+)\s*(?:documents?|docs?)/i);
+    if (docMatches) docsPerTender = parseInt(docMatches[1]);
+
+    // Pattern pour les pages
+    const pageMatches = response.match(/(\d+)\s*pages?/i);
+    if (pageMatches) pagesPerDoc = parseInt(pageMatches[1]);
+
+    // Pattern pour les versions
+    const versionMatches = response.match(/(\d+)\s*(?:versions?|révisions?)/i);
+    if (versionMatches) versionsPerDoc = parseInt(versionMatches[1]);
+
+    // Fallback avec les nombres extraits
+    if (!docsPerTender && numbers.length > 0) docsPerTender = numbers[0];
+    if (!pagesPerDoc && numbers.length > 1) pagesPerDoc = numbers[1];
+    if (!versionsPerDoc && numbers.length > 2) versionsPerDoc = numbers[2];
+
+    return { docsPerTender, pagesPerDoc, versionsPerDoc };
+  }
+
+  private parseQAManagement(response: string): { qaRounds: number; qaHours: number } {
+    const numbers = this.extractNumbers(response);
+    
+    let qaRounds = 0;
+    let qaHours = 0;
+
+    // Pattern pour les cycles/rounds
+    const roundMatches = response.match(/(\d+)\s*(?:cycles?|rounds?|tours?)/i);
+    if (roundMatches) qaRounds = parseInt(roundMatches[1]);
+
+    // Pattern pour les heures
+    const hourMatches = response.match(/(\d+)\s*(?:heures?|hours?|h\b)/i);
+    if (hourMatches) qaHours = parseInt(hourMatches[1]);
+
+    // Fallback avec les nombres extraits
+    if (!qaRounds && numbers.length > 0) qaRounds = numbers[0];
+    if (!qaHours && numbers.length > 1) qaHours = numbers[1];
+
+    return { qaRounds, qaHours };
+  }
+
+  private parseContractAdmin(response: string): { contractsTracked: number; hoursPerContract: number } {
+    const numbers = this.extractNumbers(response);
+    
+    let contractsTracked = 0;
+    let hoursPerContract = 0;
+
+    // Pattern pour les contrats
+    const contractMatches = response.match(/(\d+)\s*(?:contrats?|contracts?)/i);
+    if (contractMatches) contractsTracked = parseInt(contractMatches[1]);
+
+    // Pattern pour les heures
+    const hourMatches = response.match(/(\d+)\s*(?:heures?|hours?|h\b)/i);
+    if (hourMatches) hoursPerContract = parseInt(hourMatches[1]);
+
+    // Fallback avec les nombres extraits
+    if (!contractsTracked && numbers.length > 0) contractsTracked = numbers[0];
+    if (!hoursPerContract && numbers.length > 1) hoursPerContract = numbers[1];
+
+    return { contractsTracked, hoursPerContract };
+  }
+
+  private parseKnowledgeManagement(response: string): { reuseFrequency: string; scratchTenders: number } {
+    const numbers = this.extractNumbers(response);
+    
+    let reuseFrequency = 'Sometimes';
+    let scratchTenders = 0;
+
+    // Analyser la fréquence de réutilisation
+    const lowReuse = /(?:jamais|never|rare|peu)/i.test(response);
+    const highReuse = /(?:toujours|always|souvent|often|beaucoup)/i.test(response);
+    
+    if (lowReuse) reuseFrequency = 'Rarely';
+    else if (highReuse) reuseFrequency = 'Often';
+
+    // Pattern pour les pourcentages ou nombres d'appels d'offres from scratch
+    const scratchMatches = response.match(/(\d+)(?:%|\s*(?:appels|tenders|scratch))/i);
+    if (scratchMatches) {
+      const value = parseInt(scratchMatches[1]);
+      scratchTenders = value > 100 ? value : value; // Si c'est un pourcentage, on le convertira plus tard
+    }
+
+    // Fallback avec les nombres extraits
+    if (!scratchTenders && numbers.length > 0) scratchTenders = numbers[0];
+
+    return { reuseFrequency, scratchTenders };
+  }
+
+  private parseBusinessProfile(response: string): { winRate: number; industry?: string; turnover?: number; priorities?: string[] } {
+    const numbers = this.extractNumbers(response);
+    
+    let winRate = 20;
+    let industry = '';
+    let turnover = 0;
+
+    // Pattern pour le taux de réussite
+    const winRateMatches = response.match(/(\d+)%/i);
+    if (winRateMatches) winRate = parseInt(winRateMatches[1]);
+
+    // Pattern pour le chiffre d'affaires
+    const turnoverMatches = response.match(/(\d+(?:\.\d+)?)\s*[Mm]€?/i);
+    if (turnoverMatches) turnover = parseFloat(turnoverMatches[1]) * 1000000;
+
+    // Détecter l'industrie
+    const industries = ['construction', 'engineering', 'pharma', 'technology', 'aerospace', 'manufacturing', 'consulting', 'energy', 'healthcare'];
+    for (const ind of industries) {
+      if (response.toLowerCase().includes(ind)) {
+        industry = ind;
+        break;
+      }
+    }
+
+    // Fallback avec les nombres extraits
+    if (!winRate && numbers.length > 0) {
+      const potentialWinRate = numbers.find(n => n <= 100);
+      if (potentialWinRate) winRate = potentialWinRate;
+    }
+
+    return { winRate, industry, turnover };
+  }
+
+  private extractNumbers(text: string): number[] {
+    const numberRegex = /\b(\d+(?:\.\d+)?)\b/g;
+    const matches = text.match(numberRegex);
+    return matches ? matches.map(Number) : [];
   }
 
   private adjustResponsesForEstimate(type: 'low' | 'high'): void {

@@ -318,14 +318,14 @@ Cette analyse prend environ 8-10 minutes mais fournit des insights beaucoup plus
           action: 'advanced_analysis_start',
           response: `🚀 **DÉMARRAGE DE L'ANALYSE AVANCÉE**
 
-Nous allons maintenant explorer vos processus en détail avec 15 questions couvrant :
+Nous allons maintenant explorer vos processus en détail avec 6 questions couvrant :
 
-**📋 Profil des appels d'offres** (3 questions)
-**📄 Complexité documentaire** (3 questions)  
-**❓ Gestion Q&A** (2 questions)
-**📝 Administration contrats** (2 questions)
-**🧠 Gestion des connaissances** (2 questions)
-**🎯 Profil d'entreprise** (3 questions)
+**📋 Profil des appels d'offres** (1 question combinée)
+**📄 Complexité documentaire** (1 question combinée)  
+**❓ Gestion Q&A** (1 question combinée)
+**📝 Administration contrats** (1 question combinée)
+**🧠 Gestion des connaissances** (1 question combinée)
+**🎯 Profil d'entreprise** (1 question combinée)
 
 ${firstQuestion}`
         };
@@ -376,14 +376,14 @@ ${firstQuestion}`
 ⏱️ **Temps estimé : 3-5 minutes**
 📧 **Vous recevrez votre rapport détaillé par email**
 
-Nous allons explorer vos processus en détail avec 15 questions couvrant :
+Nous allons explorer vos processus en détail avec 6 questions couvrant :
 
-**📋 Profil des appels d'offres** (3 questions)
-**📄 Complexité documentaire** (3 questions)  
-**❓ Gestion Q&A** (2 questions)
-**📝 Administration contrats** (2 questions)
-**🧠 Gestion des connaissances** (2 questions)
-**🎯 Profil d'entreprise** (3 questions)
+**📋 Profil des appels d'offres** (1 question combinée)
+**📄 Complexité documentaire** (1 question combinée)  
+**❓ Gestion Q&A** (1 question combinée)
+**📝 Administration contrats** (1 question combinée)
+**🧠 Gestion des connaissances** (1 question combinée)
+**🎯 Profil d'entreprise** (1 question combinée)
 
 ${firstQuestion}`
       };

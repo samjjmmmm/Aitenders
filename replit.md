@@ -356,11 +356,17 @@ The architecture prioritizes developer experience with hot reloading, type safet
   - **No Validation Barriers**: All estimations accepted without strict boundary enforcement
   - **User-Friendly Language**: Examples like "environ 250, entre 100 et 200" encourage natural responses
   - **Bold Question Format**: Questions are displayed in bold format for better readability
-- **Merged Question Design**: 
-  - **Tender Profile Combined**: Merged 3 separate questions (volume, value, duration) into 1 comprehensive question
-  - **Natural Examples**: "Nous traitons 300 appels d'offres complexes par an, valeur moyenne 10M€, préparation 6-8 semaines"
-  - **Smart Parsing**: Automatic extraction of numerical values from natural language responses
-  - **Reduced Question Count**: From 16 to 14 questions total, improving user experience
+- **Complete Question Merging System**: 
+  - **All Categories Merged**: 6 comprehensive questions instead of 14+ individual questions
+  - **📋 Profil AO**: 3 questions → 1 question combinée (volume, valeur, durée)
+  - **📄 Complexité docs**: 3 questions → 1 question combinée (nombre docs, pages, versions)
+  - **❓ Gestion Q&A**: 2 questions → 1 question combinée (cycles, heures par cycle)
+  - **📝 Admin contrats**: 2 questions → 1 question combinée (nombre contrats, heures setup)
+  - **🧠 Gestion connaissances**: 2 questions → 1 question combinée (réutilisation, scratch)
+  - **🎯 Profil entreprise**: 3 questions → 1 question combinée (secteur, CA, taux réussite, priorités)
+  - **Advanced Parsing**: Intelligent text analysis with regex patterns for natural language responses
+  - **Natural Examples**: Each question shows comprehensive realistic examples
+  - **Dramatic UX Improvement**: From 14+ questions to 6 questions (57% reduction) with same data quality
 - **Coherence Validation System**:
   - **Character Detection**: Identifies incoherent character patterns like "1à:m€" or "3à pages"
   - **Contextual Validation**: Checks if numerical answers make sense for specific question types

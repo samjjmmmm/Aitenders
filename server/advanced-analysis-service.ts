@@ -75,16 +75,12 @@ class AdvancedAnalysisService {
   // Obtenir des exemples naturels par question
   private getExampleForQuestion(questionId: string): string | null {
     const examples: Record<string, string> = {
-      'tender_profile_combined': 'Nous traitons 300 appels d\'offres complexes par an, avec une équipe de 30 personnes, valeur moyenne 10M€, préparation 6-8 semaines',
-      'docs_per_tender': 'environ 15, entre 5 et 25',
-      'pages_per_doc': '30 pages, entre 10 et 50',
-      'versions_per_doc': '3 versions, entre 2 et 5',
-      'qa_rounds': '2 rounds, entre 1 et 4',
-      'hours_per_qa': '8 heures, entre 4 et 15',
-      'contracts_to_track': '50 contrats, entre 20 et 100',
-      'setup_hours': '40h, entre 20 et 80',
-      'reuse_frequency': '60%, entre 30 et 80%',
-      'from_scratch': '25%, entre 10 et 40%'
+      'tender_profile_combined': 'Nous traitons 300 appels d\'offres complexes par an, valeur moyenne 10M€, préparation 6-8 semaines',
+      'document_complexity_combined': '15 documents par AO, 30 pages par document, 3 versions avant soumission',
+      'qa_management_combined': '2 cycles Q&A par AO, 8 heures par cycle de traitement',
+      'contract_admin_combined': '50 contrats gérés par an, 40 heures setup initial par contrat',
+      'knowledge_management_combined': 'Réutilisation souvent (70%), 25% des AO créés from scratch',
+      'business_profile_combined': 'Construction, 50M€ CA annuel, 35% taux réussite, priorités: réduire coûts, améliorer conformité, accélérer soumissions'
     };
     
     return examples[questionId] || null;
