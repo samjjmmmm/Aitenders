@@ -45,6 +45,16 @@ export default function ChatInterface({
   const [userInfo, setUserInfo] = useState({ name: '', email: '', company: '' });
   const queryClient = useQueryClient();
 
+  // Function to scroll chat to bottom
+  const scrollToBottom = () => {
+    setTimeout(() => {
+      const chatContainer = document.querySelector('.chat-messages-container');
+      if (chatContainer) {
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+      }
+    }, 50); // Reduced timeout for faster scrolling
+  };
+
   const { data: messages = [] } = useQuery<ChatMessage[]>({
     queryKey: ["/api/chat", browserFingerprint],
     enabled: !!browserFingerprint, // Only run when fingerprint is available
@@ -55,6 +65,13 @@ export default function ChatInterface({
       return response.json();
     }
   });
+
+  // Auto-scroll to bottom whenever messages change
+  useEffect(() => {
+    if (messages && messages.length > 0) {
+      scrollToBottom();
+    }
+  }, [messages]);
 
   // Initialize browser fingerprint
   useEffect(() => {
@@ -183,13 +200,8 @@ export default function ChatInterface({
       if (onMessageSend) {
         onMessageSend(message);
       }
-      // Auto-scroll to bottom after response
-      setTimeout(() => {
-        const chatContainer = document.querySelector('.chat-messages-container');
-        if (chatContainer) {
-          chatContainer.scrollTop = chatContainer.scrollHeight;
-        }
-      }, 100);
+      // Auto-scroll to bottom after response (with slightly longer delay for loading)
+      setTimeout(() => scrollToBottom(), 100);
     },
     onError: (error) => {
       console.error('Message send error:', error);
@@ -400,7 +412,13 @@ export default function ChatInterface({
         <div className={`bg-white border border-gray-300 ${isExpanded ? 'rounded-2xl h-full flex flex-col shadow-2xl' : 'rounded-2xl'} shadow-lg p-3 relative`}>
           {/* Expand/Collapse Button */}
           <button
-            onClick={() => setIsExpanded(!isExpanded)}
+            onClick={() => {
+              setIsExpanded(!isExpanded);
+              // Scroll to bottom when expanding
+              if (!isExpanded) {
+                setTimeout(() => scrollToBottom(), 150);
+              }
+            }}
             className="absolute top-3 left-3 p-1 hover:opacity-80 transition-opacity z-10"
             title={isExpanded ? (language === 'fr' ? 'Réduire' : 'Collapse') : (language === 'fr' ? 'Agrandir' : 'Expand')}
           >
