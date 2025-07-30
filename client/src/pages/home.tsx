@@ -468,27 +468,27 @@ export default function HomePage() {
           {
             label: t[language].ourUseCases,
             icon: <span className="text-gray-400">+</span>,
-            onClick: () => {} // The component handles this internally
+            onClick: () => {} // The component handles this internally with descriptions
           },
           {
             label: "Simulation / ROI", 
             icon: <MdSettings className="w-3 h-3 text-gray-400" />,
-            onClick: () => {} // Launch ROI simulator
+            onClick: () => {} // The component handles this internally with descriptions
           },
           {
             label: "AI Agents",
             icon: <MdStarOutline className="w-3 h-3 text-gray-400" />,
-            onClick: () => {} // Learn about AI agents
+            onClick: () => {} // The component handles this internally with descriptions
           },
           {
             label: "Data Security",
             icon: <MdSecurity className="w-3 h-3 text-gray-400" />,
-            onClick: () => {} // Security information
+            onClick: () => {} // The component handles this internally with descriptions
           },
           {
             label: "Contactez nous", 
             icon: <MdMail className="w-3 h-3 text-gray-400" />,
-            onClick: () => {} // Contact form
+            onClick: () => {} // The component handles this internally with descriptions
           }
         ]}
       />

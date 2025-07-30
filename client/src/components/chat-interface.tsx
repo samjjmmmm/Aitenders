@@ -81,12 +81,43 @@ export default function ChatInterface({
     }
   };
 
+  // Button descriptions for different actions
+  const getButtonDescription = (buttonLabel: string) => {
+    const descriptions = {
+      fr: {
+        "Nos cas d'usage": "Découvrez notre gamme complète de cas d'usage : gestion de projets simples, moyens et complexes, avec des solutions adaptées à chaque niveau de complexité et phase du processus d'appel d'offres.",
+        "Simulation / ROI": "Calculez le retour sur investissement de notre plateforme pour votre organisation. Obtenez une estimation personnalisée des gains de temps, réduction des coûts et amélioration de la productivité.",
+        "AI Agents": "Nos agents IA spécialisés vous accompagnent dans l'analyse documentaire, l'extraction d'exigences, la rédaction de réponses et la gestion des conformités réglementaires.",
+        "Data Security": "Sécurité by design : chiffrement end-to-end, conformité RGPD, hébergement sécurisé en Europe, contrôles d'accès granulaires et pistes d'audit complètes pour protéger vos données sensibles.",
+        "Contactez nous": "Notre équipe d'experts est à votre disposition pour une démonstration personnalisée, une évaluation de vos besoins ou pour répondre à toutes vos questions sur notre plateforme.",
+        "Demo UC3": "Découvrez comment gérer efficacement vos appels d'offres complexes multi-lots avec coordination d'équipes pluridisciplinaires, gestion des conformités et collaboration en temps réel.",
+        "ROI Calculator": "Estimez les bénéfices financiers concrets : réduction du temps de préparation des offres, amélioration du taux de succès, optimisation des ressources et gains de productivité mesurables.",
+        "Contact Expert": "Échangez directement avec nos spécialistes en gestion d'appels d'offres pour une consultation personnalisée et des conseils adaptés à votre secteur d'activité."
+      },
+      en: {
+        "Our Use Cases": "Discover our comprehensive range of use cases: simple, medium and complex project management, with solutions adapted to each level of complexity and phase of the tendering process.",
+        "Simulation / ROI": "Calculate the return on investment of our platform for your organization. Get a personalized estimate of time savings, cost reduction and productivity improvement.",
+        "AI Agents": "Our specialized AI agents assist you in document analysis, requirements extraction, response writing and regulatory compliance management.",
+        "Data Security": "Security by design: end-to-end encryption, GDPR compliance, secure hosting in Europe, granular access controls and complete audit trails to protect your sensitive data.",
+        "Contact us": "Our team of experts is at your disposal for a personalized demonstration, an assessment of your needs or to answer all your questions about our platform.",
+        "Demo UC3": "Discover how to efficiently manage your complex multi-lot tenders with multidisciplinary team coordination, compliance management and real-time collaboration.",
+        "ROI Calculator": "Estimate concrete financial benefits: reduced tender preparation time, improved success rate, resource optimization and measurable productivity gains.",
+        "Contact Expert": "Connect directly with our tender management specialists for personalized consultation and advice tailored to your industry."
+      }
+    };
+    
+    return descriptions[language][buttonLabel] || "";
+  };
+
   // Default actions
   const defaultActions = [
     {
       label: language === 'fr' ? "Nos Cas d'Usage" : "Our Use Cases",
       icon: <span className="text-gray-400">+</span>,
-      onClick: () => setMessage(language === 'fr' ? "Nos Cas d'Usage" : "Our Use Cases")
+      onClick: () => {
+        const description = getButtonDescription(language === 'fr' ? "Nos cas d'usage" : "Our Use Cases");
+        setMessage(description);
+      }
     },
     {
       label: "Outils",
@@ -95,7 +126,20 @@ export default function ChatInterface({
     }
   ];
 
-  const actions = customActions.length > 0 ? customActions : defaultActions;
+  // Enhanced actions with descriptions
+  const enhancedCustomActions = customActions.map(action => ({
+    ...action,
+    onClick: () => {
+      const description = getButtonDescription(action.label);
+      if (description) {
+        setMessage(description);
+      } else {
+        action.onClick();
+      }
+    }
+  }));
+
+  const actions = customActions.length > 0 ? enhancedCustomActions : defaultActions;
 
   return (
     <div className={`fixed bottom-0 left-0 right-0 z-50 ${transparent ? 'bg-transparent' : 'bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-2xl'}`}>
