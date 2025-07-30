@@ -527,150 +527,7 @@ export default function HomePage() {
             )}
           </div>
 
-          {/* Chat UI - Expandable Chatbot Interface */}
-          <div className="max-w-3xl mx-auto mb-16">
-            <div className="relative">
-              {!chatExpanded ? (
-                /* Collapsed Chat Bar */
-                <div 
-                  className="bg-aitenders-white-blue border border-aitenders-light-blue rounded-full shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
-                  onClick={() => setChatExpanded(true)}
-                >
-                  <div className="flex items-center">
-                    <div className="flex items-center justify-center w-12 h-12 ml-2">
-                      <FaRobot className="w-5 h-5 text-aitenders-primary-blue" />
-                    </div>
-                    <Input
-                      type="text"
-                      placeholder={t[language].chatPlaceholder}
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      onKeyPress={handleKeyPress}
-                      onFocus={() => setChatExpanded(true)}
-                      className="flex-1 py-6 px-4 text-base bg-transparent border-0 focus:ring-0 focus:outline-none placeholder:text-aitenders-dark-blue/60"
-                      disabled={sendMessageMutation.isPending}
-                    />
-                    <div className="mr-2">
-                      <Button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          if (!chatExpanded) setChatExpanded(true);
-                          handleSendMessage();
-                        }}
-                        disabled={!message.trim() || sendMessageMutation.isPending}
-                        size="icon"
-                        className="h-12 w-12 rounded-full bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-aitenders-white-blue shadow-sm hover:shadow-md transition-all duration-200"
-                      >
-                        <MdSend className="w-5 h-5" />
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                /* Expanded Chat Interface */
-                <div className="bg-aitenders-white-blue border border-aitenders-light-blue rounded-3xl shadow-lg p-6 transition-all duration-300 ease-in-out">
-                  {/* Chat Header */}
-                  <div className="flex justify-between items-center mb-4">
-                    <h3 className="text-lg font-semibold text-aitenders-black">{t[language].chatTitle}</h3>
-                    <Button
-                      onClick={() => setChatExpanded(false)}
-                      variant="ghost"
-                      size="sm"
-                      className="text-aitenders-dark-blue/60 hover:text-aitenders-dark-blue -mr-2"
-                    >
-                      <span className="text-xl">×</span>
-                    </Button>
-                  </div>
 
-                  {/* Chat Input Bar */}
-                  <div className="flex items-center mb-4">
-                    <div className="flex items-center justify-center w-12 h-12 ml-2">
-                      <FaRobot className="w-6 h-6 text-aitenders-primary-blue" />
-                    </div>
-                    <Input
-                      type="text"
-                      placeholder={t[language].chatPlaceholder}
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      onKeyPress={handleKeyPress}
-                      className="flex-1 py-3 px-4 text-base bg-transparent border-0 focus:ring-0 focus:outline-none placeholder:text-aitenders-dark-blue/60"
-                      disabled={sendMessageMutation.isPending}
-                      autoFocus
-                    />
-                    <div className="mr-2">
-                      <Button
-                        onClick={handleSendMessage}
-                        disabled={!message.trim() || sendMessageMutation.isPending}
-                        size="icon"
-                        className="h-12 w-12 rounded-full bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-aitenders-white-blue shadow-sm hover:shadow-md transition-all duration-200"
-                      >
-                        <MdSend className="w-5 h-5" />
-                      </Button>
-                    </div>
-                  </div>
-
-                  {/* Messages Display */}
-                  <div className="bg-aitenders-pale-blue rounded-2xl p-4 min-h-[200px] max-h-64 overflow-y-auto mb-4">
-                    {messages.length === 0 ? (
-                      <div className="flex items-center justify-center h-full text-aitenders-dark-blue/60 text-sm">
-                        <div className="text-center">
-                          <FaRobot className="w-8 h-8 mx-auto mb-2 text-aitenders-light-blue" />
-                          <p>Start a conversation by typing your question above</p>
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="space-y-4">
-                        {messages.map((msg) => (
-                          <div key={msg.id} className="space-y-3">
-                            <div className="flex justify-end">
-                              <div className="bg-aitenders-primary-blue text-aitenders-white-blue px-4 py-3 rounded-2xl rounded-tr-sm max-w-xs lg:max-w-sm">
-                                <p className="text-sm">{msg.message}</p>
-                              </div>
-                            </div>
-                            {msg.response && (
-                              <div className="flex justify-start">
-                                <div className="bg-aitenders-white-blue text-aitenders-dark-blue px-4 py-3 rounded-2xl rounded-tl-sm max-w-xs lg:max-w-sm shadow-sm border border-aitenders-light-blue">
-                                  <p className="text-sm">{msg.response}</p>
-                                </div>
-                              </div>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Quick Actions */}
-                  <div className="flex flex-wrap gap-2">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => setMessage(language === 'fr' ? "Quels cas d'usage proposez-vous ?" : "What use cases do you offer?")}
-                      className="text-xs rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
-                    >
-                      {t[language].ourUseCases}
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => setMessage(language === 'fr' ? "Comment fonctionne le processus d'appel d'offres ?" : "How does the tender process work?")}
-                      className="text-xs rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
-                    >
-                      {t[language].tenderProcess}
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => setMessage(language === 'fr' ? "Puis-je planifier une démo ?" : "Can I schedule a demo?")}
-                      className="text-xs rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
-                    >
-                      {t[language].scheduleDemo}
-                    </Button>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
         </div>
 
         {/* Learn More Card - More Rectangular */}
@@ -716,6 +573,116 @@ export default function HomePage() {
 
       {/* Contact Section */}
       <ContactSection language={language} />
+      
+      {/* Floating Chat Widget - Fixed at Bottom */}
+      <div className="fixed bottom-6 right-6 z-50">
+        {!chatExpanded ? (
+          /* Floating Chat Button */
+          <div 
+            className="bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-aitenders-white-blue rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer group"
+            onClick={() => setChatExpanded(true)}
+          >
+            <FaRobot className="w-6 h-6 group-hover:scale-110 transition-transform duration-200" />
+          </div>
+        ) : (
+          /* Expanded Floating Chat Interface */
+          <div className="bg-aitenders-white-blue border border-aitenders-light-blue rounded-3xl shadow-xl p-6 w-80 sm:w-96 max-h-[80vh] transition-all duration-300 ease-in-out">
+            {/* Chat Header */}
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-lg font-semibold text-aitenders-black">{t[language].chatTitle}</h3>
+              <Button
+                onClick={() => setChatExpanded(false)}
+                variant="ghost"
+                size="sm"
+                className="text-aitenders-dark-blue/60 hover:text-aitenders-dark-blue -mr-2"
+              >
+                <span className="text-xl">×</span>
+              </Button>
+            </div>
+
+            {/* Messages Display */}
+            <div className="bg-aitenders-pale-blue rounded-2xl p-4 min-h-[200px] max-h-64 overflow-y-auto mb-4">
+              {messages.length === 0 ? (
+                <div className="flex items-center justify-center h-full text-aitenders-dark-blue/60 text-sm">
+                  <div className="text-center">
+                    <FaRobot className="w-8 h-8 mx-auto mb-2 text-aitenders-light-blue" />
+                    <p>Start a conversation by typing your question below</p>
+                  </div>
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  {messages.map((msg) => (
+                    <div key={msg.id} className="space-y-3">
+                      <div className="flex justify-end">
+                        <div className="bg-aitenders-primary-blue text-aitenders-white-blue px-4 py-3 rounded-2xl rounded-tr-sm max-w-xs">
+                          <p className="text-sm">{msg.message}</p>
+                        </div>
+                      </div>
+                      {msg.response && (
+                        <div className="flex justify-start">
+                          <div className="bg-aitenders-white-blue text-aitenders-dark-blue px-4 py-3 rounded-2xl rounded-tl-sm max-w-xs shadow-sm border border-aitenders-light-blue">
+                            <p className="text-sm">{msg.response}</p>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Chat Input Bar */}
+            <div className="flex items-center mb-4">
+              <Input
+                type="text"
+                placeholder={t[language].chatPlaceholder}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                onKeyPress={handleKeyPress}
+                className="flex-1 py-3 px-4 text-base bg-aitenders-pale-blue border border-aitenders-light-blue rounded-2xl focus:ring-2 focus:ring-aitenders-primary-blue focus:border-transparent placeholder:text-aitenders-dark-blue/60"
+                disabled={sendMessageMutation.isPending}
+                autoFocus
+              />
+              <Button
+                onClick={handleSendMessage}
+                disabled={!message.trim() || sendMessageMutation.isPending}
+                size="icon"
+                className="ml-2 h-12 w-12 rounded-full bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-aitenders-white-blue shadow-sm hover:shadow-md transition-all duration-200"
+              >
+                <MdSend className="w-5 h-5" />
+              </Button>
+            </div>
+
+            {/* Quick Actions */}
+            <div className="flex flex-wrap gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setMessage(language === 'fr' ? "Quels cas d'usage proposez-vous ?" : "What use cases do you offer?")}
+                className="text-xs rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
+              >
+                {t[language].ourUseCases}
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setMessage(language === 'fr' ? "Comment fonctionne le processus d'appel d'offres ?" : "How does the tender process work?")}
+                className="text-xs rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
+              >
+                {t[language].tenderProcess}
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setMessage(language === 'fr' ? "Puis-je planifier une démo ?" : "Can I schedule a demo?")}
+                className="text-xs rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
+              >
+                {t[language].scheduleDemo}
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
