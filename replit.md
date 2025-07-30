@@ -359,5 +359,5 @@ The architecture prioritizes developer experience with hot reloading, type safet
   - **Character Detection**: Identifies incoherent character patterns like "1à:m€" or "3à pages"
   - **Contextual Validation**: Checks if numerical answers make sense for specific question types
   - **Range Validation**: Ensures values fall within reasonable bounds (e.g., 1-2000 tenders per year)
-  - **Helpful Error Messages**: Clear requests for reformulation with examples included
+  - **Concise Color-Coded Messages**: 🔴 for incoherent characters, 🟡 for unusual values - single sentence format
   - **Smart Acceptance**: Valid variations like "50000€" or "environ 150" are accepted normally

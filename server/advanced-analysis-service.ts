@@ -107,7 +107,7 @@ class AdvancedAnalysisService {
       const hasRandomSymbols = /[:;]{2,}|[àà]{2,}/.test(cleanAnswer);
       
       if (hasIncoherentChars || hasRandomSymbols) {
-        return { error: `🤔 **Votre réponse semble contenir des caractères inattendus : "${cleanAnswer}"**\n\nPourriez-vous la reformuler ?\n\n${this.formatQuestion(question, 0, 0).replace(/\*\*Question.*?\*\*/, '**Question**')}` };
+        return { error: `🔴 **Réponse illisible "${cleanAnswer}" - Pouvez-vous reformuler ?**\n\n${this.formatQuestion(question, 0, 0).replace(/\*\*Question.*?\*\*/, '**Question**')}` };
       }
     }
     
@@ -256,10 +256,9 @@ class AdvancedAnalysisService {
     if (!rule) return { needsConfirmation: false };
 
     if ((rule.min !== undefined && value < rule.min) || (rule.max !== undefined && value > rule.max)) {
-      const questionText = this.questions.find(q => q.id === questionId)?.question || 'cette question';
       return {
         needsConfirmation: true,
-        message: `🤔 **Votre réponse "${originalAnswer}" semble inhabituelle pour ${questionText}**\n\nPouvez-vous confirmer ou corriger votre réponse ?`
+        message: `🟡 **Valeur "${originalAnswer}" inhabituelle - Confirmez-vous cette réponse ?**`
       };
     }
 
