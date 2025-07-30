@@ -343,16 +343,6 @@ export default function HomePage() {
             {/* Step 2: Project Size Selection */}
             {showStep2 && !showUCResults && (
               <div className="animate-in fade-in duration-300">
-                <div className="flex justify-between items-center mb-4">
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={handleBackToStep1}
-                    className="text-aitenders-primary-blue hover:text-aitenders-dark-blue"
-                  >
-                    {t[language].back}
-                  </Button>
-                </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                   {step2Cards.map((card) => {
                     const Icon = card.icon;
@@ -385,16 +375,6 @@ export default function HomePage() {
             {/* UC Results Display */}
             {showUCResults && resultUCs.length > 0 && (
               <div className="animate-in fade-in duration-300">
-                <div className="flex justify-between items-center mb-6">
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={resetSelection}
-                    className="text-aitenders-primary-blue hover:text-aitenders-dark-blue"
-                  >
-                    {t[language].back}
-                  </Button>
-                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
                   {resultUCs.map((ucId) => {
                     const ucData = ucMetadata[ucId as keyof typeof ucMetadata];
