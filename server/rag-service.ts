@@ -362,28 +362,11 @@ ${firstQuestion}`
     const isSimulatorQuery = simulatorKeywords.some(keyword => queryLower.includes(keyword));
 
     if (isSimulatorQuery && sessionId) {
-      // Proposer choix entre analyse standard et avancée
+      // Démarrer directement le simulateur standard
+      const firstQuestion = await simulatorService.startSession(sessionId);
       return {
-        action: 'simulator_choice',
-        response: `🎯 **SIMULATEUR ROI AITENDERS**
-
-Choisissez votre type d'analyse :
-
-**📊 ANALYSE STANDARD** (6 questions - 3 minutes)
-• Questions rapides sur vos processus actuels
-• Calcul ROI de base avec métriques essentielles
-• Idéal pour un aperçu rapide
-
-**🔬 ANALYSE AVANCÉE** (15+ questions - 8 minutes) 
-• Questionnaire détaillé couvrant tous les aspects
-• Calculs sophistiqués par catégorie de processus
-• Recommandations personnalisées selon votre industrie
-• Analyse de ROI monétisée avec revenus additionnels
-
-**Comment souhaitez-vous procéder ?**
-• Tapez **"standard"** pour l'analyse rapide
-• Tapez **"avancée"** pour l'analyse complète (recommandé)`,
-        simulatorData: { sessionId, status: 'choice_offered' }
+        action: 'simulator_start',
+        response: firstQuestion
       };
     }
     

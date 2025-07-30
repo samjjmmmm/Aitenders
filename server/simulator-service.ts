@@ -256,6 +256,13 @@ class SimulatorService {
       case 'number':
         console.log(`[DEBUG] Processing numeric answer: "${cleanAnswer}"`);
         
+        // Try to detect ranges first
+        const rangeResult = this.parseRangeAnswer(cleanAnswer);
+        console.log(`[DEBUG] parseRangeAnswer result:`, rangeResult);
+        if (rangeResult.isRange) {
+          return { value: rangeResult.average, numericValue: rangeResult.average };
+        }
+
         // Try to extract time values and convert to hours first
         const timeValue = this.parseTimeToHours(cleanAnswer);
         console.log(`[DEBUG] parseTimeToHours result: ${timeValue}`);
@@ -410,6 +417,40 @@ class SimulatorService {
     }
 
     return null;
+  }
+
+  // Parse range answers like "entre 30 et 50", "de 10 à 20", "15-25"
+  private parseRangeAnswer(input: string): { isRange: boolean; min?: number; max?: number; average?: number; type?: string } {
+    const cleanInput = input.trim().toLowerCase();
+    
+    // Patterns pour détecter les plages
+    const rangePatterns = [
+      /entre\s+(\d+(?:\.\d+)?)\s+et\s+(\d+(?:\.\d+)?)/i,  // "entre X et Y"
+      /de\s+(\d+(?:\.\d+)?)\s+à\s+(\d+(?:\.\d+)?)/i,      // "de X à Y"
+      /(\d+(?:\.\d+)?)\s*-\s*(\d+(?:\.\d+)?)/,             // "X-Y"
+      /(\d+(?:\.\d+)?)\s*[,;]\s*(\d+(?:\.\d+)?)/,          // "X,Y" ou "X;Y"
+    ];
+
+    for (const pattern of rangePatterns) {
+      const match = cleanInput.match(pattern);
+      if (match) {
+        const min = parseFloat(match[1]);
+        const max = parseFloat(match[2]);
+        
+        if (!isNaN(min) && !isNaN(max) && min <= max) {
+          const average = (min + max) / 2;
+          return {
+            isRange: true,
+            min,
+            max,
+            average,
+            type: 'range'
+          };
+        }
+      }
+    }
+
+    return { isRange: false };
   }
 
   // Formater une question pour l'affichage
