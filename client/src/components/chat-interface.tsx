@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MdSend, MdSettings, MdBarChart } from "react-icons/md";
@@ -32,12 +32,101 @@ export default function ChatInterface({
   transparent = false
 }: ChatInterfaceProps) {
   const [message, setMessage] = useState("");
+  const [currentPage, setCurrentPage] = useState("");
+  const [currentIP, setCurrentIP] = useState<string | null>(null);
   const { toast } = useToast();
   const queryClient = useQueryClient();
 
   const { data: messages = [] } = useQuery<ChatMessage[]>({
     queryKey: ["/api/chat"],
   });
+
+  // Mutation to clear chat
+  const clearChatMutation = useMutation({
+    mutationFn: async () => {
+      const response = await apiRequest("POST", "/api/chat/clear", {});
+      return response.json();
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/chat"] });
+      toast({
+        title: language === 'fr' ? "Session nettoyée" : "Session cleared",
+        description: language === 'fr' 
+          ? "Nouvelle session détectée - données du chat effacées automatiquement"
+          : "New session detected - chat data cleared automatically",
+      });
+    },
+  });
+
+  // Clear chat on page change
+  useEffect(() => {
+    const handlePageChange = () => {
+      const newPage = window.location.pathname;
+      if (currentPage && currentPage !== newPage) {
+        // Clear chat when page changes
+        clearChatMutation.mutate();
+        console.log(`Chat cleared due to page change: ${currentPage} → ${newPage}`);
+      }
+      setCurrentPage(newPage);
+    };
+
+    // Set initial page
+    if (!currentPage) {
+      setCurrentPage(window.location.pathname);
+    }
+
+    // Listen for page changes
+    window.addEventListener('popstate', handlePageChange);
+    
+    // Listen for navigation changes (wouter)
+    const originalPushState = history.pushState;
+    const originalReplaceState = history.replaceState;
+
+    history.pushState = function(...args) {
+      originalPushState.apply(history, args);
+      handlePageChange();
+    };
+
+    history.replaceState = function(...args) {
+      originalReplaceState.apply(history, args);
+      handlePageChange();
+    };
+
+    return () => {
+      window.removeEventListener('popstate', handlePageChange);
+      history.pushState = originalPushState;
+      history.replaceState = originalReplaceState;
+    };
+  }, [currentPage, clearChatMutation]);
+
+  // Monitor IP address changes
+  useEffect(() => {
+    const checkIPAddress = async () => {
+      try {
+        const response = await fetch('https://api.ipify.org?format=json');
+        const data = await response.json();
+        const newIP = data.ip;
+        
+        if (currentIP && currentIP !== newIP) {
+          clearChatMutation.mutate();
+          console.log(`Chat cleared due to IP change: ${currentIP} → ${newIP}`);
+        }
+        setCurrentIP(newIP);
+      } catch (error) {
+        console.warn('Failed to check IP address:', error);
+      }
+    };
+
+    // Check IP immediately
+    checkIPAddress();
+
+    // Check IP every 30 seconds
+    const ipInterval = setInterval(checkIPAddress, 30000);
+
+    return () => {
+      clearInterval(ipInterval);
+    };
+  }, [currentIP, clearChatMutation]);
 
   const sendMessageMutation = useMutation({
     mutationFn: async (messageText: string) => {

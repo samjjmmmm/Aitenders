@@ -9,22 +9,55 @@ export interface IStorage {
   getContactRequests(): Promise<ContactRequest[]>;
   createChatMessage(message: InsertChatMessage): Promise<ChatMessage>;
   getChatMessages(): Promise<ChatMessage[]>;
+  clearChatMessages(): Promise<void>;
+  getChatMessagesBySession(sessionId: string): Promise<ChatMessage[]>;
+  createChatMessageWithSession(message: InsertChatMessage, sessionId: string): Promise<ChatMessage>;
 }
 
 export class MemStorage implements IStorage {
   private users: Map<string, User>;
   private contactRequests: Map<string, ContactRequest>;
   private chatMessages: Map<string, ChatMessage>;
+  private sessionMessages: Map<string, ChatMessage[]>;
 
   constructor() {
     this.users = new Map();
     this.contactRequests = new Map();
     this.chatMessages = new Map();
+    this.sessionMessages = new Map();
   }
 
-  // Clear all chat messages for testing
+  // Clear all chat messages
   async clearChatMessages(): Promise<void> {
     this.chatMessages.clear();
+    this.sessionMessages.clear();
+  }
+
+  // Get messages for a specific session
+  async getChatMessagesBySession(sessionId: string): Promise<ChatMessage[]> {
+    return this.sessionMessages.get(sessionId) || [];
+  }
+
+  // Create message with session tracking
+  async createChatMessageWithSession(insertMessage: InsertChatMessage, sessionId: string): Promise<ChatMessage> {
+    const id = randomUUID();
+    const message: ChatMessage = { 
+      ...insertMessage, 
+      id, 
+      response: insertMessage.response ?? null,
+      createdAt: new Date() 
+    };
+    
+    // Store in global messages
+    this.chatMessages.set(id, message);
+    
+    // Store in session-specific messages
+    if (!this.sessionMessages.has(sessionId)) {
+      this.sessionMessages.set(sessionId, []);
+    }
+    this.sessionMessages.get(sessionId)!.push(message);
+    
+    return message;
   }
 
   async getUser(id: string): Promise<User | undefined> {

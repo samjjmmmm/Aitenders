@@ -154,6 +154,25 @@ The architecture prioritizes developer experience with hot reloading, type safet
   - RAG Response: Detailed security features with encryption, GDPR compliance, etc.
 - **User Experience**: Chat functions as intelligent search tool rather than static information display
 
+### Automatic Session Management & Data Cleaning
+- **Date**: January 30, 2025
+- **Change**: Implemented automatic chat data cleaning based on IP address changes and page navigation
+- **Technical Implementation**:
+  - **IP Address Monitoring**: Checks user's IP every 30 seconds using ipify.org API service
+  - **Page Change Detection**: Monitors navigation changes via history API and popstate events
+  - **Session Isolation**: Each IP address gets separate chat history stored in server memory
+  - **Automatic Cleanup**: Chat data automatically cleared when IP changes or user navigates to different pages
+  - **Visual Feedback**: Toast notifications inform users when session cleaning occurs
+- **User Experience Benefits**:
+  - **Privacy**: No chat data persistence across different users or sessions
+  - **Fresh Start**: Each new session begins with clean chat history
+  - **Seamless**: Automatic operation requires no user intervention
+  - **Transparency**: Users receive notifications when data is cleaned
+- **Security Features**:
+  - IP-based session identification prevents data leakage between users
+  - Memory-only storage ensures no persistent data retention
+  - Automatic cleanup prevents data accumulation
+
 ### ChatGPT Integration
 - **Date**: January 30, 2025
 - **Change**: Replaced local RAG system with authentic ChatGPT (GPT-4o) integration

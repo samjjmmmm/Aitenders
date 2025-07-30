@@ -82,10 +82,24 @@ export async function registerRoutes(app: Express): Promise<Server> {
       : "I can help you with questions about security, use cases, ROI, AI agents, or connecting you with our team. Rephrase your question or use the buttons below.";
   };
 
+  // Generate session ID based on IP and user agent
+  const generateSessionId = (req: any) => {
+    const ip = req.ip || req.connection.remoteAddress || req.socket.remoteAddress || 'unknown';
+    const userAgent = req.get('User-Agent') || 'unknown';
+    return `${ip}_${Buffer.from(userAgent).toString('base64').slice(0, 20)}`;
+  };
+
   // Chat message submission with OpenAI integration and fallback
   app.post("/api/chat", async (req, res) => {
     try {
-      const { message, language = 'fr' } = req.body;
+      const { message, language = 'fr', clearSession } = req.body;
+      const sessionId = generateSessionId(req);
+      
+      // Clear session if requested or if it's a new session
+      if (clearSession) {
+        await storage.clearChatMessages();
+        return res.json({ message: "Session cleared" });
+      }
       
       if (!message || typeof message !== 'string') {
         return res.status(400).json({ message: "Message is required" });
@@ -102,13 +116,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
         aiResponse = getFallbackResponse(message, language);
       }
       
-      // Save both user message and AI response
+      // Save both user message and AI response with session
       const validatedData = insertChatMessageSchema.parse({
         message: message,
         response: aiResponse
       });
       
-      const chatMessage = await storage.createChatMessage(validatedData);
+      const chatMessage = await storage.createChatMessageWithSession(validatedData, sessionId);
       res.json(chatMessage);
     } catch (error) {
       console.error("Chat API Error:", error);
@@ -120,13 +134,24 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Get chat messages
+  // Get chat messages for current session
   app.get("/api/chat", async (req, res) => {
     try {
-      const messages = await storage.getChatMessages();
+      const sessionId = generateSessionId(req);
+      const messages = await storage.getChatMessagesBySession(sessionId);
       res.json(messages);
     } catch (error) {
       res.status(500).json({ message: "Failed to fetch chat messages" });
+    }
+  });
+
+  // Clear session endpoint
+  app.post("/api/chat/clear", async (req, res) => {
+    try {
+      await storage.clearChatMessages();
+      res.json({ message: "Chat cleared successfully" });
+    } catch (error) {
+      res.status(500).json({ message: "Failed to clear chat" });
     }
   });
 
