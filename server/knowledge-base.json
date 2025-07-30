@@ -1,0 +1,215 @@
+{
+  "company": {
+    "name": "Aitenders",
+    "tagline": "Plateforme de gestion intelligente des appels d'offres et contrats",
+    "description": "Aitenders révolutionne la gestion des appels d'offres grâce à l'intelligence artificielle. Notre plateforme aide les entreprises du BTP et de l'infrastructure à gagner plus d'appels d'offres en automatisant l'analyse documentaire, l'extraction d'exigences et la génération de réponses.",
+    "sectors": ["BTP", "Infrastructure", "Construction", "Ingénierie", "Travaux publics"],
+    "founded": "2024",
+    "mission": "Transformer la complexité des appels d'offres en avantage concurrentiel"
+  },
+  
+  "security": {
+    "title": "Sécurité et Conformité de classe entreprise",
+    "encryption": {
+      "data_at_rest": "Chiffrement AES-256 pour toutes les données stockées",
+      "data_in_transit": "TLS 1.3 pour tous les échanges",
+      "database": "Chiffrement transparent des bases de données PostgreSQL"
+    },
+    "compliance": {
+      "gdpr": "Conformité RGPD complète avec droit à l'oubli",
+      "iso27001": "Certification ISO 27001 en cours",
+      "soc2": "Audit SOC 2 Type II annuel",
+      "hosting": "Hébergement en Europe (France/Allemagne)"
+    },
+    "access_control": {
+      "authentication": "Authentification multi-facteurs (MFA) obligatoire",
+      "rbac": "Contrôle d'accès basé sur les rôles (RBAC)",
+      "sso": "Intégration SSO avec Active Directory et SAML"
+    },
+    "backup": {
+      "frequency": "Sauvegardes automatiques toutes les 4 heures",
+      "retention": "Conservation 90 jours + archivage annuel",
+      "restoration": "Restauration en moins de 4 heures RTO"
+    }
+  },
+
+  "use_cases": {
+    "uc1": {
+      "title": "Fast-Track Small Project Bids",
+      "target": "Équipes gérant des projets fréquents de petite taille",
+      "description": "Automatisation complète des réponses aux appels d'offres simples avec délais serrés",
+      "features": [
+        "Analyse automatique des DCE en moins de 5 minutes",
+        "Génération de réponses pré-remplies",
+        "Bibliothèque de modèles personnalisables",
+        "Validation automatique des exigences"
+      ],
+      "roi": "Réduction de 80% du temps de préparation",
+      "typical_clients": "PME BTP, artisans, sous-traitants"
+    },
+    "uc2": {
+      "title": "Bid Intelligence & Market Analysis",
+      "target": "Directions commerciales et développement",
+      "description": "Intelligence concurrentielle et analyse de marché pour maximiser le taux de gain",
+      "features": [
+        "Analyse des concurrents et historiques de gains",
+        "Scoring automatique de probabilité de gain",
+        "Veille réglementaire et opportunités",
+        "Recommandations stratégiques IA"
+      ],
+      "roi": "Augmentation de 35% du taux de gain",
+      "typical_clients": "Grands groupes, ETI construction"
+    },
+    "uc3": {
+      "title": "Complex Multi-Lot Bid Management",
+      "target": "Équipes expertes gérant des méga-projets internationaux",
+      "description": "Coordination complète des réponses multi-lots avec gestion des équipes pluridisciplinaires",
+      "features": [
+        "Orchestration des équipes techniques, juridiques, commerciales",
+        "Gestion des lots interdépendants et variants",
+        "Conformité réglementaire multi-pays",
+        "Workflow de validation hiérarchique"
+      ],
+      "roi": "Réduction de 60% des erreurs de coordination",
+      "typical_clients": "Bouygues, Vinci, Eiffage, majors internationales"
+    }
+  },
+
+  "ai_agents": {
+    "dcr_analyzer": {
+      "name": "Agent Analyseur DCE",
+      "description": "Analyse intelligente des dossiers de consultation d'entreprises",
+      "capabilities": [
+        "Extraction automatique des exigences techniques",
+        "Identification des critères de sélection",
+        "Détection des pièges et clauses particulières",
+        "Calcul automatique des quantitatifs"
+      ]
+    },
+    "compliance_checker": {
+      "name": "Agent Conformité",
+      "description": "Vérification automatique de la conformité réglementaire",
+      "capabilities": [
+        "Validation des attestations obligatoires",
+        "Contrôle des qualifications requises",
+        "Vérification des assurances et garanties",
+        "Alerte sur les documents manquants"
+      ]
+    },
+    "cost_estimator": {
+      "name": "Agent Estimation",
+      "description": "Estimation intelligente des coûts et pricing",
+      "capabilities": [
+        "Analyse des prix de revient par poste",
+        "Benchmarking concurrentiel automatique",
+        "Optimisation des marges par lot",
+        "Gestion des risques financiers"
+      ]
+    },
+    "proposal_writer": {
+      "name": "Agent Rédacteur",
+      "description": "Génération automatique de propositions techniques et commerciales",
+      "capabilities": [
+        "Rédaction de mémoires techniques personnalisés",
+        "Adaptation du discours au donneur d'ordre",
+        "Optimisation SEO des réponses",
+        "Cohérence multi-lots garantie"
+      ]
+    }
+  },
+
+  "roi_metrics": {
+    "time_savings": {
+      "analysis": "90% de réduction du temps d'analyse DCE",
+      "proposal_writing": "75% de réduction du temps de rédaction",
+      "compliance_check": "95% de réduction des contrôles manuels"
+    },
+    "win_rate": {
+      "improvement": "35% d'augmentation moyenne du taux de gain",
+      "small_bids": "De 15% à 48% pour les petits projets",
+      "large_bids": "De 8% à 22% pour les gros projets"
+    },
+    "cost_reduction": {
+      "operational": "€125k d'économies annuelles par équipe",
+      "error_prevention": "€80k évités en erreurs et non-conformités",
+      "opportunity_cost": "€200k de CA supplémentaire par an"
+    }
+  },
+
+  "integration": {
+    "erp_systems": ["SAP", "Oracle", "Microsoft Dynamics", "Sage"],
+    "cad_tools": ["AutoCAD", "Revit", "SketchUp", "BIM 360"],
+    "project_management": ["MS Project", "Primavera", "Asana", "Monday"],
+    "document_management": ["SharePoint", "Google Drive", "Box", "OneDrive"],
+    "apis": "API REST complète pour intégrations custom"
+  },
+
+  "pricing": {
+    "starter": {
+      "name": "Starter",
+      "price": "€2,900/mois",
+      "description": "Pour les équipes qui débutent",
+      "features": ["5 utilisateurs", "50 analyses DCE/mois", "Support email"]
+    },
+    "professional": {
+      "name": "Professional",
+      "price": "€8,500/mois",
+      "description": "Pour les équipes établies",
+      "features": ["20 utilisateurs", "200 analyses DCE/mois", "Support prioritaire", "Intégrations ERP"]
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "Sur devis",
+      "description": "Pour les grandes organisations",
+      "features": ["Utilisateurs illimités", "Analyses illimitées", "Support dédié", "Déploiement on-premise"]
+    }
+  },
+
+  "contact": {
+    "sales": {
+      "email": "commercial@aitenders.fr",
+      "phone": "+33 1 84 88 40 15",
+      "meeting": "https://calendly.com/aitenders-demo"
+    },
+    "support": {
+      "email": "support@aitenders.fr",
+      "hours": "Lun-Ven 9h-18h CET"
+    },
+    "address": {
+      "line1": "Station F - Hall Freyssinet",
+      "line2": "5 Parvis Alan Turing",
+      "city": "75013 Paris",
+      "country": "France"
+    }
+  },
+
+  "testimonials": {
+    "bouygues": {
+      "company": "Bouygues Construction",
+      "contact": "Pierre Dubois, Directeur Commercial",
+      "quote": "Aitenders nous a permis de réduire de 70% le temps de préparation de nos réponses tout en augmentant notre taux de gain de 28%.",
+      "project": "Méga-projet infrastructure ferroviaire"
+    },
+    "colas": {
+      "company": "Colas",
+      "contact": "Marie Laurent, Chef de projet",
+      "quote": "L'IA d'Aitenders détecte des opportunités que nous aurions manquées. Un vrai game-changer.",
+      "project": "Marchés routiers départementaux"
+    }
+  },
+
+  "faq": {
+    "implementation": {
+      "question": "Combien de temps prend la mise en œuvre ?",
+      "answer": "Déploiement complet en 2-4 semaines selon la complexité. Formation incluse pour toutes les équipes."
+    },
+    "data_migration": {
+      "question": "Comment migrer nos données existantes ?",
+      "answer": "Migration automatisée depuis vos outils actuels avec validation complète. Zéro perte de données garantie."
+    },
+    "scalability": {
+      "question": "La solution peut-elle grandir avec nous ?",
+      "answer": "Architecture cloud-native conçue pour supporter de 5 à 5000+ utilisateurs sans limite de performance."
+    }
+  }
+}
