@@ -113,13 +113,13 @@ export default function ChatInterface({
   useEffect(() => {
     if (browserFingerprint && !sessionInitialized) {
       const lastFingerprint = localStorage.getItem('lastBrowserFingerprint');
-      
+
       if (lastFingerprint && lastFingerprint !== browserFingerprint) {
         // Different user/device detected
         clearChatMutation.mutate();
         console.log('Different user detected - clearing session');
       }
-      
+
       localStorage.setItem('lastBrowserFingerprint', browserFingerprint);
       setSessionInitialized(true);
     }
@@ -144,7 +144,7 @@ export default function ChatInterface({
 
     // Listen for page changes (navigation only)
     window.addEventListener('popstate', handlePageChange);
-    
+
     // Listen for navigation changes (wouter)
     const originalPushState = history.pushState;
     const originalReplaceState = history.replaceState;
@@ -213,7 +213,7 @@ export default function ChatInterface({
     if (messages.length === 0) {
       return;
     }
-    
+
     if (window.confirm(language === 'fr' ? 'Êtes-vous sûr de vouloir vider le chat ?' : 'Are you sure you want to clear the chat?')) {
       clearChatMutation.mutate();
     }
@@ -225,14 +225,14 @@ export default function ChatInterface({
       alert(language === 'fr' ? 'Aucune conversation à copier' : 'No conversation to copy');
       return;
     }
-    
+
     // Format entire conversation
     const conversationText = messages.map((msg, index) => {
       const questionText = `Q${index + 1}: ${msg.message}`;
       const responseText = msg.response ? `R${index + 1}: ${msg.response.replace(/<[^>]*>/g, '').replace(/&bull;/g, '•')}` : '';
       return responseText ? `${questionText}\n\n${responseText}` : questionText;
     }).join('\n\n---\n\n');
-    
+
     setCopyData(conversationText);
     setShowEmailModal(true);
   };
@@ -242,21 +242,21 @@ export default function ChatInterface({
       alert(language === 'fr' ? 'Veuillez saisir une adresse email valide' : 'Please enter a valid email address');
       return;
     }
-    
+
     try {
       // Copy to clipboard
       await navigator.clipboard.writeText(copyData);
-      
+
       // Log the email for tracking (optional backend call)
       await apiRequest("POST", "/api/copy-tracking", {
         email: email.trim(),
         content: copyData.substring(0, 100) + '...', // Only store preview
         fingerprint: browserFingerprint
       });
-      
+
       // Success feedback
       alert(language === 'fr' ? 'Données copiées avec succès!' : 'Data copied successfully!');
-      
+
       // Reset modal
       setShowEmailModal(false);
       setEmail("");
@@ -295,7 +295,7 @@ export default function ChatInterface({
         "Tools": "What tools and features does Aitenders offer?"
       }
     };
-    
+
     return questions[language]?.[buttonLabel as keyof typeof questions[typeof language]] || "";
   };
 
@@ -335,7 +335,7 @@ export default function ChatInterface({
         startSimulator();
         return;
       }
-      
+
       const question = getButtonQuestion(action.label);
       if (question) {
         if (question === "simulateur") {
@@ -406,7 +406,7 @@ export default function ChatInterface({
                             __html: formatResponse(msg.response) 
                           }} 
                         />
-                        
+
                         {/* Show User Info Button when simulator completed */}
                         {msg.response.includes('Veuillez fournir vos informations') && (
                           <div className="mt-3 pt-3 border-t border-aitenders-light-blue">
@@ -426,7 +426,7 @@ export default function ChatInterface({
               ))}
             </div>
           )}
-          
+
           {/* Input Field */}
           <div className={`flex items-start gap-3 mb-3 ${isExpanded ? 'mt-auto' : ''}`}>
             <Input
@@ -507,7 +507,7 @@ export default function ChatInterface({
             <p className="text-gray-600 mb-4 text-sm">
               Merci d'avoir terminé le simulateur ! Veuillez fournir vos informations pour recevoir votre rapport détaillé par email.
             </p>
-            
+
             <div className="space-y-4">
               <Input
                 type="text"
@@ -532,7 +532,7 @@ export default function ChatInterface({
                 className="w-full"
               />
             </div>
-            
+
             <div className="flex gap-3 justify-end mt-6">
               <Button
                 variant="outline"
