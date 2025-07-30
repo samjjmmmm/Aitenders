@@ -394,19 +394,31 @@ export default function ChatInterface({
               ))}
             </div>
 
-            {/* Right Side - Copy Button */}
+            {/* Right Side - Action Buttons */}
             <div className="flex items-center gap-2">
               {messages.length > 0 && (
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={handleCopyConversation}
-                  className="h-8 px-3 text-xs text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg flex items-center gap-1"
-                  title={language === 'fr' ? 'Copier la conversation complète' : 'Copy full conversation'}
-                >
-                  <MdContentCopy className="w-3 h-3" />
-                  {language === 'fr' ? 'Copier' : 'Copy'}
-                </Button>
+                <>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={clearChat}
+                    className="h-8 px-3 text-xs text-red-600 hover:text-red-900 hover:bg-red-50 rounded-lg flex items-center gap-1"
+                    title={language === 'fr' ? 'Vider le chat' : 'Clear chat'}
+                  >
+                    <MdDelete className="w-3 h-3" />
+                    {language === 'fr' ? 'Vider' : 'Clear'}
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={handleCopyConversation}
+                    className="h-8 px-3 text-xs text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg flex items-center gap-1"
+                    title={language === 'fr' ? 'Copier la conversation complète' : 'Copy full conversation'}
+                  >
+                    <MdContentCopy className="w-3 h-3" />
+                    {language === 'fr' ? 'Copier' : 'Copy'}
+                  </Button>
+                </>
               )}
             </div>
           </div>
