@@ -50,7 +50,7 @@ export default function ChatInterface({
     enabled: !!browserFingerprint, // Only run when fingerprint is available
     queryFn: async () => {
       const response = await apiRequest("GET", "/api/chat", undefined, {
-        'x-browser-fingerprint': browserFingerprint
+        'x-browser-fingerprint': browserFingerprint || ""
       });
       return response.json();
     }
@@ -196,6 +196,11 @@ export default function ChatInterface({
     }
   };
 
+  // Direct simulator start function
+  const startSimulator = () => {
+    sendMessageMutation.mutate("simulateur");
+  };
+
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
@@ -268,24 +273,24 @@ export default function ChatInterface({
       fr: {
         "Nos cas d'usage": "Quels sont l'ensemble des cas d'usage disponibles sur Aitenders ?",
         "Nos Cas d'Usage": "Quels sont l'ensemble des cas d'usage disponibles sur Aitenders ?",
-        "Simulation / ROI": "Comment calculer le retour sur investissement d'Aitenders pour mon organisation ?",
+        "Simulation / ROI": "simulateur",
         "AI Agents": "Comment fonctionnent les agents IA d'Aitenders et que peuvent-ils faire ?",
         "Data Security": "Que fait Aitenders pour la sécurité des données ?",
         "Contactez nous": "Comment puis-je contacter l'équipe Aitenders pour une démonstration ?",
         "Demo UC3": "Comment Aitenders gère-t-il les appels d'offres complexes multi-lots ?",
-        "ROI Calculator": "Quels bénéfices financiers puis-je attendre avec Aitenders ?",
+        "ROI Calculator": "simulateur",
         "Contact Expert": "Comment obtenir l'aide d'un expert en gestion d'appels d'offres ?",
         "Outils": "Quels outils et fonctionnalités propose Aitenders ?"
       },
       en: {
         "Our Use Cases": "What are all the use cases available on Aitenders?",
         "Nos Cas d'Usage": "What are all the use cases available on Aitenders?",
-        "Simulation / ROI": "How to calculate the ROI of Aitenders for my organization?",
+        "Simulation / ROI": "simulateur",
         "AI Agents": "How do Aitenders AI agents work and what can they do?",
         "Data Security": "What does Aitenders do for data security?",
         "Contact us": "How can I contact the Aitenders team for a demonstration?",
         "Demo UC3": "How does Aitenders handle complex multi-lot tenders?",
-        "ROI Calculator": "What financial benefits can I expect with Aitenders?",
+        "ROI Calculator": "simulateur",
         "Contact Expert": "How to get help from a tender management expert?",
         "Tools": "What tools and features does Aitenders offer?"
       }
@@ -299,22 +304,22 @@ export default function ChatInterface({
     {
       label: language === 'fr' ? 'Simulateur ROI' : 'ROI Simulator',
       icon: <MdCalculate className="w-3 h-3 text-gray-400" />,
-      onClick: () => handleSendMessage("lancer le simulateur")
+      onClick: startSimulator
     },
     {
       label: language === 'fr' ? 'Sécurité' : 'Security', 
       icon: <MdSecurity className="w-3 h-3 text-gray-400" />,
-      onClick: () => handleSendMessage("Que fait Aitenders pour la sécurité des données ?")
+      onClick: () => sendMessageMutation.mutate("Que fait Aitenders pour la sécurité des données ?")
     },
     {
       label: 'ROI',
       icon: <MdTrendingUp className="w-3 h-3 text-gray-400" />,
-      onClick: () => handleSendMessage("Comment calculer le retour sur investissement d'Aitenders pour mon organisation ?")
+      onClick: startSimulator
     },
     {
       label: 'Contact',
       icon: <MdContactMail className="w-3 h-3 text-gray-400" />,
-      onClick: () => handleSendMessage("Comment contacter l'équipe Aitenders pour une démonstration ?")
+      onClick: () => sendMessageMutation.mutate("Comment contacter l'équipe Aitenders pour une démonstration ?")
     }
   ];
 
@@ -323,14 +328,21 @@ export default function ChatInterface({
     ...action,
     onClick: () => {
       // Special handling for simulator button
-      if (action.label.toLowerCase().includes('simulateur') || action.label.toLowerCase().includes('simulator')) {
-        handleSendMessage("lancer le simulateur");
+      if (action.label.toLowerCase().includes('simulateur') || 
+          action.label.toLowerCase().includes('simulator') ||
+          action.label.toLowerCase().includes('roi') ||
+          action.label.toLowerCase().includes('simulation')) {
+        startSimulator();
         return;
       }
       
       const question = getButtonQuestion(action.label);
       if (question) {
-        setMessage(question);
+        if (question === "simulateur") {
+          startSimulator();
+        } else {
+          sendMessageMutation.mutate(question);
+        }
       } else {
         action.onClick();
       }
@@ -371,9 +383,9 @@ export default function ChatInterface({
             title={isExpanded ? (language === 'fr' ? 'Réduire' : 'Collapse') : (language === 'fr' ? 'Agrandir' : 'Expand')}
           >
             {isExpanded ? (
-              <MdExpandMore className="w-2.5 h-2.5 text-purple-600 font-bold" style={{strokeWidth: '2.5'}} />
+              <MdExpandMore className="w-4 h-4 text-purple-600 font-bold" style={{strokeWidth: '4'}} />
             ) : (
-              <MdExpandLess className="w-2.5 h-2.5 text-purple-600 font-bold" style={{strokeWidth: '2.5'}} />
+              <MdExpandLess className="w-4 h-4 text-purple-600 font-bold" style={{strokeWidth: '4'}} />
             )}
           </button>
           {/* Recent Messages Display */}
