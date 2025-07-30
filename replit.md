@@ -154,24 +154,26 @@ The architecture prioritizes developer experience with hot reloading, type safet
   - RAG Response: Detailed security features with encryption, GDPR compliance, etc.
 - **User Experience**: Chat functions as intelligent search tool rather than static information display
 
-### Automatic Session Management & Data Cleaning
+### Advanced Multi-User Session Management System
 - **Date**: January 30, 2025
-- **Change**: Implemented automatic chat data cleaning based on IP address changes and page navigation
+- **Change**: Implemented enterprise-grade session isolation system supporting multiple concurrent users
 - **Technical Implementation**:
-  - **IP Address Monitoring**: Checks user's IP every 30 seconds using ipify.org API service
-  - **Page Change Detection**: Monitors navigation changes via history API and popstate events
-  - **Session Isolation**: Each IP address gets separate chat history stored in server memory
-  - **Automatic Cleanup**: Chat data automatically cleared when IP changes or user navigates to different pages
-  - **Visual Feedback**: Toast notifications inform users when session cleaning occurs
-- **User Experience Benefits**:
-  - **Privacy**: No chat data persistence across different users or sessions
-  - **Fresh Start**: Each new session begins with clean chat history
-  - **Seamless**: Automatic operation requires no user intervention
-  - **Transparency**: Users receive notifications when data is cleaned
+  - **Browser Fingerprinting**: Unique identification combining IP, User-Agent, screen resolution, canvas rendering, WebGL info, hardware specs, and session timestamp
+  - **Individual Session Isolation**: Each browser/device gets completely separate chat history stored server-side
+  - **Multi-User Support**: Multiple users can chat simultaneously from same IP (office/shared networks) without data mixing
+  - **Automatic Session Cleanup**: Inactive sessions cleaned after 30 minutes, background cleanup every 5 minutes
+  - **Page Navigation Clearing**: Chat data cleared only when navigating between different pages (not on reload)
+  - **Different User Detection**: When different browser fingerprint detected, previous session data automatically cleared
+- **Enterprise Benefits**:
+  - **Team Compatibility**: Multiple colleagues can use platform simultaneously from same office IP
+  - **Privacy Protection**: Zero data leakage between different users/devices
+  - **Session Persistence**: Chat history maintained during same user session (refreshes, temporary navigation)
+  - **Memory Efficiency**: Automatic cleanup of abandoned sessions prevents server memory accumulation
 - **Security Features**:
-  - IP-based session identification prevents data leakage between users
-  - Memory-only storage ensures no persistent data retention
-  - Automatic cleanup prevents data accumulation
+  - Browser fingerprint-based identification prevents session hijacking
+  - Session-specific data storage with automatic timeout
+  - No persistent storage - all chat data in server memory only
+  - Different device detection triggers automatic data clearing
 
 ### ChatGPT Integration
 - **Date**: January 30, 2025

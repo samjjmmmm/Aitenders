@@ -6,6 +6,7 @@ import { FaRobot } from "react-icons/fa";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import { BrowserFingerprint } from "@/lib/browser-fingerprint";
 
 interface ChatMessage {
   id: string;
@@ -33,7 +34,7 @@ export default function ChatInterface({
 }: ChatInterfaceProps) {
   const [message, setMessage] = useState("");
   const [currentPage, setCurrentPage] = useState("");
-  const [currentIP, setCurrentIP] = useState<string | null>(null);
+  const [browserFingerprint, setBrowserFingerprint] = useState<string | null>(null);
   const [sessionInitialized, setSessionInitialized] = useState(false);
   const { toast } = useToast();
   const queryClient = useQueryClient();
@@ -42,68 +43,69 @@ export default function ChatInterface({
     queryKey: ["/api/chat"],
   });
 
-  // Mutation to clear chat
+  // Initialize browser fingerprint
+  useEffect(() => {
+    const initFingerprint = async () => {
+      try {
+        const fingerprint = await BrowserFingerprint.getFingerprint();
+        setBrowserFingerprint(fingerprint);
+        console.log('Browser fingerprint initialized:', fingerprint.slice(0, 8) + '...');
+      } catch (error) {
+        console.error('Failed to generate browser fingerprint:', error);
+      }
+    };
+
+    initFingerprint();
+  }, []);
+
+  // Mutation to clear chat for this specific session
   const clearChatMutation = useMutation({
     mutationFn: async () => {
-      const response = await apiRequest("POST", "/api/chat/clear", {});
+      const response = await apiRequest("POST", "/api/chat/clear", {
+        fingerprint: browserFingerprint
+      });
       return response.json();
     },
-    onSuccess: () => {
+    onSuccess: (data) => {
       queryClient.invalidateQueries({ queryKey: ["/api/chat"] });
-      toast({
-        title: language === 'fr' ? "Session nettoyée" : "Session cleared",
-        description: language === 'fr' 
-          ? "Nouvelle session détectée - données du chat effacées automatiquement"
-          : "New session detected - chat data cleared automatically",
-      });
+      console.log('Session cleared:', data.sessionId);
     },
   });
 
-  // Force clear on component mount (each page load/reload)
+  // Clear session only on new browser fingerprint (different user/device)
   useEffect(() => {
-    if (!sessionInitialized) {
-      clearChatMutation.mutate();
+    if (browserFingerprint && !sessionInitialized) {
+      const lastFingerprint = localStorage.getItem('lastBrowserFingerprint');
+      
+      if (lastFingerprint && lastFingerprint !== browserFingerprint) {
+        // Different user/device detected
+        clearChatMutation.mutate();
+        console.log('Different user detected - clearing session');
+      }
+      
+      localStorage.setItem('lastBrowserFingerprint', browserFingerprint);
       setSessionInitialized(true);
-      console.log('Chat cleared on component mount');
     }
-  }, [sessionInitialized, clearChatMutation]);
+  }, [browserFingerprint, sessionInitialized, clearChatMutation]);
 
-  // Clear chat on page change and page load
+  // Clear chat on page navigation only
   useEffect(() => {
     const handlePageChange = () => {
       const newPage = window.location.pathname;
       if (currentPage && currentPage !== newPage) {
-        // Clear chat when page changes
+        // Clear chat when navigating to different pages
         clearChatMutation.mutate();
         console.log(`Chat cleared due to page change: ${currentPage} → ${newPage}`);
       }
       setCurrentPage(newPage);
     };
 
-    // Clear chat on initial load and page reload
-    const handlePageLoad = () => {
-      const currentTime = Date.now();
-      const lastLoadTime = localStorage.getItem('lastChatLoadTime');
-      
-      // If more than 1 second has passed or no previous load time, clear chat
-      if (!lastLoadTime || currentTime - parseInt(lastLoadTime) > 1000) {
-        clearChatMutation.mutate();
-        console.log('Chat cleared due to page reload/new session');
-      }
-      
-      localStorage.setItem('lastChatLoadTime', currentTime.toString());
-    };
-
-    // Set initial page and handle page load
+    // Set initial page
     if (!currentPage) {
       setCurrentPage(window.location.pathname);
-      if (!sessionInitialized) {
-        handlePageLoad();
-        setSessionInitialized(true);
-      }
     }
 
-    // Listen for page changes
+    // Listen for page changes (navigation only)
     window.addEventListener('popstate', handlePageChange);
     
     // Listen for navigation changes (wouter)
@@ -120,56 +122,20 @@ export default function ChatInterface({
       handlePageChange();
     };
 
-    // Listen for page reload/refresh
-    window.addEventListener('beforeunload', () => {
-      localStorage.removeItem('chatSessionId');
-    });
-
     return () => {
       window.removeEventListener('popstate', handlePageChange);
-      window.removeEventListener('beforeunload', () => {
-        localStorage.removeItem('chatSessionId');
-      });
       history.pushState = originalPushState;
       history.replaceState = originalReplaceState;
     };
   }, [currentPage, clearChatMutation]);
 
-  // Monitor IP address changes
-  useEffect(() => {
-    const checkIPAddress = async () => {
-      try {
-        const response = await fetch('https://api.ipify.org?format=json');
-        const data = await response.json();
-        const newIP = data.ip;
-        
-        if (currentIP && currentIP !== newIP) {
-          clearChatMutation.mutate();
-          console.log(`Chat cleared due to IP change: ${currentIP} → ${newIP}`);
-        }
-        setCurrentIP(newIP);
-      } catch (error) {
-        console.warn('Failed to check IP address:', error);
-      }
-    };
-
-    // Check IP immediately
-    checkIPAddress();
-
-    // Check IP every 30 seconds
-    const ipInterval = setInterval(checkIPAddress, 30000);
-
-    return () => {
-      clearInterval(ipInterval);
-    };
-  }, [currentIP, clearChatMutation]);
-
   const sendMessageMutation = useMutation({
     mutationFn: async (messageText: string) => {
-      // Send to backend with OpenAI integration
+      // Send to backend with OpenAI integration and browser fingerprint
       const response = await apiRequest("POST", "/api/chat", { 
         message: messageText,
-        language: language 
+        language: language,
+        fingerprint: browserFingerprint
       });
       return response.json();
     },

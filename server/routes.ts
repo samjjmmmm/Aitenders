@@ -82,23 +82,29 @@ export async function registerRoutes(app: Express): Promise<Server> {
       : "I can help you with questions about security, use cases, ROI, AI agents, or connecting you with our team. Rephrase your question or use the buttons below.";
   };
 
-  // Generate session ID based on IP and user agent
-  const generateSessionId = (req: any) => {
+  // Generate session ID from browser fingerprint sent by client
+  const getSessionId = (req: any) => {
+    // Get fingerprint from request header or body
+    const fingerprint = req.headers['x-browser-fingerprint'] || req.body.fingerprint;
+    if (fingerprint) {
+      return fingerprint;
+    }
+    
+    // Fallback to IP + user agent for older sessions
     const ip = req.ip || req.connection.remoteAddress || req.socket.remoteAddress || 'unknown';
     const userAgent = req.get('User-Agent') || 'unknown';
-    return `${ip}_${Buffer.from(userAgent).toString('base64').slice(0, 20)}`;
+    return `legacy_${ip}_${Buffer.from(userAgent).toString('base64').slice(0, 20)}`;
   };
 
   // Chat message submission with OpenAI integration and fallback
   app.post("/api/chat", async (req, res) => {
     try {
-      const { message, language = 'fr', clearSession } = req.body;
-      const sessionId = generateSessionId(req);
+      const { message, language = 'fr', fingerprint } = req.body;
+      const sessionId = getSessionId(req);
       
-      // Clear session if requested or if it's a new session
-      if (clearSession) {
-        await storage.clearChatMessages();
-        return res.json({ message: "Session cleared" });
+      // Add fingerprint to headers for future requests
+      if (fingerprint) {
+        req.headers['x-browser-fingerprint'] = fingerprint;
       }
       
       if (!message || typeof message !== 'string') {
@@ -137,7 +143,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Get chat messages for current session
   app.get("/api/chat", async (req, res) => {
     try {
-      const sessionId = generateSessionId(req);
+      const sessionId = getSessionId(req);
       const messages = await storage.getChatMessagesBySession(sessionId);
       res.json(messages);
     } catch (error) {
@@ -145,13 +151,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Clear session endpoint
+  // Clear specific session endpoint
   app.post("/api/chat/clear", async (req, res) => {
     try {
-      await storage.clearChatMessages();
-      res.json({ message: "Chat cleared successfully" });
+      const { fingerprint } = req.body;
+      const sessionId = fingerprint || getSessionId(req);
+      await storage.clearSessionMessages(sessionId); // Clear only this session
+      res.json({ message: "Session cleared successfully", sessionId });
     } catch (error) {
-      res.status(500).json({ message: "Failed to clear chat" });
+      res.status(500).json({ message: "Failed to clear session" });
     }
   });
 
