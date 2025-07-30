@@ -311,9 +311,9 @@ The architecture prioritizes developer experience with hot reloading, type safet
   - **Bilingual Configuration**: French/English routing rules and response templates
 - **User Experience**: Context-aware responses with intelligent routing ensuring users get the most relevant information source (knowledge base vs ChatGPT) based on query intent
 
-### Advanced-Only Simulator Integration with Range Detection System
+### Advanced-Only Simulator Integration with User-Friendly Interface
 - **Date**: January 30, 2025
-- **Change**: Removed legacy 6-question simulator, keeping only advanced 15+ question Python-imported system
+- **Change**: Removed legacy 6-question simulator, keeping only advanced 15+ question Python-imported system with enhanced user experience
 - **Technical Implementation**:
   - **Chat-Based Simulator**: ROI simulator questions now accessible directly through chat interface via "Simulateur ROI" button
   - **RAG Integration**: Enhanced RAG service with simulator routing (simulator_start, simulator_continue, simulator_completed, simulator_answer)
@@ -349,3 +349,9 @@ The architecture prioritizes developer experience with hot reloading, type safet
   - **Pattern Recognition**: Multiple range formats supported with automatic average calculation ("entre 30 et 50", "de 10 à 20", "15-25")
   - **User Experience**: Direct simulator launch from chat button starts advanced analysis immediately
   - **Natural Flow**: Seamless handling of estimations and approximations in advanced calculator
+- **Enhanced User Experience**:
+  - **Clear Time Expectation**: "⏱️ Temps estimé : 3-5 minutes" displayed in introduction
+  - **Email Delivery Promise**: "📧 Vous recevrez votre rapport détaillé par email" 
+  - **Natural Examples**: Each question shows example responses instead of technical validation rules
+  - **No Validation Barriers**: All estimations accepted without strict boundary enforcement
+  - **User-Friendly Language**: Examples like "environ 250, entre 100 et 200" encourage natural responses

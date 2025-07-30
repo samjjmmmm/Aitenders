@@ -278,7 +278,14 @@ class RAGService {
       const firstQuestion = await advancedAnalysisService.startSession(sessionId);
       return {
         action: 'advanced_analysis_start',
-        response: `🔄 **Analyse redémarrée**\n\nNous repartons depuis le début !\n\n${firstQuestion}`
+        response: `🔄 **Analyse redémarrée**
+
+⏱️ **Temps estimé : 3-5 minutes**
+📧 **Vous recevrez votre rapport détaillé par email**
+
+Nous repartons depuis le début !
+
+${firstQuestion}`
       };
     }
 
@@ -365,6 +372,9 @@ ${firstQuestion}`
       return {
         action: 'advanced_analysis_start',
         response: `🚀 **SIMULATEUR ROI AITENDERS - ANALYSE COMPLÈTE**
+
+⏱️ **Temps estimé : 3-5 minutes**
+📧 **Vous recevrez votre rapport détaillé par email**
 
 Nous allons explorer vos processus en détail avec 15 questions couvrant :
 
