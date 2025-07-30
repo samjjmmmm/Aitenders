@@ -315,7 +315,7 @@ export default function ChatInterface({
 
   return (
     <div className={`fixed ${isExpanded ? 'top-0 left-0 right-0 bottom-0' : 'bottom-0 left-0 right-0'} z-50 ${transparent ? 'bg-transparent' : 'bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-2xl'}`}>
-      <div className={`${isExpanded ? 'w-[70%] h-full' : 'max-w-4xl'} mx-auto p-6 ${isExpanded ? 'flex flex-col' : ''}`}>
+      <div className={`${isExpanded ? 'w-[60%] h-full pt-[30%]' : 'max-w-4xl'} mx-auto p-6 ${isExpanded ? 'flex flex-col' : ''}`}>
         <div className={`bg-white border border-gray-300 ${isExpanded ? 'rounded-2xl flex-1 flex flex-col' : 'rounded-3xl'} shadow-lg p-4 relative`}>
           {/* Expand/Collapse Button */}
           <button
@@ -331,7 +331,7 @@ export default function ChatInterface({
           </button>
           {/* Recent Messages Display */}
           {messages.length > 0 && (
-            <div className={`mb-4 ${isExpanded ? 'flex-1 max-h-none overflow-y-auto scrollbar-visible' : 'max-h-40 overflow-y-auto'} space-y-2 ${isExpanded ? 'mt-12' : ''}`}>
+            <div className={`mb-4 ${isExpanded ? 'flex-1 min-h-0 overflow-y-scroll scrollbar-visible' : 'max-h-40 overflow-y-auto'} space-y-2 ${isExpanded ? 'mt-12 pr-2' : ''}`}>
               {(isExpanded ? messages : messages.slice(-2)).map((msg) => (
                 <div key={msg.id} className="space-y-2">
                   <div className="text-right">
