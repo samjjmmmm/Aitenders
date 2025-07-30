@@ -2,16 +2,26 @@ import { useState } from "react";
 import Header from "@/components/header";
 import ClientLogos from "@/components/client-logos";
 import ContactSection from "@/components/contact-section";
-import ChatWidget from "@/components/chat-widget";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Link, useLocation } from "wouter";
 import { 
   MdBarChart, MdSearch, MdDescription, MdLightbulb, MdTrendingUp, MdSecurity, MdPeople, 
-  MdInsertDriveFile, MdSettings, MdEmojiEvents, MdGpsFixed, 
+  MdSend, MdInsertDriveFile, MdSettings, MdEmojiEvents, MdGpsFixed, 
   MdSchedule, MdCheckCircle, MdEdit, MdAnalytics, MdVerifiedUser, MdGroups, MdAccountCircle 
 } from "react-icons/md";
 import { FaRobot, FaChartLine, FaShieldAlt, FaUsers } from "react-icons/fa";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
+import { useToast } from "@/hooks/use-toast";
+
+interface ChatMessage {
+  id: string;
+  message: string;
+  response?: string;
+  createdAt: Date;
+}
 
 interface SelectionCard {
   id: string;
@@ -25,317 +35,461 @@ interface SelectionCard {
 }
 
 export default function HomePage() {
+  const [message, setMessage] = useState("");
+  const [chatExpanded, setChatExpanded] = useState(false);
   const [language, setLanguage] = useState<'en' | 'fr'>('fr');
   const [, setLocation] = useLocation();
+  const { toast } = useToast();
+  const queryClient = useQueryClient();
+
+  const { data: messages = [], isLoading } = useQuery<ChatMessage[]>({
+    queryKey: ["/api/chat"],
+  });
+
+  const sendMessageMutation = useMutation({
+    mutationFn: async (messageText: string) => {
+      const response = await apiRequest("POST", "/api/chat", { message: messageText });
+      return response.json();
+    },
+    onSuccess: () => {
+      setMessage("");
+      queryClient.invalidateQueries({ queryKey: ["/api/chat"] });
+      toast({
+        title: "Message sent",
+        description: "Thank you for your message. We'll respond shortly.",
+      });
+    },
+    onError: () => {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const handleSendMessage = () => {
+    if (message.trim()) {
+      sendMessageMutation.mutate(message);
+    }
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      handleSendMessage();
+    }
+  };
 
   // Translations
   const t = {
     fr: {
-      title: "Aitenders",
-      subtitle: "Chaque exigence traitée. Chaque soumission optimisée.",
-      description: "Plateforme d'IA pour la gestion d'appels d'offres qui transforme les documents complexes en stratégies gagnantes.",
-      getStarted: "Commencer",
-      learnMore: "En savoir plus",
-      learnMoreDescription: "Découvrez comment l'IA révolutionne la gestion des appels d'offres",
-      exploreSolutions: "Explorer nos solutions",
-      step1Title: "Quel est votre profil ?",
-      step2Title: "Quel est votre besoin principal ?",
+      mainTitle: "Trouvez la solution adaptée à votre projet",
+      mainSubtitle: "en quelques clics",
+      description: "Choisissez vos besoins et la taille de votre projet pour accéder à un cas d'usage personnalisé.",
+      domainSelection: "Sélectionnez vos domaines d'activité",
+      projectSize: "Quelle est la taille de vos projets ?",
+      chooseUseCase: "Choisissez votre cas d'usage",
       yourSelection: "Votre sélection :",
-      availableUseCases: "Cas d'usage recommandés :",
-      chatTitle: "Assistant IA Aitenders",
-      chatPlaceholder: "Posez votre question sur les appels d'offres...",
-      ourUseCases: "Nos cas d'usage",
-      tenderProcess: "Processus d'appel d'offres",
-      scheduleDemo: "Planifier une démo",
-      
-      // Step 1 Cards
-      smallTeam: "Petite équipe",
-      smallTeamDesc: "Équipe de 1-10 personnes gérant des projets simples",
-      mediumTeam: "Équipe moyenne",
-      mediumTeamDesc: "Équipe de 10-50 personnes avec projets variés",
-      largeTeam: "Grande équipe",
-      largeTeamDesc: "Équipe de 50+ personnes, projets complexes",
-      consultant: "Consultant",
-      consultantDesc: "Expert indépendant ou cabinet de conseil",
-      
-      // Step 2 Cards
-      bidPreparation: "Préparation de soumissions",
-      bidPreparationDesc: "Rédaction et optimisation des réponses",
-      projectManagement: "Gestion de projets",
-      projectManagementDesc: "Suivi et coordination des équipes",
-      complianceTracking: "Suivi de conformité",
-      complianceTrackingDesc: "Vérification des exigences réglementaires",
-      marketIntelligence: "Veille concurrentielle",
-      marketIntelligenceDesc: "Analyse du marché et des concurrents",
+      availableUseCases: "Cas d'usage disponibles :",
+      back: "← Retour",
+      tenderManagement: "Tender Management",
+      tenderDescription: "Optimisez vos réponses aux appels d'offres. Analyse IA, collaboration et suivi de conformité pour maximiser vos chances de succès.",
+      contractExecution: "Contract & Project Execution", 
+      contractDescription: "Pilotez vos projets et contrats en toute confiance. Suivi des livrables, conformité et gestion proactive des changements.",
+      knowledgeManagement: "Knowledge Management",
+      knowledgeDescription: "Capitalisez sur vos savoirs et expériences passées. Accès rapide aux références, modèles et comparables pour chaque nouveau projet.",
+      smallProject: "Petit Projet",
+      smallDescription: "Idéal pour les petites équipes et besoins ciblés. Mise en place rapide, fonctionnalités essentielles.",
+      mediumProject: "Projet Moyen",
+      mediumDescription: "Un équilibre entre flexibilité et puissance. Outils complets pour des projets structurés et collaboratifs.",
+      largeProject: "Grand Projet", 
+      largeDescription: "Conçu pour les organisations complexes et à grande échelle. Solutions avancées, IA sur mesure et sécurité renforcée.",
+      learnMore: "Je veux en savoir plus sur Aitenders",
+      learnMoreDescription: "Découvrez toutes nos fonctionnalités et comment Aitenders peut transformer votre gestion des appels d'offres et projets.",
+      exploreSolutions: "Explorer nos solutions",
+      discoverUseCase: "Découvrir ce cas d'usage",
+      chatPlaceholder: "Comment puis-je vous aider aujourd'hui ?",
+      chatTitle: "Chat avec l'Assistant IA",
+      ourUseCases: "Nos Cas d'Usage",
+      tenderProcess: "Processus d'Appel d'Offres",
+      scheduleDemo: "Planifier une Démo"
     },
     en: {
-      title: "Aitenders",
-      subtitle: "Every requirement addressed. Every bid optimized.",
-      description: "AI-powered tender management platform that transforms complex documents into winning strategies.",
-      getStarted: "Get Started",
-      learnMore: "Learn More",
-      learnMoreDescription: "Discover how AI is revolutionizing tender management",
-      exploreSolutions: "Explore Solutions",
-      step1Title: "What's your profile?",
-      step2Title: "What's your main need?",
+      mainTitle: "Find the solution adapted to your project",
+      mainSubtitle: "in just a few clicks",
+      description: "Choose your needs and project size to access a personalized use case.",
+      domainSelection: "Select your business domains",
+      projectSize: "What is the size of your projects?",
+      chooseUseCase: "Choose your use case",
       yourSelection: "Your selection:",
-      availableUseCases: "Recommended use cases:",
-      chatTitle: "Aitenders AI Assistant",
-      chatPlaceholder: "Ask your question about tenders...",
-      ourUseCases: "Our use cases",
-      tenderProcess: "Tender process",
-      scheduleDemo: "Schedule demo",
-      
-      // Step 1 Cards
-      smallTeam: "Small team",
-      smallTeamDesc: "Team of 1-10 people managing simple projects",
-      mediumTeam: "Medium team", 
-      mediumTeamDesc: "Team of 10-50 people with varied projects",
-      largeTeam: "Large team",
-      largeTeamDesc: "Team of 50+ people, complex projects",
-      consultant: "Consultant",
-      consultantDesc: "Independent expert or consulting firm",
-      
-      // Step 2 Cards
-      bidPreparation: "Bid preparation",
-      bidPreparationDesc: "Writing and optimizing responses",
-      projectManagement: "Project management",
-      projectManagementDesc: "Team tracking and coordination",
-      complianceTracking: "Compliance tracking",
-      complianceTrackingDesc: "Regulatory requirements verification",
-      marketIntelligence: "Market intelligence",
-      marketIntelligenceDesc: "Market and competitor analysis",
+      availableUseCases: "Available use cases:",
+      back: "← Back",
+      tenderManagement: "Tender Management",
+      tenderDescription: "Optimize your tender responses. AI analysis, collaboration and compliance tracking to maximize your chances of success.",
+      contractExecution: "Contract & Project Execution",
+      contractDescription: "Manage your projects and contracts with confidence. Deliverables tracking, compliance and proactive change management.",
+      knowledgeManagement: "Knowledge Management", 
+      knowledgeDescription: "Capitalize on your knowledge and past experiences. Quick access to references, templates and comparables for each new project.",
+      smallProject: "Small Project",
+      smallDescription: "Ideal for small teams and targeted needs. Quick setup, essential features.",
+      mediumProject: "Medium Project",
+      mediumDescription: "A balance between flexibility and power. Complete tools for structured and collaborative projects.",
+      largeProject: "Large Project",
+      largeDescription: "Designed for complex and large-scale organizations. Advanced solutions, custom AI and enhanced security.",
+      learnMore: "I want to learn more about Aitenders",
+      learnMoreDescription: "Discover all our features and how Aitenders can transform your tender and project management.",
+      exploreSolutions: "Explore our solutions",
+      discoverUseCase: "Discover this use case",
+      chatPlaceholder: "How can I help you today?",
+      chatTitle: "Chat with AI Assistant",
+      ourUseCases: "Our Use Cases",
+      tenderProcess: "Tender Process", 
+      scheduleDemo: "Schedule Demo"
     }
   };
 
-  // Decision tree state
-  const [currentStep, setCurrentStep] = useState<1 | 2>(1);
-  const [step1Selections, setStep1Selections] = useState<string[]>([]);
-  const [step2Selection, setStep2Selection] = useState<string>("");
-
-  // Step 1 cards - Profile selection (multiple choice)
+  // Step 1: Domain Selection (Multi-select)
   const step1Cards: SelectionCard[] = [
     {
-      id: "small-team",
-      title: t[language].smallTeam,
-      description: t[language].smallTeamDesc,
-      icon: MdPeople,
-      color: "bg-blue-50 border-blue-200 text-blue-800",
-      useCases: ["UC1", "UC2"],
+      id: "tender-management",
+      title: t[language].tenderManagement,
+      description: t[language].tenderDescription,
+      icon: MdInsertDriveFile,
+      color: "bg-aitenders-primary-blue/10 text-aitenders-primary-blue"
     },
     {
-      id: "medium-team", 
-      title: t[language].mediumTeam,
-      description: t[language].mediumTeamDesc,
-      icon: MdGroups,
-      color: "bg-green-50 border-green-200 text-green-800",
-      useCases: ["UC2", "UC3", "UC4"],
+      id: "contract-execution",
+      title: t[language].contractExecution,
+      description: t[language].contractDescription,
+      icon: MdSettings,
+      color: "bg-aitenders-dark-blue/10 text-aitenders-dark-blue"
     },
     {
-      id: "large-team",
-      title: t[language].largeTeam,
-      description: t[language].largeTeamDesc,
-      icon: MdVerifiedUser,
-      color: "bg-purple-50 border-purple-200 text-purple-800", 
-      useCases: ["UC3", "UC4", "UC5"],
-    },
-    {
-      id: "consultant",
-      title: t[language].consultant,
-      description: t[language].consultantDesc,
-      icon: MdAccountCircle,
-      color: "bg-orange-50 border-orange-200 text-orange-800",
-      useCases: ["UC1", "UC6", "UC7"],
-    },
+      id: "knowledge-management",
+      title: t[language].knowledgeManagement,
+      description: t[language].knowledgeDescription,
+      icon: MdLightbulb,
+      color: "bg-aitenders-primary-blue/10 text-aitenders-primary-blue"
+    }
   ];
 
-  // Step 2 cards - Need selection (single choice)
+  // Step 2: Project Size Selection (Single-select)
   const step2Cards: SelectionCard[] = [
     {
-      id: "bid-preparation",
-      title: t[language].bidPreparation,
-      description: t[language].bidPreparationDesc,
-      icon: MdEdit,
-      color: "bg-blue-50 border-blue-200 text-blue-800",
-      useCases: ["UC1", "UC2"],
-      redirectTo: "/uc1"
+      id: "petit-projet",
+      title: t[language].smallProject,
+      description: t[language].smallDescription,
+      icon: MdSchedule,
+      color: "bg-aitenders-primary-blue/10 text-aitenders-primary-blue"
     },
     {
-      id: "project-management",
-      title: t[language].projectManagement,
-      description: t[language].projectManagementDesc,
-      icon: MdSettings,
-      color: "bg-green-50 border-green-200 text-green-800",
-      useCases: ["UC3", "UC4"],
-      redirectTo: "/uc3"
-    },
-    {
-      id: "compliance-tracking",
-      title: t[language].complianceTracking,
-      description: t[language].complianceTrackingDesc,
+      id: "projet-moyen",
+      title: t[language].mediumProject,
+      description: t[language].mediumDescription,
       icon: MdCheckCircle,
-      color: "bg-purple-50 border-purple-200 text-purple-800",
-      useCases: ["UC5", "UC6"],
-      redirectTo: "/uc2"
+      color: "bg-aitenders-dark-blue/10 text-aitenders-dark-blue"
     },
     {
-      id: "market-intelligence",
-      title: t[language].marketIntelligence,
-      description: t[language].marketIntelligenceDesc,
-      icon: MdAnalytics,
-      color: "bg-orange-50 border-orange-200 text-orange-800",
-      useCases: ["UC7", "UC8"],
-      redirectTo: "/uc2"
-    },
+      id: "grand-projet",
+      title: t[language].largeProject,
+      description: t[language].largeDescription,
+      icon: MdPeople,
+      color: "bg-aitenders-primary-blue/10 text-aitenders-primary-blue"
+    }
   ];
 
-  // Step 1 selection handler (multiple choice)
-  const handleStep1Selection = (cardId: string) => {
-    setStep1Selections(prev => 
-      prev.includes(cardId) 
-        ? prev.filter(id => id !== cardId)
-        : [...prev, cardId]
-    );
+  // UC mapping logic based on domain + project size combinations
+  const getUCsFromSelection = (domainSelections: string[], projectSize: string): string[] => {
+    const domains = new Set(domainSelections);
+    
+    // Single domain mappings
+    if (domains.size === 1) {
+      if (domains.has('tender-management')) {
+        if (projectSize === 'petit-projet') return ['UC1'];
+        if (projectSize === 'projet-moyen') return ['UC2'];
+        if (projectSize === 'grand-projet') return ['UC3'];
+      }
+      if (domains.has('contract-execution')) {
+        if (projectSize === 'petit-projet') return ['UC4'];
+        if (projectSize === 'projet-moyen') return ['UC5'];
+        if (projectSize === 'grand-projet') return ['UC6'];
+      }
+      if (domains.has('knowledge-management')) {
+        if (projectSize === 'petit-projet') return ['UC7'];
+        if (projectSize === 'projet-moyen') return ['UC8'];
+        if (projectSize === 'grand-projet') return ['UC8'];
+      }
+    }
+    
+    // Multi-domain combinations
+    if (domains.has('tender-management') && domains.has('contract-execution')) {
+      return ['UC2', 'UC5'];
+    }
+    if (domains.has('tender-management') && domains.has('knowledge-management')) {
+      return ['UC3', 'UC7'];
+    }
+    if (domains.has('contract-execution') && domains.has('knowledge-management')) {
+      return ['UC6', 'UC7'];
+    }
+    if (domains.size === 3) {
+      return ['UC8'];
+    }
+    
+    return ['UC1']; // Default fallback
   };
 
-  // Step 2 selection handler (single choice)
-  const handleStep2Selection = (cardId: string) => {
-    setStep2Selection(cardId);
-    // Auto-redirect to recommended UC page
-    const selectedCard = step2Cards.find(card => card.id === cardId);
-    if (selectedCard?.redirectTo) {
-      setTimeout(() => {
-        setLocation(selectedCard.redirectTo!);
-      }, 1000);
+  // State management for the 2-step flow
+  const [step1Selections, setStep1Selections] = useState<string[]>([]);
+  const [step2Selection, setStep2Selection] = useState<string>('');
+  const [showStep2, setShowStep2] = useState(false);
+  const [showUCResults, setShowUCResults] = useState(false);
+  const [resultUCs, setResultUCs] = useState<string[]>([]);
+
+  // UC to page mapping
+  const ucToPageMapping: { [key: string]: string } = {
+    "UC1": "/uc1",
+    "UC2": "/uc2", 
+    "UC3": "/uc3",
+    "UC4": "/uc4",
+    "UC5": "/uc5",
+    "UC6": "/uc6",
+    "UC7": "/uc7",
+    "UC8": "/uc8"
+  };
+
+  // New 2-step flow handlers
+  const handleStep1Selection = (cardId: string) => {
+    let newSelections = [...step1Selections];
+    
+    if (newSelections.includes(cardId)) {
+      // Remove if already selected (multi-select toggle)
+      newSelections = newSelections.filter(id => id !== cardId);
+    } else {
+      // Add to selections
+      newSelections.push(cardId);
+    }
+    
+    setStep1Selections(newSelections);
+    
+    // Show Step 2 as soon as at least one domain is selected
+    if (newSelections.length > 0 && !showStep2) {
+      setShowStep2(true);
+    } else if (newSelections.length === 0) {
+      setShowStep2(false);
+      setShowUCResults(false);
+      setStep2Selection('');
     }
   };
 
-  // Calculate result UCs based on selections
-  const resultUCs = step1Selections.length > 0 && step2Selection
-    ? Array.from(new Set([
-        ...step1Selections.flatMap(selection => 
-          step1Cards.find(card => card.id === selection)?.useCases || []
-        ),
-        ...(step2Cards.find(card => card.id === step2Selection)?.useCases || [])
-      ])).sort()
-    : [];
+  const handleStep2Selection = (cardId: string) => {
+    setStep2Selection(cardId);
+    
+    // Calculate UCs based on Step 1 + Step 2 combination
+    const ucs = getUCsFromSelection(step1Selections, cardId);
+    setResultUCs(ucs);
+    
+    // If only one UC, redirect directly
+    if (ucs.length === 1) {
+      const finalUC = ucs[0];
+      toast({
+        title: "Solution trouvée",
+        description: `Redirection vers ${finalUC}...`,
+      });
+      setTimeout(() => setLocation(ucToPageMapping[finalUC]), 1000);
+    } else {
+      // Show UC selection cards if multiple UCs
+      setShowUCResults(true);
+    }
+  };
+
+  const handleUCSelection = (uc: string) => {
+    toast({
+      title: "Découvrir ce cas d'usage",
+      description: `Redirection vers ${uc}...`,
+    });
+    setTimeout(() => setLocation(ucToPageMapping[uc]), 1000);
+  };
+
+  const handleBackToStep1 = () => {
+    setShowStep2(false);
+    setShowUCResults(false);
+    setStep1Selections([]);
+    setStep2Selection('');
+  };
+
+  const handleBackToStep2 = () => {
+    setShowUCResults(false);
+    setStep2Selection('');
+  };
+
+  // UC information for display
+  const ucInfo: { [key: string]: { title: string; description: string } } = {
+    "UC1": { title: "Fast-Track Small Project Bids", description: "Solutions rapides pour petits projets" },
+    "UC2": { title: "Medium Project Management", description: "Gestion complète de projets moyens" },
+    "UC3": { title: "Complex Multi-Lot Bid Management", description: "Gestion de grands appels d'offres complexes" },
+    "UC4": { title: "Small Project Execution", description: "Exécution de petits projets" },
+    "UC5": { title: "Medium Project Execution", description: "Exécution de projets moyens" },
+    "UC6": { title: "Large Project Execution", description: "Exécution de grands projets" },
+    "UC7": { title: "Knowledge Management Small", description: "Gestion des connaissances pour petites structures" },
+    "UC8": { title: "Knowledge Management Large", description: "Gestion des connaissances pour grandes organisations" }
+  };
+
+  const resetSelection = () => {
+    setStep1Selections([]);
+    setStep2Selection('');
+    setShowStep2(false);
+    setShowUCResults(false);
+  };
+
+  const getStepTitle = () => {
+    if (!showStep2) {
+      return t[language].domainSelection;
+    } else if (!showUCResults) {
+      return t[language].projectSize;
+    } else {
+      return t[language].chooseUseCase;
+    }
+  };
+
+  
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-aitenders-white-blue via-aitenders-pale-blue to-aitenders-pastel-blue">
-      <Header language={language} setLanguage={setLanguage} />
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+      <Header language={language} onLanguageChange={setLanguage} />
       
-      <main className="pt-20">
-        {/* Hero Section */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      {/* Hero Section */}
+      <main className="relative">
+        <div className="max-w-4xl mx-auto px-6 pt-16 pb-12">
+          {/* Main Heading */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-aitenders-black mb-6 leading-tight">
-              {t[language].title}
+            <h1 className="text-4xl font-bold text-aitenders-black mb-4">
+              {t[language].mainTitle}<br />
+              <span className="text-aitenders-primary-blue">{t[language].mainSubtitle}</span>
             </h1>
-            <p className="text-xl md:text-2xl text-aitenders-dark-blue mb-4 font-medium max-w-4xl mx-auto leading-relaxed">
-              {t[language].subtitle}
-            </p>
-            <p className="text-lg text-aitenders-dark-blue/80 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-aitenders-dark-blue max-w-2xl mx-auto mt-3">
               {t[language].description}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                size="lg"
-                className="bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-aitenders-white-blue px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
-                onClick={() => document.getElementById('decision-tree')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                {t[language].getStarted}
-              </Button>
-              <Button 
-                variant="outline"
-                size="lg"
-                className="border-2 border-aitenders-primary-blue text-aitenders-primary-blue hover:bg-aitenders-primary-blue hover:text-aitenders-white-blue px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-200"
-                onClick={() => window.open("https://replit.com/@aitendersdev/SimpleSaaS", "_blank")}
-              >
-                {t[language].learnMore}
-              </Button>
-            </div>
           </div>
 
-          {/* 2-Step Decision Tree */}
-          <div id="decision-tree" className="max-w-6xl mx-auto">
-            {/* Step 1: Profile Selection */}
-            <div className="mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold text-aitenders-black text-center mb-8">
-                {t[language].step1Title}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {step1Cards.map((card) => (
-                  <Card
-                    key={card.id}
-                    className={`
-                      relative p-6 cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105 border-2 rounded-2xl shadow-sm hover:shadow-lg
-                      ${step1Selections.includes(card.id)
-                        ? 'border-aitenders-primary-blue bg-aitenders-primary-blue/10 shadow-lg'
-                        : 'border-aitenders-light-blue bg-aitenders-white-blue hover:border-aitenders-primary-blue/50'
-                      }
-                    `}
-                    onClick={() => handleStep1Selection(card.id)}
-                  >
-                    <div className="flex flex-col items-center text-center space-y-4">
-                      <div className={`p-3 rounded-xl ${step1Selections.includes(card.id) ? 'bg-aitenders-primary-blue text-aitenders-white-blue' : 'bg-aitenders-primary-blue/10 text-aitenders-primary-blue'}`}>
-                        <card.icon className="w-8 h-8" />
-                      </div>
-                      <div>
+          {/* Dynamic Selection Cards */}
+          <div className="mb-12 max-w-3xl mx-auto">
+
+
+            {/* Step Title */}
+            <h2 className="text-2xl font-bold text-aitenders-black mb-8 text-center">
+              {getStepTitle()}
+            </h2>
+
+            {/* Step 1: Domain Selection */}
+            {!showUCResults && (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                {step1Cards.map((card) => {
+                  const Icon = card.icon;
+                  const isSelected = step1Selections.includes(card.id);
+                  return (
+                    <Card
+                      key={card.id}
+                      onClick={() => handleStep1Selection(card.id)}
+                      className={`rounded-2xl p-6 shadow-sm hover:shadow-md cursor-pointer border transition-all duration-200 ease-in-out hover:scale-105 ${
+                        isSelected 
+                          ? 'border-aitenders-primary-blue bg-aitenders-pale-blue' 
+                          : 'border-aitenders-light-blue bg-aitenders-white-blue hover:border-aitenders-primary-blue'
+                      }`}
+                    >
+                      <div className="text-center">
+                        <div className={`p-4 rounded-xl mb-4 mx-auto w-fit ${card.color}`}>
+                          <Icon className="h-8 w-8" />
+                        </div>
                         <h3 className="text-lg font-semibold text-aitenders-black mb-2">
                           {card.title}
                         </h3>
-                        <p className="text-sm text-aitenders-dark-blue/70 leading-relaxed">
+                        <p className="text-sm text-aitenders-dark-blue">
                           {card.description}
                         </p>
                       </div>
-                    </div>
-                    {step1Selections.includes(card.id) && (
-                      <div className="absolute top-3 right-3">
-                        <MdCheckCircle className="w-6 h-6 text-aitenders-primary-blue" />
-                      </div>
-                    )}
-                  </Card>
-                ))}
+                    </Card>
+                  );
+                })}
               </div>
-            </div>
+            )}
 
-            {/* Step 2: Need Selection */}
-            {step1Selections.length > 0 && (
-              <div className="mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold text-aitenders-black text-center mb-8">
-                  {t[language].step2Title}
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {step2Cards.map((card) => (
-                    <Card
-                      key={card.id}
-                      className={`
-                        relative p-6 cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105 border-2 rounded-2xl shadow-sm hover:shadow-lg
-                        ${step2Selection === card.id
-                          ? 'border-aitenders-primary-blue bg-aitenders-primary-blue/10 shadow-lg'
-                          : 'border-aitenders-light-blue bg-aitenders-white-blue hover:border-aitenders-primary-blue/50'
-                        }
-                      `}
-                      onClick={() => handleStep2Selection(card.id)}
-                    >
-                      <div className="flex flex-col items-center text-center space-y-4">
-                        <div className={`p-3 rounded-xl ${step2Selection === card.id ? 'bg-aitenders-primary-blue text-aitenders-white-blue' : 'bg-aitenders-primary-blue/10 text-aitenders-primary-blue'}`}>
-                          <card.icon className="w-8 h-8" />
-                        </div>
-                        <div>
+            {/* Step 2: Project Size Selection */}
+            {showStep2 && !showUCResults && (
+              <div className="animate-in fade-in duration-300">
+                <div className="flex justify-between items-center mb-6">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={handleBackToStep1}
+                    className="text-aitenders-primary-blue hover:text-aitenders-dark-blue"
+                  >
+                    {t[language].back}
+                  </Button>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {step2Cards.map((card) => {
+                    const Icon = card.icon;
+                    const isSelected = step2Selection === card.id;
+                    return (
+                      <Card
+                        key={card.id}
+                        onClick={() => handleStep2Selection(card.id)}
+                        className={`rounded-2xl p-6 shadow-sm hover:shadow-md cursor-pointer border transition-all duration-200 ease-in-out hover:scale-105 ${
+                          isSelected 
+                            ? 'border-aitenders-primary-blue bg-aitenders-pale-blue' 
+                            : 'border-aitenders-light-blue bg-aitenders-white-blue hover:border-aitenders-primary-blue'
+                        }`}
+                      >
+                        <div className="text-center">
+                          <div className={`p-4 rounded-xl mb-4 mx-auto w-fit ${card.color}`}>
+                            <Icon className="h-8 w-8" />
+                          </div>
                           <h3 className="text-lg font-semibold text-aitenders-black mb-2">
                             {card.title}
                           </h3>
-                          <p className="text-sm text-aitenders-dark-blue/70 leading-relaxed">
+                          <p className="text-sm text-aitenders-dark-blue">
                             {card.description}
                           </p>
                         </div>
+                      </Card>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {/* UC Results */}
+            {showUCResults && (
+              <div className="animate-in fade-in duration-300">
+                <div className="flex justify-between items-center mb-6">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={handleBackToStep2}
+                    className="text-aitenders-primary-blue hover:text-aitenders-dark-blue"
+                  >
+                    {t[language].back}
+                  </Button>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {resultUCs.map((uc) => (
+                    <Card
+                      key={uc}
+                      onClick={() => handleUCSelection(uc)}
+                      className="rounded-2xl p-6 shadow-sm hover:shadow-md cursor-pointer border border-aitenders-light-blue bg-aitenders-white-blue hover:border-aitenders-primary-blue transition-all duration-200 ease-in-out hover:scale-105"
+                    >
+                      <div className="text-center">
+                        <h3 className="text-lg font-semibold text-aitenders-black mb-2">
+                          {uc}
+                        </h3>
+                        <p className="text-sm text-aitenders-dark-blue mb-4">
+                          {ucInfo[uc]?.description}
+                        </p>
+                        <Button className="bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-aitenders-white-blue">
+                          {t[language].discoverUseCase}
+                        </Button>
                       </div>
-                      {step2Selection === card.id && (
-                        <div className="absolute top-3 right-3">
-                          <MdCheckCircle className="w-6 h-6 text-aitenders-primary-blue" />
-                        </div>
-                      )}
                     </Card>
                   ))}
                 </div>
@@ -371,6 +525,151 @@ export default function HomePage() {
                 )}
               </div>
             )}
+          </div>
+
+          {/* Chat UI - Expandable Chatbot Interface */}
+          <div className="max-w-3xl mx-auto mb-16">
+            <div className="relative">
+              {!chatExpanded ? (
+                /* Collapsed Chat Bar */
+                <div 
+                  className="bg-aitenders-white-blue border border-aitenders-light-blue rounded-full shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
+                  onClick={() => setChatExpanded(true)}
+                >
+                  <div className="flex items-center">
+                    <div className="flex items-center justify-center w-12 h-12 ml-2">
+                      <FaRobot className="w-5 h-5 text-aitenders-primary-blue" />
+                    </div>
+                    <Input
+                      type="text"
+                      placeholder={t[language].chatPlaceholder}
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      onKeyPress={handleKeyPress}
+                      onFocus={() => setChatExpanded(true)}
+                      className="flex-1 py-6 px-4 text-base bg-transparent border-0 focus:ring-0 focus:outline-none placeholder:text-aitenders-dark-blue/60"
+                      disabled={sendMessageMutation.isPending}
+                    />
+                    <div className="mr-2">
+                      <Button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          if (!chatExpanded) setChatExpanded(true);
+                          handleSendMessage();
+                        }}
+                        disabled={!message.trim() || sendMessageMutation.isPending}
+                        size="icon"
+                        className="h-12 w-12 rounded-full bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-aitenders-white-blue shadow-sm hover:shadow-md transition-all duration-200"
+                      >
+                        <MdSend className="w-5 h-5" />
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                /* Expanded Chat Interface */
+                <div className="bg-aitenders-white-blue border border-aitenders-light-blue rounded-3xl shadow-lg p-6 transition-all duration-300 ease-in-out">
+                  {/* Chat Header */}
+                  <div className="flex justify-between items-center mb-4">
+                    <h3 className="text-lg font-semibold text-aitenders-black">{t[language].chatTitle}</h3>
+                    <Button
+                      onClick={() => setChatExpanded(false)}
+                      variant="ghost"
+                      size="sm"
+                      className="text-aitenders-dark-blue/60 hover:text-aitenders-dark-blue -mr-2"
+                    >
+                      <span className="text-xl">×</span>
+                    </Button>
+                  </div>
+
+                  {/* Chat Input Bar */}
+                  <div className="flex items-center mb-4">
+                    <div className="flex items-center justify-center w-12 h-12 ml-2">
+                      <FaRobot className="w-6 h-6 text-aitenders-primary-blue" />
+                    </div>
+                    <Input
+                      type="text"
+                      placeholder={t[language].chatPlaceholder}
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      onKeyPress={handleKeyPress}
+                      className="flex-1 py-3 px-4 text-base bg-transparent border-0 focus:ring-0 focus:outline-none placeholder:text-aitenders-dark-blue/60"
+                      disabled={sendMessageMutation.isPending}
+                      autoFocus
+                    />
+                    <div className="mr-2">
+                      <Button
+                        onClick={handleSendMessage}
+                        disabled={!message.trim() || sendMessageMutation.isPending}
+                        size="icon"
+                        className="h-12 w-12 rounded-full bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-aitenders-white-blue shadow-sm hover:shadow-md transition-all duration-200"
+                      >
+                        <MdSend className="w-5 h-5" />
+                      </Button>
+                    </div>
+                  </div>
+
+                  {/* Messages Display */}
+                  <div className="bg-aitenders-pale-blue rounded-2xl p-4 min-h-[200px] max-h-64 overflow-y-auto mb-4">
+                    {messages.length === 0 ? (
+                      <div className="flex items-center justify-center h-full text-aitenders-dark-blue/60 text-sm">
+                        <div className="text-center">
+                          <FaRobot className="w-8 h-8 mx-auto mb-2 text-aitenders-light-blue" />
+                          <p>Start a conversation by typing your question above</p>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="space-y-4">
+                        {messages.map((msg) => (
+                          <div key={msg.id} className="space-y-3">
+                            <div className="flex justify-end">
+                              <div className="bg-aitenders-primary-blue text-aitenders-white-blue px-4 py-3 rounded-2xl rounded-tr-sm max-w-xs lg:max-w-sm">
+                                <p className="text-sm">{msg.message}</p>
+                              </div>
+                            </div>
+                            {msg.response && (
+                              <div className="flex justify-start">
+                                <div className="bg-aitenders-white-blue text-aitenders-dark-blue px-4 py-3 rounded-2xl rounded-tl-sm max-w-xs lg:max-w-sm shadow-sm border border-aitenders-light-blue">
+                                  <p className="text-sm">{msg.response}</p>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Quick Actions */}
+                  <div className="flex flex-wrap gap-2">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setMessage(language === 'fr' ? "Quels cas d'usage proposez-vous ?" : "What use cases do you offer?")}
+                      className="text-xs rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
+                    >
+                      {t[language].ourUseCases}
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setMessage(language === 'fr' ? "Comment fonctionne le processus d'appel d'offres ?" : "How does the tender process work?")}
+                      className="text-xs rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
+                    >
+                      {t[language].tenderProcess}
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setMessage(language === 'fr' ? "Puis-je planifier une démo ?" : "Can I schedule a demo?")}
+                      className="text-xs rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
+                    >
+                      {t[language].scheduleDemo}
+                    </Button>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
@@ -413,11 +712,10 @@ export default function HomePage() {
       {/* Client Logos */}
       <ClientLogos language={language} />
 
+      
+
       {/* Contact Section */}
       <ContactSection language={language} />
-
-      {/* Fixed Chat Widget */}
-      <ChatWidget />
     </div>
   );
 }
