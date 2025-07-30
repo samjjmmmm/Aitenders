@@ -124,8 +124,8 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
         />
       )}
 
-      {/* Slide-out Menu */}
-      <div className={`fixed top-0 right-0 h-full w-80 bg-aitenders-white-blue shadow-2xl transform transition-transform duration-300 ease-in-out z-50 ${
+      {/* Mobile Slide-out Menu - Hidden on desktop */}
+      <div className={`lg:hidden fixed top-0 right-0 h-full w-80 bg-aitenders-white-blue shadow-2xl transform transition-transform duration-300 ease-in-out z-50 ${
         isMenuOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
         <div className="p-6">
