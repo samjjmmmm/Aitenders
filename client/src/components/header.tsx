@@ -17,6 +17,13 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
   const [showLanguageMenu, setShowLanguageMenu] = useState(false);
   const [location] = useLocation();
   
+  // Ensure menu starts closed on mount
+  useEffect(() => {
+    setIsMenuOpen(false);
+    setIsUseCasesOpen(false);
+    setShowLanguageMenu(false);
+  }, []);
+  
   // Close menu when location changes
   useEffect(() => {
     setIsMenuOpen(false);
@@ -110,7 +117,7 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
       {/* Slide-out Menu */}
       <div className={`fixed top-0 right-0 h-full w-80 bg-aitenders-white-blue shadow-2xl transform transition-transform duration-300 ease-in-out z-50 ${
         isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-      }`}>
+      }`} style={{ transform: isMenuOpen ? 'translateX(0)' : 'translateX(100%)' }}>
         <div className="p-6">
           <div className="flex justify-between items-center mb-8">
             <span className="text-xl font-bold text-aitenders-black">Menu</span>
