@@ -297,7 +297,7 @@ export default function HomePage() {
               {t[language].mainTitle}<br />
               <span className="text-aitenders-primary-blue">{t[language].mainSubtitle}</span>
             </h1>
-            <p className="text-sm text-aitenders-dark-blue max-w-2xl mx-auto mt-1">
+            <p className="text-lg text-aitenders-dark-blue max-w-2xl mx-auto mt-1">
               {t[language].description}
             </p>
           </div>
