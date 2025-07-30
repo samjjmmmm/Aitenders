@@ -32,7 +32,57 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Chat message submission with OpenAI integration
+  // Fallback knowledge base for when OpenAI fails
+  const getFallbackResponse = (message: string, language: 'fr' | 'en' = 'fr'): string => {
+    const knowledgeBase = {
+      fr: {
+        security: {
+          keywords: ["sécurité", "security", "données", "rgpd", "gdpr", "protection", "chiffrement"],
+          response: "🛡️ **Sécurité by Design chez Aitenders**\n\n• **Chiffrement end-to-end** : Toutes vos données sont chiffrées en transit et au repos\n• **Conformité RGPD** : Respect strict de la réglementation européenne  \n• **Hébergement sécurisé** : Serveurs européens certifiés ISO 27001\n• **Contrôles d'accès granulaires** : Permissions par rôle et projet\n• **Pistes d'audit complètes** : Traçabilité de toutes les actions\n• **Sauvegarde automatique** : Vos données sont protégées en permanence"
+        },
+        usecases: {
+          keywords: ["cas d'usage", "use case", "cas", "usage", "scénarios", "fonctionnalités"],
+          response: "📋 **Cas d'Usage Aitenders**\n\n**Par Phase :**\n• **Offre** : Analyse des DCE, extraction d'exigences, estimation des coûts\n• **Exécution** : Suivi des jalons, gestion des risques, pilotage multi-projets\n• **Rédaction** : Génération automatique de réponses, vérification conformité\n\n**Par Complexité :**\n• **UC1 - Petits projets** : Appels d'offres simples, processus accéléré\n• **UC3 - Projets complexes** : Multi-lots, coordination équipes, conformité réglementaire"
+        },
+        roi: {
+          keywords: ["roi", "retour", "investissement", "bénéfices", "économies", "gains", "calcul"],
+          response: "💰 **Retour sur Investissement Aitenders**\n\n**Gains mesurables :**\n• **-60% temps de préparation** des offres\n• **+40% taux de succès** aux appels d'offres\n• **-30% erreurs de conformité**\n• **+25% productivité équipes**\n\n**Calcul personnalisé :**\n• Économies en temps : 15-20h/offre récupérées\n• Coût moyen évité : 8-12k€ par erreur non-conformité\n• ROI moyen : 300-450% première année"
+        },
+        agents: {
+          keywords: ["agents", "ia", "ai", "intelligence", "artificielle", "automatisation"],
+          response: "🤖 **Agents IA Aitenders**\n\n**Agent Analyseur** :\n• Extraction automatique des exigences techniques\n• Identification des critères de sélection\n• Détection des pièges contractuels\n\n**Agent Rédacteur** :\n• Génération de réponses personnalisées\n• Adaptation au style et aux contraintes\n• Vérification cohérence multi-documents"
+        },
+        contact: {
+          keywords: ["contact", "démonstration", "demo", "équipe", "expert", "aide"],
+          response: "📞 **Contactez Notre Équipe**\n\n**Démonstration personnalisée :**\n• Session de 30min adaptée à vos besoins\n• Découverte de vos cas d'usage spécifiques\n• Simulation sur vos documents réels\n\n**Contact :** contact@aitenders.com\n**Planning :** Disponible sous 24h"
+        }
+      },
+      en: {
+        security: {
+          keywords: ["security", "data", "gdpr", "protection", "encryption"],
+          response: "🛡️ **Security by Design at Aitenders**\n\n• **End-to-end encryption**: All data encrypted in transit and at rest\n• **GDPR compliance**: Strict adherence to European regulations\n• **Secure hosting**: ISO 27001 certified European servers\n• **Granular access controls**: Role and project-based permissions\n• **Complete audit trails**: Full traceability of all actions"
+        },
+        usecases: {
+          keywords: ["use case", "cases", "scenarios", "features"],
+          response: "📋 **Aitenders Use Cases**\n\n**By Phase:**\n• **Bidding**: DCE analysis, requirements extraction, cost estimation\n• **Execution**: Milestone tracking, risk management, multi-project control\n• **Writing**: Automatic response generation, compliance verification"
+        }
+      }
+    };
+
+    const lowerMessage = message.toLowerCase();
+    
+    for (const [category, data] of Object.entries(knowledgeBase[language])) {
+      if (data.keywords.some(keyword => lowerMessage.includes(keyword))) {
+        return data.response;
+      }
+    }
+    
+    return language === 'fr' 
+      ? "Je peux vous aider avec des questions sur la sécurité, les cas d'usage, le ROI, les agents IA ou pour vous mettre en contact avec notre équipe. Reformulez votre question ou utilisez les boutons ci-dessous."
+      : "I can help you with questions about security, use cases, ROI, AI agents, or connecting you with our team. Rephrase your question or use the buttons below.";
+  };
+
+  // Chat message submission with OpenAI integration and fallback
   app.post("/api/chat", async (req, res) => {
     try {
       const { message, language = 'fr' } = req.body;
@@ -41,8 +91,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ message: "Message is required" });
       }
 
-      // Generate AI response using OpenAI
-      const aiResponse = await generateAitendersResponse(message, language);
+      let aiResponse: string;
+      
+      try {
+        // Try OpenAI first
+        aiResponse = await generateAitendersResponse(message, language);
+      } catch (openaiError) {
+        console.warn("OpenAI failed, using fallback:", openaiError instanceof Error ? openaiError.message : 'Unknown error');
+        // Use fallback knowledge base
+        aiResponse = getFallbackResponse(message, language);
+      }
       
       // Save both user message and AI response
       const validatedData = insertChatMessageSchema.parse({
