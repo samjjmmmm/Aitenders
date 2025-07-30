@@ -221,10 +221,22 @@ class SimulatorService {
         return { error: `Veuillez choisir une option parmi: ${question.options?.join(', ')}${optionalNote}` };
 
       case 'number':
+        // Try to extract time values and convert to hours
+        const timeValue = this.parseTimeToHours(cleanAnswer);
+        if (timeValue !== null) {
+          if (question.min !== undefined && timeValue < question.min) {
+            return { error: `La valeur doit être supérieure ou égale à ${question.min} heures.` };
+          }
+          if (question.max !== undefined && timeValue > question.max) {
+            return { error: `La valeur doit être inférieure ou égale à ${question.max} heures.` };
+          }
+          return { value: timeValue, numericValue: timeValue };
+        }
+
         const num = parseFloat(cleanAnswer);
         if (isNaN(num)) {
           const optionalNote = !question.required ? ' (ou "passer" pour ignorer)' : '';
-          return { error: `Veuillez saisir un nombre valide${optionalNote}.` };
+          return { error: `Veuillez saisir un nombre valide ou une durée (ex: "6 mois", "200h")${optionalNote}.` };
         }
         if (question.min !== undefined && num < question.min) {
           return { error: `La valeur doit être supérieure ou égale à ${question.min}.` };
@@ -235,10 +247,22 @@ class SimulatorService {
         return { value: num, numericValue: num };
 
       case 'range':
+        // Try to extract time values and convert to hours for range questions too
+        const rangeTimeValue = this.parseTimeToHours(cleanAnswer);
+        if (rangeTimeValue !== null) {
+          if (question.min !== undefined && rangeTimeValue < question.min) {
+            return { error: `La valeur doit être entre ${question.min} et ${question.max} heures.` };
+          }
+          if (question.max !== undefined && rangeTimeValue > question.max) {
+            return { error: `La valeur doit être entre ${question.min} et ${question.max} heures.` };
+          }
+          return { value: rangeTimeValue, numericValue: rangeTimeValue };
+        }
+
         const rangeNum = parseFloat(cleanAnswer);
         if (isNaN(rangeNum)) {
           const optionalNote = !question.required ? ' (ou "passer" pour ignorer)' : '';
-          return { error: `Veuillez saisir un nombre valide${optionalNote}.` };
+          return { error: `Veuillez saisir un nombre valide ou une durée (ex: "6 mois", "200h")${optionalNote}.` };
         }
         if (question.min !== undefined && rangeNum < question.min) {
           return { error: `La valeur doit être entre ${question.min} et ${question.max}.` };
@@ -262,6 +286,45 @@ class SimulatorService {
       default:
         return { error: 'Type de question non supporté.' };
     }
+  }
+
+  // Parse time expressions and convert to hours
+  private parseTimeToHours(input: string): number | null {
+    const cleanInput = input.toLowerCase().trim();
+    
+    // Look for patterns like "6 mois", "3 semaines", "200 heures", etc.
+    const patterns = [
+      // Months patterns
+      { regex: /(\d+(?:\.\d+)?)\s*mois?/i, multiplier: 160 }, // ~160h per month (4 weeks * 40h)
+      { regex: /(\d+(?:\.\d+)?)\s*m$/i, multiplier: 160 }, // "6m" = 6 months
+      
+      // Weeks patterns  
+      { regex: /(\d+(?:\.\d+)?)\s*semaines?/i, multiplier: 40 }, // 40h per week
+      { regex: /(\d+(?:\.\d+)?)\s*sem/i, multiplier: 40 },
+      { regex: /(\d+(?:\.\d+)?)\s*w/i, multiplier: 40 }, // "2w" = 2 weeks
+      
+      // Days patterns
+      { regex: /(\d+(?:\.\d+)?)\s*jours?/i, multiplier: 8 }, // 8h per day
+      { regex: /(\d+(?:\.\d+)?)\s*j$/i, multiplier: 8 }, // "15j" = 15 days
+      { regex: /(\d+(?:\.\d+)?)\s*d$/i, multiplier: 8 }, // "15d" = 15 days
+      
+      // Hours patterns
+      { regex: /(\d+(?:\.\d+)?)\s*heures?/i, multiplier: 1 },
+      { regex: /(\d+(?:\.\d+)?)\s*h$/i, multiplier: 1 }, // "200h"
+      { regex: /(\d+(?:\.\d+)?)\s*hrs?$/i, multiplier: 1 },
+    ];
+
+    for (const pattern of patterns) {
+      const match = cleanInput.match(pattern.regex);
+      if (match) {
+        const value = parseFloat(match[1]);
+        if (!isNaN(value)) {
+          return value * pattern.multiplier;
+        }
+      }
+    }
+
+    return null;
   }
 
   // Formater une question pour l'affichage
