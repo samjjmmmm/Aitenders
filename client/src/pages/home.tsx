@@ -109,7 +109,7 @@ export default function HomePage() {
       learnMoreDescription: "Découvrez toutes nos fonctionnalités et comment Aitenders peut transformer votre gestion des appels d'offres et projets.",
       exploreSolutions: "Explorer nos solutions",
       discoverUseCase: "Découvrir ce cas d'usage",
-      chatPlaceholder: "Comment puis-je vous aider aujourd'hui ?",
+      chatPlaceholder: "Comment puis-je amplifier l'intelligence de votre équipe projet aujourd'hui ?",
       chatTitle: "Chat avec l'Assistant IA",
       ourUseCases: "Nos Cas d'Usage",
       tenderProcess: "Processus d'Appel d'Offres",
@@ -580,12 +580,15 @@ export default function HomePage() {
         <div className="bg-aitenders-white-blue border-b border-aitenders-light-blue p-6 shadow-sm">
           <div className="max-w-6xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-aitenders-black mb-4">
-              {t[language].chatTitle}
+              {language === 'fr' 
+                ? "L'intelligence de vos équipes projets,"
+                : "Your project teams' intelligence,"
+              }
             </h1>
             <p className="text-xl md:text-2xl text-aitenders-dark-blue">
               {language === 'fr' 
-                ? "Assistant IA pour la gestion d'appels d'offres"
-                : "AI Assistant for Tender Management"
+                ? "amplifiée par l'IA pour maximiser vos succès d'appels d'offres"
+                : "amplified by AI to maximize your tender success"
               }
             </p>
           </div>
@@ -602,12 +605,12 @@ export default function HomePage() {
                   <div className="text-center">
                     <FaRobot className="w-20 h-20 mx-auto mb-6 text-aitenders-primary-blue" />
                     <h2 className="text-2xl font-semibold text-aitenders-dark-blue mb-4">
-                      {language === 'fr' ? "Assistant IA Aitenders" : "Aitenders AI Assistant"}
+                      {language === 'fr' ? "Votre Assistant IA Expert" : "Your Expert AI Assistant"}
                     </h2>
                     <p className="text-lg max-w-md mx-auto">
                       {language === 'fr' 
-                        ? "Posez vos questions sur la gestion d'appels d'offres, nos solutions et nos services"
-                        : "Ask questions about tender management, our solutions and services"
+                        ? "Exploitez l'intelligence collective de vos équipes projets. Posez vos questions sur nos solutions d'appels d'offres et découvrez comment maximiser vos succès."
+                        : "Leverage your project teams' collective intelligence. Ask about our tender solutions and discover how to maximize your success."
                       }
                     </p>
                   </div>
