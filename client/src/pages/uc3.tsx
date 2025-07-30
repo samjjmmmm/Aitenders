@@ -22,6 +22,7 @@ import { motion } from "framer-motion";
 import equansLogo from "@assets/Equans_1753711339292.png";
 import bouyguesLogo from "@assets/Bouyges_1753711339292.png";
 import colasLogo from "@assets/Colas_1753711339292.png";
+import ChatSection from "@/components/chat-section";
 
 export default function UC3Page() {
   // Target audience data with interactive content
@@ -889,227 +890,6 @@ export default function UC3Page() {
     
       </section>
 
-      {/*Toppin Section  */}
-
-      
-      {/* Target Audience Section - Interactive Design */}
-      <section className="py-32 px-8 bg-gradient-to-br from-gray-50 via-slate-50 to-gray-50 relative overflow-hidden">
-        {/* Subtle Abstract Background Effects */}
-        <div className="absolute inset-0 pointer-events-none">
-          {/* Large atmospheric presence - left side */}
-          <div className="absolute top-10 -left-40 w-[450px] h-[450px] rounded-full opacity-20 blur-3xl"
-               style={{
-                 background: 'radial-gradient(circle, #F5F9FE 0%, #EBF2FD 60%, #C3D9F8 85%, transparent 100%)'
-               }}></div>
-
-          {/* Medium flowing accent - right top */}
-          <div className="absolute top-1/4 -right-24 w-72 h-72 rounded-full opacity-18 blur-2xl"
-               style={{
-                 background: 'linear-gradient(135deg, #FBFCFF 0%, #C3D9F8 40%, #EBF2FD 100%)'
-               }}></div>
-
-          {/* Directional accent with brand primary */}
-          <div className="absolute bottom-1/3 left-1/4 w-56 h-56 rounded-full opacity-12 blur-3xl"
-               style={{
-                 background: 'radial-gradient(circle, #3880E8 0%, #C3D9F8 50%, transparent 90%)'
-               }}></div>
-
-          {/* Subtle horizontal flow */}
-          <div className="absolute bottom-16 left-0 w-full h-28 opacity-8 blur-xl lg:opacity-12"
-               style={{
-                 background: 'linear-gradient(90deg, #EBF2FD 0%, #F5F9FE 30%, transparent 50%, #FBFCFF 80%, #C3D9F8 100%)'
-               }}></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          {/* Header */}
-          <div className="text-center mb-20">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-              Maîtrisez vos appels d'offres complexes avec une <span className="text-purple-600">conformité totale</span>
-            </h2>
-
-            {/* Interactive Navigation Tabs */}
-            <div className="flex flex-wrap justify-center gap-6 mb-16">
-              {targetAudiences.map((audience) => (
-                <button
-                  key={audience.id}
-                  onClick={() => setActiveAudience(audience)}
-                  onMouseEnter={() => setActiveAudience(audience)}
-                  className={`px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 ${
-                    activeAudience.id === audience.id
-                      ? 'bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-xl'
-                      : 'bg-white text-gray-700 hover:bg-gray-50 shadow-sm border border-gray-200'
-                  }`}
-                >
-                  {audience.title}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Interactive Content Card */}
-          <Card className="bg-white rounded-3xl overflow-hidden border border-gray-100/50"
-               style={{
-                 boxShadow: '0 32px 64px -12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-               }}>
-            <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
-
-              {/* Left Side - Dynamic Content */}
-              <motion.div 
-                key={activeAudience.id}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4 }}
-                className="p-16 flex flex-col justify-center"
-              >
-                <div className={`w-16 h-16 ${activeAudience.iconBg} rounded-2xl flex items-center justify-center mb-8 transition-all duration-300 shadow-lg`}>
-                  <activeAudience.icon className={`w-8 h-8 ${activeAudience.iconColor}`} />
-                </div>
-
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">{activeAudience.title}</h3>
-
-                <p className="text-gray-700 text-xl leading-relaxed mb-10 font-light">
-                  {activeAudience.description}
-                </p>
-
-                <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 text-lg font-semibold rounded-2xl w-fit transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
-                  Request Demo →
-                </Button>
-              </motion.div>
-
-              {/* Right Side - Dynamic UI Mockup */}
-              <motion.div 
-                key={`${activeAudience.id}-ui`}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: 0.1 }}
-                className="bg-gradient-to-br from-purple-50 to-blue-50 p-8 flex items-center justify-center relative"
-              >
-
-                {/* Main Dashboard Mockup */}
-                <div className="bg-white rounded-xl shadow-2xl w-full max-w-md relative">
-
-                  {/* Header Bar */}
-                  <div className="bg-gray-900 text-white p-4 rounded-t-xl flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                      <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                    </div>
-                    <span className="text-sm font-medium">AItenders Dashboard</span>
-                    <div className="text-sm text-gray-300">Live</div>
-                  </div>
-
-                  {/* Dynamic Dashboard Content */}
-                  <div className="p-6">
-                    <div className="mb-6">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Project Overview</h4>
-                      <div className="space-y-3">
-
-                        {/* Dynamic Progress Bars */}
-                        <div className="bg-gray-50 rounded-lg p-3">
-                          <div className="flex justify-between items-center mb-2">
-                            <span className="text-sm text-gray-700">Requirements Analysis</span>
-                            <span className={`text-sm font-medium text-${activeAudience.dashboardData.requirements.color}-600`}>
-                              {activeAudience.dashboardData.requirements.progress}%
-                            </span>
-                          </div>
-                          <div className="w-full bg-gray-200 rounded-full h-2">
-                            <motion.div 
-                              initial={{ width: 0 }}
-                              animate={{ width: `${activeAudience.dashboardData.requirements.progress}%` }}
-                              transition={{ duration: 0.8, delay: 0.3 }}
-                              className={`bg-${activeAudience.dashboardData.requirements.color}-500 h-2 rounded-full`}
-                            />
-                          </div>
-                        </div>
-
-                        <div className="bg-gray-50 rounded-lg p-3">
-                          <div className="flex justify-between items-center mb-2">
-                            <span className="text-sm text-gray-700">Expert Coordination</span>
-                            <span className={`text-sm font-medium text-${activeAudience.dashboardData.coordination.color}-600`}>
-                              {activeAudience.dashboardData.coordination.progress}%
-                            </span>
-                          </div>
-                          <div className="w-full bg-gray-200 rounded-full h-2">
-                            <motion.div 
-                              initial={{ width: 0 }}
-                              animate={{ width: `${activeAudience.dashboardData.coordination.progress}%` }}
-                              transition={{ duration: 0.8, delay: 0.4 }}
-                              className={`bg-${activeAudience.dashboardData.coordination.color}-500 h-2 rounded-full`}
-                            />
-                          </div>
-                        </div>
-
-                        <div className="bg-gray-50 rounded-lg p-3">
-                          <div className="flex justify-between items-center mb-2">
-                            <span className="text-sm text-gray-700">Compliance Check</span>
-                            <span className={`text-sm font-medium text-${activeAudience.dashboardData.compliance.color}-600`}>
-                              {activeAudience.dashboardData.compliance.progress}%
-                            </span>
-                          </div>
-                          <div className="w-full bg-gray-200 rounded-full h-2">
-                            <motion.div 
-                              initial={{ width: 0 }}
-                              animate={{ width: `${activeAudience.dashboardData.compliance.progress}%` }}
-                              transition={{ duration: 0.8, delay: 0.5 }}
-                              className={`bg-${activeAudience.dashboardData.compliance.color}-500 h-2 rounded-full`}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Team Status */}
-                    <div className="border-t pt-4">
-                      <h5 className="text-sm font-semibold text-gray-700 mb-3">Team Status</h5>
-                      <div className="flex -space-x-2">
-                        <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center border-2 border-white">
-                          <span className="text-xs text-white font-medium">T</span>
-                        </div>
-                        <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center border-2 border-white">
-                          <span className="text-xs text-white font-medium">L</span>
-                        </div>
-                        <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center border-2 border-white">
-                          <span className="text-xs text-white font-medium">C</span>
-                        </div>
-                        <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center border-2 border-white">
-                          <span className="text-xs text-white font-medium">Q</span>
-                        </div>
-                        <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center border-2 border-white">
-                          <span className="text-xs text-gray-600 font-medium">+3</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Dynamic Floating Notification */}
-                <motion.div 
-                  key={`${activeAudience.id}-notification`}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, delay: 0.6 }}
-                  className="absolute top-4 right-4 bg-green-500 text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium"
-                >
-                  {activeAudience.notification}
-                </motion.div>
-
-                {/* Dynamic Floating Alert */}
-                <motion.div 
-                  key={`${activeAudience.id}-alert`}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, delay: 0.7 }}
-                  className="absolute bottom-4 left-4 bg-blue-500 text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium"
-                >
-                  {activeAudience.alert}
-                </motion.div>
-              </motion.div>
-            </div>
-          </Card>
-        </div>
-      </section>
 
       {/* KPI Section - High Impact Design */}
       <section className="py-16 md:py-20 lg:py-24 px-4 bg-white">
@@ -1274,7 +1054,7 @@ export default function UC3Page() {
             </div>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:mb-8 leading-[1.1] tracking-tight">
-              Des <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-400 to-cyan-400">toppings additionnels</span> qui transforment votre expérience
+              Des <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-400 to-cyan-400">parcours additionnels</span> qui transforment votre expérience
             </h2>
             
             <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed font-light">
@@ -1399,7 +1179,7 @@ export default function UC3Page() {
               </div>
             </div>
 
-            {/* Ouverture et fermeture de phases */}
+            {/* Securité Accrue */}
             <div className="group md:col-span-2 lg:col-span-3">
               <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2">
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-8">
@@ -1408,18 +1188,18 @@ export default function UC3Page() {
                   </div>
                   
                   <div className="flex-1">
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Ouverture et fermeture de phases</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">haut niveai de sécurité, intégrée dès la conception</h3>
                     <p className="text-gray-200 text-lg leading-relaxed mb-6">
-                      Orchestrez le cycle de vie complet de vos appels d'offres avec gestion automatisée des phases de projet, jalons intelligents et validation des étapes critiques. Contrôlez l'accès aux informations selon la phase active.
+                     blabla
                     </p>
                     
                     <div className="flex flex-wrap gap-4">
                       <div className="flex items-center text-indigo-400 font-medium bg-white/10 px-4 py-2 rounded-lg">
-                        <span className="text-sm">Gestion de cycle</span>
+                        <span className="text-sm">Souverain</span>
                         <MdRotateRight className="w-4 h-4 ml-2" />
                       </div>
                       <div className="flex items-center text-cyan-400 font-medium bg-white/10 px-4 py-2 rounded-lg">
-                        <span className="text-sm">Jalons automatisés</span>
+                        <span className="text-sm">Data Security</span>
                         <MdFlag className="w-4 h-4 ml-2" />
                       </div>
                     </div>
@@ -1709,174 +1489,9 @@ export default function UC3Page() {
         </div>
       </section>
       {/* Master Compliance Section - Inspired by Image Design */}
-      <section className="py-32 px-8 bg-gradient-to-br from-slate-50 via-white to-purple-50/20 relative overflow-hidden">
-        {/* Subtle Abstract Background Effects */}
-        <div className="absolute inset-0 pointer-events-none">
-          {/* Large atmospheric blob - center */}
-          <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] rounded-full opacity-15 blur-3xl"
-               style={{
-                 background: 'radial-gradient(circle, #F5F9FE 0%, #EBF2FD 40%, #C3D9F8 80%, transparent 100%)'
-               }}></div>
-          
-          {/* Flowing accent - bottom right */}
-          <div className="absolute bottom-10 -right-32 w-80 h-80 rounded-full opacity-20 blur-2xl"
-               style={{
-                 background: 'linear-gradient(135deg, #FBFCFF 0%, #C3D9F8 60%, transparent 100%)'
-               }}></div>
-          
-          {/* Directional accent - top left */}
-          <div className="absolute -top-20 -left-20 w-72 h-72 rounded-full opacity-12 blur-3xl"
-               style={{
-                 background: 'radial-gradient(circle, #3880E8 0%, #EBF2FD 50%, transparent 90%)'
-               }}></div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            
-            {/* Left Column - Content */}
-            <div className="order-2 lg:order-1">
-              {/* Header with subtle background */}
-              <div className="bg-gradient-to-br from-white/80 to-gray-50/60 rounded-3xl p-10 border border-gray-100/50 backdrop-blur-sm"
-                   style={{
-                     boxShadow: '0 20px 40px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.1)'
-                   }}>
-                
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Maîtrisez la conformité de vos appels d’offres</h2>
-                
-                <p className="text-xl text-gray-600 mb-8 leading-relaxed font-light">
-                  La seule plateforme "d'engineering light" conçue pour les projets complexes.
-                </p>
 
-                {/* Feature list */}
-                <div className="space-y-6">
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                      <span className="text-white text-sm font-bold">1️⃣</span>
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-1">500+ pages instantanément structurées en une base intelligente</h4>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                      <span className="text-white text-sm font-bold">2️⃣</span>
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-1">
-                        Matrice de conformité collaborative en direct — sans Excel
-                      </h4>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                      <span className="text-white text-sm font-bold">3️⃣</span>
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-1">
-                        Alertes automatiques sur les risques, incohérences et mises à jour
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-
-                <p className="text-lg text-gray-700 mt-8 font-medium">
-                  Une alternative agile aux outils cloisonnés, garantissant 100 % de conformité et éliminant les risques de rejet coûteux.
-                </p>
-              </div>
-            </div>
-
-            {/* Right Column - Testimonial */}
-            <div className="order-1 lg:order-2">
-              <div className="bg-white rounded-3xl p-8 border border-gray-100/50 transform hover:-translate-y-2 transition-all duration-300"
-                   style={{
-                     boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-                   }}>
-                
-                {/* Company Logo Section */}
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mr-4">
-                    <span className="text-white font-bold text-lg">A</span>
-                  </div>
-                  <div className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-purple-700 bg-clip-text text-transparent">
-                    AItenders
-                  </div>
-                </div>
-
-                {/* Testimonial Quote */}
-                <blockquote className="text-lg text-gray-700 leading-relaxed mb-6 font-light italic">
-                  "With AItenders, the complexity of our multi-lot international projects becomes manageable. 99% of our compliance requirements are automatically tracked throughout the entire tender process."
-                </blockquote>
-
-                {/* CTA Link */}
-                <div className="mb-8">
-                  <a href="#" className="text-purple-600 hover:text-purple-700 font-semibold flex items-center transition-colors">
-                    Read the customer case →
-                  </a>
-                </div>
-
-                {/* Author Information */}
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-white font-semibold">PD</span>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900">Pierre Dubois</div>
-                    <div className="text-gray-600 text-sm">Project Director</div>
-                  </div>
-                </div>
-
-                {/* Bottom navigation dots (inspired by image) */}
-                <div className="flex justify-center mt-8 space-x-2">
-                  <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-                  <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                  <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                </div>
-
-                {/* Bottom link */}
-                <div className="text-center mt-6">
-                  <a href="#" className="text-gray-600 hover:text-gray-800 text-sm font-medium transition-colors">
-                    Read their testimonies →
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       {/* Trust & Compliance */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <Card className="p-8 bg-green-50/50 border-green-100">
-            <div className="text-center mb-8">
-              <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <MdSecurity className="w-8 h-8 text-green-600" />
-              </div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Sécurité d'Entreprise pour Projets Critiques</h2>
-              <p className="text-lg text-gray-600">Conformité et Protection des Données Prêtes pour l'Audit</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div>
-                <MdVerifiedUser className="w-8 h-8 text-green-600 mx-auto mb-3" />
-                <h4 className="font-semibold text-gray-900 mb-2">Pistes d'Audit Complètes du Projet</h4>
-                <p className="text-gray-600 text-sm">Contrôle de version complet et suivi de collaboration</p>
-              </div>
-              <div>
-                <MdShield className="w-8 h-8 text-green-600 mx-auto mb-3" />
-                <h4 className="font-semibold text-gray-900 mb-2">Validation Multi-Experts</h4>
-                <p className="text-gray-600 text-sm">Suivi collaboratif de tous les membres de l'équipe</p>
-              </div>
-              <div>
-                <MdAnalytics className="w-8 h-8 text-green-600 mx-auto mb-3" />
-                <h4 className="font-semibold text-gray-900 mb-2">Intégration d'Entreprise</h4>
-                <p className="text-gray-600 text-sm">Connexion transparente avec les systèmes de projet existants</p>
-              </div>
-            </div>
-          </Card>
-        </div>
-      </section>
+
       {/* Call to Action */}
       <section className="py-20 px-4 bg-aitenders-dark-blue">
         <div className="max-w-4xl mx-auto text-center text-aitenders-white-blue">
@@ -1897,8 +1512,8 @@ export default function UC3Page() {
           <p className="text-sm mt-6 opacity-80">Sécurité de niveau entreprise • Collaboration multi-experts • Pistes d'audit complètes</p>
         </div>
       </section>
-      {/* Contact Section */}
-      <ContactSection />
+      {/* Chat */}
+      <ChatSection />
     </div>
   );
 }

@@ -2,27 +2,20 @@ import { useState } from "react";
 import Header from "@/components/header";
 import ClientLogos from "@/components/client-logos";
 import ContactSection from "@/components/contact-section";
+import ChatInterface from "@/components/chat-interface";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Link, useLocation } from "wouter";
 import { 
   MdBarChart, MdSearch, MdDescription, MdLightbulb, MdTrendingUp, MdSecurity, MdPeople, 
-  MdSend, MdInsertDriveFile, MdSettings, MdEmojiEvents, MdGpsFixed, 
+  MdInsertDriveFile, MdSettings, MdEmojiEvents, MdGpsFixed, 
   MdSchedule, MdCheckCircle, MdEdit, MdAnalytics, MdVerifiedUser, MdGroups, MdAccountCircle, 
-  MdMail
+  MdMail,
+  MdStarOutline
 } from "react-icons/md";
-import { FaRobot, FaChartLine, FaShieldAlt, FaUsers } from "react-icons/fa";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
-import { useToast } from "@/hooks/use-toast";
+import { FaChartLine, FaShieldAlt, FaUsers } from "react-icons/fa";
 
-interface ChatMessage {
-  id: string;
-  message: string;
-  response?: string;
-  createdAt: Date;
-}
+
 
 interface SelectionCard {
   id: string;
@@ -36,51 +29,8 @@ interface SelectionCard {
 }
 
 export default function HomePage() {
-  const [message, setMessage] = useState("");
-  const [chatExpanded, setChatExpanded] = useState(false);
   const [language, setLanguage] = useState<'en' | 'fr'>('fr');
   const [, setLocation] = useLocation();
-  const { toast } = useToast();
-  const queryClient = useQueryClient();
-
-  const { data: messages = [], isLoading } = useQuery<ChatMessage[]>({
-    queryKey: ["/api/chat"],
-  });
-
-  const sendMessageMutation = useMutation({
-    mutationFn: async (messageText: string) => {
-      const response = await apiRequest("POST", "/api/chat", { message: messageText });
-      return response.json();
-    },
-    onSuccess: () => {
-      setMessage("");
-      queryClient.invalidateQueries({ queryKey: ["/api/chat"] });
-      toast({
-        title: "Message sent",
-        description: "Thank you for your message. We'll respond shortly.",
-      });
-    },
-    onError: () => {
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive",
-      });
-    },
-  });
-
-  const handleSendMessage = () => {
-    if (message.trim()) {
-      sendMessageMutation.mutate(message);
-    }
-  };
-
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault();
-      handleSendMessage();
-    }
-  };
 
   // Translations
   const t = {
@@ -95,10 +45,11 @@ export default function HomePage() {
         availableUseCases: "Cas d'usage disponibles :",
         back: "← Retour",
         tenderManagement: "Je réponds à des appels d'offres",
-       
+        tenderDescription: "Optimisez vos réponses aux appels d'offres. Analysez les exigences, collaborez efficacement et maximisez vos chances de succès.",
         contractExecution: "Je pilote des projets en exécution", 
-        
+        contractDescription: "Pilotez vos projets en toute confiance. Suivi des livrables, conformité et gestion proactive des changements.",
         knowledgeManagement: "Je structure la connaissance de mes experts",
+        knowledgeDescription: "Capitalisez sur vos savoirs et expériences passées. Accès rapide aux références, modèles et comparables pour chaque nouveau projet.",
        
         smallProject: "Petit Projets, régulier",
         smallDescription: "Idéal pour les petites équipes et besoins ciblés. Mise en place rapide, fonctionnalités essentielles.",
@@ -293,10 +244,6 @@ export default function HomePage() {
     // If only one UC, redirect directly
     if (ucs.length === 1) {
       const finalUC = ucs[0];
-      toast({
-        title: "Solution trouvée",
-        description: `Redirection vers ${finalUC}...`,
-      });
       setTimeout(() => setLocation(ucToPageMapping[finalUC]), 1000);
     } else {
       // Show UC selection cards if multiple UCs
@@ -305,10 +252,6 @@ export default function HomePage() {
   };
 
   const handleUCSelection = (uc: string) => {
-    toast({
-      title: "Découvrir ce cas d'usage",
-      description: `Redirection vers ${uc}...`,
-    });
     setTimeout(() => setLocation(ucToPageMapping[uc]), 1000);
   };
 
@@ -541,68 +484,30 @@ export default function HomePage() {
       
 
 
-      {/* CHATGPT STYLE CHAT - DO NOT REVERT */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-2xl">
-        <div className="max-w-4xl mx-auto p-6">
-          <div className="bg-white border border-gray-300 rounded-3xl shadow-lg p-4">
-            <div className="flex items-start gap-3 mb-3">
-              <Input
-                type="text"
-                placeholder={language === 'fr' ? "Poser une question" : "Ask a question"}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                onKeyPress={handleKeyPress}
-                className="flex-1 text-base bg-transparent border-0 focus:ring-0 focus:outline-none placeholder:text-gray-500 min-h-[24px]"
-                disabled={sendMessageMutation.isPending}
-              />
-              <Button
-                onClick={handleSendMessage}
-                disabled={!message.trim() || sendMessageMutation.isPending}
-                size="sm"
-                className="h-8 w-8 rounded-lg bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-white shadow-sm transition-all"
-              >
-                <MdSend className="w-4 h-4" />
-              </Button>
-            </div>
-            <div className="flex items-center justify-between border-t border-gray-200 pt-3">
-              <div className="flex items-center gap-2">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => setMessage(language === 'fr' ? "Montrez moi tous vos cas d'usage" : "Show me all your Use Cases")}
-                  className="h-8 px-3 text-xs text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg flex items-center gap-1"
-                >
-                  <span className="text-gray-400">+</span>
-                  {t[language].ourUseCases}
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => setMessage(language === 'fr' ? "Lance la simulation d'impact pour recevoir votre ROI personnalisé" : "Launch the simulator to get your personalised ROI report")}
-                  className="h-8 px-3 text-xs text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg flex items-center gap-1"
-                >
-                  <MdSettings className="w-3 h-3 text-gray-400" />
-                  Simulation / ROI
-                </Button>
-              </div>
-              <div className="flex items-center gap-2">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => setMessage(language === 'fr' ? "contactez nous" : "Launch the simulator to get your personalised ROI report")}
-                  className="h-8 px-3 text-xs text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg flex items-center gap-1"
-                >
-                  <MdMail className="w-3 h-3 text-gray-400" />
-                  Contactez nous
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Reusable Chat Interface Component */}
+      <ChatInterface 
+        language={language}
+        customActions={[
+          {
+            label: t[language].ourUseCases,
+            icon: <span className="text-gray-400">+</span>,
+            onClick: () => {} // The component handles this internally
+          },
+          {
+            label: "Simulation / ROI",
+            icon: <MdSettings className="w-3 h-3 text-gray-400" />,
+            onClick: () => {} // Can be customized for specific actions
+          },
+          {
+            label: "AI Agents",
+            icon: <MdStarOutline className="w-3 h-3 text-gray-400" />,
+            onClick: () => {} // Can be customized for specific actions
+          }
+        ]}
+      />
 
       {/* Add padding to body to account for fixed chat */}
-      <div className="h-28"></div>
+      <div className="h-32"></div>
     </div>
   );
 }
