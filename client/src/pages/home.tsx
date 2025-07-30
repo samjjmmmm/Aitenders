@@ -84,32 +84,32 @@ export default function HomePage() {
   // Translations
   const t = {
     fr: {
-      mainTitle: "Trouvez la solution adaptée à votre projet",
-      mainSubtitle: "en quelques clics",
-      description: "Choisissez vos besoins et la taille de votre projet pour accéder à un cas d'usage personnalisé.",
-      domainSelection: "Sélectionnez vos domaines d'activité",
+      mainTitle: "L’intelligence de vos équipes projets,",
+      mainSubtitle: "démultipliée par l’IA",
+      description: "Aitenders, votre coéquipier digital pour gagner les appels d'offres, piloter les contrats et structurer la connaissance et l'expertise de vos projets.",
+      domainSelection: "Comment puis-je vous aider? ",
       projectSize: "Quelle est la taille de vos projets ?",
-      chooseUseCase: "Choisissez votre cas d'usage",
-      yourSelection: "Votre sélection :",
-      availableUseCases: "Cas d'usage disponibles :",
-      back: "← Retour",
-      tenderManagement: "Tender Management",
-      tenderDescription: "Optimisez vos réponses aux appels d'offres. Analyse IA, collaboration et suivi de conformité pour maximiser vos chances de succès.",
-      contractExecution: "Contract & Project Execution", 
-      contractDescription: "Pilotez vos projets et contrats en toute confiance. Suivi des livrables, conformité et gestion proactive des changements.",
-      knowledgeManagement: "Knowledge Management",
-      knowledgeDescription: "Capitalisez sur vos savoirs et expériences passées. Accès rapide aux références, modèles et comparables pour chaque nouveau projet.",
-      smallProject: "Petit Projet",
-      smallDescription: "Idéal pour les petites équipes et besoins ciblés. Mise en place rapide, fonctionnalités essentielles.",
-      mediumProject: "Projet Moyen",
-      mediumDescription: "Un équilibre entre flexibilité et puissance. Outils complets pour des projets structurés et collaboratifs.",
-      largeProject: "Grand Projet", 
-      largeDescription: "Conçu pour les organisations complexes et à grande échelle. Solutions avancées, IA sur mesure et sécurité renforcée.",
-      learnMore: "Je veux en savoir plus sur Aitenders",
+        chooseUseCase: "Choisissez votre cas d'usage",
+        yourSelection: "Votre sélection :",
+        availableUseCases: "Cas d'usage disponibles :",
+        back: "← Retour",
+        tenderManagement: "Je réponds à des appels d'offres",
+        tenderDescription: "Optimisez vos réponses aux appels d'offres. Analyse IA, collaboration et suivi de conformité pour maximiser vos chances de succès.",
+        contractExecution: "Je pilote des projets en exécution", 
+        contractDescription: "Pilotez vos projets et contrats en toute confiance. Suivi des livrables, conformité et gestion proactive des changements.",
+        knowledgeManagement: "Je cherche a structurer la connaissance de mes projets",
+        knowledgeDescription: "Capitalisez sur vos savoirs et expériences passées. Accès rapide aux références, modèles et comparables pour chaque nouveau projet.",
+        smallProject: "Petit Projets, régulier",
+        smallDescription: "Idéal pour les petites équipes et besoins ciblés. Mise en place rapide, fonctionnalités essentielles.",
+        mediumProject: "Projets moyennement complexe ",
+        mediumDescription: "Un équilibre entre flexibilité et puissance. Outils complets pour des projets structurés et collaboratifs.",
+        largeProject: "Grand Projets complexes", 
+        largeDescription: "Conçu pour les organisations complexes et à grande échelle. Solutions avancées, IA sur mesure et sécurité renforcée.",
+        learnMore: "Je veux en savoir plus sur Aitenders",
       learnMoreDescription: "Découvrez toutes nos fonctionnalités et comment Aitenders peut transformer votre gestion des appels d'offres et projets.",
       exploreSolutions: "Explorer nos solutions",
       discoverUseCase: "Découvrir ce cas d'usage",
-      chatPlaceholder: "Comment puis-je amplifier l'intelligence de votre équipe projet aujourd'hui ?",
+      chatPlaceholder: "Interagisez avec le Chat Questions / Lancer le simulateur / Information  ?",
       chatTitle: "Chat avec l'Assistant IA",
       ourUseCases: "Nos Cas d'Usage",
       tenderProcess: "Processus d'Appel d'Offres",
@@ -530,103 +530,83 @@ export default function HomePage() {
 
         </div>
 
-        {/* Learn More Card - More Rectangular */}
-        <div className="max-w-4xl mx-auto px-6 pb-16">
-          <Card 
-            onClick={() => window.open("https://replit.com/@aitendersdev/SimpleSaaS", "_blank")}
-            className="bg-gradient-to-r from-aitenders-white-blue to-aitenders-pale-blue border border-aitenders-light-blue rounded-2xl p-6 shadow-sm hover:shadow-md cursor-pointer transition-all duration-200 ease-in-out hover:scale-105"
-          >
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-6">
-                <div className="p-3 rounded-xl bg-aitenders-primary-blue/10 flex-shrink-0">
-                  <MdLightbulb className="h-6 w-6 text-aitenders-primary-blue" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-aitenders-black mb-2">
-                    {t[language].learnMore}
-                  </h3>
-                  <p className="text-sm text-aitenders-dark-blue">
-                    {t[language].learnMoreDescription}
-                  </p>
-                </div>
-              </div>
-              <div className="flex-shrink-0 ml-6">
-                <Button 
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    window.open("https://replit.com/@aitendersdev/SimpleSaaS", "_blank");
-                  }}
-                  className="bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-aitenders-white-blue px-6 py-2 text-sm font-medium rounded-xl shadow-sm"
+       
+      </main>
+
+
+      
+
+
+      
+      {/* ChatGPT-Style Anchored Chat Interface */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-xl">
+        <div className="max-w-4xl mx-auto p-6">
+          {/* ChatGPT-Style Input Container */}
+          <div className="relative bg-white border border-gray-300 rounded-3xl shadow-lg p-4">
+            {/* Input Field */}
+            <div className="flex items-start gap-3 mb-3">
+              <Input
+                type="text"
+                placeholder={language === 'fr' ? "Poser une question" : "Ask a question"}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                onKeyPress={handleKeyPress}
+                className="flex-1 text-base bg-transparent border-0 focus:ring-0 focus:outline-none placeholder:text-gray-500 resize-none min-h-[24px]"
+                disabled={sendMessageMutation.isPending}
+              />
+              <Button
+                onClick={handleSendMessage}
+                disabled={!message.trim() || sendMessageMutation.isPending}
+                size="sm"
+                className="h-8 w-8 rounded-lg bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-white shadow-sm transition-all duration-200 flex-shrink-0"
+              >
+                <MdSend className="w-4 h-4" />
+              </Button>
+            </div>
+
+            {/* Internal Action Buttons Row */}
+            <div className="flex items-center justify-between border-t border-gray-200 pt-3">
+              {/* Left Side - Action Buttons */}
+              <div className="flex items-center gap-2">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setMessage(language === 'fr' ? "Nos Cas d'Usage" : "Our Use Cases")}
+                  className="h-8 px-3 text-xs text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg flex items-center gap-1"
                 >
-                  {t[language].exploreSolutions}
+                  <span className="text-gray-400">+</span>
+                  {t[language].ourUseCases}
+                </Button>
+                
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setMessage(language === 'fr' ? "Processus d'Appel d'Offres" : "Tender Process")}
+                  className="h-8 px-3 text-xs text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg flex items-center gap-1"
+                >
+                  <MdSettings className="w-3 h-3 text-gray-400" />
+                  Outils
+                </Button>
+              </div>
+
+              {/* Right Side - Additional Icons */}
+              <div className="flex items-center gap-2">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-8 w-8 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg"
+                >
+                  <FaRobot className="w-4 h-4" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-8 w-8 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg"
+                >
+                  <MdBarChart className="w-4 h-4" />
                 </Button>
               </div>
             </div>
-          </Card>
-        </div>
-      </main>
-
-      {/* Client Logos */}
-      <ClientLogos language={language} />
-
-      
-
-      {/* Contact Section */}
-      <ContactSection language={language} />
-      
-      {/* Anchored Chat Interface at Bottom */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-t border-aitenders-light-blue shadow-xl">
-        <div className="max-w-4xl mx-auto p-4">
-          {/* Chat Input Bar */}
-          <div className="flex items-center gap-4 mb-3">
-            <div className="flex items-center justify-center w-12 h-12 bg-aitenders-primary-blue rounded-full flex-shrink-0">
-              <FaRobot className="w-6 h-6 text-aitenders-white-blue" />
-            </div>
-            <Input
-              type="text"
-              placeholder={t[language].chatPlaceholder}
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              onKeyPress={handleKeyPress}
-              className="flex-1 py-3 px-6 text-base bg-aitenders-pale-blue border border-aitenders-light-blue rounded-full focus:ring-2 focus:ring-aitenders-primary-blue focus:border-aitenders-primary-blue placeholder:text-aitenders-dark-blue/60"
-              disabled={sendMessageMutation.isPending}
-            />
-            <Button
-              onClick={handleSendMessage}
-              disabled={!message.trim() || sendMessageMutation.isPending}
-              size="sm"
-              className="h-12 w-12 rounded-full bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-aitenders-white-blue shadow-lg hover:shadow-xl transition-all duration-200"
-            >
-              <MdSend className="w-5 h-5" />
-            </Button>
-          </div>
-
-          {/* Quick Actions */}
-          <div className="flex flex-wrap gap-2 justify-center">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => setMessage(language === 'fr' ? "Nos Cas d'Usage" : "Our Use Cases")}
-              className="text-xs rounded-full border border-aitenders-light-blue hover:bg-aitenders-pale-blue px-4 py-1.5"
-            >
-              {t[language].ourUseCases}
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => setMessage(language === 'fr' ? "Processus d'Appel d'Offres" : "Tender Process")}
-              className="text-xs rounded-full border border-aitenders-light-blue hover:bg-aitenders-pale-blue px-4 py-1.5"
-            >
-              {t[language].tenderProcess}
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => setMessage(language === 'fr' ? "Planifier une Démo" : "Schedule Demo")}
-              className="text-xs rounded-full border border-aitenders-light-blue hover:bg-aitenders-pale-blue px-4 py-1.5"
-            >
-              {t[language].scheduleDemo}
-            </Button>
           </div>
         </div>
       </div>
