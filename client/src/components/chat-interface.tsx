@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { MdSend, MdSettings, MdBarChart } from "react-icons/md";
+import { MdSend, MdSettings, MdBarChart, MdExpandMore, MdExpandLess } from "react-icons/md";
 import { FaRobot } from "react-icons/fa";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
@@ -36,6 +36,7 @@ export default function ChatInterface({
   const [currentPage, setCurrentPage] = useState("");
   const [browserFingerprint, setBrowserFingerprint] = useState<string | null>(null);
   const [sessionInitialized, setSessionInitialized] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
   const queryClient = useQueryClient();
 
   const { data: messages = [] } = useQuery<ChatMessage[]>({
@@ -248,22 +249,34 @@ export default function ChatInterface({
   };
 
   return (
-    <div className={`fixed bottom-0 left-0 right-0 z-50 ${transparent ? 'bg-transparent' : 'bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-2xl'}`}>
-      <div className="max-w-4xl mx-auto p-6">
-        <div className="bg-white border border-gray-300 rounded-3xl shadow-lg p-4">
+    <div className={`fixed ${isExpanded ? 'top-0 left-0 right-0 bottom-0' : 'bottom-0 left-0 right-0'} z-50 ${transparent ? 'bg-transparent' : 'bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-2xl'}`}>
+      <div className={`${isExpanded ? 'w-[70%] h-full' : 'max-w-4xl'} mx-auto p-6 ${isExpanded ? 'flex flex-col' : ''}`}>
+        <div className={`bg-white border border-gray-300 ${isExpanded ? 'rounded-2xl flex-1 flex flex-col' : 'rounded-3xl'} shadow-lg p-4 relative`}>
+          {/* Expand/Collapse Button */}
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="absolute top-3 left-3 p-2 hover:bg-gray-100 rounded-lg transition-colors z-10"
+            title={isExpanded ? (language === 'fr' ? 'Réduire' : 'Collapse') : (language === 'fr' ? 'Agrandir' : 'Expand')}
+          >
+            {isExpanded ? (
+              <MdExpandLess className="w-4 h-4 text-gray-600" />
+            ) : (
+              <MdExpandMore className="w-4 h-4 text-gray-600" />
+            )}
+          </button>
           {/* Recent Messages Display */}
           {messages.length > 0 && (
-            <div className="mb-4 max-h-40 overflow-y-auto space-y-2">
-              {messages.slice(-2).map((msg) => (
+            <div className={`mb-4 ${isExpanded ? 'flex-1 max-h-none' : 'max-h-40'} overflow-y-auto space-y-2 ${isExpanded ? 'mt-12' : ''}`}>
+              {(isExpanded ? messages : messages.slice(-2)).map((msg) => (
                 <div key={msg.id} className="space-y-2">
                   <div className="text-right">
-                    <div className="inline-block bg-aitenders-primary-blue text-white px-3 py-2 rounded-2xl rounded-tr-sm text-sm max-w-xs">
+                    <div className={`inline-block bg-aitenders-primary-blue text-white px-3 py-2 rounded-2xl rounded-tr-sm text-sm ${isExpanded ? 'max-w-lg' : 'max-w-xs'}`}>
                       {msg.message}
                     </div>
                   </div>
                   {msg.response && (
                     <div className="text-left">
-                      <div className="inline-block bg-aitenders-pale-blue text-aitenders-dark-blue px-3 py-2 rounded-2xl rounded-tl-sm text-sm max-w-md">
+                      <div className={`inline-block bg-aitenders-pale-blue text-aitenders-dark-blue px-3 py-2 rounded-2xl rounded-tl-sm text-sm ${isExpanded ? 'max-w-2xl' : 'max-w-md'}`}>
                         <div 
                           dangerouslySetInnerHTML={{ 
                             __html: formatResponse(msg.response) 
@@ -278,7 +291,7 @@ export default function ChatInterface({
           )}
           
           {/* Input Field */}
-          <div className="flex items-start gap-3 mb-3">
+          <div className={`flex items-start gap-3 mb-3 ${isExpanded ? 'mt-auto' : ''}`}>
             <Input
               type="text"
               placeholder={language === 'fr' ? "Poser une question" : "Ask a question"}
