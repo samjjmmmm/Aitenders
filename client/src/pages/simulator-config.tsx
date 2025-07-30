@@ -12,6 +12,7 @@ import { Separator } from '@/components/ui/separator';
 import { Switch } from '@/components/ui/switch';
 import { useToast } from '@/hooks/use-toast';
 import { Settings, Plus, Trash2, Edit, Save, Calculator, HelpCircle } from 'lucide-react';
+import { MdDelete } from 'react-icons/md';
 import { apiRequest } from '@/lib/queryClient';
 
 interface SimulatorQuestion {
