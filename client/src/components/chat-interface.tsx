@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { MdSend, MdSettings, MdBarChart, MdExpandMore, MdExpandLess, MdClose } from "react-icons/md";
+import { MdSend, MdSettings, MdBarChart, MdExpandMore, MdExpandLess, MdClose, MdContentCopy } from "react-icons/md";
 import { FaRobot } from "react-icons/fa";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
@@ -38,6 +38,9 @@ export default function ChatInterface({
   const [sessionInitialized, setSessionInitialized] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [isClosed, setIsClosed] = useState(false);
+  const [showEmailModal, setShowEmailModal] = useState(false);
+  const [copyData, setCopyData] = useState("");
+  const [email, setEmail] = useState("");
   const queryClient = useQueryClient();
 
   const { data: messages = [] } = useQuery<ChatMessage[]>({
@@ -174,6 +177,42 @@ export default function ChatInterface({
     }
   };
 
+  // Handle copy with email validation
+  const handleCopy = (messageResponse: string) => {
+    setCopyData(messageResponse);
+    setShowEmailModal(true);
+  };
+
+  const handleEmailSubmit = async () => {
+    if (!email.trim() || !email.includes('@')) {
+      alert(language === 'fr' ? 'Veuillez saisir une adresse email valide' : 'Please enter a valid email address');
+      return;
+    }
+    
+    try {
+      // Copy to clipboard
+      await navigator.clipboard.writeText(copyData);
+      
+      // Log the email for tracking (optional backend call)
+      await apiRequest("POST", "/api/copy-tracking", {
+        email: email.trim(),
+        content: copyData.substring(0, 100) + '...', // Only store preview
+        fingerprint: browserFingerprint
+      });
+      
+      // Success feedback
+      alert(language === 'fr' ? 'Données copiées avec succès!' : 'Data copied successfully!');
+      
+      // Reset modal
+      setShowEmailModal(false);
+      setEmail("");
+      setCopyData("");
+    } catch (error) {
+      console.error('Copy failed:', error);
+      alert(language === 'fr' ? 'Échec de la copie' : 'Copy failed');
+    }
+  };
+
   // Button questions that users would naturally ask
   const getButtonQuestion = (buttonLabel: string) => {
     const questions = {
@@ -298,7 +337,7 @@ export default function ChatInterface({
                     </div>
                   </div>
                   {msg.response && (
-                    <div className="text-left">
+                    <div className="text-left relative group">
                       <div className={`inline-block bg-aitenders-pale-blue text-aitenders-dark-blue px-3 py-2 rounded-2xl rounded-tl-sm text-sm ${isExpanded ? 'max-w-2xl' : 'max-w-md'}`}>
                         <div 
                           dangerouslySetInnerHTML={{ 
@@ -306,6 +345,14 @@ export default function ChatInterface({
                           }} 
                         />
                       </div>
+                      {/* Copy Button */}
+                      <button
+                        onClick={() => handleCopy(msg.response!)}
+                        className="absolute top-1 right-1 p-1 bg-white/80 hover:bg-white rounded-lg opacity-0 group-hover:opacity-100 transition-opacity shadow-sm"
+                        title={language === 'fr' ? 'Copier la réponse' : 'Copy response'}
+                      >
+                        <MdContentCopy className="w-3 h-3 text-gray-600" />
+                      </button>
                     </div>
                   )}
                 </div>
@@ -356,6 +403,52 @@ export default function ChatInterface({
           </div>
         </div>
       </div>
+
+      {/* Email Modal for Copy */}
+      {showEmailModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[60]">
+          <div className="bg-white rounded-2xl p-6 max-w-md w-full mx-4 shadow-2xl">
+            <h3 className="text-lg font-semibold text-aitenders-dark-blue mb-4">
+              {language === 'fr' ? 'Adresse email requise' : 'Email address required'}
+            </h3>
+            <p className="text-gray-600 mb-4 text-sm">
+              {language === 'fr' 
+                ? 'Veuillez saisir votre adresse email pour copier les données.'
+                : 'Please enter your email address to copy the data.'
+              }
+            </p>
+            <Input
+              type="email"
+              placeholder={language === 'fr' ? 'votre@email.com' : 'your@email.com'}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              onKeyPress={(e) => e.key === 'Enter' && handleEmailSubmit()}
+              className="mb-4"
+              autoFocus
+            />
+            <div className="flex gap-3 justify-end">
+              <Button
+                variant="outline"
+                onClick={() => {
+                  setShowEmailModal(false);
+                  setEmail("");
+                  setCopyData("");
+                }}
+                className="px-4 py-2"
+              >
+                {language === 'fr' ? 'Annuler' : 'Cancel'}
+              </Button>
+              <Button
+                onClick={handleEmailSubmit}
+                disabled={!email.trim()}
+                className="px-4 py-2 bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-white"
+              >
+                {language === 'fr' ? 'Copier' : 'Copy'}
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

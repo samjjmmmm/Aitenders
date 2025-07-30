@@ -129,6 +129,25 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Copy tracking endpoint
+  app.post("/api/copy-tracking", (req, res) => {
+    try {
+      const { email, content, fingerprint } = req.body;
+      
+      // Log copy activity (could be stored in database later)
+      console.log('Copy tracking:', {
+        email: email,
+        contentPreview: content,
+        fingerprint: fingerprint?.slice(0, 8) + '...',
+        timestamp: new Date().toISOString()
+      });
+      
+      res.json({ success: true, message: 'Copy tracked successfully' });
+    } catch (error) {
+      res.status(500).json({ message: "Failed to track copy" });
+    }
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }
