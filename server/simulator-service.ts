@@ -155,11 +155,20 @@ class SimulatorService {
 
     switch (question.type) {
       case 'select':
-        if (!question.options?.includes(cleanAnswer)) {
-          return { error: `Veuillez choisir une option parmi: ${question.options?.join(', ')}` };
+        // Vérification directe d'abord
+        if (question.options?.includes(cleanAnswer)) {
+          const numericValue = question.mapping?.[cleanAnswer];
+          return { value: cleanAnswer, numericValue };
         }
-        const numericValue = question.mapping?.[cleanAnswer];
-        return { value: cleanAnswer, numericValue };
+
+        // Si pas de correspondance exacte, essayer de mapper la réponse
+        const mappedOption = this.mapAnswerToOption(cleanAnswer, question);
+        if (mappedOption) {
+          const numericValue = question.mapping?.[mappedOption];
+          return { value: mappedOption, numericValue };
+        }
+
+        return { error: `Veuillez choisir une option parmi: ${question.options?.join(', ')}` };
 
       case 'number':
         const num = parseFloat(cleanAnswer);
@@ -272,6 +281,57 @@ class SimulatorService {
         userInfo
       }
     };
+  }
+
+  // Mapper une réponse utilisateur à une option valide
+  private mapAnswerToOption(answer: string, question: SimulatorQuestion): string | null {
+    const answerLower = answer.toLowerCase();
+    
+    // Pour la première question sur les montants
+    if (question.id === "1") {
+      // Extraire les nombres de la réponse
+      const millions = answerLower.match(/(\d+(?:\.\d+)?)\s*(?:millions?|m)/);
+      const milliers = answerLower.match(/(\d+(?:\.\d+)?)\s*(?:k|milliers?)/);
+      
+      if (millions) {
+        const value = parseFloat(millions[1]) * 1000000;
+        if (value < 100000) return "< 100K€";
+        if (value <= 500000) return "100K-500K€";
+        if (value <= 2000000) return "500K-2M€";
+        if (value <= 10000000) return "2M-10M€";
+        return "> 10M€";
+      }
+      
+      if (milliers) {
+        const value = parseFloat(milliers[1]) * 1000;
+        if (value < 100000) return "< 100K€";
+        if (value <= 500000) return "100K-500K€";
+        if (value <= 2000000) return "500K-2M€";
+        if (value <= 10000000) return "2M-10M€";
+        return "> 10M€";
+      }
+      
+      // Essayer de parser directement comme nombre
+      const num = parseFloat(answerLower.replace(/[^\d.]/g, ''));
+      if (!isNaN(num)) {
+        if (num < 100000) return "< 100K€";
+        if (num <= 500000) return "100K-500K€";
+        if (num <= 2000000) return "500K-2M€";
+        if (num <= 10000000) return "2M-10M€";
+        return "> 10M€";
+      }
+    }
+    
+    // Pour les autres questions avec des options textuelles
+    if (question.options) {
+      for (const option of question.options) {
+        if (option.toLowerCase().includes(answerLower) || answerLower.includes(option.toLowerCase())) {
+          return option;
+        }
+      }
+    }
+    
+    return null;
   }
 
   // Calculer les résultats basés sur les réponses
