@@ -40,7 +40,14 @@ export default function ChatInterface({
   const queryClient = useQueryClient();
 
   const { data: messages = [] } = useQuery<ChatMessage[]>({
-    queryKey: ["/api/chat"],
+    queryKey: ["/api/chat", browserFingerprint],
+    enabled: !!browserFingerprint, // Only run when fingerprint is available
+    queryFn: async () => {
+      const response = await apiRequest("GET", "/api/chat", undefined, {
+        'x-browser-fingerprint': browserFingerprint
+      });
+      return response.json();
+    }
   });
 
   // Initialize browser fingerprint
@@ -67,7 +74,7 @@ export default function ChatInterface({
       return response.json();
     },
     onSuccess: (data) => {
-      queryClient.invalidateQueries({ queryKey: ["/api/chat"] });
+      queryClient.invalidateQueries({ queryKey: ["/api/chat", browserFingerprint] });
       console.log('Session cleared:', data.sessionId);
     },
   });
@@ -141,7 +148,7 @@ export default function ChatInterface({
     },
     onSuccess: () => {
       setMessage("");
-      queryClient.invalidateQueries({ queryKey: ["/api/chat"] });
+      queryClient.invalidateQueries({ queryKey: ["/api/chat", browserFingerprint] });
       if (onMessageSend) {
         onMessageSend(message);
       }
