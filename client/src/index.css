@@ -93,4 +93,28 @@
     0% { transform: translateX(0); }
     100% { transform: translateX(-100%); }
   }
+  
+  /* Custom scrollbar for expanded chat */
+  .scrollbar-visible {
+    scrollbar-width: thin;
+    scrollbar-color: #a855f7 #f3f4f6;
+  }
+  
+  .scrollbar-visible::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .scrollbar-visible::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 4px;
+  }
+  
+  .scrollbar-visible::-webkit-scrollbar-thumb {
+    background: #a855f7;
+    border-radius: 4px;
+  }
+  
+  .scrollbar-visible::-webkit-scrollbar-thumb:hover {
+    background: #9333ea;
+  }
 }

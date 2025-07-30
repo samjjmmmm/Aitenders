@@ -331,7 +331,7 @@ export default function ChatInterface({
           </button>
           {/* Recent Messages Display */}
           {messages.length > 0 && (
-            <div className={`mb-4 ${isExpanded ? 'flex-1 max-h-none' : 'max-h-40'} overflow-y-auto space-y-2 ${isExpanded ? 'mt-12' : ''}`}>
+            <div className={`mb-4 ${isExpanded ? 'flex-1 max-h-none overflow-y-auto scrollbar-visible' : 'max-h-40 overflow-y-auto'} space-y-2 ${isExpanded ? 'mt-12' : ''}`}>
               {(isExpanded ? messages : messages.slice(-2)).map((msg) => (
                 <div key={msg.id} className="space-y-2">
                   <div className="text-right">
