@@ -1,0 +1,762 @@
+"""
+Tender Time Loss Calculator - LLM Integration Module
+====================================================
+
+This module provides structured question flows and calculation logic for integrating
+the AItenders Tender Efficiency Calculator with natural language processing systems.
+
+Usage:
+    from tender_calculator_llm import TenderCalculatorLLM
+    
+    calculator = TenderCalculatorLLM()
+    questions = calculator.get_questions()
+    result = calculator.calculate_efficiency(responses)
+"""
+
+from dataclasses import dataclass, field
+from typing import Dict, List, Any, Optional, Union
+from datetime import datetime
+import json
+
+
+@dataclass
+class QuestionConfig:
+    """Configuration for a single question in the flow"""
+    id: str
+    question: str
+    question_type: str  # "number", "text", "choice", "multiple_choice"
+    validation_rules: Dict[str, Any] = field(default_factory=dict)
+    help_text: str = ""
+    follow_up_questions: List[str] = field(default_factory=list)
+    category: str = ""
+
+
+@dataclass
+class CalculationResult:
+    """Results from the efficiency calculation"""
+    current_hours: float
+    optimized_hours: float
+    hours_saved: float
+    savings_percentage: float
+    monetized_value: float
+    breakdown: Dict[str, Dict[str, float]]
+    recommendations: List[str]
+    export_data: Dict[str, Any]
+
+
+class TenderCalculatorLLM:
+    """
+    Main calculator class for LLM integration
+    Provides structured questions and calculation logic
+    """
+    
+    def __init__(self):
+        self.questions = self._initialize_questions()
+        self.responses = {}
+        self.calculations = {}
+        
+    def _initialize_questions(self) -> List[QuestionConfig]:
+        """Initialize all questions with their configurations"""
+        return [
+            # Step 1: Tender Profile
+            QuestionConfig(
+                id="tenders_per_year",
+                question="How many tenders do you process per year?",
+                question_type="number",
+                validation_rules={"min": 1, "max": 1000},
+                help_text="Include all tender submissions your team handles annually",
+                follow_up_questions=[
+                    "Is this number increasing or decreasing year over year?",
+                    "Do these include both public and private sector tenders?"
+                ],
+                category="tender_profile"
+            ),
+            
+            QuestionConfig(
+                id="avg_tender_value",
+                question="What's the average value of each tender in euros?",
+                question_type="number",
+                validation_rules={"min": 10000, "max": 100000000},
+                help_text="Estimated contract value per tender opportunity",
+                follow_up_questions=[
+                    "Does this vary significantly by sector or client type?",
+                    "What's your largest typical tender value?"
+                ],
+                category="tender_profile"
+            ),
+            
+            QuestionConfig(
+                id="response_weeks",
+                question="How many weeks on average does it take to prepare a tender response?",
+                question_type="number",
+                validation_rules={"min": 1, "max": 20},
+                help_text="From RFP receipt to final submission",
+                follow_up_questions=[
+                    "Does this include time for approvals and reviews?",
+                    "What's the shortest and longest preparation time you've had?"
+                ],
+                category="tender_profile"
+            ),
+            
+            # Step 2: Documents & Complexity
+            QuestionConfig(
+                id="docs_per_tender",
+                question="How many documents are typically submitted per tender?",
+                question_type="number",
+                validation_rules={"min": 1, "max": 100},
+                help_text="Technical specs, proposals, compliance docs, certifications, etc.",
+                follow_up_questions=[
+                    "Which types of documents take the most time to prepare?",
+                    "Do you have standard templates for most documents?"
+                ],
+                category="document_complexity"
+            ),
+            
+            QuestionConfig(
+                id="pages_per_doc",
+                question="What's the average number of pages per document?",
+                question_type="number",
+                validation_rules={"min": 1, "max": 500},
+                help_text="Typical length of your tender documents",
+                follow_up_questions=[
+                    "Are there page limits imposed by clients?",
+                    "Do you find longer documents perform better?"
+                ],
+                category="document_complexity"
+            ),
+            
+            QuestionConfig(
+                id="versions_per_doc",
+                question="How many versions does each document typically go through before submission?",
+                question_type="number",
+                validation_rules={"min": 1, "max": 15},
+                help_text="Review cycles, revisions, approvals",
+                follow_up_questions=[
+                    "Who are the key reviewers in your approval process?",
+                    "What causes the most revisions - content, formatting, or compliance?"
+                ],
+                category="document_complexity"
+            ),
+            
+            # Step 3: Q&A / Change Order Management
+            QuestionConfig(
+                id="qa_rounds",
+                question="How many Q&A or change order cycles do you typically handle per tender?",
+                question_type="number",
+                validation_rules={"min": 0, "max": 15},
+                help_text="Clarification rounds, addenda, change requests from clients",
+                follow_up_questions=[
+                    "Do these usually come from the client or internal stakeholders?",
+                    "What percentage of tenders have no Q&A rounds?"
+                ],
+                category="qa_management"
+            ),
+            
+            QuestionConfig(
+                id="qa_hours",
+                question="How many hours on average do you spend managing each Q&A round?",
+                question_type="number",
+                validation_rules={"min": 0.5, "max": 20.0},
+                help_text="Processing, coordinating, responding to changes and clarifications",
+                follow_up_questions=[
+                    "Does this include coordination time with technical teams?",
+                    "How many people are typically involved in each response?"
+                ],
+                category="qa_management"
+            ),
+            
+            # Step 4: Contract Structuring + Obligation Tracking
+            QuestionConfig(
+                id="contracts_tracked",
+                question="How many contracts do you actively track or create per year?",
+                question_type="number",
+                validation_rules={"min": 1, "max": 1000},
+                help_text="Active contracts requiring ongoing management and compliance tracking",
+                follow_up_questions=[
+                    "Do you track obligations and milestones for all of these?",
+                    "How do you currently manage contract renewals?"
+                ],
+                category="contract_admin"
+            ),
+            
+            QuestionConfig(
+                id="hours_per_contract",
+                question="How many hours do you spend on initial contract setup, formatting, and review?",
+                question_type="number",
+                validation_rules={"min": 1, "max": 50},
+                help_text="Initial setup, formatting, compliance review per contract",
+                follow_up_questions=[
+                    "Does this include legal review time?",
+                    "How much ongoing time is spent on contract maintenance?"
+                ],
+                category="contract_admin"
+            ),
+            
+            # Step 5: Knowledge Reuse
+            QuestionConfig(
+                id="reuse_frequency",
+                question="How often do you reuse answers, content, or templates from past tenders?",
+                question_type="choice",
+                validation_rules={
+                    "choices": ["Never", "Rarely", "Sometimes", "Often", "Always"]
+                },
+                help_text="Reusing content, templates, responses from previous submissions",
+                follow_up_questions=[
+                    "What prevents you from reusing content more often?",
+                    "Do you have a centralized repository of past responses?"
+                ],
+                category="knowledge_management"
+            ),
+            
+            QuestionConfig(
+                id="scratch_tenders",
+                question="How many tenders per year are done completely from scratch with minimal reuse?",
+                question_type="number",
+                validation_rules={"min": 0, "max": 500},
+                help_text="Tenders with minimal reuse of past content or templates",
+                follow_up_questions=[
+                    "What makes these tenders unique enough to start from scratch?",
+                    "Could some of these benefit from more standardization?"
+                ],
+                category="knowledge_management"
+            ),
+            
+            # Step 6: Business Priorities
+            QuestionConfig(
+                id="priorities",
+                question="What are your top 3 business priorities for the next 6 months?",
+                question_type="multiple_choice",
+                validation_rules={
+                    "choices": [
+                        "Reduce cost",
+                        "Improve compliance", 
+                        "Faster submissions",
+                        "Increase win rate",
+                        "Improve team wellbeing",
+                        "Improve document quality",
+                        "Better client relationships",
+                        "Risk management"
+                    ],
+                    "max_selections": 3
+                },
+                help_text="Choose the most important objectives for your organization",
+                follow_up_questions=[
+                    "Which of these is the most urgent?",
+                    "How do you currently measure success in these areas?"
+                ],
+                category="business_profile"
+            ),
+            
+            # Step 7: Business Context
+            QuestionConfig(
+                id="industry",
+                question="What industry does your company operate in?",
+                question_type="choice",
+                validation_rules={
+                    "choices": [
+                        "Construction", 
+                        "Engineering", 
+                        "Pharma", 
+                        "IT/Technology", 
+                        "Aerospace",
+                        "Manufacturing",
+                        "Consulting",
+                        "Energy",
+                        "Healthcare",
+                        "Other"
+                    ]
+                },
+                help_text="Your primary industry sector",
+                follow_up_questions=[
+                    "Do you work across multiple industry sectors?",
+                    "Are there industry-specific compliance requirements you must meet?"
+                ],
+                category="business_profile"
+            ),
+            
+            QuestionConfig(
+                id="company_name",
+                question="What's your company name?",
+                question_type="text",
+                validation_rules={"max_length": 100},
+                help_text="Your organization name (optional)",
+                category="business_profile"
+            ),
+            
+            QuestionConfig(
+                id="turnover",
+                question="What's your business unit's annual turnover in euros?",
+                question_type="number",
+                validation_rules={"min": 1000000, "max": 10000000000},
+                help_text="Annual revenue of the business unit handling tenders",
+                follow_up_questions=[
+                    "Is this growing or stable year over year?",
+                    "What percentage comes from tender-won contracts?"
+                ],
+                category="business_profile"
+            ),
+            
+            QuestionConfig(
+                id="win_rate",
+                question="What's your typical win rate as a percentage?",
+                question_type="number",
+                validation_rules={"min": 5, "max": 100},
+                help_text="Percentage of tenders you typically win",
+                follow_up_questions=[
+                    "Has this improved or declined in recent years?",
+                    "Do you track win rates by tender size or client type?"
+                ],
+                category="business_profile"
+            ),
+            
+            QuestionConfig(
+                id="role",
+                question="What's your role in the tender process?",
+                question_type="choice",
+                validation_rules={
+                    "choices": [
+                        "Tender Manager",
+                        "Procurement Specialist", 
+                        "Project Manager",
+                        "Business Development",
+                        "Legal/Compliance",
+                        "Technical Lead",
+                        "Executive/Director",
+                        "Other"
+                    ]
+                },
+                help_text="Your primary role in tender management",
+                category="business_profile"
+            )
+        ]
+    
+    def get_questions(self) -> List[QuestionConfig]:
+        """Return all questions for the LLM system"""
+        return self.questions
+    
+    def get_questions_by_category(self, category: str) -> List[QuestionConfig]:
+        """Get questions filtered by category"""
+        return [q for q in self.questions if q.category == category]
+    
+    def get_question_by_id(self, question_id: str) -> Optional[QuestionConfig]:
+        """Get a specific question by its ID"""
+        return next((q for q in self.questions if q.id == question_id), None)
+    
+    def validate_response(self, question_id: str, response: Any) -> Dict[str, Any]:
+        """Validate a response against question rules"""
+        question = self.get_question_by_id(question_id)
+        if not question:
+            return {"valid": False, "error": "Question not found"}
+        
+        rules = question.validation_rules
+        
+        # Number validation
+        if question.question_type == "number":
+            try:
+                value = float(response)
+                if "min" in rules and value < rules["min"]:
+                    return {"valid": False, "error": f"Value must be at least {rules['min']}"}
+                if "max" in rules and value > rules["max"]:
+                    return {"valid": False, "error": f"Value must be at most {rules['max']}"}
+                return {"valid": True, "parsed_value": value}
+            except (ValueError, TypeError):
+                return {"valid": False, "error": "Must be a valid number"}
+        
+        # Choice validation
+        elif question.question_type == "choice":
+            if response not in rules.get("choices", []):
+                return {"valid": False, "error": f"Must be one of: {', '.join(rules['choices'])}"}
+            return {"valid": True, "parsed_value": response}
+        
+        # Multiple choice validation
+        elif question.question_type == "multiple_choice":
+            if not isinstance(response, list):
+                response = [response]  # Convert single choice to list
+            
+            valid_choices = rules.get("choices", [])
+            invalid_choices = [choice for choice in response if choice not in valid_choices]
+            if invalid_choices:
+                return {"valid": False, "error": f"Invalid choices: {', '.join(invalid_choices)}"}
+            
+            max_selections = rules.get("max_selections", len(valid_choices))
+            if len(response) > max_selections:
+                return {"valid": False, "error": f"Maximum {max_selections} selections allowed"}
+            
+            return {"valid": True, "parsed_value": response}
+        
+        # Text validation
+        elif question.question_type == "text":
+            if "max_length" in rules and len(str(response)) > rules["max_length"]:
+                return {"valid": False, "error": f"Maximum {rules['max_length']} characters allowed"}
+            return {"valid": True, "parsed_value": str(response)}
+        
+        return {"valid": True, "parsed_value": response}
+    
+    def add_response(self, question_id: str, response: Any) -> Dict[str, Any]:
+        """Add a validated response to the calculator"""
+        validation = self.validate_response(question_id, response)
+        if validation["valid"]:
+            self.responses[question_id] = validation["parsed_value"]
+            return {"success": True, "message": "Response recorded"}
+        else:
+            return {"success": False, "error": validation["error"]}
+    
+    def get_next_question(self) -> Optional[QuestionConfig]:
+        """Get the next unanswered question"""
+        for question in self.questions:
+            if question.id not in self.responses:
+                return question
+        return None
+    
+    def is_complete(self) -> bool:
+        """Check if all required questions have been answered"""
+        required_questions = [q.id for q in self.questions if q.id != "company_name"]  # company_name is optional
+        return all(q_id in self.responses for q_id in required_questions)
+    
+    def calculate_efficiency(self) -> CalculationResult:
+        """Calculate efficiency metrics based on responses"""
+        if not self.is_complete():
+            missing = [q.question for q in self.questions if q.id not in self.responses]
+            raise ValueError(f"Missing responses for: {', '.join(missing[:3])}...")
+        
+        # Convert reuse frequency to factor
+        reuse_mapping = {
+            "Never": 0,
+            "Rarely": 0.25,
+            "Sometimes": 0.5,
+            "Often": 0.75,
+            "Always": 0.9
+        }
+        reuse_factor = reuse_mapping.get(self.responses.get("reuse_frequency", "Sometimes"), 0.5)
+        
+        # Basic calculations
+        tenders_per_year = self.responses["tenders_per_year"]
+        avg_tender_value = self.responses["avg_tender_value"]
+        response_weeks = self.responses["response_weeks"]
+        docs_per_tender = self.responses["docs_per_tender"]
+        pages_per_doc = self.responses["pages_per_doc"]
+        versions_per_doc = self.responses["versions_per_doc"]
+        qa_rounds = self.responses["qa_rounds"]
+        qa_hours = self.responses["qa_hours"]
+        contracts_tracked = self.responses["contracts_tracked"]
+        hours_per_contract = self.responses["hours_per_contract"]
+        win_rate = self.responses["win_rate"]
+        
+        # Detailed calculations
+        avg_hours_per_tender = response_weeks * 40
+        total_hours_annual = avg_hours_per_tender * tenders_per_year
+        
+        # Document management
+        total_docs = tenders_per_year * docs_per_tender
+        total_pages = total_docs * pages_per_doc
+        total_versions = total_docs * versions_per_doc
+        total_version_hours = total_versions * 1.5  # 1.5 hours per version
+        
+        # Q&A Management
+        qa_hours_total = qa_rounds * qa_hours * tenders_per_year
+        
+        # Contract structuring
+        contract_hours_total = contracts_tracked * hours_per_contract
+        
+        # Knowledge reuse gap
+        reuse_gap = 1 - reuse_factor
+        reuse_loss_hours = total_hours_annual * reuse_gap
+        
+        # Current state totals
+        breakdown = {
+            "tender_response": {
+                "before": total_hours_annual,
+                "after": total_hours_annual * 0.5,  # 50% reduction
+                "savings_pct": 50
+            },
+            "qa_management": {
+                "before": qa_hours_total,
+                "after": qa_hours_total * 0.4,  # 60% reduction
+                "savings_pct": 60
+            },
+            "doc_versioning": {
+                "before": total_version_hours,
+                "after": total_version_hours * 0.4,  # 60% reduction
+                "savings_pct": 60
+            },
+            "contract_admin": {
+                "before": contract_hours_total,
+                "after": contract_hours_total * 0.5,  # 50% reduction
+                "savings_pct": 50
+            },
+            "knowledge_management": {
+                "before": reuse_loss_hours,
+                "after": reuse_loss_hours * 0.5,  # 50% reduction
+                "savings_pct": 50
+            }
+        }
+        
+        # Calculate totals
+        current_hours = sum(cat["before"] for cat in breakdown.values())
+        optimized_hours = sum(cat["after"] for cat in breakdown.values())
+        hours_saved = current_hours - optimized_hours
+        savings_percentage = (hours_saved / current_hours) * 100 if current_hours > 0 else 0
+        
+        # Monetized value calculation
+        # Assumes saved time can be reinvested in more tenders or higher quality submissions
+        additional_tenders_possible = hours_saved / (response_weeks * 40)
+        potential_additional_revenue = additional_tenders_possible * avg_tender_value * (win_rate / 100)
+        
+        # Conservative estimate: 25% of saved time converts to revenue
+        monetized_value = potential_additional_revenue * 0.25
+        
+        # Generate recommendations
+        recommendations = self._generate_recommendations()
+        
+        # Export data
+        export_data = {
+            "responses": self.responses,
+            "calculations": breakdown,
+            "summary": {
+                "current_hours": current_hours,
+                "optimized_hours": optimized_hours,
+                "hours_saved": hours_saved,
+                "savings_percentage": savings_percentage,
+                "monetized_value": monetized_value
+            },
+            "timestamp": datetime.now().isoformat()
+        }
+        
+        return CalculationResult(
+            current_hours=current_hours,
+            optimized_hours=optimized_hours,
+            hours_saved=hours_saved,
+            savings_percentage=savings_percentage,
+            monetized_value=monetized_value,
+            breakdown=breakdown,
+            recommendations=recommendations,
+            export_data=export_data
+        )
+    
+    def _generate_recommendations(self) -> List[str]:
+        """Generate personalized recommendations based on responses"""
+        recommendations = []
+        
+        # Based on priorities
+        priorities = self.responses.get("priorities", [])
+        
+        if "Reduce cost" in priorities:
+            recommendations.append("Focus on automating tender response workflows to reduce manual effort and associated costs")
+        
+        if "Faster submissions" in priorities:
+            recommendations.append("Implement template libraries and AI-assisted content generation for quicker turnarounds")
+        
+        if "Improve compliance" in priorities:
+            recommendations.append("Use structured obligation tracking to ensure no compliance requirements are missed")
+        
+        if "Increase win rate" in priorities:
+            recommendations.append("Leverage knowledge management to reuse winning strategies and content from successful past tenders")
+        
+        # Based on specific pain points
+        if self.responses.get("versions_per_doc", 3) > 5:
+            recommendations.append("Reduce document versioning overhead with collaborative editing and approval workflows")
+        
+        if self.responses.get("qa_rounds", 3) > 4:
+            recommendations.append("Implement structured Q&A management to handle clarifications more efficiently")
+        
+        reuse_freq = self.responses.get("reuse_frequency", "Sometimes")
+        if reuse_freq in ["Never", "Rarely"]:
+            recommendations.append("Build a centralized knowledge base to dramatically improve content reuse and reduce repeated work")
+        
+        # Industry-specific recommendations
+        industry = self.responses.get("industry", "")
+        if industry == "Construction":
+            recommendations.append("Focus on technical specification mapping and compliance tracking for construction regulations")
+        elif industry == "IT/Technology":
+            recommendations.append("Emphasize rapid prototyping capabilities and technical proposal automation")
+        elif industry == "Healthcare":
+            recommendations.append("Prioritize regulatory compliance tracking and audit trail management")
+        
+        # Default recommendations if list is short
+        if len(recommendations) < 3:
+            recommendations.extend([
+                "Start with document template standardization for immediate time savings",
+                "Implement centralized tender response tracking for better visibility",
+                "Focus on knowledge capture from your most successful tender wins"
+            ])
+        
+        return recommendations[:5]  # Return top 5 recommendations
+    
+    def export_to_json(self, filepath: Optional[str] = None) -> str:
+        """Export current state to JSON"""
+        export_data = {
+            "questions": [
+                {
+                    "id": q.id,
+                    "question": q.question,
+                    "type": q.question_type,
+                    "category": q.category,
+                    "help_text": q.help_text,
+                    "validation_rules": q.validation_rules
+                }
+                for q in self.questions
+            ],
+            "responses": self.responses,
+            "timestamp": datetime.now().isoformat()
+        }
+        
+        json_str = json.dumps(export_data, indent=2, ensure_ascii=False)
+        
+        if filepath:
+            with open(filepath, 'w', encoding='utf-8') as f:
+                f.write(json_str)
+        
+        return json_str
+    
+    def get_progress_info(self) -> Dict[str, Any]:
+        """Get current progress information"""
+        total_questions = len(self.questions)
+        answered_questions = len(self.responses)
+        
+        return {
+            "total_questions": total_questions,
+            "answered_questions": answered_questions,
+            "progress_percentage": (answered_questions / total_questions) * 100,
+            "remaining_questions": total_questions - answered_questions,
+            "is_complete": self.is_complete()
+        }
+
+
+# Example usage and integration helpers
+class ConversationHandler:
+    """Helper class for managing conversational flow with LLM"""
+    
+    def __init__(self):
+        self.calculator = TenderCalculatorLLM()
+        self.current_question = None
+        self.conversation_state = "greeting"
+    
+    def start_conversation(self) -> str:
+        """Start the conversation"""
+        self.conversation_state = "questioning"
+        self.current_question = self.calculator.get_next_question()
+        
+        greeting = """Hello! I'm here to help you analyze your tender process efficiency. 
+I'll ask you some questions about how your team currently handles tenders, 
+and then provide you with a detailed analysis of potential time savings and improvements.
+
+This will take about 5-10 minutes. Let's start:
+
+"""
+        return greeting + (self.current_question.question if self.current_question else "No questions available")
+    
+    def process_response(self, user_response: str) -> str:
+        """Process user response and return next question or results"""
+        if self.conversation_state != "questioning" or not self.current_question:
+            return "Please start the conversation first."
+        
+        # Add the response
+        result = self.calculator.add_response(self.current_question.id, user_response)
+        
+        if not result["success"]:
+            return f"I need a valid response. {result['error']} \n\nLet me ask again: {self.current_question.question if self.current_question else 'Unknown question'}"
+        
+        # Get next question
+        self.current_question = self.calculator.get_next_question()
+        
+        if self.current_question:
+            progress = self.calculator.get_progress_info()
+            progress_text = f"({progress['answered_questions']}/{progress['total_questions']}) "
+            return f"Thanks! {progress_text}{self.current_question.question if self.current_question else 'No more questions'}"
+        else:
+            # All questions answered, provide results
+            self.conversation_state = "complete"
+            return self._generate_results_summary()
+    
+    def _generate_results_summary(self) -> str:
+        """Generate a conversational summary of results"""
+        results = self.calculator.calculate_efficiency()
+        
+        company_name = self.calculator.responses.get("company_name", "your organization")
+        
+        summary = f"""
+Perfect! I've analyzed {company_name}'s tender process. Here are your results:
+
+📊 **EFFICIENCY ANALYSIS**
+• Current annual hours: {results.current_hours:,.0f} hours
+• Potential optimized hours: {results.optimized_hours:,.0f} hours  
+• **Hours you could save: {results.hours_saved:,.0f} hours ({results.savings_percentage:.1f}%)**
+• **Estimated annual value: €{results.monetized_value:,.0f}**
+
+📈 **BREAKDOWN BY CATEGORY:**
+"""
+        
+        for category, data in results.breakdown.items():
+            category_name = category.replace("_", " ").title()
+            summary += f"• {category_name}: {data['before']:,.0f} → {data['after']:,.0f} hours ({data['savings_pct']}% reduction)\n"
+        
+        summary += f"""
+💡 **TOP RECOMMENDATIONS:**
+"""
+        for i, rec in enumerate(results.recommendations[:3], 1):
+            summary += f"{i}. {rec}\n"
+        
+        summary += """
+Would you like me to explain any specific area in more detail, or would you like to export these results?
+"""
+        
+        return summary
+    
+    def get_detailed_breakdown(self, category: Optional[str] = None) -> str:
+        """Get detailed breakdown for a specific category"""
+        if not self.calculator.is_complete():
+            return "Please complete all questions first."
+        
+        results = self.calculator.calculate_efficiency()
+        
+        if category and category in results.breakdown:
+            data = results.breakdown[category]
+            category_name = category.replace("_", " ").title()
+            
+            return f"""
+**{category_name} Detailed Analysis:**
+
+Current state: {data['before']:,.0f} hours annually
+With AItenders: {data['after']:,.0f} hours annually
+Savings: {data['before'] - data['after']:,.0f} hours ({data['savings_pct']}% reduction)
+
+This improvement comes from:
+- Automation of repetitive tasks
+- Better template and knowledge reuse
+- Streamlined approval workflows
+- Reduced manual coordination overhead
+"""
+        
+        # Return overall breakdown
+        breakdown_text = "**DETAILED BREAKDOWN:**\n\n"
+        for cat, data in results.breakdown.items():
+            cat_name = cat.replace("_", " ").title()
+            breakdown_text += f"**{cat_name}:**\n"
+            breakdown_text += f"• Current: {data['before']:,.0f} hours\n"
+            breakdown_text += f"• Optimized: {data['after']:,.0f} hours\n"
+            breakdown_text += f"• Savings: {data['before'] - data['after']:,.0f} hours\n\n"
+        
+        return breakdown_text
+
+
+# Usage example for LLM integration
+if __name__ == "__main__":
+    # Example of how to integrate with an LLM system
+    
+    # Initialize the conversation handler
+    handler = ConversationHandler()
+    
+    # Start conversation
+    print(handler.start_conversation())
+    
+    # Simulate conversation (in real implementation, these would come from LLM chat)
+    responses = ["35", "2000000", "3", "8", "25", "4", "2", "1.5", "50", "4", "Sometimes", "10", 
+                ["Reduce cost", "Faster submissions"], "Construction", "BuildCorp Ltd", "50000000", "25", "Tender Manager"]
+    
+    for response in responses:
+        print(f"\nUser: {response}")
+        result = handler.process_response(response)
+        print(f"Assistant: {result}")
+        
+        if handler.conversation_state == "complete":
+            break

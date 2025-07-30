@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import { storage } from './storage';
 import { hubspotService } from './hubspot-service';
 import { tenderTimeCalculator } from './tender-time-calculator';
+import { advancedTenderCalculator } from './advanced-tender-calculator';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -408,7 +409,7 @@ class SimulatorService {
     const hasCurrentTools = responses.find(r => r.questionId === '6')?.numericValue === 1;
 
     try {
-      // Utiliser le calculateur avancé de perte de temps
+      // Utiliser le calculateur avancé de perte de temps intégré
       const metrics = tenderTimeCalculator.calculateMetrics(
         averageTenderValue,
         tendersPerMonth,
@@ -419,7 +420,13 @@ class SimulatorService {
       );
 
       // Générer le rapport détaillé avec les nouvelles métriques
-      return tenderTimeCalculator.generateAnalysisReport(metrics, 'fr');
+      const basicReport = tenderTimeCalculator.generateAnalysisReport(metrics, 'fr');
+      
+      // Ajouter une option pour un rapport plus détaillé
+      return `${basicReport}
+
+**🔬 ANALYSE AVANCÉE DISPONIBLE**
+Pour une analyse encore plus poussée avec 15+ questions détaillées et recommandations personnalisées par industrie, tapez "**analyse avancée**"`;
     } catch (error) {
       console.error('Error calculating advanced metrics:', error);
       return `🎉 **Simulateur terminé !**\n\n**📋 Vos réponses ont été enregistrées avec succès !**\n\n**Veuillez fournir vos informations pour recevoir votre rapport ROI détaillé !**`;

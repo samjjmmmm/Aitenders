@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { simulatorService } from './simulator-service.js';
+import { advancedAnalysisService } from './advanced-analysis-service.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -276,6 +277,77 @@ class RAGService {
         response: `🔄 **Simulateur redémarré**\n\nNous repartons depuis le début !\n\n${firstQuestion}`,
         simulatorData: { sessionId, status: 'restarted' }
       };
+    }
+
+    // 0.1. Gérer l'analyse avancée
+    if (queryLower.includes('analyse avancée') || queryLower.includes('analyse avancee')) {
+      return {
+        action: 'advanced_analysis_offer',
+        response: `🔬 **ANALYSE AVANCÉE - CALCULATEUR COMPLET**
+
+L'analyse avancée comprend :
+• **15+ questions détaillées** couvrant tous les aspects de vos processus
+• **Calculs sophistiqués** par catégorie (documents, Q&A, contrats, etc.)
+• **Recommandations personnalisées** selon votre industrie et priorités
+• **Analyse de ROI monétisée** avec potentiel de revenus additionnels
+• **Rapport d'exportation** complet avec toutes les métriques
+
+Cette analyse prend environ 8-10 minutes mais fournit des insights beaucoup plus précis et actionnables.
+
+**Souhaitez-vous commencer l'analyse avancée ?** Tapez "**oui avancée**" pour démarrer ou "**non**" pour rester avec l'analyse standard.`
+      };
+    }
+
+    // 0.2. Gérer le démarrage de l'analyse avancée
+    if (queryLower.includes('oui avancée') || queryLower.includes('oui avancee')) {
+      if (sessionId) {
+        const firstQuestion = await advancedAnalysisService.startSession(sessionId);
+        return {
+          action: 'advanced_analysis_start',
+          response: `🚀 **DÉMARRAGE DE L'ANALYSE AVANCÉE**
+
+Nous allons maintenant explorer vos processus en détail avec 15 questions couvrant :
+
+**📋 Profil des appels d'offres** (3 questions)
+**📄 Complexité documentaire** (3 questions)  
+**❓ Gestion Q&A** (2 questions)
+**📝 Administration contrats** (2 questions)
+**🧠 Gestion des connaissances** (2 questions)
+**🎯 Profil d'entreprise** (3 questions)
+
+${firstQuestion}`
+        };
+      }
+      return {
+        action: 'error',
+        response: "❌ Session introuvable pour démarrer l'analyse avancée."
+      };
+    }
+
+    // 0.3. Gérer les réponses d'analyse avancée en cours
+    if (sessionId) {
+      const advancedSession = advancedAnalysisService.getSessionInfo(sessionId);
+      if (advancedSession && !advancedSession.completed) {
+        // L'utilisateur est dans un processus d'analyse avancée
+        const result = await advancedAnalysisService.processAnswer(sessionId, query);
+        
+        if (result.error) {
+          return {
+            action: 'advanced_analysis_error',
+            response: result.error
+          };
+        } else if (result.completed) {
+          return {
+            action: 'advanced_analysis_completed',
+            response: result.message
+          };
+        } else if (result.nextQuestion) {
+          return {
+            action: 'advanced_analysis_continue',
+            response: result.message
+          };
+        }
+      }
     }
 
     // 1. Vérifier les commandes simulateur en priorité

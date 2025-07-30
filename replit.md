@@ -111,6 +111,35 @@ The architecture prioritizes developer experience with hot reloading, type safet
 
 ## Recent Changes (January 2025)
 
+### Advanced Tender Calculator Integration with Full LLM Module
+- **Date**: January 30, 2025
+- **Change**: Integrated comprehensive 15+ question advanced tender calculator from Python LLM module
+- **Technical Implementation**:
+  - **Advanced Calculator**: `server/advanced-tender-calculator.ts` - Complete TypeScript port with sophisticated calculation logic
+  - **Analysis Service**: `server/advanced-analysis-service.ts` - Manages detailed 15-question workflow
+  - **RAG Integration**: Enhanced routing for "analyse avancée" commands and workflow management
+  - **Comprehensive Calculations**: Document prep, Q&A management, versioning, contract admin, knowledge management
+  - **Industry-Specific Recommendations**: Personalized insights based on business priorities and sector
+- **Question Categories**:
+  - **Tender Profile**: Tender volume, value, response time (3 questions)
+  - **Document Complexity**: Document count, pages, versions (3 questions)
+  - **Q&A Management**: Rounds, hours per round (2 questions)
+  - **Contract Administration**: Contract tracking, setup hours (2 questions)
+  - **Knowledge Management**: Reuse frequency, scratch work (2 questions)
+  - **Business Profile**: Priorities, industry, turnover, win rate (3 questions)
+- **Advanced Features**:
+  - **Monetized ROI**: Calculates potential additional revenue from time savings
+  - **Category Breakdown**: Detailed savings analysis per business process
+  - **Validation System**: Comprehensive input validation with helpful error messages
+  - **Multi-Choice Support**: Handles complex question types with proper parsing
+  - **Export Capabilities**: Complete data export with timestamps and calculations
+- **User Experience**:
+  - **Two-Tier Analysis**: Basic 6-question simulator + advanced 15+ question analysis
+  - **Progressive Disclosure**: Standard analysis offers upgrade to advanced insights
+  - **Natural Commands**: "analyse avancée" triggers comprehensive workflow
+  - **Detailed Reports**: Professional formatting with category breakdowns and recommendations
+- **Business Impact**: Provides enterprise-grade ROI analysis with industry-specific insights for serious prospects requiring detailed vendor evaluation
+
 ### Advanced Chat Interface with Multi-State Design
 - **Date**: January 30, 2025
 - **Change**: Implemented comprehensive chat interface with three interactive states

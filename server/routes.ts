@@ -229,6 +229,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
         case 'simulator_continue':
         case 'simulator_completed':
         case 'simulator_answer':
+        case 'advanced_analysis_offer':
+        case 'advanced_analysis_start':
+        case 'advanced_analysis_continue':
+        case 'advanced_analysis_completed':
+        case 'advanced_analysis_error':
           aiResponse = routing.response!;
           break;
         case 'blocked':
