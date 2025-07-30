@@ -177,6 +177,17 @@ export default function ChatInterface({
     }
   };
 
+  // Handle clear chat
+  const clearChat = () => {
+    if (messages.length === 0) {
+      return;
+    }
+    
+    if (window.confirm(language === 'fr' ? 'Êtes-vous sûr de vouloir vider le chat ?' : 'Are you sure you want to clear the chat?')) {
+      clearChatMutation.mutate();
+    }
+  };
+
   // Handle copy entire conversation with email validation
   const handleCopyConversation = () => {
     if (messages.length === 0) {
