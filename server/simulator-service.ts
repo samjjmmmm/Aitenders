@@ -213,17 +213,36 @@ class SimulatorService {
     error?: string;
   } {
     const cleanAnswer = answer.trim();
+    console.log(`[VALIDATION DEBUG] Question type: ${question.type}, Answer: "${cleanAnswer}"`);
 
     // Pour les questions optionnelles, permettre de passer avec "passer", "skip", etc.
     if (!question.required) {
       const skipAnswers = ['passer', 'skip', 'suivant', 'next', '-', ''];
       if (skipAnswers.includes(cleanAnswer.toLowerCase())) {
+        console.log(`[VALIDATION DEBUG] Skipping optional question`);
         return { value: undefined, numericValue: 0 };
       }
     }
 
+    console.log(`[VALIDATION DEBUG] Processing question type: ${question.type}`);
     switch (question.type) {
       case 'select':
+        // Gestion des réponses "je ne sais pas" ou équivalent
+        const unknownAnswers = ['je ne sais pas', 'aucune idee', 'aucune idée', 'je sais pas', 'sais pas', 'pas sur', 'pas sûr', 'don\'t know', 'no idea', 'not sure', 'pas certain', 'incertain'];
+        // Normalize both the answer and patterns to handle accents
+        const normalizeTextSelect = (text: string) => text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        const normalizedAnswerSelect = normalizeTextSelect(cleanAnswer);
+        if (unknownAnswers.some(phrase => normalizedAnswerSelect.includes(normalizeTextSelect(phrase)))) {
+          // Prendre une option par défaut (celle du milieu)
+          if (question.options && question.options.length > 0) {
+            const middleIndex = Math.floor(question.options.length / 2);
+            const defaultOption = question.options[middleIndex];
+            const numericValue = question.mapping?.[defaultOption];
+            console.log(`User doesn't know answer, using default option: ${defaultOption}`);
+            return { value: defaultOption, numericValue };
+          }
+        }
+
         // Vérification directe d'abord
         if (question.options?.includes(cleanAnswer)) {
           const numericValue = question.mapping?.[cleanAnswer];
@@ -238,11 +257,14 @@ class SimulatorService {
         }
 
         const optionalNote = !question.required ? ' (ou "passer" pour ignorer)' : '';
-        return { error: `Veuillez choisir une option parmi: ${question.options?.join(', ')}${optionalNote}` };
+        return { error: `Veuillez choisir une option parmi: ${question.options?.join(', ')}${optionalNote}\n\n💡 Si vous ne savez pas, vous pouvez dire "je ne sais pas" et nous utiliserons une valeur par défaut.` };
 
       case 'number':
-        // Try to extract time values and convert to hours
+        console.log(`[DEBUG] Processing numeric answer: "${cleanAnswer}"`);
+        
+        // Try to extract time values and convert to hours first
         const timeValue = this.parseTimeToHours(cleanAnswer);
+        console.log(`[DEBUG] parseTimeToHours result: ${timeValue}`);
         if (timeValue !== null) {
           if (question.min !== undefined && timeValue < question.min) {
             return { error: `La valeur doit être supérieure ou égale à ${question.min} heures.` };
@@ -253,22 +275,52 @@ class SimulatorService {
           return { value: timeValue, numericValue: timeValue };
         }
 
+        // Try to parse as regular number
         const num = parseFloat(cleanAnswer);
-        if (isNaN(num)) {
-          const optionalNote = !question.required ? ' (ou "passer" pour ignorer)' : '';
-          return { error: `Veuillez saisir un nombre valide ou une durée (ex: "6 mois", "200h")${optionalNote}.` };
+        console.log(`[DEBUG] parseFloat result: ${num} (isNaN: ${isNaN(num)})`);
+        if (!isNaN(num)) {
+          if (question.min !== undefined && num < question.min) {
+            return { error: `La valeur doit être supérieure ou égale à ${question.min}.` };
+          }
+          if (question.max !== undefined && num > question.max) {
+            return { error: `La valeur doit être inférieure ou égale à ${question.max}.` };
+          }
+          return { value: num, numericValue: num };
         }
-        if (question.min !== undefined && num < question.min) {
-          return { error: `La valeur doit être supérieure ou égale à ${question.min}.` };
+
+        // Gestion des réponses "je ne sais pas" (après avoir essayé de parser)
+        const unknownNumAnswers = ['je ne sais pas', 'aucune idee', 'aucune idée', 'je sais pas', 'sais pas', 'pas sur', 'pas sûr', 'pas certain', 'incertain', 'don\'t know', 'no idea', 'not sure'];
+        console.log(`Checking numeric answer "${cleanAnswer}" against unknown patterns:`, unknownNumAnswers);
+        // Normalize both the answer and patterns to handle accents
+        const normalizeText = (text: string) => text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        const normalizedAnswer = normalizeText(cleanAnswer);
+        console.log(`Normalized answer: "${normalizedAnswer}"`);
+        const hasUnknownPattern = unknownNumAnswers.some(phrase => {
+          const normalizedPhrase = normalizeText(phrase);
+          const match = normalizedAnswer.includes(normalizedPhrase);
+          console.log(`  Testing "${phrase}" (normalized: "${normalizedPhrase}") -> ${match}`);
+          return match;
+        });
+        console.log(`Unknown pattern detected: ${hasUnknownPattern}`);
+        if (hasUnknownPattern) {
+          // Utiliser une valeur moyenne entre min et max
+          const defaultValue = question.min !== undefined && question.max !== undefined 
+            ? (question.min + question.max) / 2 
+            : question.min || question.max || 10;
+          console.log(`User doesn't know numeric answer, using default: ${defaultValue}`);
+          return { value: defaultValue, numericValue: defaultValue };
         }
-        if (question.max !== undefined && num > question.max) {
-          return { error: `La valeur doit être inférieure ou égale à ${question.max}.` };
-        }
-        return { value: num, numericValue: num };
+
+        // Si rien ne fonctionne, retourner l'erreur
+        const numOptionalNote = !question.required ? ' (ou "passer" pour ignorer)' : '';
+        return { error: `Veuillez saisir un nombre valide ou une durée (ex: "6 mois", "200h")${numOptionalNote}.\n\n💡 Si vous ne savez pas, vous pouvez dire "je ne sais pas".` };
 
       case 'range':
+        console.log(`[DEBUG] Processing range answer: "${cleanAnswer}"`);
+        
         // Try to extract time values and convert to hours for range questions too
         const rangeTimeValue = this.parseTimeToHours(cleanAnswer);
+        console.log(`[DEBUG] parseTimeToHours result for range: ${rangeTimeValue}`);
         if (rangeTimeValue !== null) {
           if (question.min !== undefined && rangeTimeValue < question.min) {
             return { error: `La valeur doit être entre ${question.min} et ${question.max} heures.` };
@@ -279,18 +331,45 @@ class SimulatorService {
           return { value: rangeTimeValue, numericValue: rangeTimeValue };
         }
 
+        // Try to parse as regular number
         const rangeNum = parseFloat(cleanAnswer);
-        if (isNaN(rangeNum)) {
-          const optionalNote = !question.required ? ' (ou "passer" pour ignorer)' : '';
-          return { error: `Veuillez saisir un nombre valide ou une durée (ex: "6 mois", "200h")${optionalNote}.` };
+        console.log(`[DEBUG] parseFloat result for range: ${rangeNum} (isNaN: ${isNaN(rangeNum)})`);
+        if (!isNaN(rangeNum)) {
+          if (question.min !== undefined && rangeNum < question.min) {
+            return { error: `La valeur doit être entre ${question.min} et ${question.max}.` };
+          }
+          if (question.max !== undefined && rangeNum > question.max) {
+            return { error: `La valeur doit être entre ${question.min} et ${question.max}.` };
+          }
+          return { value: rangeNum, numericValue: rangeNum };
         }
-        if (question.min !== undefined && rangeNum < question.min) {
-          return { error: `La valeur doit être entre ${question.min} et ${question.max}.` };
+
+        // Gestion des réponses "je ne sais pas" pour les questions de type range
+        const unknownRangeAnswers = ['je ne sais pas', 'aucune idee', 'aucune idée', 'je sais pas', 'sais pas', 'pas sur', 'pas sûr', 'pas certain', 'incertain', 'don\'t know', 'no idea', 'not sure'];
+        console.log(`Checking range answer "${cleanAnswer}" against unknown patterns:`, unknownRangeAnswers);
+        // Normalize both the answer and patterns to handle accents
+        const normalizeTextRange = (text: string) => text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        const normalizedRangeAnswer = normalizeTextRange(cleanAnswer);
+        console.log(`Normalized range answer: "${normalizedRangeAnswer}"`);
+        const hasUnknownRangePattern = unknownRangeAnswers.some(phrase => {
+          const normalizedPhrase = normalizeTextRange(phrase);
+          const match = normalizedRangeAnswer.includes(normalizedPhrase);
+          console.log(`  Testing "${phrase}" (normalized: "${normalizedPhrase}") -> ${match}`);
+          return match;
+        });
+        console.log(`Unknown range pattern detected: ${hasUnknownRangePattern}`);
+        if (hasUnknownRangePattern) {
+          // Utiliser une valeur moyenne entre min et max
+          const defaultValue = question.min !== undefined && question.max !== undefined 
+            ? (question.min + question.max) / 2 
+            : question.min || question.max || 10;
+          console.log(`User doesn't know range answer, using default: ${defaultValue}`);
+          return { value: defaultValue, numericValue: defaultValue };
         }
-        if (question.max !== undefined && rangeNum > question.max) {
-          return { error: `La valeur doit être entre ${question.min} et ${question.max}.` };
-        }
-        return { value: rangeNum, numericValue: rangeNum };
+
+        // Si rien ne fonctionne, retourner l'erreur
+        const rangeOptionalNote = !question.required ? ' (ou "passer" pour ignorer)' : '';
+        return { error: `Veuillez saisir un nombre valide ou une durée (ex: "6 mois", "200h")${rangeOptionalNote}.\n\n💡 Si vous ne savez pas, vous pouvez dire "je ne sais pas".` };
 
       case 'boolean':
         const boolAnswer = cleanAnswer.toLowerCase();

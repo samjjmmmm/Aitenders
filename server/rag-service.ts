@@ -386,27 +386,32 @@ ${firstQuestion}`
       }
     }
 
-    // Vérifier si c'est une réponse à une question de simulateur
+    // Vérifier si c'est une réponse à une question de simulateur (PRIORITAIRE)
     if (sessionId) {
       const sessionInfo = simulatorService.getSessionInfo(sessionId);
 
       if (sessionInfo && !sessionInfo.completed) {
-        // Traiter la réponse utilisateur
+        console.log(`[RAG] Active simulator session detected for ${sessionId}, processing answer: "${query}"`);
+        
+        // Traiter la réponse utilisateur pour le simulateur actif
         const result = await simulatorService.processAnswer(sessionId, query);
 
         if (result.error) {
+          console.log(`[RAG] Simulator error: ${result.error}`);
           return {
             action: 'simulator_error',
             response: result.error,
             simulatorData: { sessionId, status: 'error' }
           };
         } else if (result.nextQuestion) {
+          console.log(`[RAG] Simulator continuing to next question`);
           return {
             action: 'simulator_continue',
             response: result.nextQuestion,
             simulatorData: { sessionId, status: 'in_progress' }
           };
         } else if (result.completed) {
+          console.log(`[RAG] Simulator completed successfully`);
           return {
             action: 'simulator_completed',
             response: result.message,
