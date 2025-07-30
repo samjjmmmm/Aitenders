@@ -45,7 +45,7 @@ class AdvancedAnalysisService {
 
   // Formatter une question avec contexte
   private formatQuestion(question: any, index: number, total: number): string {
-    let formatted = `**Question ${index}/${total} :** ${question.question}`;
+    let formatted = `**Question ${index}/${total} :** **${question.question}**`;
     
     if (question.helpText) {
       formatted += `\n\n*${question.helpText}*`;
