@@ -487,18 +487,16 @@ export default function UC2Page() {
               
               {/* Main Headline */}
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Maîtrisez la complexité croissante, <span className="text-blue-600">sans compromettre l'efficacité</span>
+                Des appels d'offres complexes, des équipes limitées, <span className="text-blue-600">zéro marge pour l'erreur</span>
               </h2>
               
               {/* Body Copy */}
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Les projets moyens exigent plus de coordination, de ressources et de rigueur. Sans méthodologie claire, 
-                les équipes perdent en efficacité, les délais se rallongent et la qualité se dégrade.
+                Vos équipes, souvent réduites et dispersées, passent des heures à relire et comparer des versions. Résultat : décisions prises dans l'urgence, incohérences non détectées et risque accru de perte de crédibilité.
               </p>
               
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Avec Aitenders, transformez la complexité en avantage concurrentiel grâce à des workflows intelligents, 
-                une coordination automatisée et un contrôle qualité continu qui garantit l'excellence de vos livrables.
+                Avec Aitenders, vos documents sont analysés automatiquement : contradictions détectées, clauses critiques identifiées et versions harmonisées. Vous gagnez en rapidité et validez chaque critère avec une fiabilité totale.
               </p>
               
               {/* CTA Buttons */}
