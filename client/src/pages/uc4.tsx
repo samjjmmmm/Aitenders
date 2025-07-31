@@ -711,6 +711,90 @@ export default function UC4Page() {
         </div>
       </section>
 
+      {/* User-Focused Results Section - Before Additional Features */}
+      <section className="py-16 md:py-20 lg:py-24 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-20 md:mb-24 lg:mb-28">
+            <div className="text-center mb-12 md:mb-16">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Résultats concrets pour chaque utilisateur</h3>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Des bénéfices mesurables pour tous les profils contractuels</p>
+            </div>
+            
+            {/* Results Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+              
+              {/* Contract Manager Results */}
+              <div className="group">
+                <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/50 hover:border-blue-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4">
+                      <MdAccountBox className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900">Gestionnaire de contrats</h4>
+                      <p className="text-sm text-gray-600">Maîtrise instantanée des engagements contractuels</p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-700">Temps de recherche d'information</span>
+                      <span className="font-bold text-blue-600">-90%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-700">Clauses critiques manquées</span>
+                      <span className="font-bold text-green-600">0</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-700">Accessibilité des informations</span>
+                      <span className="font-bold text-blue-600">+100%</span>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 p-4 bg-white/70 rounded-lg border border-blue-200/30">
+                    <p className="text-sm text-gray-700 italic">"Enfin des contrats lisibles et exploitables dès le premier jour."</p>
+                  </div>
+                </Card>
+              </div>
+
+              {/* Legal Director Results */}
+              <div className="group">
+                <Card className="h-full p-8 bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200/50 hover:border-orange-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mr-4">
+                      <MdBusiness className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900">Directeur juridique</h4>
+                      <p className="text-sm text-gray-600">Intelligence contractuelle avancée</p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-700">Questions sans réponse immédiate</span>
+                      <span className="font-bold text-green-600">0</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-700">Conformité des décisions</span>
+                      <span className="font-bold text-green-600">100%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-700">Efficacité équipe juridique</span>
+                      <span className="font-bold text-green-600">+75%</span>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 p-4 bg-white/70 rounded-lg border border-orange-200/30">
+                    <p className="text-sm text-gray-700 italic">"Un juriste IA disponible 24h/7j avec accès instantané aux clauses sources."</p>
+                  </div>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Toppings Section - Wow Features & Additional Functionalities */}
       <section className="py-16 md:py-20 lg:py-24 px-4 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 relative overflow-hidden">
         {/* Background Effects */}
@@ -916,86 +1000,6 @@ export default function UC4Page() {
       {/* KPI Section - High Impact Design */}
       <section className="py-16 md:py-20 lg:py-24 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-
-          {/* User-Focused Results Section - Before KPIs */}
-          <div className="mb-20 md:mb-24 lg:mb-28">
-            <div className="text-center mb-12 md:mb-16">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Résultats concrets pour chaque utilisateur</h3>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Des bénéfices mesurables pour tous les profils contractuels</p>
-            </div>
-            
-            {/* Results Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-              
-              {/* Risk Manager Results */}
-              <div className="group">
-                <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/50 hover:border-blue-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4">
-                      <MdAccountBox className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-gray-900">Gestionnaire de risques</h4>
-                      <p className="text-sm text-gray-600">Maîtrise totale des expositions contractuelles</p>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-700">Temps d'analyse des contrats</span>
-                      <span className="font-bold text-blue-600">-95%</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-700">Risques non détectés</span>
-                      <span className="font-bold text-green-600">-80%</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-700">Visibilité sur les expositions</span>
-                      <span className="font-bold text-blue-600">+100%</span>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-6 p-4 bg-white/70 rounded-lg border border-blue-200/30">
-                    <p className="text-sm text-gray-700 italic">"Une cartographie complète de tous nos risques contractuels en quelques minutes."</p>
-                  </div>
-                </Card>
-              </div>
-
-              {/* Legal Director Results */}
-              <div className="group">
-                <Card className="h-full p-8 bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200/50 hover:border-orange-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mr-4">
-                      <MdBusiness className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-gray-900">Directeur juridique</h4>
-                      <p className="text-sm text-gray-600">Sécurisation juridique maximale</p>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-700">Clauses critiques oubliées</span>
-                      <span className="font-bold text-green-600">0</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-700">Conformité réglementaire</span>
-                      <span className="font-bold text-green-600">100%</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-700">Risques de litiges</span>
-                      <span className="font-bold text-green-600">-75%</span>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-6 p-4 bg-white/70 rounded-lg border border-orange-200/30">
-                    <p className="text-sm text-gray-700 italic">"Enfin une solution qui comprend réellement les enjeux juridiques complexes."</p>
-                  </div>
-                </Card>
-              </div>
-            </div>
-          </div>
 
           {/* KPI Grid */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
