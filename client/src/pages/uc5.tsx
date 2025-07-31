@@ -228,10 +228,10 @@ export function UC5() {
                 <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Pilotage Proactif</Badge>
                 
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                  Du réactif au proactif, sans friction.
+                  Chaque engagement suivi, tracée, et alerte anticipée.
                 </h1>
                 
-                <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]">Chaque engagement suivi, chaque action tracée, chaque alerte anticipée. Anticipez les dérives et sécurisez vos engagements grâce à une gestion proactive des projets. Avec Aitenders, vous détectez les écarts à temps et conservez une traçabilité complète sans surcharge administrative.</p>
+                <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]">Anticipez les dérives et sécurisez vos engagements grâce à une gestion proactive des projets. Avec Aitenders, vous détectez les écarts à temps et conservez une traçabilité complète sans surcharge administrative.</p>
               </div>
               
               {/* Primary CTA */}
@@ -418,7 +418,7 @@ export function UC5() {
               
               {/* Main Headline */}
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Du réactif au proactif, <span className="text-blue-600">sans friction</span>
+                Quand la gestion des projets devient un frein plutôt qu’un levier 
               </h2>
               
               {/* Body Copy */}
@@ -704,7 +704,7 @@ export function UC5() {
                   </div>
                   
                   <p className="text-gray-700 text-base leading-relaxed mb-4">
-                    Avec Aitenders, anticipez les problèmes avant qu'ils n'impactent vos délais et budgets.
+                    Pilotez vos projets sans perte d’information ni surcharge administrative.
                   </p>
                   
                   <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
@@ -714,16 +714,16 @@ export function UC5() {
                     </div>
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Alertes proactives sur les risques contractuels</span>
+                      <span>Suivi fluide des actions et responsabilités</span>
                     </div>
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Temps de cadrage réduit par trois</span>
+                      <span>Décisions rapides et documentées</span>
                     </div>
                   </div>
                   
                   <div className="mt-6 p-4 bg-white/70 rounded-lg border border-blue-200/30">
-                    <p className="text-sm text-gray-700 font-medium">Impact : pilotage serein et anticipation des dérives projet.</p>
+                    <p className="text-sm text-gray-700 font-medium">Impact : Aitenders transforme vos contrats en actions concrètes, pour une gestion proactive et sans zones d’ombre</p>
                   </div>
                 </Card>
               </div>
@@ -742,7 +742,7 @@ export function UC5() {
                   </div>
                   
                   <p className="text-gray-700 text-base leading-relaxed mb-4">
-                    Aitenders centralise et structure tous vos engagements pour un suivi sans faille.
+                    Sécurisez vos obligations sans multiplier les fichiers ni les réunions.
                   </p>
                   
                   <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
@@ -752,16 +752,16 @@ export function UC5() {
                     </div>
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Alertes automatiques sur les échéances critiques</span>
+                      <span>Engagements extraits et organisés automatiquement</span>
                     </div>
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Réduction des litiges grâce à la documentation exhaustive</span>
+                      <span>Preuves prêtes pour audits et comités</span>
                     </div>
                   </div>
                   
                   <div className="mt-6 p-4 bg-white/70 rounded-lg border border-orange-200/30">
-                    <p className="text-sm text-gray-700 font-medium">Impact : conformité renforcée et diminution des risques contractuels.</p>
+                    <p className="text-sm text-gray-700 font-medium">Impact : Aitenders allie rigueur juridique et simplicité grâce à son copilote IA</p>
                   </div>
                 </Card>
               </div>
@@ -774,32 +774,32 @@ export function UC5() {
                       <MdGroups className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold text-gray-900">Pour les équipes opérationnelles</h4>
+                      <h4 className="text-xl font-bold text-gray-900">Pour les équipes pilotage et relation client</h4>
                       <p className="text-sm text-gray-600">Actions coordonnées et contextualisées</p>
                     </div>
                   </div>
                   
                   <p className="text-gray-700 text-base leading-relaxed mb-4">
-                    En donnant aux équipes terrain l'accès aux informations contractuelles pertinentes pour leurs actions.
+                    Gardez le contrôle de vos engagements tout en offrant une transparence renforcée à vos clients.
                   </p>
                   
                   <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Accès rapide aux exigences et procédures spécifiques</span>
+                      <span> Suivi structuré et collaboratif avec alertes sur dérives et échéances critiques</span>
                     </div>
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Notifications ciblées selon les rôles et responsabilités</span>
+                      <span>Engagements validés en continu et preuves disponibles à tout moment</span>
                     </div>
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Communication fluide entre équipes projet et support</span>
+                      <span>Transparence renforcée pour limiter litiges et contestations et inspirer confiance aux parties prenantes</span>
                     </div>
                   </div>
                   
                   <div className="mt-6 p-4 bg-white/70 rounded-lg border border-green-200/30">
-                    <p className="text-sm text-gray-700 font-medium">Impact : amélioration de la coordination et réduction des erreurs opérationnelles.</p>
+                    <p className="text-sm text-gray-700 font-medium">Impact : Aitenders transforme la gestion contractuelle en un levier de confiance et de performance durable</p>
                   </div>
                 </Card>
               </div>
