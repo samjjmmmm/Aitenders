@@ -9,7 +9,7 @@ import UC1Page from "@/pages/uc1";
 import UC2Page from "@/pages/uc2";
 import UC3Page from "@/pages/uc3";
 import UC4Page from "@/pages/uc4";
-import UC5Page from "@/pages/uc5";
+import { UC5 } from "@/pages/uc5";
 import UC6Page from "@/pages/uc6";
 import UC7Page from "@/pages/uc7";
 import UC8Page from "@/pages/uc8";
@@ -25,7 +25,7 @@ function Router() {
       <Route path="/uc2" component={UC2Page} />
       <Route path="/uc3" component={UC3Page} />
       <Route path="/uc4" component={UC4Page} />
-      <Route path="/uc5" component={UC5Page} />
+      <Route path="/uc5" component={UC5} />
       <Route path="/uc6" component={UC6Page} />
       <Route path="/uc7" component={UC7Page} />
       <Route path="/uc8" component={UC8Page} />
