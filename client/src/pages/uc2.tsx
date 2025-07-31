@@ -242,12 +242,11 @@ export default function UC2Page() {
                 <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Optimisez Vos Projets</Badge>
                 
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                  Gestion intelligente des projets moyens
+                  Votre offre, 100% claire, 0% surprise.
                 </h1>
                 
                 <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]">
-                  Equilibrez parfaitement complexité et efficacité sur vos projets intermédiaires. 
-                  Coordonnez vos équipes, standardisez vos processus et livrez avec excellence grâce à une approche méthodique et des outils avancés.
+                  Transformez vos dossiers complexes en une vision contractuelle claire dès le premier jour. Validez vos réponses en deux fois moins de temps, sans risques de dernière minute.
                 </p>
               </div>
               
