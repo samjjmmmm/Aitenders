@@ -722,9 +722,9 @@ export default function UC4Page() {
             </div>
             
             {/* Results Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
               
-              {/* Contract Manager Results */}
+              {/* Chefs de projet terrain */}
               <div className="group">
                 <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/50 hover:border-blue-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
                   <div className="flex items-center mb-6">
@@ -732,33 +732,37 @@ export default function UC4Page() {
                       <MdAccountBox className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold text-gray-900">Gestionnaire de contrats</h4>
-                      <p className="text-sm text-gray-600">Maîtrise instantanée des engagements contractuels</p>
+                      <h4 className="text-xl font-bold text-gray-900">Pour les chefs de projet terrain</h4>
+                      <p className="text-sm text-gray-600">Ne perdez plus de temps à parcourir des PDF interminables</p>
                     </div>
                   </div>
                   
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-700">Temps de recherche d'information</span>
-                      <span className="font-bold text-blue-600">-90%</span>
+                  <p className="text-gray-700 text-base leading-relaxed mb-4">
+                    Avec Aitenders, vous accédez immédiatement aux clauses clés qui comptent.
+                  </p>
+                  
+                  <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Une vision claire et structurée dès le premier jour</span>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-700">Clauses critiques manquées</span>
-                      <span className="font-bold text-green-600">0</span>
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Moins de dépendance aux validations juridiques</span>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-700">Accessibilité des informations</span>
-                      <span className="font-bold text-blue-600">+100%</span>
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Des décisions alignées et traçables en temps réel</span>
                     </div>
                   </div>
                   
                   <div className="mt-6 p-4 bg-white/70 rounded-lg border border-blue-200/30">
-                    <p className="text-sm text-gray-700 italic">"Enfin des contrats lisibles et exploitables dès le premier jour."</p>
+                    <p className="text-sm text-gray-700 font-medium">Impact : gagnez en autonomie et sécurisez vos choix dès le lancement du projet.</p>
                   </div>
                 </Card>
               </div>
 
-              {/* Legal Director Results */}
+              {/* Responsables maintenance et exploitation */}
               <div className="group">
                 <Card className="h-full p-8 bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200/50 hover:border-orange-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
                   <div className="flex items-center mb-6">
@@ -766,28 +770,70 @@ export default function UC4Page() {
                       <MdBusiness className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold text-gray-900">Directeur juridique</h4>
-                      <p className="text-sm text-gray-600">Intelligence contractuelle avancée</p>
+                      <h4 className="text-xl font-bold text-gray-900">Pour les responsables maintenance et exploitation</h4>
+                      <p className="text-sm text-gray-600">Chaque minute compte pour respecter vos engagements</p>
                     </div>
                   </div>
                   
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-700">Questions sans réponse immédiate</span>
-                      <span className="font-bold text-green-600">0</span>
+                  <p className="text-gray-700 text-base leading-relaxed mb-4">
+                    Aitenders vous donne les réponses essentielles sans attendre.
+                  </p>
+                  
+                  <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Accès instantané aux SLA et aux pénalités</span>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-700">Conformité des décisions</span>
-                      <span className="font-bold text-green-600">100%</span>
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Réponses immédiates aux questions opérationnelles</span>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-700">Efficacité équipe juridique</span>
-                      <span className="font-bold text-green-600">+75%</span>
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Réduction des erreurs et litiges en fin de projet</span>
                     </div>
                   </div>
                   
                   <div className="mt-6 p-4 bg-white/70 rounded-lg border border-orange-200/30">
-                    <p className="text-sm text-gray-700 italic">"Un juriste IA disponible 24h/7j avec accès instantané aux clauses sources."</p>
+                    <p className="text-sm text-gray-700 font-medium">Impact : une exploitation fluide, moins de risques et des équipes plus efficaces.</p>
+                  </div>
+                </Card>
+              </div>
+
+              {/* Juristes support et PMO */}
+              <div className="group">
+                <Card className="h-full p-8 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50 hover:border-green-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-4">
+                      <MdBusiness className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900">Pour les juristes support et PMO</h4>
+                      <p className="text-sm text-gray-600">Libérez du temps pour les dossiers stratégiques</p>
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-700 text-base leading-relaxed mb-4">
+                    En donnant aux équipes l'autonomie d'accéder elles‑mêmes aux clauses pertinentes.
+                  </p>
+                  
+                  <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Jusqu'à 80 % des questions traitées en autonomie</span>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Gain de temps significatif sur les validations contractuelles</span>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Preuves contractuelles disponibles à tout moment pour audits et comités</span>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 p-4 bg-white/70 rounded-lg border border-green-200/30">
+                    <p className="text-sm text-gray-700 font-medium">Impact : moins de sollicitations répétitives, plus de valeur ajoutée sur vos missions.</p>
                   </div>
                 </Card>
               </div>
@@ -1056,38 +1102,6 @@ export default function UC4Page() {
               <p className="text-lg font-medium">Simulateur en cours de développement</p>
               <p className="text-sm mt-2">Cette fonctionnalité sera bientôt disponible</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 md:py-20 lg:py-24 px-4 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
-            Prêt à Maîtriser Votre Prochaine Offre Complexe ?
-          </h3>
-          <p className="text-lg md:text-xl text-blue-100 mb-12 leading-relaxed max-w-3xl mx-auto">
-            Rejoignez les équipes de projet qui font confiance à Aitenders pour sécuriser leurs offres complexes, éliminer les risques de non-conformité, et gagner en toute confiance.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
-              className="bg-white text-blue-900 hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-            >
-              📅 Programmer une Démo
-            </Button>
-            <Button 
-              variant="outline"
-              size="lg" 
-              className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 transform hover:-translate-y-1"
-            >
-              Contacter Notre Équipe
-            </Button>
-          </div>
-          
-          <div className="mt-8 text-sm text-blue-200">
-            Sécurité de niveau entreprise • Collaboration multi-experts • Prise en main complète
           </div>
         </div>
       </section>
