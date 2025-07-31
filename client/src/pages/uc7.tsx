@@ -264,11 +264,11 @@ export default function UC7Page() {
                 <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Supply Chain Intelligente</Badge>
                 
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                  Supply chain prédictive, <span className="text-blue-600">résilience assurée</span>
+                  Chaque exigence traitée, chaque réponse alignée, chaque clause justifiée.
                 </h1>
                 
-                <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]"> <span className="text-blue-300">La plateforme IA pour une supply chain intelligente et résiliente :</span> prédiction des besoins, orchestration temps réel des flux et anticipation proactive des risques. 
-                Vous éliminez les ruptures, optimisez les coûts et construisez une chaîne d'approvisionnement qui devient votre avantage concurrentiel.</p>
+                <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]"> Avec Aitenders, chaque réponse devient une preuve de maîtrise.
+                  Notre copilote IA vous aide à couvrir 100 % des exigences et à livrer des offres conformes, traçables et prêtes à défendre devant vos clients.</p>
               </div>
               
               
@@ -279,7 +279,7 @@ export default function UC7Page() {
                   size="lg" 
                   className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto"
                 >
-                  Découvrez UC7
+                  Réservez une Démo
                 </Button>
               </div>
               
@@ -289,7 +289,7 @@ export default function UC7Page() {
                   variant="ghost" 
                   className="text-blue-600 hover:text-blue-700 hover:bg-blue-50/80 px-6 py-4 text-xl font-medium underline decoration-2 underline-offset-4 rounded-2xl transition-all duration-300"
                 >
-                  Téléchargez le guide supply chain →
+                  Téléchargez le cas d'usage →
                 </Button>
               </div>
               
@@ -470,16 +470,13 @@ export default function UC7Page() {
               
               {/* Main Headline */}
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Supply chain imprévisible, <span className="text-blue-600">coûts exponentiels</span>
+                Impossible de couvrir toutes les exigences sans perdre en précision
               </h2>
               
               {/* Body Copy */}
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Les chaînes d'approvisionnement traditionnelles subissent les aléas sans les anticiper.
-              </p>
-              
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Ruptures fréquentes, visibilité limitée et gestion réactive créent des arrêts de production coûteux. Les processus manuels empêchent l'optimisation globale et la réactivité face aux changements. Avec Aitenders UC7, transformez votre supply chain en avantage concurrentiel grâce à l'intelligence prédictive.
+                Dans les réponses aux appels d’offres complexes, vos équipes jonglent entre fichiers dispersés, copier‑coller risqués et validations interminables. Sans outil dédié, chaque exigence devient un risque : omissions, incohérences et livrables difficiles à défendre.
+                Le lien entre cahier des charges, rédaction et livrables se perd, augmentant les coûts et fragilisant la conformité.
               </p>
               
               {/* CTA Buttons */}
