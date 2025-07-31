@@ -1,4 +1,3 @@
-
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -203,7 +202,7 @@ export default function UC2Page() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-white">
       {/* Header/Navbar */}
       <Header />
-      
+
       {/* Hero Section - Professional SaaS Design */}
       <section className="py-12 md:py-16 lg:py-20 xl:py-24 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-white via-slate-50/30 to-blue-50/20 relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
@@ -213,43 +212,43 @@ export default function UC2Page() {
                style={{
                  background: 'radial-gradient(circle, #F0F8FF 0%, #E6F3FF 40%, #B3D9FF 70%, transparent 100%)'
                }}></div>
-          
+
           {/* Medium accent blob - center right */}
           <div className="absolute top-1/3 -right-16 w-80 h-80 rounded-full opacity-20 blur-2xl"
                style={{
                  background: 'radial-gradient(circle, #B3D9FF 0%, #2563EB 30%, transparent 70%)'
                }}></div>
-          
+
           {/* Small atmospheric accent - bottom */}
           <div className="absolute -bottom-16 left-1/4 w-64 h-64 rounded-full opacity-25 blur-3xl"
                style={{
                  background: 'linear-gradient(135deg, #FAFCFF 0%, #F0F8FF 50%, #E6F3FF 100%)'
                }}></div>
-          
+
           {/* Flowing wave accent - mobile optimized */}
           <div className="absolute top-1/2 left-0 w-full h-32 opacity-15 blur-xl lg:opacity-20"
                style={{
                  background: 'linear-gradient(90deg, transparent 0%, #F0F8FF 20%, #B3D9FF 40%, #E6F3FF 60%, transparent 100%)'
                }}></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 xl:gap-32 items-center">
-            
+
             {/* Left Side - Content */}
             <div className="text-left">
               <div className="mb-12">
                 <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Optimisez Vos Projets</Badge>
-                
+
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
                   Votre offre, 100% claire, 0% surprise.
                 </h1>
-                
+
                 <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]">
                   Transformez vos dossiers complexes en une vision contractuelle claire dès le premier jour. Validez vos réponses en deux fois moins de temps, sans risques de dernière minute.
                 </p>
               </div>
-              
+
               {/* Primary CTA */}
               <div className="mb-16">
                 <Button 
@@ -259,7 +258,7 @@ export default function UC2Page() {
                   Réservez une Démo
                 </Button>
               </div>
-              
+
               {/* Secondary CTA - Less Prominent */}
               <div className="mb-20">
                 <Button 
@@ -269,11 +268,11 @@ export default function UC2Page() {
                   Téléchargez le cas d'usage →
                 </Button>
               </div>
-              
+
               {/* Trust Elements */}
               <div className="border-t border-gray-100 pt-8">
                 <p className="text-sm text-gray-500 mb-6">Solution de référence pour la gestion de projets moyens</p>
-                
+
                 {/* Customer Logos / Trust Indicators */}
                 <div className="flex items-center space-x-8">
                   <div className="flex items-center text-sm text-gray-600">
@@ -309,13 +308,13 @@ export default function UC2Page() {
             {/* Right Side - Realistic Product Mockup */}
             <div className="flex justify-center lg:justify-end">
               <div className="relative w-full max-w-lg">
-                
+
                 {/* Main Dashboard Mockup */}
                 <div className="bg-white rounded-3xl shadow-2xl border border-gray-100/50 overflow-hidden backdrop-blur-sm"
                      style={{
                        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
                      }}>
-                  
+
                   {/* Browser Header */}
                   <div className="bg-gray-100 px-6 py-4 flex items-center justify-between border-b border-gray-200">
                     <div className="flex items-center space-x-2">
@@ -326,10 +325,10 @@ export default function UC2Page() {
                     <div className="text-sm text-gray-600 font-medium">AItenders - Medium Project Manager</div>
                     <div className="w-12"></div>
                   </div>
-                  
+
                   {/* Dashboard Content */}
                   <div className="p-8">
-                    
+
                     {/* Header */}
                     <div className="flex items-center justify-between mb-8">
                       <div>
@@ -341,7 +340,7 @@ export default function UC2Page() {
                         <span className="text-sm text-gray-600">Coordinating</span>
                       </div>
                     </div>
-                    
+
                     {/* Project Overview */}
                     <div className="grid grid-cols-2 gap-6 mb-8">
                       <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border border-blue-100">
@@ -353,11 +352,11 @@ export default function UC2Page() {
                         <div className="text-sm text-gray-600">Project completion</div>
                       </div>
                     </div>
-                    
+
                     {/* Team Coordination */}
                     <div className="space-y-4">
                       <h4 className="text-lg font-semibold text-gray-900 mb-4">Team Coordination</h4>
-                      
+
                       <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
                         <div className="flex items-center space-x-3">
                           <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
@@ -375,7 +374,7 @@ export default function UC2Page() {
                           <span className="text-sm font-medium text-green-600">Excellent</span>
                         </div>
                       </div>
-                      
+
                       <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
                         <div className="flex items-center space-x-3">
                           <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
@@ -393,7 +392,7 @@ export default function UC2Page() {
                           <span className="text-sm font-medium text-blue-600">Optimized</span>
                         </div>
                       </div>
-                      
+
                       <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
                         <div className="flex items-center space-x-3">
                           <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center">
@@ -414,7 +413,7 @@ export default function UC2Page() {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Floating Coordination Alerts */}
                 <div className="absolute -top-4 -right-4 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-medium animate-bounce">
                   <div className="flex items-center space-x-2">
@@ -422,14 +421,14 @@ export default function UC2Page() {
                     <span>Teams aligned</span>
                   </div>
                 </div>
-                
+
                 <div className="absolute -bottom-4 -left-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-medium animate-pulse">
                   <div className="flex items-center space-x-2">
                     <MdCheckCircle className="w-4 h-4" />
                     <span>85% complete</span>
                   </div>
                 </div>
-                
+
                 {/* Background Decorative Elements */}
                 <div className="absolute -top-8 -right-8 w-24 h-24 bg-blue-200/20 rounded-full blur-2xl"></div>
                 <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-green-200/15 rounded-full blur-3xl"></div>
@@ -448,57 +447,57 @@ export default function UC2Page() {
                style={{
                  background: 'radial-gradient(circle, #F0F8FF 0%, #B3D9FF 50%, #E6F3FF 80%, transparent 100%)'
                }}></div>
-          
+
           {/* Flowing accent - left side */}
           <div className="absolute top-1/3 -left-24 w-72 h-72 rounded-full opacity-20 blur-2xl"
                style={{
                  background: 'linear-gradient(135deg, #E6F3FF 0%, #B3D9FF 60%, transparent 100%)'
                }}></div>
-          
+
           {/* Small directional accent */}
           <div className="absolute bottom-20 right-1/4 w-48 h-48 rounded-full opacity-15 blur-3xl"
                style={{
                  background: 'radial-gradient(circle, #2563EB 0%, #B3D9FF 40%, transparent 80%)'
                }}></div>
-          
+
           {/* Mobile-optimized wave */}
           <div className="absolute bottom-0 left-0 w-full h-24 opacity-10 blur-xl lg:opacity-15"
                style={{
                  background: 'linear-gradient(90deg, #F0F8FF 0%, transparent 30%, #FAFCFF 70%, #E6F3FF 100%)'
                }}></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
-          
+
           {/* Main Feature Card */}
           <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20"
                style={{
                  boxShadow: '0 32px 64px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.05)'
                }}>
-            
+
             {/* Multi-tone Faded Background Pattern */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-cyan-50/20 to-indigo-50/25 rounded-3xl"></div>
             <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-blue-100/25 to-transparent rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-cyan-100/20 to-transparent rounded-full blur-3xl"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
-            
+
             {/* Content Container */}
             <div className="relative z-10 text-center">
-              
+
               {/* Main Headline */}
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Des appels d'offres complexes, des équipes limitées, <span className="text-blue-600">zéro marge pour l'erreur</span>
               </h2>
-              
+
               {/* Body Copy */}
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                 Vos équipes, souvent réduites et dispersées, passent des heures à relire et comparer des versions. Résultat : décisions prises dans l'urgence, incohérences non détectées et risque accru de perte de crédibilité.
               </p>
-              
+
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                 Avec Aitenders, vos documents sont analysés automatiquement : contradictions détectées, clauses critiques identifiées et versions harmonisées. Vous gagnez en rapidité et validez chaque critère avec une fiabilité totale.
               </p>
-              
+
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
                 <Button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
@@ -523,26 +522,26 @@ export default function UC2Page() {
                style={{
                  background: 'radial-gradient(circle, #FAFCFF 0%, #F0F8FF 30%, #B3D9FF 70%, transparent 100%)'
                }}></div>
-          
+
           {/* Medium directional blob - middle left */}
           <div className="absolute top-1/2 -left-32 w-80 h-80 rounded-full opacity-15 blur-2xl"
                style={{
                  background: 'linear-gradient(45deg, #E6F3FF 0%, #B3D9FF 50%, #2563EB 90%, transparent 100%)'
                }}></div>
-          
+
           {/* Atmospheric accent - bottom right */}
           <div className="absolute -bottom-24 -right-32 w-[400px] h-[400px] rounded-full opacity-25 blur-3xl"
                style={{
                  background: 'radial-gradient(circle, #F0F8FF 0%, #E6F3FF 40%, transparent 100%)'
                }}></div>
-          
+
           {/* Subtle flowing wave - center */}
           <div className="absolute top-1/2 left-0 w-full h-40 opacity-10 blur-xl lg:opacity-15"
                style={{
                  background: 'linear-gradient(90deg, transparent 0%, #B3D9FF 25%, #F0F8FF 50%, #E6F3FF 75%, transparent 100%)'
                }}></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-blue-600">copilote IA</span> pour sécuriser vos réponses dès le premier jour</h1>
@@ -741,13 +740,13 @@ export default function UC2Page() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-20 md:mb-24 lg:mb-28">
             <div className="text-center mb-12 md:mb-16">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Résultats concrets pour chaque utilisateur</h3>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Des bénéfices mesurables pour tous les profils impliqués dans la gestion de projets moyens</p>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Des résultats concrets pour chaque acteur clé</h3>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Aitenders aide chaque profil impliqué dans les appels d’offres complexes à gagner du temps, sécuriser la conformité et livrer des réponses crédibles sans compromis.</p>
             </div>
-            
+
             {/* Results Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-              
+
               {/* Proposal Managers */}
               <div className="group">
                 <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/50 hover:border-blue-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
@@ -756,32 +755,32 @@ export default function UC2Page() {
                       <MdAccountBox className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold text-gray-900">Pour les Proposal Managers</h4>
-                      <p className="text-sm text-gray-600">Coordonnez efficacement vos équipes</p>
+                      <h4 className="text-xl font-bold text-gray-900">Pour les Bid Managers</h4>
+                      <p className="text-sm text-gray-600">Décision accélérée et sans erreur</p>
                     </div>
                   </div>
-                  
+
                   <p className="text-gray-700 text-base leading-relaxed mb-4">
-                    Avec Aitenders, orchestrez vos projets moyens sans perdre de vue la vue d'ensemble.
+                    Accélérez la qualification et livrez des propositions solides sans perdre de temps en relectures manuelles.
                   </p>
-                  
+
                   <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Coordination automatisée entre équipes techniques et commerciales</span>
+                      <span>Détection automatique des clauses critiques et incohérences</span>
                     </div>
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Visibilité temps réel sur l'avancement de tous les workstreams</span>
+                      <span>Tableaux de critères prêts à valider dès le jour 1</span>
                     </div>
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Gestion proactive des risques et des dépendances</span>
+                      <span>Gain de temps majeur pour affiner l’argumentaire</span>
                     </div>
                   </div>
-                  
+
                   <div className="mt-6 p-4 bg-white/70 rounded-lg border border-blue-200/30">
-                    <p className="text-sm text-gray-700 font-medium">Impact : livrez des projets complexes avec l'efficacité des projets simples.</p>
+                    <p className="text-sm text-gray-700 font-medium">Vous transformez des dossiers complexes en offres prêtes à défendre en moins de 48h.</p>
                   </div>
                 </Card>
               </div>
@@ -791,35 +790,35 @@ export default function UC2Page() {
                 <Card className="h-full p-8 bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200/50 hover:border-orange-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mr-4">
-                      <MdBusiness className="w-6 h-6 text-white" />
+                      <MdShield className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold text-gray-900">Pour les Managers techniques</h4>
-                      <p className="text-sm text-gray-600">Assurez la cohérence technique</p>
+                      <h4 className="text-xl font-bold text-gray-900">Pour les Contract Managers</h4>
+                      <p className="text-sm text-gray-600">Conformité garantie et traçabilité totale</p>
                     </div>
                   </div>
-                  
+
                   <p className="text-gray-700 text-base leading-relaxed mb-4">
-                    Aitenders garantit la qualité technique sur toute la durée du projet.
+                    Sécurisez chaque exigence et réduisez vos risques de non‑conformité grâce à une analyse contractuelle intelligente.
                   </p>
-                  
+
                   <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Validation automatique des spécifications techniques</span>
+                      <span>Chaque clause reliée à son exigence source</span>
                     </div>
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Détection précoce des incohérences entre livrables</span>
+                      <span>Vérification instantanée de la cohérence et de la couverture</span>
                     </div>
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Templates techniques pré-validés et personnalisables</span>
+                      <span>Justificatifs prêts pour audits et négociations</span>
                     </div>
                   </div>
-                  
+
                   <div className="mt-6 p-4 bg-white/70 rounded-lg border border-orange-200/30">
-                    <p className="text-sm text-gray-700 font-medium">Impact : zero défaut technique et respect des standards de qualité.</p>
+                    <p className="text-sm text-gray-700 font-medium">Vous éliminez jusqu’à 90% des risques de rejet liés aux erreurs contractuelles.</p>
                   </div>
                 </Card>
               </div>
@@ -829,51 +828,91 @@ export default function UC2Page() {
                 <Card className="h-full p-8 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50 hover:border-green-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-4">
-                      <MdBusiness className="w-6 h-6 text-white" />
+                      <MdGroups className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold text-gray-900">Pour les Directeurs commerciaux</h4>
-                      <p className="text-sm text-gray-600">Optimisez votre pipeline commercial</p>
+                      <h4 className="text-xl font-bold text-gray-900">Pour les Chefs de Projet</h4>
+                      <p className="text-sm text-gray-600">Gardez une vision complète et partagée de l’avancement, sans surcharge administrative.</p>
                     </div>
                   </div>
-                  
+
                   <p className="text-gray-700 text-base leading-relaxed mb-4">
-                    En donnant une visibilité complète sur la performance de votre portefeuille.
+                    -
                   </p>
-                  
+
                   <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Analytics avancées sur les performances par type de projet</span>
+                      <span>Tableaux de bord en temps réel sur les validations</span>
                     </div>
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Optimisation automatique de l'allocation des ressources</span>
+                      <span>Gestion fluide des Q&A et des versions</span>
                     </div>
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Prédiction des taux de succès et ROI projets</span>
+                      <span>Historique centralisé des décisions</span>
                     </div>
                   </div>
-                  
+
                   <div className="mt-6 p-4 bg-white/70 rounded-lg border border-green-200/30">
-                    <p className="text-sm text-gray-700 font-medium">Impact : augmentez votre taux de conversion et maximisez la rentabilité.</p>
+                    <p className="text-sm text-gray-700 font-medium">Vous divisez par deux vos cycles de coordination et réduisez les retards.</p>
+                  </div>
+                </Card>
+              </div>
+            </div>
+
+            {/* Add fourth card for Directeurs Techniques */}
+            <div className="mt-8">
+              <div className="group max-w-lg mx-auto">
+                <Card className="h-full p-8 bg-gradient-to-br from-purple-50 to-violet-50 border border-purple-200/50 hover:border-purple-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-600 rounded-2xl flex items-center justify-center mr-4">
+                      <MdEngineering className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900">Pour les Directeurs Techniques</h4>
+                      <p className="text-sm text-gray-600">Validation technique rapide et fiable</p>
+                    </div>
+                  </div>
+
+                  <p className="text-gray-700 text-base leading-relaxed mb-4">
+                    Accédez directement aux points techniques critiques sans lire des centaines de pages.
+                  </p>
+
+                  <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Liens directs vers les clauses techniques clés</span>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Analyse d'impact sur coûts, délais et livrables</span>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Traçabilité complète des choix techniques</span>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 p-4 bg-white/70 rounded-lg border border-purple-200/30">
+                    <p className="text-sm text-gray-700 font-medium">Vous validez la faisabilité et rassurez la direction en un temps record.</p>
                   </div>
                 </Card>
               </div>
             </div>
           </div>
-          
+
           {/* KPI Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            
+
             {/* KPI 1 */}
             <div className="group">
               <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-6 md:p-8 text-center border border-green-100 hover:border-green-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
                 <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-green-600 to-emerald-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
-                  70 %
+                  ⚡ -50 %
                 </div>
-                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Réduction du temps de coordination</p>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">du temps d’analyse initiale.</p>
               </div>
             </div>
 
@@ -881,9 +920,9 @@ export default function UC2Page() {
             <div className="group">
               <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-6 md:p-8 text-center border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
                 <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
-                  85 %
+                  ✅ 100 %
                 </div>
-                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Amélioration de la qualité des livrables</p>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">des clauses critiques identifiées et priorisées.</p>
               </div>
             </div>
 
@@ -891,19 +930,9 @@ export default function UC2Page() {
             <div className="group">
               <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-6 md:p-8 text-center border border-orange-100 hover:border-orange-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
                 <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-br from-orange-600 to-red-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
-                  3-5 jours
+                  🛡️
                 </div>
-                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Délai moyen de structuration projet</p>
-              </div>
-            </div>
-
-            {/* KPI 4 */}
-            <div className="group">
-              <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-3xl p-6 md:p-8 text-center border border-purple-100 hover:border-purple-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
-                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-purple-600 to-violet-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300 leading-tight">
-                  100 %
-                </div>
-                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Traçabilité des processus</p>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Confiance immédiate de la direction, moins d’allers-retours, zéro remise en cause.</p>
               </div>
             </div>
           </div>
@@ -923,7 +952,7 @@ export default function UC2Page() {
                style={{
                  background: 'linear-gradient(135deg, #EC4899 0%, #8B5CF6 50%, #3B82F6 100%)'
                }}></div>
-          
+
           {/* Subtle grid pattern */}
           <div className="absolute inset-0 opacity-5"
                style={{
@@ -939,11 +968,11 @@ export default function UC2Page() {
               <MdStars className="w-5 h-5 text-yellow-400 mr-2" />
               <span className="text-white font-semibold text-sm md:text-base">Fonctionnalités Wow</span>
             </div>
-            
+
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:mb-8 leading-[1.1] tracking-tight">
               Des <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-400 to-cyan-400">capacités avancées</span> qui élèvent vos projets moyens
             </h2>
-            
+
             <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed font-light">
               Au-delà de la coordination intelligente, découvrez des fonctionnalités qui transforment la gestion de projets moyens en avantage concurrentiel.
             </p>
@@ -951,19 +980,19 @@ export default function UC2Page() {
 
           {/* Toppings Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-            
+
             {/* Intelligence Prédictive */}
             <div className="group">
               <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdTrendingUp className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Prédiction de Performance</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
                   Anticipez les goulots d'étranglement et optimisez automatiquement l'allocation des ressources grâce à l'analyse prédictive avancée.
                 </p>
-                
+
                 <div className="flex items-center text-cyan-400 font-medium">
                   <span className="text-sm">Optimisation IA</span>
                   <MdAnalytics className="w-4 h-4 ml-2" />
@@ -977,12 +1006,12 @@ export default function UC2Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdGroups className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Collaboration Adaptive</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
                   Espaces de travail qui s'adaptent automatiquement à la taille et à la complexité de chaque équipe projet pour une efficacité maximale.
                 </p>
-                
+
                 <div className="flex items-center text-green-400 font-medium">
                   <span className="text-sm">Adaptation dynamique</span>
                   <MdAutoAwesome className="w-4 h-4 ml-2" />
@@ -993,15 +1022,15 @@ export default function UC2Page() {
             {/* Métriques Intelligentes */}
             <div className="group">
               <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdTableChart className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Métriques Intelligentes</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
                   Tableaux de bord adaptatifs qui mettent en évidence les KPIs les plus pertinents selon la phase et la complexité du projet.
                 </p>
-                
+
                 <div className="flex items-center text-orange-400 font-medium">
                   <span className="text-sm">KPIs dynamiques</span>
                   <MdDashboard className="w-4 h-4 ml-2" />
@@ -1015,12 +1044,12 @@ export default function UC2Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdSecurity className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Gestion des Risques</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
                   Identification proactive des risques avec suggestions de mitigation automatiques basées sur l'historique de projets similaires.
                 </p>
-                
+
                 <div className="flex items-center text-purple-400 font-medium">
                   <span className="text-sm">Prévention IA</span>
                   <MdWarning className="w-4 h-4 ml-2" />
@@ -1034,12 +1063,12 @@ export default function UC2Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdContentCopy className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Templates Intelligents</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
                   Génération automatique de structures projet personnalisées selon la complexité, le secteur et les exigences spécifiques.
                 </p>
-                
+
                 <div className="flex items-center text-pink-400 font-medium">
                   <span className="text-sm">Personnalisation IA</span>
                   <MdCreate className="w-4 h-4 ml-2" />
@@ -1053,12 +1082,12 @@ export default function UC2Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-red-400 to-red-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdRotateRight className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Apprentissage Continu</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
                   Le système apprend de chaque projet pour optimiser automatiquement les processus et améliorer les performances futures.
                 </p>
-                
+
                 <div className="flex items-center text-red-400 font-medium">
                   <span className="text-sm">Amélioration continue</span>
                   <MdTrendingUp className="w-4 h-4 ml-2" />
@@ -1073,13 +1102,13 @@ export default function UC2Page() {
                   <div className="w-16 h-16 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <MdCloudSync className="w-8 h-8 text-white" />
                   </div>
-                  
+
                   <div className="flex-1">
                     <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Écosystème intégré, performance amplifiée</h3>
                     <p className="text-gray-200 text-lg leading-relaxed mb-6">
                       Connectivité native avec vos outils métier existants (ERP, CRM, outils de gestion de projet) pour une synergie parfaite et des données unifiées.
                     </p>
-                    
+
                     <div className="flex flex-wrap gap-4">
                       <div className="flex items-center text-indigo-400 font-medium bg-white/10 px-4 py-2 rounded-lg">
                         <span className="text-sm">API Native</span>
@@ -1121,7 +1150,7 @@ export default function UC2Page() {
               Découvrez la transformation complète, de la coordination manuelle à l'orchestration intelligente.
             </p>
           </div>
-          
+
           {/* Simulator Placeholder */}
           <div className="bg-white rounded-3xl shadow-lg border border-gray-200 p-8 md:p-12 text-center">
             <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
