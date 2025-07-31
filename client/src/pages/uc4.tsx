@@ -241,10 +241,10 @@ export default function UC4Page() {
                 <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Sécurisez Vos Contrats</Badge>
                 
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                  Chaque clause analysée, <span className="text-blue-600">chaque risque maîtrisé</span>
+                  Consultation intelligente des contrats sur petits projets, <span className="text-blue-600">Le contrat n’est plus un PDF, c’est une source de réponses.</span>
                 </h1>
                 
-                <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]"> <span className="text-blue-300">La première plateforme d'intelligence contractuelle pour les projets complexes :</span> analyse IA approfondie des clauses, identification automatique des risques, validation de conformité et pilotage sécurisé de l'exécution. 
+                <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]"> <span className="text-blue-300">Accédez instantanément aux clauses clés de vos contrats grâce à une fiche synthétique intelligente. :</span> Chaque acteur projet consulte, comprend et agit sans ouvrir le PDF ni dépendre du juridique, pour des décisions alignées et rapides.
                 Vous éliminez les zones d'ombre, prévenez les litiges coûteux et garantissez le respect de tous vos engagements contractuels.</p>
               </div>
               
@@ -485,11 +485,13 @@ export default function UC4Page() {
               
               {/* Main Headline */}
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Zéro clause cachée, <span className="text-blue-600">zéro risque imprévu</span>
+                Vos décisions contractuelles, claires et rapides, <span className="text-blue-600">Zéro erreur, zéro perte de temps</span>
               </h2>
               
               {/* Body Copy */}
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">Dans les contrats complexes, les équipes passent des <span className="text-grey-500 font-bold">semaines critiques</span> à analyser manuellement chaque clause, avec des risques d'interprétation erronée et d'exposition financière.</p>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">Dans les projets de maintenance et de petits travaux, chaque clause oubliée peut coûter cher : retards, litiges, pénalités.
+
+              Pourtant, vos équipes n’ont ni le temps ni les outils pour relire un contrat en entier. Résultat : décisions prises à l’intuition, juridique saturé, confiance fragilisée.Avec Aitenders, accédez en un clic à toutes les clauses clés – durée, reconduction, SLA, pénalités – grâce à une fiche synthétique intelligente.</p>
               
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">Avec Aitenders, bénéficiez d'une analyse contractuelle intelligente dès la réception, identifiez instantanément tous les risques et pilotez sereinement l'exécution avec une visibilité totale sur vos obligations.</p>
               
@@ -539,8 +541,7 @@ export default function UC4Page() {
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-blue-600">intelligence contractuelle </span> qui sécurise tous vos engagements</h1>
-            <h3 className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">Analysez, maîtrisez et pilotez vos contrats complexes avec une précision inégalée.</h3>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-blue-600">copilote IA</span> qui rend vos contrats immédiatement actionnables</h1>
           </div>
 
           {/* Feature 1: Contract Analysis - Text Left, Card Right */}
@@ -549,14 +550,20 @@ export default function UC4Page() {
               <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdFlashOn className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Décryptez instantanément tous vos contrats <span className="text-blue-600">avec une précision chirurgicale</span></h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Fiche contrat intelligente, <span className="text-blue-600">disponible dès le premier jour</span></h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Grâce à l'IA spécialisée en droit des contrats, chaque clause est automatiquement analysée, catégorisée et évaluée selon son niveau de risque. Les obligations financières, les échéances critiques et les pénalités potentielles sont immédiatement identifiées.
-        <p>      <span className="text-blue-600">Le responsable juridique dispose instantanément</span> d'une cartographie complète des risques contractuels, sans aucune analyse manuelle préalable.</p>  
+                Dès le chargement d'un contrat, Aitenders génère une fiche synthétique claire et structurée.
+                Durée, reconduction, SLA, pénalités : tout l'essentiel est accessible immédiatement, sans relecture fastidieuse.
               </p>
-              <div className="flex items-center text-lg font-bold  text-blue-500">
-                <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
-                Analyse contractuelle experte en quelques minutes!
+              <div className="space-y-3 mb-8">
+                <div className="flex items-start text-gray-600">
+                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
+                  <span>Accessible à tous les niveaux, de la lecture rapide (Essential) jusqu'à la conformité automatisée (Premium et Iconic).</span>
+                </div>
+                <div className="flex items-start text-gray-600">
+                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
+                  <span>Le contrat devient lisible et exploitable pour toute l'équipe dès le jour 1.</span>
+                </div>
               </div>
             </div>
             <div className="order-2">
@@ -629,14 +636,20 @@ export default function UC4Page() {
               <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdGroups className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Anticipez et maîtrisez <span className="text-orange-600">tous vos risques contractuels</span></h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Accédez à l'essentiel, <span className="text-orange-600">sans relecture complète</span></h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Tableau de bord unifié qui agrège toutes les expositions par type de risque, montant et probabilité. Alertes proactives sur les échéances critiques et recommandations automatiques pour minimiser les impacts.
-              <p> <span className="text-orange-600">L'équipe dispose d'une visibilité complète</span> sur tous les engagements avec une priorisation intelligente des actions correctives.</p>
+                Avec Aitenders, les PDF interminables appartiennent au passé.
+                Les clauses sont organisées par thèmes : durée, engagement, pénalités, résiliation.
               </p>
-              <div className="flex items-center text-lg font-bold text-orange-500">
-                <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
-                 Vision consolidée de tous vos risques contractuels
+              <div className="space-y-3 mb-8">
+                <div className="flex items-start text-gray-600">
+                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
+                  <span>Chaque clause clé est disponible en un clic, déjà catégorisée et prête à l'usage.</span>
+                </div>
+                <div className="flex items-start text-gray-600">
+                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
+                  <span>Dans les niveaux avancés (Premium et Iconic), bénéficiez également de la détection automatique des exigences, similitudes et contradictions pour sécuriser vos décisions.</span>
+                </div>
               </div>
             </div>
           </div>
@@ -647,14 +660,20 @@ export default function UC4Page() {
               <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdSecurity className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Sécurisez l'exécution <span className="text-green-600">avec un pilotage en temps réel</span></h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Posez une question et obtenez la réponse <span className="text-green-600">avec la clause source</span></h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Suivi automatisé de toutes les obligations contractuelles avec détection proactive des écarts. Gestion intelligente des avenants et validation de conformité avant chaque livrable.
-        <p>      <span className="text-green-600">L'équipe projet maintient une exécution parfaite</span> avec des alertes automatiques et une documentation complète de chaque engagement.</p>
+                Demandez simplement : « Quel est le préavis ? » ou « Combien dure l'engagement ? ».
+                L'intelligence artificielle vous répond instantanément avec la clause exacte et sa source.
               </p>
-              <div className="flex items-center text-lg font-bold text-green-500">
-                <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
-                 Pilotage des engagements sans faille
+              <div className="space-y-3 mb-8">
+                <div className="flex items-start text-gray-600">
+                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
+                  <span>Les décisions deviennent rapides, alignées et vérifiables, comme si vous aviez un juriste à vos côtés en continu.</span>
+                </div>
+                <div className="flex items-start text-gray-600">
+                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
+                  <span>Dans les versions Premium et Iconic, intégrez vos propres livrables et matrices de conformité pour aller plus loin.</span>
+                </div>
               </div>
             </div>
             <div className="order-2">
