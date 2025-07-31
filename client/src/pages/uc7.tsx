@@ -848,6 +848,50 @@ export default function UC7Page() {
               </Card>
             </div>
           </div>
+          
+          {/* KPI Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-20 md:mt-24 lg:mt-28">
+            
+            {/* KPI 1 */}
+            <div className="group">
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-6 md:p-8 text-center border border-green-100 hover:border-green-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
+                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-green-600 to-emerald-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
+                  100 %
+                </div>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Requirement coverage in all deliverables</p>
+              </div>
+            </div>
+
+            {/* KPI 2 */}
+            <div className="group">
+              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-6 md:p-8 text-center border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
+                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
+                  50 %
+                </div>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Faster initial writing process</p>
+              </div>
+            </div>
+
+            {/* KPI 3 */}
+            <div className="group">
+              <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-6 md:p-8 text-center border border-orange-100 hover:border-orange-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
+                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-orange-600 to-red-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
+                  -90 %
+                </div>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Drastic reduction in non-compliance risks</p>
+              </div>
+            </div>
+
+            {/* KPI 4 */}
+            <div className="group">
+              <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-3xl p-6 md:p-8 text-center border border-purple-100 hover:border-purple-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
+                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-purple-600 to-violet-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
+                  40 %
+                </div>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Higher reuse rate on future bids</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
