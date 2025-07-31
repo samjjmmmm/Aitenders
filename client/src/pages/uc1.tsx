@@ -487,17 +487,16 @@ export default function UC1Page() {
               
               {/* Main Headline */}
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Petits projets, <span className="text-blue-600">grandes opportunités manquées</span>
+                Quand chaque heure compte, <span className="text-blue-600">vos validations ne peuvent pas attendre</span>
               </h2>
               
               {/* Body Copy */}
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Sur les petits projets, la rapidité est cruciale mais la qualité ne peut pas être sacrifiée. 
-                Pourtant, vos équipes perdent des opportunités faute de temps pour répondre convenablement ou produisent des offres bâclées qui nuisent à votre image.
+                Sur les petits projets répétés, il faut valider vite et rassurer sa hiérarchie, souvent sans équipe support. Les relectures manuelles rallongent les délais, multiplient les erreurs et ajoutent un stress inutile.
               </p>
               
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Avec Aitenders, transformez chaque petite opportunité en succès commercial grâce à des offres générées intelligemment, personnalisées et livrées en temps record.
+                Avec Aitenders, vos documents deviennent exploitables dès le premier jour : structuration automatique, exigences identifiées et points clés synthétisés. Vous gagnez un temps précieux et validez sereinement vos projets en moins de 48 heures.
               </p>
               
               {/* CTA Buttons */}
