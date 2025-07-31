@@ -1,0 +1,37 @@
+You are tasked with updating the content for this target persona section with the conetnt below, make sure you think like the head of web design
+
+Headline (H1) Ce que vos équipes obtiennent concrètement avec Aitenders
+Subtext Une maîtrise totale des exigences pour chaque rôle impliqué dans vos projets complexes. Des résultats concrets en conformité, traçabilité et performance collective.
+Équipes Pilotage et Coordination Visibilité et maîtrise de bout en bout
+
+Directeurs de projet, Requirements Managers et Coordinateurs d’exigences disposent d’une vision centralisée pour anticiper chaque dérive et sécuriser la livraison.
+
+    Centralisation des exigences et suivi actualisé en temps réel
+
+    Alertes automatiques sur écarts et échéances critiques
+
+    Validation et arbitrages facilités pour éviter les blocages
+
+Impact : Réduction de 40 % du temps passé à consolider les matrices d’exigences et suppression des risques d’oubli qui génèrent des surcoûts.
+Responsables Métier et Techniques Clarté et collaboration pour chaque discipline
+Les Discipline Leads accèdent à une matrice d’exigences spécifique à leur périmètre, toujours à jour et intégrée au projet global.
+
+    Exigences organisées et accessibles instantanément
+
+    Suivi collaboratif avec répartition claire des responsabilités
+
+    Rédaction guidée pour couvrir 100 % des points critiques
+
+Impact : Division par deux du temps de relecture et suppression des erreurs de reformulation qui retardent les livrables.
+Équipes Qualité et Conformité Conformité prouvée et risque maîtrisé
+Quality Directors et Contract & Claims Managers disposent d’une traçabilité complète et exploitable à tout moment pour prouver la conformité.
+
+    Couverture 100 % vérifiée de toutes les exigences
+
+    Historique exhaustif disponible pour audits et comités
+
+    Détection proactive des non‑conformités et écarts contractuels
+
+Impact : Préparation des audits divisée par trois et réduction significative des litiges liés aux non‑conformités.
+
+make sure no other things on this page or any other page is touched, nothing else should chnage
