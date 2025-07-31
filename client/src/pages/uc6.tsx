@@ -1033,254 +1033,31 @@ export default function UC6Page() {
         </div>
       </section>
 
-      {/* Comparison Section - High-Conversion Enterprise Design */}
-      <section className="py-20 md:py-28 lg:py-32 xl:py-40 px-4 bg-gradient-to-br from-slate-50 via-white to-purple-50/30 relative overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 -left-48 w-96 h-96 rounded-full opacity-10 blur-3xl"
-               style={{
-                 background: 'radial-gradient(circle, #C3D9F8 0%, #3880E8 30%, transparent 70%)'
-               }}></div>
-          <div className="absolute bottom-1/4 -right-48 w-96 h-96 rounded-full opacity-15 blur-3xl"
-               style={{
-                 background: 'radial-gradient(circle, #F5F9FE 0%, #EBF2FD 40%, transparent 80%)'
-               }}></div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          {/* Clean Section Header */}
+      {/* Ce qui change avec Aitenders Section */}
+      <section className="py-16 md:py-20 lg:py-24 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 md:mb-20 lg:mb-24">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-              Transformation <span className="text-purple-600">avec</span> vs <span className="text-red-500">sans</span> UC6
-            </h2>
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Ce qui change avec Aitenders</h3>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              Découvrez comment UC6 révolutionne votre approche de la transformation organisationnelle
+              Découvrez la transformation complète, du chaos manuel à la précision pilotée par l'IA.
             </p>
           </div>
-
-          {/* Desktop Comparison - Side by Side */}
-          <div className="hidden lg:block">
-            <div className="grid grid-cols-2 gap-12 lg:gap-16">
-              
-              {/* Without UC6 - Left Side */}
-              <div className="bg-white rounded-3xl border border-gray-200 p-8 lg:p-12 relative overflow-hidden">
-                {/* Red accent for "bad" state */}
-                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-500 to-red-600"></div>
-                
-                <div className="mb-8">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-red-500 rounded-2xl flex items-center justify-center mr-4">
-                      <MdWarning className="w-6 h-6 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900">AS‑IS (Aujourd'hui)</h3>
-                  </div>
-                  <p className="text-gray-600 text-lg">Transformation chaotique et non mesurée</p>
-                </div>
-                
-                <div className="space-y-6">
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-red-500 rounded-full mr-4 mt-1 flex-shrink-0">
-                      <MdClose className="w-5 h-5 m-1.5 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 text-base mb-2">Initiatives isolées et non coordonnées</h4>
-                      <p className="text-gray-600 text-sm">Chaque département mène sa transformation en silos</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-red-500 rounded-full mr-4 mt-1 flex-shrink-0">
-                      <MdClose className="w-5 h-5 m-1.5 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 text-base mb-2">Résistance au changement non anticipée</h4>
-                      <p className="text-gray-600 text-sm">Adoption faible et équipes démotivées</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-red-500 rounded-full mr-4 mt-1 flex-shrink-0">
-                      <MdClose className="w-5 h-5 m-1.5 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 text-base mb-2">ROI impossible à mesurer</h4>
-                      <p className="text-gray-600 text-sm">Impact business flou et justification difficile</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-red-500 rounded-full mr-4 mt-1 flex-shrink-0">
-                      <MdClose className="w-5 h-5 m-1.5 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 text-base mb-2">Pilotage réactif et correctionnel</h4>
-                      <p className="text-gray-600 text-sm">Problèmes découverts trop tard</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* With UC6 - Right Side */}
-              <div className="bg-white rounded-3xl border border-gray-200 p-8 lg:p-12 relative overflow-hidden">
-                {/* Green accent for "good" state */}
-                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-500 to-green-600"></div>
-                
-                <div className="mb-8">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-green-500 rounded-2xl flex items-center justify-center mr-4">
-                      <MdCheckCircle className="w-6 h-6 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900">TO‑BE (Avec UC6)</h3>
-                  </div>
-                  <p className="text-gray-600 text-lg">Transformation orchestrée et mesurée</p>
-                </div>
-                
-                <div className="space-y-6">
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-green-500 rounded-full mr-4 mt-1 flex-shrink-0">
-                      <MdCheck className="w-5 h-5 m-1.5 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 text-base mb-2">Orchestration intelligente multi-projets</h4>
-                      <p className="text-gray-600 text-sm">Vision globale et coordination centralisée</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-green-500 rounded-full mr-4 mt-1 flex-shrink-0">
-                      <MdCheck className="w-5 h-5 m-1.5 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 text-base mb-2">Accompagnement personnalisé et mesuré</h4>
-                      <p className="text-gray-600 text-sm">Adoption facilitée avec parcours adaptatifs</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-green-500 rounded-full mr-4 mt-1 flex-shrink-0">
-                      <MdCheck className="w-5 h-5 m-1.5 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 text-base mb-2">ROI démontré en temps réel</h4>
-                      <p className="text-gray-600 text-sm">Impact business connecté et mesurable</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-green-500 rounded-full mr-4 mt-1 flex-shrink-0">
-                      <MdCheck className="w-5 h-5 m-1.5 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 text-base mb-2">Pilotage prédictif et proactif</h4>
-                      <p className="text-gray-600 text-sm">Anticipation des risques et ajustement automatique</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          
+          {/* Simulator Placeholder */}
+          <div className="bg-white rounded-3xl shadow-lg border border-gray-200 p-8 md:p-12 text-center">
+            <div className="w-24 h-24 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
+              <MdPlayArrow className="w-12 h-12 text-white" />
             </div>
-
-            {/* Mobile Comparison - Simple Cards */}
-            <div className="lg:hidden space-y-6">
-              {/* Before Card */}
-              <div className="bg-white rounded-lg border border-gray-200 p-4">
-                <div className="flex items-center mb-4">
-                  <div className="w-6 h-6 bg-red-500 rounded mr-3">
-                    <MdWarning className="w-4 h-4 text-white m-1" />
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900">AS‑IS (Aujourd'hui)</h3>
-                </div>
-                <div className="space-y-3">
-                  {/* Mobile comparison items with same content */}
-                  <div className="flex items-start">
-                    <div className="w-4 h-4 bg-red-500 rounded-full mr-3 mt-1 flex-shrink-0">
-                      <MdClose className="w-2 h-2 m-1 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-sm text-gray-900">Initiatives isolées et non coordonnées</h4>
-                      <p className="text-xs text-gray-600">Chaque département mène sa transformation en silos</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-4 h-4 bg-red-500 rounded-full mr-3 mt-1 flex-shrink-0">
-                      <MdClose className="w-2 h-2 m-1 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-sm text-gray-900">Résistance au changement non anticipée</h4>
-                      <p className="text-xs text-gray-600">Adoption faible et équipes démotivées</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-4 h-4 bg-red-500 rounded-full mr-3 mt-1 flex-shrink-0">
-                      <MdClose className="w-2 h-2 m-1 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-sm text-gray-900">ROI impossible à mesurer</h4>
-                      <p className="text-xs text-gray-600">Impact business flou</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-4 h-4 bg-red-500 rounded-full mr-3 mt-1 flex-shrink-0">
-                      <MdClose className="w-2 h-2 m-1 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-sm text-gray-900">Pilotage réactif et correctionnel</h4>
-                      <p className="text-xs text-gray-600">Problèmes découverts trop tard</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* After Card */}
-              <div className="bg-white rounded-lg border border-gray-200 p-4">
-                <div className="flex items-center mb-4">
-                  <div className="w-6 h-6 bg-green-500 rounded mr-3">
-                    <MdCheckCircle className="w-4 h-4 text-white m-1" />
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900">TO‑BE (Avec UC6)</h3>
-                </div>
-                <div className="space-y-3">
-                  <div className="flex items-start">
-                    <div className="w-4 h-4 bg-green-500 rounded-full mr-3 mt-1 flex-shrink-0">
-                      <MdCheck className="w-2 h-2 m-1 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-sm text-gray-900">Orchestration intelligente multi-projets</h4>
-                      <p className="text-xs text-gray-600">Vision globale et coordination centralisée</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-4 h-4 bg-green-500 rounded-full mr-3 mt-1 flex-shrink-0">
-                      <MdCheck className="w-2 h-2 m-1 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-sm text-gray-900">Accompagnement personnalisé et mesuré</h4>
-                      <p className="text-xs text-gray-600">Adoption facilitée avec parcours adaptatifs</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-4 h-4 bg-green-500 rounded-full mr-3 mt-1 flex-shrink-0">
-                      <MdCheck className="w-2 h-2 m-1 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-sm text-gray-900">ROI démontré en temps réel</h4>
-                      <p className="text-xs text-gray-600">Impact business connecté et mesurable</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-4 h-4 bg-green-500 rounded-full mr-3 mt-1 flex-shrink-0">
-                      <MdCheck className="w-2 h-2 m-1 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-sm text-gray-900">Pilotage prédictif et proactif</h4>
-                      <p className="text-xs text-gray-600">Anticipation des risques et ajustement automatique</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <h4 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Simulateur de Transformation</h4>
+            <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
+              Visualisez l'impact de l'IA de transformation organisationnelle sur vos processus métier avec notre simulateur interactif.
+            </p>
+            <div className="bg-gray-100 rounded-2xl p-12 text-gray-500">
+              <MdSettings className="w-16 h-16 mx-auto mb-4 opacity-50" />
+              <p className="text-lg font-medium">Simulateur en cours de développement</p>
+              <p className="text-sm mt-2">Cette fonctionnalité sera bientôt disponible</p>
             </div>
           </div>
-
-
         </div>
       </section>
       {/* Master Compliance Section - Inspired by Image Design */}
