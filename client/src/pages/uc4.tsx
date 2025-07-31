@@ -1,85 +1,504 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { 
   MdSchedule, MdCheckCircle, MdWarning, MdPeople, MdTrendingUp, MdSecurity, 
   MdFlashOn, MdArrowForward, MdGpsFixed, MdVerifiedUser, MdAnalytics, MdEmojiEvents, 
-  MdMessage, MdShield, MdGroups, MdPlayArrow, MdDescription, MdAccountBox, MdNotifications
+  MdMessage, MdShield, MdGroups, MdDescription, MdSettings, MdAccountBox, MdBusiness, 
+  MdEngineering, MdGavel, MdTableChart, MdAccessTime, MdContentCopy, MdRefresh, MdSearch,
+  MdDashboard, MdBolt, MdEdit, MdNotifications, MdVerified, MdSwapHoriz, MdPlayArrow,
+  MdClose, MdCheck, MdStars, MdCloudSync, MdCreate, MdAutoAwesome, MdLink, 
+  MdAccountTree, MdTrackChanges, MdCallSplit, MdSchema, MdGppBad, MdTimeline, 
+  MdRotateRight, MdFlag, MdMail
 } from "react-icons/md";
-import { FaUsers, FaShieldAlt, FaChartBar } from "react-icons/fa";
+import { FaUsers, FaShieldAlt, FaChartBar, FaFileAlt, FaCogs } from "react-icons/fa";
 import ContactSection from "@/components/contact-section";
 import Header from "@/components/header";
-import BouyguesLogo from "@assets/Bouyges_1753711339292.png";
-import ColasLogo from "@assets/Colas_1753711339292.png";
-import EquansLogo from "@assets/Equans_1753711339292.png";
+import UC3AnalysisCard from "@/components/UC3AnalysisCard";
+import { useState } from "react";
+import { motion } from "framer-motion";
+
+// Import client logos
+import equansLogo from "@assets/Equans_1753711339292.png";
+import bouyguesLogo from "@assets/Bouyges_1753711339292.png";
+import colasLogo from "@assets/Colas_1753711339292.png";
+import ChatSection from "@/components/chat-section";
+import ChatInterface from "@/components/chat-interface";
 
 export default function UC4Page() {
-  const [activeAudience, setActiveAudience] = useState({
-    id: 'project-manager',
-    title: 'Project Manager',
-    description: 'Content will be added later for UC4 target audience.'
-  });
+  // Target audience data with interactive content - UC4 adapted
+  const targetAudiences = [
+    {
+      id: 'risk-managers',
+      title: 'Gestionnaires de risques contractuels',
+      icon: MdAccountBox,
+      iconColor: 'text-purple-600',
+      iconBg: 'bg-purple-100',
+      description: 'Anticipez et maîtrisez chaque risque contractuel avant signature. Grâce à l\'analyse IA avancée, identifiez instantanément les clauses critiques, les obligations dangereuses et les zones d\'ombre qui pourraient compromettre vos projets à plusieurs millions d\'euros.',
+      dashboardData: {
+        requirements: { progress: 100, color: 'green' },
+        coordination: { progress: 78, color: 'blue' },
+        compliance: { progress: 92, color: 'purple' }
+      },
+      notification: '✓ Risques identifiés',
+      alert: '📊 Exposition: Minimisée'
+    },
+    {
+      id: 'legal-directors',
+      title: 'Directeurs juridiques',
+      icon: MdBusiness,
+      iconColor: 'text-blue-600',
+      iconBg: 'bg-blue-100',
+      description: 'Sécurisez juridiquement vos contrats complexes avec une vue d\'ensemble claire et une traçabilité parfaite. Détectez automatiquement les incohérences, validez la conformité réglementaire et protégez l\'entreprise contre les litiges coûteux.',
+      dashboardData: {
+        requirements: { progress: 95, color: 'green' },
+        coordination: { progress: 88, color: 'blue' },
+        compliance: { progress: 100, color: 'purple' }
+      },
+      notification: '⚡ Validation complète',
+      alert: '📈 Conformité: 100%'
+    },
+    {
+      id: 'project-directors',
+      title: 'Directeurs de projets',
+      icon: MdGavel,
+      iconColor: 'text-green-600',
+      iconBg: 'bg-green-100',
+      description: 'Pilotez sereinement vos projets complexes avec une vision claire des obligations contractuelles. Évitez les dérapages budgétaires liés aux clauses mal comprises et assurez une exécution conforme aux engagements pris.',
+      dashboardData: {
+        requirements: { progress: 100, color: 'green' },
+        coordination: { progress: 95, color: 'blue' },
+        compliance: { progress: 100, color: 'purple' }
+      },
+      notification: '🔒 Projet sécurisé',
+      alert: '✅ Zéro déviation'
+    },
+    {
+      id: 'finance-directors',
+      title: 'Directeurs financiers',
+      icon: MdEngineering,
+      iconColor: 'text-orange-600',
+      iconBg: 'bg-orange-100',
+      description: 'Protégez la rentabilité avec une analyse financière précise des clauses contractuelles. Identifiez les risques de surcoûts cachés, les pénalités potentielles et optimisez les conditions de paiement pour une trésorerie maîtrisée.',
+      dashboardData: {
+        requirements: { progress: 100, color: 'green' },
+        coordination: { progress: 85, color: 'blue' },
+        compliance: { progress: 98, color: 'purple' }
+      },
+      notification: '🔧 Budget sécurisé',
+      alert: '📋 Rentabilité garantie'
+    },
+    {
+      id: 'compliance-officers',
+      title: 'Responsables conformité',
+      icon: MdAnalytics,
+      iconColor: 'text-indigo-600',
+      iconBg: 'bg-indigo-100',
+      description: 'Garantissez une conformité réglementaire absolue sur tous vos contrats. Surveillez automatiquement les évolutions légales, validez le respect des normes sectorielles et maintenez un niveau de conformité irréprochable.',
+      dashboardData: {
+        requirements: { progress: 100, color: 'green' },
+        coordination: { progress: 92, color: 'blue' },
+        compliance: { progress: 100, color: 'purple' }
+      },
+      notification: '💼 Conformité validée',
+      alert: '🎯 100% réglementaire'
+    }
+  ];
+
+  const [activeAudience, setActiveAudience] = useState(targetAudiences[0]);
+
+  const painPoints = [
+    {
+      icon: MdWarning,
+      title: "Clauses contractuelles mal comprises",
+      description: "Interprétations erronées des obligations contractuelles créent des risques juridiques et financiers majeurs"
+    },
+    {
+      icon: MdDescription,
+      title: "Analyse manuelle chronophage",
+      description: "Jours perdus à décortiquer manuellement des contrats de centaines de pages avec risques d'oublis critiques"
+    },
+    {
+      icon: FaUsers,
+      title: "Manque de visibilité sur les risques",
+      description: "Absence de vue d'ensemble des expositions contractuelles et des obligations croisées"
+    }
+  ];
+
+  const solutions = [
+    {
+      icon: MdFlashOn,
+      title: "Analysez les contrats instantanément",
+      description: "IA spécialisée qui décortique automatiquement tous types de contrats et identifie les clauses critiques"
+    },
+    {
+      icon: MdGroups,
+      title: "Maîtrisez tous vos risques contractuels",
+      description: "Vision consolidée des expositions, obligations et échéances avec alertes proactives"
+    },
+    {
+      icon: MdSecurity,
+      title: "Sécurisez vos engagements",
+      description: "Validation automatique de la conformité et détection des incohérences avant signature"
+    }
+  ];
+
+  const userJourneySteps = [
+    {
+      step: "1",
+      title: "Analysez vos contrats complexes",
+      description: "Importez vos documents contractuels et laissez l'IA extraire automatiquement toutes les clauses critiques",
+      icon: MdDescription
+    },
+    {
+      step: "2", 
+      title: "Identifiez les risques et obligations",
+      description: "Visualisez instantanément les expositions, les échéances et les obligations avec un niveau de détail inégalé",
+      icon: MdGroups
+    },
+    {
+      step: "3",
+      title: "Pilotez et sécurisez l'exécution", 
+      description: "Suivez en temps réel le respect des engagements et recevez des alertes proactives sur les déviations",
+      icon: MdSecurity
+    }
+  ];
+
+  const kpis = [
+    {
+      metric: "95%",
+      description: "Réduction du temps d'analyse contractuelle"
+    },
+    {
+      metric: "80%",
+      description: "Moins de risques juridiques non détectés"
+    },
+    {
+      metric: "0",
+      description: "Clause critique oubliée"
+    },
+    {
+      metric: "100%",
+      description: "Traçabilité des obligations"
+    }
+  ];
+
+  const differentiators = [
+    {
+      title: "Première Solution pour Contrats Multi-lots",
+      description: "Conçue spécifiquement pour les projets complexes avec gestion croisée des obligations"
+    },
+    {
+      title: "Intelligence Contractuelle Avancée",
+      description: "IA spécialisée dans l'analyse juridique et financière des contrats de construction"
+    },
+    {
+      title: "Gestion Proactive des Risques",
+      description: "Alertes intelligentes et recommandations pour prévenir les dérapages contractuels"
+    }
+  ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-white">
+      {/* Header/Navbar */}
       <Header />
       
       {/* Hero Section - Professional SaaS Design */}
-      <section className="py-40 px-8 bg-gradient-to-br from-aitenders-white-blue via-aitenders-pale-blue/30 to-aitenders-pastel-blue/20 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto text-center relative z-10">
-          <Badge className="mb-8 bg-gradient-to-r from-aitenders-pastel-blue to-aitenders-light-blue text-aitenders-dark-blue border-aitenders-light-blue/50 px-6 py-3 text-lg font-medium rounded-full shadow-sm">
-            Use Case 4 • Content Coming Soon
-          </Badge>
+      <section className="py-12 md:py-16 lg:py-20 xl:py-24 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-white via-slate-50/30 to-blue-50/20 relative overflow-hidden">
+        {/* Subtle Abstract Background Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Large flowing gradient blob - top left */}
+          <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full opacity-30 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #F0F8FF 0%, #E6F3FF 40%, #B3D9FF 70%, transparent 100%)'
+               }}></div>
           
-          <h1 className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-[1.1] tracking-tight">
-            Content will be <br/>
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">added later</span>
-          </h1>
+          {/* Medium accent blob - center right */}
+          <div className="absolute top-1/3 -right-16 w-80 h-80 rounded-full opacity-20 blur-2xl"
+               style={{
+                 background: 'radial-gradient(circle, #B3D9FF 0%, #2563EB 30%, transparent 70%)'
+               }}></div>
           
-          <p className="text-2xl lg:text-3xl text-gray-600 max-w-4xl mx-auto mb-16 leading-relaxed font-light">
-            Placeholder content for UC4 - same structure as UC3
-          </p>
+          {/* Small atmospheric accent - bottom */}
+          <div className="absolute -bottom-16 left-1/4 w-64 h-64 rounded-full opacity-25 blur-3xl"
+               style={{
+                 background: 'linear-gradient(135deg, #FAFCFF 0%, #F0F8FF 50%, #E6F3FF 100%)'
+               }}></div>
           
-          {/* Primary CTA */}
-          <div className="mb-16">
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto"
-            >
-              Request a Demo
-            </Button>
-          </div>
-          
-          {/* Secondary CTA */}
-          <div className="mb-20">
-            <Button 
-              variant="ghost" 
-              className="text-purple-600 hover:text-purple-700 hover:bg-purple-50/80 px-6 py-4 text-xl font-medium underline decoration-2 underline-offset-4 rounded-2xl transition-all duration-300"
-            >
-              Download Use Case →
-            </Button>
+          {/* Flowing wave accent - mobile optimized */}
+          <div className="absolute top-1/2 left-0 w-full h-32 opacity-15 blur-xl lg:opacity-20"
+               style={{
+                 background: 'linear-gradient(90deg, transparent 0%, #F0F8FF 20%, #B3D9FF 40%, #E6F3FF 60%, transparent 100%)'
+               }}></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 xl:gap-32 items-center">
+            
+            {/* Left Side - Content */}
+            <div className="text-left">
+              <div className="mb-12">
+                <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Sécurisez Vos Contrats</Badge>
+                
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+                  Chaque clause analysée, <span className="text-blue-600">chaque risque maîtrisé</span>
+                </h1>
+                
+                <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]"> <span className="text-blue-300">La première plateforme d'intelligence contractuelle pour les projets complexes :</span> analyse IA approfondie des clauses, identification automatique des risques, validation de conformité et pilotage sécurisé de l'exécution. 
+                Vous éliminez les zones d'ombre, prévenez les litiges coûteux et garantissez le respect de tous vos engagements contractuels.</p>
+              </div>
+              
+              {/* Primary CTA */}
+              <div className="mb-16">
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto"
+                >
+                  Réservez une Démo
+                </Button>
+              </div>
+              
+              {/* Secondary CTA - Less Prominent */}
+              <div className="mb-20">
+                <Button 
+                  variant="ghost" 
+                  className="text-blue-600 hover:text-blue-700 hover:bg-blue-50/80 px-6 py-4 text-xl font-medium underline decoration-2 underline-offset-4 rounded-2xl transition-all duration-300"
+                >
+                  Téléchargez le cas d'usage →
+                </Button>
+              </div>
+              
+              {/* Trust Elements */}
+              <div className="border-t border-gray-100 pt-8">
+                <p className="text-sm text-gray-500 mb-6">Solution de référence pour l'analyse contractuelle intelligente</p>
+                
+                {/* Customer Logos / Trust Indicators */}
+                <div className="flex items-center space-x-8">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="flex -space-x-2 mr-3">
+                      <div className="w-12 h-12 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center shadow-sm overflow-hidden">
+                        <img 
+                          src={equansLogo} 
+                          alt="Equans logo" 
+                          className="w-10 h-6 object-contain"
+                        />
+                      </div>
+                      <div className="w-12 h-12 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center shadow-sm overflow-hidden">
+                        <img 
+                          src={bouyguesLogo} 
+                          alt="Bouygues logo" 
+                          className="w-10 h-6 object-contain"
+                        />
+                      </div>
+                      <div className="w-12 h-12 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center shadow-sm overflow-hidden">
+                        <img 
+                          src={colasLogo} 
+                          alt="Colas logo" 
+                          className="w-10 h-6 object-contain"
+                        />
+                      </div>
+                    </div>
+                    <span>Adopté par les leaders de la construction</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side - Realistic Product Mockup */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-lg">
+                
+                {/* Main Dashboard Mockup */}
+                <div className="bg-white rounded-3xl shadow-2xl border border-gray-100/50 overflow-hidden backdrop-blur-sm"
+                     style={{
+                       boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+                     }}>
+                  
+                  {/* Browser Header */}
+                  <div className="bg-gray-100 px-6 py-4 flex items-center justify-between border-b border-gray-200">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                      <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                    </div>
+                    <div className="text-sm text-gray-600 font-medium">AItenders - Contract Analytics</div>
+                    <div className="w-12"></div>
+                  </div>
+                  
+                  {/* Dashboard Content */}
+                  <div className="p-8">
+                    
+                    {/* Header */}
+                    <div className="flex items-center justify-between mb-8">
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2">Multi-lot Construction Contract</h3>
+                        <p className="text-gray-600">€85M project • 12 risk clauses</p>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
+                        <span className="text-sm text-gray-600">Analyzing</span>
+                      </div>
+                    </div>
+                    
+                    {/* Risk Overview */}
+                    <div className="grid grid-cols-2 gap-6 mb-8">
+                      <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-6 border border-red-100">
+                        <div className="text-3xl font-bold text-red-700 mb-2">12</div>
+                        <div className="text-sm text-gray-600">Critical clauses identified</div>
+                      </div>
+                      <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border border-blue-100">
+                        <div className="text-3xl font-bold text-blue-700 mb-2">€2.3M</div>
+                        <div className="text-sm text-gray-600">Potential risk exposure</div>
+                      </div>
+                    </div>
+                    
+                    {/* Risk Categories */}
+                    <div className="space-y-4">
+                      <h4 className="text-lg font-semibold text-gray-900 mb-4">Risk Analysis</h4>
+                      
+                      <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center">
+                            <MdWarning className="w-5 h-5 text-white" />
+                          </div>
+                          <div>
+                            <div className="font-medium text-gray-900">Penalty Clauses</div>
+                            <div className="text-sm text-gray-600">High financial exposure</div>
+                          </div>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <div className="w-20 bg-gray-200 rounded-full h-2">
+                            <div className="bg-red-500 h-2 rounded-full" style={{width: '92%'}}></div>
+                          </div>
+                          <span className="text-sm font-medium text-red-600">Critical</span>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center">
+                            <MdAccessTime className="w-5 h-5 text-white" />
+                          </div>
+                          <div>
+                            <div className="font-medium text-gray-900">Delivery Terms</div>
+                            <div className="text-sm text-gray-600">Timeline constraints</div>
+                          </div>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <div className="w-20 bg-gray-200 rounded-full h-2">
+                            <div className="bg-orange-500 h-2 rounded-full" style={{width: '78%'}}></div>
+                          </div>
+                          <span className="text-sm font-medium text-orange-600">High</span>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center">
+                            <MdShield className="w-5 h-5 text-white" />
+                          </div>
+                          <div>
+                            <div className="font-medium text-gray-900">Insurance Coverage</div>
+                            <div className="text-sm text-gray-600">Liability limits</div>
+                          </div>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <div className="w-20 bg-gray-200 rounded-full h-2">
+                            <div className="bg-yellow-500 h-2 rounded-full" style={{width: '65%'}}></div>
+                          </div>
+                          <span className="text-sm font-medium text-yellow-600">Medium</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Floating Risk Alerts */}
+                <div className="absolute -top-4 -right-4 bg-red-500 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-medium animate-bounce">
+                  <div className="flex items-center space-x-2">
+                    <MdWarning className="w-4 h-4" />
+                    <span>High risk detected</span>
+                  </div>
+                </div>
+                
+                <div className="absolute -bottom-4 -left-4 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-medium animate-pulse">
+                  <div className="flex items-center space-x-2">
+                    <MdCheckCircle className="w-4 h-4" />
+                    <span>Analysis complete</span>
+                  </div>
+                </div>
+                
+                {/* Background Decorative Elements */}
+                <div className="absolute -top-8 -right-8 w-24 h-24 bg-blue-200/20 rounded-full blur-2xl"></div>
+                <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-orange-200/15 rounded-full blur-3xl"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Pain Points Section */}
-      <section className="py-32 px-8 bg-gradient-to-br from-slate-50 via-gray-50 to-purple-50/20 relative overflow-hidden">
+      {/* Pain Points Section - Main Feature Card + Supporting Cards */}
+      <section className="py-16 md:py-20 lg:py-24 px-8 bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50/20 relative overflow-hidden">
+        {/* Subtle Abstract Background Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Large atmospheric blob - right side */}
+          <div className="absolute top-16 -right-40 w-[500px] h-[500px] rounded-full opacity-25 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #F0F8FF 0%, #B3D9FF 50%, #E6F3FF 80%, transparent 100%)'
+               }}></div>
+          
+          {/* Flowing accent - left side */}
+          <div className="absolute top-1/3 -left-24 w-72 h-72 rounded-full opacity-20 blur-2xl"
+               style={{
+                 background: 'linear-gradient(135deg, #E6F3FF 0%, #B3D9FF 60%, transparent 100%)'
+               }}></div>
+          
+          {/* Small directional accent */}
+          <div className="absolute bottom-20 right-1/4 w-48 h-48 rounded-full opacity-15 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #2563EB 0%, #B3D9FF 40%, transparent 80%)'
+               }}></div>
+          
+          {/* Mobile-optimized wave */}
+          <div className="absolute bottom-0 left-0 w-full h-24 opacity-10 blur-xl lg:opacity-15"
+               style={{
+                 background: 'linear-gradient(90deg, #F0F8FF 0%, transparent 30%, #FAFCFF 70%, #E6F3FF 100%)'
+               }}></div>
+        </div>
+        
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20">
+          
+          {/* Main Feature Card */}
+          <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20"
+               style={{
+                 boxShadow: '0 32px 64px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+               }}>
+            
+            {/* Multi-tone Faded Background Pattern */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-cyan-50/20 to-indigo-50/25 rounded-3xl"></div>
+            <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-blue-100/25 to-transparent rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-cyan-100/20 to-transparent rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+            
+            {/* Content Container */}
             <div className="relative z-10 text-center">
-              <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-12 leading-[1.1] tracking-tight">
-                Pain Point Content <span className="text-purple-600">Placeholder</span>
+              
+              {/* Main Headline */}
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+                Zéro clause cachée, <span className="text-blue-600">zéro risque imprévu</span>
               </h2>
-              <p className="text-2xl lg:text-3xl text-gray-600 mb-16 leading-relaxed max-w-5xl mx-auto font-light">
-                Content will be added later - same structure as UC3 pain points section.
-              </p>
+              
+              {/* Body Copy */}
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">Dans les contrats complexes, les équipes passent des <span className="text-grey-500 font-bold">semaines critiques</span> à analyser manuellement chaque clause, avec des risques d'interprétation erronée et d'exposition financière.</p>
+              
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">Avec Aitenders, bénéficiez d'une analyse contractuelle intelligente dès la réception, identifiez instantanément tous les risques et pilotez sereinement l'exécution avec une visibilité totale sur vos obligations.</p>
+              
+              {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-                <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
-                  Request a Demo
+                <Button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
+                  Contactez nous!
                 </Button>
-                <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white px-12 py-6 text-xl font-semibold rounded-3xl transition-all duration-300">
+                <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-12 py-6 text-xl font-semibold rounded-3xl transition-all duration-300">
                   <MdPlayArrow className="w-6 h-6 mr-2" />
                   Watch Quick Demo
                 </Button>
@@ -89,132 +508,499 @@ export default function UC4Page() {
         </div>
       </section>
 
-      {/* Solution Section */}
+      {/* Solution Section - Alternating Layout Design */}
       <section className="py-32 px-8 bg-gradient-to-br from-white via-slate-50/20 to-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-24">
-            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-[1.1] tracking-tight">
-              Solution Section Placeholder
-            </h1>
-          </div>
+        {/* Subtle Abstract Background Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Large flowing accent - top center */}
+          <div className="absolute -top-20 left-1/3 w-96 h-96 rounded-full opacity-20 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #FAFCFF 0%, #F0F8FF 30%, #B3D9FF 70%, transparent 100%)'
+               }}></div>
+          
+          {/* Medium directional blob - middle left */}
+          <div className="absolute top-1/2 -left-32 w-80 h-80 rounded-full opacity-15 blur-2xl"
+               style={{
+                 background: 'linear-gradient(45deg, #E6F3FF 0%, #B3D9FF 50%, #2563EB 90%, transparent 100%)'
+               }}></div>
+          
+          {/* Atmospheric accent - bottom right */}
+          <div className="absolute -bottom-24 -right-32 w-[400px] h-[400px] rounded-full opacity-25 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #F0F8FF 0%, #E6F3FF 40%, transparent 100%)'
+               }}></div>
+          
+          {/* Subtle flowing wave - center */}
+          <div className="absolute top-1/2 left-0 w-full h-40 opacity-10 blur-xl lg:opacity-15"
+               style={{
+                 background: 'linear-gradient(90deg, transparent 0%, #B3D9FF 25%, #F0F8FF 50%, #E6F3FF 75%, transparent 100%)'
+               }}></div>
         </div>
-      </section>
-
-      {/* Target Audience Section */}
-      <section className="py-32 px-8 bg-gradient-to-br from-gray-50 via-slate-50 to-gray-50 relative overflow-hidden">
+        
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-[1.1] tracking-tight">
-              Target Audience Placeholder
-            </h2>
+          <div className="text-center mb-12 md:mb-16 lg:mb-20">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-blue-600">intelligence contractuelle </span> qui sécurise tous vos engagements</h1>
+            <h3 className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">Analysez, maîtrisez et pilotez vos contrats complexes avec une précision inégalée.</h3>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div className="space-y-8">
-              <h3 className="text-4xl font-bold text-gray-900 leading-tight">{activeAudience.title}</h3>
-              <p className="text-gray-700 text-xl leading-relaxed mb-10 font-light">
-                {activeAudience.description}
+
+          {/* Feature 1: Contract Analysis - Text Left, Card Right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
+            <div className="order-1">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
+                <MdFlashOn className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Décryptez instantanément tous vos contrats <span className="text-blue-600">avec une précision chirurgicale</span></h3>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
+                Grâce à l'IA spécialisée en droit des contrats, chaque clause est automatiquement analysée, catégorisée et évaluée selon son niveau de risque. Les obligations financières, les échéances critiques et les pénalités potentielles sont immédiatement identifiées.
+        <p>      <span className="text-blue-600">Le responsable juridique dispose instantanément</span> d'une cartographie complète des risques contractuels, sans aucune analyse manuelle préalable.</p>  
               </p>
-              <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 text-lg font-semibold rounded-2xl w-fit transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
-                Request Demo →
-              </Button>
-            </motion.div>
-            <motion.div className="bg-gradient-to-br from-purple-50 to-blue-50 p-8 flex items-center justify-center relative">
-              <div className="text-center text-gray-500">Interactive mockup placeholder</div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* User Journey Section */}
-      <section className="py-32 px-8 bg-gradient-to-br from-slate-50 via-white to-purple-50/30 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-[1.1] tracking-tight">
-              User Journey Placeholder
-            </h2>
-          </div>
-        </div>
-      </section>
-
-      {/* KPI Section */}
-      <section className="py-24 px-4 bg-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-16">KPI Section Placeholder</h2>
-        </div>
-      </section>
-
-      {/* Comparison Section */}
-      <section className="py-40 px-4 bg-gradient-to-br from-slate-50 via-white to-purple-50/30 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-24">
-            <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-[1.1] tracking-tight">
-              Before/After Comparison Placeholder
-            </h2>
-          </div>
-        </div>
-      </section>
-
-      {/* Master Compliance Section */}
-      <section className="py-32 px-8 bg-gradient-to-br from-slate-50 via-white to-purple-50/20 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <h2 className="text-5xl font-bold text-gray-900 leading-tight">
-                Compliance Section Placeholder
-              </h2>
+              <div className="flex items-center text-lg font-bold  text-blue-500">
+                <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
+                Analyse contractuelle experte en quelques minutes!
+              </div>
             </div>
-            <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-12 border border-gray-200/50 relative overflow-hidden">
-              <div className="text-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center mx-auto mb-8">
-                  <MdShield className="w-16 h-16 text-green-600" />
-                </div>
-                <h3 className="text-3xl font-bold text-gray-900 mb-6">Testimonial Placeholder</h3>
-                <p className="text-xl text-gray-600 mb-8 leading-relaxed font-light italic">
-                  "Customer testimonial content goes here"
-                </p>
-                <div className="flex flex-col items-center space-y-4">
-                  <img src={BouyguesLogo} alt="Company" className="h-12 w-auto opacity-60" />
-                  <div className="text-center">
-                    <p className="font-semibold text-gray-900">Customer Name</p>
-                    <p className="text-gray-600 text-sm">Job Title, Company</p>
+            <div className="order-2">
+              <Card className="p-10 bg-gradient-to-br from-blue-50 to-indigo-100 border border-blue-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
+                   style={{
+                     boxShadow: '0 25px 50px -12px rgba(59, 130, 246, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+                   }}>
+                <div className="bg-white rounded-xl p-4 border border-blue-200 shadow-sm">
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className="text-sm font-semibold text-gray-700">Contract Analysis</h4>
+                    <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                      <MdGavel className="w-4 h-4 text-blue-600" />
+                    </div>
                   </div>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between py-2 px-3 bg-red-50 rounded-lg border border-red-200">
+                      <span className="text-sm text-gray-700">12 penalty clauses found</span>
+                      <span className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full">Critical</span>
+                    </div>
+                    <div className="flex items-center justify-between py-2 px-3 bg-orange-50 rounded-lg border border-orange-200">
+                      <span className="text-sm text-gray-700">€2.3M exposure identified</span>
+                      <span className="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full">High</span>
+                    </div>
+                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
+                      <span className="text-sm text-gray-700">Analysis completed</span>
+                      <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
+                        <MdCheckCircle className="w-3 h-3 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
+
+          {/* Feature 2: Risk Management - Text Right, Card Left */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
+            <div className="order-2 lg:order-1">
+              <Card className="p-10 bg-gradient-to-br from-orange-50 to-red-100 border border-orange-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
+                   style={{
+                     boxShadow: '0 25px 50px -12px rgba(251, 146, 60, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+                   }}>
+                <div className="bg-white rounded-xl p-4 border border-orange-200 shadow-sm">
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className="text-sm font-semibold text-gray-700">Risk Dashboard</h4>
+                    <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
+                      <MdWarning className="w-4 h-4 text-orange-600" />
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between py-2 px-3 bg-red-50 rounded-lg border border-red-200">
+                      <span className="text-sm text-gray-700">Delivery delay risk</span>
+                      <span className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full">92%</span>
+                    </div>
+                    <div className="flex items-center justify-between py-2 px-3 bg-yellow-50 rounded-lg border border-yellow-200">
+                      <span className="text-sm text-gray-700">Budget overrun risk</span>
+                      <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full">68%</span>
+                    </div>
+                    <div className="flex items-center justify-between py-2 px-3 bg-orange-50 rounded-lg border border-orange-200">
+                      <span className="text-sm text-gray-700">Compliance gaps</span>
+                      <div className="w-4 h-4 bg-orange-500 rounded-full flex items-center justify-center">
+                        <MdWarning className="w-3 h-3 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
+            <div className="order-1 lg:order-2">
+              <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
+                <MdGroups className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Anticipez et maîtrisez <span className="text-orange-600">tous vos risques contractuels</span></h3>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
+                Tableau de bord unifié qui agrège toutes les expositions par type de risque, montant et probabilité. Alertes proactives sur les échéances critiques et recommandations automatiques pour minimiser les impacts.
+              <p> <span className="text-orange-600">L'équipe dispose d'une visibilité complète</span> sur tous les engagements avec une priorisation intelligente des actions correctives.</p>
+              </p>
+              <div className="flex items-center text-lg font-bold text-orange-500">
+                <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
+                 Vision consolidée de tous vos risques contractuels
+              </div>
+            </div>
+          </div>
+
+          {/* Feature 3: Contract Execution - Text Left, Card Right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
+            <div className="order-1">
+              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
+                <MdSecurity className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Sécurisez l'exécution <span className="text-green-600">avec un pilotage en temps réel</span></h3>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
+                Suivi automatisé de toutes les obligations contractuelles avec détection proactive des écarts. Gestion intelligente des avenants et validation de conformité avant chaque livrable.
+        <p>      <span className="text-green-600">L'équipe projet maintient une exécution parfaite</span> avec des alertes automatiques et une documentation complète de chaque engagement.</p>
+              </p>
+              <div className="flex items-center text-lg font-bold text-green-500">
+                <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
+                 Pilotage des engagements sans faille
+              </div>
+            </div>
+            <div className="order-2">
+              <Card className="p-10 bg-gradient-to-br from-green-50 to-emerald-100 border border-green-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
+                   style={{
+                     boxShadow: '0 25px 50px -12px rgba(34, 197, 94, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+                   }}>
+                <div className="bg-white rounded-xl p-4 border border-green-200 shadow-sm">
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className="text-sm font-semibold text-gray-700">Execution Control</h4>
+                    <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                      <MdSettings className="w-4 h-4 text-green-600" />
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
+                      <span className="text-sm text-gray-700">Milestone completed</span>
+                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">On time</span>
+                    </div>
+                    <div className="flex items-center justify-between py-2 px-3 bg-yellow-50 rounded-lg border border-yellow-200">
+                      <span className="text-sm text-gray-700">Payment due in 5 days</span>
+                      <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full">Alert</span>
+                    </div>
+                    <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
+                      <span className="text-sm text-gray-700">Amendment processed</span>
+                      <div className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
+                        <MdMessage className="w-3 h-3 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* User Journey Section - High Conversion Design */}
+      <section className="py-32 px-8 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative overflow-hidden">
+        {/* Subtle Abstract Background Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Large atmospheric blob - center top */}
+          <div className="absolute -top-32 left-1/2 transform -translate-x-1/2 w-[500px] h-[500px] rounded-full opacity-22 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #FAFCFF 0%, #F0F8FF 35%, #B3D9FF 70%, transparent 100%)'
+               }}></div>
+          
+          {/* Flowing accent - bottom left */}
+          <div className="absolute bottom-10 -left-32 w-80 h-80 rounded-full opacity-18 blur-2xl"
+               style={{
+                 background: 'linear-gradient(45deg, #E6F3FF 0%, #B3D9FF 60%, transparent 100%)'
+               }}></div>
+          
+          {/* Directional accent - right side */}
+          <div className="absolute top-1/3 -right-28 w-72 h-72 rounded-full opacity-15 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #2563EB 0%, #E6F3FF 40%, transparent 80%)'
+               }}></div>
+          
+          {/* Subtle connecting flow */}
+          <div className="absolute top-2/3 left-0 w-full h-24 opacity-10 blur-xl lg:opacity-14"
+               style={{
+                 background: 'linear-gradient(90deg, #F0F8FF 0%, transparent 20%, #B3D9FF 50%, transparent 80%, #FAFCFF 100%)'
+               }}></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-16 md:mb-20 lg:mb-24">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Sécurisez Vos Contrats en 3 Étapes</h2>
+          </div>
+          
+          {/* Steps Flow */}
+          <div className="relative">
+            {/* Enhanced Connection Flow - Desktop Only */}
+            <div className="hidden lg:block absolute top-20 left-1/4 right-1/4">
+              <div className="h-1 bg-gradient-to-r from-blue-200 via-blue-400 to-blue-200 rounded-full"></div>
+              {/* Directional arrows */}
+              <div className="absolute top-1/2 left-1/3 transform -translate-y-1/2 w-3 h-3 bg-blue-400 rotate-45"></div>
+              <div className="absolute top-1/2 right-1/3 transform -translate-y-1/2 w-3 h-3 bg-blue-400 rotate-45"></div>
+            </div>
+            
+            {/* Step indicators */}
+            <div className="hidden lg:flex absolute top-16 left-0 right-0 justify-between items-center px-12">
+              <div className="text-xs font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">ÉTAPE 1</div>
+              <div className="text-xs font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">ÉTAPE 2</div>
+              <div className="text-xs font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">ÉTAPE 3</div>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
+              
+              {/* Step 1 */}
+              <div className="relative group">
+                <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-12 border border-gray-100/50 hover:border-blue-200/50 transform hover:-translate-y-3 transition-all duration-500"
+                     style={{
+                       boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+                     }}>
+                  
+                  {/* Step Number */}
+                  <div className="absolute -top-6 md:-top-8 left-6 md:left-8 lg:left-12">
+                    <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-3xl flex items-center justify-center text-lg md:text-2xl font-bold shadow-xl">
+                      1
+                    </div>
+                  </div>
+                  
+                  {/* Icon */}
+                  <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-blue-100 to-blue-200 rounded-3xl flex items-center justify-center mx-auto mb-6 md:mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <MdDescription className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-blue-600" />
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="text-center">
+                    <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4 leading-tight">Importez vos contrats complexes</h4>
+                    <p className="text-gray-600 leading-relaxed text-base md:text-lg mb-4 md:mb-6">Déposez tous vos documents contractuels et laissez l'IA spécialisée analyser instantanément chaque clause, obligation et risque potentiel.</p>
+                    
+                    {/* Enhanced Blue Highlight Box */}
+                    <div className="bg-gradient-to-r from-blue-50 to-blue-100 border-l-4 border-blue-500 rounded-lg p-3 md:p-4 mx-auto">
+                      <div className="flex items-center justify-center text-blue-700 font-semibold text-sm md:text-base">
+                        <MdFlashOn className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 text-blue-600" />
+                        <span className="text-blue-800">Analyse contractuelle complète en quelques minutes au lieu de semaines.</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Subtle Animation Element */}
+                  <div className="absolute bottom-6 right-6 w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+                </div>
+              </div>
+
+              {/* Step 2 */}
+              <div className="relative group">
+                <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-12 border border-gray-100/50 hover:border-blue-200/50 transform hover:-translate-y-3 transition-all duration-500"
+                     style={{
+                       boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+                     }}>
+                  
+                  {/* Step Number */}
+                  <div className="absolute -top-6 md:-top-8 left-6 md:left-8 lg:left-12">
+                    <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-3xl flex items-center justify-center text-lg md:text-2xl font-bold shadow-xl">
+                      2
+                    </div>
+                  </div>
+                  
+                  {/* Icon */}
+                  <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-orange-100 to-orange-200 rounded-3xl flex items-center justify-center mx-auto mb-6 md:mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <MdGroups className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-orange-600" />
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="text-center">
+                    <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4 leading-tight">Visualisez tous vos risques</h4>
+                    <p className="text-gray-600 leading-relaxed text-base md:text-lg mb-4 md:mb-6">Accédez à un tableau de bord unifié qui cartographie tous vos risques contractuels par criticité, exposition financière et probabilité de survenance.</p>
+                    
+                    {/* Enhanced Orange Highlight Box */}
+                    <div className="bg-gradient-to-r from-orange-50 to-orange-100 border-l-4 border-orange-500 rounded-lg p-3 md:p-4 mx-auto">
+                      <div className="flex items-center justify-center text-orange-700 font-semibold text-sm md:text-base">
+                        <MdFlashOn className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 text-orange-600" />
+                        <span className="text-orange-800">Anticipez et prévenez 80% des risques contractuels majeurs.</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Subtle Animation Element */}
+                  <div className="absolute bottom-6 right-6 w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+                </div>
+              </div>
+
+              {/* Step 3 */}
+              <div className="relative group">
+                <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-12 border border-gray-100/50 hover:border-blue-200/50 transform hover:-translate-y-3 transition-all duration-500"
+                     style={{
+                       boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+                     }}>
+                  
+                  {/* Step Number */}
+                  <div className="absolute -top-6 md:-top-8 left-6 md:left-8 lg:left-12">
+                    <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-3xl flex items-center justify-center text-lg md:text-2xl font-bold shadow-xl">
+                      3
+                    </div>
+                  </div>
+                  
+                  {/* Icon */}
+                  <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-green-100 to-green-200 rounded-3xl flex items-center justify-center mx-auto mb-6 md:mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <MdSecurity className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-green-600" />
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="text-center">
+                    <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4 leading-tight">Pilotez l'exécution en sécurité</h4>
+                    <p className="text-gray-600 leading-relaxed text-base md:text-lg mb-4 md:mb-6">Suivez en temps réel le respect de tous vos engagements avec des alertes automatiques et une validation continue de la conformité contractuelle.</p>
+                    
+                    {/* Enhanced Green Highlight Box */}
+                    <div className="bg-gradient-to-r from-green-50 to-green-100 border-l-4 border-green-500 rounded-lg p-3 md:p-4 mx-auto">
+                      <div className="flex items-center justify-center text-green-700 font-semibold text-sm md:text-base">
+                        <MdFlashOn className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 text-green-600" />
+                        <span className="text-green-800">Garantissez une exécution parfaite avec zéro risque de litige.</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Subtle Animation Element */}
+                  <div className="absolute bottom-6 right-6 w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Trust & Company Logos Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-gray-600 mb-8 text-lg">Trusted by leading construction companies</p>
-          <div className="flex items-center justify-center space-x-12 opacity-60">
-            <img src={BouyguesLogo} alt="Bouygues" className="h-12 w-auto" />
-            <img src={ColasLogo} alt="Colas" className="h-12 w-auto" />
-            <img src={EquansLogo} alt="Equans" className="h-12 w-auto" />
-          </div>
-        </div>
-      </section>
-
-      {/* Final Call to Action Section */}
-      <section className="py-20 px-4 bg-purple-600">
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Next Project?</h2>
-          <p className="text-xl mb-8 opacity-90">Content placeholder for final CTA</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 text-lg">
-              <MdMessage className="w-5 h-5 mr-2" />
-              Request a Demo
-            </Button>
-            <Button variant="outline" size="lg" className="border-white/80 text-white bg-white/10 hover:bg-white hover:text-purple-600 px-8 py-4 text-lg backdrop-blur-sm">
-              Contact Our Team
+          
+          {/* CTA Button */}
+          <div className="text-center mt-12 md:mt-16">
+            <Button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 md:px-8 lg:px-10 py-3 md:py-4 text-base md:text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              Découvrez une démo personnalisée
             </Button>
           </div>
         </div>
       </section>
 
+      {/* KPI Section - High Impact Design */}
+      <section className="py-16 md:py-20 lg:py-24 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+
+          {/* User-Focused Results Section - Before KPIs */}
+          <div className="mb-20 md:mb-24 lg:mb-28">
+            <div className="text-center mb-12 md:mb-16">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Résultats concrets pour chaque utilisateur</h3>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Des bénéfices mesurables pour tous les profils contractuels</p>
+            </div>
+            
+            {/* Results Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+              
+              {/* Risk Manager Results */}
+              <div className="group">
+                <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/50 hover:border-blue-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4">
+                      <MdAccountBox className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900">Gestionnaire de risques</h4>
+                      <p className="text-sm text-gray-600">Maîtrise totale des expositions contractuelles</p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-700">Temps d'analyse des contrats</span>
+                      <span className="font-bold text-blue-600">-95%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-700">Risques non détectés</span>
+                      <span className="font-bold text-green-600">-80%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-700">Visibilité sur les expositions</span>
+                      <span className="font-bold text-blue-600">+100%</span>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 p-4 bg-white/70 rounded-lg border border-blue-200/30">
+                    <p className="text-sm text-gray-700 italic">"Une cartographie complète de tous nos risques contractuels en quelques minutes."</p>
+                  </div>
+                </Card>
+              </div>
+
+              {/* Legal Director Results */}
+              <div className="group">
+                <Card className="h-full p-8 bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200/50 hover:border-orange-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mr-4">
+                      <MdBusiness className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900">Directeur juridique</h4>
+                      <p className="text-sm text-gray-600">Sécurisation juridique maximale</p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-700">Clauses critiques oubliées</span>
+                      <span className="font-bold text-green-600">0</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-700">Conformité réglementaire</span>
+                      <span className="font-bold text-green-600">100%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-700">Risques de litiges</span>
+                      <span className="font-bold text-green-600">-75%</span>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 p-4 bg-white/70 rounded-lg border border-orange-200/30">
+                    <p className="text-sm text-gray-700 italic">"Enfin une solution qui comprend réellement les enjeux juridiques complexes."</p>
+                  </div>
+                </Card>
+              </div>
+            </div>
+          </div>
+
+          {/* KPI Grid */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+            {kpis.map((kpi, index) => (
+              <div key={index} className="text-center group">
+                <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl flex items-center justify-center mx-auto mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">{kpi.metric}</span>
+                </div>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">{kpi.description}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
       <ContactSection />
+
+      {/* Chat Interface with UC4-specific actions */}
+      <ChatInterface 
+        language="fr"
+        transparent={true}
+        customActions={[
+          {
+            label: "Nos cas d'usage",
+            icon: <span className="text-gray-400">+</span>,
+            onClick: () => {} // Navigate to use cases
+          },
+          {
+            label: "Demo UC4",
+            icon: <MdPlayArrow className="w-3 h-3 text-gray-400" />,
+            onClick: () => {} // Launch UC4 demo
+          },
+          {
+            label: "ROI Calculator", 
+            icon: <MdAnalytics className="w-3 h-3 text-gray-400" />,
+            onClick: () => {} // Open ROI calculator
+          },
+          {
+            label: "Contact Expert",
+            icon: <MdMail className="w-3 h-3 text-gray-400" />,
+            onClick: () => {} // Contact form
+          }
+        ]}
+      />
+
+      {/* Add padding to body to account for fixed chat */}
+      <div className="h-32"></div>
     </div>
   );
 }
