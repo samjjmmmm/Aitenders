@@ -912,6 +912,7 @@ export default function UC1Page() {
             </div>
           </div>
         </div>
+      </div>
       </section>
 
       {/* Toppings Section - Wow Features & Additional Functionalities */}
