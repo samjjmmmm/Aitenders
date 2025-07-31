@@ -382,17 +382,7 @@ export function UC5() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-            {painPoints.map((point, index) => (
-              <Card key={index} className="p-8 text-center hover:shadow-lg transition-shadow duration-300 border border-red-100 bg-gradient-to-br from-red-50/50 to-orange-50/30">
-                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <point.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{point.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{point.description}</p>
-              </Card>
-            ))}
-          </div>
+          
         </div>
       </section>
 
