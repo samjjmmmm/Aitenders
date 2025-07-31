@@ -526,43 +526,42 @@ export default function UC7Page() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-              Une <span className="text-blue-600">supply chain intelligente</span> qui anticipe et s'adapte
+              Rédigez des <span className="text-blue-600">réponses conformes et convaincantes</span> en un temps record
             </h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">
-              Aitenders UC7 révolutionne votre chaîne d'approvisionnement avec l'IA prédictive, l'orchestration temps réel et la résilience intégrée.
+              Aitenders Write transforme vos cahiers des charges en livrables complets et justifiés, réduisant vos délais de rédaction de plus de moitié tout en garantissant 100% de couverture des exigences.
             </p>
           </div>
 
-          {/* Feature 1: Prédiction intelligente - Text Left, Card Right */}
+          {/* Feature 1: Rédaction guidée - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-1">
               <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdFlashOn className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Prédiction intelligente, <span className="text-blue-600">approvisionnement optimisé</span>
+                Rédaction guidée par les <span className="text-blue-600">exigences contractuelles</span>
               </h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                L'IA anticipe la demande et optimise automatiquement les niveaux de stock et les plans d'approvisionnement.
+                Dès l'analyse du cahier des charges, Aitenders extrait automatiquement les obligations et propose une structure optimisée.
               </p>
               <div className="space-y-3 mb-8">
                 <div className="flex items-start text-gray-600">
                   <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Prévision de la demande avec 95% de précision</span>
+                  <span>Jusqu'à 90% du livrable généré instantanément</span>
                 </div>
                 <div className="flex items-start text-gray-600">
                   <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Optimisation automatique des niveaux de stock</span>
+                  <span>Points clés identifiés et organisés</span>
                 </div>
                 <div className="flex items-start text-gray-600">
                   <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Plans d'approvisionnement adaptatifs en temps réel</span>
-                </div>
-                <div className="flex items-start text-gray-600">
-                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Réduction de 30% des coûts de stockage</span>
+                  <span>Gain de temps significatif dès le démarrage</span>
                 </div>
               </div>
+              <p className="text-lg text-blue-600 font-medium">
+                Vous livrez vos premières versions en quelques heures au lieu de plusieurs jours.
+              </p>
             </div>
             <div className="order-2">
               <Card className="p-10 bg-gradient-to-br from-blue-50 to-indigo-100 border border-blue-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
@@ -571,22 +570,22 @@ export default function UC7Page() {
                    }}>
                 <div className="bg-white rounded-xl p-4 border border-blue-200 shadow-sm">
                   <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Demand Prediction</h4>
+                    <h4 className="text-sm font-semibold text-gray-700">Document Generation</h4>
                     <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
                       <MdAnalytics className="w-4 h-4 text-blue-600" />
                     </div>
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Prévision précision</span>
-                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">✓ 95%</span>
+                      <span className="text-sm text-gray-700">Livrable généré</span>
+                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">✓ 90%</span>
                     </div>
                     <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
-                      <span className="text-sm text-gray-700">Stock optimisé</span>
-                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">-30% coûts</span>
+                      <span className="text-sm text-gray-700">Points clés</span>
+                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Organisés</span>
                     </div>
                     <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
-                      <span className="text-sm text-gray-700">Plans adaptatifs</span>
+                      <span className="text-sm text-gray-700">Gain de temps</span>
                       <div className="w-4 h-4 bg-purple-500 rounded-full flex items-center justify-center">
                         <MdCheck className="w-3 h-3 text-white" />
                       </div>
@@ -597,7 +596,7 @@ export default function UC7Page() {
             </div>
           </div>
 
-          {/* Feature 2: Orchestration temps réel - Card Left, Text Right */}
+          {/* Feature 2: Preuve de couverture - Card Left, Text Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-2 lg:order-1">
               <Card className="p-10 bg-gradient-to-br from-green-50 to-emerald-100 border border-green-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
@@ -606,22 +605,22 @@ export default function UC7Page() {
                    }}>
                 <div className="bg-white rounded-xl p-4 border border-green-200 shadow-sm">
                   <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Supply Chain Flow</h4>
+                    <h4 className="text-sm font-semibold text-gray-700">Compliance Check</h4>
                     <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
                       <MdGroups className="w-4 h-4 text-green-600" />
                     </div>
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
-                      <span className="text-sm text-gray-700">Synchronisation</span>
-                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Temps réel</span>
+                      <span className="text-sm text-gray-700">Vérification</span>
+                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Automatique</span>
                     </div>
                     <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Taux de service</span>
-                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">98%</span>
+                      <span className="text-sm text-gray-700">Couverture</span>
+                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">100%</span>
                     </div>
                     <div className="flex items-center justify-between py-2 px-3 bg-orange-50 rounded-lg border border-orange-200">
-                      <span className="text-sm text-gray-700">Alertes prédictives</span>
+                      <span className="text-sm text-gray-700">Reformulations IA</span>
                       <div className="w-4 h-4 bg-orange-500 rounded-full flex items-center justify-center">
                         <MdNotifications className="w-3 h-3 text-white" />
                       </div>
@@ -635,62 +634,60 @@ export default function UC7Page() {
                 <MdGroups className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Orchestration temps réel, <span className="text-green-600">flux synchronisés</span>
+                Preuve de couverture et <span className="text-green-600">justification instantanée</span>
               </h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Synchronisation automatique entre tous les maillons de la chaîne avec alertes prédictives et ajustements en temps réel.
+                Chaque contenu est relié à son exigence source pour une conformité démontrable.
               </p>
               <div className="space-y-3 mb-8">
                 <div className="flex items-start text-gray-600">
                   <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Coordination automatique fournisseurs-production-logistique</span>
+                  <span>Vérification automatique de la cohérence</span>
                 </div>
                 <div className="flex items-start text-gray-600">
                   <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Alertes prédictives sur les risques de rupture</span>
+                  <span>Reformulations proposées par l'IA</span>
                 </div>
                 <div className="flex items-start text-gray-600">
                   <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Réajustement automatique des plans en cas d'aléa</span>
-                </div>
-                <div className="flex items-start text-gray-600">
-                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Visibilité end-to-end sur toute la chaîne</span>
+                  <span>100% des exigences couvertes et tracées</span>
                 </div>
               </div>
+              <p className="text-lg text-green-600 font-medium">
+                Vous réduisez de 70% le temps de validation et éliminez les risques de rejet.
+              </p>
             </div>
           </div>
 
-          {/* Feature 3: Résilience et continuité - Text Left, Card Right */}
+          {/* Feature 3: Collaboration et réutilisation - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center">
             <div className="order-1">
               <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdSecurity className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Résilience proactive, <span className="text-orange-600">continuité garantie</span>
+                Collaboration et <span className="text-orange-600">réutilisation optimisées</span>
               </h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Identification proactive des risques et plans de contingence automatisés pour garantir la continuité opérationnelle.
+                Vos équipes produisent, valident et capitalisent ensemble pour accélérer les projets futurs.
               </p>
               <div className="space-y-3 mb-8">
                 <div className="flex items-start text-gray-600">
                   <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Cartographie automatique des vulnérabilités supply</span>
+                  <span>Contenus validés et centralisés</span>
                 </div>
                 <div className="flex items-start text-gray-600">
                   <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Plans de contingence activés automatiquement</span>
+                  <span>Réutilisation facilitée des modèles</span>
                 </div>
                 <div className="flex items-start text-gray-600">
                   <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Diversification intelligente des sources d'approvisionnement</span>
-                </div>
-                <div className="flex items-start text-gray-600">
-                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Simulation de scénarios de crise en temps réel</span>
+                  <span>Moins de relectures, plus de fiabilité</span>
                 </div>
               </div>
+              <p className="text-lg text-orange-600 font-medium">
+                Vous divisez par deux l'effort de vos équipes sur les prochains appels d'offres.
+              </p>
             </div>
             <div className="order-2">
               <Card className="p-10 bg-gradient-to-br from-orange-50 to-red-100 border border-orange-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
@@ -699,22 +696,22 @@ export default function UC7Page() {
                    }}>
                 <div className="bg-white rounded-xl p-4 border border-orange-200 shadow-sm">
                   <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Risk Management</h4>
+                    <h4 className="text-sm font-semibold text-gray-700">Team Collaboration</h4>
                     <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
                       <MdSecurity className="w-4 h-4 text-orange-600" />
                     </div>
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Continuité assurée</span>
-                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">✓ 99.9%</span>
+                      <span className="text-sm text-gray-700">Contenus centralisés</span>
+                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">✓ Validés</span>
                     </div>
                     <div className="flex items-center justify-between py-2 px-3 bg-orange-50 rounded-lg border border-orange-200">
-                      <span className="text-sm text-gray-700">Risques identifiés</span>
-                      <span className="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full">12 mitigés</span>
+                      <span className="text-sm text-gray-700">Réutilisation</span>
+                      <span className="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full">Facilitée</span>
                     </div>
                     <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
-                      <span className="text-sm text-gray-700">Sources diversifiées</span>
+                      <span className="text-sm text-gray-700">Effort équipes</span>
                       <div className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
                         <MdVerified className="w-3 h-3 text-white" />
                       </div>
