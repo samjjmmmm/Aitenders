@@ -242,13 +242,11 @@ export default function UC1Page() {
                 <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Accélérez Vos Offres</Badge>
                 
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                  Réponses rapides et convaincantes pour petits projets
+                  Analyse express. Contrôle total. Confiance immédiate.
                 </h1>
                 
                 <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]">
-                  Transformez votre approche des petits projets avec des offres générées intelligemment. 
-                  Répondez en 2 heures au lieu de 2 jours, tout en maintenant la qualité et la conformité. 
-                  Maximisez vos chances de succès avec des argumentaires personnalisés et des livrables structurés.
+                  Validez tous les critères en moins de 48h, rassurez votre hiérarchie et gagnez un temps précieux, grâce à une analyse complète, cohérente et prête à présenter.
                 </p>
               </div>
               
