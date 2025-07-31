@@ -370,19 +370,78 @@ export function UC5() {
         </div>
       </section>
 
-      {/* Pain Points Section */}
-      <section className="py-16 md:py-20 lg:py-24 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 md:mb-20 lg:mb-24">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
-              Quand la gestion des projets devient un frein plutôt qu'un levier
-            </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">
-              Pour les chefs de projet et contract managers, les projets de complexité moyenne exigent rigueur et réactivité. Pourtant, sans outil adapté, chaque engagement à suivre devient une source de stress. Les dérives contractuelles passent inaperçues, la conformité repose sur des contrôles manuels chronophages et la traçabilité se perd dans des fichiers éparpillés.
-            </p>
+      {/* Pain Points Section - Main Feature Card + Supporting Cards */}
+      <section className="py-16 md:py-20 lg:py-24 px-8 bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50/20 relative overflow-hidden">
+        {/* Subtle Abstract Background Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Large atmospheric blob - right side */}
+          <div className="absolute top-16 -right-40 w-[500px] h-[500px] rounded-full opacity-25 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #F0F8FF 0%, #B3D9FF 50%, #E6F3FF 80%, transparent 100%)'
+               }}></div>
+          
+          {/* Flowing accent - left side */}
+          <div className="absolute top-1/3 -left-24 w-72 h-72 rounded-full opacity-20 blur-2xl"
+               style={{
+                 background: 'linear-gradient(135deg, #E6F3FF 0%, #B3D9FF 60%, transparent 100%)'
+               }}></div>
+          
+          {/* Small directional accent */}
+          <div className="absolute bottom-20 right-1/4 w-48 h-48 rounded-full opacity-15 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #2563EB 0%, #B3D9FF 40%, transparent 80%)'
+               }}></div>
+          
+          {/* Mobile-optimized wave */}
+          <div className="absolute bottom-0 left-0 w-full h-24 opacity-10 blur-xl lg:opacity-15"
+               style={{
+                 background: 'linear-gradient(90deg, #F0F8FF 0%, transparent 30%, #FAFCFF 70%, #E6F3FF 100%)'
+               }}></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          
+          {/* Main Feature Card */}
+          <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20"
+               style={{
+                 boxShadow: '0 32px 64px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+               }}>
+            
+            {/* Multi-tone Faded Background Pattern */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-cyan-50/20 to-indigo-50/25 rounded-3xl"></div>
+            <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-blue-100/25 to-transparent rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-cyan-100/20 to-transparent rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+            
+            {/* Content Container */}
+            <div className="relative z-10 text-center">
+              
+              {/* Main Headline */}
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+                Du réactif au proactif, <span className="text-blue-600">sans friction</span>
+              </h2>
+              
+              {/* Body Copy */}
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
+                Pour les chefs de projet et contract managers, les projets de complexité moyenne exigent rigueur et réactivité. Pourtant, sans outil adapté, chaque engagement à suivre devient une source de stress.
+              </p>
+              
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
+                Les dérives contractuelles passent inaperçues, la conformité repose sur des contrôles manuels chronophages et la traçabilité se perd dans des fichiers éparpillés. Avec Aitenders, passez d'une gestion réactive à une approche proactive qui anticipe les problèmes avant qu'ils n'impactent vos projets.
+              </p>
+              
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+                <Button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
+                  Contactez nous!
+                </Button>
+                <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-12 py-6 text-xl font-semibold rounded-3xl transition-all duration-300">
+                  <MdPlayArrow className="w-6 h-6 mr-2" />
+                  Watch Quick Demo
+                </Button>
+              </div>
+            </div>
           </div>
-          
-          
         </div>
       </section>
 
@@ -619,113 +678,136 @@ export function UC5() {
         </div>
       </section>
 
-      {/* Target Audience Section */}
+      {/* User-Focused Results Section - Before Additional Features */}
       <section className="py-16 md:py-20 lg:py-24 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 md:mb-20 lg:mb-24">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
-              Un copilote IA qui répond aux besoins de chaque rôle projet
-            </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              Anticipez, décidez et prouvez vos engagements sans alourdir vos équipes.
-            </p>
-          </div>
-          
-          {/* Audience Selection Tabs */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12 md:mb-16">
-            {targetAudiences.map((audience) => (
-              <button
-                key={audience.id}
-                onClick={() => setActiveAudience(audience)}
-                className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
-                  activeAudience.id === audience.id
-                    ? 'bg-blue-600 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                }`}
-              >
-                {audience.title}
-              </button>
-            ))}
-          </div>
-          
-          {/* Active Audience Content */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-            <div>
-              <div className="flex items-center mb-6">
-                <div className={`w-16 h-16 ${activeAudience.iconBg} rounded-2xl flex items-center justify-center mr-6`}>
-                  <activeAudience.icon className={`w-8 h-8 ${activeAudience.iconColor}`} />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900">{activeAudience.title}</h3>
-                  <p className="text-gray-600">Optimisation dédiée à votre rôle</p>
-                </div>
-              </div>
-              
-              <p className="text-gray-700 text-base leading-relaxed mb-8">
-                {activeAudience.description}
-              </p>
+          <div className="mb-20 md:mb-24 lg:mb-28">
+            <div className="text-center mb-12 md:mb-16">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Résultats concrets pour chaque utilisateur</h3>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Des bénéfices mesurables pour tous les profils contractuels</p>
             </div>
             
-            <Card className="p-8 bg-gradient-to-br from-gray-50 to-blue-50/30 border border-blue-100">
-              <h4 className="text-lg font-bold text-gray-900 mb-6">Tableau de bord personnalisé</h4>
+            {/* Results Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
               
-              <div className="space-y-4 mb-6">
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">Engagements tracés</span>
-                  <div className="flex items-center">
-                    <div className="w-24 bg-gray-200 rounded-full h-2 mr-3">
-                      <div 
-                        className={`h-2 rounded-full bg-${activeAudience.dashboardData.requirements.color}-500`}
-                        style={{ width: `${activeAudience.dashboardData.requirements.progress}%` }}
-                      ></div>
+              {/* Chefs de projet */}
+              <div className="group">
+                <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/50 hover:border-blue-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4">
+                      <MdAccountBox className="w-6 h-6 text-white" />
                     </div>
-                    <span className="font-bold text-gray-900">{activeAudience.dashboardData.requirements.progress}%</span>
-                  </div>
-                </div>
-                
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">Coordination équipe</span>
-                  <div className="flex items-center">
-                    <div className="w-24 bg-gray-200 rounded-full h-2 mr-3">
-                      <div 
-                        className={`h-2 rounded-full bg-${activeAudience.dashboardData.coordination.color}-500`}
-                        style={{ width: `${activeAudience.dashboardData.coordination.progress}%` }}
-                      ></div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900">Pour les chefs de projet</h4>
+                      <p className="text-sm text-gray-600">Une gestion proactive et structurée</p>
                     </div>
-                    <span className="font-bold text-gray-900">{activeAudience.dashboardData.coordination.progress}%</span>
                   </div>
-                </div>
-                
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">Conformité projet</span>
-                  <div className="flex items-center">
-                    <div className="w-24 bg-gray-200 rounded-full h-2 mr-3">
-                      <div 
-                        className={`h-2 rounded-full bg-${activeAudience.dashboardData.compliance.color}-500`}
-                        style={{ width: `${activeAudience.dashboardData.compliance.progress}%` }}
-                      ></div>
+                  
+                  <p className="text-gray-700 text-base leading-relaxed mb-4">
+                    Avec Aitenders, anticipez les problèmes avant qu'ils n'impactent vos délais et budgets.
+                  </p>
+                  
+                  <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Vision claire des engagements et échéances dès le démarrage</span>
                     </div>
-                    <span className="font-bold text-gray-900">{activeAudience.dashboardData.compliance.progress}%</span>
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Alertes proactives sur les risques contractuels</span>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Temps de cadrage réduit par trois</span>
+                    </div>
                   </div>
-                </div>
+                  
+                  <div className="mt-6 p-4 bg-white/70 rounded-lg border border-blue-200/30">
+                    <p className="text-sm text-gray-700 font-medium">Impact : pilotage serein et anticipation des dérives projet.</p>
+                  </div>
+                </Card>
               </div>
-              
-              {/* Sample Notifications */}
-              <div className="space-y-3">
-                <div className="flex items-center p-3 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
-                  <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
-                  <span className="text-sm font-medium text-gray-800">{activeAudience.notification}</span>
-                </div>
-                <div className="flex items-center p-3 bg-blue-50 rounded-lg border-l-4 border-blue-400">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full mr-3"></div>
-                  <span className="text-sm font-medium text-gray-800">{activeAudience.alert}</span>
-                </div>
+
+              {/* Contract managers */}
+              <div className="group">
+                <Card className="h-full p-8 bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200/50 hover:border-orange-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mr-4">
+                      <MdBusiness className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900">Pour les contract managers</h4>
+                      <p className="text-sm text-gray-600">Suivi exhaustif des obligations contractuelles</p>
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-700 text-base leading-relaxed mb-4">
+                    Aitenders centralise et structure tous vos engagements pour un suivi sans faille.
+                  </p>
+                  
+                  <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Traçabilité complète de toutes les décisions</span>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Alertes automatiques sur les échéances critiques</span>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Réduction des litiges grâce à la documentation exhaustive</span>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 p-4 bg-white/70 rounded-lg border border-orange-200/30">
+                    <p className="text-sm text-gray-700 font-medium">Impact : conformité renforcée et diminution des risques contractuels.</p>
+                  </div>
+                </Card>
               </div>
-            </Card>
+
+              {/* Équipes opérationnelles */}
+              <div className="group">
+                <Card className="h-full p-8 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50 hover:border-green-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-4">
+                      <MdGroups className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900">Pour les équipes opérationnelles</h4>
+                      <p className="text-sm text-gray-600">Actions coordonnées et contextualisées</p>
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-700 text-base leading-relaxed mb-4">
+                    En donnant aux équipes terrain l'accès aux informations contractuelles pertinentes pour leurs actions.
+                  </p>
+                  
+                  <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Accès rapide aux exigences et procédures spécifiques</span>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Notifications ciblées selon les rôles et responsabilités</span>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      <span>Communication fluide entre équipes projet et support</span>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 p-4 bg-white/70 rounded-lg border border-green-200/30">
+                    <p className="text-sm text-gray-700 font-medium">Impact : amélioration de la coordination et réduction des erreurs opérationnelles.</p>
+                  </div>
+                </Card>
+              </div>
+            </div>
           </div>
           
           {/* KPI Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-16 md:mt-20 lg:mt-24">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
             {/* KPI 1 */}
             <div className="group">
@@ -754,16 +836,6 @@ export function UC5() {
                   Moins
                 </div>
                 <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">De litiges ou d'écarts contractuels</p>
-              </div>
-            </div>
-
-            {/* KPI 4 */}
-            <div className="group">
-              <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-6 md:p-8 text-center border border-orange-100 hover:border-orange-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
-                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-orange-600 to-red-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300 leading-tight">
-                  Meilleure
-                </div>
-                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Communication inter-équipe</p>
               </div>
             </div>
           </div>
