@@ -792,6 +792,40 @@ export default function UC4Page() {
               </div>
             </div>
           </div>
+          
+          {/* KPI Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            {/* KPI 1 */}
+            <div className="group">
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-6 md:p-8 text-center border border-green-100 hover:border-green-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
+                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-green-600 to-emerald-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
+                  95 %
+                </div>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Réduction du temps de recherche d'informations contractuelles</p>
+              </div>
+            </div>
+
+            {/* KPI 2 */}
+            <div className="group">
+              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-6 md:p-8 text-center border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
+                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
+                  Instantané
+                </div>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Accès immédiat aux clauses critiques avec source précise</p>
+              </div>
+            </div>
+
+            {/* KPI 3 */}
+            <div className="group">
+              <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-3xl p-6 md:p-8 text-center border border-purple-100 hover:border-purple-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
+                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-purple-600 to-violet-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300 leading-tight">
+                  0 erreur
+                </div>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Aucune clause critique manquée grâce à l'IA contractuelle</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -997,23 +1031,7 @@ export default function UC4Page() {
         </div>
       </section>
 
-      {/* KPI Section - High Impact Design */}
-      <section className="py-16 md:py-20 lg:py-24 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
 
-          {/* KPI Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-            {kpis.map((kpi, index) => (
-              <div key={index} className="text-center group">
-                <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl flex items-center justify-center mx-auto mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">{kpi.metric}</span>
-                </div>
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">{kpi.description}</h3>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Contact Section */}
       <ContactSection />
