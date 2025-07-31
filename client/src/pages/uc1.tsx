@@ -545,30 +545,39 @@ export default function UC1Page() {
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-blue-600">générateur IA</span> d'offres gagnantes en 2 heures</h1>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Ne perdez plus de jours précieux <span className="text-blue-600">à tout relire</span></h1>
+            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
+              Aitenders transforme vos documents en une base claire et exploitable dès le premier jour, pour décider plus vite et valider sans stress.
+            </p>
           </div>
 
-          {/* Feature 1: Fast Bid Generation - Text Left, Card Right */}
+          {/* Feature 1: Structuration IA immédiate - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-1">
               <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdFlashOn className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Génération express d'offres, <span className="text-blue-600">sans compromis sur la qualité</span></h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Structuration IA immédiate</h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                En 2 heures maximum, obtenez une proposition complète et structurée. L'IA analyse le cahier des charges, 
-                génère les réponses techniques adaptées et assemble une offre convaincante prête à envoyer.
+                Vos documents sont analysés automatiquement pour fournir une base exploitable dès leur dépôt.
               </p>
               <div className="space-y-3 mb-8">
                 <div className="flex items-start text-gray-600">
                   <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>90% du contenu généré automatiquement à partir des exigences</span>
+                  <span>Clauses et exigences extraites et classées par priorité</span>
                 </div>
                 <div className="flex items-start text-gray-600">
                   <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Templates éprouvés adaptés à votre secteur d'activité</span>
+                  <span>Détection instantanée des incohérences ou doublons</span>
+                </div>
+                <div className="flex items-start text-gray-600">
+                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
+                  <span>Vision stratégique claire en quelques minutes</span>
                 </div>
               </div>
+              <p className="text-lg font-semibold text-blue-600">
+                Vous réduisez de 50 % le temps nécessaire au cadrage initial.
+              </p>
             </div>
             <div className="order-2">
               <Card className="p-10 bg-gradient-to-br from-blue-50 to-indigo-100 border border-blue-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
@@ -603,7 +612,7 @@ export default function UC1Page() {
             </div>
           </div>
 
-          {/* Feature 2: Smart Templates - Text Right, Card Left */}
+          {/* Feature 2: Synthèse visuelle claire - Text Right, Card Left */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-2 lg:order-1">
               <Card className="p-10 bg-gradient-to-br from-orange-50 to-red-100 border border-orange-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
@@ -612,22 +621,22 @@ export default function UC1Page() {
                    }}>
                 <div className="bg-white rounded-xl p-4 border border-orange-200 shadow-sm">
                   <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Smart Templates</h4>
+                    <h4 className="text-sm font-semibold text-gray-700">Synthèse Visuelle</h4>
                     <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
                       <MdGroups className="w-4 h-4 text-orange-600" />
                     </div>
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Maintenance template</span>
-                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Active</span>
+                      <span className="text-sm text-gray-700">Tableaux de critères</span>
+                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Prêts</span>
                     </div>
                     <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
-                      <span className="text-sm text-gray-700">Construction template</span>
-                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Ready</span>
+                      <span className="text-sm text-gray-700">Liens vers sources</span>
+                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Directs</span>
                     </div>
                     <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
-                      <span className="text-sm text-gray-700">Custom adaptations</span>
+                      <span className="text-sm text-gray-700">Points de vigilance</span>
                       <div className="w-4 h-4 bg-purple-500 rounded-full flex items-center justify-center">
                         <MdSettings className="w-3 h-3 text-white" />
                       </div>
@@ -640,45 +649,57 @@ export default function UC1Page() {
               <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdGroups className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Bibliothèque d'argumentaires, <span className="text-orange-600">adaptés à votre métier</span></h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Synthèse visuelle claire et <span className="text-orange-600">actionnable</span></h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Capitalisez sur vos succès passés avec une bibliothèque d'argumentaires éprouvés. 
-                Chaque proposition s'enrichit automatiquement des meilleures pratiques de votre secteur.
+                Une vue consolidée présente vos critères critiques avec des preuves directement accessibles.
               </p>
               <div className="space-y-3 mb-8">
                 <div className="flex items-start text-gray-600">
                   <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Templates sectoriels pré-validés et personnalisables</span>
+                  <span>Tableaux de critères prêts à l'emploi</span>
                 </div>
                 <div className="flex items-start text-gray-600">
                   <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Capitalisation automatique sur vos offres gagnantes</span>
+                  <span>Liens directs vers les passages contractuels sources</span>
+                </div>
+                <div className="flex items-start text-gray-600">
+                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
+                  <span>Mise en évidence automatique des points de vigilance</span>
                 </div>
               </div>
+              <p className="text-lg font-semibold text-orange-600">
+                Vous divisez par trois le temps d'analyse et gagnez en précision.
+              </p>
             </div>
           </div>
 
-          {/* Feature 3: Quality Assurance - Text Left, Card Right */}
+          {/* Feature 3: Validation guidée - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-1">
               <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdSecurity className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Contrôle qualité automatique, <span className="text-green-600">zéro oubli critique</span></h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Validation guidée et <span className="text-green-600">tracée</span></h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Chaque offre générée passe par une validation automatique des exigences. 
-                L'IA vérifie la cohérence, la complétude et la conformité avant livraison.
+                Chaque exigence suit un processus de validation structuré et documenté.
               </p>
               <div className="space-y-3 mb-8">
                 <div className="flex items-start text-gray-600">
                   <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Validation automatique de tous les points du cahier des charges</span>
+                  <span>Acceptation, ajustement ou rejet avec justification associée</span>
                 </div>
                 <div className="flex items-start text-gray-600">
                   <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Contrôle de cohérence technique et commerciale</span>
+                  <span>Historique complet des validations et décisions</span>
+                </div>
+                <div className="flex items-start text-gray-600">
+                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
+                  <span>Dossier de conformité prêt pour hiérarchie ou audit</span>
                 </div>
               </div>
+              <p className="text-lg font-semibold text-green-600">
+                Vous validez sereinement tous vos critères en moins de 48 heures.
+              </p>
             </div>
             <div className="order-2">
               <Card className="p-10 bg-gradient-to-br from-green-50 to-emerald-100 border border-green-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
@@ -687,22 +708,22 @@ export default function UC1Page() {
                    }}>
                 <div className="bg-white rounded-xl p-4 border border-green-200 shadow-sm">
                   <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Quality Control</h4>
+                    <h4 className="text-sm font-semibold text-gray-700">Validation Guidée</h4>
                     <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
                       <MdSecurity className="w-4 h-4 text-green-600" />
                     </div>
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Requirements coverage</span>
-                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">100%</span>
+                      <span className="text-sm text-gray-700">Processus structuré</span>
+                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Actif</span>
                     </div>
                     <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Technical coherence</span>
-                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Validated</span>
+                      <span className="text-sm text-gray-700">Traçabilité complète</span>
+                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Documenté</span>
                     </div>
                     <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Commercial alignment</span>
+                      <span className="text-sm text-gray-700">Dossier conformité</span>
                       <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
                         <MdVerified className="w-3 h-3 text-white" />
                       </div>
