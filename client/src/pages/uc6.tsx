@@ -240,11 +240,10 @@ export default function UC6Page() {
                 <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-purple-50 to-purple-100/80 text-purple-800 border-purple-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Transformation Organisationnelle</Badge>
                 
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                  Accélérez votre transformation, <span className="text-purple-600">mesurez l'impact</span>
+                  De l’exigence à la livraison, chaque engagement tenu, <span className="text-purple-600">Zéro écart, zéro surprise.</span>
                 </h1>
                 
-                <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]"> <span className="text-purple-300">La plateforme intelligente pour orchestrer le changement organisationnel :</span> analyse IA des processus, pilotage collaboratif de la transformation et mesure d'impact en temps réel. 
-                Vous accélérez l'adoption, fédérez les équipes et démontrez la valeur business de chaque initiative de changement.</p>
+                <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]"> Chaque exigence est reliée à ses livrables et suivie en temps réel.Vous réduisez les risques opérationnels et financiers tout en garantissant conformité, traçabilité et collaboration fluide entre équipes.</p>
               </div>
               
               
@@ -255,7 +254,7 @@ export default function UC6Page() {
                   size="lg" 
                   className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto"
                 >
-                  Découvrez UC6
+                 Réservez une Démo
                 </Button>
               </div>
               
@@ -265,7 +264,7 @@ export default function UC6Page() {
                   variant="ghost" 
                   className="text-purple-600 hover:text-purple-700 hover:bg-purple-50/80 px-6 py-4 text-xl font-medium underline decoration-2 underline-offset-4 rounded-2xl transition-all duration-300"
                 >
-                  Téléchargez le guide de transformation →
+                  Téléchargez le cas d'usage
                 </Button>
               </div>
               
@@ -445,16 +444,16 @@ export default function UC6Page() {
               
               {/* Main Headline */}
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Transformation bloquée, <span className="text-purple-600">résultats invisibles</span>
+                Fini les oublis, <span className="text-purple-600">rplace à la conformité totale</span>
               </h2>
               
               {/* Body Copy */}
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Les initiatives de transformation organisationnelle s'enlisent souvent dans la résistance au changement et l'absence de vision globale.
+                Sur vos projets complexes, la gestion manuelle des exigences vire rapidement au casse‑tête. Entre fichiers Excel, emails dispersés et validations en workshops, vos équipes perdent du temps, multiplient les risques d’oubli et s’exposent à des non‑conformités coûteuses.
               </p>
               
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Les silos départementaux freinent l'innovation collaborative, l'adoption des nouvelles méthodes reste faible faute d'accompagnement structuré, et l'impact réel des investissements de transformation reste impossible à mesurer. Avec Aitenders UC6, orchestrez intelligemment le changement et démontrez la valeur business de chaque initiative.
+                Avec Aitenders, vous reprenez le contrôle : les exigences sont reliées à leurs livrables et suivies en temps réel, pour réduire les risques, garantir la conformité et fluidifier la collaboration.
               </p>
               
               {/* CTA Buttons */}
@@ -504,10 +503,10 @@ export default function UC6Page() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-              Une <span className="text-purple-600">intelligence collective</span> pour transformer l'organisation
+              Transformez la gestion des exigences en un levier de performance
             </h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">
-              Aitenders UC6 fédère les équipes autour d'objectifs communs, mesure l'impact en temps réel et accélère l'adoption du changement grâce à l'intelligence artificielle.
+              Chaque exigence est reliée à son livrable et suivie en temps réel. Vous réduisez les risques opérationnels et financiers tout en garantissant conformité et collaboration fluide.
             </p>
           </div>
 
@@ -518,28 +517,25 @@ export default function UC6Page() {
                 <MdFlashOn className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Analyse intelligente des processus, <span className="text-purple-600">transformation sur mesure</span>
+                Démarrez l’exécution avec une vision complète dès le premier jour
               </h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                L'IA cartographie automatiquement vos processus existants et identifie les opportunités de transformation prioritaires.
+                Dès l’import des documents contractuels, Aitenders extrait et classe automatiquement toutes les exigences, explicites comme implicites.
               </p>
               <div className="space-y-3 mb-8">
                 <div className="flex items-start text-gray-600">
                   <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Cartographie automatique des flux organisationnels</span>
+                  <span>Contradictions détectées dès le départ</span>
                 </div>
                 <div className="flex items-start text-gray-600">
                   <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Identification des goulots d'étranglement critiques</span>
+                  <span>Clauses reliées aux documents sources</span>
                 </div>
                 <div className="flex items-start text-gray-600">
                   <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Recommandations personnalisées de transformation</span>
+                  <span>Base contractuelle exhaustive et exploitable en un clic</span>
                 </div>
-                <div className="flex items-start text-gray-600">
-                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Priorisation basée sur l'impact business</span>
-                </div>
+                
               </div>
             </div>
             <div className="order-2">
@@ -613,28 +609,25 @@ export default function UC6Page() {
                 <MdGroups className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Collaboration fédérée, <span className="text-green-600">adoption mesurée</span>
+                Faites de votre pilotage collectif un levier de performance continue
               </h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Créez une culture collaborative avec des outils de suivi partagés qui fédèrent les équipes autour d'objectifs communs et mesurent l'engagement en temps réel.
+                Chaque discipline dispose de sa matrice d’exigences dédiée, mise à jour en temps réel.
               </p>
               <div className="space-y-3 mb-8">
                 <div className="flex items-start text-gray-600">
                   <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Espaces collaboratifs par initiative de transformation</span>
+                  <span>Arbitrages et validations centralisés, sans Excel dispersés</span>
                 </div>
                 <div className="flex items-start text-gray-600">
                   <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Métriques d'engagement et d'adoption en temps réel</span>
+                  <span>Impacts coûts, délais et ressources calculés instantanément</span>
                 </div>
                 <div className="flex items-start text-gray-600">
                   <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Parcours de formation personnalisés et adaptatifs</span>
+                  <span>Modifications intégrées avec alertes ciblées aux bons acteurs</span>
                 </div>
-                <div className="flex items-start text-gray-600">
-                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Feedback continu et ajustement des stratégies</span>
-                </div>
+                
               </div>
             </div>
           </div>
@@ -646,28 +639,26 @@ export default function UC6Page() {
                 <MdSecurity className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Pilotage stratégique, <span className="text-blue-600">impact démontré</span>
+                Maîtrisez la couverture de vos exigences jusqu’à la dernière ligne
               </h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Tableaux de bord exécutifs qui connectent transformation et performance business, avec mesure d'impact en temps réel et ajustement des stratégies selon les résultats.
+                Toutes les exigences sont reliées aux livrables correspondants et suivies en continu.
               </p>
               <div className="space-y-3 mb-8">
                 <div className="flex items-start text-gray-600">
                   <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>KPIs stratégiques connectés à la performance business</span>
+                  <span>Couverture 100 % prouvée, sans risque d’oubli</span>
                 </div>
                 <div className="flex items-start text-gray-600">
                   <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Alertes prédictives sur les risques de dérive</span>
+                  <span>Détection proactive des non‑conformités et écarts
+</span>
                 </div>
                 <div className="flex items-start text-gray-600">
                   <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Rapports exécutifs automatisés avec recommandations</span>
+                  <span>Historique complet prêt pour audit ou comité client</span>
                 </div>
-                <div className="flex items-start text-gray-600">
-                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>ROI des initiatives de transformation calculé en continu</span>
-                </div>
+                
               </div>
             </div>
             <div className="order-2">
