@@ -386,92 +386,235 @@ export function UC5() {
         </div>
       </section>
 
-      {/* Solution Section */}
-      <section className="py-16 md:py-20 lg:py-24 px-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 md:mb-20 lg:mb-24">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
-              Un copilote IA pour sécuriser vos projets moyens
-            </h2>
+      {/* Solution Section - Alternating Layout Design */}
+      <section className="py-32 px-8 bg-gradient-to-br from-white via-slate-50/20 to-white relative overflow-hidden">
+        {/* Subtle Abstract Background Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Large flowing accent - top center */}
+          <div className="absolute -top-20 left-1/3 w-96 h-96 rounded-full opacity-20 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #FAFCFF 0%, #F0F8FF 30%, #B3D9FF 70%, transparent 100%)'
+               }}></div>
+          
+          {/* Medium directional blob - middle left */}
+          <div className="absolute top-1/2 -left-32 w-80 h-80 rounded-full opacity-15 blur-2xl"
+               style={{
+                 background: 'linear-gradient(45deg, #E6F3FF 0%, #B3D9FF 50%, #2563EB 90%, transparent 100%)'
+               }}></div>
+          
+          {/* Atmospheric accent - bottom right */}
+          <div className="absolute -bottom-24 -right-32 w-[400px] h-[400px] rounded-full opacity-25 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #F0F8FF 0%, #E6F3FF 40%, transparent 100%)'
+               }}></div>
+          
+          {/* Subtle flowing wave - center */}
+          <div className="absolute top-1/2 left-0 w-full h-40 opacity-10 blur-xl lg:opacity-15"
+               style={{
+                 background: 'linear-gradient(90deg, transparent 0%, #B3D9FF 25%, #F0F8FF 50%, #E6F3FF 75%, transparent 100%)'
+               }}></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-12 md:mb-16 lg:mb-20">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+              Un <span className="text-blue-600">copilote IA</span> pour sécuriser vos projets moyens
+            </h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">
               Aitenders structure vos contrats, trace chaque engagement et vous alerte avant qu'un risque ne devienne un litige, pour réduire par trois le temps de cadrage et renforcer la sérénité de vos équipes.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-            {solutions.map((solution, index) => (
-              <Card key={index} className="p-8 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 bg-white border border-blue-100">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <solution.icon className="w-8 h-8 text-white" />
+
+          {/* Feature 1: Organisation intelligente des documents - Text Left, Card Right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
+            <div className="order-1">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
+                <MdFlashOn className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+                Organisation intelligente des documents et critères, <span className="text-blue-600">dès le premier jour</span>
+              </h3>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
+                Dès la création du projet, Aitenders analyse vos contrats, plannings et annexes pour construire une base claire et exploitable.
+              </p>
+              <div className="space-y-3 mb-8">
+                <div className="flex items-start text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Extraction automatique des clauses et échéances</span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{solution.title}</h3>
-                <p className="text-gray-600 leading-relaxed mb-6">{solution.description}</p>
-                
-                {/* Detailed benefits for each solution */}
-                {index === 0 && (
-                  <div className="text-left space-y-2 text-sm text-gray-600">
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Extraction automatique des clauses et échéances</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Classement intelligent par thèmes et priorités</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Critères de suivi configurés dès le départ</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Temps de cadrage réduit par trois</span>
-                    </div>
-                  </div>
-                )}
-                
-                {index === 1 && (
-                  <div className="text-left space-y-2 text-sm text-gray-600">
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Historique complet des décisions</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Responsabilités attribuées aux bons acteurs</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Tableaux de bord partagés en temps réel</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Litiges évités grâce à la traçabilité</span>
+                <div className="flex items-start text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Classement intelligent par thèmes et priorités</span>
+                </div>
+                <div className="flex items-start text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Critères de suivi configurés dès le départ</span>
+                </div>
+                <div className="flex items-start text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Temps de cadrage réduit par trois</span>
+                </div>
+              </div>
+            </div>
+            <div className="order-2">
+              <Card className="p-10 bg-gradient-to-br from-blue-50 to-indigo-100 border border-blue-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
+                   style={{
+                     boxShadow: '0 25px 50px -12px rgba(59, 130, 246, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+                   }}>
+                <div className="bg-white rounded-xl p-4 border border-blue-200 shadow-sm">
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className="text-sm font-semibold text-gray-700">Document Analysis</h4>
+                    <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                      <MdDescription className="w-4 h-4 text-blue-600" />
                     </div>
                   </div>
-                )}
-                
-                {index === 2 && (
-                  <div className="text-left space-y-2 text-sm text-gray-600">
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Recherche par clause, thème ou exigence</span>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
+                      <span className="text-sm text-gray-700">Contrats analysés</span>
+                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">✓ Complet</span>
                     </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Analyse d'impact instantanée sur coûts et délais</span>
+                    <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
+                      <span className="text-sm text-gray-700">Échéances extraites</span>
+                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">12 trouvées</span>
                     </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Alertes ciblées aux équipes concernées</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Décisions basées sur preuves documentées</span>
+                    <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
+                      <span className="text-sm text-gray-700">Critères configurés</span>
+                      <div className="w-4 h-4 bg-purple-500 rounded-full flex items-center justify-center">
+                        <MdSettings className="w-3 h-3 text-white" />
+                      </div>
                     </div>
                   </div>
-                )}
+                </div>
               </Card>
-            ))}
+            </div>
+          </div>
+
+          {/* Feature 2: Suivi fluide des actions - Text Right, Card Left */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
+            <div className="order-2 lg:order-1">
+              <Card className="p-10 bg-gradient-to-br from-orange-50 to-red-100 border border-orange-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
+                   style={{
+                     boxShadow: '0 25px 50px -12px rgba(251, 146, 60, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+                   }}>
+                <div className="bg-white rounded-xl p-4 border border-orange-200 shadow-sm">
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className="text-sm font-semibold text-gray-700">Action Tracking</h4>
+                    <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
+                      <MdGroups className="w-4 h-4 text-orange-600" />
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
+                      <span className="text-sm text-gray-700">Décisions tracées</span>
+                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">100%</span>
+                    </div>
+                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
+                      <span className="text-sm text-gray-700">Responsabilités attribuées</span>
+                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Actives</span>
+                    </div>
+                    <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
+                      <span className="text-sm text-gray-700">Tableaux de bord</span>
+                      <div className="w-4 h-4 bg-purple-500 rounded-full flex items-center justify-center">
+                        <MdAnalytics className="w-3 h-3 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
+            <div className="order-1 lg:order-2">
+              <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
+                <MdGroups className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+                Suivi fluide des actions et des engagements, <span className="text-orange-600">sans zones d'ombre</span>
+              </h3>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
+                Chaque engagement contractuel est transformé en tâche concrète avec responsables et échéances, assurant un pilotage sans zones d'ombre.
+              </p>
+              <div className="space-y-3 mb-8">
+                <div className="flex items-start text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Historique complet des décisions</span>
+                </div>
+                <div className="flex items-start text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Responsabilités attribuées aux bons acteurs</span>
+                </div>
+                <div className="flex items-start text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Tableaux de bord partagés en temps réel</span>
+                </div>
+                <div className="flex items-start text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Litiges évités grâce à la traçabilité</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Feature 3: Analyses intelligentes et alertes - Text Left, Card Right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
+            <div className="order-1">
+              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
+                <MdSecurity className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+                Analyses intelligentes et alertes proactives, <span className="text-green-600">avant les problèmes</span>
+              </h3>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
+                Aitenders ne se contente pas d'archiver vos données. L'IA surveille en continu vos projets pour prévenir les risques avant qu'ils ne génèrent des coûts ou des retards.
+              </p>
+              <div className="space-y-3 mb-8">
+                <div className="flex items-start text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Recherche par clause, thème ou exigence</span>
+                </div>
+                <div className="flex items-start text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Analyse d'impact instantanée sur coûts et délais</span>
+                </div>
+                <div className="flex items-start text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Alertes ciblées aux équipes concernées</span>
+                </div>
+                <div className="flex items-start text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Décisions basées sur preuves documentées</span>
+                </div>
+              </div>
+            </div>
+            <div className="order-2">
+              <Card className="p-10 bg-gradient-to-br from-green-50 to-emerald-100 border border-green-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
+                   style={{
+                     boxShadow: '0 25px 50px -12px rgba(34, 197, 94, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+                   }}>
+                <div className="bg-white rounded-xl p-4 border border-green-200 shadow-sm">
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className="text-sm font-semibold text-gray-700">Smart Alerts</h4>
+                    <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                      <MdSecurity className="w-4 h-4 text-green-600" />
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between py-2 px-3 bg-yellow-50 rounded-lg border border-yellow-200">
+                      <span className="text-sm text-gray-700">Échéance proche</span>
+                      <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full">3 jours</span>
+                    </div>
+                    <div className="flex items-center justify-between py-2 px-3 bg-red-50 rounded-lg border border-red-200">
+                      <span className="text-sm text-gray-700">Risque de dérive</span>
+                      <span className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full">Critique</span>
+                    </div>
+                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
+                      <span className="text-sm text-gray-700">Analyse terminée</span>
+                      <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
+                        <MdAnalytics className="w-3 h-3 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
