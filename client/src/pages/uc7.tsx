@@ -728,44 +728,125 @@ export default function UC7Page() {
       <section className="py-16 md:py-20 lg:py-24 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
-            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Résultats concrets pour chaque utilisateur</h3>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Des bénéfices mesurables pour tous les acteurs de la supply chain</p>
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Ce que nos utilisateurs obtiennent concrètement</h3>
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Des résultats mesurables pour chaque rôle clé impliqué dans vos réponses aux appels d'offres.</p>
           </div>
           
           {/* Results Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
-            {userResults.map((result, index) => (
-              <div key={index} className="group">
-                <Card className={`h-full p-8 bg-gradient-to-br ${result.bgColor} border ${result.borderColor} hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1`}>
-                  <div className="flex items-center mb-6">
-                    <div className={`w-12 h-12 bg-gradient-to-br ${result.iconBg} rounded-2xl flex items-center justify-center mr-4`}>
-                      <MdAccountBox className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-gray-900">{result.title}</h4>
-                      <p className="text-sm text-gray-600">Optimisation intelligente</p>
-                    </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+            {/* Rédacteurs & Chefs de projet offre */}
+            <div className="group">
+              <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4">
+                    <MdEdit className="w-6 h-6 text-white" />
                   </div>
-                  
-                  <p className="text-gray-700 text-base leading-relaxed mb-4">
-                    {result.description}
-                  </p>
-                  
-                  <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
-                    {result.benefits.map((benefit, benefitIndex) => (
-                      <div key={benefitIndex} className="flex items-start">
-                        <div className={`w-1.5 h-1.5 ${result.bulletColor} rounded-full mr-3 mt-2 flex-shrink-0`}></div>
-                        <span>{benefit}</span>
-                      </div>
-                    ))}
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900">Rédacteurs & Chefs de projet offre</h4>
+                    <p className="text-sm text-gray-600">Génération de contenu</p>
                   </div>
-                  
-                  <div className="mt-6 p-4 bg-white/70 rounded-lg border border-gray-200/30">
-                    <p className="text-sm text-gray-700 font-medium">{result.impact}</p>
+                </div>
+                
+                <p className="text-gray-700 text-base leading-relaxed mb-4">
+                  Produisez des réponses structurées, conformes et prêtes à convaincre dès le premier jour.
+                </p>
+                
+                <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
+                  <div className="flex items-start">
+                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>90% du contenu généré automatiquement à partir du cahier des charges</span>
                   </div>
-                </Card>
-              </div>
-            ))}
+                  <div className="flex items-start">
+                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>Argumentaires préconstruits alignés sur les attentes de l'acheteur</span>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>Gain de temps majeur pour affiner la valeur ajoutée de l'offre</span>
+                  </div>
+                </div>
+                
+                <div className="mt-6 p-4 bg-white/70 rounded-lg border border-gray-200/30">
+                  <p className="text-sm text-gray-700 font-medium">Vous livrez une proposition complète et différenciante en quelques heures, pas en plusieurs jours.</p>
+                </div>
+              </Card>
+            </div>
+
+            {/* Contract Managers & Responsables conformité */}
+            <div className="group">
+              <Card className="h-full p-8 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-4">
+                    <MdVerified className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900">Contract Managers & Responsables conformité</h4>
+                    <p className="text-sm text-gray-600">Conformité sécurisée</p>
+                  </div>
+                </div>
+                
+                <p className="text-gray-700 text-base leading-relaxed mb-4">
+                  Sécurisez la couverture de chaque exigence et réduisez vos risques de non-conformité.
+                </p>
+                
+                <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
+                  <div className="flex items-start">
+                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>Chaque paragraphe relié à son exigence source</span>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>Vérification instantanée de la cohérence et de la traçabilité</span>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>Justification documentée prête pour audits et négociations</span>
+                  </div>
+                </div>
+                
+                <div className="mt-6 p-4 bg-white/70 rounded-lg border border-gray-200/30">
+                  <p className="text-sm text-gray-700 font-medium">Vous éliminez jusqu'à 90% des risques de rejet liés à la conformité.</p>
+                </div>
+              </Card>
+            </div>
+
+            {/* Directeurs techniques & PMO */}
+            <div className="group">
+              <Card className="h-full p-8 bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4">
+                    <MdDashboard className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900">Directeurs techniques & PMO</h4>
+                    <p className="text-sm text-gray-600">Visibilité et pilotage</p>
+                  </div>
+                </div>
+                
+                <p className="text-gray-700 text-base leading-relaxed mb-4">
+                  Gagnez en visibilité et assurez la cohérence globale de la réponse.
+                </p>
+                
+                <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
+                  <div className="flex items-start">
+                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>Tableau de bord en temps réel de la couverture des livrables</span>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>Processus de validation simplifié et collaboratif</span>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>Historique centralisé disponible pour audits et comités</span>
+                  </div>
+                </div>
+                
+                <div className="mt-6 p-4 bg-white/70 rounded-lg border border-gray-200/30">
+                  <p className="text-sm text-gray-700 font-medium">Vous réduisez vos cycles de validation de moitié et garantissez un suivi transparent pour la direction.</p>
+                </div>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
