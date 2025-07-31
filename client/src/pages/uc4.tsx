@@ -1060,6 +1060,38 @@ export default function UC4Page() {
         </div>
       </section>
 
+      {/* CTA Section */}
+      <section className="py-16 md:py-20 lg:py-24 px-4 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900">
+        <div className="max-w-4xl mx-auto text-center">
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
+            Prêt à Maîtriser Votre Prochaine Offre Complexe ?
+          </h3>
+          <p className="text-lg md:text-xl text-blue-100 mb-12 leading-relaxed max-w-3xl mx-auto">
+            Rejoignez les équipes de projet qui font confiance à Aitenders pour sécuriser leurs offres complexes, éliminer les risques de non-conformité, et gagner en toute confiance.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button 
+              size="lg" 
+              className="bg-white text-blue-900 hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+            >
+              📅 Programmer une Démo
+            </Button>
+            <Button 
+              variant="outline"
+              size="lg" 
+              className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 transform hover:-translate-y-1"
+            >
+              Contacter Notre Équipe
+            </Button>
+          </div>
+          
+          <div className="mt-8 text-sm text-blue-200">
+            Sécurité de niveau entreprise • Collaboration multi-experts • Prise en main complète
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <ContactSection />
 
