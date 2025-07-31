@@ -545,38 +545,38 @@ export default function UC2Page() {
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-blue-600">orchestrateur intelligent</span> pour projets moyens</h1>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-blue-600">copilote IA</span> pour sécuriser vos réponses dès le premier jour</h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
-              Aitenders équilibre parfaitement structure et flexibilité pour vous permettre de livrer des projets moyens avec l'efficacité des petits et la rigueur des grands.
+              Aitenders transforme vos dossiers complexes en réponses structurées et conformes, pour livrer en toute sérénité.
             </p>
           </div>
 
-          {/* Feature 1: Coordination Intelligente - Text Left, Card Right */}
+          {/* Feature 1: Structuration automatique - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-1">
               <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdFlashOn className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Coordination intelligente des équipes multiples</h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Structuration automatique du périmètre</h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Orchestrez automatiquement les interactions entre équipes techniques, commerciales et opérationnelles pour une synergie maximale.
+                Dès le chargement du dossier, Aitenders organise vos documents et extrait toutes les clauses critiques.
               </p>
               <div className="space-y-3 mb-8">
                 <div className="flex items-start text-gray-600">
-                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Planification automatisée des ressources et des dépendances</span>
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Identification immédiate des obligations, échéances et pénalités</span>
                 </div>
                 <div className="flex items-start text-gray-600">
-                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Communication fluide entre tous les acteurs du projet</span>
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Classement par priorité et par thématique</span>
                 </div>
                 <div className="flex items-start text-gray-600">
-                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Résolution proactive des conflits de ressources</span>
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Vision claire de la charge et des risques dès le départ</span>
                 </div>
               </div>
               <p className="text-lg font-semibold text-blue-600">
-                Vous réduisez de 70% le temps consacré à la coordination projet.
+                Vous réduisez de 50 % le temps de cadrage et éliminez les oublis critiques.
               </p>
             </div>
             <div className="order-2">
@@ -586,22 +586,22 @@ export default function UC2Page() {
                    }}>
                 <div className="bg-white rounded-xl p-4 border border-blue-200 shadow-sm">
                   <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Team Coordination</h4>
+                    <h4 className="text-sm font-semibold text-gray-700">Document Analysis</h4>
                     <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <MdGroups className="w-4 h-4 text-blue-600" />
+                      <MdDescription className="w-4 h-4 text-blue-600" />
                     </div>
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Technical teams aligned</span>
-                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Synchronized</span>
+                      <span className="text-sm text-gray-700">Obligations extracted</span>
+                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Complete</span>
                     </div>
                     <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
-                      <span className="text-sm text-gray-700">Resource allocation optimized</span>
-                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">85%</span>
+                      <span className="text-sm text-gray-700">Priority classification</span>
+                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Structured</span>
                     </div>
                     <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
-                      <span className="text-sm text-gray-700">Dependencies managed</span>
+                      <span className="text-sm text-gray-700">Risk assessment</span>
                       <div className="w-4 h-4 bg-purple-500 rounded-full flex items-center justify-center">
                         <MdCheckCircle className="w-3 h-3 text-white" />
                       </div>
@@ -612,7 +612,7 @@ export default function UC2Page() {
             </div>
           </div>
 
-          {/* Feature 2: Workflows Standardisés - Text Right, Card Left */}
+          {/* Feature 2: Détection automatique - Text Right, Card Left */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-2 lg:order-1">
               <Card className="p-10 bg-gradient-to-br from-orange-50 to-red-100 border border-orange-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
@@ -621,22 +621,22 @@ export default function UC2Page() {
                    }}>
                 <div className="bg-white rounded-xl p-4 border border-orange-200 shadow-sm">
                   <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Workflow Management</h4>
+                    <h4 className="text-sm font-semibold text-gray-700">Risk Detection</h4>
                     <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
-                      <MdSettings className="w-4 h-4 text-orange-600" />
+                      <MdWarning className="w-4 h-4 text-orange-600" />
                     </div>
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Process templates active</span>
-                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Standardized</span>
+                      <span className="text-sm text-gray-700">Critical clauses identified</span>
+                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Detected</span>
                     </div>
                     <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
-                      <span className="text-sm text-gray-700">Quality checkpoints</span>
-                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Automated</span>
+                      <span className="text-sm text-gray-700">SLA monitoring</span>
+                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Active</span>
                     </div>
                     <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
-                      <span className="text-sm text-gray-700">Flexibility maintained</span>
+                      <span className="text-sm text-gray-700">Validation ready</span>
                       <div className="w-4 h-4 bg-purple-500 rounded-full flex items-center justify-center">
                         <MdVerified className="w-3 h-3 text-white" />
                       </div>
@@ -647,58 +647,58 @@ export default function UC2Page() {
             </div>
             <div className="order-1 lg:order-2">
               <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
-                <MdGroups className="w-10 h-10 text-white" />
+                <MdWarning className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Workflows standardisés et <span className="text-orange-600">flexibles</span></h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Détection automatique des <span className="text-orange-600">clauses critiques</span></h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Bénéficiez de méthodologies éprouvées qui s'adaptent automatiquement à la spécificité de chaque projet moyen.
+                L'IA scanne chaque document pour repérer les points à risque qui peuvent compromettre la conformité.
               </p>
               <div className="space-y-3 mb-8">
                 <div className="flex items-start text-gray-600">
-                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Templates de processus adaptés à la complexité du projet</span>
+                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Contrôle instantané des délais, SLA et pénalités</span>
                 </div>
                 <div className="flex items-start text-gray-600">
-                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Points de contrôle qualité automatisés et personnalisables</span>
+                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Alertes précises sur les clauses sensibles et incohérentes</span>
                 </div>
                 <div className="flex items-start text-gray-600">
-                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Escalade intelligente selon les seuils critiques</span>
+                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Suivi documenté prêt pour validation hiérarchique</span>
                 </div>
               </div>
               <p className="text-lg font-semibold text-orange-600">
-                Vous augmentez de 85% la qualité de vos livrables tout en gardant l'agilité nécessaire.
+                Vous évitez jusqu'à 90 % des risques de rejet liés aux erreurs contractuelles.
               </p>
             </div>
           </div>
 
-          {/* Feature 3: Contrôle Qualité Automatisé - Text Left, Card Right */}
+          {/* Feature 3: Pilotage dynamique - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-1">
               <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
-                <MdSecurity className="w-10 h-10 text-white" />
+                <MdDashboard className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Contrôle qualité automatisé et <span className="text-green-600">suivi proactif</span></h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Pilotage dynamique des Q&A et des <span className="text-green-600">versions</span></h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Détectez et corrigez les déviations en temps réel grâce à un système de surveillance intelligent et proactif.
+                Collaborez efficacement sur chaque réponse et gardez toujours la bonne version sous contrôle.
               </p>
               <div className="space-y-3 mb-8">
                 <div className="flex items-start text-gray-600">
-                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Validation automatique à chaque étape critique</span>
+                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Suivi en temps réel des questions, réponses et validations</span>
                 </div>
                 <div className="flex items-start text-gray-600">
-                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Alertes prédictives sur les risques potentiels</span>
+                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Gestion des versions et historique des modifications</span>
                 </div>
                 <div className="flex items-start text-gray-600">
-                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Rapport de conformité en temps réel pour la direction</span>
+                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Tableaux de bord partagés pour assurer la cohérence globale</span>
                 </div>
               </div>
               <p className="text-lg font-semibold text-green-600">
-                Vous garantissez 100% de traçabilité et réduisez les risques de non-conformité.
+                Vous gagnez plusieurs jours de coordination et livrez une réponse sans faille.
               </p>
             </div>
             <div className="order-2">
@@ -708,24 +708,24 @@ export default function UC2Page() {
                    }}>
                 <div className="bg-white rounded-xl p-4 border border-green-200 shadow-sm">
                   <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Quality Control</h4>
+                    <h4 className="text-sm font-semibold text-gray-700">Collaboration Control</h4>
                     <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-                      <MdVerified className="w-4 h-4 text-green-600" />
+                      <MdGroups className="w-4 h-4 text-green-600" />
                     </div>
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Validation automated</span>
-                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Active</span>
+                      <span className="text-sm text-gray-700">Q&A tracking</span>
+                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Real-time</span>
                     </div>
                     <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
-                      <span className="text-sm text-gray-700">Risk monitoring</span>
-                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Proactive</span>
+                      <span className="text-sm text-gray-700">Version control</span>
+                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Managed</span>
                     </div>
                     <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
-                      <span className="text-sm text-gray-700">Compliance tracking</span>
+                      <span className="text-sm text-gray-700">Global consistency</span>
                       <div className="w-4 h-4 bg-purple-500 rounded-full flex items-center justify-center">
-                        <MdTrackChanges className="w-3 h-3 text-white" />
+                        <MdCheckCircle className="w-3 h-3 text-white" />
                       </div>
                     </div>
                   </div>
