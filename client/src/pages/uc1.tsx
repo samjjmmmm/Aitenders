@@ -1,4 +1,3 @@
-
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -203,7 +202,7 @@ export default function UC1Page() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-white">
       {/* Header/Navbar */}
       <Header />
-      
+
       {/* Hero Section - Professional SaaS Design */}
       <section className="py-12 md:py-16 lg:py-20 xl:py-24 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-white via-slate-50/30 to-blue-50/20 relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
@@ -213,43 +212,43 @@ export default function UC1Page() {
                style={{
                  background: 'radial-gradient(circle, #F0F8FF 0%, #E6F3FF 40%, #B3D9FF 70%, transparent 100%)'
                }}></div>
-          
+
           {/* Medium accent blob - center right */}
           <div className="absolute top-1/3 -right-16 w-80 h-80 rounded-full opacity-20 blur-2xl"
                style={{
                  background: 'radial-gradient(circle, #B3D9FF 0%, #2563EB 30%, transparent 70%)'
                }}></div>
-          
+
           {/* Small atmospheric accent - bottom */}
           <div className="absolute -bottom-16 left-1/4 w-64 h-64 rounded-full opacity-25 blur-3xl"
                style={{
                  background: 'linear-gradient(135deg, #FAFCFF 0%, #F0F8FF 50%, #E6F3FF 100%)'
                }}></div>
-          
+
           {/* Flowing wave accent - mobile optimized */}
           <div className="absolute top-1/2 left-0 w-full h-32 opacity-15 blur-xl lg:opacity-20"
                style={{
                  background: 'linear-gradient(90deg, transparent 0%, #F0F8FF 20%, #B3D9FF 40%, #E6F3FF 60%, transparent 100%)'
                }}></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 xl:gap-32 items-center">
-            
+
             {/* Left Side - Content */}
             <div className="text-left">
               <div className="mb-12">
                 <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Accélérez Vos Offres</Badge>
-                
+
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
                   Analyse express. Contrôle total. Confiance immédiate.
                 </h1>
-                
+
                 <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]">
                   Validez tous les critères en moins de 48h, rassurez votre hiérarchie et gagnez un temps précieux, grâce à une analyse complète, cohérente et prête à présenter.
                 </p>
               </div>
-              
+
               {/* Primary CTA */}
               <div className="mb-16">
                 <Button 
@@ -259,7 +258,7 @@ export default function UC1Page() {
                   Réservez une Démo
                 </Button>
               </div>
-              
+
               {/* Secondary CTA - Less Prominent */}
               <div className="mb-20">
                 <Button 
@@ -269,11 +268,11 @@ export default function UC1Page() {
                   Téléchargez le cas d'usage →
                 </Button>
               </div>
-              
+
               {/* Trust Elements */}
               <div className="border-t border-gray-100 pt-8">
                 <p className="text-sm text-gray-500 mb-6">Solution de référence pour les offres rapides et efficaces</p>
-                
+
                 {/* Customer Logos / Trust Indicators */}
                 <div className="flex items-center space-x-8">
                   <div className="flex items-center text-sm text-gray-600">
@@ -309,13 +308,13 @@ export default function UC1Page() {
             {/* Right Side - Realistic Product Mockup */}
             <div className="flex justify-center lg:justify-end">
               <div className="relative w-full max-w-lg">
-                
+
                 {/* Main Dashboard Mockup */}
                 <div className="bg-white rounded-3xl shadow-2xl border border-gray-100/50 overflow-hidden backdrop-blur-sm"
                      style={{
                        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
                      }}>
-                  
+
                   {/* Browser Header */}
                   <div className="bg-gray-100 px-6 py-4 flex items-center justify-between border-b border-gray-200">
                     <div className="flex items-center space-x-2">
@@ -326,10 +325,10 @@ export default function UC1Page() {
                     <div className="text-sm text-gray-600 font-medium">AItenders - Fast Bid Generator</div>
                     <div className="w-12"></div>
                   </div>
-                  
+
                   {/* Dashboard Content */}
                   <div className="p-8">
-                    
+
                     {/* Header */}
                     <div className="flex items-center justify-between mb-8">
                       <div>
@@ -341,7 +340,7 @@ export default function UC1Page() {
                         <span className="text-sm text-gray-600">Generating</span>
                       </div>
                     </div>
-                    
+
                     {/* Progress Overview */}
                     <div className="grid grid-cols-2 gap-6 mb-8">
                       <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-100">
@@ -353,11 +352,11 @@ export default function UC1Page() {
                         <div className="text-sm text-gray-600">Time remaining</div>
                       </div>
                     </div>
-                    
+
                     {/* Generation Progress */}
                     <div className="space-y-4">
                       <h4 className="text-lg font-semibold text-gray-900 mb-4">Bid Progress</h4>
-                      
+
                       <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
                         <div className="flex items-center space-x-3">
                           <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
@@ -375,7 +374,7 @@ export default function UC1Page() {
                           <span className="text-sm font-medium text-green-600">Complete</span>
                         </div>
                       </div>
-                      
+
                       <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
                         <div className="flex items-center space-x-3">
                           <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
@@ -393,7 +392,7 @@ export default function UC1Page() {
                           <span className="text-sm font-medium text-blue-600">In progress</span>
                         </div>
                       </div>
-                      
+
                       <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
                         <div className="flex items-center space-x-3">
                           <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center">
@@ -414,7 +413,7 @@ export default function UC1Page() {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Floating Success Notifications */}
                 <div className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-medium animate-bounce">
                   <div className="flex items-center space-x-2">
@@ -422,14 +421,14 @@ export default function UC1Page() {
                     <span>90% complete</span>
                   </div>
                 </div>
-                
+
                 <div className="absolute -bottom-4 -left-4 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-medium animate-pulse">
                   <div className="flex items-center space-x-2">
                     <MdFlashOn className="w-4 h-4" />
                     <span>2h delivery</span>
                   </div>
                 </div>
-                
+
                 {/* Background Decorative Elements */}
                 <div className="absolute -top-8 -right-8 w-24 h-24 bg-blue-200/20 rounded-full blur-2xl"></div>
                 <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-green-200/15 rounded-full blur-3xl"></div>
@@ -448,57 +447,57 @@ export default function UC1Page() {
                style={{
                  background: 'radial-gradient(circle, #F0F8FF 0%, #B3D9FF 50%, #E6F3FF 80%, transparent 100%)'
                }}></div>
-          
+
           {/* Flowing accent - left side */}
           <div className="absolute top-1/3 -left-24 w-72 h-72 rounded-full opacity-20 blur-2xl"
                style={{
                  background: 'linear-gradient(135deg, #E6F3FF 0%, #B3D9FF 60%, transparent 100%)'
                }}></div>
-          
+
           {/* Small directional accent */}
           <div className="absolute bottom-20 right-1/4 w-48 h-48 rounded-full opacity-15 blur-3xl"
                style={{
                  background: 'radial-gradient(circle, #2563EB 0%, #B3D9FF 40%, transparent 80%)'
                }}></div>
-          
+
           {/* Mobile-optimized wave */}
           <div className="absolute bottom-0 left-0 w-full h-24 opacity-10 blur-xl lg:opacity-15"
                style={{
                  background: 'linear-gradient(90deg, #F0F8FF 0%, transparent 30%, #FAFCFF 70%, #E6F3FF 100%)'
                }}></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
-          
+
           {/* Main Feature Card */}
           <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20"
                style={{
                  boxShadow: '0 32px 64px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.05)'
                }}>
-            
+
             {/* Multi-tone Faded Background Pattern */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-cyan-50/20 to-indigo-50/25 rounded-3xl"></div>
             <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-blue-100/25 to-transparent rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-cyan-100/20 to-transparent rounded-full blur-3xl"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
-            
+
             {/* Content Container */}
             <div className="relative z-10 text-center">
-              
+
               {/* Main Headline */}
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Quand chaque heure compte, <span className="text-blue-600">vos validations ne peuvent pas attendre</span>
               </h2>
-              
+
               {/* Body Copy */}
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                 Sur les petits projets répétés, il faut valider vite et rassurer sa hiérarchie, souvent sans équipe support. Les relectures manuelles rallongent les délais, multiplient les erreurs et ajoutent un stress inutile.
               </p>
-              
+
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                 Avec Aitenders, vos documents deviennent exploitables dès le premier jour : structuration automatique, exigences identifiées et points clés synthétisés. Vous gagnez un temps précieux et validez sereinement vos projets en moins de 48 heures.
               </p>
-              
+
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
                 <Button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
@@ -523,26 +522,26 @@ export default function UC1Page() {
                style={{
                  background: 'radial-gradient(circle, #FAFCFF 0%, #F0F8FF 30%, #B3D9FF 70%, transparent 100%)'
                }}></div>
-          
+
           {/* Medium directional blob - middle left */}
           <div className="absolute top-1/2 -left-32 w-80 h-80 rounded-full opacity-15 blur-2xl"
                style={{
                  background: 'linear-gradient(45deg, #E6F3FF 0%, #B3D9FF 50%, #2563EB 90%, transparent 100%)'
                }}></div>
-          
+
           {/* Atmospheric accent - bottom right */}
           <div className="absolute -bottom-24 -right-32 w-[400px] h-[400px] rounded-full opacity-25 blur-3xl"
                style={{
                  background: 'radial-gradient(circle, #F0F8FF 0%, #E6F3FF 40%, transparent 100%)'
                }}></div>
-          
+
           {/* Subtle flowing wave - center */}
           <div className="absolute top-1/2 left-0 w-full h-40 opacity-10 blur-xl lg:opacity-15"
                style={{
                  background: 'linear-gradient(90deg, transparent 0%, #B3D9FF 25%, #F0F8FF 50%, #E6F3FF 75%, transparent 100%)'
                }}></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Ne perdez plus de jours précieux <span className="text-blue-600">à tout relire</span></h1>
@@ -568,7 +567,7 @@ export default function UC1Page() {
                 </div>
                 <div className="flex items-start text-gray-600">
                   <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Détection instantanée des incohérences ou doublons</span>
+                  <span>Détection instantanée des incohérences ou doublons</span>```text
                 </div>
                 <div className="flex items-start text-gray-600">
                   <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
@@ -739,134 +738,139 @@ export default function UC1Page() {
       {/* User-Focused Results Section - Before Additional Features */}
       <section className="py-16 md:py-20 lg:py-24 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
+          
+          
           <div className="mb-20 md:mb-24 lg:mb-28">
-            <div className="text-center mb-12 md:mb-16">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Résultats concrets pour chaque utilisateur</h3>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Des bénéfices mesurables pour tous les profils commerciaux</p>
+          <div className="text-center mb-12 md:mb-16">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Des résultats concrets pour chaque rôle clé</h3>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Aitenders permet à chaque acteur de la réponse aux appels d'offres de gagner du temps, d'assurer la conformité et de présenter des dossiers solides en toute confiance.</p>
             </div>
-            
-            {/* Results Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-              
-              {/* Business Development Managers */}
-              <div className="group">
-                <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/50 hover:border-blue-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4">
-                      <MdAccountBox className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-gray-900">Pour les Business Development Managers</h4>
-                      <p className="text-sm text-gray-600">Maximisez votre pipeline d'opportunités</p>
-                    </div>
-                  </div>
-                  
-                  <p className="text-gray-700 text-base leading-relaxed mb-4">
-                    Avec Aitenders, transformez chaque opportunité en proposition gagnante, même sur les délais les plus serrés.
-                  </p>
-                  
-                  <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Réponse en 2h au lieu de 2 jours</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>+50% d'opportunités traitées avec la même équipe</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Qualité constante, image professionnelle renforcée</span>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-6 p-4 bg-white/70 rounded-lg border border-blue-200/30">
-                    <p className="text-sm text-gray-700 font-medium">Impact : pipeline d'opportunités doublé avec une qualité garantie.</p>
-                  </div>
-                </Card>
-              </div>
 
-              {/* Proposal Managers */}
-              <div className="group">
-                <Card className="h-full p-8 bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200/50 hover:border-orange-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mr-4">
-                      <MdBusiness className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-gray-900">Pour les Proposal Managers</h4>
-                      <p className="text-sm text-gray-600">Orchestrez plusieurs offres en parallèle</p>
-                    </div>
+          {/* Results Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+            {/* Rédacteurs & Chefs de projet offre */}
+            <div className="group">
+              <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4">
+                    <MdEdit className="w-6 h-6 text-white" />
                   </div>
-                  
-                  <p className="text-gray-700 text-base leading-relaxed mb-4">
-                    Gérez efficacement un portefeuille d'offres multiples avec des workflows standardisés et une visibilité totale.
-                  </p>
-                  
-                  <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Coordination de 5 offres simultanées au lieu de 2</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Suivi en temps réel du statut de chaque proposition</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Élimination des risques d'oubli et de retard</span>
-                    </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900">Rédacteurs & Chefs de projet offre</h4>
+                    <p className="text-sm text-gray-600">Génération de contenu</p>
                   </div>
-                  
-                  <div className="mt-6 p-4 bg-white/70 rounded-lg border border-orange-200/30">
-                    <p className="text-sm text-gray-700 font-medium">Impact : capacité de traitement multipliée par 2,5 sans stress.</p>
-                  </div>
-                </Card>
-              </div>
+                </div>
 
-              {/* Directors */}
-              <div className="group">
-                <Card className="h-full p-8 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50 hover:border-green-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-4">
-                      <MdGavel className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-gray-900">Pour les Directeurs</h4>
-                      <p className="text-sm text-gray-600">Visibilité et performance commerciale</p>
-                    </div>
+                <p className="text-gray-700 text-base leading-relaxed mb-4">
+                  Produisez des réponses structurées, conformes et prêtes à convaincre dès le premier jour.
+                </p>
+
+                <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
+                  <div className="flex items-start">
+                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>90% du contenu généré automatiquement à partir du cahier des charges</span>
                   </div>
-                  
-                  <p className="text-gray-700 text-base leading-relaxed mb-4">
-                    Pilotez votre performance commerciale avec des métriques claires et une montée en gamme de votre image.
-                  </p>
-                  
-                  <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Taux de conversion amélioré de 30% sur les petits projets</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>ROI commercial mesurable et transparence totale</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Image d'entreprise renforcée auprès des clients</span>
-                    </div>
+                  <div className="flex items-start">
+                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>Argumentaires alignés sur les attentes de l'acheteur</span>
                   </div>
-                  
-                  <div className="mt-6 p-4 bg-white/70 rounded-lg border border-green-200/30">
-                    <p className="text-sm text-gray-700 font-medium">Impact : croissance du CA sur les petits projets et excellence opérationnelle.</p>
+                  <div className="flex items-start">
+                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>Temps libéré pour renforcer la valeur ajoutée de l'offre</span>
                   </div>
-                </Card>
-              </div>
+                </div>
+
+                <div className="mt-6 p-4 bg-white/70 rounded-lg border border-gray-200/30">
+                  <p className="text-sm text-gray-700 font-medium">Vous livrez une proposition complète et différenciante en quelques heures, pas en plusieurs jours.</p>
+                </div>
+              </Card>
+            </div>
+
+            {/* Contract Managers & Responsables conformité */}
+            <div className="group">
+              <Card className="h-full p-8 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-4">
+                    <MdVerified className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900">Contract Managers & Responsables conformité</h4>
+                    <p className="text-sm text-gray-600">Conformité sécurisée</p>
+                  </div>
+                </div>
+
+                <p className="text-gray-700 text-base leading-relaxed mb-4">
+                  Assurez la couverture de chaque exigence et réduisez vos risques de non‑conformité.
+                </p>
+
+                <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
+                  <div className="flex items-start">
+                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>Paragraphes directement reliés à leurs exigences sources</span>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>Vérification instantanée de la cohérence et de la traçabilité</span>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>Justification documentée prête pour audits et négociations</span>
+                  </div>
+                </div>
+
+                <div className="mt-6 p-4 bg-white/70 rounded-lg border border-gray-200/30">
+                  <p className="text-sm text-gray-700 font-medium">Vous éliminez jusqu'à 90% des risques de rejet liés à la conformité.</p>
+                </div>
+              </Card>
+            </div>
+
+            {/* Directeurs techniques & PMO */}
+            <div className="group">
+              <Card className="h-full p-8 bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4">
+                    <MdDashboard className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900">Directeurs techniques & PMO</h4>
+                    <p className="text-sm text-gray-600">Visibilité et pilotage</p>
+                  </div>
+                </div>
+
+                <p className="text-gray-700 text-base leading-relaxed mb-4">
+                  Supervisez la cohérence globale et garantissez un suivi clair pour la direction.
+                </p>
+
+                <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
+                  <div className="flex items-start">
+                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>Tableaux de bord en temps réel sur la couverture des livrables</span>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>Processus de validation simplifié et collaboratif</span>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>Historique centralisé prêt pour audits et comités</span>
+                  </div>
+                </div>
+
+                <div className="mt-6 p-4 bg-white/70 rounded-lg border border-gray-200/30">
+                  <p className="text-sm text-gray-700 font-medium">Vous réduisez vos cycles de validation de moitié et offrez un suivi transparent à la direction.</p>
+                </div>
+              </Card>
             </div>
           </div>
           
+          
+          
+          
+          
+
           {/* KPI Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            
+
             {/* KPI 1 */}
             <div className="group">
               <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-6 md:p-8 text-center border border-green-100 hover:border-green-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
@@ -923,7 +927,7 @@ export default function UC1Page() {
                style={{
                  background: 'linear-gradient(135deg, #EC4899 0%, #8B5CF6 50%, #3B82F6 100%)'
                }}></div>
-          
+
           {/* Subtle grid pattern */}
           <div className="absolute inset-0 opacity-5"
                style={{
@@ -939,11 +943,11 @@ export default function UC1Page() {
               <MdStars className="w-5 h-5 text-yellow-400 mr-2" />
               <span className="text-white font-semibold text-sm md:text-base">Fonctionnalités Wow</span>
             </div>
-            
+
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:mb-8 leading-[1.1] tracking-tight">
               Des <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-400 to-cyan-400">capacités avancées</span> qui transforment votre approche commerciale
             </h2>
-            
+
             <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed font-light">
               Au-delà de la génération rapide, découvrez des fonctionnalités qui ajoutent une dimension stratégique à votre développement commercial.
             </p>
@@ -951,19 +955,19 @@ export default function UC1Page() {
 
           {/* Toppings Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-            
+
             {/* Learning Engine */}
             <div className="group">
               <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdTrendingUp className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Moteur d'Apprentissage</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
                   L'IA apprend de vos succès et échecs pour optimiser continuellement la qualité et la pertinence de vos futures propositions.
                 </p>
-                
+
                 <div className="flex items-center text-cyan-400 font-medium">
                   <span className="text-sm">Amélioration continue</span>
                   <MdAnalytics className="w-4 h-4 ml-2" />
@@ -977,12 +981,12 @@ export default function UC1Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdGroups className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Personnalisation Client</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
                   Adaptation automatique du ton, des arguments et de la structure selon le profil et l'historique de chaque client cible.
                 </p>
-                
+
                 <div className="flex items-center text-green-400 font-medium">
                   <span className="text-sm">Personnalisation IA</span>
                   <MdAutoAwesome className="w-4 h-4 ml-2" />
@@ -996,12 +1000,12 @@ export default function UC1Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdSearch className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Intelligence Concurrentielle</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
                   Analyse automatique du marché et suggestions d'arguments différenciants basés sur les tendances sectorielles.
                 </p>
-                
+
                 <div className="flex items-center text-orange-400 font-medium">
                   <span className="text-sm">Veille concurrentielle</span>
                   <MdGpsFixed className="w-4 h-4 ml-2" />
@@ -1012,15 +1016,15 @@ export default function UC1Page() {
             {/* Success Prediction */}
             <div className="group">
               <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transformduration-300">
                   <MdEmojiEvents className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Prédiction de Succès</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
                   Score de probabilité de gain calculé en temps réel pour optimiser l'allocation de vos ressources commerciales.
                 </p>
-                
+
                 <div className="flex items-center text-purple-400 font-medium">
                   <span className="text-sm">Prédictif</span>
                   <MdTrackChanges className="w-4 h-4 ml-2" />
@@ -1034,12 +1038,12 @@ export default function UC1Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdContentCopy className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Export Multi-Format</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
                   Génération automatique dans tous les formats requis : PDF, Word, PowerPoint avec charte graphique intégrée.
                 </p>
-                
+
                 <div className="flex items-center text-pink-400 font-medium">
                   <span className="text-sm">Formats multiples</span>
                   <MdSwapHoriz className="w-4 h-4 ml-2" />
@@ -1053,12 +1057,12 @@ export default function UC1Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-red-400 to-red-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdDashboard className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Analytics Avancées</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
                   Tableau de bord avec métriques de performance commerciale, taux de conversion et ROI par type de projet.
                 </p>
-                
+
                 <div className="flex items-center text-red-400 font-medium">
                   <span className="text-sm">Business Intelligence</span>
                   <MdTableChart className="w-4 h-4 ml-2" />
@@ -1073,13 +1077,13 @@ export default function UC1Page() {
                   <div className="w-16 h-16 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <MdPeople className="w-8 h-8 text-white" />
                   </div>
-                  
+
                   <div className="flex-1">
                     <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Collaboration d'équipe native, workflows fluides</h3>
                     <p className="text-gray-200 text-lg leading-relaxed mb-6">
                       Workflows collaboratifs intégrés permettant la révision, validation et finalisation en équipe avec traçabilité complète et notifications intelligentes.
                     </p>
-                    
+
                     <div className="flex flex-wrap gap-4">
                       <div className="flex items-center text-indigo-400 font-medium bg-white/10 px-4 py-2 rounded-lg">
                         <span className="text-sm">Révision collaborative</span>
@@ -1121,7 +1125,7 @@ export default function UC1Page() {
               Découvrez la transformation complète, des réponses bâclées aux offres professionnelles gagnantes.
             </p>
           </div>
-          
+
           {/* Simulator Placeholder */}
           <div className="bg-white rounded-3xl shadow-lg border border-gray-200 p-8 md:p-12 text-center">
             <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
