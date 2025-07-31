@@ -835,9 +835,9 @@ export default function UC6Page() {
             <div className="group">
               <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-3xl p-6 md:p-8 text-center border border-purple-100 hover:border-purple-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
                 <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
-                  75 %
+                  80 %
                 </div>
-                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Accélération des projets de transformation</p>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Less time on initial requirements prep</p>
               </div>
             </div>
 
@@ -845,9 +845,9 @@ export default function UC6Page() {
             <div className="group">
               <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-6 md:p-8 text-center border border-green-100 hover:border-green-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
                 <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-green-600 to-emerald-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
-                  60 %
+                  50 %
                 </div>
-                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Amélioration de l'adoption utilisateur</p>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Reduction in review and arbitration cycles</p>
               </div>
             </div>
 
@@ -855,9 +855,9 @@ export default function UC6Page() {
             <div className="group">
               <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-6 md:p-8 text-center border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
                 <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300 leading-tight">
-                  90 %
+                  100 %
                 </div>
-                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Satisfaction des équipes transformées</p>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Requirement traceability from initiation to delivery</p>
               </div>
             </div>
 
@@ -865,9 +865,9 @@ export default function UC6Page() {
             <div className="group">
               <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-6 md:p-8 text-center border border-orange-100 hover:border-orange-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
                 <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-orange-600 to-red-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300 leading-tight">
-                  100 %
+                  0
                 </div>
-                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Visibilité sur l'avancement stratégique</p>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Non-conformities at audit, stronger client confidence</p>
               </div>
             </div>
           </div>
