@@ -705,14 +705,14 @@ export default function UC6Page() {
           {/* User-Focused Results Section - Before KPIs */}
           <div className="mb-20 md:mb-24 lg:mb-28">
             <div className="text-center mb-12 md:mb-16">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Résultats concrets pour chaque utilisateur</h3>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Des bénéfices mesurables pour tous les acteurs de la transformation</p>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Ce que vos équipes obtiennent concrètement avec Aitenders</h3>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Une maîtrise totale des exigences pour chaque rôle impliqué dans vos projets complexes. Des résultats concrets en conformité, traçabilité et performance collective.</p>
             </div>
             
             {/* Results Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
               
-              {/* Responsables transformation */}
+              {/* Équipes Pilotage et Coordination */}
               <div className="group">
                 <Card className="h-full p-8 bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200/50 hover:border-purple-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
                   <div className="flex items-center mb-6">
@@ -720,37 +720,37 @@ export default function UC6Page() {
                       <MdAccountBox className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold text-gray-900">Pour les responsables transformation</h4>
-                      <p className="text-sm text-gray-600">Orchestrez le changement avec vision</p>
+                      <h4 className="text-xl font-bold text-gray-900">Équipes Pilotage et Coordination</h4>
+                      <p className="text-sm text-gray-600">Visibilité et maîtrise de bout en bout</p>
                     </div>
                   </div>
                   
                   <p className="text-gray-700 text-base leading-relaxed mb-4">
-                    Avec UC6, pilotez la transformation organisationnelle avec une visibilité complète sur l'adoption et l'impact.
+                    Directeurs de projet, Requirements Managers et Coordinateurs d'exigences disposent d'une vision centralisée pour anticiper chaque dérive et sécuriser la livraison.
                   </p>
                   
                   <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Vision 360° de l'avancement transformation</span>
+                      <span>Centralisation des exigences et suivi actualisé en temps réel</span>
                     </div>
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Mesure d'impact business en temps réel</span>
+                      <span>Alertes automatiques sur écarts et échéances critiques</span>
                     </div>
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Priorisation intelligente des initiatives</span>
+                      <span>Validation et arbitrages facilités pour éviter les blocages</span>
                     </div>
                   </div>
                   
                   <div className="mt-6 p-4 bg-white/70 rounded-lg border border-purple-200/30">
-                    <p className="text-sm text-gray-700 font-medium">Impact : transformation accélérée et ROI démontré.</p>
+                    <p className="text-sm text-gray-700 font-medium">Impact : Réduction de 40 % du temps passé à consolider les matrices d'exigences et suppression des risques d'oubli qui génèrent des surcoûts.</p>
                   </div>
                 </Card>
               </div>
 
-              {/* Gestionnaires changement */}
+              {/* Responsables Métier et Techniques */}
               <div className="group">
                 <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200/50 hover:border-blue-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
                   <div className="flex items-center mb-6">
@@ -758,37 +758,37 @@ export default function UC6Page() {
                       <MdBusiness className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold text-gray-900">Pour les gestionnaires du changement</h4>
-                      <p className="text-sm text-gray-600">Accompagnez l'adoption avec mesure</p>
+                      <h4 className="text-xl font-bold text-gray-900">Responsables Métier et Techniques</h4>
+                      <p className="text-sm text-gray-600">Clarté et collaboration pour chaque discipline</p>
                     </div>
                   </div>
                   
                   <p className="text-gray-700 text-base leading-relaxed mb-4">
-                    UC6 vous aide à mesurer l'engagement des équipes et à adapter votre stratégie d'accompagnement.
+                    Les Discipline Leads accèdent à une matrice d'exigences spécifique à leur périmètre, toujours à jour et intégrée au projet global.
                   </p>
                   
                   <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Métriques d'engagement comportemental</span>
+                      <span>Exigences organisées et accessibles instantanément</span>
                     </div>
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Parcours de formation adaptatifs</span>
+                      <span>Suivi collaboratif avec répartition claire des responsabilités</span>
                     </div>
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Alertes précoces sur les résistances</span>
+                      <span>Rédaction guidée pour couvrir 100 % des points critiques</span>
                     </div>
                   </div>
                   
                   <div className="mt-6 p-4 bg-white/70 rounded-lg border border-blue-200/30">
-                    <p className="text-sm text-gray-700 font-medium">Impact : adoption réussie et équipes engagées.</p>
+                    <p className="text-sm text-gray-700 font-medium">Impact : Division par deux du temps de relecture et suppression des erreurs de reformulation qui retardent les livrables.</p>
                   </div>
                 </Card>
               </div>
 
-              {/* Directeurs innovation */}
+              {/* Équipes Qualité et Conformité */}
               <div className="group">
                 <Card className="h-full p-8 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50 hover:border-green-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
                   <div className="flex items-center mb-6">
@@ -796,108 +796,32 @@ export default function UC6Page() {
                       <MdGavel className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold text-gray-900">Pour les directeurs innovation</h4>
-                      <p className="text-sm text-gray-600">Cultivez l'innovation durable</p>
+                      <h4 className="text-xl font-bold text-gray-900">Équipes Qualité et Conformité</h4>
+                      <p className="text-sm text-gray-600">Conformité prouvée et risque maîtrisé</p>
                     </div>
                   </div>
                   
                   <p className="text-gray-700 text-base leading-relaxed mb-4">
-                    En identifiant automatiquement les opportunités d'amélioration et en mesurant l'impact des initiatives.
+                    Quality Directors et Contract & Claims Managers disposent d'une traçabilité complète et exploitable à tout moment pour prouver la conformité.
                   </p>
                   
                   <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Détection automatique des opportunités</span>
+                      <span>Couverture 100 % vérifiée de toutes les exigences</span>
                     </div>
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Culture d'innovation mesurable</span>
+                      <span>Historique exhaustif disponible pour audits et comités</span>
                     </div>
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Roadmap innovation alignée business</span>
+                      <span>Détection proactive des non‑conformités et écarts contractuels</span>
                     </div>
                   </div>
                   
                   <div className="mt-6 p-4 bg-white/70 rounded-lg border border-green-200/30">
-                    <p className="text-sm text-gray-700 font-medium">Impact : innovation systématique et mesurée.</p>
-                  </div>
-                </Card>
-              </div>
-
-              {/* Directeurs opérationnels */}
-              <div className="group">
-                <Card className="h-full p-8 bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200/50 hover:border-orange-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mr-4">
-                      <MdEngineering className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-gray-900">Pour les directeurs opérationnels</h4>
-                      <p className="text-sm text-gray-600">Optimisez la performance continue</p>
-                    </div>
-                  </div>
-                  
-                  <p className="text-gray-700 text-base leading-relaxed mb-4">
-                    UC6 consolide la vision des processus métier et automatise l'amélioration continue.
-                  </p>
-                  
-                  <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Vision consolidée des processus métier</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Automatisation des tâches répétitives</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Amélioration continue pilotée par la data</span>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-6 p-4 bg-white/70 rounded-lg border border-orange-200/30">
-                    <p className="text-sm text-gray-700 font-medium">Impact : performance opérationnelle optimisée.</p>
-                  </div>
-                </Card>
-              </div>
-
-              {/* Directeurs stratégie */}
-              <div className="group">
-                <Card className="h-full p-8 bg-gradient-to-br from-indigo-50 to-purple-50 border border-indigo-200/50 hover:border-indigo-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mr-4">
-                      <MdAnalytics className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-gray-900">Pour les directeurs stratégie</h4>
-                      <p className="text-sm text-gray-600">Alignez stratégie et exécution</p>
-                    </div>
-                  </div>
-                  
-                  <p className="text-gray-700 text-base leading-relaxed mb-4">
-                    En connectant les objectifs stratégiques avec l'exécution opérationnelle via des tableaux de bord unifiés.
-                  </p>
-                  
-                  <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Tableaux de bord stratégiques temps réel</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Anticipation des tendances et ajustements</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Impact des décisions mesuré en continu</span>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-6 p-4 bg-white/70 rounded-lg border border-indigo-200/30">
-                    <p className="text-sm text-gray-700 font-medium">Impact : stratégie alignée et exécution maîtrisée.</p>
+                    <p className="text-sm text-gray-700 font-medium">Impact : Préparation des audits divisée par trois et réduction significative des litiges liés aux non‑conformités.</p>
                   </div>
                 </Card>
               </div>
