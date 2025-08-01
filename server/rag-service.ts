@@ -336,7 +336,19 @@ ${firstQuestion}`
       };
     }
 
-    // 0.3. Gérer les réponses d'analyse avancée en cours (APRÈS la détection des commandes)
+    // 0.3. Gérer la commande "commencer" pour lancer la première question
+    const startKeywords = ['commencer', 'commenc', 'demarrer', 'demarr', 'start', 'begin', 'débuter'];
+    const isStartCommand = startKeywords.some(keyword => queryLower.includes(keyword));
+    
+    if (isStartCommand && sessionId) {
+      const firstQuestion = await advancedAnalysisService.startSession(sessionId);
+      return {
+        action: 'advanced_analysis_start',
+        response: firstQuestion
+      };
+    }
+
+    // 0.4. Gérer les réponses d'analyse avancée en cours (APRÈS la détection des commandes)
     if (sessionId && !isAdvancedStartCommand) {
       const advancedSession = advancedAnalysisService.getSessionInfo(sessionId);
       if (advancedSession && !advancedSession.completed) {
@@ -367,10 +379,9 @@ ${firstQuestion}`
     const isSimulatorQuery = simulatorKeywords.some(keyword => queryLower.includes(keyword));
 
     if (isSimulatorQuery && sessionId) {
-      // Démarrer directement l'analyse avancée
-      const firstQuestion = await advancedAnalysisService.startSession(sessionId);
+      // Préparer la session mais ne pas encore démarrer
       return {
-        action: 'advanced_analysis_start',
+        action: 'advanced_analysis_intro',
         response: `🚀 **SIMULATEUR ROI AITENDERS - ANALYSE COMPLÈTE**
 
 ⏱️ **Temps estimé : 3-5 minutes**
@@ -385,7 +396,7 @@ Nous allons explorer vos processus en détail avec 6 questions couvrant :
 **🧠 Gestion des connaissances** (1 question combinée)
 **🎯 Profil d'entreprise** (1 question combinée)
 
-${firstQuestion}`
+Prêt à commencer ? Écrivez **"commencer"** pour démarrer la première question.`
       };
     }
 
