@@ -22,6 +22,9 @@ import { motion } from "framer-motion";
 import equansLogo from "@assets/Equans_1753711339292.png";
 import bouyguesLogo from "@assets/Bouyges_1753711339292.png";
 import colasLogo from "@assets/Colas_1753711339292.png";
+
+// Import hero image
+import heroImage from "@assets/Document Review and Categorization_1754034067501.png";
 import ChatSection from "@/components/chat-section";
 import ChatInterface from "@/components/chat-interface";
 
@@ -309,7 +312,7 @@ export default function UC1Page() {
             <div className="flex justify-center lg:justify-end">
               <div className="relative w-full max-w-lg">
                 <img 
-                  src="/attached_assets/Document Review and Categorization_1754034067501.png"
+                  src={heroImage}
                   alt="Document Review and Categorization - Aitenders Interface"
                   className="w-full h-auto rounded-3xl shadow-2xl border border-gray-100/50"
                   style={{
