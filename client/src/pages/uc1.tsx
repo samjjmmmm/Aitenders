@@ -24,7 +24,7 @@ import bouyguesLogo from "@assets/Bouyges_1753711339292.png";
 import colasLogo from "@assets/Colas_1753711339292.png";
 
 // Import hero image
-import heroImage from "@assets/Try_1754035199425.png";
+import heroImage from "@assets/Dell XPS 15__1754046364427.png";
 import ChatSection from "@/components/chat-section";
 import ChatInterface from "@/components/chat-interface";
 
