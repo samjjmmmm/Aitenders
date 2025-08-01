@@ -52,7 +52,7 @@ class AdvancedAnalysisService {
   private formatQuestion(question: any, index: number, total: number): string {
     let formatted = `**Question ${index}/${total} :** ${this.getStructuredQuestion(question.id)}`;
 
-    if (question.helpText) {
+    if (question.helpText && question.helpText.trim() !== '') {
       formatted += `\n\n*${question.helpText}*`;
     }
 
