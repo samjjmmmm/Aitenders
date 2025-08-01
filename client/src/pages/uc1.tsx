@@ -610,7 +610,7 @@ export default function UC1Page() {
 
           {/* Results Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-            {/* Rédacteurs & Chefs de projet offre */}
+            {/* Directeur commercial directeyr de projet offre */}
             <div className="group">
               <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
                 <div className="flex items-center mb-6">
@@ -654,86 +654,50 @@ export default function UC1Page() {
               </Card>
             </div>
 
-            {/* Assistants*/}
+
+            {/* Rédacteurs & Chefs de projet offre */}
             <div className="group">
-              <Card className="h-full p-8 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+              <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
                 <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-4">
-                    <MdVerified className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4">
+                    <MdEdit className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-gray-900">Responsable Offre, Chef de Projet ou Assistant Offre</h4>
-                    <p className="text-sm text-gray-600">Analyse rapide, validation fluide, sérénité retrouvée</p>
+                    <h4 className="text-xl font-bold text-gray-900">Directeur Commercial ou Directeur des Offres</h4>
+                    <p className="text-sm text-gray-600">Décision rapide, process validé, crédibilité renforcée</p>
                   </div>
                 </div>
 
                 <p className="text-gray-700 text-base leading-relaxed mb-4">
-                  Travaillez dès le premier jour sur une base IA déjà structurée et priorisée, sans retraitement manuel. Vous disposez d’une vue synthétique et actionnable des points à valider, d’un accès immédiat aux preuves et d’un suivi clair de vos validations. Résultat : moins de stress, un gain de temps massif et la capacité de démontrer à tout moment que tout a été contrôlé et tracé.es de non‑conformité.
+                  Obtenez en moins de 48h une analyse complète et documentée, prête à présenter. Vous décidez dès le premier jour grâce à un go / no-go immédiat et démontrez que chaque point a été contrôlé et validé. Cette approche garantit la transparence, réduit les allers‑retours internes et renforce la confiance lors des comités.
                 </p>
 
                 <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
                   <div className="flex items-start">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Moins de relectures, plus de décisions stratégiques</span>
+                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>Décision éclairée dès J+1 grâce à une analyse instantanée
+
+                  </span>
                   </div>
                   <div className="flex items-start">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Validation fluide et intégralement documentée</span>
+                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>  Process interne respecté et intégralement tracé
+
+                    </span>
                   </div>
                   <div className="flex items-start">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Chaque point couvert, chaque preuve archivée</span>
+                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>Transparence totale sur les points critiques</span>
                   </div>
                   <div className="flex items-start">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Crédibilité renforcée face aux décideurs internes</span>
+                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>
+                    Crédibilité renforcée lors des comités</span>
                   </div>
                 </div>
 
               </Card>
             </div>
-
-            {/* Directeurs techniques & PMO */}
-            <div className="group">
-              <Card className="h-full p-8 bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4">
-                    <MdDashboard className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-gray-900">Directeurs techniques & PMO</h4>
-                    <p className="text-sm text-gray-600">Visibilité et pilotage</p>
-                  </div>
-                </div>
-
-                <p className="text-gray-700 text-base leading-relaxed mb-4">
-                  Supervisez la cohérence globale et garantissez un suivi clair pour la direction.
-                </p>
-
-                <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
-                  <div className="flex items-start">
-                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Tableaux de bord en temps réel sur la couverture des livrables</span>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Processus de validation simplifié et collaboratif</span>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Historique centralisé prêt pour audits et comités</span>
-                  </div>
-                </div>
-
-                <div className="mt-6 p-4 bg-white/70 rounded-lg border border-gray-200/30">
-                  <p className="text-sm text-gray-700 font-medium">Vous réduisez vos cycles de validation de moitié et offrez un suivi transparent à la direction.</p>
-                </div>
-              </Card>
-            </div>
-          </div>
-
-
-
 
 
 
