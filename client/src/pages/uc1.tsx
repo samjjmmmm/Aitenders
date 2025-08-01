@@ -682,13 +682,7 @@ export default function UC1Page() {
                     <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
                     <span>Validation fluide et intégralement documentée</span>
                   </div>
-                  
                   <div className="flex items-start">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Chaque point couvert, chaque preuve archivée</span>
-                  </div>
-                </div>
-                <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
                     <span>Chaque point couvert, chaque preuve archivée</span>
                   </div>
