@@ -314,8 +314,8 @@ Cette analyse prend environ 8-10 minutes mais fournit des insights beaucoup plus
 
       // Toujours proposer le choix entre standard et avancé pour un nouveau simulateur
       if (sessionId) {
-        // Supprimer toute session existante
-        advancedAnalysisService.clearSession(sessionId);
+        // Redémarrer toute session existante
+        await advancedAnalysisService.restartSession(sessionId);
       }
 
       // Nouvelle session
