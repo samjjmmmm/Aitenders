@@ -24,6 +24,11 @@ class AdvancedAnalysisService {
 
   // Démarrer une nouvelle session d'analyse avancée
   async startSession(sessionId: string): Promise<string> {
+    // Supprimer toute session existante pour ce sessionId
+    if (this.sessions.has(sessionId)) {
+      this.sessions.delete(sessionId);
+    }
+
     const session: AdvancedSession = {
       sessionId,
       currentQuestionIndex: 0,
@@ -32,9 +37,9 @@ class AdvancedAnalysisService {
       completed: false,
       category: 'tender_profile'
     };
-    
+
     this.sessions.set(sessionId, session);
-    
+
     const firstQuestion = this.questions[0];
     if (!firstQuestion) {
       return "❌ Aucune question disponible dans l'analyse avancée.";
@@ -46,7 +51,7 @@ class AdvancedAnalysisService {
   // Formatter une question avec contexte et champs structurés
   private formatQuestion(question: any, index: number, total: number): string {
     let formatted = `**Question ${index}/${total} :** ${this.getStructuredQuestion(question.id)}`;
-    
+
     if (question.helpText) {
       formatted += `\n\n*${question.helpText}*`;
     }
@@ -88,7 +93,7 @@ class AdvancedAnalysisService {
       'knowledge_management_combined': '**Gestion des connaissances**',
       'business_profile_combined': '**Profil d\'entreprise**'
     };
-    
+
     return structuredTitles[questionId] || '**Question**';
   }
 
@@ -98,7 +103,7 @@ class AdvancedAnalysisService {
       'tender_profile_combined': `📋 **#AO** : _____ appels d'offres par an
 💰 **Valeur moyenne** : _____ € 
 ⏱️ **Durée préparation** : _____ semaines`,
-      
+
       'document_complexity_combined': `📄 **Documents par AO** : _____ documents
 📑 **Pages par document** : _____ pages  
 🔄 **Versions avant soumission** : _____ versions`,
@@ -117,7 +122,7 @@ class AdvancedAnalysisService {
 📈 **Taux réussite** : _____%
 🎯 **Priorités** : _____________`
     };
-    
+
     return structuredFields[questionId] || null;
   }
 
@@ -131,19 +136,19 @@ class AdvancedAnalysisService {
       'knowledge_management_combined': 'Réutilisation souvent (70%), 25% des AO créés from scratch',
       'business_profile_combined': 'Construction, 50M€ CA annuel, 35% taux réussite, priorités: réduire coûts, améliorer conformité, accélérer soumissions'
     };
-    
+
     return examples[questionId] || null;
   }
 
   // Valider et gérer les incertitudes pour une réponse
   private validateAnswer(question: any, answer: string): { value?: any; error?: string } {
     const cleanAnswer = answer.trim();
-    
+
     // Patterns d'incertitude
     const unknownAnswers = ['je ne sais pas', 'aucune idee', 'aucune idée', 'je sais pas', 'sais pas', 'pas sur', 'pas sûr', 'don\'t know', 'no idea', 'not sure', 'pas certain', 'incertain'];
     const normalizeText = (text: string) => text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     const normalizedAnswer = normalizeText(cleanAnswer);
-    
+
     // Vérifier si c'est une expression d'incertitude
     if (unknownAnswers.some(phrase => normalizedAnswer.includes(normalizeText(phrase)))) {
       return { error: `💡 **Nous comprenons que vous n'êtes pas certain.**\n\nPouvez-vous donner une **estimation approximative** ?\n\nMême une estimation vous aidera à obtenir une analyse plus précise.\n\n${this.formatQuestion(question, 0, 0).replace(/\*\*Question.*?\*\*/, '**Question**')}` };
@@ -153,12 +158,12 @@ class AdvancedAnalysisService {
     if (question.questionType === 'number') {
       const hasIncoherentChars = /[àæøœç:;]{2,}|[^\w\s€$KkMm.,\-àé]+/.test(cleanAnswer);
       const hasRandomSymbols = /[:;]{2,}|[àà]{2,}/.test(cleanAnswer);
-      
+
       if (hasIncoherentChars || hasRandomSymbols) {
         return { error: `🔴 **Réponse illisible "${cleanAnswer}" - Pouvez-vous reformuler ?**\n\n${this.formatQuestion(question, 0, 0).replace(/\*\*Question.*?\*\*/, '**Question**')}` };
       }
     }
-    
+
     // Validation par type de question
     if (question.questionType === 'text') {
       // Pour les questions textuelles, validation minimale
@@ -172,10 +177,10 @@ class AdvancedAnalysisService {
         const cleanValue = value.replace(/[€$,]/g, '').trim();
         const match = cleanValue.match(/(\d+(?:\.\d+)?)\s*([KkMm])?/);
         if (!match) return NaN;
-        
+
         const baseValue = parseFloat(match[1]);
         const suffix = match[2]?.toUpperCase();
-        
+
         if (suffix === 'K') return baseValue * 1000;
         if (suffix === 'M') return baseValue * 1000000;
         return baseValue;
@@ -188,13 +193,13 @@ class AdvancedAnalysisService {
         /([0-9.,KkMm€$\s]+)\s*[-–]\s*([0-9.,KkMm€$\s]+)/i,
         /([0-9.,KkMm€$\s]+)\s*[,;]\s*([0-9.,KkMm€$\s]+)/i
       ];
-      
+
       for (const pattern of rangePatterns) {
         const rangeMatch = cleanAnswer.match(pattern);
         if (rangeMatch) {
           const minValue = parseValueWithSuffix(rangeMatch[1]);
           const maxValue = parseValueWithSuffix(rangeMatch[2]);
-          
+
           if (!isNaN(minValue) && !isNaN(maxValue) && minValue <= maxValue) {
             return { 
               value: { 
@@ -207,15 +212,15 @@ class AdvancedAnalysisService {
           }
         }
       }
-      
+
       // Essayer d'extraire un nombre unique avec support des abréviations
       let numValue = parseValueWithSuffix(cleanAnswer);
-      
+
       // Si parsing échoue, essayer d'extraire juste le nombre
       if (isNaN(numValue)) {
         numValue = parseFloat(cleanAnswer.replace(/[^0-9.]/g, ''));
       }
-      
+
       if (isNaN(numValue)) {
         return { error: "❌ Veuillez entrer un nombre valide ou une plage (ex: 'entre 3 et 7')." };
       }
@@ -228,35 +233,35 @@ class AdvancedAnalysisService {
 
       return { value: numValue };
     }
-    
+
     if (question.questionType === 'choice') {
       // Vérifier si la réponse correspond à une option ou à un numéro
       const choices = question.validationRules.choices || [];
-      
+
       // Essayer de matcher directement
       const directMatch = choices.find((choice: string) => 
         normalizeText(choice).includes(normalizedAnswer) || 
         normalizedAnswer.includes(normalizeText(choice))
       );
       if (directMatch) return { value: directMatch };
-      
+
       // Essayer de matcher par numéro
       const numChoice = parseInt(cleanAnswer);
       if (!isNaN(numChoice) && numChoice >= 1 && numChoice <= choices.length) {
         return { value: choices[numChoice - 1] };
       }
-      
+
       return { error: `❌ Veuillez choisir une option valide (1-${choices.length}) ou tapez le nom de l'option.` };
     }
-    
+
     if (question.questionType === 'multiple_choice') {
       const choices = question.validationRules.choices || [];
       const maxSelections = question.validationRules.maxSelections || 3;
-      
+
       // Parser les réponses multiples (séparées par virgules)
       const answers = cleanAnswer.split(',').map(a => a.trim());
       const selectedChoices = [];
-      
+
       for (const ans of answers) {
         const numChoice = parseInt(ans);
         if (!isNaN(numChoice) && numChoice >= 1 && numChoice <= choices.length) {
@@ -269,24 +274,24 @@ class AdvancedAnalysisService {
           if (directMatch) selectedChoices.push(directMatch);
         }
       }
-      
+
       if (selectedChoices.length === 0) {
         return { error: `❌ Veuillez choisir au moins une option valide (1-${choices.length}).` };
       }
       if (selectedChoices.length > maxSelections) {
         return { error: `❌ Vous ne pouvez choisir que ${maxSelections} options maximum.` };
       }
-      
+
       return { value: selectedChoices };
     }
-    
+
     if (question.questionType === 'text') {
       if (question.validationRules.maxLength && cleanAnswer.length > question.validationRules.maxLength) {
         return { error: `❌ Le texte ne peut pas dépasser ${question.validationRules.maxLength} caractères.` };
       }
       return { value: cleanAnswer };
     }
-    
+
     return { value: cleanAnswer };
   }
 
@@ -350,7 +355,7 @@ class AdvancedAnalysisService {
     // Vérifier si terminé
     if (session.currentQuestionIndex >= this.questions.length) {
       session.completed = true;
-      
+
       // Générer le rapport complet
       const report = advancedTenderCalculator.generateDetailedReport('fr');
       return {

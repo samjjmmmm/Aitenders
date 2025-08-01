@@ -263,7 +263,7 @@ class RAGService {
     this.analytics.totalQueries++;
 
     const queryLower = query.toLowerCase();
-    
+
     // Détecter les commandes d'analyse avancée
     const isAdvancedStartCommand = queryLower.includes('oui avancée') || queryLower.includes('oui avancee') || 
         queryLower === 'avancée' || queryLower === 'avancee' || queryLower === 'avancé' || queryLower === 'avance' ||
@@ -308,6 +308,31 @@ Cette analyse prend environ 8-10 minutes mais fournit des insights beaucoup plus
       };
     }
 
+    // 0.1. Gérer le simulateur standard (priorité la plus haute)
+    if (queryLower === 'simulateur' || queryLower === 'simulator' || 
+        queryLower.includes('simulateur roi') || queryLower.includes('roi calculator')) {
+
+      // Toujours proposer le choix entre standard et avancé pour un nouveau simulateur
+      if (sessionId) {
+        // Supprimer toute session existante
+        advancedAnalysisService.clearSession(sessionId);
+      }
+
+      // Nouvelle session
+      return {
+        action: 'advanced_analysis_offer',
+        response: `🚀 **SIMULATEUR ROI AITENDERS**
+
+**Analyse Standard (2-3 minutes)**
+Obtenez une estimation rapide de vos économies potentielles avec quelques questions essentielles.
+
+**Analyse Avancée (5-7 minutes)**  
+Analyse complète de vos processus avec des recommandations détaillées et un rapport personnalisé très précis et actionnables.
+
+**Souhaitez-vous commencer l'analyse avancée ?** Tapez "**oui avancée**" pour démarrer ou "**non**" pour rester avec l'analyse standard.`
+      };
+    }
+
     // 0.2. Gérer le démarrage de l'analyse avancée (priorité haute)
     if (queryLower.includes('oui avancée') || queryLower.includes('oui avancee') || 
         queryLower === 'avancée' || queryLower === 'avancee' || queryLower === 'avancé' || queryLower === 'avance' ||
@@ -339,7 +364,7 @@ ${firstQuestion}`
     // 0.3. Gérer la commande "commencer" pour lancer la première question
     const startKeywords = ['commencer', 'commenc', 'demarrer', 'demarr', 'start', 'begin', 'débuter'];
     const isStartCommand = startKeywords.some(keyword => queryLower.includes(keyword));
-    
+
     if (isStartCommand && sessionId) {
       const firstQuestion = await advancedAnalysisService.startSession(sessionId);
       return {
@@ -354,7 +379,7 @@ ${firstQuestion}`
       if (advancedSession && !advancedSession.completed) {
         // L'utilisateur est dans un processus d'analyse avancée
         const result = await advancedAnalysisService.processAnswer(sessionId, query);
-        
+
         if (result.error) {
           return {
             action: 'advanced_analysis_error',
