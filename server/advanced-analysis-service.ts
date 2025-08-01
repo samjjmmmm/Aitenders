@@ -56,11 +56,8 @@ class AdvancedAnalysisService {
       formatted += `\n\n*${question.helpText}*`;
     }
 
-    // Ajouter des champs de saisie structurés selon la question
-    const structuredFields = this.getStructuredFields(question.id);
-    if (structuredFields) {
-      formatted += `\n\n${structuredFields}`;
-    }
+    // Structured fields are now handled by the frontend quick entry form
+    // No need to duplicate them in the main response
 
     // Ajouter des exemples de réponses naturelles au lieu de contraintes de validation
     if (question.questionType === 'number') {
