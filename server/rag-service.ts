@@ -350,33 +350,7 @@ ${firstQuestion}`
       };
     }
 
-    // 0.4. Gérer les réponses d'analyse avancée en cours (APRÈS la détection des commandes)
-    if (sessionId && !isAdvancedStartCommand) {
-      const advancedSession = advancedAnalysisService.getSessionInfo(sessionId);
-      if (advancedSession && !advancedSession.completed) {
-        // L'utilisateur est dans un processus d'analyse avancée
-        const result = await advancedAnalysisService.processAnswer(sessionId, query);
-
-        if (result.error) {
-          return {
-            action: 'advanced_analysis_error',
-            response: result.error
-          };
-        } else if (result.completed) {
-          return {
-            action: 'advanced_analysis_completed',
-            response: result.message
-          };
-        } else if (result.nextQuestion) {
-          return {
-            action: 'advanced_analysis_continue',
-            response: result.message
-          };
-        }
-      }
-    }
-
-    // 1. Vérifier les demandes de cas d'usage en priorité (avant simulateur)
+    // 1. Vérifier les demandes de cas d'usage en priorité ABSOLUE
     const useCaseKeywords = ['cas d\'usage', 'use case', 'nos cas', 'ensemble des cas', 'use cases'];
     const isUseCaseQuery = useCaseKeywords.some(keyword => queryLower.includes(keyword));
 
@@ -431,39 +405,64 @@ Découvrez comment Aitenders transforme votre activité selon votre profil :
       };
     }
 
-    // 2. Vérifier les commandes simulateur - lancer le simulateur standard
+    // 2. Vérifier les commandes simulateur EN PRIORITÉ ABSOLUE - avant toute autre logique
     const simulatorKeywords = ['simulateur', 'simulation', 'simulator', 'roi calculer', 'calculator', 'calcul roi'];
     const isSimulatorQuery = simulatorKeywords.some(keyword => queryLower.includes(keyword));
 
-    if (isSimulatorQuery && sessionId) {
-      // Redémarrer toute session existante
-      await advancedAnalysisService.restartSession(sessionId);
-      
-      // Commencer directement avec la première question du simulateur standard
-      const firstQuestion = `**Question 1/6 :** Profil de vos appels d'offres
+    if (isSimulatorQuery) {
+      // FORCER un redémarrage complet et propre
+      if (sessionId) {
+        console.log(`[SIMULATOR] Redémarrage forcé de la session: ${sessionId}`);
+        // Redémarrer complètement la session existante
+        const firstQuestion = await advancedAnalysisService.restartSession(sessionId);
+        console.log(`[SIMULATOR] Nouvelle session démarrée avec première question`);
+        return {
+          action: 'advanced_analysis_start',
+          response: `🚀 **SIMULATEUR ROI AITENDERS**
 
-📋 **Combien d'appels d'offres traitez-vous par an ?**
+⏱️ **Temps estimé : 3-5 minutes**
+📧 **Vous recevrez votre rapport détaillé par email**
 
-_____ appels d'offres par an
+Nous allons explorer vos processus en détail avec 6 questions couvrant :
 
-💰 **Quelle est la valeur moyenne d'un appel d'offres ?**
+**📋 Profil des appels d'offres** (1 question combinée)
+**📄 Complexité documentaire** (1 question combinée)  
+**❓ Gestion Q&A** (1 question combinée)
+**📝 Administration contrats** (1 question combinée)
+**🧠 Gestion des connaissances** (1 question combinée)
+**🎯 Profil d'entreprise** (1 question combinée)
 
-_____ € en moyenne
-
-⏱️ **Combien de temps prenez-vous pour préparer une réponse ?**
-
-_____ semaines de préparation
-
-*Répondez avec des valeurs séparées par des virgules, ex: 300, 10M, 6-8*`;
-
-      return {
-        action: 'simulator_standard',
-        response: `🚀 **SIMULATEUR ROI AITENDERS**
-
-Nous allons calculer vos économies potentielles avec 6 questions rapides (2-3 minutes).
+---
 
 ${firstQuestion}`
-      };
+        };
+      }
+    }
+
+    // 3. Gérer les réponses d'analyse avancée en cours (APRÈS la détection des commandes prioritaires)
+    if (sessionId && !isAdvancedStartCommand && !isUseCaseQuery && !isSimulatorQuery) {
+      const advancedSession = advancedAnalysisService.getSessionInfo(sessionId);
+      if (advancedSession && !advancedSession.completed) {
+        // L'utilisateur est dans un processus d'analyse avancée
+        const result = await advancedAnalysisService.processAnswer(sessionId, query);
+
+        if (result.error) {
+          return {
+            action: 'advanced_analysis_error',
+            response: result.error
+          };
+        } else if (result.completed) {
+          return {
+            action: 'advanced_analysis_completed',
+            response: result.message
+          };
+        } else if (result.nextQuestion) {
+          return {
+            action: 'advanced_analysis_continue',
+            response: result.message
+          };
+        }
+      }
     }
 
 
