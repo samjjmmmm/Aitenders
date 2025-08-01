@@ -24,7 +24,7 @@ import bouyguesLogo from "@assets/Bouyges_1753711339292.png";
 import colasLogo from "@assets/Colas_1753711339292.png";
 
 // Import hero image
-import heroImage from "@assets/Document Review and Categorization(1)_1754034312178.jpg";
+import heroImage from "@assets/Try_1754035199425.png";
 import ChatSection from "@/components/chat-section";
 import ChatInterface from "@/components/chat-interface";
 
@@ -310,34 +310,12 @@ export default function UC1Page() {
 
             {/* Right Side - Hero Image */}
             <div className="flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-2xl lg:max-w-3xl xl:max-w-4xl">
-                {/* Professional container with enhanced styling */}
-                <div className="relative bg-white/95 backdrop-blur-sm rounded-3xl p-4 md:p-6 lg:p-8 border border-gray-100/50 shadow-2xl"
-                     style={{
-                       boxShadow: '0 32px 64px -12px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.3)'
-                     }}>
-                  
-                  {/* Image with professional treatment */}
-                  <img 
-                    src={heroImage}
-                    alt="Document Review and Categorization - Aitenders Interface"
-                    className="w-full h-auto rounded-2xl border border-gray-200/60 shadow-lg"
-                    style={{
-                      boxShadow: '0 12px 24px -4px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.04)'
-                    }}
-                  />
-                  
-                  {/* Professional highlight overlay */}
-                  <div className="absolute inset-4 md:inset-6 lg:inset-8 rounded-2xl bg-gradient-to-t from-transparent via-transparent to-white/10 pointer-events-none"></div>
-                </div>
-                
-                {/* Enhanced decorative elements */}
-                <div className="absolute -top-12 -right-12 w-32 h-32 bg-gradient-to-br from-blue-200/30 to-blue-300/20 rounded-full blur-3xl"></div>
-                <div className="absolute -bottom-12 -left-12 w-40 h-40 bg-gradient-to-tr from-indigo-200/25 to-purple-200/20 rounded-full blur-3xl"></div>
-                
-                {/* Professional floating accent */}
-                <div className="absolute top-4 right-4 w-3 h-3 bg-green-500 rounded-full shadow-lg animate-pulse"></div>
-                <div className="absolute bottom-8 left-6 w-2 h-2 bg-blue-500 rounded-full shadow-md"></div>
+              <div className="relative w-full">
+                <img 
+                  src={heroImage}
+                  alt="Aitenders Document Review Interface"
+                  className="w-full h-auto max-w-none"
+                />
               </div>
             </div>
           </div>
