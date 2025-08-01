@@ -267,7 +267,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
           break;
           
         case 'knowledge_base':
-          if (routing.category) {
+          // Check if we have a custom response from routing (like use cases)
+          if (routing.response) {
+            aiResponse = routing.response;
+          } else if (routing.category) {
             // Search specific category
             const categoryResults = ragService.searchByCategory(message, routing.category, 2);
             if (categoryResults.length > 0) {

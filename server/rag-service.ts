@@ -528,21 +528,7 @@ Découvrez nos solutions adaptées à chaque taille de projet :
       }
     }
 
-    const useCasesKeywords = [
-        'quels sont',
-        'nos cas',
-        'cas d\'usage',
-        'use cases',
-        'use case',
-        'ensemble des cas'
-    ];
-
-    if (useCasesKeywords.some(keyword => queryLower.includes(keyword))) {
-        return {
-            action: 'knowledge_base',
-            category: 'use_cases'
-        };
-    }
+    // Use cases are handled earlier in the function, so this is removed to avoid conflict
 
     // 4. Par défaut, utiliser la base de connaissances
     return {
