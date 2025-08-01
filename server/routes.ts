@@ -224,6 +224,28 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const routing = await ragService.routeQuery(message, language, sessionId);
       
       switch (routing.action) {
+        case 'advanced_analysis_two_messages':
+          // Special case: split into presentation and question
+          const fullResponse = routing.response!;
+          const parts = fullResponse.split('---');
+          const presentation = parts[0].trim();
+          const question = parts[1].trim();
+          
+          // Save first message (presentation)
+          const presentationData = insertChatMessageSchema.parse({
+            message: message,
+            response: presentation
+          });
+          await storage.createChatMessageWithSession(presentationData, sessionId);
+          
+          // Save second message (question) 
+          const questionData = insertChatMessageSchema.parse({
+            message: '',
+            response: question
+          });
+          const finalMessage = await storage.createChatMessageWithSession(questionData, sessionId);
+          return res.json(finalMessage);
+          
         case 'advanced_analysis_offer':
         case 'advanced_analysis_start':
         case 'advanced_analysis_continue':

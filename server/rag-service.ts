@@ -379,9 +379,10 @@ ${firstQuestion}`
     const isSimulatorQuery = simulatorKeywords.some(keyword => queryLower.includes(keyword));
 
     if (isSimulatorQuery && sessionId) {
-      // Préparer la session mais ne pas encore démarrer
+      // Démarrer la session et préparer les deux messages
+      const firstQuestion = await advancedAnalysisService.startSession(sessionId);
       return {
-        action: 'advanced_analysis_intro',
+        action: 'advanced_analysis_two_messages',
         response: `🚀 **SIMULATEUR ROI AITENDERS - ANALYSE COMPLÈTE**
 
 ⏱️ **Temps estimé : 3-5 minutes**
@@ -396,7 +397,9 @@ Nous allons explorer vos processus en détail avec 6 questions couvrant :
 **🧠 Gestion des connaissances** (1 question combinée)
 **🎯 Profil d'entreprise** (1 question combinée)
 
-Prêt à commencer ? Écrivez **"commencer"** pour démarrer la première question.`
+---
+
+${firstQuestion}`
       };
     }
 
