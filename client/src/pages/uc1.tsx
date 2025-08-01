@@ -701,7 +701,11 @@ export default function UC1Page() {
 
 
 
-          {/* KPI Grid */}
+          </div>
+        </div>
+
+        {/* KPI Grid */}
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
 
             {/* KPI 1 */}
