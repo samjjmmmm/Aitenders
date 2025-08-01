@@ -312,24 +312,36 @@ Cette analyse prend environ 8-10 minutes mais fournit des insights beaucoup plus
     if (queryLower === 'simulateur' || queryLower === 'simulator' || 
         queryLower.includes('simulateur roi') || queryLower.includes('roi calculator')) {
 
-      // Toujours proposer le choix entre standard et avancé pour un nouveau simulateur
+      // Démarrer directement le simulateur standard
       if (sessionId) {
-        // Supprimer toute session existante
-        advancedAnalysisService.clearSession(sessionId);
+        // Redémarrer toute session existante
+        await advancedAnalysisService.restartSession(sessionId);
       }
 
-      // Nouvelle session
+      // Commencer directement avec la première question du simulateur standard
+      const firstQuestion = `**Question 1/6 :** Profil de vos appels d'offres
+
+📋 **Combien d'appels d'offres traitez-vous par an ?**
+
+_____ appels d'offres par an
+
+💰 **Quelle est la valeur moyenne d'un appel d'offres ?**
+
+_____ € en moyenne
+
+⏱️ **Combien de temps prenez-vous pour préparer une réponse ?**
+
+_____ semaines de préparation
+
+*Répondez avec des valeurs séparées par des virgules, ex: 300, 10M, 6-8*`;
+
       return {
-        action: 'advanced_analysis_offer',
+        action: 'simulator_standard',
         response: `🚀 **SIMULATEUR ROI AITENDERS**
 
-**Analyse Standard (2-3 minutes)**
-Obtenez une estimation rapide de vos économies potentielles avec quelques questions essentielles.
+Nous allons calculer vos économies potentielles avec 6 questions rapides (2-3 minutes).
 
-**Analyse Avancée (5-7 minutes)**  
-Analyse complète de vos processus avec des recommandations détaillées et un rapport personnalisé très précis et actionnables.
-
-**Souhaitez-vous commencer l'analyse avancée ?** Tapez "**oui avancée**" pour démarrer ou "**non**" pour rester avec l'analyse standard.`
+${firstQuestion}`
       };
     }
 
