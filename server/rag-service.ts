@@ -355,52 +355,37 @@ ${firstQuestion}`
     const isUseCaseQuery = useCaseKeywords.some(keyword => queryLower.includes(keyword));
 
     if (isUseCaseQuery) {
-      // Retourner directement les cas d'usage
+      // Retourner directement les cas d'usage organisés par taille de projet
       return {
         action: 'knowledge_base',
-        response: `🎯 **Nos 8 Cas d'Usage Aitenders**
+        response: `🎯 **Nos Cas d'Usage Aitenders**
 
-Découvrez comment Aitenders transforme votre activité selon votre profil :
+Découvrez nos solutions adaptées à chaque taille de projet :
 
-**📋 APPELS D'OFFRES**
+## 🚀 **PETITS PROJETS**
+[**→ UC1 - Appels d'Offres Petits Projets**](/uc1)
+[**→ UC4 - Réalisation Petits Projets**](/uc4)
 
-**UC1 - Fast-Track Small Bids** 🚀
-*Appels d'offres petits projets* 
-[**→ Voir UC1**](/uc1)
+## 📊 **PROJETS MOYENS** 
+[**→ UC2 - Appels d'Offres Projets Moyens**](/uc2)
+[**→ UC5 - Réalisation Projets Moyens**](/uc5)
 
-**UC2 - Medium Bid Management** 📊
-*Gestion d'appels d'offres moyens*
-[**→ Voir UC2**](/uc2)
+## 🏗️ **PROJETS COMPLEXES**
+[**→ UC3 - Appels d'Offres Multi-Lots Complexes**](/uc3) 
+[**→ UC6 - Réalisation Grands Projets**](/uc6)
 
-**UC3 - Complex Multi-Lot Bids** 🏗️
-*Appels d'offres multi-lots complexes*
-[**→ Voir UC3**](/uc3)
+---
 
-**⚙️ EXÉCUTION DE PROJETS**
+## 📝 **RÉDACTION & LIVRABLES**
+• Génération automatique de réponses techniques
+• Templates intelligents personnalisés
+• Révision et optimisation des documents
+• Vérification de conformité automatique
 
-**UC4 - Small Project Execution** 📝
-*Exécution de petits projets*
-[**→ Voir UC4**](/uc4)
+## 🧠 **FONCTIONNALITÉS PLATEFORME**
+[**→ Knowledge Management & Sécurité**](/platform-features)
 
-**UC5 - Medium Project Execution** 🔧
-*Exécution de projets moyens*
-[**→ Voir UC5**](/uc5)
-
-**UC6 - Large Project Execution** 🏭
-*Exécution de grands projets*
-[**→ Voir UC6**](/uc6)
-
-**🧠 GESTION DES CONNAISSANCES**
-
-**UC7 - Knowledge Management Small** 📚
-*Pour petites structures*
-[**→ Voir UC7**](/uc7)
-
-**UC8 - Knowledge Management Large** 🏢
-*Pour grandes organisations*
-[**→ Voir UC8**](/uc8)
-
-**💡 Conseil :** Cliquez sur les liens ci-dessus pour explorer chaque cas d'usage en détail, voir les démos et calculer votre ROI spécifique !`,
+**💡 Cliquez sur les liens pour explorer chaque cas d'usage en détail !**`,
         category: 'use_cases'
       };
     }
@@ -430,6 +415,39 @@ Découvrez comment Aitenders transforme votre activité selon votre profil :
       return {
         action: 'advanced_analysis_next',
         response: nextQuestion
+      };
+    }
+
+    // Handle platform features request
+    const platformKeywords = ['platform-features', 'knowledge management', 'sécurité', 'security', 'km', 'plateforme'];
+    const isPlatformQuery = platformKeywords.some(keyword => queryLower.includes(keyword));
+
+    if (isPlatformQuery) {
+      return {
+        action: 'knowledge_base',
+        response: `🧠 **Knowledge Management & Sécurité Aitenders**
+
+## 🔍 **GESTION DES CONNAISSANCES**
+• **Base de connaissances centralisée** - Toutes vos données projet accessibles instantanément
+• **IA de recherche avancée** - Trouvez l'information pertinente en quelques secondes
+• **Réutilisation intelligente** - L'IA suggère automatiquement les contenus existants
+• **Apprentissage continu** - La plateforme s'améliore à chaque utilisation
+
+## 🔒 **SÉCURITÉ & CONFORMITÉ**
+• **Chiffrement end-to-end** - Vos données protégées à tout niveau
+• **Conformité RGPD** - Respect total de la réglementation européenne
+• **Hébergement sécurisé** - Infrastructure certifiée ISO 27001
+• **Contrôle d'accès granulaire** - Permissions personnalisées par utilisateur
+• **Sauvegarde automatique** - Vos données protégées et récupérables
+
+## 🚀 **AVANTAGES BUSINESS**
+• **ROI démontré** - Retour sur investissement mesurable dès 3 mois
+• **Gain de temps** - Jusqu'à 70% de temps économisé sur la rédaction
+• **Amélioration qualité** - Réponses plus précises et conformes
+• **Avantage concurrentiel** - Réponses plus rapidement que vos concurrents
+
+**💡 Besoin d'une démonstration personnalisée ? Contactez notre équipe !**`,
+        category: 'platform'
       };
     }
 
