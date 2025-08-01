@@ -44,7 +44,7 @@ export class AdvancedTenderCalculator {
         question: 'Décrivez votre profil d\'appels d\'offres : nombre par an, valeur moyenne en euros, et durée de préparation en semaines',
         questionType: 'text',
         validationRules: { minLength: 10, maxLength: 500 },
-        helpText: 'Donnez-nous une vue d\'ensemble de votre activité appels d\'offres',
+        helpText: '',
         followUpQuestions: [
           'Ces chiffres varient-ils selon les secteurs ou types de clients ?',
           'Votre volume d\'affaires augmente-t-il d\'année en année ?'

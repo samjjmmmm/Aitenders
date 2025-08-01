@@ -609,7 +609,7 @@ export default function UC1Page() {
             </div>
 
           {/* Results Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Directeur commercial directeyr de projet offre */}
             <div className="group">
               <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
@@ -655,7 +655,7 @@ export default function UC1Page() {
             </div>
 
 
-            {/* Rédacteurs & Chefs de projet offre */}
+            {/* chef de projets */}
             <div className="group">
               <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
                 <div className="flex items-center mb-6">
@@ -663,36 +663,36 @@ export default function UC1Page() {
                     <MdEdit className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-gray-900">Directeur Commercial ou Directeur des Offres</h4>
-                    <p className="text-sm text-gray-600">Décision rapide, process validé, crédibilité renforcée</p>
+                    <h4 className="text-xl font-bold text-gray-900">Responsable Offre, Chef de Projet, Assistants commercial</h4>
+                    <p className="text-sm text-gray-600">Analyse rapide, validation fluide, sérénité retrouvée</p>
                   </div>
                 </div>
 
                 <p className="text-gray-700 text-base leading-relaxed mb-4">
-                  Obtenez en moins de 48h une analyse complète et documentée, prête à présenter. Vous décidez dès le premier jour grâce à un go / no-go immédiat et démontrez que chaque point a été contrôlé et validé. Cette approche garantit la transparence, réduit les allers‑retours internes et renforce la confiance lors des comités.
+                  Travaillez dès le premier jour sur une base IA déjà structurée et priorisée, sans retraitement manuel. Vous disposez d’une vue synthétique et actionnable des points à valider, d’un accès immédiat aux preuves et d’un suivi clair de vos validations. Résultat : moins de stress, un gain de temps massif et la capacité de démontrer à tout moment que tout a été contrôlé et tracé.
                 </p>
 
                 <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
                   <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Décision éclairée dès J+1 grâce à une analyse instantanée
+                    <span>Moins de relectures, plus de décisions stratégiques
 
                   </span>
                   </div>
                   <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>  Process interne respecté et intégralement tracé
+                    <span> Chaque point couvert, chaque preuve archivée
 
                     </span>
                   </div>
                   <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Transparence totale sur les points critiques</span>
+                    <span>Crédibilité renforcée face aux décideurs internes</span>
                   </div>
                   <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
                     <span>
-                    Crédibilité renforcée lors des comités</span>
+                    Validation fluide et intégralement documentée</span>
                   </div>
                 </div>
 
@@ -706,15 +706,15 @@ export default function UC1Page() {
 
         {/* KPI Grid */}
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
             {/* KPI 1 */}
             <div className="group">
               <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-6 md:p-8 text-center border border-green-100 hover:border-green-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
                 <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-green-600 to-emerald-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
-                  80 %
+                  -50 % à -70 % 
                 </div>
-                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Réduction du temps de rédaction d'offres</p>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Réduction du temps d'analyse</p>
               </div>
             </div>
 
@@ -722,9 +722,9 @@ export default function UC1Page() {
             <div className="group">
               <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-6 md:p-8 text-center border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
                 <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
-                  90 %
+                  100 %
                 </div>
-                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Couverture automatique des exigences</p>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed"> des critères critiques vérifiés et documentés.</p>
               </div>
             </div>
 
@@ -732,19 +732,9 @@ export default function UC1Page() {
             <div className="group">
               <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-6 md:p-8 text-center border border-orange-100 hover:border-orange-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
                 <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-orange-600 to-red-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
-                  2h
+                  +++ Sérénité
                 </div>
-                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Délai moyen de génération d'offre</p>
-              </div>
-            </div>
-
-            {/* KPI 4 */}
-            <div className="group">
-              <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-3xl p-6 md:p-8 text-center border border-purple-100 hover:border-purple-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
-                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-purple-600 to-violet-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300 leading-tight">
-                  100 %
-                </div>
-                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Conformité des livrables</p>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Confiance renforcée du management, moins de stress, zéro escalade interne.</p>
               </div>
             </div>
           </div>
@@ -960,7 +950,7 @@ export default function UC1Page() {
           <div className="text-center mb-16 md:mb-20 lg:mb-24">
             <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Ce qui change avec Aitenders</h3>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              Découvrez la transformation complète, des réponses bâclées aux offres professionnelles gagnantes.
+    
             </p>
           </div>
 
@@ -970,7 +960,7 @@ export default function UC1Page() {
               <MdPlayArrow className="w-12 h-12 text-white" />
             </div>
             <h4 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Simulateur de Performance Commerciale</h4>
-            <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
+                      <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
               Visualisez l'impact de l'IA sur votre taux de conversion et votre efficacité commerciale avec notre simulateur interactif.
             </p>
             <div className="bg-gray-100 rounded-2xl p-12 text-gray-500">
