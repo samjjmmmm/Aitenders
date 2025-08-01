@@ -609,7 +609,22 @@ export default function ChatInterface({
   const formatResponse = (text: string) => {
     return text
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-aitenders-primary-blue hover:text-aitenders-dark-blue underline font-medium cursor-pointer" onclick="window.location.href=\'$2\'; return false;">$1</a>')
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, url) => {
+        // Add unique id for each link to handle clicks properly
+        const linkId = `chat-link-${Math.random().toString(36).substr(2, 9)}`;
+        // Store the click handler globally
+        setTimeout(() => {
+          const linkElement = document.getElementById(linkId);
+          if (linkElement) {
+            linkElement.addEventListener('click', (e) => {
+              e.preventDefault();
+              window.location.href = url;
+            });
+          }
+        }, 100);
+        
+        return `<a id="${linkId}" href="${url}" class="text-aitenders-primary-blue hover:text-aitenders-dark-blue underline font-medium cursor-pointer inline-block px-2 py-1 bg-aitenders-primary-blue/10 rounded hover:bg-aitenders-primary-blue/20 transition-colors">${linkText}</a>`;
+      })
       .replace(/\n/g, '<br/>')
       .replace(/•/g, '&bull;');
   };

@@ -549,23 +549,47 @@ ${firstQuestion}`
       response = language === 'fr' ? 
       `🎯 **Nos 8 Cas d'Usage Aitenders**
 
-Choisissez votre cas d'usage pour découvrir comment Aitenders peut transformer votre activité :
+Découvrez comment Aitenders transforme votre activité selon votre profil :
 
-**📋 Appels d'Offres :**
-• [UC1 - Fast-Track Small Bids](/uc1) - Appels d'offres petits projets
-• [UC2 - Medium Bid Management](/uc2) - Gestion d'appels d'offres moyens  
-• [UC3 - Complex Multi-Lot Bids](/uc3) - Appels d'offres multi-lots complexes
+**📋 APPELS D'OFFRES**
 
-**⚙️ Exécution de Projets :**
-• [UC4 - Small Project Execution](/uc4) - Exécution de petits projets
-• [UC5 - Medium Project Execution](/uc5) - Exécution de projets moyens
-• [UC6 - Large Project Execution](/uc6) - Exécution de grands projets
+**UC1 - Fast-Track Small Bids** 🚀
+*Appels d'offres petits projets* 
+[**→ Voir UC1**](/uc1)
 
-**🧠 Gestion des Connaissances :**
-• [UC7 - Knowledge Management Small](/uc7) - Pour petites structures
-• [UC8 - Knowledge Management Large](/uc8) - Pour grandes organisations
+**UC2 - Medium Bid Management** 📊
+*Gestion d'appels d'offres moyens*
+[**→ Voir UC2**](/uc2)
 
-Cliquez sur un cas d'usage pour découvrir ses fonctionnalités détaillées, voir une démonstration et calculer votre ROI !` :
+**UC3 - Complex Multi-Lot Bids** 🏗️
+*Appels d'offres multi-lots complexes*
+[**→ Voir UC3**](/uc3)
+
+**⚙️ EXÉCUTION DE PROJETS**
+
+**UC4 - Small Project Execution** 📝
+*Exécution de petits projets*
+[**→ Voir UC4**](/uc4)
+
+**UC5 - Medium Project Execution** 🔧
+*Exécution de projets moyens*
+[**→ Voir UC5**](/uc5)
+
+**UC6 - Large Project Execution** 🏭
+*Exécution de grands projets*
+[**→ Voir UC6**](/uc6)
+
+**🧠 GESTION DES CONNAISSANCES**
+
+**UC7 - Knowledge Management Small** 📚
+*Pour petites structures*
+[**→ Voir UC7**](/uc7)
+
+**UC8 - Knowledge Management Large** 🏢
+*Pour grandes organisations*
+[**→ Voir UC8**](/uc8)
+
+**💡 Conseil :** Cliquez sur les liens ci-dessus pour explorer chaque cas d'usage en détail, voir les démos et calculer votre ROI spécifique !` :
       `🎯 **Our 8 Aitenders Use Cases**
 
 Choose your use case to discover how Aitenders can transform your business:
