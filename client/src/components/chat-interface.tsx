@@ -640,15 +640,18 @@ export default function ChatInterface({
   };
 
   // Détecter si c'est une question de simulateur avec champs structurés
-  const detectSimulatorQuestion = (text: string): { isSimulator: boolean; questionId: string; fields: Array<{label: string; placeholder: string; key: string; suffix: string}> } => {
+  const detectSimulatorQuestion = (text: string): { isSimulator: boolean; questionId: string; fields: Array<{label: string; placeholder: string; key: string; suffix: string}>; bgColor: string; borderColor: string; textColor: string } => {
     if (!text.includes('**Question') || !text.includes('_____')) {
-      return { isSimulator: false, questionId: '', fields: [] };
+      return { isSimulator: false, questionId: '', fields: [], bgColor: '', borderColor: '', textColor: '' };
     }
 
     const questionPatterns = [
       {
         id: 'tender_profile_combined',
         pattern: /Profil de vos appels d'offres/,
+        bgColor: 'bg-blue-50',
+        borderColor: 'border-blue-200',
+        textColor: 'text-blue-800',
         fields: [
           { label: '#AO', placeholder: 'ex: 300', key: 'nb_ao', suffix: 'appels d\'offres par an' },
           { label: 'Valeur moyenne', placeholder: 'ex: 10M', key: 'valeur_moyenne', suffix: '€' },
@@ -658,6 +661,9 @@ export default function ChatInterface({
       {
         id: 'document_complexity_combined',
         pattern: /Complexité documentaire/,
+        bgColor: 'bg-green-50',
+        borderColor: 'border-green-200',
+        textColor: 'text-green-800',
         fields: [
           { label: 'Documents par AO', placeholder: 'ex: 15', key: 'docs_par_ao', suffix: 'documents' },
           { label: 'Pages par document', placeholder: 'ex: 30', key: 'pages_par_doc', suffix: 'pages' },
@@ -667,6 +673,9 @@ export default function ChatInterface({
       {
         id: 'qa_management_combined',
         pattern: /Gestion Q&A/,
+        bgColor: 'bg-purple-50',
+        borderColor: 'border-purple-200',
+        textColor: 'text-purple-800',
         fields: [
           { label: 'Cycles Q&A par AO', placeholder: 'ex: 2', key: 'cycles_qa', suffix: 'cycles' },
           { label: 'Heures par cycle', placeholder: 'ex: 8', key: 'heures_cycle', suffix: 'heures' }
@@ -675,6 +684,9 @@ export default function ChatInterface({
       {
         id: 'contract_admin_combined',
         pattern: /Administration contrats/,
+        bgColor: 'bg-orange-50',
+        borderColor: 'border-orange-200',
+        textColor: 'text-orange-800',
         fields: [
           { label: 'Contrats gérés/an', placeholder: 'ex: 50', key: 'contrats_an', suffix: 'contrats' },
           { label: 'Heures setup initial', placeholder: 'ex: 40', key: 'heures_setup', suffix: 'heures par contrat' }
@@ -683,6 +695,9 @@ export default function ChatInterface({
       {
         id: 'knowledge_management_combined',
         pattern: /Gestion des connaissances/,
+        bgColor: 'bg-indigo-50',
+        borderColor: 'border-indigo-200',
+        textColor: 'text-indigo-800',
         fields: [
           { label: '% Réutilisation', placeholder: 'ex: 70', key: 'pct_reutilisation', suffix: '%' },
           { label: '% Créés from scratch', placeholder: 'ex: 25', key: 'pct_nouveau', suffix: '%' }
@@ -691,6 +706,9 @@ export default function ChatInterface({
       {
         id: 'business_profile_combined',
         pattern: /Profil d'entreprise/,
+        bgColor: 'bg-pink-50',
+        borderColor: 'border-pink-200',
+        textColor: 'text-pink-800',
         fields: [
           { label: 'Secteur', placeholder: 'ex: Construction', key: 'secteur', suffix: '' },
           { label: 'CA annuel', placeholder: 'ex: 50M', key: 'ca_annuel', suffix: '€' },
@@ -705,12 +723,15 @@ export default function ChatInterface({
         return {
           isSimulator: true,
           questionId: pattern.id,
-          fields: pattern.fields
+          fields: pattern.fields,
+          bgColor: pattern.bgColor,
+          borderColor: pattern.borderColor,
+          textColor: pattern.textColor
         };
       }
     }
 
-    return { isSimulator: false, questionId: '', fields: [] };
+    return { isSimulator: false, questionId: '', fields: [], bgColor: '', borderColor: '', textColor: '' };
   };
 
   // Soumettre le formulaire structuré du simulateur
@@ -807,14 +828,14 @@ export default function ChatInterface({
 
                             {/* Show Inline Structured Form for Simulator Questions */}
                             {simulatorData.isSimulator && (
-                              <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
-                                <div className="text-sm font-medium text-blue-800 mb-3">
+                              <div className={`mt-4 p-4 ${simulatorData.bgColor} rounded-lg border ${simulatorData.borderColor}`}>
+                                <div className={`text-sm font-medium ${simulatorData.textColor} mb-3`}>
                                   ⚡ Saisie rapide (optionnel)
                                 </div>
                                 <div className="space-y-3">
                                   {simulatorData.fields.map((field) => (
                                     <div key={field.key} className="flex items-center gap-2 text-sm flex-wrap">
-                                      <span className="font-medium text-blue-700">
+                                      <span className={`font-medium ${simulatorData.textColor}`}>
                                         {field.label}:
                                       </span>
                                       <Input
@@ -828,7 +849,7 @@ export default function ChatInterface({
                                         className="h-8 text-sm w-24 border-b-2 border-blue-300 bg-white rounded-md focus:border-blue-500"
                                       />
                                       {field.suffix && (
-                                        <span className="text-blue-700">{field.suffix}</span>
+                                        <span className={simulatorData.textColor}>{field.suffix}</span>
                                       )}
                                     </div>
                                   ))}

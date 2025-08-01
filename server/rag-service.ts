@@ -408,35 +408,29 @@ Découvrez comment Aitenders transforme votre activité selon votre profil :
     // 2. Vérifier les commandes simulateur EN PRIORITÉ ABSOLUE - avant toute autre logique
     const simulatorKeywords = ['simulateur', 'simulation', 'simulator', 'roi calculer', 'calculator', 'calcul roi'];
     const isSimulatorQuery = simulatorKeywords.some(keyword => queryLower.includes(keyword));
+    const isNextCommand = ['suivant', 'next', 'continuer', 'continue'].some(keyword => queryLower.includes(keyword));
 
     if (isSimulatorQuery) {
       // FORCER un redémarrage complet et propre
       if (sessionId) {
         console.log(`[SIMULATOR] Redémarrage forcé de la session: ${sessionId}`);
         // Redémarrer complètement la session existante
-        const firstQuestion = await advancedAnalysisService.restartSession(sessionId);
-        console.log(`[SIMULATOR] Nouvelle session démarrée avec première question`);
+        const response = await advancedAnalysisService.startSession(sessionId);
+        console.log(`[SIMULATOR] Nouvelle session démarrée avec introduction`);
         return {
           action: 'advanced_analysis_start',
-          response: `🚀 **SIMULATEUR ROI AITENDERS**
-
-⏱️ **Temps estimé : 3-5 minutes**
-📧 **Vous recevrez votre rapport détaillé par email**
-
-Nous allons explorer vos processus en détail avec 6 questions couvrant :
-
-**📋 Profil des appels d'offres** (1 question combinée)
-**📄 Complexité documentaire** (1 question combinée)  
-**❓ Gestion Q&A** (1 question combinée)
-**📝 Administration contrats** (1 question combinée)
-**🧠 Gestion des connaissances** (1 question combinée)
-**🎯 Profil d'entreprise** (1 question combinée)
-
----
-
-${firstQuestion}`
+          response: response
         };
       }
+    }
+
+    // Handle "suivant" command to show first question
+    if (isNextCommand && sessionId) {
+      const nextQuestion = await advancedAnalysisService.getNextQuestion(sessionId);
+      return {
+        action: 'advanced_analysis_next',
+        response: nextQuestion
+      };
     }
 
     // 3. Gérer les réponses d'analyse avancée en cours (APRÈS la détection des commandes prioritaires)

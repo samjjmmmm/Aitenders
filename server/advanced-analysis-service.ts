@@ -40,12 +40,37 @@ class AdvancedAnalysisService {
 
     this.sessions.set(sessionId, session);
 
-    const firstQuestion = this.questions[0];
-    if (!firstQuestion) {
-      return "❌ Aucune question disponible dans l'analyse avancée.";
+    // Return only the intro text for the first message
+    return `🚀 **SIMULATEUR ROI AITENDERS**
+
+⏱️ Temps estimé : 3-5 minutes
+📧 Vous recevrez votre rapport détaillé par email
+
+Nous allons explorer vos processus en détail avec 6 questions couvrant :
+
+📋 Profil des appels d'offres (1 question combinée)
+📄 Complexité documentaire (1 question combinée)
+❓ Gestion Q&A (1 question combinée)
+📝 Administration contrats (1 question combinée)
+🧠 Gestion des connaissances (1 question combinée)
+🎯 Profil d'entreprise (1 question combinée)
+
+*Tapez "suivant" pour commencer avec la première question.*`;
+  }
+
+  // Get the next question for a session
+  async getNextQuestion(sessionId: string): Promise<string> {
+    const session = this.sessions.get(sessionId);
+    if (!session) {
+      return this.startSession(sessionId);
     }
 
-    return this.formatQuestion(firstQuestion, 1, this.questions.length);
+    const question = this.questions[session.currentQuestionIndex];
+    if (!question) {
+      return "❌ Aucune question disponible.";
+    }
+
+    return this.formatQuestion(question, session.currentQuestionIndex + 1, this.questions.length);
   }
 
   // Formatter une question avec contexte et champs structurés
