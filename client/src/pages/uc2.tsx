@@ -238,10 +238,10 @@ export default function UC2Page() {
             {/* Left Side - Content */}
             <div className="text-left">
               <div className="mb-12">
-                <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Optimisez Vos Projets</Badge>
+                <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Pilotez les offres moyennes</Badge>
 
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                  Votre offre, 100% claire, 0% surprise.
+                  Découvrez, pilotez et sécurisez chaque clause dès le premier jour.
                 </h1>
 
                 <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]">
