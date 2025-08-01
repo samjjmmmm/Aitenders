@@ -100,9 +100,9 @@ class AdvancedAnalysisService {
   // Obtenir les champs structurés pour chaque question
   private getStructuredFields(questionId: string): string | null {
     const structuredFields: Record<string, string> = {
-      'tender_profile_combined': `📋 #AO : _____ appels d'offres par an
-💰 Valeur moyenne : _____ €
-⏱️ Durée préparation : _____ semaines`,
+      'tender_profile_combined': `📋 Nombre d'appels d'offres par an
+💰 Valeur moyenne des projets
+⏱️ Durée de préparation (en semaines)`,
 
       'document_complexity_combined': `📄 **Documents par AO** : _____ documents
 📑 **Pages par document** : _____ pages  
