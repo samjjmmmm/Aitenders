@@ -625,6 +625,9 @@ export default function ChatInterface({
         
         return `<a id="${linkId}" href="${url}" class="text-aitenders-primary-blue hover:text-aitenders-dark-blue underline font-medium cursor-pointer inline-block px-2 py-1 bg-aitenders-primary-blue/10 rounded hover:bg-aitenders-primary-blue/20 transition-colors">${linkText}</a>`;
       })
+      .replace(/\n_____\n?/g, '<br/>') // Hide the trigger marker
+      .replace(/^_____\n?/g, '') // Hide if at start
+      .replace(/_____$/g, '') // Hide if at end
       .replace(/\n/g, '<br/>')
       .replace(/•/g, '&bull;');
   };
