@@ -308,42 +308,7 @@ Cette analyse prend environ 8-10 minutes mais fournit des insights beaucoup plus
       };
     }
 
-    // 0.1. Gérer le simulateur standard (priorité la plus haute)
-    if (queryLower === 'simulateur' || queryLower === 'simulator' || 
-        queryLower.includes('simulateur roi') || queryLower.includes('roi calculator')) {
 
-      // Démarrer directement le simulateur standard
-      if (sessionId) {
-        // Redémarrer toute session existante
-        await advancedAnalysisService.restartSession(sessionId);
-      }
-
-      // Commencer directement avec la première question du simulateur standard
-      const firstQuestion = `**Question 1/6 :** Profil de vos appels d'offres
-
-📋 **Combien d'appels d'offres traitez-vous par an ?**
-
-_____ appels d'offres par an
-
-💰 **Quelle est la valeur moyenne d'un appel d'offres ?**
-
-_____ € en moyenne
-
-⏱️ **Combien de temps prenez-vous pour préparer une réponse ?**
-
-_____ semaines de préparation
-
-*Répondez avec des valeurs séparées par des virgules, ex: 300, 10M, 6-8*`;
-
-      return {
-        action: 'simulator_standard',
-        response: `🚀 **SIMULATEUR ROI AITENDERS**
-
-Nous allons calculer vos économies potentielles avec 6 questions rapides (2-3 minutes).
-
-${firstQuestion}`
-      };
-    }
 
     // 0.2. Gérer le démarrage de l'analyse avancée (priorité haute)
     if (queryLower.includes('oui avancée') || queryLower.includes('oui avancee') || 
@@ -466,30 +431,36 @@ Découvrez comment Aitenders transforme votre activité selon votre profil :
       };
     }
 
-    // 2. Vérifier les commandes simulateur en priorité - rediriger vers analyse avancée
-    const simulatorKeywords = ['simulateur', 'simulation', 'simulator', 'roi calculer', 'calculator', 'calcul roi', 'économies', 'gains'];
+    // 2. Vérifier les commandes simulateur - lancer le simulateur standard
+    const simulatorKeywords = ['simulateur', 'simulation', 'simulator', 'roi calculer', 'calculator', 'calcul roi'];
     const isSimulatorQuery = simulatorKeywords.some(keyword => queryLower.includes(keyword));
 
     if (isSimulatorQuery && sessionId) {
-      // Démarrer la session et préparer les deux messages
-      const firstQuestion = await advancedAnalysisService.startSession(sessionId);
+      // Redémarrer toute session existante
+      await advancedAnalysisService.restartSession(sessionId);
+      
+      // Commencer directement avec la première question du simulateur standard
+      const firstQuestion = `**Question 1/6 :** Profil de vos appels d'offres
+
+📋 **Combien d'appels d'offres traitez-vous par an ?**
+
+_____ appels d'offres par an
+
+💰 **Quelle est la valeur moyenne d'un appel d'offres ?**
+
+_____ € en moyenne
+
+⏱️ **Combien de temps prenez-vous pour préparer une réponse ?**
+
+_____ semaines de préparation
+
+*Répondez avec des valeurs séparées par des virgules, ex: 300, 10M, 6-8*`;
+
       return {
-        action: 'advanced_analysis_two_messages',
-        response: `🚀 **SIMULATEUR ROI AITENDERS - ANALYSE COMPLÈTE**
+        action: 'simulator_standard',
+        response: `🚀 **SIMULATEUR ROI AITENDERS**
 
-⏱️ **Temps estimé : 3-5 minutes**
-📧 **Vous recevrez votre rapport détaillé par email**
-
-Nous allons explorer vos processus en détail avec 6 questions couvrant :
-
-**📋 Profil des appels d'offres** (1 question combinée)
-**📄 Complexité documentaire** (1 question combinée)  
-**❓ Gestion Q&A** (1 question combinée)
-**📝 Administration contrats** (1 question combinée)
-**🧠 Gestion des connaissances** (1 question combinée)
-**🎯 Profil d'entreprise** (1 question combinée)
-
----
+Nous allons calculer vos économies potentielles avec 6 questions rapides (2-3 minutes).
 
 ${firstQuestion}`
       };
