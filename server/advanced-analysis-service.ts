@@ -58,23 +58,14 @@ class AdvancedAnalysisService {
 
     // Structured fields are handled by the frontend quick entry form only
 
-    // Ajouter des exemples de réponses naturelles au lieu de contraintes de validation
-    if (question.questionType === 'number') {
-      const examples = this.getExampleForQuestion(question.id);
-      if (examples) {
-        formatted += `\n\n💬 **Sinon, écrivez votre réponse détaillée comme l'exemple :**\n*${examples}*`;
-      }
-    } else if (question.questionType === 'choice') {
+    // For choice questions, show options
+    if (question.questionType === 'choice') {
       formatted += `\n\n**Options :**\n${question.validationRules.choices.map((c: string, i: number) => `${i + 1}. ${c}`).join('\n')}`;
     } else if (question.questionType === 'multiple_choice') {
       formatted += `\n\n**Choisissez jusqu'à ${question.validationRules.maxSelections || 3} options :**\n${question.validationRules.choices.map((c: string, i: number) => `${i + 1}. ${c}`).join('\n')}`;
       formatted += `\n\n*Séparez vos réponses par des virgules (ex: 1,3,5)*`;
-    } else if (question.questionType === 'text') {
-      const examples = this.getExampleForQuestion(question.id);
-      if (examples) {
-        formatted += `\n\n💬 **Sinon, écrivez votre réponse détaillée comme l'exemple :**\n*${examples}*`;
-      }
     }
+    // Examples are shown in the quick entry form only
 
     return formatted;
   }
