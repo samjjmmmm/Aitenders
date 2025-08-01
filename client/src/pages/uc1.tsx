@@ -241,14 +241,14 @@ export default function UC1Page() {
             {/* Left Side - Content */}
             <div className="text-left">
               <div className="mb-12">
-                <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Accélérez Vos Offres Répétitives</Badge>
+                <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Accélérez l'Analyse Des Offres Répétitives</Badge>
 
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                  Analyse express. Contrôle total. Confiance immédiate.
+                  Une analyse  <span className="text-purple-600">immediate</span> du DCE, aligné avec vos <span className="text-purple-600">processus interne.</span>
                 </h1>
 
                 <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]">
-                  Validez tous les critères en moins de 48h, rassurez votre hiérarchie et gagnez un temps précieux, grâce à une analyse complète, cohérente et prête à présenter.
+                  La seule plateforme pensée pour les petits projets à cycles courts : Agents IA d'analyse des points clés, automatisation d'une synthèse et validation guidée. Vous transformez des jours de relectureet d'analyse en <span className="text-purple-600">heures</span>, gagnez en sérénité et livrez une offre solide et incontestable — sans surcharge ni faux départs.
                 </p>
               </div>
 
@@ -370,16 +370,20 @@ export default function UC1Page() {
 
               {/* Main Headline */}
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Quand chaque heure compte, <span className="text-blue-600">vos validations ne peuvent pas attendre</span>
+                Go / No-Go immédiat<span className="text-blue-600">, process interne garanti </span>
               </h2>
 
               {/* Body Copy */}
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Sur les petits projets répétés, il faut valider vite et rassurer sa hiérarchie, souvent sans équipe support. Les relectures manuelles rallongent les délais, multiplient les erreurs et ajoutent un stress inutile.
+                Sur les petits projets, la pression est double : analyser vite et prouver que tout a été lu, compris et contrôlé.
+                <p>Sans support transversal (qualité, juridique), chaque oubli peut coûter cher en marge en exécution et du coup en crédibilité interne.</p>
+         
               </p>
 
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Avec Aitenders, vos documents deviennent exploitables dès le premier jour : structuration automatique, exigences identifiées et points clés synthétisés. Vous gagnez un temps précieux et validez sereinement vos projets en moins de 48 heures.
+                Avec Aitenders, vous obtenez en quelques minutes une vision claire et priorisée de vos documents pour un go/no‑go immédiat. La plateforme guide ensuite la validation et archive chaque contrôle, garantissant que vos obligations internes sont remplies sans surcharge.
+
+
               </p>
 
               {/* CTA Buttons */}
@@ -428,9 +432,9 @@ export default function UC1Page() {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Ne perdez plus de jours précieux <span className="text-blue-600">à tout relire</span></h1>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-blue-600">copilote IA </span>qui Votre copilote IA qui accélère l’analyse de vos petits projets</h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
-              Aitenders transforme vos documents en une base claire et exploitable dès le premier jour, pour décider plus vite et valider sans stress.
+              Décidez vite et prouvez que tout a été contrôlé, en moins de 48h.
             </p>
           </div>
 
@@ -440,26 +444,18 @@ export default function UC1Page() {
               <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdFlashOn className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Structuration IA immédiate</h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Structuration instantanée pour un premier "go / no-go"  <span className="text-purple-600">immédiat</span> </h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Vos documents sont analysés automatiquement pour fournir une base exploitable dès leur dépôt.
+                Grâce aux assistants IA, vos documents sont instantanément analysés, classés et priorisés : critères d’intérêt, points critiques et preuves associées sont détectés en quelques minutes.
+                <p></p>
+                Le Responsable Offre démarre ainsi avec une base claire et exploitable : vision globale du projet, identification des points bloquants éventuels et possibilité de décider quasi immédiatement d’un “go / no‑go”.
               </p>
               <div className="space-y-3 mb-8">
-                <div className="flex items-start text-gray-600">
-                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Clauses et exigences extraites et classées par priorité</span>
-                </div>
-                <div className="flex items-start text-gray-600">
-                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Détection instantanée des incohérences ou doublons</span>```text
-                </div>
-                <div className="flex items-start text-gray-600">
-                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Vision stratégique claire en quelques minutes</span>
-                </div>
+  
+
               </div>
               <p className="text-lg font-semibold text-blue-600">
-                Vous réduisez de 50 % le temps nécessaire au cadrage initial.
+                Votre analyse prête avant même la première réunion
               </p>
             </div>
             <div className="order-2">
@@ -532,26 +528,18 @@ export default function UC1Page() {
               <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdGroups className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Synthèse visuelle claire et <span className="text-orange-600">actionnable</span></h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Accédez à une vision  <span className="text-orange-600">claire</span> de votre projet</h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Une vue consolidée présente vos critères critiques avec des preuves directement accessibles.
+               Aitenders génère une vue claire et priorisée de l’ensemble des critères détectés, avec leurs valeurs et les liens directs vers les documents sources.
+                <p>          Le Responsable Offre n’a plus besoin de parcourir des centaines de pages ou de jongler entre plusieurs fichiers : tout est rassemblé dans une synthèse visuelle, exploitable immédiatement.
+                </p>
+      
+
               </p>
               <div className="space-y-3 mb-8">
-                <div className="flex items-start text-gray-600">
-                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Tableaux de critères prêts à l'emploi</span>
-                </div>
-                <div className="flex items-start text-gray-600">
-                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Liens directs vers les passages contractuels sources</span>
-                </div>
-                <div className="flex items-start text-gray-600">
-                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Mise en évidence automatique des points de vigilance</span>
-                </div>
               </div>
               <p className="text-lg font-semibold text-orange-600">
-                Vous divisez par trois le temps d'analyse et gagnez en précision.
+                Votre revue interne prête en quelques minutes
               </p>
             </div>
           </div>
@@ -562,26 +550,18 @@ export default function UC1Page() {
               <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdSecurity className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Validation guidée et <span className="text-green-600">tracée</span></h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Validez et archivez chaque point <span className="text-green-600">sans effort</span></h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Chaque exigence suit un processus de validation structuré et documenté.
+                Aitenders vous guide pas à pas pour confirmer, ajuster ou rejeter chaque élément identifié par l’IA. Aitenders vous guide pas à pas pour confirmer, ajuster ou rejeter chaque élément identifié par l’IA.
+                Chaque validation est automatiquement tracée et historisée, créant un dossier de preuves complet.          
+                <p></p>
+                Le responsable d'offre passe d’une validation manuelle, lente et incertaine à un processus fluide, sécurisé et incontestable.
               </p>
               <div className="space-y-3 mb-8">
-                <div className="flex items-start text-gray-600">
-                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Acceptation, ajustement ou rejet avec justification associée</span>
-                </div>
-                <div className="flex items-start text-gray-600">
-                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Historique complet des validations et décisions</span>
-                </div>
-                <div className="flex items-start text-gray-600">
-                  <MdCheckCircle className="w-5 h-5 mr-3 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Dossier de conformité prêt pour hiérarchie ou audit</span>
-                </div>
+               
               </div>
               <p className="text-lg font-semibold text-green-600">
-                Vous validez sereinement tous vos critères en moins de 48 heures.
+                Finies les zones grises : tout est validé et tracé.
               </p>
             </div>
             <div className="order-2">
@@ -626,8 +606,8 @@ export default function UC1Page() {
           
           <div className="mb-20 md:mb-24 lg:mb-28">
           <div className="text-center mb-12 md:mb-16">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Des résultats concrets pour chaque rôle clé</h3>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Aitenders permet à chaque acteur de la réponse aux appels d'offres de gagner du temps, d'assurer la conformité et de présenter des dossiers solides en toute confiance.</p>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Ce que nos utilisateurs obtiennent concrètement pour les petites offres</h3>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Des résultats mesurables pour chaque profil d'utilisateur</p>
             </div>
 
           {/* Results Grid */}
@@ -640,37 +620,43 @@ export default function UC1Page() {
                     <MdEdit className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-gray-900">Rédacteurs & Chefs de projet offre</h4>
-                    <p className="text-sm text-gray-600">Génération de contenu</p>
+                    <h4 className="text-xl font-bold text-gray-900">Directeur Commercial ou Directeur des Offres</h4>
+                    <p className="text-sm text-gray-600">Décision rapide, process validé, crédibilité renforcée</p>
                   </div>
                 </div>
 
                 <p className="text-gray-700 text-base leading-relaxed mb-4">
-                  Produisez des réponses structurées, conformes et prêtes à convaincre dès le premier jour.
+                  Obtenez en moins de 48h une analyse complète et documentée, prête à présenter. Vous décidez dès le premier jour grâce à un go / no-go immédiat et démontrez que chaque point a été contrôlé et validé. Cette approche garantit la transparence, réduit les allers‑retours internes et renforce la confiance lors des comités.
                 </p>
 
                 <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
                   <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>90% du contenu généré automatiquement à partir du cahier des charges</span>
+                    <span>Décision éclairée dès J+1 grâce à une analyse instantanée
+
+                  </span>
                   </div>
                   <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Argumentaires alignés sur les attentes de l'acheteur</span>
+                    <span>  Process interne respecté et intégralement tracé
+
+                    </span>
                   </div>
                   <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Temps libéré pour renforcer la valeur ajoutée de l'offre</span>
+                    <span>Transparence totale sur les points critiques</span>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>
+                    Crédibilité renforcée lors des comités</span>
                   </div>
                 </div>
 
-                <div className="mt-6 p-4 bg-white/70 rounded-lg border border-gray-200/30">
-                  <p className="text-sm text-gray-700 font-medium">Vous livrez une proposition complète et différenciante en quelques heures, pas en plusieurs jours.</p>
-                </div>
               </Card>
             </div>
 
-            {/* Contract Managers & Responsables conformité */}
+            {/* Assistants*/}
             <div className="group">
               <Card className="h-full p-8 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
                 <div className="flex items-center mb-6">
@@ -678,33 +664,36 @@ export default function UC1Page() {
                     <MdVerified className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-gray-900">Contract Managers & Responsables conformité</h4>
-                    <p className="text-sm text-gray-600">Conformité sécurisée</p>
+                    <h4 className="text-xl font-bold text-gray-900">Responsable Offre, Chef de Projet ou Assistant Offre</h4>
+                    <p className="text-sm text-gray-600">Analyse rapide, validation fluide, sérénité retrouvée</p>
                   </div>
                 </div>
 
                 <p className="text-gray-700 text-base leading-relaxed mb-4">
-                  Assurez la couverture de chaque exigence et réduisez vos risques de non‑conformité.
+                  Travaillez dès le premier jour sur une base IA déjà structurée et priorisée, sans retraitement manuel. Vous disposez d’une vue synthétique et actionnable des points à valider, d’un accès immédiat aux preuves et d’un suivi clair de vos validations. Résultat : moins de stress, un gain de temps massif et la capacité de démontrer à tout moment que tout a été contrôlé et tracé.es de non‑conformité.
                 </p>
 
                 <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
                   <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Paragraphes directement reliés à leurs exigences sources</span>
+                    <span>Moins de relectures, plus de décisions stratégiques</span>
                   </div>
                   <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Vérification instantanée de la cohérence et de la traçabilité</span>
+                    <span>Validation fluide et intégralement documentée</span>
                   </div>
+                  
                   <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Justification documentée prête pour audits et négociations</span>
+                    <span>Chaque point couvert, chaque preuve archivée</span>
                   </div>
                 </div>
-
-                <div className="mt-6 p-4 bg-white/70 rounded-lg border border-gray-200/30">
-                  <p className="text-sm text-gray-700 font-medium">Vous éliminez jusqu'à 90% des risques de rejet liés à la conformité.</p>
+                <div className="flex items-start">
+                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>Crédibilité renforcée face aux décideurs internes</span>
+                  </div>
                 </div>
+   
               </Card>
             </div>
 

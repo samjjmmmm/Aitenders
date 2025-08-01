@@ -486,7 +486,7 @@ export default function UC2Page() {
 
               {/* Main Headline */}
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Des appels d'offres complexes, des équipes limitées, <span className="text-blue-600">zéro marge pour l'erreur</span>
+                Structuration automatique du périmètre dès le jour 1
               </h2>
 
               {/* Body Copy */}
@@ -556,7 +556,7 @@ export default function UC2Page() {
               <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdFlashOn className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Structuration automatique du périmètre</h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Structuration instantanée pour un premier "go / no-go" immédiat</h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                 Dès le chargement du dossier, Aitenders organise vos documents et extrait toutes les clauses critiques.
               </p>
@@ -648,9 +648,13 @@ export default function UC2Page() {
               <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdWarning className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Détection automatique des <span className="text-orange-600">clauses critiques</span></h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Une analyse proactive et une cohérence contractuelle garantie dès   <span className="text-orange-600">le premier scan</span></h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                L'IA scanne chaque document pour repérer les points à risque qui peuvent compromettre la conformité.
+                Grâce à l’IA d’Aitenders, vos documents sont instantanément segmentés et organisés en lots et critères contractuels.
+
+                Le Responsable Offre accède immédiatement à une vue synthétique : points bloquants, écarts et zones sensibles sont visibles sans parcourir des centaines de pages.
+
+                Votre vision claire et priorisée dès le premier jour
               </p>
               <div className="space-y-3 mb-8">
                 <div className="flex items-start text-gray-600">
@@ -678,7 +682,7 @@ export default function UC2Page() {
               <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdDashboard className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Pilotage dynamique des Q&A et des <span className="text-green-600">versions</span></h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Un contrôle total sur chaque évolution, <span className="text-green-600">sans surprisess</span></h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                 Collaborez efficacement sur chaque réponse et gardez toujours la bonne version sous contrôle.
               </p>
@@ -767,7 +771,8 @@ export default function UC2Page() {
                   <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Détection automatique des clauses critiques et incohérences</span>
+                      <span>
+                        et incohérences</span>
                     </div>
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
