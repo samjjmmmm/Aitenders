@@ -24,7 +24,7 @@ import bouyguesLogo from "@assets/Bouyges_1753711339292.png";
 import colasLogo from "@assets/Colas_1753711339292.png";
 
 // Import hero image
-import heroImage from "@assets/Document Review and Categorization_1754034067501.png";
+import heroImage from "@assets/Document Review and Categorization(1)_1754034312178.jpg";
 import ChatSection from "@/components/chat-section";
 import ChatInterface from "@/components/chat-interface";
 
