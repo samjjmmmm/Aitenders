@@ -500,6 +500,28 @@ export default function ChatInterface({
     setShowSimulatorForm(false);
   };
 
+  // Effect to hide header when chat is expanded
+  useEffect(() => {
+    const header = document.querySelector('header');
+    if (header) {
+      if (isExpanded) {
+        header.style.display = 'none';
+        document.body.style.paddingTop = '0';
+      } else {
+        header.style.display = 'block';
+        document.body.style.paddingTop = '';
+      }
+    }
+
+    // Cleanup function to restore header when component unmounts
+    return () => {
+      if (header) {
+        header.style.display = 'block';
+        document.body.style.paddingTop = '';
+      }
+    };
+  }, [isExpanded]);
+
   // Don't render if closed
   if (isClosed) {
     return (
@@ -514,8 +536,8 @@ export default function ChatInterface({
   }
 
   return (
-    <div className={`fixed bottom-0 left-0 right-0 z-50 ${transparent || isExpanded ? 'bg-transparent' : 'bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-2xl'}`}>
-      <div className={`${isExpanded ? 'w-[75%] h-[75vh]' : 'max-w-4xl'} mx-auto p-2 ${isExpanded ? 'flex flex-col' : ''}`}>
+    <div className={`fixed ${isExpanded ? 'inset-0' : 'bottom-0 left-0 right-0'} z-50 ${transparent || isExpanded ? 'bg-transparent' : 'bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-2xl'}`}>
+      <div className={`${isExpanded ? 'w-[90%] h-[95vh] mt-4' : 'max-w-4xl'} mx-auto p-2 ${isExpanded ? 'flex flex-col' : ''}`}></div>
         <div className={`bg-white border border-gray-300 ${isExpanded ? 'rounded-2xl h-full flex flex-col shadow-2xl' : 'rounded-2xl'} shadow-lg p-3 relative`}>
           {/* Expand/Collapse Button */}
           <button
@@ -604,7 +626,8 @@ export default function ChatInterface({
                                   </Button>
                                 </div>
                                 <div className="text-xs text-gray-500 mt-2">
-                                  💬 Ou écrivez votre réponse complète dans le chat ci-dessous
+                                  💬 Sinon, écrivez votre réponse détaillée comme l'exemple :
+                                  <span className="italic">" Nous traitons 300 appels d'offres complexes par an, 10 complexes en JV, 100 moyen et 400 petits valeur moyenne respective 100M€, 10M€, 1 M€, préparation 6-8 semaines pour les petits à 1 an pour les grands"</span>
                                 </div>
                               </div>
                             );
