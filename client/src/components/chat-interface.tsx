@@ -609,6 +609,7 @@ export default function ChatInterface({
   const formatResponse = (text: string) => {
     return text
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-aitenders-primary-blue hover:text-aitenders-dark-blue underline font-medium cursor-pointer" onclick="window.location.href=\'$2\'; return false;">$1</a>')
       .replace(/\n/g, '<br/>')
       .replace(/•/g, '&bull;');
   };

@@ -314,8 +314,8 @@ Cette analyse prend environ 8-10 minutes mais fournit des insights beaucoup plus
 
       // Toujours proposer le choix entre standard et avancé pour un nouveau simulateur
       if (sessionId) {
-        // Redémarrer toute session existante
-        await advancedAnalysisService.restartSession(sessionId);
+        // Supprimer toute session existante
+        advancedAnalysisService.clearSession(sessionId);
       }
 
       // Nouvelle session
@@ -479,6 +479,22 @@ ${firstQuestion}`
       }
     }
 
+    const useCasesKeywords = [
+        'quels sont',
+        'nos cas',
+        'cas d\'usage',
+        'use cases',
+        'use case',
+        'ensemble des cas'
+    ];
+
+    if (useCasesKeywords.some(keyword => queryLower.includes(keyword))) {
+        return {
+            action: 'knowledge_base',
+            category: 'use_cases'
+        };
+    }
+
     // 4. Par défaut, utiliser la base de connaissances
     return {
       action: 'knowledge_base'
@@ -517,6 +533,46 @@ ${firstQuestion}`
       response += language === 'fr' 
         ? '\n\n📞 *Contactez-nous pour une démonstration adaptée à vos besoins.*'
         : '\n\n📞 *Contact us for a demo tailored to your needs.*';
+    } else if (category === 'use_cases') {
+      response = language === 'fr' ? 
+      `🎯 **Nos 8 Cas d'Usage Aitenders**
+
+Choisissez votre cas d'usage pour découvrir comment Aitenders peut transformer votre activité :
+
+**📋 Appels d'Offres :**
+• [UC1 - Fast-Track Small Bids](/uc1) - Appels d'offres petits projets
+• [UC2 - Medium Bid Management](/uc2) - Gestion d'appels d'offres moyens  
+• [UC3 - Complex Multi-Lot Bids](/uc3) - Appels d'offres multi-lots complexes
+
+**⚙️ Exécution de Projets :**
+• [UC4 - Small Project Execution](/uc4) - Exécution de petits projets
+• [UC5 - Medium Project Execution](/uc5) - Exécution de projets moyens
+• [UC6 - Large Project Execution](/uc6) - Exécution de grands projets
+
+**🧠 Gestion des Connaissances :**
+• [UC7 - Knowledge Management Small](/uc7) - Pour petites structures
+• [UC8 - Knowledge Management Large](/uc8) - Pour grandes organisations
+
+Cliquez sur un cas d'usage pour découvrir ses fonctionnalités détaillées, voir une démonstration et calculer votre ROI !` :
+      `🎯 **Our 8 Aitenders Use Cases**
+
+Choose your use case to discover how Aitenders can transform your business:
+
+**📋 Tender Management:**
+• [UC1 - Fast-Track Small Bids](/uc1) - Small project tenders
+• [UC2 - Medium Bid Management](/uc2) - Medium tender management
+• [UC3 - Complex Multi-Lot Bids](/uc3) - Complex multi-lot tenders
+
+**⚙️ Project Execution:**
+• [UC4 - Small Project Execution](/uc4) - Small project execution
+• [UC5 - Medium Project Execution](/uc5) - Medium project execution
+• [UC6 - Large Project Execution](/uc6) - Large project execution
+
+**🧠 Knowledge Management:**
+• [UC7 - Knowledge Management Small](/uc7) - For small structures
+• [UC8 - Knowledge Management Large](/uc8) - For large organizations
+
+Click on a use case to discover its detailed features, see a demonstration and calculate your ROI!`;
     }
 
     return response;
