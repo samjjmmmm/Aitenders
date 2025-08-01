@@ -362,30 +362,44 @@ ${firstQuestion}`
 
 Découvrez nos solutions adaptées à chaque taille de projet :
 
-## 🚀 **PETITS PROJETS**
-[**→ UC1 - Appels d'Offres Petits Projets**](/uc1)
-[**→ UC4 - Réalisation Petits Projets**](/uc4)
-
-## 📊 **PROJETS MOYENS** 
-[**→ UC2 - Appels d'Offres Projets Moyens**](/uc2)
-[**→ UC5 - Réalisation Projets Moyens**](/uc5)
-
-## 🏗️ **PROJETS COMPLEXES**
-[**→ UC3 - Appels d'Offres Multi-Lots Complexes**](/uc3) 
-[**→ UC6 - Réalisation Grands Projets**](/uc6)
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; max-width: 1200px; margin: 1.5rem 0;">
+  <div style="background: linear-gradient(135deg, #EBF2FD 0%, #F5F9FE 100%); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #3880E8;">
+    <h3 style="color: #112646; margin: 0 0 1rem 0; font-size: 1.1rem;">🚀 <strong>PETITS PROJETS</strong></h3>
+    <div style="space-y: 0.75rem;">
+      <div><a href="/uc1" style="color: #3880E8; text-decoration: none; font-weight: 600;">→ UC1 - Appels d'Offres</a></div>
+      <div><a href="/uc4" style="color: #3880E8; text-decoration: none; font-weight: 600;">→ UC4 - Réalisation</a></div>
+    </div>
+  </div>
+  
+  <div style="background: linear-gradient(135deg, #F0F7FF 0%, #F8FBFF 100%); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #0066CC;">
+    <h3 style="color: #112646; margin: 0 0 1rem 0; font-size: 1.1rem;">📊 <strong>PROJETS MOYENS</strong></h3>
+    <div style="space-y: 0.75rem;">
+      <div><a href="/uc2" style="color: #0066CC; text-decoration: none; font-weight: 600;">→ UC2 - Appels d'Offres</a></div>
+      <div><a href="/uc5" style="color: #0066CC; text-decoration: none; font-weight: 600;">→ UC5 - Réalisation</a></div>
+    </div>
+  </div>
+  
+  <div style="background: linear-gradient(135deg, #F3F0FF 0%, #FAFBFF 100%); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #6B46C1;">
+    <h3 style="color: #112646; margin: 0 0 1rem 0; font-size: 1.1rem;">🏗️ <strong>PROJETS COMPLEXES</strong></h3>
+    <div style="space-y: 0.75rem;">
+      <div><a href="/uc3" style="color: #6B46C1; text-decoration: none; font-weight: 600;">→ UC3 - Multi-Lots Complexes</a></div>
+      <div><a href="/uc6" style="color: #6B46C1; text-decoration: none; font-weight: 600;">→ UC6 - Grands Projets</a></div>
+    </div>
+  </div>
+</div>
 
 ---
 
 ## 📝 **RÉDACTION & LIVRABLES**
-• Génération automatique de réponses techniques
-• Templates intelligents personnalisés
-• Révision et optimisation des documents
-• Vérification de conformité automatique
+• **Génération automatique** de réponses techniques adaptées au secteur
+• **Templates intelligents** personnalisés selon vos historiques de gains
+• **Révision et optimisation** des documents par IA spécialisée BTP
+• **Vérification de conformité** automatique des exigences réglementaires
 
 ## 🧠 **FONCTIONNALITÉS PLATEFORME**
-[**→ Knowledge Management & Sécurité**](/platform-features)
+[**→ Knowledge Management & Sécurité de la Plateforme**](/platform-features)
 
-**💡 Cliquez sur les liens pour explorer chaque cas d'usage en détail !**`,
+**💡 Cliquez sur les liens ci-dessus pour explorer chaque cas d'usage en détail et calculer votre ROI !**`,
         category: 'use_cases'
       };
     }

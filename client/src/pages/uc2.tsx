@@ -245,7 +245,7 @@ export default function UC2Page() {
                 </h1>
 
                 <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]">
-                  Transformez vos dossiers complexes en une vision contractuelle claire dès le premier jour. Validez vos réponses en deux fois moins de temps, sans risques de dernière minute.
+                  Transformez un dossier dense et complexe en une vision contractuelle claire dès les premières heures. Gagnez du temps, crédibilisez votre réponse et livrez une offre sans aucune surprise de dernière minute.
                 </p>
               </div>
 
