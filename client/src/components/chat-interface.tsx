@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { MdSend, MdSettings, MdBarChart, MdExpandMore, MdExpandLess, MdClose, MdContentCopy, MdDelete, MdCalculate, MdSecurity, MdTrendingUp, MdContactMail } from "react-icons/md";
+import { MdSend, MdSettings, MdBarChart, MdExpandMore, MdExpandLess, MdClose, MdContentCopy, MdDelete, MdCalculate, MdSecurity, MdTrendingUp, MdContactMail, MdPlayArrow, MdStarOutline, MdAnalytics } from "react-icons/md";
 import { FaRobot } from "react-icons/fa";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
@@ -163,14 +163,13 @@ export default function ChatInterface({
     }
   }, [browserFingerprint, sessionInitialized, clearChatMutation]);
 
-  // Clear chat on page navigation only
+  // Track page changes without clearing chat - maintain context across pages
   useEffect(() => {
     const handlePageChange = () => {
       const newPage = window.location.pathname;
       if (currentPage && currentPage !== newPage) {
-        // Clear chat when navigating to different pages
-        clearChatMutation.mutate();
-        console.log(`Chat cleared due to page change: ${currentPage} → ${newPage}`);
+        // Just update current page, don't clear chat
+        console.log(`Page changed: ${currentPage} → ${newPage} (chat context preserved)`);
       }
       setCurrentPage(newPage);
     };
@@ -202,7 +201,7 @@ export default function ChatInterface({
       history.pushState = originalPushState;
       history.replaceState = originalReplaceState;
     };
-  }, [currentPage, clearChatMutation]);
+  }, [currentPage]);
 
   const sendMessageMutation = useMutation({
     mutationFn: async (messageText: string) => {
@@ -342,41 +341,237 @@ export default function ChatInterface({
     return questions[language]?.[buttonLabel as keyof typeof questions[typeof language]] || "";
   };
 
-  // Default actions
-  const defaultActions = [
-    {
-      label: language === 'fr' ? 'Simulateur ROI' : 'ROI Simulator',
-      icon: <MdCalculate className="w-3 h-3 text-gray-400" />,
-      onClick: () => {
-        setIsExpanded(true);
-        startSimulator();
-      }
-    },
-    {
-      label: language === 'fr' ? 'Sécurité' : 'Security', 
-      icon: <MdSecurity className="w-3 h-3 text-gray-400" />,
-      onClick: () => {
-        setIsExpanded(true);
-        sendMessageMutation.mutate("Que fait Aitenders pour la sécurité des données ?");
-      }
-    },
-    {
-      label: 'ROI',
-      icon: <MdTrendingUp className="w-3 h-3 text-gray-400" />,
-      onClick: () => {
-        setIsExpanded(true);
-        startSimulator();
-      }
-    },
-    {
-      label: 'Contact',
-      icon: <MdContactMail className="w-3 h-3 text-gray-400" />,
-      onClick: () => {
-        setIsExpanded(true);
-        sendMessageMutation.mutate("Comment contacter l'équipe Aitenders pour une démonstration ?");
-      }
+  // Dynamic actions based on current page
+  const getPageSpecificActions = () => {
+    const currentPath = currentPage || window.location.pathname;
+    
+    // Home page actions
+    if (currentPath === '/') {
+      return [
+        {
+          label: language === 'fr' ? 'Nos Cas d\'Usage' : 'Our Use Cases',
+          icon: <span className="text-gray-400">+</span>,
+          onClick: () => {
+            setIsExpanded(true);
+            sendMessageMutation.mutate("Quels sont l'ensemble des cas d'usage disponibles sur Aitenders ?");
+          }
+        },
+        {
+          label: "Simulation / ROI", 
+          icon: <MdSettings className="w-3 h-3 text-gray-400" />,
+          onClick: () => {
+            setIsExpanded(true);
+            startSimulator();
+          }
+        },
+        {
+          label: "AI Agents",
+          icon: <MdStarOutline className="w-3 h-3 text-gray-400" />,
+          onClick: () => {
+            setIsExpanded(true);
+            sendMessageMutation.mutate("Comment fonctionnent les agents IA d'Aitenders et que peuvent-ils faire ?");
+          }
+        },
+        {
+          label: "Data Security",
+          icon: <MdSecurity className="w-3 h-3 text-gray-400" />,
+          onClick: () => {
+            setIsExpanded(true);
+            sendMessageMutation.mutate("Que fait Aitenders pour la sécurité des données ?");
+          }
+        }
+      ];
     }
-  ];
+
+    // UC1 page actions
+    if (currentPath === '/uc1') {
+      return [
+        {
+          label: "Nos cas d'usage",
+          icon: <span className="text-gray-400">+</span>,
+          onClick: () => {
+            setIsExpanded(true);
+            sendMessageMutation.mutate("Quels sont l'ensemble des cas d'usage disponibles sur Aitenders ?");
+          }
+        },
+        {
+          label: "Demo UC1",
+          icon: <MdPlayArrow className="w-3 h-3 text-gray-400" />,
+          onClick: () => {
+            setIsExpanded(true);
+            sendMessageMutation.mutate("Comment Aitenders aide-t-il dans l'analyse et la réponse aux appels d'offres simples ?");
+          }
+        },
+        {
+          label: "ROI Calculator", 
+          icon: <MdAnalytics className="w-3 h-3 text-gray-400" />,
+          onClick: () => {
+            setIsExpanded(true);
+            startSimulator();
+          }
+        },
+        {
+          label: "Contact Expert",
+          icon: <MdContactMail className="w-3 h-3 text-gray-400" />,
+          onClick: () => {
+            setIsExpanded(true);
+            sendMessageMutation.mutate("Comment obtenir l'aide d'un expert en gestion d'appels d'offres ?");
+          }
+        }
+      ];
+    }
+
+    // UC2 page actions
+    if (currentPath === '/uc2') {
+      return [
+        {
+          label: "Nos cas d'usage",
+          icon: <span className="text-gray-400">+</span>,
+          onClick: () => {
+            setIsExpanded(true);
+            sendMessageMutation.mutate("Quels sont l'ensemble des cas d'usage disponibles sur Aitenders ?");
+          }
+        },
+        {
+          label: "Demo UC2",
+          icon: <MdPlayArrow className="w-3 h-3 text-gray-400" />,
+          onClick: () => {
+            setIsExpanded(true);
+            sendMessageMutation.mutate("Comment Aitenders aide-t-il dans la gestion collaborative des appels d'offres ?");
+          }
+        },
+        {
+          label: "ROI Calculator", 
+          icon: <MdAnalytics className="w-3 h-3 text-gray-400" />,
+          onClick: () => {
+            setIsExpanded(true);
+            startSimulator();
+          }
+        },
+        {
+          label: "Contact Expert",
+          icon: <MdContactMail className="w-3 h-3 text-gray-400" />,
+          onClick: () => {
+            setIsExpanded(true);
+            sendMessageMutation.mutate("Comment obtenir l'aide d'un expert en gestion d'appels d'offres ?");
+          }
+        }
+      ];
+    }
+
+    // UC3 page actions  
+    if (currentPath === '/uc3') {
+      return [
+        {
+          label: "Nos cas d'usage",
+          icon: <span className="text-gray-400">+</span>,
+          onClick: () => {
+            setIsExpanded(true);
+            sendMessageMutation.mutate("Quels sont l'ensemble des cas d'usage disponibles sur Aitenders ?");
+          }
+        },
+        {
+          label: "Demo UC3",
+          icon: <MdPlayArrow className="w-3 h-3 text-gray-400" />,
+          onClick: () => {
+            setIsExpanded(true);
+            sendMessageMutation.mutate("Comment Aitenders gère-t-il les appels d'offres complexes multi-lots ?");
+          }
+        },
+        {
+          label: "ROI Calculator", 
+          icon: <MdAnalytics className="w-3 h-3 text-gray-400" />,
+          onClick: () => {
+            setIsExpanded(true);
+            startSimulator();
+          }
+        },
+        {
+          label: "Contact Expert",
+          icon: <MdContactMail className="w-3 h-3 text-gray-400" />,
+          onClick: () => {
+            setIsExpanded(true);
+            sendMessageMutation.mutate("Comment obtenir l'aide d'un expert en gestion d'appels d'offres ?");
+          }
+        }
+      ];
+    }
+
+    // UC4-UC8 page actions (template for other use cases)
+    if (currentPath.startsWith('/uc') && ['4', '5', '6', '7', '8'].includes(currentPath.slice(-1))) {
+      const ucNumber = currentPath.slice(-1);
+      return [
+        {
+          label: "Nos cas d'usage",
+          icon: <span className="text-gray-400">+</span>,
+          onClick: () => {
+            setIsExpanded(true);
+            sendMessageMutation.mutate("Quels sont l'ensemble des cas d'usage disponibles sur Aitenders ?");
+          }
+        },
+        {
+          label: `Demo UC${ucNumber}`,
+          icon: <MdPlayArrow className="w-3 h-3 text-gray-400" />,
+          onClick: () => {
+            setIsExpanded(true);
+            sendMessageMutation.mutate(`Comment Aitenders aide-t-il dans le cas d'usage UC${ucNumber} ?`);
+          }
+        },
+        {
+          label: "ROI Calculator", 
+          icon: <MdAnalytics className="w-3 h-3 text-gray-400" />,
+          onClick: () => {
+            setIsExpanded(true);
+            startSimulator();
+          }
+        },
+        {
+          label: "Contact Expert",
+          icon: <MdContactMail className="w-3 h-3 text-gray-400" />,
+          onClick: () => {
+            setIsExpanded(true);
+            sendMessageMutation.mutate("Comment obtenir l'aide d'un expert en gestion d'appels d'offres ?");
+          }
+        }
+      ];
+    }
+
+    // Default actions for other pages
+    return [
+      {
+        label: language === 'fr' ? 'Simulateur ROI' : 'ROI Simulator',
+        icon: <MdCalculate className="w-3 h-3 text-gray-400" />,
+        onClick: () => {
+          setIsExpanded(true);
+          startSimulator();
+        }
+      },
+      {
+        label: language === 'fr' ? 'Sécurité' : 'Security', 
+        icon: <MdSecurity className="w-3 h-3 text-gray-400" />,
+        onClick: () => {
+          setIsExpanded(true);
+          sendMessageMutation.mutate("Que fait Aitenders pour la sécurité des données ?");
+        }
+      },
+      {
+        label: 'ROI',
+        icon: <MdTrendingUp className="w-3 h-3 text-gray-400" />,
+        onClick: () => {
+          setIsExpanded(true);
+          startSimulator();
+        }
+      },
+      {
+        label: 'Contact',
+        icon: <MdContactMail className="w-3 h-3 text-gray-400" />,
+        onClick: () => {
+          setIsExpanded(true);
+          sendMessageMutation.mutate("Comment contacter l'équipe Aitenders pour une démonstration ?");
+        }
+      }
+    ];
+  };
 
   // Enhanced actions with questions
   const enhancedCustomActions = customActions.map(action => ({
@@ -407,7 +602,8 @@ export default function ChatInterface({
     }
   }));
 
-  const actions = customActions.length > 0 ? enhancedCustomActions : defaultActions;
+  // Use custom actions if provided, otherwise use page-specific actions
+  const actions = customActions.length > 0 ? enhancedCustomActions : getPageSpecificActions();
 
   // Format AI response for display
   const formatResponse = (text: string) => {
