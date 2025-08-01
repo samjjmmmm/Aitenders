@@ -632,6 +632,13 @@ export default function ChatInterface({
       .replace(/•/g, '&bull;');
   };
 
+  // Check if response should be completely hidden (simulator with only quick form)
+  const shouldHideResponse = (text: string) => {
+    // Hide if it's just a question title followed by trigger marker
+    const cleanText = text.replace(/\*\*/g, '').replace(/_____/g, '').trim();
+    return cleanText.match(/^Question \d+\/\d+ : .+$/) && text.includes('_____');
+  };
+
   // Détecter si c'est une question de simulateur avec champs structurés
   const detectSimulatorQuestion = (text: string): { isSimulator: boolean; questionId: string; fields: Array<{label: string; placeholder: string; key: string; suffix: string}> } => {
     if (!text.includes('**Question') || !text.includes('_____')) {
@@ -784,18 +791,22 @@ export default function ChatInterface({
                   </div>
                   {msg.response && (
                     <div className="text-left">
-                      <div className={`inline-block bg-aitenders-pale-blue text-aitenders-dark-blue px-3 py-2 rounded-2xl rounded-tl-sm text-sm ${isExpanded ? 'max-w-2xl' : 'max-w-md'}`}>
-                        <div 
-                          dangerouslySetInnerHTML={{ 
-                            __html: formatResponse(msg.response) 
-                          }} 
-                        />
+                      {(() => {
+                        const simulatorData = detectSimulatorQuestion(msg.response || '');
+                        const hideMainResponse = shouldHideResponse(msg.response);
+                        
+                        return (
+                          <div className={`inline-block ${hideMainResponse ? '' : 'bg-aitenders-pale-blue text-aitenders-dark-blue px-3 py-2 rounded-2xl rounded-tl-sm text-sm'} ${isExpanded ? 'max-w-2xl' : 'max-w-md'}`}>
+                            {!hideMainResponse && (
+                              <div 
+                                dangerouslySetInnerHTML={{ 
+                                  __html: formatResponse(msg.response) 
+                                }} 
+                              />
+                            )}
 
-                        {/* Show Inline Structured Form for Simulator Questions */}
-                        {(() => {
-                          const simulatorData = detectSimulatorQuestion(msg.response || '');
-                          if (simulatorData.isSimulator) {
-                            return (
+                            {/* Show Inline Structured Form for Simulator Questions */}
+                            {simulatorData.isSimulator && (
                               <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
                                 <div className="text-sm font-medium text-blue-800 mb-3">
                                   ⚡ Saisie rapide (optionnel)
@@ -845,24 +856,23 @@ export default function ChatInterface({
                                   <span className="italic">" Nous traitons 300 appels d'offres complexes par an, 10 complexes en JV, 100 moyen et 400 petits valeur moyenne respective 100M€, 10M€, 1 M€, préparation 6-8 semaines pour les petits à 1 an pour les grands"</span>
                                 </div>
                               </div>
-                            );
-                          }
-                          return null;
-                        })()}
+                            )}
 
-                        {/* Show User Info Button when simulator completed */}
-                        {msg.response.includes('Veuillez fournir vos informations') && (
-                          <div className="mt-3 pt-3 border-t border-aitenders-light-blue">
-                            <Button
-                              onClick={() => setShowUserInfoModal(true)}
-                              size="sm"
-                              className="bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-white text-xs"
-                            >
-                              📧 Saisir mes informations
-                            </Button>
+                            {/* Show User Info Button when simulator completed */}
+                            {msg.response.includes('Veuillez fournir vos informations') && (
+                              <div className="mt-3 pt-3 border-t border-aitenders-light-blue">
+                                <Button
+                                  onClick={() => setShowUserInfoModal(true)}
+                                  size="sm"
+                                  className="bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-white text-xs"
+                                >
+                                  📧 Saisir mes informations
+                                </Button>
+                              </div>
+                            )}
                           </div>
-                        )}
-                      </div>
+                        );
+                      })()}
                     </div>
                   )}
                 </div>
