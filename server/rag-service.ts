@@ -411,7 +411,62 @@ ${firstQuestion}`
       }
     }
 
-    // 1. Vérifier les commandes simulateur en priorité - rediriger vers analyse avancée
+    // 1. Vérifier les demandes de cas d'usage en priorité (avant simulateur)
+    const useCaseKeywords = ['cas d\'usage', 'use case', 'nos cas', 'ensemble des cas', 'use cases'];
+    const isUseCaseQuery = useCaseKeywords.some(keyword => queryLower.includes(keyword));
+
+    if (isUseCaseQuery) {
+      // Retourner directement les cas d'usage
+      return {
+        action: 'knowledge_base',
+        response: `🎯 **Nos 8 Cas d'Usage Aitenders**
+
+Découvrez comment Aitenders transforme votre activité selon votre profil :
+
+**📋 APPELS D'OFFRES**
+
+**UC1 - Fast-Track Small Bids** 🚀
+*Appels d'offres petits projets* 
+[**→ Voir UC1**](/uc1)
+
+**UC2 - Medium Bid Management** 📊
+*Gestion d'appels d'offres moyens*
+[**→ Voir UC2**](/uc2)
+
+**UC3 - Complex Multi-Lot Bids** 🏗️
+*Appels d'offres multi-lots complexes*
+[**→ Voir UC3**](/uc3)
+
+**⚙️ EXÉCUTION DE PROJETS**
+
+**UC4 - Small Project Execution** 📝
+*Exécution de petits projets*
+[**→ Voir UC4**](/uc4)
+
+**UC5 - Medium Project Execution** 🔧
+*Exécution de projets moyens*
+[**→ Voir UC5**](/uc5)
+
+**UC6 - Large Project Execution** 🏭
+*Exécution de grands projets*
+[**→ Voir UC6**](/uc6)
+
+**🧠 GESTION DES CONNAISSANCES**
+
+**UC7 - Knowledge Management Small** 📚
+*Pour petites structures*
+[**→ Voir UC7**](/uc7)
+
+**UC8 - Knowledge Management Large** 🏢
+*Pour grandes organisations*
+[**→ Voir UC8**](/uc8)
+
+**💡 Conseil :** Cliquez sur les liens ci-dessus pour explorer chaque cas d'usage en détail, voir les démos et calculer votre ROI spécifique !`,
+        category: 'use_cases'
+      };
+    }
+
+    // 2. Vérifier les commandes simulateur en priorité - rediriger vers analyse avancée
     const simulatorKeywords = ['simulateur', 'simulation', 'simulator', 'roi calculer', 'calculator', 'calcul roi', 'économies', 'gains'];
     const isSimulatorQuery = simulatorKeywords.some(keyword => queryLower.includes(keyword));
 
