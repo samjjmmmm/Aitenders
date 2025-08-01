@@ -43,19 +43,25 @@ class AdvancedAnalysisService {
     return this.formatQuestion(firstQuestion, 1, this.questions.length);
   }
 
-  // Formatter une question avec contexte
+  // Formatter une question avec contexte et champs structurés
   private formatQuestion(question: any, index: number, total: number): string {
-    let formatted = `**Question ${index}/${total} :** **${question.question}**`;
+    let formatted = `**Question ${index}/${total} :** ${this.getStructuredQuestion(question.id)}`;
     
     if (question.helpText) {
       formatted += `\n\n*${question.helpText}*`;
+    }
+
+    // Ajouter des champs de saisie structurés selon la question
+    const structuredFields = this.getStructuredFields(question.id);
+    if (structuredFields) {
+      formatted += `\n\n${structuredFields}`;
     }
 
     // Ajouter des exemples de réponses naturelles au lieu de contraintes de validation
     if (question.questionType === 'number') {
       const examples = this.getExampleForQuestion(question.id);
       if (examples) {
-        formatted += `\n\n📊 Exemple de réponse: ${examples}`;
+        formatted += `\n\n💬 **Sinon, écrivez votre réponse détaillée comme l'exemple :**\n*${examples}*`;
       }
     } else if (question.questionType === 'choice') {
       formatted += `\n\n**Options :**\n${question.validationRules.choices.map((c: string, i: number) => `${i + 1}. ${c}`).join('\n')}`;
@@ -65,11 +71,54 @@ class AdvancedAnalysisService {
     } else if (question.questionType === 'text') {
       const examples = this.getExampleForQuestion(question.id);
       if (examples) {
-        formatted += `\n\n📊 Exemple de réponse: ${examples}`;
+        formatted += `\n\n💬 **Sinon, écrivez votre réponse détaillée comme l'exemple :**\n*${examples}*`;
       }
     }
 
     return formatted;
+  }
+
+  // Obtenir le titre structuré de la question
+  private getStructuredQuestion(questionId: string): string {
+    const structuredTitles: Record<string, string> = {
+      'tender_profile_combined': '**Profil de vos appels d\'offres**',
+      'document_complexity_combined': '**Complexité documentaire**',
+      'qa_management_combined': '**Gestion Q&A**',
+      'contract_admin_combined': '**Administration contrats**',
+      'knowledge_management_combined': '**Gestion des connaissances**',
+      'business_profile_combined': '**Profil d\'entreprise**'
+    };
+    
+    return structuredTitles[questionId] || '**Question**';
+  }
+
+  // Obtenir les champs structurés pour chaque question
+  private getStructuredFields(questionId: string): string | null {
+    const structuredFields: Record<string, string> = {
+      'tender_profile_combined': `📋 **#AO** : _____ appels d'offres par an
+💰 **Valeur moyenne** : _____ € 
+⏱️ **Durée préparation** : _____ semaines`,
+      
+      'document_complexity_combined': `📄 **Documents par AO** : _____ documents
+📑 **Pages par document** : _____ pages  
+🔄 **Versions avant soumission** : _____ versions`,
+
+      'qa_management_combined': `❓ **Cycles Q&A par AO** : _____ cycles
+⏰ **Heures par cycle** : _____ heures`,
+
+      'contract_admin_combined': `📝 **Contrats gérés/an** : _____ contrats
+🕒 **Heures setup initial** : _____ heures par contrat`,
+
+      'knowledge_management_combined': `🔄 **% Réutilisation** : _____%
+✨ **% Créés from scratch** : _____%`,
+
+      'business_profile_combined': `🏢 **Secteur** : _____________
+💼 **CA annuel** : _____ M€
+📈 **Taux réussite** : _____%
+🎯 **Priorités** : _____________`
+    };
+    
+    return structuredFields[questionId] || null;
   }
 
   // Obtenir des exemples naturels par question

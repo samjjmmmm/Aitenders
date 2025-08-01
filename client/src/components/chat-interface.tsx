@@ -43,6 +43,9 @@ export default function ChatInterface({
   const [email, setEmail] = useState("");
   const [showUserInfoModal, setShowUserInfoModal] = useState(false);
   const [userInfo, setUserInfo] = useState({ name: '', email: '', company: '' });
+  const [simulatorForm, setSimulatorForm] = useState<Record<string, string>>({});
+  const [showSimulatorForm, setShowSimulatorForm] = useState(false);
+  const [currentQuestionId, setCurrentQuestionId] = useState<string>('');
   const queryClient = useQueryClient();
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -414,6 +417,89 @@ export default function ChatInterface({
       .replace(/•/g, '&bull;');
   };
 
+  // Détecter si c'est une question de simulateur avec champs structurés
+  const detectSimulatorQuestion = (text: string): { isSimulator: boolean; questionId: string; fields: Array<{label: string; placeholder: string; key: string}> } => {
+    if (!text.includes('**Question') || !text.includes('_____')) {
+      return { isSimulator: false, questionId: '', fields: [] };
+    }
+
+    const questionPatterns = [
+      {
+        id: 'tender_profile_combined',
+        pattern: /Profil de vos appels d'offres/,
+        fields: [
+          { label: '#AO', placeholder: 'ex: 300', key: 'nb_ao' },
+          { label: 'Valeur moyenne', placeholder: 'ex: 10M€', key: 'valeur_moyenne' },
+          { label: 'Durée préparation', placeholder: 'ex: 6-8 semaines', key: 'duree_prep' }
+        ]
+      },
+      {
+        id: 'document_complexity_combined',
+        pattern: /Complexité documentaire/,
+        fields: [
+          { label: 'Documents par AO', placeholder: 'ex: 15', key: 'docs_par_ao' },
+          { label: 'Pages par document', placeholder: 'ex: 30', key: 'pages_par_doc' },
+          { label: 'Versions avant soumission', placeholder: 'ex: 3', key: 'versions' }
+        ]
+      },
+      {
+        id: 'qa_management_combined',
+        pattern: /Gestion Q&A/,
+        fields: [
+          { label: 'Cycles Q&A par AO', placeholder: 'ex: 2', key: 'cycles_qa' },
+          { label: 'Heures par cycle', placeholder: 'ex: 8', key: 'heures_cycle' }
+        ]
+      },
+      {
+        id: 'contract_admin_combined',
+        pattern: /Administration contrats/,
+        fields: [
+          { label: 'Contrats gérés/an', placeholder: 'ex: 50', key: 'contrats_an' },
+          { label: 'Heures setup initial', placeholder: 'ex: 40', key: 'heures_setup' }
+        ]
+      },
+      {
+        id: 'knowledge_management_combined',
+        pattern: /Gestion des connaissances/,
+        fields: [
+          { label: '% Réutilisation', placeholder: 'ex: 70%', key: 'pct_reutilisation' },
+          { label: '% Créés from scratch', placeholder: 'ex: 25%', key: 'pct_nouveau' }
+        ]
+      },
+      {
+        id: 'business_profile_combined',
+        pattern: /Profil d'entreprise/,
+        fields: [
+          { label: 'Secteur', placeholder: 'ex: Construction', key: 'secteur' },
+          { label: 'CA annuel', placeholder: 'ex: 50M€', key: 'ca_annuel' },
+          { label: 'Taux réussite', placeholder: 'ex: 35%', key: 'taux_reussite' },
+          { label: 'Priorités', placeholder: 'ex: réduire coûts, améliorer conformité', key: 'priorites' }
+        ]
+      }
+    ];
+
+    for (const pattern of questionPatterns) {
+      if (pattern.pattern.test(text)) {
+        return {
+          isSimulator: true,
+          questionId: pattern.id,
+          fields: pattern.fields
+        };
+      }
+    }
+
+    return { isSimulator: false, questionId: '', fields: [] };
+  };
+
+  // Soumettre le formulaire structuré du simulateur
+  const submitSimulatorForm = () => {
+    const formValues = Object.entries(simulatorForm).map(([key, value]) => value).join(', ');
+    const message = formValues || 'Formulaire vide';
+    sendMessageMutation.mutate(message);
+    setSimulatorForm({});
+    setShowSimulatorForm(false);
+  };
+
   // Don't render if closed
   if (isClosed) {
     return (
@@ -467,6 +553,61 @@ export default function ChatInterface({
                             __html: formatResponse(msg.response) 
                           }} 
                         />
+
+                        {/* Show Structured Form for Simulator Questions */}
+                        {(() => {
+                          const simulatorData = detectSimulatorQuestion(msg.response || '');
+                          if (simulatorData.isSimulator) {
+                            return (
+                              <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                                <div className="text-sm font-medium text-blue-800 mb-3">
+                                  ⚡ Saisie rapide (optionnel)
+                                </div>
+                                <div className="grid grid-cols-1 gap-3">
+                                  {simulatorData.fields.map((field) => (
+                                    <div key={field.key} className="flex items-center gap-2">
+                                      <label className="text-xs font-medium text-blue-700 min-w-24">
+                                        {field.label}:
+                                      </label>
+                                      <Input
+                                        type="text"
+                                        placeholder={field.placeholder}
+                                        value={simulatorForm[field.key] || ''}
+                                        onChange={(e) => setSimulatorForm({ 
+                                          ...simulatorForm, 
+                                          [field.key]: e.target.value 
+                                        })}
+                                        className="h-8 text-xs flex-1"
+                                      />
+                                    </div>
+                                  ))}
+                                </div>
+                                <div className="flex gap-2 mt-3">
+                                  <Button
+                                    size="sm"
+                                    onClick={submitSimulatorForm}
+                                    disabled={Object.values(simulatorForm).every(v => !v.trim())}
+                                    className="bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-white text-xs"
+                                  >
+                                    ✅ Valider la réponse
+                                  </Button>
+                                  <Button
+                                    size="sm"
+                                    variant="outline"
+                                    onClick={() => setSimulatorForm({})}
+                                    className="text-xs"
+                                  >
+                                    🗑️ Vider
+                                  </Button>
+                                </div>
+                                <div className="text-xs text-gray-500 mt-2">
+                                  💬 Ou écrivez votre réponse complète dans le chat ci-dessous
+                                </div>
+                              </div>
+                            );
+                          }
+                          return null;
+                        })()}
 
                         {/* Show User Info Button when simulator completed */}
                         {msg.response.includes('Veuillez fournir vos informations') && (
