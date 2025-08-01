@@ -418,7 +418,7 @@ export default function ChatInterface({
   };
 
   // Détecter si c'est une question de simulateur avec champs structurés
-  const detectSimulatorQuestion = (text: string): { isSimulator: boolean; questionId: string; fields: Array<{label: string; placeholder: string; key: string}> } => {
+  const detectSimulatorQuestion = (text: string): { isSimulator: boolean; questionId: string; fields: Array<{label: string; placeholder: string; key: string; suffix: string}> } => {
     if (!text.includes('**Question') || !text.includes('_____')) {
       return { isSimulator: false, questionId: '', fields: [] };
     }
@@ -428,52 +428,52 @@ export default function ChatInterface({
         id: 'tender_profile_combined',
         pattern: /Profil de vos appels d'offres/,
         fields: [
-          { label: '#AO', placeholder: 'ex: 300', key: 'nb_ao' },
-          { label: 'Valeur moyenne', placeholder: 'ex: 10M€', key: 'valeur_moyenne' },
-          { label: 'Durée préparation', placeholder: 'ex: 6-8 semaines', key: 'duree_prep' }
+          { label: '#AO', placeholder: 'ex: 300', key: 'nb_ao', suffix: 'appels d\'offres par an' },
+          { label: 'Valeur moyenne', placeholder: 'ex: 10M', key: 'valeur_moyenne', suffix: '€' },
+          { label: 'Durée préparation', placeholder: 'ex: 6-8', key: 'duree_prep', suffix: 'semaines' }
         ]
       },
       {
         id: 'document_complexity_combined',
         pattern: /Complexité documentaire/,
         fields: [
-          { label: 'Documents par AO', placeholder: 'ex: 15', key: 'docs_par_ao' },
-          { label: 'Pages par document', placeholder: 'ex: 30', key: 'pages_par_doc' },
-          { label: 'Versions avant soumission', placeholder: 'ex: 3', key: 'versions' }
+          { label: 'Documents par AO', placeholder: 'ex: 15', key: 'docs_par_ao', suffix: 'documents' },
+          { label: 'Pages par document', placeholder: 'ex: 30', key: 'pages_par_doc', suffix: 'pages' },
+          { label: 'Versions avant soumission', placeholder: 'ex: 3', key: 'versions', suffix: 'versions' }
         ]
       },
       {
         id: 'qa_management_combined',
         pattern: /Gestion Q&A/,
         fields: [
-          { label: 'Cycles Q&A par AO', placeholder: 'ex: 2', key: 'cycles_qa' },
-          { label: 'Heures par cycle', placeholder: 'ex: 8', key: 'heures_cycle' }
+          { label: 'Cycles Q&A par AO', placeholder: 'ex: 2', key: 'cycles_qa', suffix: 'cycles' },
+          { label: 'Heures par cycle', placeholder: 'ex: 8', key: 'heures_cycle', suffix: 'heures' }
         ]
       },
       {
         id: 'contract_admin_combined',
         pattern: /Administration contrats/,
         fields: [
-          { label: 'Contrats gérés/an', placeholder: 'ex: 50', key: 'contrats_an' },
-          { label: 'Heures setup initial', placeholder: 'ex: 40', key: 'heures_setup' }
+          { label: 'Contrats gérés/an', placeholder: 'ex: 50', key: 'contrats_an', suffix: 'contrats' },
+          { label: 'Heures setup initial', placeholder: 'ex: 40', key: 'heures_setup', suffix: 'heures par contrat' }
         ]
       },
       {
         id: 'knowledge_management_combined',
         pattern: /Gestion des connaissances/,
         fields: [
-          { label: '% Réutilisation', placeholder: 'ex: 70%', key: 'pct_reutilisation' },
-          { label: '% Créés from scratch', placeholder: 'ex: 25%', key: 'pct_nouveau' }
+          { label: '% Réutilisation', placeholder: 'ex: 70', key: 'pct_reutilisation', suffix: '%' },
+          { label: '% Créés from scratch', placeholder: 'ex: 25', key: 'pct_nouveau', suffix: '%' }
         ]
       },
       {
         id: 'business_profile_combined',
         pattern: /Profil d'entreprise/,
         fields: [
-          { label: 'Secteur', placeholder: 'ex: Construction', key: 'secteur' },
-          { label: 'CA annuel', placeholder: 'ex: 50M€', key: 'ca_annuel' },
-          { label: 'Taux réussite', placeholder: 'ex: 35%', key: 'taux_reussite' },
-          { label: 'Priorités', placeholder: 'ex: réduire coûts, améliorer conformité', key: 'priorites' }
+          { label: 'Secteur', placeholder: 'ex: Construction', key: 'secteur', suffix: '' },
+          { label: 'CA annuel', placeholder: 'ex: 50M', key: 'ca_annuel', suffix: '€' },
+          { label: 'Taux réussite', placeholder: 'ex: 35', key: 'taux_reussite', suffix: '%' },
+          { label: 'Priorités', placeholder: 'ex: réduire coûts, améliorer conformité', key: 'priorites', suffix: '' }
         ]
       }
     ];
@@ -554,7 +554,7 @@ export default function ChatInterface({
                           }} 
                         />
 
-                        {/* Show Structured Form for Simulator Questions */}
+                        {/* Show Inline Structured Form for Simulator Questions */}
                         {(() => {
                           const simulatorData = detectSimulatorQuestion(msg.response || '');
                           if (simulatorData.isSimulator) {
@@ -563,12 +563,12 @@ export default function ChatInterface({
                                 <div className="text-sm font-medium text-blue-800 mb-3">
                                   ⚡ Saisie rapide (optionnel)
                                 </div>
-                                <div className="grid grid-cols-1 gap-3">
+                                <div className="space-y-3">
                                   {simulatorData.fields.map((field) => (
-                                    <div key={field.key} className="flex items-center gap-2">
-                                      <label className="text-xs font-medium text-blue-700 min-w-24">
+                                    <div key={field.key} className="flex items-center gap-2 text-sm flex-wrap">
+                                      <span className="font-medium text-blue-700">
                                         {field.label}:
-                                      </label>
+                                      </span>
                                       <Input
                                         type="text"
                                         placeholder={field.placeholder}
@@ -577,12 +577,15 @@ export default function ChatInterface({
                                           ...simulatorForm, 
                                           [field.key]: e.target.value 
                                         })}
-                                        className="h-8 text-xs flex-1"
+                                        className="h-8 text-sm w-24 border-b-2 border-blue-300 bg-white rounded-md focus:border-blue-500"
                                       />
+                                      {field.suffix && (
+                                        <span className="text-blue-700">{field.suffix}</span>
+                                      )}
                                     </div>
                                   ))}
                                 </div>
-                                <div className="flex gap-2 mt-3">
+                                <div className="flex gap-2 mt-4">
                                   <Button
                                     size="sm"
                                     onClick={submitSimulatorForm}
