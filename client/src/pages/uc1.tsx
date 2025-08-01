@@ -377,7 +377,7 @@ export default function UC1Page() {
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                 Sur les petits projets, la pression est double : analyser vite et prouver que tout a été lu, compris et contrôlé.
                 <p>Sans support transversal (qualité, juridique), chaque oubli peut coûter cher en marge en exécution et du coup en crédibilité interne.</p>
-         
+
               </p>
 
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
@@ -432,7 +432,7 @@ export default function UC1Page() {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-blue-600">copilote IA </span>qui Votre copilote IA qui accélère l’analyse de vos petits projets</h1>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-blue-600">copilote IA</span> qui accélère l'analyse de vos petits projets</h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
               Décidez vite et prouvez que tout a été contrôlé, en moins de 48h.
             </p>
@@ -446,12 +446,12 @@ export default function UC1Page() {
               </div>
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Structuration instantanée pour un premier "go / no-go"  <span className="text-purple-600">immédiat</span> </h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Grâce aux assistants IA, vos documents sont instantanément analysés, classés et priorisés : critères d’intérêt, points critiques et preuves associées sont détectés en quelques minutes.
-                <p></p>
+                Grâce aux assistants IA, vos documents sont instantanément analysés, classés et priorisés : critères d’intérêt, points critiques et preuves associées sont détectés en quelques minutes.
+                <br /><br />
                 Le Responsable Offre démarre ainsi avec une base claire et exploitable : vision globale du projet, identification des points bloquants éventuels et possibilité de décider quasi immédiatement d’un “go / no‑go”.
               </p>
               <div className="space-y-3 mb-8">
-  
+
 
               </div>
               <p className="text-lg font-semibold text-blue-600">
@@ -530,11 +530,9 @@ export default function UC1Page() {
               </div>
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Accédez à une vision  <span className="text-orange-600">claire</span> de votre projet</h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-               Aitenders génère une vue claire et priorisée de l’ensemble des critères détectés, avec leurs valeurs et les liens directs vers les documents sources.
-                <p>          Le Responsable Offre n’a plus besoin de parcourir des centaines de pages ou de jongler entre plusieurs fichiers : tout est rassemblé dans une synthèse visuelle, exploitable immédiatement.
-                </p>
-      
-
+               Aitenders génère une vue claire et priorisée de l'ensemble des critères détectés, avec leurs valeurs et les liens directs vers les documents sources.
+                <br /><br />
+                Le Responsable Offre n'a plus besoin de parcourir des centaines de pages ou de jongler entre plusieurs fichiers : tout est rassemblé dans une synthèse visuelle, exploitable immédiatement.
               </p>
               <div className="space-y-3 mb-8">
               </div>
@@ -552,13 +550,13 @@ export default function UC1Page() {
               </div>
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Validez et archivez chaque point <span className="text-green-600">sans effort</span></h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Aitenders vous guide pas à pas pour confirmer, ajuster ou rejeter chaque élément identifié par l’IA. Aitenders vous guide pas à pas pour confirmer, ajuster ou rejeter chaque élément identifié par l’IA.
+                Aitenders vous guide pas à pas pour confirmer, ajuster ou rejeter chaque élément identifié par l'IA.
                 Chaque validation est automatiquement tracée et historisée, créant un dossier de preuves complet.          
-                <p></p>
-                Le responsable d'offre passe d’une validation manuelle, lente et incertaine à un processus fluide, sécurisé et incontestable.
+                <br /><br />
+                Le responsable d'offre passe d'une validation manuelle, lente et incertaine à un processus fluide, sécurisé et incontestable.
               </p>
               <div className="space-y-3 mb-8">
-               
+
               </div>
               <p className="text-lg font-semibold text-green-600">
                 Finies les zones grises : tout est validé et tracé.
@@ -602,8 +600,8 @@ export default function UC1Page() {
       {/* User-Focused Results Section - Before Additional Features */}
       <section className="py-16 md:py-20 lg:py-24 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          
-          
+
+
           <div className="mb-20 md:mb-24 lg:mb-28">
           <div className="text-center mb-12 md:mb-16">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Ce que nos utilisateurs obtiennent concrètement pour les petites offres</h3>
@@ -682,14 +680,18 @@ export default function UC1Page() {
                     <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
                     <span>Validation fluide et intégralement documentée</span>
                   </div>
+
                   <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
                     <span>Chaque point couvert, chaque preuve archivée</span>
                   </div>
                 </div>
-                <div className="mt-6 p-4 bg-white/70 rounded-lg border border-gray-200/30">
-                  <p className="text-sm text-gray-700 font-medium">Vous éliminez jusqu'à 90% des risques de rejet liés à la conformité.</p>
+                <div className="flex items-start">
+                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span>Crédibilité renforcée face aux décideurs internes</span>
+                  </div>
                 </div>
+
               </Card>
             </div>
 
@@ -731,11 +733,11 @@ export default function UC1Page() {
               </Card>
             </div>
           </div>
-          
-          
-          
-          
-          
+
+
+
+
+
 
           {/* KPI Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
