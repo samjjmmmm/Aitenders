@@ -305,130 +305,18 @@ export default function UC1Page() {
               </div>
             </div>
 
-            {/* Right Side - Realistic Product Mockup */}
+            {/* Right Side - Hero Image */}
             <div className="flex justify-center lg:justify-end">
               <div className="relative w-full max-w-lg">
-
-                {/* Main Dashboard Mockup */}
-                <div className="bg-white rounded-3xl shadow-2xl border border-gray-100/50 overflow-hidden backdrop-blur-sm"
-                     style={{
-                       boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-                     }}>
-
-                  {/* Browser Header */}
-                  <div className="bg-gray-100 px-6 py-4 flex items-center justify-between border-b border-gray-200">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                      <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                      <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                    </div>
-                    <div className="text-sm text-gray-600 font-medium">AItenders - Fast Bid Generator</div>
-                    <div className="w-12"></div>
-                  </div>
-
-                  {/* Dashboard Content */}
-                  <div className="p-8">
-
-                    {/* Header */}
-                    <div className="flex items-center justify-between mb-8">
-                      <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-2">Small Project Bid</h3>
-                        <p className="text-gray-600">€250K maintenance • 2h generation</p>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                        <span className="text-sm text-gray-600">Generating</span>
-                      </div>
-                    </div>
-
-                    {/* Progress Overview */}
-                    <div className="grid grid-cols-2 gap-6 mb-8">
-                      <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-100">
-                        <div className="text-3xl font-bold text-green-700 mb-2">90%</div>
-                        <div className="text-sm text-gray-600">Content generated</div>
-                      </div>
-                      <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border border-blue-100">
-                        <div className="text-3xl font-bold text-blue-700 mb-2">1.8h</div>
-                        <div className="text-sm text-gray-600">Time remaining</div>
-                      </div>
-                    </div>
-
-                    {/* Generation Progress */}
-                    <div className="space-y-4">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-4">Bid Progress</h4>
-
-                      <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
-                        <div className="flex items-center space-x-3">
-                          <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
-                            <MdCheckCircle className="w-5 h-5 text-white" />
-                          </div>
-                          <div>
-                            <div className="font-medium text-gray-900">Requirements Analysis</div>
-                            <div className="text-sm text-gray-600">All specs covered</div>
-                          </div>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <div className="w-20 bg-gray-200 rounded-full h-2">
-                            <div className="bg-green-500 h-2 rounded-full" style={{width: '100%'}}></div>
-                          </div>
-                          <span className="text-sm font-medium text-green-600">Complete</span>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
-                        <div className="flex items-center space-x-3">
-                          <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
-                            <MdEdit className="w-5 h-5 text-white" />
-                          </div>
-                          <div>
-                            <div className="font-medium text-gray-900">Content Generation</div>
-                            <div className="text-sm text-gray-600">Tailored proposals</div>
-                          </div>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <div className="w-20 bg-gray-200 rounded-full h-2">
-                            <div className="bg-blue-500 h-2 rounded-full animate-pulse" style={{width: '75%'}}></div>
-                          </div>
-                          <span className="text-sm font-medium text-blue-600">In progress</span>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
-                        <div className="flex items-center space-x-3">
-                          <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center">
-                            <MdVerified className="w-5 h-5 text-white" />
-                          </div>
-                          <div>
-                            <div className="font-medium text-gray-900">Final Review</div>
-                            <div className="text-sm text-gray-600">Quality validation</div>
-                          </div>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <div className="w-20 bg-gray-200 rounded-full h-2">
-                            <div className="bg-gray-300 h-2 rounded-full" style={{width: '0%'}}></div>
-                          </div>
-                          <span className="text-sm font-medium text-gray-500">Pending</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Floating Success Notifications */}
-                <div className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-medium animate-bounce">
-                  <div className="flex items-center space-x-2">
-                    <MdCheckCircle className="w-4 h-4" />
-                    <span>90% complete</span>
-                  </div>
-                </div>
-
-                <div className="absolute -bottom-4 -left-4 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-medium animate-pulse">
-                  <div className="flex items-center space-x-2">
-                    <MdFlashOn className="w-4 h-4" />
-                    <span>2h delivery</span>
-                  </div>
-                </div>
-
+                <img 
+                  src="/attached_assets/Document Review and Categorization_1754034067501.png"
+                  alt="Document Review and Categorization - Aitenders Interface"
+                  className="w-full h-auto rounded-3xl shadow-2xl border border-gray-100/50"
+                  style={{
+                    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+                  }}
+                />
+                
                 {/* Background Decorative Elements */}
                 <div className="absolute -top-8 -right-8 w-24 h-24 bg-blue-200/20 rounded-full blur-2xl"></div>
                 <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-green-200/15 rounded-full blur-3xl"></div>
