@@ -682,16 +682,20 @@ export default function UC1Page() {
                     <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
                     <span>Validation fluide et intégralement documentée</span>
                   </div>
+                  
                   <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
                     <span>Chaque point couvert, chaque preuve archivée</span>
                   </div>
-                  <div className="flex items-start">
+                </div>
+                <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Crédibilité renforcée face aux décideurs internes</span>
+                    <span>Chaque point couvert, chaque preuve archivée</span>
                   </div>
                 </div>
-   
+                <div className="mt-6 p-4 bg-white/70 rounded-lg border border-gray-200/30">
+                  <p className="text-sm text-gray-700 font-medium">Vous éliminez jusqu'à 90% des risques de rejet liés à la conformité.</p>
+                </div>
               </Card>
             </div>
 
