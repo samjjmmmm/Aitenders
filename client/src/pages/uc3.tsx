@@ -15,17 +15,30 @@ import { FaUsers, FaShieldAlt, FaChartBar, FaFileAlt, FaCogs } from "react-icons
 import ContactSection from "@/components/contact-section";
 import Header from "@/components/header";
 import UC3AnalysisCard from "@/components/UC3AnalysisCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 // Import client logos
 import equansLogo from "@assets/Equans_1753711339292.png";
 import bouyguesLogo from "@assets/Bouyges_1753711339292.png";
 import colasLogo from "@assets/Colas_1753711339292.png";
+import newProjectImage from "@assets/Selection(24)_1754328031324.png";
 import ChatSection from "@/components/chat-section";
 import ChatInterface from "@/components/chat-interface";
 
 export default function UC3Page() {
+  // State for managing fade transition between mockup views
+  const [showNewProject, setShowNewProject] = useState(false);
+  
+  // Auto-cycle between the two views
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowNewProject(prev => !prev);
+    }, 4000); // Switch every 4 seconds
+    
+    return () => clearInterval(interval);
+  }, []);
+
   // Target audience data with interactive content
   const targetAudiences = [
     {
@@ -307,15 +320,41 @@ export default function UC3Page() {
               </div>
             </div>
 
-            {/* Right Side - Realistic Product Mockup */}
+            {/* Right Side - Realistic Product Mockup with Fade Effect */}
             <div className="flex justify-center lg:justify-end">
               <div className="relative w-full max-w-lg">
                 
-                {/* Main Dashboard Mockup */}
-                <div className="bg-white rounded-3xl shadow-2xl border border-gray-100/50 overflow-hidden backdrop-blur-sm"
-                     style={{
-                       boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-                     }}>
+                {/* New Project Image - Fade In/Out */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: showNewProject ? 1 : 0 }}
+                  transition={{ duration: 1.2, ease: "easeInOut" }}
+                  className="absolute inset-0 z-20"
+                  style={{ pointerEvents: showNewProject ? 'auto' : 'none' }}
+                >
+                  <div className="bg-white rounded-3xl shadow-2xl border border-gray-100/50 overflow-hidden backdrop-blur-sm h-full"
+                       style={{
+                         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+                       }}>
+                    <img 
+                      src={newProjectImage} 
+                      alt="Aitenders New Project Dashboard" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </motion.div>
+                
+                {/* Original Dashboard Mockup - Fade In/Out */}
+                <motion.div
+                  initial={{ opacity: 1 }}
+                  animate={{ opacity: showNewProject ? 0 : 1 }}
+                  transition={{ duration: 1.2, ease: "easeInOut" }}
+                  className="relative z-10"
+                >
+                  <div className="bg-white rounded-3xl shadow-2xl border border-gray-100/50 overflow-hidden backdrop-blur-sm"
+                       style={{
+                         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+                       }}>
                   
                   {/* Browser Header */}
                   <div className="bg-gray-100 px-6 py-4 flex items-center justify-between border-b border-gray-200">
@@ -414,17 +453,18 @@ export default function UC3Page() {
                       </div>
                     </div>
                   </div>
-                </div>
+                  </div>
+                </motion.div>
                 
-                {/* Floating Success Notifications */}
-                <div className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-medium animate-bounce">
+                {/* Floating Success Notifications - Always visible */}
+                <div className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-medium animate-bounce z-30">
                   <div className="flex items-center space-x-2">
                     <MdCheckCircle className="w-4 h-4" />
                     <span>Requirements analyzed</span>
                   </div>
                 </div>
                 
-                <div className="absolute -bottom-4 -left-4 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-medium animate-pulse">
+                <div className="absolute -bottom-4 -left-4 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-medium animate-pulse z-30">
                   <div className="flex items-center space-x-2">
                     <MdNotifications className="w-4 h-4" />
                     <span>Teams notified</span>
