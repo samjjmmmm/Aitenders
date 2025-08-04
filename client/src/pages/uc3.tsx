@@ -30,6 +30,22 @@ export default function UC3Page() {
   // State for managing continuous animation loop
   const [animationKey, setAnimationKey] = useState(0);
   
+  // ANIMATION TIMING CONFIGURATION - 7 SECOND LOOP
+  // ==============================================
+  // 0.0s - 3.0s : Image (opacity 1→1→0.3, duration: 3s)
+  // 2.5s - 3.1s : Agent Technique (delay: 2.5s, duration: 0.6s)
+  // 2.7s - 3.3s : Agent Juridique (delay: 2.7s, duration: 0.6s)
+  // 2.9s - 3.5s : Agent Commercial (delay: 2.9s, duration: 0.6s)
+  // 3.1s - 3.7s : Agent Risques (delay: 3.1s, duration: 0.6s)
+  // 3.3s - 4.1s : Coordination IA (delay: 3.3s, duration: 0.8s)
+  // 3.8s - 5.8s : Particules (delay: 3.8s, duration: 2s, repeat)
+  // 5.0s - 6.0s : Dashboard (delay: 5s, duration: 1s)
+  // 5.5s - 6.3s : Blob violet (delay: 5.5s, duration: 0.8s)
+  // 5.7s - 6.5s : Blob bleu (delay: 5.7s, duration: 0.8s)
+  // 6.0s - 6.6s : Notification "Analyse terminée" (delay: 6s, duration: 0.6s)
+  // 6.2s - 6.8s : Notification "Équipes coordonnées" (delay: 6.2s, duration: 0.6s)
+  // 7.0s        : RESTART - animationKey increment
+  
   // Continuous loop - restart animation every 7 seconds
   useEffect(() => {
     const interval = setInterval(() => {
@@ -325,38 +341,27 @@ export default function UC3Page() {
             <div className="flex justify-center lg:justify-end">
               <div className="relative w-full max-w-lg">
                 
-                {/* Image appears immediately, then fades to background for agents */}
+                {/* =============================================== */}
+                {/* ANIMATION SEQUENCE - 7 SECOND CONTINUOUS LOOP */}
+                {/* =============================================== */}
+                
+                {/* 1. IMAGE BASE (0.0s → 3.0s) */}
                 <motion.div
                   key={`image-${animationKey}`}
                   initial={{ opacity: 1 }}
-                  animate={{ 
-                    opacity: [1, 1, 0.3]
-                  }}
-                  transition={{ 
-                    duration: 3, 
-                    times: [0, 0.33, 1],
-                    ease: "easeInOut" 
-                  }}
+                  animate={{ opacity: [1, 1, 0.3] }}
+                  transition={{ duration: 3, times: [0, 0.33, 1], ease: "easeInOut" }}
                   className="absolute inset-0 z-5"
                 >
                   <div className="bg-white rounded-3xl shadow-2xl border border-gray-100/50 overflow-hidden backdrop-blur-sm h-full"
-                       style={{
-                         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-                       }}>
-                    <img 
-                      src={newProjectImage} 
-                      alt="Aitenders Agents Dashboard" 
-                      className="w-full h-full object-contain bg-white"
-                    />
+                       style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)' }}>
+                    <img src={newProjectImage} alt="Aitenders Agents Dashboard" className="w-full h-full object-contain bg-white" />
                   </div>
                 </motion.div>
 
-
-
-                
-                {/* AI Agents Elements - Flying particles representing UC3 agents */}
+                {/* 2. AI AGENTS (2.5s → 4.1s) */}
                 <>
-                  {/* Technical Analysis Agent */}
+                  {/* 2.1 Agent Technique (2.5s → 3.1s) */}
                   <motion.div
                     key={`agent-tech-${animationKey}`}
                     initial={{ opacity: 0, scale: 0, x: -50, y: -30 }}
@@ -370,7 +375,7 @@ export default function UC3Page() {
                     </div>
                   </motion.div>
 
-                  {/* Legal Compliance Agent */}
+                  {/* 2.2 Agent Juridique (2.7s → 3.3s) */}
                   <motion.div
                     key={`agent-legal-${animationKey}`}
                     initial={{ opacity: 0, scale: 0, x: 50, y: -40 }}
@@ -384,7 +389,7 @@ export default function UC3Page() {
                     </div>
                   </motion.div>
 
-                  {/* Commercial Agent */}
+                  {/* 2.3 Agent Commercial (2.9s → 3.5s) */}
                   <motion.div
                     key={`agent-commercial-${animationKey}`}
                     initial={{ opacity: 0, scale: 0, x: -30, y: 50 }}
@@ -398,7 +403,7 @@ export default function UC3Page() {
                     </div>
                   </motion.div>
 
-                  {/* Risk Analysis Agent */}
+                  {/* 2.4 Agent Risques (3.1s → 3.7s) */}
                   <motion.div
                     key={`agent-risk-${animationKey}`}
                     initial={{ opacity: 0, scale: 0, x: 40, y: 40 }}
@@ -412,7 +417,7 @@ export default function UC3Page() {
                     </div>
                   </motion.div>
 
-                  {/* Coordination Agent - Central */}
+                  {/* 2.5 Coordination IA (3.3s → 4.1s) */}
                   <motion.div
                     key={`agent-coord-${animationKey}`}
                     initial={{ opacity: 0, scale: 0 }}
@@ -425,35 +430,35 @@ export default function UC3Page() {
                       <span>Coordination IA</span>
                     </div>
                   </motion.div>
-
-                  {/* Floating Analysis Particles */}
-                  {[...Array(6)].map((_, i) => (
-                    <motion.div
-                      key={`particle-${animationKey}-${i}`}
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={{ 
-                        opacity: [0, 1, 1, 0], 
-                        scale: [0, 1, 1, 0],
-                        y: [0, -20, -40, -60],
-                        x: [0, Math.sin(i) * 20, Math.cos(i) * 15, 0]
-                      }}
-                      transition={{ 
-                        duration: 2,
-                        delay: 3.8 + i * 0.1,
-                        repeat: Infinity,
-                        repeatDelay: 3
-                      }}
-                      className={`absolute w-2 h-2 rounded-full z-24`}
-                      style={{
-                        left: `${20 + i * 10}%`,
-                        top: `${30 + i * 8}%`,
-                        backgroundColor: ['#3B82F6', '#8B5CF6', '#10B981', '#EF4444', '#F59E0B', '#06B6D4'][i]
-                      }}
-                    />
-                  ))}
                 </>
-                
-                {/* Final Dashboard Mockup - Fade In at the end */}
+
+                {/* 3. PARTICULES D'ANALYSE (3.8s → 5.8s) */}
+                {[...Array(6)].map((_, i) => (
+                  <motion.div
+                    key={`particle-${animationKey}-${i}`}
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ 
+                      opacity: [0, 1, 1, 0], 
+                      scale: [0, 1, 1, 0],
+                      y: [0, -20, -40, -60],
+                      x: [0, Math.sin(i) * 20, Math.cos(i) * 15, 0]
+                    }}
+                    transition={{ 
+                      duration: 2,
+                      delay: 3.8 + i * 0.1,
+                      repeat: Infinity,
+                      repeatDelay: 3
+                    }}
+                    className={`absolute w-2 h-2 rounded-full z-24`}
+                    style={{
+                      left: `${20 + i * 10}%`,
+                      top: `${30 + i * 8}%`,
+                      backgroundColor: ['#3B82F6', '#8B5CF6', '#10B981', '#EF4444', '#F59E0B', '#06B6D4'][i]
+                    }}
+                  />
+                ))}
+
+                {/* 4. DASHBOARD FINAL (5.0s → 6.0s) */}
                 <motion.div
                   key={`dashboard-${animationKey}`}
                   initial={{ opacity: 0 }}
@@ -566,7 +571,23 @@ export default function UC3Page() {
                   </div>
                 </motion.div>
                 
-                {/* Final State Notifications */}
+                {/* 5. BLOBS DÉCORATIFS (5.5s → 6.5s) */}
+                <motion.div
+                  key={`blob-1-${animationKey}`}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: 5.5 }}
+                  className="absolute -top-8 -right-8 w-24 h-24 bg-purple-200/20 rounded-full blur-2xl"
+                ></motion.div>
+                <motion.div
+                  key={`blob-2-${animationKey}`}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: 5.7 }}
+                  className="absolute -bottom-8 -left-8 w-32 h-32 bg-blue-200/15 rounded-full blur-3xl"
+                ></motion.div>
+
+                {/* 6. NOTIFICATIONS FINALES (6.0s → 6.8s) */}
                 <motion.div
                   key={`notification-1-${animationKey}`}
                   initial={{ opacity: 0, y: 10 }}
@@ -593,21 +614,7 @@ export default function UC3Page() {
                   </div>
                 </motion.div>
                 
-                {/* Background Decorative Elements */}
-                <motion.div
-                  key={`blob-1-${animationKey}`}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, ease: "easeOut", delay: 5.5 }}
-                  className="absolute -top-8 -right-8 w-24 h-24 bg-purple-200/20 rounded-full blur-2xl"
-                ></motion.div>
-                <motion.div
-                  key={`blob-2-${animationKey}`}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, ease: "easeOut", delay: 5.7 }}
-                  className="absolute -bottom-8 -left-8 w-32 h-32 bg-blue-200/15 rounded-full blur-3xl"
-                ></motion.div>
+                {/* 7.0s → RESTART: animationKey++ déclenche une nouvelle loop */}
               </div>
             </div>
           </div>
