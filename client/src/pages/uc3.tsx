@@ -325,13 +325,19 @@ export default function UC3Page() {
             <div className="flex justify-center lg:justify-end">
               <div className="relative w-full max-w-lg">
                 
-                {/* Image appears immediately for showNewProject, fades to original */}
+                {/* Image appears immediately, then fades to background for agents */}
                 <motion.div
-                  initial={{ opacity: showNewProject ? 1 : 0 }}
-                  animate={{ opacity: showNewProject ? 0 : 1 }}
-                  transition={{ duration: 1, ease: "easeInOut", delay: showNewProject ? 1 : 0 }}
+                  key={`image-${showNewProject}`}
+                  initial={{ opacity: 1 }}
+                  animate={{ 
+                    opacity: showNewProject ? [1, 1, 0.3] : [0, 1]
+                  }}
+                  transition={{ 
+                    duration: showNewProject ? 3 : 1, 
+                    times: showNewProject ? [0, 0.33, 1] : [0, 1],
+                    ease: "easeInOut" 
+                  }}
                   className="absolute inset-0 z-5"
-                  style={{ pointerEvents: !showNewProject ? 'auto' : 'none' }}
                 >
                   <div className="bg-white rounded-3xl shadow-2xl border border-gray-100/50 overflow-hidden backdrop-blur-sm h-full"
                        style={{
@@ -345,27 +351,6 @@ export default function UC3Page() {
                   </div>
                 </motion.div>
 
-                {/* Background Image for Agents - Stays visible during agent animation */}
-                {showNewProject && (
-                  <motion.div
-                    initial={{ opacity: 1 }}
-                    animate={{ opacity: 0.3 }}
-                    transition={{ duration: 0.5, ease: "easeInOut", delay: 1 }}
-                    className="absolute inset-0 z-5"
-                  >
-                    <div className="bg-white rounded-3xl shadow-2xl border border-gray-100/50 overflow-hidden backdrop-blur-sm h-full"
-                         style={{
-                           boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-                         }}>
-                      <img 
-                        src={newProjectImage} 
-                        alt="Aitenders Agents Dashboard" 
-                        className="w-full h-full object-contain bg-white"
-                      />
-                    </div>
-                  </motion.div>
-                )}
-
 
 
                 
@@ -377,7 +362,7 @@ export default function UC3Page() {
                       initial={{ opacity: 0, scale: 0, x: -50, y: -30 }}
                       animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
                       exit={{ opacity: 0, scale: 0 }}
-                      transition={{ duration: 0.6, ease: "backOut", delay: 2.5 }}
+                      transition={{ duration: 0.6, ease: "backOut", delay: showNewProject ? 2.5 : 0 }}
                       className="absolute top-1/4 left-1/4 z-25"
                     >
                       <div className="bg-blue-500 text-white p-3 rounded-xl shadow-lg text-xs font-medium flex items-center space-x-2 animate-pulse">
@@ -391,7 +376,7 @@ export default function UC3Page() {
                       initial={{ opacity: 0, scale: 0, x: 50, y: -40 }}
                       animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
                       exit={{ opacity: 0, scale: 0 }}
-                      transition={{ duration: 0.6, ease: "backOut", delay: 2.7 }}
+                      transition={{ duration: 0.6, ease: "backOut", delay: showNewProject ? 2.7 : 0 }}
                       className="absolute top-1/3 right-1/4 z-25"
                     >
                       <div className="bg-purple-500 text-white p-3 rounded-xl shadow-lg text-xs font-medium flex items-center space-x-2 animate-pulse">
@@ -405,7 +390,7 @@ export default function UC3Page() {
                       initial={{ opacity: 0, scale: 0, x: -30, y: 50 }}
                       animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
                       exit={{ opacity: 0, scale: 0 }}
-                      transition={{ duration: 0.6, ease: "backOut", delay: 2.9 }}
+                      transition={{ duration: 0.6, ease: "backOut", delay: showNewProject ? 2.9 : 0 }}
                       className="absolute bottom-1/3 left-1/3 z-25"
                     >
                       <div className="bg-green-500 text-white p-3 rounded-xl shadow-lg text-xs font-medium flex items-center space-x-2 animate-pulse">
@@ -419,7 +404,7 @@ export default function UC3Page() {
                       initial={{ opacity: 0, scale: 0, x: 40, y: 40 }}
                       animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
                       exit={{ opacity: 0, scale: 0 }}
-                      transition={{ duration: 0.6, ease: "backOut", delay: 3.1 }}
+                      transition={{ duration: 0.6, ease: "backOut", delay: showNewProject ? 3.1 : 0 }}
                       className="absolute bottom-1/4 right-1/3 z-25"
                     >
                       <div className="bg-red-500 text-white p-3 rounded-xl shadow-lg text-xs font-medium flex items-center space-x-2 animate-pulse">
@@ -433,7 +418,7 @@ export default function UC3Page() {
                       initial={{ opacity: 0, scale: 0 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0 }}
-                      transition={{ duration: 0.8, ease: "backOut", delay: 3.3 }}
+                      transition={{ duration: 0.8, ease: "backOut", delay: showNewProject ? 3.3 : 0 }}
                       className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-25"
                     >
                       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-2xl shadow-xl text-sm font-bold flex items-center space-x-2 animate-bounce">
@@ -455,7 +440,7 @@ export default function UC3Page() {
                         }}
                         transition={{ 
                           duration: 2,
-                          delay: 3.8 + i * 0.1,
+                          delay: showNewProject ? 3.8 + i * 0.1 : 0,
                           repeat: Infinity,
                           repeatDelay: 3
                         }}
