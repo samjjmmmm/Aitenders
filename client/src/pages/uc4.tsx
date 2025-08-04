@@ -849,7 +849,7 @@ export default function UC4Page() {
       </section>
 
 
-      {/* Toppings Section - Wow Features & Additional Functionalities */}
+
       {/* Toppings Section - UC4 Fonctionnalités Additionnelles */}
       <section className="py-16 md:py-20 lg:py-24 px-4 bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 relative overflow-hidden">
         {/* Background Effects */}
@@ -958,33 +958,6 @@ export default function UC4Page() {
       </section>
 
 
-      {/* Ce qui change avec Aitenders Section */}
-      <section className="py-16 md:py-20 lg:py-24 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 md:mb-20 lg:mb-24">
-            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Ce qui change avec Aitenders</h3>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              Découvrez la transformation complète, du chaos manuel à la précision pilotée par l'IA.
-            </p>
-          </div>
-          
-          {/* Simulator Placeholder */}
-          <div className="bg-white rounded-3xl shadow-lg border border-gray-200 p-8 md:p-12 text-center">
-            <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
-              <MdPlayArrow className="w-12 h-12 text-white" />
-            </div>
-            <h4 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Simulateur de Transformation</h4>
-            <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
-              Visualisez l'impact de l'IA contractuelle sur vos processus métier avec notre simulateur interactif.
-            </p>
-            <div className="bg-gray-100 rounded-2xl p-12 text-gray-500">
-              <MdSettings className="w-16 h-16 mx-auto mb-4 opacity-50" />
-              <p className="text-lg font-medium">Simulateur en cours de développement</p>
-              <p className="text-sm mt-2">Cette fonctionnalité sera bientôt disponible</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Real Projects Section */}
       <section className="py-16 md:py-20 lg:py-24 px-4 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">

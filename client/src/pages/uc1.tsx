@@ -9,7 +9,7 @@ import {
   MdDashboard, MdBolt, MdEdit, MdNotifications, MdVerified, MdSwapHoriz, MdPlayArrow,
   MdClose, MdCheck, MdStars, MdCloudSync, MdCreate, MdAutoAwesome, MdLink, 
   MdAccountTree, MdTrackChanges, MdCallSplit, MdSchema, MdGppBad, MdTimeline, 
-  MdRotateRight, MdFlag, MdMail
+  MdRotateRight, MdFlag, MdMail, MdCalculate
 } from "react-icons/md";
 import { FaUsers, FaShieldAlt, FaChartBar, FaFileAlt, FaCogs } from "react-icons/fa";
 import ContactSection from "@/components/contact-section";
@@ -1193,34 +1193,6 @@ export default function UC1Page() {
         </div>
       </section>
 
-      {/* Ce qui change avec Aitenders Section */}
-      <section className="py-16 md:py-20 lg:py-24 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 md:mb-20 lg:mb-24">
-            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Ce qui change avec Aitenders</h3>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-    
-            </p>
-          </div>
-
-          {/* Simulator Placeholder */}
-          <div className="bg-white rounded-3xl shadow-lg border border-gray-200 p-8 md:p-12 text-center">
-            <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
-              <MdPlayArrow className="w-12 h-12 text-white" />
-            </div>
-            <h4 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Simulateur de Performance Commerciale</h4>
-                      <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
-              Visualisez l'impact de l'IA sur votre taux de conversion et votre efficacité commerciale avec notre simulateur interactif.
-            </p>
-            <div className="bg-gray-100 rounded-2xl p-12 text-gray-500">
-              <MdSettings className="w-16 h-16 mx-auto mb-4 opacity-50" />
-              <p className="text-lg font-medium">Simulateur en cours de développement</p>
-              <p className="text-sm mt-2">Cette fonctionnalité sera bientôt disponible</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Real Projects Section */}
       <section className="py-16 md:py-20 lg:py-24 px-4 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
         <div className="max-w-7xl mx-auto">
@@ -1399,40 +1371,50 @@ export default function UC1Page() {
               <div className="text-center mb-8">
                 <div className="inline-flex items-center justify-center px-6 py-3 bg-purple-100 rounded-full border border-purple-200 mb-6">
                   <MdAnalytics className="w-5 h-5 text-purple-600 mr-2" />
-                  <span className="text-purple-700 font-semibold text-sm">Simulateur Interactif</span>
+                  <span className="text-purple-700 font-semibold text-sm">Simulateur ROI Intégré</span>
                 </div>
                 
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                  Vous voulez voir l'impact sur <span className="text-purple-600">vos projets ?</span>
+                  Calculez votre <span className="text-purple-600">ROI en temps réel</span>
                 </h3>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  Découvrez en 2 minutes le potentiel d'optimisation spécifique à votre contexte
+                  Simulateur intelligent intégré à la page pour une analyse immédiate de vos projets
                 </p>
               </div>
               
-              <div className="max-w-4xl mx-auto">
-                <ChatInterface 
-                  language="fr"
-                  customActions={[
-                    {
-                      label: "🚀 Lancer Simulateur ROI",
-                      icon: <MdAnalytics className="w-4 h-4" />,
-                      onClick: () => {}
-                    },
-                    {
-                      label: "📋 Explorer Cas d'Usage",
-                      icon: <MdDashboard className="w-4 h-4" />,
-                      onClick: () => {}
-                    },
-                    {
-                      label: "💬 Parler à un Expert",
-                      icon: <MdMail className="w-4 h-4" />,
-                      onClick: () => {}
-                    }
-                  ]}
-                  transparent={true}
-
-                />
+              {/* Embedded Simulator Interface */}
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 p-8 shadow-lg">
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <MdCalculate className="w-8 h-8 text-white" />
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">Simulateur ROI UC1</h4>
+                  <p className="text-gray-600">Analyse spécialisée pour projets &lt; 1M€</p>
+                </div>
+                
+                {/* Quick ROI Form */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Budget projet</label>
+                    <input 
+                      type="text" 
+                      placeholder="Ex: 850 000€"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Durée (mois)</label>
+                    <input 
+                      type="text" 
+                      placeholder="Ex: 12 mois"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    />
+                  </div>
+                </div>
+                
+                <button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-4 px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-[1.02] shadow-lg">
+                  🚀 Lancer Simulation ROI
+                </button>
               </div>
               
 
@@ -1441,8 +1423,6 @@ export default function UC1Page() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <ContactSection />
 
       {/* Chat Interface with UC1-specific actions */}
       <ChatInterface 
