@@ -44,6 +44,7 @@ export function ROISimulator({ useCase, className = '' }: ROISimulatorProps) {
   const [email, setEmail] = useState('');
   const [isDownloading, setIsDownloading] = useState(false);
   const [sessionId] = useState(() => `roi-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`);
+  const [userInput, setUserInput] = useState('');
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -56,15 +57,47 @@ export function ROISimulator({ useCase, className = '' }: ROISimulatorProps) {
   }, [steps]);
 
   useEffect(() => {
-    // Initialize with welcome message
-    const welcomeMessage = getWelcomeMessage(useCase);
-    setSteps([{
-      id: '1',
-      type: 'question',
-      content: welcomeMessage,
-      timestamp: new Date()
-    }]);
+    // Auto-start the advanced ROI simulator immediately
+    startAdvancedSimulator();
   }, [useCase]);
+
+  const startAdvancedSimulator = async () => {
+    setIsCalculating(true);
+    
+    try {
+      // Send "simulateur" command to start the advanced ROI calculator
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: 'simulateur', sessionId })
+      });
+
+      const data = await response.json();
+
+      if (data.response) {
+        setSteps([{
+          id: '1',
+          type: 'question',
+          content: data.response,
+          timestamp: new Date()
+        }]);
+      }
+    } catch (error) {
+      console.error('Error starting advanced simulator:', error);
+      // Fallback to simple welcome message
+      const welcomeMessage = getWelcomeMessage(useCase);
+      setSteps([{
+        id: '1',
+        type: 'question',
+        content: welcomeMessage,
+        timestamp: new Date()
+      }]);
+    } finally {
+      setIsCalculating(false);
+    }
+  };
 
   const getWelcomeMessage = (useCase: string) => {
     const messages = {
@@ -152,6 +185,52 @@ export function ROISimulator({ useCase, className = '' }: ROISimulatorProps) {
       )
     }
   ];
+
+  const handleUserResponse = async (userInput: string) => {
+    if (!userInput.trim()) return;
+
+    setIsCalculating(true);
+
+    // Add user message to steps
+    setSteps(prev => [...prev, {
+      id: `user-${Date.now()}`,
+      type: 'question',
+      content: `👤 ${userInput}`,
+      timestamp: new Date()
+    }]);
+
+    try {
+      // Send response to advanced simulator
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: userInput, sessionId })
+      });
+
+      const data = await response.json();
+
+      if (data.response) {
+        setSteps(prev => [...prev, {
+          id: `bot-${Date.now()}`,
+          type: 'question',
+          content: data.response,
+          timestamp: new Date()
+        }]);
+      }
+    } catch (error) {
+      console.error('Error processing response:', error);
+      setSteps(prev => [...prev, {
+        id: `error-${Date.now()}`,
+        type: 'question',
+        content: '❌ Erreur lors du traitement de votre réponse. Veuillez réessayer.',
+        timestamp: new Date()
+      }]);
+    } finally {
+      setIsCalculating(false);
+    }
+  };
 
   const handleNextQuestion = () => {
     const currentQuestion = questions[currentStep];
@@ -485,6 +564,40 @@ export function ROISimulator({ useCase, className = '' }: ROISimulatorProps) {
             )}
 
             <div ref={messagesEndRef} />
+          </div>
+
+          {/* User Input Field for Advanced Simulator */}
+          <div className="border-t pt-4">
+            <div className="flex gap-2">
+              <Input
+                type="text"
+                placeholder="Tapez votre réponse ici..."
+                value={userInput}
+                onChange={(e) => setUserInput(e.target.value)}
+                onKeyPress={(e) => {
+                  if (e.key === 'Enter' && !isCalculating) {
+                    handleUserResponse(userInput);
+                    setUserInput('');
+                  }
+                }}
+                className="flex-1"
+                disabled={isCalculating}
+              />
+              <Button
+                onClick={() => {
+                  handleUserResponse(userInput);
+                  setUserInput('');
+                }}
+                disabled={!userInput.trim() || isCalculating}
+                className="bg-[#3880E8] hover:bg-[#112646] text-white"
+              >
+                {isCalculating ? (
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                ) : (
+                  <Send className="w-4 h-4" />
+                )}
+              </Button>
+            </div>
           </div>
         </CardContent>
       </Card>

@@ -40,7 +40,10 @@ class AdvancedAnalysisService {
 
     this.sessions.set(sessionId, session);
 
-    // Return only the intro text for the first message
+    // Inclure directement la première question dans l'introduction
+    const firstQuestion = this.questions[0];
+    const formattedQuestion = this.formatQuestion(firstQuestion, 1, this.questions.length);
+
     return `🚀 **SIMULATEUR ROI AITENDERS**
 
 ⏱️ Temps estimé : 3-5 minutes
@@ -55,7 +58,9 @@ Nous allons explorer vos processus en détail avec 6 questions couvrant :
 🧠 Gestion des connaissances (1 question combinée)
 🎯 Profil d'entreprise (1 question combinée)
 
-*Tapez "suivant" pour commencer avec la première question.*`;
+---
+
+${formattedQuestion}`;
   }
 
   // Get the next question for a session
