@@ -1431,29 +1431,11 @@ export default function UC1Page() {
                     }
                   ]}
                   transparent={true}
-                  placeholder="Décrivez votre projet ou posez une question sur nos solutions UC1..."
+
                 />
               </div>
               
-              {/* Quick stats under chat */}
-              <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="text-center p-4 bg-white/50 rounded-xl border border-white/60">
-                  <div className="text-2xl font-bold text-purple-600">2min</div>
-                  <div className="text-sm text-gray-600">Temps moyen</div>
-                </div>
-                <div className="text-center p-4 bg-white/50 rounded-xl border border-white/60">
-                  <div className="text-2xl font-bold text-blue-600">850K€</div>
-                  <div className="text-sm text-gray-600">Projet type</div>
-                </div>
-                <div className="text-center p-4 bg-white/50 rounded-xl border border-white/60">
-                  <div className="text-2xl font-bold text-green-600">+45%</div>
-                  <div className="text-sm text-gray-600">Gain efficacité</div>
-                </div>
-                <div className="text-center p-4 bg-white/50 rounded-xl border border-white/60">
-                  <div className="text-2xl font-bold text-orange-600">15+</div>
-                  <div className="text-sm text-gray-600">Questions IA</div>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>

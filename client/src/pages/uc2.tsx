@@ -1040,7 +1040,7 @@ export default function UC2Page() {
         </div>
       </section>
 
- sName="py-16 md:py-20 lg:py-24 px-4 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+      <section className="py-16 md:py-20 lg:py-24 px-4 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:mb-8 leading-[1.1] tracking-tight">
