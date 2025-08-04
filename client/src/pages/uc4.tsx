@@ -1017,11 +1017,11 @@ export default function UC4Page() {
                 <div className="mb-4">
                   <Badge className="bg-purple-100 text-purple-800 font-medium">IT/Sécurité</Badge>
                 </div>
-                <div className="text-xl font-bold text-purple-600 mb-4">Contrat : 180 Millions €</div>
+                <div className="text-xl font-bold text-purple-600 mb-4">Contrat : 3 documents (85 pages)</div>
                 
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  Construction d'un data center haute sécurité avec redondance énergétique et connectivité fiber. 
-                  Clauses contractuelles critiques incluant SLA, pénalités et obligations de maintenance sur 15 ans.
+                  Contrat de maintenance informatique simple avec SLA standard et clauses de pénalités. 
+                  Documentation concise : contrat principal, annexe technique et grille tarifaire.
                 </p>
                 
                 <div className="space-y-3">
@@ -1062,11 +1062,11 @@ export default function UC4Page() {
                 <div className="mb-4">
                   <Badge className="bg-blue-100 text-blue-800 font-medium">Industrie</Badge>
                 </div>
-                <div className="text-xl font-bold text-blue-600 mb-4">Contrat : 320 Millions €</div>
+                <div className="text-xl font-bold text-blue-600 mb-4">Contrat : 5 documents (120 pages)</div>
                 
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  Maintenance préventive et corrective de sites industriels avec garantie de performance sur 20 ans. 
-                  Analyse contractuelle de 1,200 pages incluant risques technologiques et responsabilités environnementales.
+                  Fourniture d'équipements industriels avec installation et formation. 
+                  Dossier contractuel : bon de commande, spécifications techniques, planning, garanties et formation.
                 </p>
                 
                 <div className="space-y-3">
@@ -1107,11 +1107,11 @@ export default function UC4Page() {
                 <div className="mb-4">
                   <Badge className="bg-green-100 text-green-800 font-medium">PPP</Badge>
                 </div>
-                <div className="text-xl font-bold text-green-600 mb-4">Contrat : 450 Millions €</div>
+                <div className="text-xl font-bold text-green-600 mb-4">Contrat : 4 documents (95 pages)</div>
                 
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  Partenariat public-privé pour ligne de tramway avec exploitation sur 30 ans. 
-                  Contrat complexe de 2,000 pages incluant partage de risques, indicateurs de performance et pénalités.
+                  Prestation de services conseil avec livrables définis et jalons de validation. 
+                  Documentation standard : contrat cadre, cahier des charges, planning et conditions générales.
                 </p>
                 
                 <div className="space-y-3">

@@ -32,9 +32,11 @@ import {
   MdTimeline,
   MdHistory,
   MdNotificationsActive,
-  MdFlag
+  MdFlag,
+  MdVerified
 } from 'react-icons/md';
 import { FaUsers } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import Header from '@/components/header';
 import ContactSection from '@/components/contact-section';
 import ChatInterface from '@/components/chat-interface';
@@ -1063,11 +1065,11 @@ export function UC5() {
                 <div className="mb-4">
                   <Badge className="bg-purple-100 text-purple-800 font-medium">Énergie</Badge>
                 </div>
-                <div className="text-xl font-bold text-purple-600 mb-4">Exécution : 890 Millions €</div>
+                <div className="text-xl font-bold text-purple-600 mb-4">Exécution : 245 documents</div>
                 
                 <p className="text-gray-600 leading-relaxed mb-6">
                   Installation de 67 éoliennes offshore avec raccordement électrique et maintenance sur 25 ans. 
-                  Gestion d'obligations contractuelles complexes incluant garanties de performance et pénalités météo.
+                  Dossier d'exécution avec 245 documents : plans, procédures, certificats et obligations contractuelles.
                 </p>
                 
                 <div className="space-y-3">
@@ -1108,11 +1110,11 @@ export function UC5() {
                 <div className="mb-4">
                   <Badge className="bg-blue-100 text-blue-800 font-medium">Transport</Badge>
                 </div>
-                <div className="text-xl font-bold text-blue-600 mb-4">Exécution : 1.2 Milliards €</div>
+                <div className="text-xl font-bold text-blue-600 mb-4">Exécution : 387 documents</div>
                 
                 <p className="text-gray-600 leading-relaxed mb-6">
                   Construction de 85 km de ligne TGV avec 12 ouvrages d'art et systèmes de signalisation avancés. 
-                  Pilotage d'un contrat de 3,500 pages avec 1,200 obligations techniques et environnementales.
+                  Pilotage avec 387 documents : plans d'exécution, procédures et 1,200 obligations techniques.
                 </p>
                 
                 <div className="space-y-3">
@@ -1153,11 +1155,11 @@ export function UC5() {
                 <div className="mb-4">
                   <Badge className="bg-green-100 text-green-800 font-medium">Industrie</Badge>
                 </div>
-                <div className="text-xl font-bold text-green-600 mb-4">Exécution : 650 Millions €</div>
+                <div className="text-xl font-bold text-green-600 mb-4">Exécution : 156 documents</div>
                 
                 <p className="text-gray-600 leading-relaxed mb-6">
                   Construction d'une usine de véhicules électriques avec chaînes robotisées et systèmes Industry 4.0. 
-                  Suivi de 800 obligations contractuelles incluant performances énergétiques et certifications qualité.
+                  Suivi de 156 documents d'exécution incluant 800 obligations techniques et certifications qualité.
                 </p>
                 
                 <div className="space-y-3">

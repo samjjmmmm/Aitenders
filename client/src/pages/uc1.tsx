@@ -1003,7 +1003,7 @@ export default function UC1Page() {
                 <div className="mb-4">
                   <Badge className="bg-purple-100 text-purple-800 font-medium">Bâtiment</Badge>
                 </div>
-                <div className="text-xl font-bold text-purple-600 mb-4">Offre : 8.5 Millions €</div>
+                <div className="text-xl font-bold text-purple-600 mb-4">Offre : 850 K€</div>
                 
                 <p className="text-gray-600 leading-relaxed mb-6">
                   Programme de rénovation énergétique de 15 écoles municipales avec mise aux normes accessibilité. 
@@ -1048,7 +1048,7 @@ export default function UC1Page() {
                 <div className="mb-4">
                   <Badge className="bg-blue-100 text-blue-800 font-medium">Aménagement</Badge>
                 </div>
-                <div className="text-xl font-bold text-blue-600 mb-4">Offre : 12 Millions €</div>
+                <div className="text-xl font-bold text-blue-600 mb-4">Offre : 720 K€</div>
                 
                 <p className="text-gray-600 leading-relaxed mb-6">
                   Création d'espaces commerciaux modernes avec parkings et voiries associées. 
@@ -1093,7 +1093,7 @@ export default function UC1Page() {
                 <div className="mb-4">
                   <Badge className="bg-green-100 text-green-800 font-medium">Santé</Badge>
                 </div>
-                <div className="text-xl font-bold text-green-600 mb-4">Offre : 6.2 Millions €</div>
+                <div className="text-xl font-bold text-green-600 mb-4">Offre : 950 K€</div>
                 
                 <p className="text-gray-600 leading-relaxed mb-6">
                   Extension moderne d'un centre de santé avec salles de consultation et équipements médicaux. 

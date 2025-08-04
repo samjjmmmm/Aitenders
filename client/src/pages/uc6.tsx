@@ -1022,7 +1022,7 @@ export default function UC6Page() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:mb-8 leading-[1.1] tracking-tight">
-              Nos <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">projets de référence</span> transformationnels
+              Nos <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">projets de référence</span> Contrats Semi-complexes
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Découvrez comment nos clients révolutionnent leur organisation avec l'IA Aitenders
@@ -1048,11 +1048,11 @@ export default function UC6Page() {
                 <div className="mb-4">
                   <Badge className="bg-purple-100 text-purple-800 font-medium">Organisation</Badge>
                 </div>
-                <div className="text-xl font-bold text-purple-600 mb-4">Transformation : 2,300 collaborateurs</div>
+                <div className="text-xl font-bold text-purple-600 mb-4">Transformation : 15,000+ documents</div>
                 
                 <p className="text-gray-600 leading-relaxed mb-6">
                   Refonte complète des processus appels d'offres pour un groupe BTP avec 15 filiales. 
-                  Déploiement d'Aitenders sur 45 équipes projets avec formation et accompagnement sur 18 mois.
+                  Analyse et transformation de plus de 15,000 documents complexes avec formats hétérogènes sur 18 mois.
                 </p>
                 
                 <div className="space-y-3">
@@ -1093,11 +1093,11 @@ export default function UC6Page() {
                 <div className="mb-4">
                   <Badge className="bg-blue-100 text-blue-800 font-medium">Innovation</Badge>
                 </div>
-                <div className="text-xl font-bold text-blue-600 mb-4">Excellence : 850 collaborateurs</div>
+                <div className="text-xl font-bold text-blue-600 mb-4">Excellence : 8,500+ pages</div>
                 
                 <p className="text-gray-600 leading-relaxed mb-6">
                   Création d'un centre d'expertise IA transversal avec Aitenders comme pierre angulaire. 
-                  Formation de 120 experts internes et développement de bonnes pratiques pour 8 business units.
+                  Traitement de plus de 8,500 pages de documentation technique complexe pour 8 business units.
                 </p>
                 
                 <div className="space-y-3">
@@ -1138,11 +1138,11 @@ export default function UC6Page() {
                 <div className="mb-4">
                   <Badge className="bg-green-100 text-green-800 font-medium">Formation</Badge>
                 </div>
-                <div className="text-xl font-bold text-green-600 mb-4">Formation : 1,500 apprenants</div>
+                <div className="text-xl font-bold text-green-600 mb-4">Formation : 25,000+ documents</div>
                 
                 <p className="text-gray-600 leading-relaxed mb-6">
                   Programme de formation intensif sur 12 mois pour transformer les équipes commerciales. 
-                  Certification Aitenders Advanced avec suivi personnalisé et évaluation continue des performances.
+                  Certification avec analyse de plus de 25,000 documents de tailles et complexités variables.
                 </p>
                 
                 <div className="space-y-3">

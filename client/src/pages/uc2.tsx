@@ -1072,7 +1072,7 @@ export default function UC2Page() {
                 <div className="mb-4">
                   <Badge className="bg-purple-100 text-purple-800 font-medium">Logistique</Badge>
                 </div>
-                <div className="text-xl font-bold text-purple-600 mb-4">Offre : 45 Millions €</div>
+                <div className="text-xl font-bold text-purple-600 mb-4">Offre : 8.5 Millions €</div>
                 
                 <p className="text-gray-600 leading-relaxed mb-6">
                   Construction d'un hub logistique moderne de 25,000 m² avec systèmes automatisés et aires de manœuvre. 
@@ -1117,7 +1117,7 @@ export default function UC2Page() {
                 <div className="mb-4">
                   <Badge className="bg-blue-100 text-blue-800 font-medium">Urbain</Badge>
                 </div>
-                <div className="text-xl font-bold text-blue-600 mb-4">Offre : 78 Millions €</div>
+                <div className="text-xl font-bold text-blue-600 mb-4">Offre : 6.2 Millions €</div>
                 
                 <p className="text-gray-600 leading-relaxed mb-6">
                   Rénovation complète d'un quartier résidentiel avec 200 logements, espaces verts et commerces. 
@@ -1162,7 +1162,7 @@ export default function UC2Page() {
                 <div className="mb-4">
                   <Badge className="bg-green-100 text-green-800 font-medium">Éducation</Badge>
                 </div>
-                <div className="text-xl font-bold text-green-600 mb-4">Offre : 95 Millions €</div>
+                <div className="text-xl font-bold text-green-600 mb-4">Offre : 4.8 Millions €</div>
                 
                 <p className="text-gray-600 leading-relaxed mb-6">
                   Construction d'un campus de 15,000 m² avec amphithéâtres, laboratoires et résidences étudiantes. 
