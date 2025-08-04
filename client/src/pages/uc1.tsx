@@ -28,7 +28,7 @@ import heroImage from "@assets/Dell XPS 15__1754046364427.png";
 import ChatSection from "@/components/chat-section";
 import ChatInterface from "@/components/chat-interface";
 import ToppingModal from "@/components/topping-modal";
-import { ROISimulator } from "@/components/roi-simulator";
+import { AitendersSimulatorFinal } from "@/components/aitenders-simulator-final";
 
 export default function UC1Page() {
   const [selectedTopping, setSelectedTopping] = useState<any>(null);
@@ -1383,8 +1383,8 @@ export default function UC1Page() {
                 </p>
               </div>
               
-              {/* Embedded ROI Simulator */}
-              <ROISimulator useCase="UC1" className="w-full" />
+              {/* Embedded Aitenders ROI Simulator Final */}
+              <AitendersSimulatorFinal useCase="UC1" className="w-full" />
               
 
             </div>

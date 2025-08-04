@@ -1,0 +1,120 @@
+import streamlit as st
+
+# -----------------------------
+# CALCUL POUR UN TYPE DE PROJET
+# -----------------------------
+def calcul_par_projet(taille, nb_projets, montant_projet, cout_jh=600):
+    if taille == "Petit":
+        duree_offre, nb_personnes = 3, 1.5
+        repartition = {"Analyse": 0.20, "Prix": 0.50, "Ecriture": 0.30}
+        effort_realisation, gain_collab, gain_tracabilite, gain_conformite_pct = 36, 0.70, 0.65, 0.05
+
+    elif taille == "Moyen":
+        duree_offre, nb_personnes = 12, 3.5
+        repartition = {"Analyse": 0.30, "Prix": 0.30, "Ecriture": 0.40}
+        effort_realisation, gain_collab, gain_tracabilite, gain_conformite_pct = 144, 0.85, 0.75, 0.007
+
+    else: # Grand
+        duree_offre, nb_personnes = 48, 15
+        repartition = {"Analyse": 0.40, "Prix": 0.20, "Ecriture": 0.40}
+        effort_realisation, gain_collab, gain_tracabilite, gain_conformite_pct = 2000, 0.95, 0.80, 0.02
+
+    # Offre
+    temps_total_offre = duree_offre * nb_personnes * 5
+    cout_offre_base = temps_total_offre * cout_jh
+    gain_analyse = temps_total_offre * repartition["Analyse"] * 0.50
+    gain_prix = temps_total_offre * repartition["Prix"] * 0.30
+    gain_ecriture = temps_total_offre * repartition["Ecriture"] * 0.40
+    gain_total_offre = gain_analyse + gain_prix + gain_ecriture
+    economies_offre = gain_total_offre * cout_jh
+    cout_avec_aitenders = cout_offre_base - economies_offre
+    roi_offre = round(cout_offre_base / max(cout_avec_aitenders,1), 1)
+
+    # Réalisation
+    cout_realisation_base = effort_realisation * cout_jh
+    economies_realisation = cout_realisation_base * gain_collab
+
+    # Traçabilité
+    gain_tracabilite_jh = temps_total_offre * gain_tracabilite
+    economies_tracabilite = gain_tracabilite_jh * cout_jh
+
+    # Conformité
+    economies_conformite = montant_projet * gain_conformite_pct
+
+    # Totaux
+    economies_totales = economies_offre + economies_realisation + economies_tracabilite + economies_conformite
+    economies_annuelles = economies_totales * nb_projets
+
+    return {
+        "ROI": roi_offre,
+        "WOW1": gain_analyse * cout_jh,
+        "WOW2": gain_prix * cout_jh + economies_realisation,
+        "WOW3": gain_ecriture * cout_jh,
+        "Collaboration": economies_realisation,
+        "Tracabilite": economies_tracabilite,
+        "Conformite": economies_conformite,
+        "Total_Par_Projet": economies_totales,
+        "Total_Annuel": economies_annuelles
+    }
+
+# -----------------------------
+# INTERFACE STREAMLIT
+# -----------------------------
+st.title("📊 Simulateur One Voice Aitenders (Multi Cas d’Usage)")
+
+st.write("Déclarez votre portefeuille de projets pour mesurer l’impact d’Aitenders.")
+
+# Entrées multi-types
+nb_petits = st.number_input("Nombre de petits projets (≈3 semaines, 1 pers.) :", min_value=0, value=0)
+montant_petit = st.number_input("Montant moyen par petit projet (€) :", min_value=1000000, value=5000000, step=1000000)
+
+nb_moyens = st.number_input("Nombre de projets moyens (1-3 mois, 2-5 pers.) :", min_value=0, value=0)
+montant_moyen = st.number_input("Montant moyen par projet moyen (€) :", min_value=1000000, value=50000000, step=5000000)
+
+nb_grands = st.number_input("Nombre de grands projets (>6 mois, 15 pers.+) :", min_value=0, value=0)
+montant_grand = st.number_input("Montant moyen par grand projet (€) :", min_value=50000000, value=100000000, step=10000000)
+
+email = st.text_input("Votre email (obligatoire pour voir les résultats détaillés)")
+
+# Calculs
+resultats_petits = calcul_par_projet("Petit", nb_petits, montant_petit)
+resultats_moyens = calcul_par_projet("Moyen", nb_moyens, montant_moyen)
+resultats_grands = calcul_par_projet("Grand", nb_grands, montant_grand)
+
+total_annuel = resultats_petits["Total_Annuel"] + resultats_moyens["Total_Annuel"] + resultats_grands["Total_Annuel"]
+
+# Aperçu visuel
+st.subheader("Aperçu rapide")
+st.metric("Économie annuelle estimée", f"{total_annuel:,.0f} €")
+st.progress(min(total_annuel / 10_000_000, 1.0))
+
+# Résultats détaillés
+if email:
+    st.success("✅ Merci, voici vos résultats détaillés consolidés !")
+
+    st.subheader("📌 Détail par taille de projet")
+
+    if nb_petits > 0:
+        st.write(f"**Petits projets ({nb_petits})**")
+        st.write(f"- ROI moyen : {resultats_petits['ROI']}x")
+        st.write(f"- Économie annuelle : {resultats_petits['Total_Annuel']:,.0f} €")
+
+    if nb_moyens > 0:
+        st.write(f"**Projets moyens ({nb_moyens})**")
+        st.write(f"- ROI moyen : {resultats_moyens['ROI']}x")
+        st.write(f"- Économie annuelle : {resultats_moyens['Total_Annuel']:,.0f} €")
+
+    if nb_grands > 0:
+        st.write(f"**Grands projets ({nb_grands})**")
+        st.write(f"- ROI moyen : {resultats_grands['ROI']}x")
+        st.write(f"- Économie annuelle : {resultats_grands['Total_Annuel']:,.0f} €")
+
+    st.subheader("🚀 Synthèse consolidée")
+    st.write(f"**Économie totale annuelle : {total_annuel:,.0f} €**")
+    st.write(f"**Décomposition par WOW**")
+    st.write(f"- WOW1 (Analyse & Structuration IA) : {resultats_petits['WOW1'] + resultats_moyens['WOW1'] + resultats_grands['WOW1']:,.0f} €")
+    st.write(f"- WOW2 (Collaboration & Pilotage)  : {resultats_petits['WOW2'] + resultats_moyens['WOW2'] + resultats_grands['WOW2']:,.0f} €")
+    st.write(f"- WOW3 (Écriture & Validation)     : {resultats_petits['WOW3'] + resultats_moyens['WOW3'] + resultats_grands['WOW3']:,.0f} €")
+
+else:
+    st.warning("⚠️ Entrez votre email pour débloquer les résultats détaillés.")
