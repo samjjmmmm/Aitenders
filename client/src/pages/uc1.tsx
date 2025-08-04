@@ -28,6 +28,7 @@ import heroImage from "@assets/Dell XPS 15__1754046364427.png";
 import ChatSection from "@/components/chat-section";
 import ChatInterface from "@/components/chat-interface";
 import ToppingModal from "@/components/topping-modal";
+import { ROISimulator } from "@/components/roi-simulator";
 
 export default function UC1Page() {
   const [selectedTopping, setSelectedTopping] = useState<any>(null);
@@ -1382,40 +1383,8 @@ export default function UC1Page() {
                 </p>
               </div>
               
-              {/* Embedded Simulator Interface */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 p-8 shadow-lg">
-                <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <MdCalculate className="w-8 h-8 text-white" />
-                  </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">Simulateur ROI UC1</h4>
-                  <p className="text-gray-600">Analyse spécialisée pour projets &lt; 1M€</p>
-                </div>
-                
-                {/* Quick ROI Form */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Budget projet</label>
-                    <input 
-                      type="text" 
-                      placeholder="Ex: 850 000€"
-                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Durée (mois)</label>
-                    <input 
-                      type="text" 
-                      placeholder="Ex: 12 mois"
-                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    />
-                  </div>
-                </div>
-                
-                <button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-4 px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-[1.02] shadow-lg">
-                  🚀 Lancer Simulation ROI
-                </button>
-              </div>
+              {/* Embedded ROI Simulator */}
+              <ROISimulator useCase="UC1" className="w-full" />
               
 
             </div>

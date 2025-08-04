@@ -1,4 +1,4 @@
-import { type User, type InsertUser, type ContactRequest, type InsertContactRequest, type ChatMessage, type InsertChatMessage, type EmailLog, type InsertEmailLog, type SimulatorSession, type InsertSimulatorSession } from "@shared/schema";
+import { type User, type InsertUser, type ContactRequest, type InsertContactRequest, type ChatMessage, type InsertChatMessage, type EmailLog, type InsertEmailLog, type SimulatorSession, type InsertSimulatorSession, type RoiSimulation, type InsertRoiSimulation } from "@shared/schema";
 import { randomUUID } from "crypto";
 
 export interface IStorage {
@@ -21,6 +21,10 @@ export interface IStorage {
   updateSimulatorSession(sessionId: string, updates: Partial<SimulatorSession>): Promise<SimulatorSession | undefined>;
   getSimulatorSession(sessionId: string): Promise<SimulatorSession | undefined>;
   deleteSimulatorSession(sessionId: string): Promise<void>;
+  createRoiSimulation(simulation: InsertRoiSimulation): Promise<RoiSimulation>;
+  getRoiSimulation(id: string): Promise<RoiSimulation | undefined>;
+  updateRoiSimulation(id: string, updates: Partial<RoiSimulation>): Promise<RoiSimulation | undefined>;
+  getRoiSimulationsBySession(sessionId: string): Promise<RoiSimulation[]>;
 }
 
 export class MemStorage implements IStorage {
@@ -31,6 +35,7 @@ export class MemStorage implements IStorage {
   private sessionLastActivity: Map<string, number>;
   private emailLogs: Map<string, EmailLog>;
   private simulatorSessions: Map<string, SimulatorSession>;
+  private roiSimulations: Map<string, RoiSimulation>;
 
   constructor() {
     this.users = new Map();
@@ -40,6 +45,7 @@ export class MemStorage implements IStorage {
     this.sessionLastActivity = new Map();
     this.emailLogs = new Map();
     this.simulatorSessions = new Map();
+    this.roiSimulations = new Map();
 
     // Clean inactive sessions every 5 minutes
     setInterval(() => {
@@ -243,6 +249,37 @@ export class MemStorage implements IStorage {
 
   async getAllSimulatorSessions(): Promise<SimulatorSession[]> {
     return Array.from(this.simulatorSessions.values());
+  }
+
+  async createRoiSimulation(insertSimulation: InsertRoiSimulation): Promise<RoiSimulation> {
+    const id = randomUUID();
+    const simulation: RoiSimulation = {
+      ...insertSimulation,
+      id,
+      userEmail: insertSimulation.userEmail ?? null,
+      downloadRequested: false,
+      downloadedAt: null,
+      createdAt: new Date()
+    };
+    this.roiSimulations.set(id, simulation);
+    return simulation;
+  }
+
+  async getRoiSimulation(id: string): Promise<RoiSimulation | undefined> {
+    return this.roiSimulations.get(id);
+  }
+
+  async updateRoiSimulation(id: string, updates: Partial<RoiSimulation>): Promise<RoiSimulation | undefined> {
+    const existing = this.roiSimulations.get(id);
+    if (!existing) return undefined;
+
+    const updated = { ...existing, ...updates };
+    this.roiSimulations.set(id, updated);
+    return updated;
+  }
+
+  async getRoiSimulationsBySession(sessionId: string): Promise<RoiSimulation[]> {
+    return Array.from(this.roiSimulations.values()).filter(sim => sim.sessionId === sessionId);
   }
 }
 

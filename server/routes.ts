@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertContactRequestSchema, insertChatMessageSchema } from "@shared/schema";
+import { insertContactRequestSchema, insertChatMessageSchema, insertRoiSimulationSchema } from "@shared/schema";
 import { z } from "zod";
 import { generateAitendersResponse } from "./openai";
 import { ragService } from "./rag-service";
@@ -583,6 +583,162 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error('Error fetching simulator sessions:', error);
       res.status(500).json({ message: "Failed to fetch simulator sessions" });
+    }
+  });
+
+  // ROI Simulator routes
+  app.post("/api/roi/calculate", async (req, res) => {
+    try {
+      const { sessionId, useCase, projectBudget, projectDuration, inputs } = req.body;
+      
+      if (!sessionId || !useCase || !projectBudget || !projectDuration || !inputs) {
+        return res.status(400).json({ message: "Missing required fields" });
+      }
+
+      // ROI calculation logic based on use case
+      const calculateROI = (useCase: string, budget: string, duration: string, inputs: any) => {
+        const budgetValue = parseFloat(budget.replace(/[^\d.]/g, '')) || 0;
+        const durationValue = parseFloat(duration.replace(/[^\d.]/g, '')) || 0;
+        
+        let timeSavings = 0;
+        let efficiencyGains = 0;
+        let costReduction = 0;
+        
+        // Calculate based on use case
+        switch (useCase) {
+          case 'UC1': // < 1M€ projects
+            timeSavings = Math.min(budgetValue * 0.15, 150000); // 15% up to 150k
+            efficiencyGains = budgetValue * 0.10; // 10% efficiency
+            costReduction = budgetValue * 0.08; // 8% cost reduction
+            break;
+          case 'UC2': // 1-10M€ projects
+            timeSavings = Math.min(budgetValue * 0.20, 2000000); // 20% up to 2M
+            efficiencyGains = budgetValue * 0.15; // 15% efficiency
+            costReduction = budgetValue * 0.12; // 12% cost reduction
+            break;
+          case 'UC3': // > 10M€ projects
+            timeSavings = Math.min(budgetValue * 0.25, 5000000); // 25% up to 5M
+            efficiencyGains = budgetValue * 0.20; // 20% efficiency
+            costReduction = budgetValue * 0.15; // 15% cost reduction
+            break;
+          case 'UC4': // Small documents
+            timeSavings = Math.min(budgetValue * 0.12, 120000);
+            efficiencyGains = budgetValue * 0.08;
+            costReduction = budgetValue * 0.06;
+            break;
+          case 'UC5': // 10-500 documents
+            timeSavings = Math.min(budgetValue * 0.18, 1800000);
+            efficiencyGains = budgetValue * 0.13;
+            costReduction = budgetValue * 0.10;
+            break;
+          case 'UC6': // Complex documents
+            timeSavings = Math.min(budgetValue * 0.22, 3000000);
+            efficiencyGains = budgetValue * 0.17;
+            costReduction = budgetValue * 0.13;
+            break;
+          default:
+            timeSavings = budgetValue * 0.15;
+            efficiencyGains = budgetValue * 0.10;
+            costReduction = budgetValue * 0.08;
+        }
+        
+        const totalSavings = timeSavings + efficiencyGains + costReduction;
+        const roi = ((totalSavings - (budgetValue * 0.05)) / (budgetValue * 0.05)) * 100; // Assume 5% implementation cost
+        
+        return {
+          timeSavings: Math.round(timeSavings),
+          efficiencyGains: Math.round(efficiencyGains),
+          costReduction: Math.round(costReduction),
+          totalSavings: Math.round(totalSavings),
+          roi: Math.round(roi * 100) / 100,
+          projectBudget: budgetValue,
+          projectDuration: durationValue
+        };
+      };
+
+      const results = calculateROI(useCase, projectBudget, projectDuration, inputs);
+      
+      // Save to database
+      const roiData = {
+        sessionId,
+        useCase,
+        projectBudget,
+        projectDuration,
+        inputs,
+        results
+      };
+      
+      const savedSimulation = await storage.createRoiSimulation(roiData);
+      
+      res.json({
+        success: true,
+        results,
+        simulationId: savedSimulation.id
+      });
+    } catch (error) {
+      console.error('ROI calculation error:', error);
+      res.status(500).json({ message: "Failed to calculate ROI" });
+    }
+  });
+
+  // Download PDF with email gate
+  app.post("/api/roi/download/:simulationId", async (req, res) => {
+    try {
+      const { simulationId } = req.params;
+      const { email } = req.body;
+      
+      if (!email) {
+        return res.status(400).json({ message: "Email is required for PDF download" });
+      }
+      
+      const simulation = await storage.getRoiSimulation(simulationId);
+      if (!simulation) {
+        return res.status(404).json({ message: "Simulation not found" });
+      }
+      
+      // Update simulation with user email and download request
+      await storage.updateRoiSimulation(simulationId, {
+        userEmail: email,
+        downloadRequested: true,
+        downloadedAt: new Date()
+      });
+      
+      // Create PDF content (simplified for now)
+      const pdfContent = {
+        title: `Rapport ROI - ${simulation.useCase}`,
+        projectBudget: simulation.projectBudget,
+        projectDuration: simulation.projectDuration,
+        results: simulation.results,
+        generatedAt: new Date().toISOString(),
+        userEmail: email
+      };
+      
+      res.json({
+        success: true,
+        message: "PDF ready for download",
+        pdfContent,
+        downloadUrl: `/api/roi/pdf/${simulationId}`
+      });
+    } catch (error) {
+      console.error('PDF download error:', error);
+      res.status(500).json({ message: "Failed to prepare PDF download" });
+    }
+  });
+
+  // Get simulation results
+  app.get("/api/roi/:simulationId", async (req, res) => {
+    try {
+      const { simulationId } = req.params;
+      const simulation = await storage.getRoiSimulation(simulationId);
+      
+      if (!simulation) {
+        return res.status(404).json({ message: "Simulation not found" });
+      }
+      
+      res.json(simulation);
+    } catch (error) {
+      console.error('Get simulation error:', error);
+      res.status(500).json({ message: "Failed to fetch simulation" });
     }
   });
 

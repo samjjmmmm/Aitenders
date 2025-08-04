@@ -64,6 +64,21 @@ export const chatMessages = pgTable("chat_messages", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
+// ROI Simulations
+export const roiSimulations = pgTable('roi_simulations', {
+  id: text('id').primaryKey().default(sql`gen_random_uuid()`),
+  sessionId: text('session_id').notNull(),
+  useCase: text('use_case').notNull(), // UC1, UC2, UC3, etc.
+  projectBudget: text('project_budget').notNull(),
+  projectDuration: text('project_duration').notNull(),
+  inputs: json('inputs').notNull(), // All form inputs
+  results: json('results').notNull(), // Calculated ROI results
+  userEmail: text('user_email'),
+  downloadRequested: boolean('download_requested').default(false),
+  downloadedAt: timestamp('downloaded_at'),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+});
+
 export const insertUserSchema = createInsertSchema(users).pick({
   username: true,
   password: true,
@@ -109,6 +124,16 @@ export const insertChatMessageSchema = createInsertSchema(chatMessages).pick({
   response: true,
 });
 
+export const insertRoiSimulationSchema = createInsertSchema(roiSimulations).pick({
+  sessionId: true,
+  useCase: true,
+  projectBudget: true,
+  projectDuration: true,
+  inputs: true,
+  results: true,
+  userEmail: true,
+});
+
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type InsertContactRequest = z.infer<typeof insertContactRequestSchema>;
@@ -119,3 +144,5 @@ export type InsertEmailLog = z.infer<typeof insertEmailLogSchema>;
 export type EmailLog = typeof emailLogs.$inferSelect;
 export type InsertSimulatorSession = z.infer<typeof insertSimulatorSessionSchema>;
 export type SimulatorSession = typeof simulatorSessions.$inferSelect;
+export type InsertRoiSimulation = z.infer<typeof insertRoiSimulationSchema>;
+export type RoiSimulation = typeof roiSimulations.$inferSelect;
