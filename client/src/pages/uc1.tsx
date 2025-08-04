@@ -27,8 +27,123 @@ import colasLogo from "@assets/Colas_1753711339292.png";
 import heroImage from "@assets/Dell XPS 15__1754046364427.png";
 import ChatSection from "@/components/chat-section";
 import ChatInterface from "@/components/chat-interface";
+import ToppingModal from "@/components/topping-modal";
 
 export default function UC1Page() {
+  const [selectedTopping, setSelectedTopping] = useState<any>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Topping modal data for UC1
+  const toppingsData = {
+    'learning-engine': {
+      name: 'Moteur d\'Apprentissage',
+      description: 'L\'IA apprend de vos succès et échecs pour optimiser continuellement la qualité et la pertinence de vos futures propositions.',
+      icon: MdTrendingUp,
+      iconColor: 'text-blue-600',
+      integration: {
+        title: 'Intégration dans le cycle d\'offres récurrentes',
+        steps: ['Analyse historique', 'Apprentissage IA', 'Optimisation continue'],
+        visual: 'L\'IA analyse vos offres passées, identifie les patterns de succès et d\'échec, puis optimise automatiquement les nouvelles propositions en s\'appuyant sur ces apprentissages.'
+      },
+      valueProposition: {
+        buyer: {
+          title: 'Business Development Managers',
+          benefits: [
+            'Amélioration continue du taux de succès des offres',
+            'Réduction du temps de préparation grâce aux templates optimisés',
+            'Identification automatique des arguments gagnants'
+          ]
+        },
+        user: {
+          title: 'Proposal Managers',
+          benefits: [
+            'Workflows automatisés basés sur les meilleures pratiques',
+            'Suggestions intelligentes pour chaque section d\'offre',
+            'Qualité constante même sur les petites offres'
+          ]
+        }
+      },
+      impact: {
+        kpi1: { label: 'Amélioration taux de gain', value: '+32%', icon: MdTrendingUp },
+        kpi2: { label: 'Réduction temps préparation', value: '-45%', icon: MdAccessTime },
+        kpi3: { label: 'Qualité propositions', value: '+28%', icon: MdStars }
+      }
+    },
+    'client-customization': {
+      name: 'Personnalisation Client',
+      description: 'Adaptation automatique du ton, des arguments et de la structure selon le profil et l\'historique de chaque client cible.',
+      icon: MdGroups,
+      iconColor: 'text-emerald-600',
+      integration: {
+        title: 'Personnalisation automatique par client',
+        steps: ['Profil client', 'Adaptation IA', 'Proposition sur-mesure'],
+        visual: 'Le système analyse le profil du client, ses préférences passées et adapte automatiquement le contenu, le ton et les arguments pour maximiser les chances de succès.'
+      },
+      valueProposition: {
+        buyer: {
+          title: 'Business Development Managers',
+          benefits: [
+            'Messages percutants adaptés à chaque prospect',
+            'Augmentation du taux de réponse positive',
+            'Différenciation claire vs la concurrence'
+          ]
+        },
+        user: {
+          title: 'Proposal Managers',
+          benefits: [
+            'Templates dynamiques par type de client',
+            'Cohérence dans l\'approche commerciale',
+            'Gain de temps sur la personnalisation'
+          ]
+        }
+      },
+      impact: {
+        kpi1: { label: 'Taux de réponse client', value: '+58%', icon: MdTrendingUp },
+        kpi2: { label: 'Satisfaction client', value: '+41%', icon: MdStars },
+        kpi3: { label: 'Conversion prospects', value: '+35%', icon: MdVerified }
+      }
+    },
+    'competitive-intelligence': {
+      name: 'Intelligence Concurrentielle',
+      description: 'Analyse automatique du marché et suggestions d\'arguments différenciants basés sur les tendances sectorielles.',
+      icon: MdSearch,
+      iconColor: 'text-orange-600',
+      integration: {
+        title: 'Veille concurrentielle intelligente',
+        steps: ['Analyse marché', 'Détection tendances', 'Arguments différenciants'],
+        visual: 'L\'IA surveille les tendances du marché, analyse les offres concurrentes et suggère automatiquement des arguments de différenciation pertinents.'
+      },
+      valueProposition: {
+        buyer: {
+          title: 'Business Development Managers',
+          benefits: [
+            'Positionnement optimal face à la concurrence',
+            'Arguments de vente actualisés en permanence',
+            'Identification d\'opportunités de marché'
+          ]
+        },
+        user: {
+          title: 'Proposal Managers',
+          benefits: [
+            'Contenu différenciant intégré automatiquement',
+            'Veille concurrentielle sans effort manuel',
+            'Messages adaptés aux tendances du marché'
+          ]
+        }
+      },
+      impact: {
+        kpi1: { label: 'Avantage concurrentiel', value: '+47%', icon: MdTrendingUp },
+        kpi2: { label: 'Positionnement marché', value: '+52%', icon: MdGpsFixed },
+        kpi3: { label: 'Arguments différenciants', value: '+39%', icon: MdSearch }
+      }
+    }
+  };
+
+  const handleToppingClick = (toppingKey: string) => {
+    setSelectedTopping(toppingsData[toppingKey as keyof typeof toppingsData]);
+    setIsModalOpen(true);
+  };
+
   // Target audience data with interactive content - UC1 adapted
   const targetAudiences = [
     {
@@ -786,7 +901,10 @@ export default function UC1Page() {
 
             {/* Learning Engine */}
             <div className="group">
-              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
+              <div 
+                className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
+                onClick={() => handleToppingClick('learning-engine')}
+              >
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdTrendingUp className="w-8 h-8 text-white" />
                 </div>
@@ -805,7 +923,10 @@ export default function UC1Page() {
 
             {/* Multi-Client Customization */}
             <div className="group">
-              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
+              <div 
+                className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
+                onClick={() => handleToppingClick('client-customization')}
+              >
                 <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdGroups className="w-8 h-8 text-white" />
                 </div>
@@ -824,7 +945,10 @@ export default function UC1Page() {
 
             {/* Competitive Intelligence */}
             <div className="group">
-              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
+              <div 
+                className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
+                onClick={() => handleToppingClick('competitive-intelligence')}
+              >
                 <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdSearch className="w-8 h-8 text-white" />
                 </div>
@@ -1210,6 +1334,13 @@ export default function UC1Page() {
 
       {/* Add padding to body to account for fixed chat */}
       <div className="h-32"></div>
+      
+      {/* Topping Modal */}
+      <ToppingModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        topping={selectedTopping}
+      />
     </div>
   );
 }
