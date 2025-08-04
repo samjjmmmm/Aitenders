@@ -28,13 +28,10 @@ import ChatInterface from "@/components/chat-interface";
 
 export default function UC3Page() {
   // State for managing fade transition between mockup views
-  const [showNewProject, setShowNewProject] = useState(false);
+  const [showNewProject, setShowNewProject] = useState(true);
   
   // Auto-cycle between the two views with staggered timing
   useEffect(() => {
-    // Start immediately
-    setShowNewProject(true);
-    
     const interval = setInterval(() => {
       setShowNewProject(prev => !prev);
     }, 8000); // Switch every 8 seconds to allow for extended staggered animations
@@ -328,11 +325,11 @@ export default function UC3Page() {
             <div className="flex justify-center lg:justify-end">
               <div className="relative w-full max-w-lg">
                 
-                {/* Start with New Project Image */}
+                {/* Image appears immediately for showNewProject, fades to original */}
                 <motion.div
-                  initial={{ opacity: 1 }}
+                  initial={{ opacity: showNewProject ? 1 : 0 }}
                   animate={{ opacity: showNewProject ? 0 : 1 }}
-                  transition={{ duration: 0.3, ease: "easeInOut", delay: 0 }}
+                  transition={{ duration: 1, ease: "easeInOut", delay: showNewProject ? 1 : 0 }}
                   className="absolute inset-0 z-5"
                   style={{ pointerEvents: !showNewProject ? 'auto' : 'none' }}
                 >
@@ -351,9 +348,9 @@ export default function UC3Page() {
                 {/* Background Image for Agents - Stays visible during agent animation */}
                 {showNewProject && (
                   <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.8, ease: "easeInOut", delay: 1 }}
+                    initial={{ opacity: 1 }}
+                    animate={{ opacity: 0.3 }}
+                    transition={{ duration: 0.5, ease: "easeInOut", delay: 1 }}
                     className="absolute inset-0 z-5"
                   >
                     <div className="bg-white rounded-3xl shadow-2xl border border-gray-100/50 overflow-hidden backdrop-blur-sm h-full"
@@ -363,7 +360,7 @@ export default function UC3Page() {
                       <img 
                         src={newProjectImage} 
                         alt="Aitenders Agents Dashboard" 
-                        className="w-full h-full object-contain bg-white opacity-30"
+                        className="w-full h-full object-contain bg-white"
                       />
                     </div>
                   </motion.div>
