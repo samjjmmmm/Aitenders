@@ -224,6 +224,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const routing = await ragService.routeQuery(message, language, sessionId);
       
       switch (routing.action) {
+        case 'simulator_direct':
+        case 'simulator_start':
+        case 'simulator_continue':
+          // NOUVEAU SIMULATEUR AITENDERS - Direct launch
+          aiResponse = routing.response!;
+          break;
+          
+        case 'error':
+          aiResponse = routing.response!;
+          break;
+          
         case 'advanced_analysis_two_messages':
           // Special case: split into presentation and question
           const fullResponse = routing.response!;
@@ -288,13 +299,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
           break;
           
         default:
-          
-          // Fallback to OpenAI then knowledge base
-          try {
-            aiResponse = await generateAitendersResponse(message, language);
-          } catch (openaiError) {
-            console.warn("OpenAI failed, using fallback:", openaiError instanceof Error ? openaiError.message : 'Unknown error');
-            aiResponse = getFallbackResponse(message, language);
+          // Vérifier si on doit bypass OpenAI
+          if (routing.shouldUseOpenAI === false) {
+            console.log("[ROUTES] Bypassing OpenAI as requested by routing");
+            aiResponse = routing.response || "❌ Erreur dans le routage";
+          } else {
+            // Fallback to OpenAI then knowledge base
+            try {
+              aiResponse = await generateAitendersResponse(message, language);
+            } catch (openaiError) {
+              console.warn("OpenAI failed, using fallback:", openaiError instanceof Error ? openaiError.message : 'Unknown error');
+              aiResponse = getFallbackResponse(message, language);
+            }
           }
       }
       
