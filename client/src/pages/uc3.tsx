@@ -37,7 +37,7 @@ export default function UC3Page() {
     
     const interval = setInterval(() => {
       setShowNewProject(prev => !prev);
-    }, 6000); // Switch every 6 seconds to allow for staggered animations
+    }, 8000); // Switch every 8 seconds to allow for extended staggered animations
     
     return () => clearInterval(interval);
   }, []);
@@ -353,7 +353,7 @@ export default function UC3Page() {
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 1.5, ease: "easeInOut" }}
+                    transition={{ duration: 0.8, ease: "easeInOut", delay: 1 }}
                     className="absolute inset-0 z-5"
                   >
                     <div className="bg-white rounded-3xl shadow-2xl border border-gray-100/50 overflow-hidden backdrop-blur-sm h-full"
@@ -380,7 +380,7 @@ export default function UC3Page() {
                       initial={{ opacity: 0, scale: 0, x: -50, y: -30 }}
                       animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
                       exit={{ opacity: 0, scale: 0 }}
-                      transition={{ duration: 0.6, ease: "backOut", delay: 1.5 }}
+                      transition={{ duration: 0.6, ease: "backOut", delay: 2.5 }}
                       className="absolute top-1/4 left-1/4 z-25"
                     >
                       <div className="bg-blue-500 text-white p-3 rounded-xl shadow-lg text-xs font-medium flex items-center space-x-2 animate-pulse">
@@ -394,7 +394,7 @@ export default function UC3Page() {
                       initial={{ opacity: 0, scale: 0, x: 50, y: -40 }}
                       animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
                       exit={{ opacity: 0, scale: 0 }}
-                      transition={{ duration: 0.6, ease: "backOut", delay: 1.7 }}
+                      transition={{ duration: 0.6, ease: "backOut", delay: 2.7 }}
                       className="absolute top-1/3 right-1/4 z-25"
                     >
                       <div className="bg-purple-500 text-white p-3 rounded-xl shadow-lg text-xs font-medium flex items-center space-x-2 animate-pulse">
@@ -408,7 +408,7 @@ export default function UC3Page() {
                       initial={{ opacity: 0, scale: 0, x: -30, y: 50 }}
                       animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
                       exit={{ opacity: 0, scale: 0 }}
-                      transition={{ duration: 0.6, ease: "backOut", delay: 1.9 }}
+                      transition={{ duration: 0.6, ease: "backOut", delay: 2.9 }}
                       className="absolute bottom-1/3 left-1/3 z-25"
                     >
                       <div className="bg-green-500 text-white p-3 rounded-xl shadow-lg text-xs font-medium flex items-center space-x-2 animate-pulse">
@@ -422,7 +422,7 @@ export default function UC3Page() {
                       initial={{ opacity: 0, scale: 0, x: 40, y: 40 }}
                       animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
                       exit={{ opacity: 0, scale: 0 }}
-                      transition={{ duration: 0.6, ease: "backOut", delay: 2.1 }}
+                      transition={{ duration: 0.6, ease: "backOut", delay: 3.1 }}
                       className="absolute bottom-1/4 right-1/3 z-25"
                     >
                       <div className="bg-red-500 text-white p-3 rounded-xl shadow-lg text-xs font-medium flex items-center space-x-2 animate-pulse">
@@ -436,7 +436,7 @@ export default function UC3Page() {
                       initial={{ opacity: 0, scale: 0 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0 }}
-                      transition={{ duration: 0.8, ease: "backOut", delay: 2.3 }}
+                      transition={{ duration: 0.8, ease: "backOut", delay: 3.3 }}
                       className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-25"
                     >
                       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-2xl shadow-xl text-sm font-bold flex items-center space-x-2 animate-bounce">
@@ -458,7 +458,7 @@ export default function UC3Page() {
                         }}
                         transition={{ 
                           duration: 2,
-                          delay: 2.8 + i * 0.1,
+                          delay: 3.8 + i * 0.1,
                           repeat: Infinity,
                           repeatDelay: 3
                         }}
@@ -477,7 +477,7 @@ export default function UC3Page() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: showNewProject ? 1 : 0 }}
-                  transition={{ duration: 1, ease: "easeInOut", delay: showNewProject ? 4 : 0 }}
+                  transition={{ duration: 1, ease: "easeInOut", delay: showNewProject ? 5 : 0 }}
                   className="relative z-10"
                 >
                   <div className="bg-white rounded-3xl shadow-2xl border border-gray-100/50 overflow-hidden backdrop-blur-sm"
@@ -589,7 +589,7 @@ export default function UC3Page() {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: showNewProject ? 1 : 0, y: showNewProject ? 0 : 10 }}
-                  transition={{ duration: 0.6, ease: "easeOut", delay: showNewProject ? 5 : 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut", delay: showNewProject ? 6 : 0 }}
                   className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-medium z-30"
                 >
                   <div className="flex items-center space-x-2">
@@ -601,7 +601,7 @@ export default function UC3Page() {
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: showNewProject ? 1 : 0, y: showNewProject ? 0 : -10 }}
-                  transition={{ duration: 0.6, ease: "easeOut", delay: showNewProject ? 5.2 : 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut", delay: showNewProject ? 6.2 : 0 }}
                   className="absolute -bottom-4 -left-4 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-medium z-30"
                 >
                   <div className="flex items-center space-x-2">
@@ -614,13 +614,13 @@ export default function UC3Page() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: showNewProject ? 1 : 0, scale: showNewProject ? 1 : 0.8 }}
-                  transition={{ duration: 0.8, ease: "easeOut", delay: showNewProject ? 4.5 : 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: showNewProject ? 5.5 : 0 }}
                   className="absolute -top-8 -right-8 w-24 h-24 bg-purple-200/20 rounded-full blur-2xl"
                 ></motion.div>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: showNewProject ? 1 : 0, scale: showNewProject ? 1 : 0.8 }}
-                  transition={{ duration: 0.8, ease: "easeOut", delay: showNewProject ? 4.7 : 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: showNewProject ? 5.7 : 0 }}
                   className="absolute -bottom-8 -left-8 w-32 h-32 bg-blue-200/15 rounded-full blur-3xl"
                 ></motion.div>
 
