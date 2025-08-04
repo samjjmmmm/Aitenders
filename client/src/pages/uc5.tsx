@@ -38,7 +38,6 @@ import {
 import { FaUsers } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import Header from '@/components/header';
-import ContactSection from '@/components/contact-section';
 import ChatInterface from '@/components/chat-interface';
 import equansLogo from '@assets/Equans_1753711339292.png';
 import bouyguesLogo from '@assets/Bouyges_1753711339292.png';
@@ -205,7 +204,7 @@ export function UC5() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-white">
       {/* Header/Navbar */}
       <Header />
-      
+
       {/* Hero Section - Professional SaaS Design */}
       <section className="py-12 md:py-16 lg:py-20 xl:py-24 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-white via-slate-50/30 to-blue-50/20 relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
@@ -215,29 +214,29 @@ export function UC5() {
                style={{
                  background: 'radial-gradient(circle, #F0F8FF 0%, #E6F3FF 40%, #B3D9FF 70%, transparent 100%)'
                }}></div>
-          
+
           {/* Medium accent blob - center right */}
           <div className="absolute top-1/3 -right-16 w-80 h-80 rounded-full opacity-20 blur-2xl"
                style={{
                  background: 'radial-gradient(circle, #B3D9FF 0%, #2563EB 30%, transparent 70%)'
                }}></div>
-          
+
           {/* Small atmospheric accent - bottom */}
           <div className="absolute -bottom-16 left-1/4 w-64 h-64 rounded-full opacity-25 blur-3xl"
                style={{
                  background: 'linear-gradient(135deg, #FAFCFF 0%, #F0F8FF 50%, #E6F3FF 100%)'
                }}></div>
-          
+
           {/* Flowing wave accent - mobile optimized */}
           <div className="absolute top-1/2 left-0 w-full h-32 opacity-15 blur-xl lg:opacity-20"
                style={{
                  background: 'linear-gradient(90deg, transparent 0%, #F0F8FF 20%, #B3D9FF 40%, #E6F3FF 60%, transparent 100%)'
                }}></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 xl:gap-32 items-center">
-            
+
             {/* Left Side - Content UC5 */}
             <div className="text-left">
               <div className="mb-12">
@@ -305,13 +304,13 @@ export function UC5() {
             {/* Right Side - Realistic Product Mockup */}
             <div className="flex justify-center lg:justify-end">
               <div className="relative w-full max-w-lg">
-                
+
                 {/* Main Dashboard Mockup */}
                 <div className="bg-white rounded-3xl shadow-2xl border border-gray-100/50 overflow-hidden backdrop-blur-sm"
                      style={{
                        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
                      }}>
-                  
+
                   {/* Browser Header */}
                   <div className="bg-gray-100 px-6 py-4 flex items-center justify-between border-b border-gray-200">
                     <div className="flex items-center space-x-2">
@@ -322,10 +321,10 @@ export function UC5() {
                     <div className="text-sm text-gray-600 font-medium">AItenders - Project Tracking</div>
                     <div className="w-6"></div>
                   </div>
-                  
+
                   {/* Dashboard Content */}
                   <div className="p-6 space-y-6">
-                    
+
                     {/* Project Header */}
                     <div className="flex items-center justify-between">
                       <div>
@@ -334,7 +333,7 @@ export function UC5() {
                       </div>
                       <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
                     </div>
-                    
+
                     {/* Progress Metrics */}
                     <div className="grid grid-cols-3 gap-4">
                       <div className="text-center p-3 bg-blue-50 rounded-lg">
@@ -350,7 +349,7 @@ export function UC5() {
                         <div className="text-xs text-gray-600">Conformité</div>
                       </div>
                     </div>
-                    
+
                     {/* Active Tasks */}
                     <div className="space-y-3">
                       <div className="flex items-center justify-between p-3 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
@@ -360,7 +359,7 @@ export function UC5() {
                         </div>
                         <span className="text-xs text-gray-600">2h</span>
                       </div>
-                      
+
                       <div className="flex items-center justify-between p-3 bg-blue-50 rounded-lg border-l-4 border-blue-400">
                         <div className="flex items-center space-x-3">
                           <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
@@ -371,7 +370,7 @@ export function UC5() {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Floating Action Button */}
                 <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full shadow-xl flex items-center justify-center">
                   <MdAnalytics className="w-8 h-8 text-white" />
@@ -457,26 +456,26 @@ export function UC5() {
                style={{
                  background: 'radial-gradient(circle, #FAFCFF 0%, #F0F8FF 30%, #B3D9FF 70%, transparent 100%)'
                }}></div>
-          
+
           {/* Medium directional blob - middle left */}
           <div className="absolute top-1/2 -left-32 w-80 h-80 rounded-full opacity-15 blur-2xl"
                style={{
                  background: 'linear-gradient(45deg, #E6F3FF 0%, #B3D9FF 50%, #2563EB 90%, transparent 100%)'
                }}></div>
-          
+
           {/* Atmospheric accent - bottom right */}
           <div className="absolute -bottom-24 -right-32 w-[400px] h-[400px] rounded-full opacity-25 blur-3xl"
                style={{
                  background: 'radial-gradient(circle, #F0F8FF 0%, #E6F3FF 40%, transparent 100%)'
                }}></div>
-          
+
           {/* Subtle flowing wave - center */}
           <div className="absolute top-1/2 left-0 w-full h-40 opacity-10 blur-xl lg:opacity-15"
                style={{
                  background: 'linear-gradient(90deg, transparent 0%, #B3D9FF 25%, #F0F8FF 50%, #E6F3FF 75%, transparent 100%)'
                }}></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
@@ -595,10 +594,10 @@ export function UC5() {
             </div>
           </div>
 
-          
+
 
           {/* Feature 3: Analyses intelligentes et alertes - Text Left, Card Right */}
-         
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="order-1">
               <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
@@ -656,7 +655,7 @@ export function UC5() {
           </div>
 
 
-          
+
         </div>
       </section>
 
@@ -1015,7 +1014,7 @@ export function UC5() {
               Découvrez la transformation complète, du chaos manuel à la précision pilotée par l'IA.
             </p>
           </div>
-          
+
           {/* Simulator Placeholder */}
           <div className="bg-white rounded-3xl shadow-lg border border-gray-200 p-8 md:p-12 text-center">
             <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
@@ -1048,7 +1047,7 @@ export function UC5() {
 
           {/* 3 Real Projects Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 mb-16 md:mb-20">
-            
+
             {/* Project 1: Parc Éolien Offshore */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -1060,18 +1059,18 @@ export function UC5() {
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
                   <MdAccountTree className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">Parc Éolien Offshore</h3>
                 <div className="mb-4">
                   <Badge className="bg-purple-100 text-purple-800 font-medium">Énergie</Badge>
                 </div>
                 <div className="text-xl font-bold text-purple-600 mb-4">Exécution : 245 documents</div>
-                
+
                 <p className="text-gray-600 leading-relaxed mb-6">
                   Installation de 67 éoliennes offshore avec raccordement électrique et maintenance sur 25 ans. 
                   Dossier d'exécution avec 245 documents : plans, procédures, certificats et obligations contractuelles.
                 </p>
-                
+
                 <div className="space-y-3">
                   <h4 className="font-semibold text-gray-900 mb-3">Impact client :</h4>
                   <div className="flex items-center text-sm text-gray-700">
@@ -1105,18 +1104,18 @@ export function UC5() {
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
                   <MdTimeline className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">Ligne Ferroviaire Haute Vitesse</h3>
                 <div className="mb-4">
                   <Badge className="bg-blue-100 text-blue-800 font-medium">Transport</Badge>
                 </div>
                 <div className="text-xl font-bold text-blue-600 mb-4">Exécution : 387 documents</div>
-                
+
                 <p className="text-gray-600 leading-relaxed mb-6">
                   Construction de 85 km de ligne TGV avec 12 ouvrages d'art et systèmes de signalisation avancés. 
                   Pilotage avec 387 documents : plans d'exécution, procédures et 1,200 obligations techniques.
                 </p>
-                
+
                 <div className="space-y-3">
                   <h4 className="font-semibold text-gray-900 mb-3">Impact client :</h4>
                   <div className="flex items-center text-sm text-gray-700">
@@ -1150,18 +1149,18 @@ export function UC5() {
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6">
                   <MdSettings className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">Usine Automobile Intelligente</h3>
                 <div className="mb-4">
                   <Badge className="bg-green-100 text-green-800 font-medium">Industrie</Badge>
                 </div>
                 <div className="text-xl font-bold text-green-600 mb-4">Exécution : 156 documents</div>
-                
+
                 <p className="text-gray-600 leading-relaxed mb-6">
                   Construction d'une usine de véhicules électriques avec chaînes robotisées et systèmes Industry 4.0. 
                   Suivi de 156 documents d'exécution incluant 800 obligations techniques et certifications qualité.
                 </p>
-                
+
                 <div className="space-y-3">
                   <h4 className="font-semibold text-gray-900 mb-3">Impact client :</h4>
                   <div className="flex items-center text-sm text-gray-700">
@@ -1211,7 +1210,7 @@ export function UC5() {
                 Découvrez en 2 minutes le potentiel d'optimisation spécifique à votre contexte
               </p>
             </div>
-            
+
             <div className="max-w-4xl mx-auto">
               <ChatInterface 
                 language="fr"
@@ -1248,7 +1247,7 @@ export function UC5() {
           <p className="text-lg md:text-xl text-blue-100 mb-12 leading-relaxed max-w-3xl mx-auto">
             Rejoignez les équipes de projet qui font confiance à Aitenders pour sécuriser leurs offres complexes, éliminer les risques de non-conformité, et gagner en toute confiance.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg" 
@@ -1264,14 +1263,12 @@ export function UC5() {
               Contacter Notre Équipe
             </Button>
           </div>
-          
+
           <div className="mt-8 text-sm text-blue-200">
             Sécurité de niveau entreprise • Collaboration multi-experts • Prise en main complète
           </div>
         </div>
       </section>
-
-
 
       {/* Chat Interface with UC5-specific actions */}
       <ChatInterface 
