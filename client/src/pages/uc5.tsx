@@ -1162,7 +1162,7 @@ export function UC5() {
           <div className="mb-16 md:mb-20">
             <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 overflow-hidden">
               <div className="flex items-center justify-center mb-4">
-                <h3 className="text-lg font-semibold text-gray-700">Ils nous font confiance</h3>
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Ils nous font confiance pour leurs projets industriels</h3>
               </div>
               <div className="flex items-center justify-center space-x-12 animate-pulse">
                 <img src={equansLogo} alt="Equans" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
