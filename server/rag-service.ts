@@ -423,14 +423,30 @@ Découvrez nos solutions adaptées à chaque taille de projet :
       }
     }
 
-    // Handle "suivant" command to show first question
+    // 2.1. Gérer les commandes "next" et "suivant" pour les sessions existantes
     if (isNextCommand && sessionId) {
-      const nextQuestion = await advancedAnalysisService.getNextQuestion(sessionId);
+      const sessionInfo = advancedAnalysisService.getSessionInfo(sessionId);
+      if (sessionInfo && !sessionInfo.completed) {
+        // Si la session existe et n'est pas terminée, montrer la question courante
+        console.log(`[SIMULATOR] Affichage question courante pour session: ${sessionId}`);
+        const currentQuestion = advancedAnalysisService.getCurrentQuestion(sessionId);
+        if (currentQuestion) {
+          return {
+            action: 'advanced_analysis_continue',
+            response: currentQuestion
+          };
+        }
+      }
+      // Si pas de session active, démarrer une nouvelle session
+      console.log(`[SIMULATOR] Pas de session active, démarrage nouvelle session: ${sessionId}`);
+      const response = await advancedAnalysisService.startSession(sessionId);
       return {
-        action: 'advanced_analysis_next',
-        response: nextQuestion
+        action: 'advanced_analysis_start',
+        response: response
       };
     }
+
+
 
     // Handle platform features request
     const platformKeywords = ['platform-features', 'knowledge management', 'sécurité', 'security', 'km', 'plateforme'];
