@@ -343,8 +343,8 @@ Découvrez nos solutions adaptées à chaque taille de projet :
     const isSimulatorQuery = simulatorKeywords.some(keyword => queryLower.includes(keyword));
     const isNextCommand = ['suivant', 'next', 'continuer', 'continue'].some(keyword => queryLower.includes(keyword));
 
+    // PRIORITÉ ABSOLUE : Si c'est une requête simulateur, TOUJOURS utiliser le nouveau simulateur Aitenders
     if (isSimulatorQuery) {
-      // FORCER un redémarrage complet et propre
       if (sessionId) {
         console.log(`[SIMULATOR] Redémarrage forcé de la session: ${sessionId}`);
         // Redémarrer complètement la session existante
@@ -353,6 +353,12 @@ Découvrez nos solutions adaptées à chaque taille de projet :
         return {
           action: 'simulator_start',
           response: response
+        };
+      } else {
+        // Pas de sessionId, générer une réponse d'erreur
+        return {
+          action: 'error',
+          response: '❌ Session non disponible. Veuillez rafraîchir la page et réessayer.'
         };
       }
     }
