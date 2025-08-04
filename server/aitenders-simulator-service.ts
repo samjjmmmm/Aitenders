@@ -43,12 +43,12 @@ class AitendersSimulatorService {
   private questions: SimulatorQuestion[] = [
     {
       id: 'profil_projets',
-      title: 'Question 1/6 : Profil de vos appels d\'offres',
-      description: 'Déclarez votre portefeuille de projets pour mesurer l\'impact d\'Aitenders.',
+      title: 'Question 1/4 : Profil de vos appels d\'offres',
+      description: 'Calculez l\'impact global d\'Aitenders sur votre portefeuille projets.',
       fields: [
         {
           name: 'nb_petits',
-          label: '#AO:',
+          label: 'Nombre de petits projets (≈3 semaines, 1 pers.):',
           type: 'number',
           placeholder: 'ex: 300',
           min: 0,
@@ -56,24 +56,24 @@ class AitendersSimulatorService {
         },
         {
           name: 'montant_petit',
-          label: 'Valeur moyenne:',
+          label: 'Montant moyen d\'un petit projet (€):',
           type: 'number',
-          placeholder: 'ex: 10M',
+          placeholder: 'ex: 5M€',
           min: 1000000,
           step: 1000000,
           required: false
         }
       ],
-      example: 'Nous traitons 300 appels d\'offres complexes par an, 10 complexes en JV, 100 moyen et 400 petits valeur moyenne respective 100M€, 10M€, 1 M€'
+      example: 'Nous traitons 300 petits projets par an de 5M€ en moyenne, 100 projets moyens de 50M€, et 10 grands projets de 100M€'
     },
     {
       id: 'projets_moyens',
-      title: 'Question 2/6 : Projets moyens',
+      title: 'Question 2/4 : Projets moyens',
       description: 'Projets moyens (1-3 mois, 2-5 personnes)',
       fields: [
         {
           name: 'nb_moyens',
-          label: 'Nombre de projets moyens:',
+          label: 'Nombre de projets moyens (1-3 mois, 2-5 pers.):',
           type: 'number',
           placeholder: 'ex: 100',
           min: 0,
@@ -81,9 +81,9 @@ class AitendersSimulatorService {
         },
         {
           name: 'montant_moyen',
-          label: 'Montant moyen par projet (€):',
-          type: 'number',
-          placeholder: 'ex: 50M',
+          label: 'Montant moyen d\'un projet moyen (€):',
+          type: 'number',  
+          placeholder: 'ex: 50M€',
           min: 1000000,
           step: 5000000,
           required: false
@@ -92,12 +92,12 @@ class AitendersSimulatorService {
     },
     {
       id: 'grands_projets',
-      title: 'Question 3/6 : Grands projets',
+      title: 'Question 3/4 : Grands projets',
       description: 'Grands projets (>6 mois, 15 personnes+)',
       fields: [
         {
           name: 'nb_grands',
-          label: 'Nombre de grands projets:',
+          label: 'Nombre de grands projets (>6 mois, 15 pers.+):',
           type: 'number',
           placeholder: 'ex: 10',
           min: 0,
@@ -105,9 +105,9 @@ class AitendersSimulatorService {
         },
         {
           name: 'montant_grand',
-          label: 'Montant moyen par grand projet (€):',
+          label: 'Montant moyen d\'un grand projet (€):',
           type: 'number',
-          placeholder: 'ex: 100M',
+          placeholder: 'ex: 100M€',
           min: 50000000,
           step: 10000000,
           required: false
@@ -116,12 +116,12 @@ class AitendersSimulatorService {
     },
     {
       id: 'email_validation',
-      title: 'Question 4/6 : Validation email',
-      description: 'Pour voir les résultats détaillés et recevoir votre rapport',
+      title: 'Question 4/4 : Validation email',
+      description: 'Pour débloquer le détail des impacts par WOW',
       fields: [
         {
           name: 'email',
-          label: 'Votre email:',
+          label: 'Votre email (obligatoire pour voir le détail):',
           type: 'email',
           placeholder: 'votre@email.com',
           required: true
@@ -158,12 +158,12 @@ class AitendersSimulatorService {
    * Formate l'introduction avec la première question
    */
   private formatIntroWithQuestion(question: SimulatorQuestion): string {
-    return `🚀 **SIMULATEUR ROI AITENDERS**
+    return `📊 **SIMULATEUR ONE VOICE AITENDERS**
 
 ⏱️ Temps estimé : 3-5 minutes
 📧 Vous recevrez votre rapport détaillé par email
 
-Nous allons explorer vos processus avec des questions ciblées pour calculer votre ROI personnalisé.
+Calculez l'impact global d'Aitenders sur votre portefeuille projets.
 
 ---
 
@@ -185,18 +185,20 @@ _____`;
     let formatted = '';
     
     if (question.id === 'profil_projets') {
-      formatted += `**🏗️ Saisie rapide (optionnel)**
+      formatted += `**📋 Inputs utilisateur**
 
-📋 Nombre d'appels d'offres par an
-💰 Valeur moyenne des projets  
-⏱️ Durée de préparation (en semaines)
+Colonne 1:
+• ${question.fields[0].label} ${question.fields[0].placeholder}
+• ${question.fields[1].label} ${question.fields[1].placeholder}
 
 **OU**
 
 Vous pouvez simplement décrire votre portefeuille en langage naturel ci-dessous.`;
+    } else if (question.id === 'email_validation') {
+      formatted = `**${question.fields[0].label}** ${question.fields[0].placeholder}`;
     } else {
       formatted = question.fields.map(field => 
-        `**${field.label}** ${field.placeholder}`
+        `• **${field.label}** ${field.placeholder}`
       ).join('\n');
     }
 

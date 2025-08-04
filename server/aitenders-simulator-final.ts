@@ -34,6 +34,7 @@ interface DetailedResults {
     WOW1_total: number;
     WOW2_total: number;
     WOW3_total: number;
+    roi_global: number;
   };
 }
 
@@ -123,10 +124,18 @@ class AitendersSimulatorFinal {
 
     const total_annuel = resultats_petits.Total_Annuel + resultats_moyens.Total_Annuel + resultats_grands.Total_Annuel;
 
+    // Calcul ROI global pondéré
+    const nb_total_projets = (data.nb_petits || 0) + (data.nb_moyens || 0) + (data.nb_grands || 0);
+    const roi_global = nb_total_projets > 0 ? 
+      Math.round(((resultats_petits.ROI * (data.nb_petits || 0)) + 
+                  (resultats_moyens.ROI * (data.nb_moyens || 0)) + 
+                  (resultats_grands.ROI * (data.nb_grands || 0))) / nb_total_projets * 10) / 10 : 0;
+
     const wow_summary = {
       WOW1_total: resultats_petits.WOW1 + resultats_moyens.WOW1 + resultats_grands.WOW1,
       WOW2_total: resultats_petits.WOW2 + resultats_moyens.WOW2 + resultats_grands.WOW2,
-      WOW3_total: resultats_petits.WOW3 + resultats_moyens.WOW3 + resultats_grands.WOW3
+      WOW3_total: resultats_petits.WOW3 + resultats_moyens.WOW3 + resultats_grands.WOW3,
+      roi_global
     };
 
     return {
@@ -144,43 +153,60 @@ class AitendersSimulatorFinal {
   public genererRapport(data: ProjectData): string {
     const resultats = this.calculerROI(data);
 
-    let rapport = `🚀 **RÉSULTATS SIMULATEUR AITENDERS**\n\n`;
+    let rapport = `📊 **SIMULATEUR ONE VOICE AITENDERS**\n\n`;
     
-    // Aperçu rapide
+    // Aperçu immédiat (toujours visible)
+    rapport += `🔍 **Aperçu immédiat**\n\n`;
+    rapport += `💡 **ROI Productivité global : ${resultats.wow_summary.roi_global}x**\n`;
     rapport += `💰 **Économie annuelle estimée : ${this.formatCurrency(resultats.total_annuel)}**\n\n`;
 
-    // Détail par taille si email fourni
+    // Détails complets si email fourni
     if (data.email) {
-      rapport += `📌 **Détail par taille de projet**\n\n`;
+      rapport += `✅ **Merci, voici vos résultats détaillés !**\n\n`;
 
-      if (data.nb_petits > 0) {
-        rapport += `**Petits projets (${data.nb_petits})**\n`;
-        rapport += `• ROI moyen : ${resultats.petits.ROI}x\n`;
-        rapport += `• Économie annuelle : ${this.formatCurrency(resultats.petits.Total_Annuel)}\n\n`;
+      // WOW1 - Structuration IA & Analyse
+      rapport += `🌍 **WOW1 – Structuration IA & Analyse**\n`;
+      rapport += `• Gain total : ${this.formatCurrency(resultats.wow_summary.WOW1_total)}\n`;
+      rapport += `• **Impacts :** Productivité (JH gagnés), Traçabilité (exigences couvertes), Sécurisation du démarrage.\n\n`;
+
+      // WOW2 - Collaboration & Pilotage
+      rapport += `🤝 **WOW2 – Collaboration & Pilotage**\n`;
+      rapport += `• Gain total : ${this.formatCurrency(resultats.wow_summary.WOW2_total)}\n`;
+      rapport += `• **Impacts :** Collaboration (+70% à +95%), versions gérées, arbitrages accélérés.\n\n`;
+
+      // WOW3 - Écriture & Validation
+      rapport += `📝 **WOW3 – Écriture & Validation**\n`;
+      rapport += `• Gain total : ${this.formatCurrency(resultats.wow_summary.WOW3_total)}\n`;
+      rapport += `• **Impacts :** Rédaction guidée, justifications automatiques, réduction du risque contractuel.\n\n`;
+
+      // Synthèse détaillée par taille
+      if (data.nb_petits > 0 || data.nb_moyens > 0 || data.nb_grands > 0) {
+        rapport += `📌 **Détail par taille de projet**\n\n`;
+
+        if (data.nb_petits > 0) {
+          rapport += `**Petits projets (${data.nb_petits}) - ≈3 semaines, 1 pers.**\n`;
+          rapport += `• ROI moyen : ${resultats.petits.ROI}x\n`;
+          rapport += `• Économie annuelle : ${this.formatCurrency(resultats.petits.Total_Annuel)}\n\n`;
+        }
+
+        if (data.nb_moyens > 0) {
+          rapport += `**Projets moyens (${data.nb_moyens}) - 1-3 mois, 2-5 pers.**\n`;
+          rapport += `• ROI moyen : ${resultats.moyens.ROI}x\n`;
+          rapport += `• Économie annuelle : ${this.formatCurrency(resultats.moyens.Total_Annuel)}\n\n`;
+        }
+
+        if (data.nb_grands > 0) {
+          rapport += `**Grands projets (${data.nb_grands}) - >6 mois, 15 pers.+**\n`;
+          rapport += `• ROI moyen : ${resultats.grands.ROI}x\n`;
+          rapport += `• Économie annuelle : ${this.formatCurrency(resultats.grands.Total_Annuel)}\n\n`;
+        }
       }
 
-      if (data.nb_moyens > 0) {
-        rapport += `**Projets moyens (${data.nb_moyens})**\n`;
-        rapport += `• ROI moyen : ${resultats.moyens.ROI}x\n`;
-        rapport += `• Économie annuelle : ${this.formatCurrency(resultats.moyens.Total_Annuel)}\n\n`;
-      }
-
-      if (data.nb_grands > 0) {
-        rapport += `**Grands projets (${data.nb_grands})**\n`;
-        rapport += `• ROI moyen : ${resultats.grands.ROI}x\n`;
-        rapport += `• Économie annuelle : ${this.formatCurrency(resultats.grands.Total_Annuel)}\n\n`;
-      }
-
-      rapport += `🚀 **Synthèse consolidée**\n\n`;
-      rapport += `**Économie totale annuelle : ${this.formatCurrency(resultats.total_annuel)}**\n\n`;
-      rapport += `**Décomposition par WOW**\n`;
-      rapport += `• WOW1 (Analyse & Structuration IA) : ${this.formatCurrency(resultats.wow_summary.WOW1_total)}\n`;
-      rapport += `• WOW2 (Collaboration & Pilotage) : ${this.formatCurrency(resultats.wow_summary.WOW2_total)}\n`;
-      rapport += `• WOW3 (Écriture & Validation) : ${this.formatCurrency(resultats.wow_summary.WOW3_total)}\n\n`;
+      rapport += `📌 **Synthèse Consolidée**\n`;
+      rapport += `• **Économie totale annuelle : ${this.formatCurrency(resultats.total_annuel)}**`;
       
-      rapport += `✅ **Vos données ont été enregistrées pour ${data.email}**`;
     } else {
-      rapport += `⚠️ **Entrez votre email pour débloquer les résultats détaillés.**`;
+      rapport += `⚠️ **Entrez votre email pour débloquer le détail des impacts par WOW.**`;
     }
 
     return rapport;
