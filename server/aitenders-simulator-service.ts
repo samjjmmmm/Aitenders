@@ -131,7 +131,7 @@ class AitendersSimulatorService {
   ];
 
   /**
-   * Démarre une nouvelle session de simulation
+   * Démarre une nouvelle session de simulation - DIRECT LAUNCH
    */
   public startSession(sessionId: string): string {
     // Supprimer toute session existante
@@ -149,9 +149,26 @@ class AitendersSimulatorService {
 
     this.sessions.set(sessionId, session);
 
-    // Retourner l'introduction avec la première question
-    const firstQuestion = this.questions[0];
-    return this.formatIntroWithQuestion(firstQuestion);
+    // RETOURNER DIRECTEMENT LA PREMIÈRE QUESTION STRUCTURÉE
+    return `📊 **SIMULATEUR ROI AITENDERS - ONE VOICE**
+
+⏱️ Temps estimé : 3-5 minutes
+📧 Vous recevrez votre rapport détaillé par email
+
+---
+
+**Question 1/4 : Volume et Types de Projets**
+
+Pour mieux calculer votre ROI, pouvez-vous me décrire le volume de projets sur lesquels vous soumissionnez annuellement ?
+
+**📋 Exemples de réponses :**
+• "100 petits projets de 5M€ environ"
+• "50 projets moyens de 20M€"
+• "5 grands projets de 100M€"
+
+💡 **Vous pouvez répondre en langage naturel.**
+
+_____`;
   }
 
   /**
@@ -237,19 +254,24 @@ Vous pouvez simplement décrire votre portefeuille en langage naturel ci-dessous
                          (session.data.nb_grands && session.data.nb_grands > 0);
 
       if (hasProjects) {
-        // Passer directement à la question email
+        // Passer directement à la question email (DIRECTE)
         session.currentStep = 3;
-        const emailQuestion = this.questions[3];
         return {
           success: true,
-          message: `✅ Données enregistrées !\n\n**${emailQuestion.title}**\n\n${emailQuestion.description}\n\n${this.formatQuestionFields(emailQuestion)}\n\n_____`
+          message: `✅ Données enregistrées !\n\n**Question 4/4 : Email de Contact**\n\nMerci ! Pour finaliser votre rapport ROI personnalisé, pouvez-vous me communiquer votre adresse email ?\n\n**📧 Votre email :** votre@entreprise.com\n\n_____`
         };
       } else if (session.currentStep < 3) {
-        // Continuer avec les questions de projets
-        const nextQuestion = this.questions[session.currentStep];
+        // Questions directes selon l'étape
+        let questionText = '';
+        if (session.currentStep === 1) {
+          questionText = `**Question 2/4 : Équipes et Ressources**\n\nCombien de personnes travaillent sur la préparation des appels d'offres dans votre organisation ?\n\n**Exemples :**\n• "2-3 personnes à temps partiel"\n• "5 personnes dédiées"\n• "15 personnes réparties sur plusieurs équipes"`;
+        } else if (session.currentStep === 2) {
+          questionText = `**Question 3/4 : Temps de Préparation**\n\nEn moyenne, combien de temps votre équipe consacre-t-elle à la préparation d'une réponse d'appel d'offres ?\n\n**Exemples :**\n• "2-3 jours pour les petits projets"\n• "2 semaines pour les projets moyens"\n• "1-2 mois pour les grands projets"`;
+        }
+        
         return {
           success: true,
-          message: `✅ Réponse enregistrée !\n\n**${nextQuestion.title}**\n\n${nextQuestion.description}\n\n${this.formatQuestionFields(nextQuestion)}\n\n_____`
+          message: `✅ Réponse enregistrée !\n\n${questionText}\n\n_____`
         };
       } else {
         return {
