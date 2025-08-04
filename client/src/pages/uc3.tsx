@@ -32,9 +32,12 @@ export default function UC3Page() {
   
   // Auto-cycle between the two views with staggered timing
   useEffect(() => {
+    // Start immediately
+    setShowNewProject(true);
+    
     const interval = setInterval(() => {
       setShowNewProject(prev => !prev);
-    }, 6000); // Switch every 5 seconds to allow for staggered animations
+    }, 6000); // Switch every 6 seconds to allow for staggered animations
     
     return () => clearInterval(interval);
   }, []);
