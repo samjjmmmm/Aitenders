@@ -241,11 +241,12 @@ export default function UC2Page() {
                 <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Pilotez les offres moyennes</Badge>
 
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                  Découvrez, pilotez et sécurisez chaque clause dès le premier jour.
+                  Découvrez, pilotez et sécurisez chaque clause <span className="text-purple-600">dès le premier jour.</span>
                 </h1>
 
                 <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]">
-                  Transformez un dossier dense et complexe en une vision contractuelle claire dès les premières heures. Gagnez du temps, crédibilisez votre réponse et livrez une offre sans aucune surprise de dernière minute.
+
+                  La seule plateforme conçue pour transformer des dossiers moyens (1 à 10 M€) en une vision contractuelle claire dès le premier jour : structuration IA du périmètre, détection immédiate des clauses critiques et pilotage dynamique des Q&A et versions. Vous réduisez de moitié votre temps d’analyse, rassurez votre direction et livrez une réponse compétitive, sans risque de dernière minute. 
                 </p>
               </div>
 
@@ -438,6 +439,7 @@ export default function UC2Page() {
         </div>
       </section>
 
+      
       {/* Pain Points Section - Main Feature Card + Supporting Cards */}
       <section className="py-16 md:py-20 lg:py-24 px-8 bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50/20 relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
@@ -486,16 +488,18 @@ export default function UC2Page() {
 
               {/* Main Headline */}
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Structuration automatique du périmètre dès le jour 1
+                Votre offre, 100 % claire, 0 % surprise  
               </h2>
 
               {/* Body Copy */}
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Vos équipes, souvent réduites et dispersées, passent des heures à relire et comparer des versions. Résultat : décisions prises dans l'urgence, incohérences non détectées et risque accru de perte de crédibilité.
+              Sur les projets moyen, vos équipes jonglent entre délais serrés, clauses critiques cachées et versions dispersées, au risque d’erreurs coûteuses et d’allers‑retours interminables.   
               </p>
 
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Avec Aitenders, vos documents sont analysés automatiquement : contradictions détectées, clauses critiques identifiées et versions harmonisées. Vous gagnez en rapidité et validez chaque critère avec une fiabilité totale.
+
+
+                Avec Aitenders, structurez automatiquement chaque dossier dès le jour 1, détectez instantanément les clauses sensibles et pilotez vos Q&A et versions dans un cockpit centralisé. Résultat : une analyse deux fois plus rapide, zéro clause oubliée, et une offre compétitive validée sans stress. 
               </p>
 
               {/* CTA Buttons */}
@@ -544,38 +548,32 @@ export default function UC2Page() {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-blue-600">copilote IA</span> pour sécuriser vos réponses dès le premier jour</h1>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-blue-600">copilote IA</span> qui sécurise la gestion de vos projets moyens</h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
-              Aitenders transforme vos dossiers complexes en réponses structurées et conformes, pour livrer en toute sérénité.
+              Découvrez, pilotez et sécurisez chaque clause dès le premier jour. 
+
             </p>
           </div>
 
-          {/* Feature 1: Structuration automatique - Text Left, Card Right */}
+          {/* Feature 1: Structuration IA immédiate - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-1">
               <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdFlashOn className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Structuration instantanée pour un premier "go / no-go" immédiat</h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Structuration automatique du périmètre   <span className="text-purple-600">dès le jour 1</span> </h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Dès le chargement du dossier, Aitenders organise vos documents et extrait toutes les clauses critiques.
+                Grâce à l’IA d’Aitenders, vos documents sont instantanément segmentés et organisés : lots, sous‑ensembles et critères contractuels sont classés et hiérarchisés en quelques minutes.
+                <br /><br />
+                Le Responsable Offre dispose immédiatement d’une vision consolidée du périmètre : points bloquants et clauses sensibles sont identifiés sans effort, permettant une décision “go / no‑go” éclairée dès le premier jour.
+
               </p>
               <div className="space-y-3 mb-8">
-                <div className="flex items-start text-gray-600">
-                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Identification immédiate des obligations, échéances et pénalités</span>
-                </div>
-                <div className="flex items-start text-gray-600">
-                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Classement par priorité et par thématique</span>
-                </div>
-                <div className="flex items-start text-gray-600">
-                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Vision claire de la charge et des risques dès le départ</span>
-                </div>
+
+
               </div>
               <p className="text-lg font-semibold text-blue-600">
-                Vous réduisez de 50 % le temps de cadrage et éliminez les oublis critiques.
+                Une vision consolidée et priorisée, prête dès le premier jour !
               </p>
             </div>
             <div className="order-2">
@@ -585,24 +583,24 @@ export default function UC2Page() {
                    }}>
                 <div className="bg-white rounded-xl p-4 border border-blue-200 shadow-sm">
                   <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Document Analysis</h4>
+                    <h4 className="text-sm font-semibold text-gray-700">Bid Generation</h4>
                     <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <MdDescription className="w-4 h-4 text-blue-600" />
+                      <MdFlashOn className="w-4 h-4 text-blue-600" />
                     </div>
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Obligations extracted</span>
+                      <span className="text-sm text-gray-700">Technical response ready</span>
                       <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Complete</span>
                     </div>
                     <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
-                      <span className="text-sm text-gray-700">Priority classification</span>
-                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Structured</span>
+                      <span className="text-sm text-gray-700">Commercial proposal generated</span>
+                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">90%</span>
                     </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
-                      <span className="text-sm text-gray-700">Risk assessment</span>
-                      <div className="w-4 h-4 bg-purple-500 rounded-full flex items-center justify-center">
-                        <MdCheckCircle className="w-3 h-3 text-white" />
+                    <div className="flex items-center justify-between py-2 px-3 bg-orange-50 rounded-lg border border-orange-200">
+                      <span className="text-sm text-gray-700">Final review pending</span>
+                      <div className="w-4 h-4 bg-orange-500 rounded-full flex items-center justify-center">
+                        <MdAccessTime className="w-3 h-3 text-white" />
                       </div>
                     </div>
                   </div>
@@ -611,7 +609,7 @@ export default function UC2Page() {
             </div>
           </div>
 
-          {/* Feature 2: Détection automatique - Text Right, Card Left */}
+          {/* Feature 2: Synthèse visuelle claire - Text Right, Card Left */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-2 lg:order-1">
               <Card className="p-10 bg-gradient-to-br from-orange-50 to-red-100 border border-orange-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
@@ -620,24 +618,24 @@ export default function UC2Page() {
                    }}>
                 <div className="bg-white rounded-xl p-4 border border-orange-200 shadow-sm">
                   <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Risk Detection</h4>
+                    <h4 className="text-sm font-semibold text-gray-700">Synthèse Visuelle</h4>
                     <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
-                      <MdWarning className="w-4 h-4 text-orange-600" />
+                      <MdGroups className="w-4 h-4 text-orange-600" />
                     </div>
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Critical clauses identified</span>
-                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Detected</span>
+                      <span className="text-sm text-gray-700">Tableaux de critères</span>
+                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Prêts</span>
                     </div>
                     <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
-                      <span className="text-sm text-gray-700">SLA monitoring</span>
-                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Active</span>
+                      <span className="text-sm text-gray-700">Liens vers sources</span>
+                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Directs</span>
                     </div>
                     <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
-                      <span className="text-sm text-gray-700">Validation ready</span>
+                      <span className="text-sm text-gray-700">Points de vigilance</span>
                       <div className="w-4 h-4 bg-purple-500 rounded-full flex items-center justify-center">
-                        <MdVerified className="w-3 h-3 text-white" />
+                        <MdSettings className="w-3 h-3 text-white" />
                       </div>
                     </div>
                   </div>
@@ -646,62 +644,39 @@ export default function UC2Page() {
             </div>
             <div className="order-1 lg:order-2">
               <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
-                <MdWarning className="w-10 h-10 text-white" />
+                <MdGroups className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Une analyse proactive et une cohérence contractuelle garantie dès   <span className="text-orange-600">le premier scan</span></h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Contrôlez chaque  <span className="text-orange-600">clause critique</span> de votre projet</h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Grâce à l’IA d’Aitenders, vos documents sont instantanément segmentés et organisés en lots et critères contractuels.
-
-                Le Responsable Offre accède immédiatement à une vue synthétique : points bloquants, écarts et zones sensibles sont visibles sans parcourir des centaines de pages.
-
-                Votre vision claire et priorisée dès le premier jour
-              </p>
+                Aitenders identifie et hiérarchise automatiquement toutes les clauses sensibles : responsabilités, engagements, pénalités et conditions critiques. 
+                En parallèle, l’IA contrôle la cohérence des documents et signale contradictions, doublons et écarts, pour une analyse fiable et complète.
+                <br /><br />
+                Le Responsable Offre obtient en quelques minutes une vision claire des zones à risque, prête à être corrigée et validée sans perte de temps.
+                </p>
+          
               <div className="space-y-3 mb-8">
-                <div className="flex items-start text-gray-600">
-                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Contrôle instantané des délais, SLA et pénalités</span>
-                </div>
-                <div className="flex items-start text-gray-600">
-                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Alertes précises sur les clauses sensibles et incohérentes</span>
-                </div>
-                <div className="flex items-start text-gray-600">
-                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Suivi documenté prêt pour validation hiérarchique</span>
-                </div>
               </div>
               <p className="text-lg font-semibold text-orange-600">
-                Vous évitez jusqu'à 90 % des risques de rejet liés aux erreurs contractuelles.
+                Une validation contractuelle proactive, dès le jour 1
               </p>
             </div>
           </div>
 
-          {/* Feature 3: Pilotage dynamique - Text Left, Card Right */}
+          {/* Feature 3: Validation guidée - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-1">
               <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
-                <MdDashboard className="w-10 h-10 text-white" />
+                <MdSecurity className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Un contrôle total sur chaque évolution, <span className="text-green-600">sans surprisess</span></h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Pilotez chaque <span className="text-green-600">évolution contractuelle</span> en temps réel</h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Collaborez efficacement sur chaque réponse et gardez toujours la bonne version sous contrôle.
+              Toutes vos questions-réponses, versions et ajustements documentaires sont consolidés et tracés automatiquement par l’IA. 
+              Le Responsable Offre suit chaque changement en temps réel, visualise les écarts, reçoit des alertes et s’assure que rien n’est oublié ou modifié sans validation.
+              <br /><br />
+              Fini les suivis éclatés par emails ou fichiers multiples : tout est centralisé dans un cockpit fluide et fiable.
               </p>
-              <div className="space-y-3 mb-8">
-                <div className="flex items-start text-gray-600">
-                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Suivi en temps réel des questions, réponses et validations</span>
-                </div>
-                <div className="flex items-start text-gray-600">
-                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Gestion des versions et historique des modifications</span>
-                </div>
-                <div className="flex items-start text-gray-600">
-                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Tableaux de bord partagés pour assurer la cohérence globale</span>
-                </div>
-              </div>
               <p className="text-lg font-semibold text-green-600">
-                Vous gagnez plusieurs jours de coordination et livrez une réponse sans faille.
+              Zéro surprise, zéro version perdue, zéro risque d’oubli
               </p>
             </div>
             <div className="order-2">
@@ -711,24 +686,24 @@ export default function UC2Page() {
                    }}>
                 <div className="bg-white rounded-xl p-4 border border-green-200 shadow-sm">
                   <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Collaboration Control</h4>
+                    <h4 className="text-sm font-semibold text-gray-700">Validation Guidée</h4>
                     <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-                      <MdGroups className="w-4 h-4 text-green-600" />
+                      <MdSecurity className="w-4 h-4 text-green-600" />
                     </div>
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Q&A tracking</span>
-                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Real-time</span>
+                      <span className="text-sm text-gray-700">Processus structuré</span>
+                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Actif</span>
                     </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
-                      <span className="text-sm text-gray-700">Version control</span>
-                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Managed</span>
+                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
+                      <span className="text-sm text-gray-700">Traçabilité complète</span>
+                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Documenté</span>
                     </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
-                      <span className="text-sm text-gray-700">Global consistency</span>
-                      <div className="w-4 h-4 bg-purple-500 rounded-full flex items-center justify-center">
-                        <MdCheckCircle className="w-3 h-3 text-white" />
+                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
+                      <span className="text-sm text-gray-700">Dossier conformité</span>
+                      <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
+                        <MdVerified className="w-3 h-3 text-white" />
                       </div>
                     </div>
                   </div>
@@ -739,212 +714,104 @@ export default function UC2Page() {
         </div>
       </section>
 
-      {/* User-Focused Results Section - Before Additional Features */}
-      <section className="py-16 md:py-20 lg:py-24 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-20 md:mb-24 lg:mb-28">
-            <div className="text-center mb-12 md:mb-16">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Des résultats concrets pour chaque acteur clé</h3>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Aitenders aide chaque profil impliqué dans les appels d’offres complexes à gagner du temps, sécuriser la conformité et livrer des réponses crédibles sans compromis.</p>
-            </div>
+      
 
-            {/* Results Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+        {/* User-Focused Results Section - UC2 */}
+        <section className="py-16 md:py-20 lg:py-24 px-4 bg-white">
+          <div className="max-w-7xl mx-auto">
 
-              {/* Proposal Managers */}
-              <div className="group">
-                <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/50 hover:border-blue-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4">
-                      <MdAccountBox className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-gray-900">Pour les Bid Managers</h4>
-                      <p className="text-sm text-gray-600">Décision accélérée et sans erreur</p>
-                    </div>
-                  </div>
-
-                  <p className="text-gray-700 text-base leading-relaxed mb-4">
-                    Accélérez la qualification et livrez des propositions solides sans perdre de temps en relectures manuelles.
-                  </p>
-
-                  <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>
-                        et incohérences</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Tableaux de critères prêts à valider dès le jour 1</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Gain de temps majeur pour affiner l’argumentaire</span>
-                    </div>
-                  </div>
-
-                  <div className="mt-6 p-4 bg-white/70 rounded-lg border border-blue-200/30">
-                    <p className="text-sm text-gray-700 font-medium">Vous transformez des dossiers complexes en offres prêtes à défendre en moins de 48h.</p>
-                  </div>
-                </Card>
+            <div className="mb-20 md:mb-24 lg:mb-28">
+              <div className="text-center mb-12 md:mb-16">
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
+                  Ce que nos utilisateurs obtiennent concrètement pour les offres moyennes
+                </h3>
+                <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                  Des résultats décisifs pour les acheteurs et les équipes en charge des dossiers
+                </p>
               </div>
 
-              {/* Managers techniques */}
-              <div className="group">
-                <Card className="h-full p-8 bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200/50 hover:border-orange-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mr-4">
-                      <MdShield className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-gray-900">Pour les Contract Managers</h4>
-                      <p className="text-sm text-gray-600">Conformité garantie et traçabilité totale</p>
-                    </div>
-                  </div>
+              {/* Results Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 
-                  <p className="text-gray-700 text-base leading-relaxed mb-4">
-                    Sécurisez chaque exigence et réduisez vos risques de non‑conformité grâce à une analyse contractuelle intelligente.
-                  </p>
+                {/* Acheteur - Directeur Commercial / Offres */}
+                <div className="group">
+                  <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                    <div className="flex items-center mb-6">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4">
+                        <MdBusiness className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-bold text-gray-900">Directeur Commercial ou Directeur des Offres</h4>
+                        <p className="text-sm text-gray-600">Décision rapide, crédibilité renforcée, zéro surprise</p>
+                      </div>
+                    </div>
 
-                  <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Chaque clause reliée à son exigence source</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Vérification instantanée de la cohérence et de la couverture</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Justificatifs prêts pour audits et négociations</span>
-                    </div>
-                  </div>
+                    <p className="text-gray-700 text-base leading-relaxed mb-4">
+                      Garantissez dès le premier jour que chaque clause critique est identifiée, chaque engagement maîtrisé 
+                      et chaque risque couvert. Vous arrivez en comité avec une offre solide, immédiatement validable, 
+                      sans charge mentale ni escalade inutile.
+                    </p>
 
-                  <div className="mt-6 p-4 bg-white/70 rounded-lg border border-orange-200/30">
-                    <p className="text-sm text-gray-700 font-medium">Vous éliminez jusqu’à 90% des risques de rejet liés aux erreurs contractuelles.</p>
-                  </div>
-                </Card>
-              </div>
+                    <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
+                      <div className="flex items-start">
+                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                        <span>Zéro clause oubliée, zéro incohérence détectée trop tard</span>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                        <span>Décision "go / no-go" prise sans délai</span>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                        <span>Crédibilité renforcée devant le top management</span>
+                      </div>
+                    </div>
+                  </Card>
+                </div>
 
-              {/* Directeurs commerciaux */}
-              <div className="group">
-                <Card className="h-full p-8 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50 hover:border-green-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-4">
-                      <MdGroups className="w-6 h-6 text-white" />
+                {/* Utilisateur - Responsable Offre / Contract Manager / Chef de Projet */}
+                <div className="group">
+                  <Card className="h-full p-8 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                    <div className="flex items-center mb-6">
+                      <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-4">
+                        <MdEngineering className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-bold text-gray-900">Responsable Offre, Contract Manager ou Chef de Projet</h4>
+                        <p className="text-sm text-gray-600">Analyse claire, suivi fluide, zéro stress</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-gray-900">Pour les Chefs de Projet</h4>
-                      <p className="text-sm text-gray-600">Gardez une vision complète et partagée de l’avancement, sans surcharge administrative.</p>
-                    </div>
-                  </div>
 
-                  <p className="text-gray-700 text-base leading-relaxed mb-4">
-                    -
-                  </p>
+                    <p className="text-gray-700 text-base leading-relaxed mb-4">
+                      Démarrez dès J+1 sur une base structurée et priorisée par l’IA : chaque critère est classé, 
+                      chaque clause sensible détectée et chaque version tracée. Vous passez d’un rôle sous pression 
+                      à celui d’un pilote stratégique, capable de prouver la solidité de son offre à tout moment.
+                    </p>
 
-                  <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Tableaux de bord en temps réel sur les validations</span>
+                    <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
+                      <div className="flex items-start">
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                        <span>Analyse prête dès le premier jour, sans tri manuel</span>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                        <span>Zéro stress, zéro surprises, zéro allers-retours inutiles</span>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                        <span>Contrôle total sur chaque clause et chaque version</span>
+                      </div>
                     </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Gestion fluide des Q&A et des versions</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Historique centralisé des décisions</span>
-                    </div>
-                  </div>
+                  </Card>
+                </div>
 
-                  <div className="mt-6 p-4 bg-white/70 rounded-lg border border-green-200/30">
-                    <p className="text-sm text-gray-700 font-medium">Vous divisez par deux vos cycles de coordination et réduisez les retards.</p>
-                  </div>
-                </Card>
-              </div>
-            </div>
-
-            {/* Add fourth card for Directeurs Techniques */}
-            <div className="mt-8">
-              <div className="group max-w-lg mx-auto">
-                <Card className="h-full p-8 bg-gradient-to-br from-purple-50 to-violet-50 border border-purple-200/50 hover:border-purple-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-600 rounded-2xl flex items-center justify-center mr-4">
-                      <MdEngineering className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-gray-900">Pour les Directeurs Techniques</h4>
-                      <p className="text-sm text-gray-600">Validation technique rapide et fiable</p>
-                    </div>
-                  </div>
-
-                  <p className="text-gray-700 text-base leading-relaxed mb-4">
-                    Accédez directement aux points techniques critiques sans lire des centaines de pages.
-                  </p>
-
-                  <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Liens directs vers les clauses techniques clés</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Analyse d'impact sur coûts, délais et livrables</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Traçabilité complète des choix techniques</span>
-                    </div>
-                  </div>
-
-                  <div className="mt-6 p-4 bg-white/70 rounded-lg border border-purple-200/30">
-                    <p className="text-sm text-gray-700 font-medium">Vous validez la faisabilité et rassurez la direction en un temps record.</p>
-                  </div>
-                </Card>
               </div>
             </div>
           </div>
+        </section>
 
-          {/* KPI Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-
-            {/* KPI 1 */}
-            <div className="group">
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-6 md:p-8 text-center border border-green-100 hover:border-green-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
-                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-green-600 to-emerald-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
-                  ⚡ -50 %
-                </div>
-                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">du temps d’analyse initiale.</p>
-              </div>
-            </div>
-
-            {/* KPI 2 */}
-            <div className="group">
-              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-6 md:p-8 text-center border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
-                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
-                  ✅ 100 %
-                </div>
-                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">des clauses critiques identifiées et priorisées.</p>
-              </div>
-            </div>
-
-            {/* KPI 3 */}
-            <div className="group">
-              <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-6 md:p-8 text-center border border-orange-100 hover:border-orange-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
-                <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-br from-orange-600 to-red-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
-                  🛡️
-                </div>
-                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Confiance immédiate de la direction, moins d’allers-retours, zéro remise en cause.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Toppings Section - Wow Features & Additional Functionalities */}
+        
+        {/* Toppings Section - Wow Features & Additional Functionalities */}
       <section className="py-16 md:py-20 lg:py-24 px-4 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 relative overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0">

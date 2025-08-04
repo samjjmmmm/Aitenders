@@ -244,7 +244,7 @@ export default function UC1Page() {
                 <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Accélérez l'Analyse Des Offres Répétitives</Badge>
 
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                  Une analyse  <span className="text-purple-600">immediate</span> du DCE, aligné avec vos <span className="text-purple-600">processus interne.</span>
+                  Une analyse go/no go   <span className="text-purple-600">immediate</span>, alignée avec vos <span className="text-purple-600">processus interne.</span>
                 </h1>
 
                 <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]">
@@ -971,6 +971,7 @@ export default function UC1Page() {
           </div>
         </div>
       </section>
+      
 
       {/* Contact Section */}
       <ContactSection />

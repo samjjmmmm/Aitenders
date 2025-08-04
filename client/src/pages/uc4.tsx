@@ -238,13 +238,13 @@ export default function UC4Page() {
             {/* Left Side - Content */}
             <div className="text-left">
               <div className="mb-12">
-                <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Sécurisez Vos Contrats</Badge>
+                <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Suivre Vos Contrats Réguliers</Badge>
                 
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
                   Consultation intelligente des contrats sur petits projets
                 </h1>
                 
-                <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]"> Le contrat n’est plus un PDF mais une véritable source de réponses.
+                <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]"> Le contrat n’est plus un PDF,<br />c’est une source de réponses
                   Accédez instantanément aux clauses clés grâce à une fiche synthétique intelligente.
                   Chaque acteur du projet consulte, comprend et agit sans ouvrir le PDF ni dépendre du juridique, pour des décisions rapides et alignées..</p>
               </div>
