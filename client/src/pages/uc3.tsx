@@ -34,7 +34,7 @@ export default function UC3Page() {
   useEffect(() => {
     const interval = setInterval(() => {
       setShowNewProject(prev => !prev);
-    }, 8000); // Switch every 8 seconds to allow for extended staggered animations
+    }, 7000); // Switch every 7 seconds for faster loop
     
     return () => clearInterval(interval);
   }, []);
@@ -457,8 +457,9 @@ export default function UC3Page() {
                 
                 {/* Final Dashboard Mockup - Fade In at the end */}
                 <motion.div
+                  key={`dashboard-${showNewProject}`}
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: showNewProject ? 1 : 0 }}
+                  animate={{ opacity: showNewProject ? 1 : 1 }}
                   transition={{ duration: 1, ease: "easeInOut", delay: showNewProject ? 5 : 0 }}
                   className="relative z-10"
                 >
