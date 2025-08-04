@@ -34,7 +34,7 @@ export default function UC3Page() {
   useEffect(() => {
     const interval = setInterval(() => {
       setShowNewProject(prev => !prev);
-    }, 6000); // Switch every 6 seconds to allow for staggered animations
+    }, 5000); // Switch every 5 seconds to allow for staggered animations
     
     return () => clearInterval(interval);
   }, []);
@@ -118,6 +118,7 @@ export default function UC3Page() {
     }
   ];
 
+  
   const [activeAudience, setActiveAudience] = useState(targetAudiences[0]);
 
   const painPoints = [
