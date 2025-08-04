@@ -1041,6 +1041,211 @@ export default function UC2Page() {
         </div>
       </section>
 
+      {/* Real Projects Section */}
+      <section className="py-16 md:py-20 lg:py-24 px-4 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12 md:mb-16 lg:mb-20">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:mb-8 leading-[1.1] tracking-tight">
+              Nos <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">projets de référence</span> moyens optimisés
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Découvrez comment nos clients transforment leurs projets moyens avec l'IA Aitenders
+            </p>
+          </div>
+
+          {/* 3 Real Projects Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 mb-16 md:mb-20">
+            
+            {/* Project 1: Centre Logistique Régional */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="group"
+            >
+              <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-purple-100 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                  <MdBusiness className="w-8 h-8 text-white" />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">Centre Logistique Régional</h3>
+                <div className="mb-4">
+                  <Badge className="bg-purple-100 text-purple-800 font-medium">Logistique</Badge>
+                </div>
+                <div className="text-xl font-bold text-purple-600 mb-4">Offre : 45 Millions €</div>
+                
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Construction d'un hub logistique moderne de 25,000 m² avec systèmes automatisés et aires de manœuvre. 
+                  Coordination de 10 lots techniques spécialisés incluant manutention, sécurité et connectivité.
+                </p>
+                
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-gray-900 mb-3">Impact client :</h4>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdTrendingUp className="w-4 h-4 mr-2 text-green-500" />
+                    <span><strong>Productivité :</strong> +55% temps économisé coordination</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdVerified className="w-4 h-4 mr-2 text-blue-500" />
+                    <span><strong>Conformité :</strong> Normes logistiques respectées</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdTrackChanges className="w-4 h-4 mr-2 text-purple-500" />
+                    <span><strong>Traçabilité :</strong> Suivi multi-lots intégré</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdGroups className="w-4 h-4 mr-2 text-orange-500" />
+                    <span><strong>Collaboration :</strong> 10 équipes synchronisées</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Project 2: Réhabilitation Quartier Urbain */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="group"
+            >
+              <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-100 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                  <MdGpsFixed className="w-8 h-8 text-white" />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">Réhabilitation Quartier Urbain</h3>
+                <div className="mb-4">
+                  <Badge className="bg-blue-100 text-blue-800 font-medium">Urbain</Badge>
+                </div>
+                <div className="text-xl font-bold text-blue-600 mb-4">Offre : 78 Millions €</div>
+                
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Rénovation complète d'un quartier résidentiel avec 200 logements, espaces verts et commerces. 
+                  Gestion coordonnée des réseaux, voiries et contraintes d'occupation sur 5 hectares.
+                </p>
+                
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-gray-900 mb-3">Impact client :</h4>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdTrendingUp className="w-4 h-4 mr-2 text-green-500" />
+                    <span><strong>Productivité :</strong> +62% accélération études</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdVerified className="w-4 h-4 mr-2 text-blue-500" />
+                    <span><strong>Conformité :</strong> Urbanisme validé</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdTrackChanges className="w-4 h-4 mr-2 text-purple-500" />
+                    <span><strong>Traçabilité :</strong> Phases coordonnées</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdGroups className="w-4 h-4 mr-2 text-orange-500" />
+                    <span><strong>Collaboration :</strong> 15 corps de métier</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Project 3: Campus Universitaire */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="group"
+            >
+              <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-green-100 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6">
+                  <MdSecurity className="w-8 h-8 text-white" />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">Campus Universitaire Moderne</h3>
+                <div className="mb-4">
+                  <Badge className="bg-green-100 text-green-800 font-medium">Éducation</Badge>
+                </div>
+                <div className="text-xl font-bold text-green-600 mb-4">Offre : 95 Millions €</div>
+                
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Construction d'un campus de 15,000 m² avec amphithéâtres, laboratoires et résidences étudiantes. 
+                  Intégration de technologies numériques et espaces collaboratifs sur site de 8 hectares.
+                </p>
+                
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-gray-900 mb-3">Impact client :</h4>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdTrendingUp className="w-4 h-4 mr-2 text-green-500" />
+                    <span><strong>Productivité :</strong> +48% réduction délais</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdVerified className="w-4 h-4 mr-2 text-blue-500" />
+                    <span><strong>Conformité :</strong> Standards académiques</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdTrackChanges className="w-4 h-4 mr-2 text-purple-500" />
+                    <span><strong>Traçabilité :</strong> Validation continue</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdGroups className="w-4 h-4 mr-2 text-orange-500" />
+                    <span><strong>Collaboration :</strong> 18 lots coordonnés</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Client Logos Scrolling Banner */}
+          <div className="mb-16 md:mb-20">
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 overflow-hidden">
+              <div className="flex items-center justify-center mb-4">
+                <h3 className="text-lg font-semibold text-gray-700">Ils nous font confiance</h3>
+              </div>
+              <div className="flex items-center justify-center space-x-12 animate-pulse">
+                <img src={equansLogo} alt="Equans" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                <img src={bouyguesLogo} alt="Bouygues" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                <img src={colasLogo} alt="Colas" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                <img src={equansLogo} alt="Equans" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                <img src={bouyguesLogo} alt="Bouygues" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+              </div>
+            </div>
+          </div>
+
+          {/* Integrated Chat Simulator */}
+          <div className="bg-white rounded-3xl shadow-2xl border border-purple-100 p-8 md:p-12">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                Vous voulez voir l'impact sur <span className="text-purple-600">vos projets ?</span>
+              </h3>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Découvrez en 2 minutes le potentiel d'optimisation spécifique à votre contexte
+              </p>
+            </div>
+            
+            <div className="max-w-4xl mx-auto">
+              <ChatInterface 
+                language="fr"
+                customActions={[
+                  {
+                    label: "🚀 Simulateur ROI",
+                    icon: <MdAnalytics className="w-4 h-4" />,
+                    onClick: () => {}
+                  },
+                  {
+                    label: "📋 Nos Cas d'Usage",
+                    icon: <MdDashboard className="w-4 h-4" />,
+                    onClick: () => {}
+                  },
+                  {
+                    label: "💬 Parler à un Expert",
+                    icon: <MdMail className="w-4 h-4" />,
+                    onClick: () => {}
+                  }
+                ]}
+                transparent={true}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <ContactSection />
 

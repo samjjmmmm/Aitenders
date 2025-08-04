@@ -9,7 +9,14 @@ import {
   MdDashboard, MdBolt, MdEdit, MdNotifications, MdVerified, MdSwapHoriz, MdPlayArrow,
   MdClose, MdCheck, MdStars, MdCloudSync, MdCreate, MdAutoAwesome, MdLink, 
   MdAccountTree, MdTrackChanges, MdCallSplit, MdSchema, MdGppBad, MdTimeline, 
-  MdRotateRight, MdFlag, MdMail
+  MdRotateRight, MdFlag, MdMail,
+  MdAssignmentTurnedIn,
+  MdBusinessCenter,
+  MdPerson,
+  MdGppGood,
+  MdHistory,
+  MdHandshake,
+  MdSchool
 } from "react-icons/md";
 import { FaUsers, FaShieldAlt, FaChartBar, FaFileAlt, FaCogs } from "react-icons/fa";
 import ContactSection from "@/components/contact-section";
@@ -237,7 +244,7 @@ export default function UC6Page() {
             {/* Left Side - Content */}
             <div className="text-left">
               <div className="mb-12">
-                <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-purple-50 to-purple-100/80 text-purple-800 border-purple-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Transformation Organisationnelle</Badge>
+                <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-purple-50 to-purple-100/80 text-purple-800 border-purple-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Exécution des Projets Complexes</Badge>
                 
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
                   De l’exigence à la livraison, chaque engagement tenu, <span className="text-purple-600">Zéro écart, zéro surprise.</span>
@@ -396,6 +403,7 @@ export default function UC6Page() {
           </div>
         </div>
       </section>
+      
       {/* Pain Points Section - Main Feature Card + Supporting Cards */}
       <section className="py-16 md:py-20 lg:py-24 px-8 bg-gradient-to-br from-slate-50 via-gray-50 to-purple-50/20 relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
@@ -403,73 +411,81 @@ export default function UC6Page() {
           {/* Large atmospheric blob - right side */}
           <div className="absolute top-16 -right-40 w-[500px] h-[500px] rounded-full opacity-25 blur-3xl"
                style={{
-                 background: 'radial-gradient(circle, #F0F8FF 0%, #B3D9FF 50%, #E6F3FF 80%, transparent 100%)'
+                 background: 'radial-gradient(circle, #F5F9FE 0%, #C3D9F8 50%, #EBF2FD 80%, transparent 100%)'
                }}></div>
-          
+
           {/* Flowing accent - left side */}
           <div className="absolute top-1/3 -left-24 w-72 h-72 rounded-full opacity-20 blur-2xl"
                style={{
-                 background: 'linear-gradient(135deg, #E6F3FF 0%, #B3D9FF 60%, transparent 100%)'
+                 background: 'linear-gradient(135deg, #EBF2FD 0%, #C3D9F8 60%, transparent 100%)'
                }}></div>
-          
+
           {/* Small directional accent */}
           <div className="absolute bottom-20 right-1/4 w-48 h-48 rounded-full opacity-15 blur-3xl"
                style={{
-                 background: 'radial-gradient(circle, #2563EB 0%, #B3D9FF 40%, transparent 80%)'
+                 background: 'radial-gradient(circle, #3880E8 0%, #C3D9F8 40%, transparent 80%)'
                }}></div>
-          
+
           {/* Mobile-optimized wave */}
           <div className="absolute bottom-0 left-0 w-full h-24 opacity-10 blur-xl lg:opacity-15"
                style={{
-                 background: 'linear-gradient(90deg, #F0F8FF 0%, transparent 30%, #FAFCFF 70%, #E6F3FF 100%)'
+                 background: 'linear-gradient(90deg, #F5F9FE 0%, transparent 30%, #FBFCFF 70%, #EBF2FD 100%)'
                }}></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
-          
+
           {/* Main Feature Card */}
           <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20"
                style={{
                  boxShadow: '0 32px 64px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.05)'
                }}>
-            
+
             {/* Multi-tone Faded Background Pattern */}
             <div className="absolute inset-0 bg-gradient-to-br from-purple-50/30 via-blue-50/20 to-indigo-50/25 rounded-3xl"></div>
             <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-purple-100/25 to-transparent rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-blue-100/20 to-transparent rounded-full blur-3xl"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
-            
+
             {/* Content Container */}
             <div className="relative z-10 text-center">
-              
+
               {/* Main Headline */}
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Fini les oublis, <span className="text-purple-600">rplace à la conformité totale</span>
+                Exigence ↔ Rédaction ↔ Preuve, <span className="text-purple-600">chaque engagement tenu</span>
               </h2>
-              
+
               {/* Body Copy */}
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Sur vos projets complexes, la gestion manuelle des exigences vire rapidement au casse‑tête. Entre fichiers Excel, emails dispersés et validations en workshops, vos équipes perdent du temps, multiplient les risques d’oubli et s’exposent à des non‑conformités coûteuses.
+                Aujourd’hui, la gestion manuelle via <span className="font-semibold">Excel, emails et workshops dispersés</span> alourdit les processus, 
+                multiplie les risques d’erreurs et consomme un temps critique. 
+                Demain, avec Aitenders, chaque exigence – explicite ou implicite – sera reliée à ses livrables, 
+                intégrée dans vos documents finaux, et suivie comme un fil conducteur vivant de la production.
               </p>
-              
+
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Avec Aitenders, vous reprenez le contrôle : les exigences sont reliées à leurs livrables et suivies en temps réel, pour réduire les risques, garantir la conformité et fluidifier la collaboration.
+                Aitenders accompagne vos équipes dans la <span className="font-semibold">maîtrise totale des exigences</span> tout au long de l’exécution, 
+                en garantissant la couverture complète, la traçabilité des décisions et la conformité contractuelle. 
+                Résultat : des projets menés sans écart, sans litige, et en totale confiance.
               </p>
-              
+
+
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
                 <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
-                  Commencez la Transformation!
+                  Contactez-nous!
                 </Button>
                 <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white px-12 py-6 text-xl font-semibold rounded-3xl transition-all duration-300">
                   <MdPlayArrow className="w-6 h-6 mr-2" />
-                  Découvrez le Processus
+                  Voir la démo
                 </Button>
               </div>
+
             </div>
           </div>
         </div>
       </section>
+
 
       {/* Solution Section - Alternating Layout Design */}
       <section className="py-32 px-8 bg-gradient-to-br from-white via-slate-50/20 to-white relative overflow-hidden">
@@ -499,45 +515,42 @@ export default function UC6Page() {
                  background: 'linear-gradient(90deg, transparent 0%, #B3D9FF 25%, #F0F8FF 50%, #E6F3FF 75%, transparent 100%)'
                }}></div>
         </div>
-        
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-              Transformez la gestion des exigences en un levier de performance
+              Votre <span className="text-purple-600">copilote IA</span> pour exécuter vos projets complexes sans écart
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">
-              Chaque exigence est reliée à son livrable et suivie en temps réel. Vous réduisez les risques opérationnels et financiers tout en garantissant conformité et collaboration fluide.
-            </p>
+            <h3 className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Démarrez avec une base contractuelle exhaustive, pilotez collectivement chaque exigence 
+              et assurez une conformité continue jusqu’à la livraison finale.
+            </h3>
           </div>
-
-          {/* Feature 1: Analyse intelligente - Text Left, Card Right */}
+          {/* Feature 1: Vision Totale dès le Premier Jour */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
+            {/* Texte à gauche */}
             <div className="order-1">
               <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdFlashOn className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Démarrez l’exécution avec une vision complète dès le premier jour
+                Démarrez l’exécution avec une <span className="text-purple-600">vision totale</span>, dès le premier jour
               </h3>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Dès l’import des documents contractuels, Aitenders extrait et classe automatiquement toutes les exigences, explicites comme implicites.
+              <p className="text-xl text-gray-600 leading-relaxed mb-6 font-light">
+                Dès le chargement des documents, les assistants IA extraient, structurent et classifient automatiquement 
+                toutes les exigences <span className="font-semibold">explicites et implicites</span>, identifient les contradictions 
+                et relient chaque point aux documents sources. 
               </p>
-              <div className="space-y-3 mb-8">
-                <div className="flex items-start text-gray-600">
-                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Contradictions détectées dès le départ</span>
-                </div>
-                <div className="flex items-start text-gray-600">
-                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Clauses reliées aux documents sources</span>
-                </div>
-                <div className="flex items-start text-gray-600">
-                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Base contractuelle exhaustive et exploitable en un clic</span>
-                </div>
-                
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
+                Vous passez d’un puzzle fragmenté à une vision globale, claire et immédiatement exploitable — 
+                sans interprétation manuelle ni perte d’information.
+              </p>
+              <div className="flex items-center text-lg font-bold text-purple-600">
+                <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
+                80 % du travail initial déjà réalisé dès le jour 1
               </div>
             </div>
+
+            {/* Carte à droite */}
             <div className="order-2">
               <Card className="p-10 bg-gradient-to-br from-purple-50 to-indigo-100 border border-purple-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
                    style={{
@@ -545,24 +558,28 @@ export default function UC6Page() {
                    }}>
                 <div className="bg-white rounded-xl p-4 border border-purple-200 shadow-sm">
                   <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Process Analysis</h4>
+                    <h4 className="text-sm font-semibold text-gray-700">Analyse Contractuelle IA</h4>
                     <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-                      <MdAnalytics className="w-4 h-4 text-purple-600" />
+                      <MdDescription className="w-4 h-4 text-purple-600" />
                     </div>
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Processus mappés</span>
-                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">✓ 24/24</span>
+                      <span className="text-sm text-gray-700">Extraction des exigences</span>
+                      <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
+                        <MdCheckCircle className="w-3 h-3 text-white" />
+                      </div>
                     </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-yellow-50 rounded-lg border border-yellow-200">
-                      <span className="text-sm text-gray-700">Opportunités détectées</span>
-                      <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full">7 prioritaires</span>
+                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
+                      <span className="text-sm text-gray-700">Classification automatique</span>
+                      <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
+                        <MdCheckCircle className="w-3 h-3 text-white" />
+                      </div>
                     </div>
                     <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
-                      <span className="text-sm text-gray-700">ROI estimé</span>
+                      <span className="text-sm text-gray-700">Détection des contradictions</span>
                       <div className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
-                        <MdTrendingUp className="w-3 h-3 text-white" />
+                        <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                       </div>
                     </div>
                   </div>
@@ -570,129 +587,126 @@ export default function UC6Page() {
               </Card>
             </div>
           </div>
-
-          {/* Feature 2: Collaboration teams - Card Left, Text Right */}
+          {/* Feature 2: Pilotage Collectif - Text Right, Card Left */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
+            {/* Carte à gauche */}
             <div className="order-2 lg:order-1">
+              <Card className="p-10 bg-gradient-to-br from-purple-50 to-indigo-100 border border-purple-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
+                   style={{
+                     boxShadow: '0 25px 50px -12px rgba(147, 51, 234, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+                   }}>
+                <div className="bg-white rounded-xl p-4 border border-purple-200 shadow-sm">
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className="text-sm font-semibold text-gray-700">Pilotage Collaboratif</h4>
+                    <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                      <MdTimeline className="w-4 h-4 text-purple-600" />
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
+                      <span className="text-sm text-gray-700">Matrices par discipline</span>
+                      <span className="text-xs text-gray-500">Mises à jour en temps réel</span>
+                    </div>
+                    <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
+                      <span className="text-sm text-gray-700">Arbitrages accélérés</span>
+                      <span className="text-xs text-gray-500">Décisions tracées</span>
+                    </div>
+                    <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
+                      <span className="text-sm text-gray-700">Calcul d’impacts</span>
+                      <span className="text-xs text-gray-500">Coûts & délais</span>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
+
+            {/* Texte à droite */}
+            <div className="order-1 lg:order-2">
+              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
+                <MdGroups className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+                Faites de votre <span className="text-purple-600">pilotage collectif</span> un levier de performance continue
+              </h3>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
+                Chaque discipline accède à sa <span className="font-semibold">matrice dédiée</span>, clarifie ou reformule les exigences, 
+                et valide ou arbitre directement. Les impacts <span className="font-semibold">coûts, délais et ressources</span> 
+                sont calculés en temps réel grâce aux alertes automatiques.
+                <br /><br />
+                La revue initiale devient un <span className="font-semibold">pilotage vivant</span>, capable d’intégrer les changements sans friction 
+                et de maintenir l’alignement collectif tout au long du projet.
+              </p>
+              <div className="flex items-center text-lg text-gray-500">
+                <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
+                <span className="font-bold text-blue-500">
+                  50 % de gain de temps sur les cycles de revue et décision
+                </span>
+              </div>
+            </div>
+          </div>
+
+
+          {/* Feature 3: Maîtrisez la couverture - Text Left, Card Right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            {/* Texte à gauche */}
+            <div className="order-1">
+              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
+                <MdSecurity className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+                Maîtrisez la <span className="text-purple-600">couverture de vos exigences</span> jusqu’à la dernière ligne
+              </h3>
+              <p className="text-xl text-gray-600 leading-relaxed mb-6 font-light">
+                Toutes les exigences — explicites, implicites ou déclinées en exigences filles — 
+                sont directement associées aux livrables et intégrées dans les documents finaux. 
+                Chaque exigence reste <span className="font-semibold">couverte, traçable et justifiable</span> à tout moment.
+              </p>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
+                Grâce aux validations croisées et à une base centralisée, 
+                la conformité devient un <span className="font-semibold">fil conducteur vivant</span>, 
+                intégré à chaque étape de la production, même en cas de modification tardive.
+              </p>
+              <div className="flex items-center text-lg font-bold text-green-600">
+                <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
+                Conformité prouvée à tout moment
+              </div>
+            </div>
+
+            {/* Carte à droite */}
+            <div className="order-2">
               <Card className="p-10 bg-gradient-to-br from-green-50 to-emerald-100 border border-green-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
                    style={{
                      boxShadow: '0 25px 50px -12px rgba(34, 197, 94, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
                    }}>
                 <div className="bg-white rounded-xl p-4 border border-green-200 shadow-sm">
                   <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Team Collaboration</h4>
+                    <h4 className="text-sm font-semibold text-gray-700">Suivi Dynamique</h4>
                     <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-                      <MdGroups className="w-4 h-4 text-green-600" />
+                      <MdAssignmentTurnedIn className="w-4 h-4 text-green-600" />
                     </div>
                   </div>
                   <div className="space-y-3">
-                    <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
-                      <span className="text-sm text-gray-700">Équipes engagées</span>
-                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">85%</span>
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
-                      <span className="text-sm text-gray-700">Projets collaboratifs</span>
-                      <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full">12 actifs</span>
+                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
+                      <span className="text-sm text-gray-700">Exigence reliée à son livrable</span>
+                      <MdCheckCircle className="w-4 h-4 text-green-500" />
                     </div>
                     <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Adoption mesurée</span>
-                      <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
-                        <MdCheck className="w-3 h-3 text-white" />
+                      <span className="text-sm text-gray-700">Validation croisée réussie</span>
+                      <MdCheckCircle className="w-4 h-4 text-green-500" />
+                    </div>
+                    <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
+                      <span className="text-sm text-gray-700">Alerte sur modification tardive</span>
+                      <div className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
+                        <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                       </div>
                     </div>
                   </div>
                 </div>
               </Card>
-            </div>
-            <div className="order-1 lg:order-2">
-              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
-                <MdGroups className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Faites de votre pilotage collectif un levier de performance continue
-              </h3>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Chaque discipline dispose de sa matrice d’exigences dédiée, mise à jour en temps réel.
-              </p>
-              <div className="space-y-3 mb-8">
-                <div className="flex items-start text-gray-600">
-                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Arbitrages et validations centralisés, sans Excel dispersés</span>
-                </div>
-                <div className="flex items-start text-gray-600">
-                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Impacts coûts, délais et ressources calculés instantanément</span>
-                </div>
-                <div className="flex items-start text-gray-600">
-                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Modifications intégrées avec alertes ciblées aux bons acteurs</span>
-                </div>
-                
-              </div>
             </div>
           </div>
 
-          {/* Feature 3: Impact measurement - Text Left, Card Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center">
-            <div className="order-1">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
-                <MdSecurity className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Maîtrisez la couverture de vos exigences jusqu’à la dernière ligne
-              </h3>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Toutes les exigences sont reliées aux livrables correspondants et suivies en continu.
-              </p>
-              <div className="space-y-3 mb-8">
-                <div className="flex items-start text-gray-600">
-                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Couverture 100 % prouvée, sans risque d’oubli</span>
-                </div>
-                <div className="flex items-start text-gray-600">
-                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Détection proactive des non‑conformités et écarts
-</span>
-                </div>
-                <div className="flex items-start text-gray-600">
-                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span>Historique complet prêt pour audit ou comité client</span>
-                </div>
-                
-              </div>
-            </div>
-            <div className="order-2">
-              <Card className="p-10 bg-gradient-to-br from-blue-50 to-cyan-100 border border-blue-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
-                   style={{
-                     boxShadow: '0 25px 50px -12px rgba(59, 130, 246, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-                   }}>
-                <div className="bg-white rounded-xl p-4 border border-blue-200 shadow-sm">
-                  <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Impact Dashboard</h4>
-                    <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <MdTableChart className="w-4 h-4 text-blue-600" />
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">ROI transformation</span>
-                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">+25%</span>
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
-                      <span className="text-sm text-gray-700">Performance équipes</span>
-                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">↗ Trending</span>
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
-                      <span className="text-sm text-gray-700">Objectifs atteints</span>
-                      <div className="w-4 h-4 bg-purple-500 rounded-full flex items-center justify-center">
-                        <MdAnalytics className="w-3 h-3 text-white" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </div>
-          </div>
+          
         </div>
       </section>
 
@@ -701,194 +715,150 @@ export default function UC6Page() {
       {/* KPI Section - High Impact Design */}
       <section className="py-16 md:py-20 lg:py-24 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          
-          {/* User-Focused Results Section - Before KPIs */}
+
+          {/* User-Focused Results Section */}
           <div className="mb-20 md:mb-24 lg:mb-28">
             <div className="text-center mb-12 md:mb-16">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Ce que vos équipes obtiennent concrètement avec Aitenders</h3>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Une maîtrise totale des exigences pour chaque rôle impliqué dans vos projets complexes. Des résultats concrets en conformité, traçabilité et performance collective.</p>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
+                Ce que vos équipes obtiennent concrètement avec Aitenders
+              </h3>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                Une maîtrise totale des exigences pour chaque rôle impliqué dans vos projets complexes.
+                Des résultats concrets en conformité, traçabilité et performance collective.
+              </p>
             </div>
-            
+
             {/* Results Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-              
-              {/* Équipes Pilotage et Coordination */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+
+              {/* Résultat Buyer */}
               <div className="group">
-                <Card className="h-full p-8 bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200/50 hover:border-purple-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/50 hover:border-blue-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
                   <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4">
-                      <MdAccountBox className="w-6 h-6 text-white" />
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4">
+                      <MdBusinessCenter className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold text-gray-900">Équipes Pilotage et Coordination</h4>
-                      <p className="text-sm text-gray-600">Visibilité et maîtrise de bout en bout</p>
+                      <h4 className="text-xl font-bold text-gray-900">Pour le Buyer</h4>
+                      <p className="text-sm text-gray-600">Conformité et sérénité contractuelle</p>
                     </div>
                   </div>
-                  
+
                   <p className="text-gray-700 text-base leading-relaxed mb-4">
-                    Directeurs de projet, Requirements Managers et Coordinateurs d'exigences disposent d'une vision centralisée pour anticiper chaque dérive et sécuriser la livraison.
+                    Livrez vos projets en toute confiance et en totale conformité, sans surprise finale. 
+                    Suivez la couverture des exigences en temps réel et démontrez la conformité lors des audits 
+                    ou comités de pilotage.
                   </p>
-                  
-                  <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Centralisation des exigences et suivi actualisé en temps réel</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Alertes automatiques sur écarts et échéances critiques</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Validation et arbitrages facilités pour éviter les blocages</span>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-6 p-4 bg-white/70 rounded-lg border border-purple-200/30">
-                    <p className="text-sm text-gray-700 font-medium">Impact : Réduction de 40 % du temps passé à consolider les matrices d'exigences et suppression des risques d'oubli qui génèrent des surcoûts.</p>
-                  </div>
+
+                  <ul className="text-gray-600 text-sm leading-relaxed space-y-2">
+                    <li className="flex items-start">
+                      <span className="inline-block w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span>Maîtrise des risques contractuels et financiers</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="inline-block w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span>Prévisibilité renforcée des marges</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="inline-block w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span>Crédibilité accrue vis-à-vis du donneur d’ordre</span>
+                    </li>
+                  </ul>
                 </Card>
               </div>
 
-              {/* Responsables Métier et Techniques */}
-              <div className="group">
-                <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200/50 hover:border-blue-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mr-4">
-                      <MdBusiness className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-gray-900">Responsables Métier et Techniques</h4>
-                      <p className="text-sm text-gray-600">Clarté et collaboration pour chaque discipline</p>
-                    </div>
-                  </div>
-                  
-                  <p className="text-gray-700 text-base leading-relaxed mb-4">
-                    Les Discipline Leads accèdent à une matrice d'exigences spécifique à leur périmètre, toujours à jour et intégrée au projet global.
-                  </p>
-                  
-                  <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Exigences organisées et accessibles instantanément</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Suivi collaboratif avec répartition claire des responsabilités</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Rédaction guidée pour couvrir 100 % des points critiques</span>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-6 p-4 bg-white/70 rounded-lg border border-blue-200/30">
-                    <p className="text-sm text-gray-700 font-medium">Impact : Division par deux du temps de relecture et suppression des erreurs de reformulation qui retardent les livrables.</p>
-                  </div>
-                </Card>
-              </div>
-
-              {/* Équipes Qualité et Conformité */}
+              {/* Résultat Utilisateur */}
               <div className="group">
                 <Card className="h-full p-8 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50 hover:border-green-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-4">
-                      <MdGavel className="w-6 h-6 text-white" />
+                      <MdPerson className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold text-gray-900">Équipes Qualité et Conformité</h4>
-                      <p className="text-sm text-gray-600">Conformité prouvée et risque maîtrisé</p>
+                      <h4 className="text-xl font-bold text-gray-900">Pour vos équipes</h4>
+                      <p className="text-sm text-gray-600">Fluidité, traçabilité et sérénité</p>
                     </div>
                   </div>
-                  
+
                   <p className="text-gray-700 text-base leading-relaxed mb-4">
-                    Quality Directors et Contract & Claims Managers disposent d'une traçabilité complète et exploitable à tout moment pour prouver la conformité.
+                    Bénéficiez d’une base claire, exhaustive et structurée. 
+                    Collaborez efficacement, suivez chaque exigence reliée aux livrables, 
+                    et prouvez votre travail à tout moment, sans effort supplémentaire.
                   </p>
-                  
-                  <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Couverture 100 % vérifiée de toutes les exigences</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Historique exhaustif disponible pour audits et comités</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span>Détection proactive des non‑conformités et écarts contractuels</span>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-6 p-4 bg-white/70 rounded-lg border border-green-200/30">
-                    <p className="text-sm text-gray-700 font-medium">Impact : Préparation des audits divisée par trois et réduction significative des litiges liés aux non‑conformités.</p>
-                  </div>
+
+                  <ul className="text-gray-600 text-sm leading-relaxed space-y-2">
+                    <li className="flex items-start">
+                      <span className="inline-block w-1.5 h-1.5 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span>Moins de stress et de relectures manuelles</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="inline-block w-1.5 h-1.5 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span>Pilotage clair : qui fait quoi, avec historique et notifications</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="inline-block w-1.5 h-1.5 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span>Rédaction intelligente et cohérente, sans repartir de zéro</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="inline-block w-1.5 h-1.5 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span>Démonstration immédiate de la couverture complète</span>
+                    </li>
+                  </ul>
                 </Card>
               </div>
             </div>
           </div>
-          
+
           {/* KPI Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* KPI 1 */}
             <div className="group">
-              <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-3xl p-6 md:p-8 text-center border border-purple-100 hover:border-purple-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
-                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-6 md:p-8 text-center border border-green-100 hover:border-green-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between">
+                <div className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-br from-green-600 to-emerald-600 bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300">
                   80 %
                 </div>
-                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Less time on initial requirements prep</p>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">
+                  du travail initial réalisé dès le premier jour
+                </p>
               </div>
             </div>
 
             {/* KPI 2 */}
             <div className="group">
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-6 md:p-8 text-center border border-green-100 hover:border-green-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
-                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-green-600 to-emerald-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
-                  50 %
+              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-6 md:p-8 text-center border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between">
+                <div className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-br from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300">
+                  -50 %
                 </div>
-                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Reduction in review and arbitration cycles</p>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">
+                  de temps gagné sur les cycles de revue et de décision
+                </p>
               </div>
             </div>
 
             {/* KPI 3 */}
             <div className="group">
-              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-6 md:p-8 text-center border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
-                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300 leading-tight">
+              <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-3xl p-6 md:p-8 text-center border border-purple-100 hover:border-purple-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between">
+                <div className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-br from-purple-600 to-violet-600 bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300 leading-tight">
                   100 %
                 </div>
-                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Requirement traceability from initiation to delivery</p>
-              </div>
-            </div>
-
-            {/* KPI 4 */}
-            <div className="group">
-              <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-6 md:p-8 text-center border border-orange-100 hover:border-orange-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
-                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-orange-600 to-red-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300 leading-tight">
-                  0
-                </div>
-                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Non-conformities at audit, stronger client confidence</p>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">
+                  de couverture et traçabilité des exigences
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Toppings Section - Wow Features & Additional Functionalities */}
+
+      {/* Toppings Section - UC6 Additional Functionalities */}
       <section className="py-16 md:py-20 lg:py-24 px-4 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 relative overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0">
-          {/* Animated gradient orbs */}
           <div className="absolute top-20 left-10 w-96 h-96 rounded-full opacity-20 blur-3xl animate-pulse"
-               style={{
-                 background: 'linear-gradient(135deg, #8B5CF6 0%, #3B82F6 50%, #06B6D4 100%)'
-               }}></div>
+               style={{ background: 'linear-gradient(135deg, #8B5CF6 0%, #3B82F6 50%, #06B6D4 100%)' }}></div>
           <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full opacity-15 blur-3xl animate-pulse delay-1000"
-               style={{
-                 background: 'linear-gradient(135deg, #EC4899 0%, #8B5CF6 50%, #3B82F6 100%)'
-               }}></div>
-          
-          {/* Subtle grid pattern */}
+               style={{ background: 'linear-gradient(135deg, #EC4899 0%, #8B5CF6 50%, #3B82F6 100%)' }}></div>
           <div className="absolute inset-0 opacity-5"
                style={{
                  backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)',
@@ -901,137 +871,123 @@ export default function UC6Page() {
           <div className="text-center mb-16 md:mb-20 lg:mb-24">
             <div className="inline-flex items-center justify-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6 md:mb-8">
               <MdStars className="w-5 h-5 text-yellow-400 mr-2" />
-              <span className="text-white font-semibold text-sm md:text-base">Fonctionnalités Wow</span>
+              <span className="text-white font-semibold text-sm md:text-base">Fonctionnalités avancées</span>
             </div>
-            
+
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:mb-8 leading-[1.1] tracking-tight">
-              Des <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-400 to-cyan-400">capacités avancées</span> qui transforment votre approche
+              Des <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-400 to-cyan-400">toppings stratégiques</span> pour l’exécution sans faille de vos projets complexes
             </h2>
-            
+
             <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed font-light">
-              Au-delà de la transformation traditionnelle, découvrez des fonctionnalités qui révolutionnent votre capacité à orchestrer le changement organisationnel.
+              Au-delà du suivi des exigences, Aitenders active des modules avancés qui garantissent couverture, traçabilité et performance contractuelle à chaque étape du projet.
             </p>
           </div>
 
           {/* Toppings Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-            
-            {/* Intelligence Prédictive Organisationnelle */}
+
+            {/* Lien automatique avec livrables */}
             <div className="group">
               <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <MdFlashOn className="w-8 h-8 text-white" />
-                </div>
-                
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Intelligence Prédictive Organisationnelle</h3>
-                <p className="text-gray-200 leading-relaxed mb-6">
-                  Anticipez les résistances au changement et les goulots d'étranglement organisationnels grâce à l'analyse prédictive des comportements et patterns.
-                </p>
-                
-                <div className="flex items-center text-purple-400 font-medium">
-                  <span className="text-sm">Anticipation</span>
-                  <MdAnalytics className="w-4 h-4 ml-2" />
-                </div>
-              </div>
-            </div>
-
-            {/* Culture Collaborative Mesurée */}
-            <div className="group">
-              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-green-500/20 transform hover:-translate-y-2 h-full">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <MdGroups className="w-8 h-8 text-white" />
-                </div>
-                
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Culture Collaborative Mesurée</h3>
-                <p className="text-gray-200 leading-relaxed mb-6">
-                  Créez et mesurez une culture de collaboration avec des métriques d'engagement, des espaces de co-création et des récompenses automatisées.
-                </p>
-                
-                <div className="flex items-center text-green-400 font-medium">
-                  <span className="text-sm">Collaboration</span>
-                  <MdVerifiedUser className="w-4 h-4 ml-2" />
-                </div>
-              </div>
-            </div>
-
-            {/* ROI Transformation en Temps Réel */}
-            <div className="group">
-              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 transform hover:-translate-y-2 h-full">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <MdAnalytics className="w-8 h-8 text-white" />
-                </div>
-                
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">ROI Transformation en Temps Réel</h3>
-                <p className="text-gray-200 leading-relaxed mb-6">
-                  Calculez et démontrez le retour sur investissement de chaque initiative de transformation avec des métriques business connectées.
-                </p>
-                
-                <div className="flex items-center text-blue-400 font-medium">
-                  <span className="text-sm">ROI</span>
-                  <MdTableChart className="w-4 h-4 ml-2" />
-                </div>
-              </div>
-            </div>
-
-            {/* Orchestration Multi-Projets */}
-            <div className="group">
-              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/20 transform hover:-translate-y-2 h-full">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdAccountTree className="w-8 h-8 text-white" />
                 </div>
-                
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Orchestration Multi-Projets</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Exigences reliées aux livrables</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  Coordonnez plusieurs initiatives de transformation simultanément avec gestion des dépendances et optimisation des ressources.
+                  Chaque exigence est automatiquement reliée à son livrable, garantissant une complétude et une traçabilité parfaite, même en cas de modifications tardives.
                 </p>
-                
-                <div className="flex items-center text-orange-400 font-medium">
-                  <span className="text-sm">Orchestration</span>
-                  <MdSettings className="w-4 h-4 ml-2" />
+                <div className="flex items-center text-purple-400 font-medium">
+                  <span className="text-sm">Traçabilité intégrale</span>
+                  <MdTrackChanges className="w-4 h-4 ml-2" />
                 </div>
               </div>
             </div>
 
-            {/* Formation Adaptative IA */}
+            {/* Exigences Filles */}
             <div className="group">
-              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 transform hover:-translate-y-2 h-full">
-                <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <MdAutoAwesome className="w-8 h-8 text-white" />
+              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <MdCallSplit className="w-8 h-8 text-white" />
                 </div>
-                
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Formation Adaptative IA</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Gestion des exigences filles</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  Parcours de formation personnalisés qui s'adaptent au profil et au rythme d'apprentissage de chaque utilisateur avec recommandations IA.
+                  Décomposez automatiquement les exigences complexes en sous-exigences managérables, hiérarchisées et attribuées par domaine d’expertise.
                 </p>
-                
-                <div className="flex items-center text-cyan-400 font-medium">
-                  <span className="text-sm">Formation</span>
-                  <MdCreate className="w-4 h-4 ml-2" />
+                <div className="flex items-center text-pink-400 font-medium">
+                  <span className="text-sm">Décomposition intelligente</span>
+                  <MdSchema className="w-4 h-4 ml-2" />
                 </div>
               </div>
             </div>
 
-            {/* Vision Stratégique Prédictive */}
+            {/* Contrôles de conformité en temps réel */}
             <div className="group">
-              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-red-500/20 transform hover:-translate-y-2 h-full">
-                <div className="w-16 h-16 bg-gradient-to-br from-red-400 to-red-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <MdTimeline className="w-8 h-8 text-white" />
+              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <MdGppGood className="w-8 h-8 text-white" />
                 </div>
-                
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Vision Stratégique Prédictive</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Contrôles de conformité intelligents</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  Tableaux de bord exécutifs avec scénarios prédictifs et simulations d'impact pour les décisions stratégiques futures.
+                  Détection proactive des écarts, alertes intelligentes et suggestions correctives pour sécuriser la conformité en continu.
                 </p>
-                
-                <div className="flex items-center text-red-400 font-medium">
-                  <span className="text-sm">Vision</span>
-                  <MdFlag className="w-4 h-4 ml-2" />
+                <div className="flex items-center text-green-400 font-medium">
+                  <span className="text-sm">Conformité proactive</span>
+                  <MdVerified className="w-4 h-4 ml-2" />
                 </div>
               </div>
             </div>
+
+            {/* Historique et arbitrages */}
+            <div className="group">
+              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <MdHistory className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Arbitrages tracés</h3>
+                <p className="text-gray-200 leading-relaxed mb-6">
+                  Chaque décision est documentée et historisée, permettant de revenir sur les arbitrages et de prouver la cohérence du projet à tout moment.
+                </p>
+                <div className="flex items-center text-indigo-400 font-medium">
+                  <span className="text-sm">Traçabilité complète</span>
+                  <MdTimeline className="w-4 h-4 ml-2" />
+                </div>
+              </div>
+            </div>
+
+            {/* Collaboration cross-disciplines */}
+            <div className="group">
+              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <MdGroups className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Collaboration multi-disciplines</h3>
+                <p className="text-gray-200 leading-relaxed mb-6">
+                  Un espace unique où chaque discipline collabore, partage et valide ses exigences, avec alertes et notifications automatiques.
+                </p>
+                <div className="flex items-center text-yellow-400 font-medium">
+                  <span className="text-sm">Alignement immédiat</span>
+                  <MdHandshake className="w-4 h-4 ml-2" />
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="text-center mt-16 md:mt-20 lg:mt-24">
+            <p className="text-gray-200 text-lg mb-8">
+              Chaque topping ajoute une couche de contrôle, de sérénité et de performance.
+            </p>
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-yellow-400 via-pink-500 to-cyan-500 hover:from-yellow-500 hover:via-pink-600 hover:to-cyan-600 text-white px-12 py-6 text-xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
+            >
+              Découvrir tous les modules →
+            </Button>
           </div>
         </div>
       </section>
+
 
       {/* Ce qui change avec Aitenders Section */}
       <section className="py-16 md:py-20 lg:py-24 px-4 bg-gray-50">
@@ -1060,33 +1016,212 @@ export default function UC6Page() {
           </div>
         </div>
       </section>
-      {/* Master Compliance Section - Inspired by Image Design */}
 
-      {/* Trust & Compliance */}
-
-      {/* Call to Action */}
-      <section className="py-20 px-4 bg-aitenders-dark-blue">
-        <div className="max-w-4xl mx-auto text-center text-aitenders-white-blue">
-          <h2 className="text-4xl font-bold mb-6">Prêt à Transformer Votre Organisation ?</h2>
-          <p className="text-xl mb-8 opacity-90">
-            Rejoignez les entreprises qui font confiance à AItenders UC6 pour orchestrer leur transformation, 
-            fédérer leurs équipes et démontrer l'impact business de chaque initiative.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="bg-aitenders-primary-blue text-aitenders-white-blue hover:bg-aitenders-primary-blue/90 px-8 py-4 text-lg">
-              <MdMessage className="w-5 h-5 mr-2" />
-              Commencer la Transformation
-            </Button>
-            <Button variant="outline" size="lg" className="border-aitenders-white-blue/80 text-aitenders-white-blue bg-aitenders-white-blue/10 hover:bg-aitenders-white-blue hover:text-aitenders-dark-blue px-8 py-4 text-lg backdrop-blur-sm">
-              Découvrir UC6
-            </Button>
+      {/* Real Projects Section */}
+      <section className="py-16 md:py-20 lg:py-24 px-4 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12 md:mb-16 lg:mb-20">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:mb-8 leading-[1.1] tracking-tight">
+              Nos <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">projets de référence</span> transformationnels
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Découvrez comment nos clients révolutionnent leur organisation avec l'IA Aitenders
+            </p>
           </div>
-          <p className="text-sm mt-6 opacity-80">Intelligence collaborative • Mesure d'impact • Transformation durable</p>
+
+          {/* 3 Real Projects Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 mb-16 md:mb-20">
+            
+            {/* Project 1: Transformation Digitale Groupe */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="group"
+            >
+              <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-purple-100 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                  <MdAccountTree className="w-8 h-8 text-white" />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">Transformation Digitale Groupe</h3>
+                <div className="mb-4">
+                  <Badge className="bg-purple-100 text-purple-800 font-medium">Organisation</Badge>
+                </div>
+                <div className="text-xl font-bold text-purple-600 mb-4">Transformation : 2,300 collaborateurs</div>
+                
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Refonte complète des processus appels d'offres pour un groupe BTP avec 15 filiales. 
+                  Déploiement d'Aitenders sur 45 équipes projets avec formation et accompagnement sur 18 mois.
+                </p>
+                
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-gray-900 mb-3">Impact client :</h4>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdTrendingUp className="w-4 h-4 mr-2 text-green-500" />
+                    <span><strong>Productivité :</strong> +285% efficacité organisationnelle</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdVerifiedUser className="w-4 h-4 mr-2 text-blue-500" />
+                    <span><strong>Conformité :</strong> Standards unifiés groupe</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdTrackChanges className="w-4 h-4 mr-2 text-purple-500" />
+                    <span><strong>Traçabilité :</strong> Processus auditables en temps réel</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdGroups className="w-4 h-4 mr-2 text-orange-500" />
+                    <span><strong>Collaboration :</strong> 45 équipes synchronisées</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Project 2: Centre d'Excellence IA */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="group"
+            >
+              <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-100 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                  <MdAutoAwesome className="w-8 h-8 text-white" />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">Centre d'Excellence IA</h3>
+                <div className="mb-4">
+                  <Badge className="bg-blue-100 text-blue-800 font-medium">Innovation</Badge>
+                </div>
+                <div className="text-xl font-bold text-blue-600 mb-4">Excellence : 850 collaborateurs</div>
+                
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Création d'un centre d'expertise IA transversal avec Aitenders comme pierre angulaire. 
+                  Formation de 120 experts internes et développement de bonnes pratiques pour 8 business units.
+                </p>
+                
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-gray-900 mb-3">Impact client :</h4>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdTrendingUp className="w-4 h-4 mr-2 text-green-500" />
+                    <span><strong>Productivité :</strong> +340% accélération innovation</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdVerifiedUser className="w-4 h-4 mr-2 text-blue-500" />
+                    <span><strong>Conformité :</strong> Standards IA éthique</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdTrackChanges className="w-4 h-4 mr-2 text-purple-500" />
+                    <span><strong>Traçabilité :</strong> ROI mesurable par projet</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdGroups className="w-4 h-4 mr-2 text-orange-500" />
+                    <span><strong>Collaboration :</strong> 8 business units connectées</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Project 3: Académie Aitenders */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="group"
+            >
+              <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-green-100 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6">
+                  <MdSchool className="w-8 h-8 text-white" />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">Académie Aitenders Enterprise</h3>
+                <div className="mb-4">
+                  <Badge className="bg-green-100 text-green-800 font-medium">Formation</Badge>
+                </div>
+                <div className="text-xl font-bold text-green-600 mb-4">Formation : 1,500 apprenants</div>
+                
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Programme de formation intensif sur 12 mois pour transformer les équipes commerciales. 
+                  Certification Aitenders Advanced avec suivi personnalisé et évaluation continue des performances.
+                </p>
+                
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-gray-900 mb-3">Impact client :</h4>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdTrendingUp className="w-4 h-4 mr-2 text-green-500" />
+                    <span><strong>Productivité :</strong> +195% montée en compétences</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdVerifiedUser className="w-4 h-4 mr-2 text-blue-500" />
+                    <span><strong>Conformité :</strong> Certification professionnelle</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdTrackChanges className="w-4 h-4 mr-2 text-purple-500" />
+                    <span><strong>Traçabilité :</strong> Progression individuelle trackée</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdGroups className="w-4 h-4 mr-2 text-orange-500" />
+                    <span><strong>Collaboration :</strong> Communauté d'experts active</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Client Logos Scrolling Banner */}
+          <div className="mb-16 md:mb-20">
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 overflow-hidden">
+              <div className="flex items-center justify-center mb-4">
+                <h3 className="text-lg font-semibold text-gray-700">Ils nous font confiance</h3>
+              </div>
+              <div className="flex items-center justify-center space-x-12 animate-pulse">
+                <img src={equansLogo} alt="Equans" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                <img src={bouyguesLogo} alt="Bouygues" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                <img src={colasLogo} alt="Colas" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                <img src={equansLogo} alt="Equans" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                <img src={bouyguesLogo} alt="Bouygues" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+              </div>
+            </div>
+          </div>
+
+          {/* Integrated Chat Simulator */}
+          <div className="bg-white rounded-3xl shadow-2xl border border-purple-100 p-8 md:p-12">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                Vous voulez voir l'impact sur <span className="text-purple-600">votre organisation ?</span>
+              </h3>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Découvrez en 2 minutes le potentiel de transformation spécifique à votre contexte
+              </p>
+            </div>
+            
+            <div className="max-w-4xl mx-auto">
+              <ChatInterface 
+                language="fr"
+                customActions={[
+                  {
+                    label: "🚀 Simulateur ROI",
+                    icon: <MdAnalytics className="w-4 h-4" />,
+                    onClick: () => {}
+                  },
+                  {
+                    label: "📋 Nos Cas d'Usage",
+                    icon: <MdDashboard className="w-4 h-4" />,
+                    onClick: () => {}
+                  },
+                  {
+                    label: "💬 Parler à un Expert",
+                    icon: <MdMail className="w-4 h-4" />,
+                    onClick: () => {}
+                  }
+                ]}
+                transparent={true}
+              />
+            </div>
+          </div>
         </div>
       </section>
 
-
-      
       {/* Chat Interface with UC6-specific actions */}
       <ChatInterface 
         language="fr"

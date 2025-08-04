@@ -439,6 +439,7 @@ export default function UC3Page() {
           </div>
         </div>
       </section>
+      
       {/* Pain Points Section - Main Feature Card + Supporting Cards */}
       <section className="py-16 md:py-20 lg:py-24 px-8 bg-gradient-to-br from-slate-50 via-gray-50 to-purple-50/20 relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
@@ -512,6 +513,7 @@ export default function UC3Page() {
           </div>
         </div>
       </section>
+      
       {/* Solution Section - Alternating Layout Design */}
       <section className="py-32 px-8 bg-gradient-to-br from-white via-slate-50/20 to-white relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
@@ -721,8 +723,10 @@ export default function UC3Page() {
           {/* User-Focused Results Section - Before KPIs */}
           <div className="mb-20 md:mb-24 lg:mb-28">
             <div className="text-center mb-12 md:mb-16">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Ce que nos utilisateurs obtiennent concrètement pour les offres complexes</h3>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Des résultats mesurables pour chaque profil d'utilisateur</p>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Ce que vos équipes obtiennent concrètement avec Aitenders</h3>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Une réponse sans angle mort pour vos appels d’offres complexes : conformité garantie, 
+                traçabilité intégrale et pilotage collaboratif pour maximiser vos chances de succès.
+              </p>
             </div>
             
             {/* Results Grid */}
@@ -844,6 +848,7 @@ export default function UC3Page() {
         </div>
       </section>
 
+      
       {/* Toppings Section - Wow Features & Additional Functionalities */}
       <section className="py-16 md:py-20 lg:py-24 px-4 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 relative overflow-hidden">
         {/* Background Effects */}
@@ -1201,7 +1206,7 @@ export default function UC3Page() {
           <div className="mb-16 md:mb-20">
             <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 overflow-hidden">
               <div className="flex items-center justify-center mb-4">
-                <h3 className="text-lg font-semibold text-gray-700">Ils nous font confiance</h3>
+                <h3 className="text-lg font-semibold text-gray-700">Ils nous font confiance sur leurs Projets Complexes</h3>
               </div>
               <div className="flex items-center justify-center space-x-12 animate-pulse">
                 <img src={equansLogo} alt="Equans" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
@@ -1212,6 +1217,7 @@ export default function UC3Page() {
               </div>
             </div>
           </div>
+          
 
           {/* Integrated Chat Simulator */}
           <div className="bg-white rounded-3xl shadow-2xl border border-purple-100 p-8 md:p-12">
@@ -1251,296 +1257,8 @@ export default function UC3Page() {
         </div>
       </section>
 
-      {/* Comparison Section - High-Conversion Enterprise Design */}
-      <section className="py-20 md:py-28 lg:py-32 xl:py-40 px-4 bg-gradient-to-br from-slate-50 via-white to-purple-50/30 relative overflow-hidden">
-        {/* Enhanced Background Pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(139,92,246,0.08),transparent_60%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(59,130,246,0.06),transparent_60%)]"></div>
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-200/20 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/3 w-80 h-80 bg-gradient-to-tl from-blue-200/15 to-transparent rounded-full blur-3xl"></div>
-        
-        <div className="max-w-6xl mx-auto relative">
-          {/* Clean Section Header */}
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
-              Ce qui change avec Aitenders
-            </h2>
-            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
-              Découvrez la transformation complète, du chaos manuel à la précision pilotée par l'IA.
-            </p>
-          </div>
-
-          {/* Clean Comparison Container */}
-          <div className="relative">
-            {/* Desktop Clean Comparison Table */}
-            <div className="hidden lg:block">
-              <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
-                {/* Simple Table Header */}
-                <div className="grid grid-cols-2 bg-gray-50 border-b border-gray-200">
-                  <div className="p-6 border-r border-gray-200">
-                    <div className="flex items-center">
-                      <div className="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center mr-3">
-                        <MdWarning className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-gray-900">AS‑IS (Aujourd'hui)</h3>
-                        <p className="text-sm text-gray-600">Chaos, retards et risques</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center">
-                      <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center mr-3">
-                        <MdCheckCircle className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-gray-900">TO‑BE (Avec Aitenders)</h3>
-                        <p className="text-sm text-gray-600">Automatisé, précis, efficace</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Clean Comparison Rows */}
-                <div className="divide-y divide-gray-200">
-                  {/* Row 1 */}
-                  <div className="grid grid-cols-2">
-                    <div className="p-4 border-r border-gray-200">
-                      <div className="flex items-center">
-                        <div className="w-6 h-6 bg-red-500 rounded flex items-center justify-center mr-3 flex-shrink-0">
-                          <MdClose className="w-4 h-4 text-white" />
-                        </div>
-                        <div>
-                          <h4 className="font-medium text-gray-900 text-sm mb-1">Excel manuel pour conformité</h4>
-                          <p className="text-gray-600 text-xs">Tableaux dispersés entre départements sans coordination centrale</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="p-4">
-                      <div className="flex items-center">
-                        <div className="w-6 h-6 bg-green-500 rounded flex items-center justify-center mr-3 flex-shrink-0">
-                          <MdCheck className="w-4 h-4 text-white" />
-                        </div>
-                        <div>
-                          <h4 className="font-medium text-gray-900 text-sm mb-1">Matrice IA dynamique</h4>
-                          <p className="text-gray-600 text-xs">Source unique de vérité avec collaboration temps réel pour tous les experts</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Row 2 */}
-                  <div className="grid grid-cols-2">
-                    <div className="p-4 border-r border-gray-200">
-                      <div className="flex items-center">
-                        <div className="w-6 h-6 bg-red-500 rounded flex items-center justify-center mr-3 flex-shrink-0">
-                          <MdClose className="w-4 h-4 text-white" />
-                        </div>
-                        <div>
-                          <h4 className="font-medium text-gray-900 text-sm mb-1">Copier‑coller hasardeux</h4>
-                          <p className="text-gray-600 text-xs">Erreurs humaines dans les processus manuels coûtent des opportunités critiques</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="p-4">
-                      <div className="flex items-center">
-                        <div className="w-6 h-6 bg-green-500 rounded flex items-center justify-center mr-3 flex-shrink-0">
-                          <MdCheck className="w-4 h-4 text-white" />
-                        </div>
-                        <div>
-                          <h4 className="font-medium text-gray-900 text-sm mb-1">Rédaction guidée par exigences</h4>
-                          <p className="text-gray-600 text-xs">L'IA traite les documents complexes en minutes, pas en semaines</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Row 3 */}
-                  <div className="grid grid-cols-2">
-                    <div className="p-4 border-r border-gray-200">
-                      <div className="flex items-center">
-                        <div className="w-6 h-6 bg-red-500 rounded flex items-center justify-center mr-3 flex-shrink-0">
-                          <MdClose className="w-4 h-4 text-white" />
-                        </div>
-                        <div>
-                          <h4 className="font-medium text-gray-900 text-sm mb-1">Relectures longues et multiples</h4>
-                          <p className="text-gray-600 text-xs">Coordination interminable ralentit tout le processus</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="p-4">
-                      <div className="flex items-center">
-                        <div className="w-6 h-6 bg-green-500 rounded flex items-center justify-center mr-3 flex-shrink-0">
-                          <MdCheck className="w-4 h-4 text-white" />
-                        </div>
-                        <div>
-                          <h4 className="font-medium text-gray-900 text-sm mb-1">Détection automatique des incohérences</h4>
-                          <p className="text-gray-600 text-xs">Contrôle qualité proactif avec notifications instantanées à l'équipe</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Row 4 */}
-                  <div className="grid grid-cols-2">
-                    <div className="p-4 border-r border-gray-200">
-                      <div className="flex items-center">
-                        <div className="w-6 h-6 bg-red-500 rounded flex items-center justify-center mr-3 flex-shrink-0">
-                          <MdClose className="w-4 h-4 text-white" />
-                        </div>
-                        <div>
-                          <h4 className="font-medium text-gray-900 text-sm mb-1">Risque d'exclusion / d'oublis d'exigences</h4>
-                          <p className="text-gray-600 text-xs">Oublis critiques découverts trop tard dans le processus</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="p-4">
-                      <div className="flex items-center">
-                        <div className="w-6 h-6 bg-green-500 rounded flex items-center justify-center mr-3 flex-shrink-0">
-                          <MdCheck className="w-4 h-4 text-white" />
-                        </div>
-                        <div>
-                          <h4 className="font-medium text-gray-900 text-sm mb-1">Preuve de couverture conforme à 100 %</h4>
-                          <p className="text-gray-600 text-xs">Audit complet garantit qu'aucune exigence n'est jamais manquée</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Mobile Comparison - Simple Cards */}
-            <div className="lg:hidden space-y-6">
-              {/* Before Card */}
-              <div className="bg-white rounded-lg border border-gray-200 p-4">
-                <div className="flex items-center mb-4">
-                  <div className="w-6 h-6 bg-red-500 rounded mr-3">
-                    <MdWarning className="w-4 h-4 text-white m-1" />
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900">AS‑IS (Aujourd'hui)</h3>
-                </div>
-                <div className="space-y-3">
-                  {/* Mobile comparison items with same content */}
-                  <div className="flex items-start">
-                    <div className="w-4 h-4 bg-red-500 rounded-full mr-3 mt-1 flex-shrink-0">
-                      <MdClose className="w-2 h-2 m-1 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-sm text-gray-900">Excel manuel pour conformité</h4>
-                      <p className="text-xs text-gray-600">Tableaux dispersés entre départements</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-4 h-4 bg-red-500 rounded-full mr-3 mt-1 flex-shrink-0">
-                      <MdClose className="w-2 h-2 m-1 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-sm text-gray-900">Copier‑coller hasardeux</h4>
-                      <p className="text-xs text-gray-600">Erreurs humaines coûtent des opportunités</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-4 h-4 bg-red-500 rounded-full mr-3 mt-1 flex-shrink-0">
-                      <MdClose className="w-2 h-2 m-1 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-sm text-gray-900">Relectures longues et multiples</h4>
-                      <p className="text-xs text-gray-600">Coordination interminable</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-4 h-4 bg-red-500 rounded-full mr-3 mt-1 flex-shrink-0">
-                      <MdClose className="w-2 h-2 m-1 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-sm text-gray-900">Risque d'exclusion / d'oublis d'exigences</h4>
-                      <p className="text-xs text-gray-600">Oublis critiques découverts trop tard</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* After Card */}
-              <div className="bg-white rounded-lg border border-gray-200 p-4">
-                <div className="flex items-center mb-4">
-                  <div className="w-6 h-6 bg-green-500 rounded mr-3">
-                    <MdCheckCircle className="w-4 h-4 text-white m-1" />
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900">TO‑BE (Avec Aitenders)</h3>
-                </div>
-                <div className="space-y-3">
-                  <div className="flex items-start">
-                    <div className="w-4 h-4 bg-green-500 rounded-full mr-3 mt-1 flex-shrink-0">
-                      <MdCheck className="w-2 h-2 m-1 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-sm text-gray-900">Matrice IA dynamique</h4>
-                      <p className="text-xs text-gray-600">Source unique de vérité pour tous les experts</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-4 h-4 bg-green-500 rounded-full mr-3 mt-1 flex-shrink-0">
-                      <MdCheck className="w-2 h-2 m-1 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-sm text-gray-900">Rédaction guidée par exigences</h4>
-                      <p className="text-xs text-gray-600">L'IA traite les documents en minutes</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-4 h-4 bg-green-500 rounded-full mr-3 mt-1 flex-shrink-0">
-                      <MdCheck className="w-2 h-2 m-1 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-sm text-gray-900">Détection automatique des incohérences</h4>
-                      <p className="text-xs text-gray-600">Contrôle qualité proactif</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-4 h-4 bg-green-500 rounded-full mr-3 mt-1 flex-shrink-0">
-                      <MdCheck className="w-2 h-2 m-1 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-sm text-gray-900">Preuve de couverture conforme à 100 %</h4>
-                      <p className="text-xs text-gray-600">Audit complet garantit qu'aucune exigence n'est manquée</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
 
-        </div>
-      </section>
-      {/* Master Compliance Section - Inspired by Image Design */}
-
-      {/* Trust & Compliance */}
-
-      {/* Call to Action */}
-      <section className="py-20 px-4 bg-aitenders-dark-blue">
-        <div className="max-w-4xl mx-auto text-center text-aitenders-white-blue">
-          <h2 className="text-4xl font-bold mb-6">Prêt à Maîtriser Votre Prochaine Offre Complexe ?</h2>
-          <p className="text-xl mb-8 opacity-90">
-            Rejoignez les équipes de projet qui font confiance à AItenders pour sécuriser leurs offres complexes, éliminer les risques de conformité, 
-            et gagner en toute confiance.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="bg-aitenders-primary-blue text-aitenders-white-blue hover:bg-aitenders-primary-blue/90 px-8 py-4 text-lg">
-              <MdMessage className="w-5 h-5 mr-2" />
-              Demander une Démo
-            </Button>
-            <Button variant="outline" size="lg" className="border-aitenders-white-blue/80 text-aitenders-white-blue bg-aitenders-white-blue/10 hover:bg-aitenders-white-blue hover:text-aitenders-dark-blue px-8 py-4 text-lg backdrop-blur-sm">
-              Contacter Notre Équipe
-            </Button>
-          </div>
-          <p className="text-sm mt-6 opacity-80">Sécurité de niveau entreprise • Collaboration multi-experts • Pistes d'audit complètes</p>
-        </div>
-      </section>
-
-
-      
       {/* Chat Interface with UC3-specific actions */}
       <ChatInterface 
         language="fr"
