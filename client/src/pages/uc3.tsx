@@ -27,14 +27,14 @@ import ChatSection from "@/components/chat-section";
 import ChatInterface from "@/components/chat-interface";
 
 export default function UC3Page() {
-  // State for managing fade transition between mockup views
-  const [showNewProject, setShowNewProject] = useState(true);
+  // State for managing continuous animation loop
+  const [animationKey, setAnimationKey] = useState(0);
   
-  // Auto-cycle between the two views with staggered timing
+  // Continuous loop - restart animation every 7 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setShowNewProject(prev => !prev);
-    }, 7000); // Switch every 7 seconds for faster loop
+      setAnimationKey(prev => prev + 1);
+    }, 7000); // Restart animation every 7 seconds
     
     return () => clearInterval(interval);
   }, []);
@@ -327,14 +327,14 @@ export default function UC3Page() {
                 
                 {/* Image appears immediately, then fades to background for agents */}
                 <motion.div
-                  key={`image-${showNewProject}`}
+                  key={`image-${animationKey}`}
                   initial={{ opacity: 1 }}
                   animate={{ 
-                    opacity: showNewProject ? [1, 1, 0.3] : [0, 1]
+                    opacity: [1, 1, 0.3]
                   }}
                   transition={{ 
-                    duration: showNewProject ? 3 : 1, 
-                    times: showNewProject ? [0, 0.33, 1] : [0, 1],
+                    duration: 3, 
+                    times: [0, 0.33, 1],
                     ease: "easeInOut" 
                   }}
                   className="absolute inset-0 z-5"
@@ -355,112 +355,110 @@ export default function UC3Page() {
 
                 
                 {/* AI Agents Elements - Flying particles representing UC3 agents */}
-                {showNewProject && (
-                  <>
-                    {/* Technical Analysis Agent */}
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0, x: -50, y: -30 }}
-                      animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
-                      exit={{ opacity: 0, scale: 0 }}
-                      transition={{ duration: 0.6, ease: "backOut", delay: showNewProject ? 2.5 : 0 }}
-                      className="absolute top-1/4 left-1/4 z-25"
-                    >
-                      <div className="bg-blue-500 text-white p-3 rounded-xl shadow-lg text-xs font-medium flex items-center space-x-2 animate-pulse">
-                        <MdEngineering className="w-4 h-4" />
-                        <span>Agent Technique</span>
-                      </div>
-                    </motion.div>
+                <>
+                  {/* Technical Analysis Agent */}
+                  <motion.div
+                    key={`agent-tech-${animationKey}`}
+                    initial={{ opacity: 0, scale: 0, x: -50, y: -30 }}
+                    animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+                    transition={{ duration: 0.6, ease: "backOut", delay: 2.5 }}
+                    className="absolute top-1/4 left-1/4 z-25"
+                  >
+                    <div className="bg-blue-500 text-white p-3 rounded-xl shadow-lg text-xs font-medium flex items-center space-x-2 animate-pulse">
+                      <MdEngineering className="w-4 h-4" />
+                      <span>Agent Technique</span>
+                    </div>
+                  </motion.div>
 
-                    {/* Legal Compliance Agent */}
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0, x: 50, y: -40 }}
-                      animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
-                      exit={{ opacity: 0, scale: 0 }}
-                      transition={{ duration: 0.6, ease: "backOut", delay: showNewProject ? 2.7 : 0 }}
-                      className="absolute top-1/3 right-1/4 z-25"
-                    >
-                      <div className="bg-purple-500 text-white p-3 rounded-xl shadow-lg text-xs font-medium flex items-center space-x-2 animate-pulse">
-                        <MdGavel className="w-4 h-4" />
-                        <span>Agent Juridique</span>
-                      </div>
-                    </motion.div>
+                  {/* Legal Compliance Agent */}
+                  <motion.div
+                    key={`agent-legal-${animationKey}`}
+                    initial={{ opacity: 0, scale: 0, x: 50, y: -40 }}
+                    animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+                    transition={{ duration: 0.6, ease: "backOut", delay: 2.7 }}
+                    className="absolute top-1/3 right-1/4 z-25"
+                  >
+                    <div className="bg-purple-500 text-white p-3 rounded-xl shadow-lg text-xs font-medium flex items-center space-x-2 animate-pulse">
+                      <MdGavel className="w-4 h-4" />
+                      <span>Agent Juridique</span>
+                    </div>
+                  </motion.div>
 
-                    {/* Commercial Agent */}
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0, x: -30, y: 50 }}
-                      animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
-                      exit={{ opacity: 0, scale: 0 }}
-                      transition={{ duration: 0.6, ease: "backOut", delay: showNewProject ? 2.9 : 0 }}
-                      className="absolute bottom-1/3 left-1/3 z-25"
-                    >
-                      <div className="bg-green-500 text-white p-3 rounded-xl shadow-lg text-xs font-medium flex items-center space-x-2 animate-pulse">
-                        <MdBusiness className="w-4 h-4" />
-                        <span>Agent Commercial</span>
-                      </div>
-                    </motion.div>
+                  {/* Commercial Agent */}
+                  <motion.div
+                    key={`agent-commercial-${animationKey}`}
+                    initial={{ opacity: 0, scale: 0, x: -30, y: 50 }}
+                    animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+                    transition={{ duration: 0.6, ease: "backOut", delay: 2.9 }}
+                    className="absolute bottom-1/3 left-1/3 z-25"
+                  >
+                    <div className="bg-green-500 text-white p-3 rounded-xl shadow-lg text-xs font-medium flex items-center space-x-2 animate-pulse">
+                      <MdBusiness className="w-4 h-4" />
+                      <span>Agent Commercial</span>
+                    </div>
+                  </motion.div>
 
-                    {/* Risk Analysis Agent */}
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0, x: 40, y: 40 }}
-                      animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
-                      exit={{ opacity: 0, scale: 0 }}
-                      transition={{ duration: 0.6, ease: "backOut", delay: showNewProject ? 3.1 : 0 }}
-                      className="absolute bottom-1/4 right-1/3 z-25"
-                    >
-                      <div className="bg-red-500 text-white p-3 rounded-xl shadow-lg text-xs font-medium flex items-center space-x-2 animate-pulse">
-                        <MdSecurity className="w-4 h-4" />
-                        <span>Agent Risques</span>
-                      </div>
-                    </motion.div>
+                  {/* Risk Analysis Agent */}
+                  <motion.div
+                    key={`agent-risk-${animationKey}`}
+                    initial={{ opacity: 0, scale: 0, x: 40, y: 40 }}
+                    animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+                    transition={{ duration: 0.6, ease: "backOut", delay: 3.1 }}
+                    className="absolute bottom-1/4 right-1/3 z-25"
+                  >
+                    <div className="bg-red-500 text-white p-3 rounded-xl shadow-lg text-xs font-medium flex items-center space-x-2 animate-pulse">
+                      <MdSecurity className="w-4 h-4" />
+                      <span>Agent Risques</span>
+                    </div>
+                  </motion.div>
 
-                    {/* Coordination Agent - Central */}
+                  {/* Coordination Agent - Central */}
+                  <motion.div
+                    key={`agent-coord-${animationKey}`}
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, ease: "backOut", delay: 3.3 }}
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-25"
+                  >
+                    <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-2xl shadow-xl text-sm font-bold flex items-center space-x-2 animate-bounce">
+                      <MdAutoAwesome className="w-5 h-5" />
+                      <span>Coordination IA</span>
+                    </div>
+                  </motion.div>
+
+                  {/* Floating Analysis Particles */}
+                  {[...Array(6)].map((_, i) => (
                     <motion.div
+                      key={`particle-${animationKey}-${i}`}
                       initial={{ opacity: 0, scale: 0 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0 }}
-                      transition={{ duration: 0.8, ease: "backOut", delay: showNewProject ? 3.3 : 0 }}
-                      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-25"
-                    >
-                      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-2xl shadow-xl text-sm font-bold flex items-center space-x-2 animate-bounce">
-                        <MdAutoAwesome className="w-5 h-5" />
-                        <span>Coordination IA</span>
-                      </div>
-                    </motion.div>
-
-                    {/* Floating Analysis Particles */}
-                    {[...Array(6)].map((_, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ 
-                          opacity: [0, 1, 1, 0], 
-                          scale: [0, 1, 1, 0],
-                          y: [0, -20, -40, -60],
-                          x: [0, Math.sin(i) * 20, Math.cos(i) * 15, 0]
-                        }}
-                        transition={{ 
-                          duration: 2,
-                          delay: showNewProject ? 3.8 + i * 0.1 : 0,
-                          repeat: Infinity,
-                          repeatDelay: 3
-                        }}
-                        className={`absolute w-2 h-2 rounded-full z-24`}
-                        style={{
-                          left: `${20 + i * 10}%`,
-                          top: `${30 + i * 8}%`,
-                          backgroundColor: ['#3B82F6', '#8B5CF6', '#10B981', '#EF4444', '#F59E0B', '#06B6D4'][i]
-                        }}
-                      />
-                    ))}
-                  </>
-                )}
+                      animate={{ 
+                        opacity: [0, 1, 1, 0], 
+                        scale: [0, 1, 1, 0],
+                        y: [0, -20, -40, -60],
+                        x: [0, Math.sin(i) * 20, Math.cos(i) * 15, 0]
+                      }}
+                      transition={{ 
+                        duration: 2,
+                        delay: 3.8 + i * 0.1,
+                        repeat: Infinity,
+                        repeatDelay: 3
+                      }}
+                      className={`absolute w-2 h-2 rounded-full z-24`}
+                      style={{
+                        left: `${20 + i * 10}%`,
+                        top: `${30 + i * 8}%`,
+                        backgroundColor: ['#3B82F6', '#8B5CF6', '#10B981', '#EF4444', '#F59E0B', '#06B6D4'][i]
+                      }}
+                    />
+                  ))}
+                </>
                 
                 {/* Final Dashboard Mockup - Fade In at the end */}
                 <motion.div
-                  key={`dashboard-${showNewProject}`}
+                  key={`dashboard-${animationKey}`}
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: showNewProject ? 1 : 1 }}
-                  transition={{ duration: 1, ease: "easeInOut", delay: showNewProject ? 5 : 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1, ease: "easeInOut", delay: 5 }}
                   className="relative z-10"
                 >
                   <div className="bg-white rounded-3xl shadow-2xl border border-gray-100/50 overflow-hidden backdrop-blur-sm"
@@ -570,50 +568,46 @@ export default function UC3Page() {
                 
                 {/* Final State Notifications */}
                 <motion.div
+                  key={`notification-1-${animationKey}`}
                   initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: showNewProject ? 1 : 0, y: showNewProject ? 0 : 10 }}
-                  transition={{ duration: 0.6, ease: "easeOut", delay: showNewProject ? 6 : 0 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut", delay: 6 }}
                   className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-medium z-30"
                 >
                   <div className="flex items-center space-x-2">
                     <MdCheckCircle className="w-4 h-4" />
-                    <span>{showNewProject ? "Analyse terminée" : "Requirements analyzed"}</span>
+                    <span>Analyse terminée</span>
                   </div>
                 </motion.div>
                 
                 <motion.div
+                  key={`notification-2-${animationKey}`}
                   initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: showNewProject ? 1 : 0, y: showNewProject ? 0 : -10 }}
-                  transition={{ duration: 0.6, ease: "easeOut", delay: showNewProject ? 6.2 : 0 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut", delay: 6.2 }}
                   className="absolute -bottom-4 -left-4 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-medium z-30"
                 >
                   <div className="flex items-center space-x-2">
                     <MdNotifications className="w-4 h-4" />
-                    <span>{showNewProject ? "Équipes coordonnées" : "Teams notified"}</span>
+                    <span>Équipes coordonnées</span>
                   </div>
                 </motion.div>
                 
                 {/* Background Decorative Elements */}
                 <motion.div
+                  key={`blob-1-${animationKey}`}
                   initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: showNewProject ? 1 : 0, scale: showNewProject ? 1 : 0.8 }}
-                  transition={{ duration: 0.8, ease: "easeOut", delay: showNewProject ? 5.5 : 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: 5.5 }}
                   className="absolute -top-8 -right-8 w-24 h-24 bg-purple-200/20 rounded-full blur-2xl"
                 ></motion.div>
                 <motion.div
+                  key={`blob-2-${animationKey}`}
                   initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: showNewProject ? 1 : 0, scale: showNewProject ? 1 : 0.8 }}
-                  transition={{ duration: 0.8, ease: "easeOut", delay: showNewProject ? 5.7 : 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: 5.7 }}
                   className="absolute -bottom-8 -left-8 w-32 h-32 bg-blue-200/15 rounded-full blur-3xl"
                 ></motion.div>
-
-                {/* Static Background for Original View */}
-                {!showNewProject && (
-                  <>
-                    <div className="absolute -top-8 -right-8 w-24 h-24 bg-purple-200/20 rounded-full blur-2xl"></div>
-                    <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-blue-200/15 rounded-full blur-3xl"></div>
-                  </>
-                )}
               </div>
             </div>
           </div>
