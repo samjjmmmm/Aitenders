@@ -1388,39 +1388,72 @@ export default function UC1Page() {
             </div>
           </div>
 
-          {/* Integrated Chat Simulator */}
-          <div className="bg-white rounded-3xl shadow-2xl border border-purple-100 p-8 md:p-12">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                Vous voulez voir l'impact sur <span className="text-purple-600">vos projets ?</span>
-              </h3>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Découvrez en 2 minutes le potentiel d'optimisation spécifique à votre contexte
-              </p>
-            </div>
+          {/* Integrated Chat Simulator - Enhanced */}
+          <div className="bg-gradient-to-br from-purple-50 via-white to-blue-50 rounded-3xl shadow-2xl border border-purple-100 p-8 md:p-12 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-100/20 to-blue-100/20 opacity-50"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-purple-200/30 to-transparent rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-blue-200/30 to-transparent rounded-full blur-2xl"></div>
             
-            <div className="max-w-4xl mx-auto">
-              <ChatInterface 
-                language="fr"
-                customActions={[
-                  {
-                    label: "🚀 Simulateur ROI",
-                    icon: <MdAnalytics className="w-4 h-4" />,
-                    onClick: () => {}
-                  },
-                  {
-                    label: "📋 Nos Cas d'Usage",
-                    icon: <MdDashboard className="w-4 h-4" />,
-                    onClick: () => {}
-                  },
-                  {
-                    label: "💬 Parler à un Expert",
-                    icon: <MdMail className="w-4 h-4" />,
-                    onClick: () => {}
-                  }
-                ]}
-                transparent={true}
-              />
+            <div className="relative z-10">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center justify-center px-6 py-3 bg-purple-100 rounded-full border border-purple-200 mb-6">
+                  <MdAnalytics className="w-5 h-5 text-purple-600 mr-2" />
+                  <span className="text-purple-700 font-semibold text-sm">Simulateur Interactif</span>
+                </div>
+                
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                  Vous voulez voir l'impact sur <span className="text-purple-600">vos projets ?</span>
+                </h3>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  Découvrez en 2 minutes le potentiel d'optimisation spécifique à votre contexte
+                </p>
+              </div>
+              
+              <div className="max-w-4xl mx-auto">
+                <ChatInterface 
+                  language="fr"
+                  customActions={[
+                    {
+                      label: "🚀 Lancer Simulateur ROI",
+                      icon: <MdAnalytics className="w-4 h-4" />,
+                      onClick: () => {}
+                    },
+                    {
+                      label: "📋 Explorer Cas d'Usage",
+                      icon: <MdDashboard className="w-4 h-4" />,
+                      onClick: () => {}
+                    },
+                    {
+                      label: "💬 Parler à un Expert",
+                      icon: <MdMail className="w-4 h-4" />,
+                      onClick: () => {}
+                    }
+                  ]}
+                  transparent={true}
+                  placeholder="Décrivez votre projet ou posez une question sur nos solutions UC1..."
+                />
+              </div>
+              
+              {/* Quick stats under chat */}
+              <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="text-center p-4 bg-white/50 rounded-xl border border-white/60">
+                  <div className="text-2xl font-bold text-purple-600">2min</div>
+                  <div className="text-sm text-gray-600">Temps moyen</div>
+                </div>
+                <div className="text-center p-4 bg-white/50 rounded-xl border border-white/60">
+                  <div className="text-2xl font-bold text-blue-600">850K€</div>
+                  <div className="text-sm text-gray-600">Projet type</div>
+                </div>
+                <div className="text-center p-4 bg-white/50 rounded-xl border border-white/60">
+                  <div className="text-2xl font-bold text-green-600">+45%</div>
+                  <div className="text-sm text-gray-600">Gain efficacité</div>
+                </div>
+                <div className="text-center p-4 bg-white/50 rounded-xl border border-white/60">
+                  <div className="text-2xl font-bold text-orange-600">15+</div>
+                  <div className="text-sm text-gray-600">Questions IA</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
