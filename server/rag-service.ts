@@ -344,21 +344,24 @@ Découvrez nos solutions adaptées à chaque taille de projet :
     const isNextCommand = ['suivant', 'next', 'continuer', 'continue'].some(keyword => queryLower.includes(keyword));
 
     // PRIORITÉ ABSOLUE : Si c'est une requête simulateur, TOUJOURS utiliser le nouveau simulateur Aitenders
+    // BYPASSER COMPLÈTEMENT OpenAI pour les simulateurs
     if (isSimulatorQuery) {
       if (sessionId) {
-        console.log(`[SIMULATOR] Redémarrage forcé de la session: ${sessionId}`);
-        // Redémarrer complètement la session existante
+        console.log(`[SIMULATOR] BYPASS OPENAI - Démarrage direct simulateur Aitenders: ${sessionId}`);
+        // Force le redémarrage de session pour éviter les conflits
         const response = aitendersSimulatorService.startSession(sessionId);
-        console.log(`[SIMULATOR] Nouvelle session démarrée avec introduction`);
+        console.log(`[SIMULATOR] Session Aitenders démarrée avec première question`);
         return {
-          action: 'simulator_start',
-          response: response
+          action: 'simulator_direct',
+          response: response,
+          shouldUseOpenAI: false
         };
       } else {
         // Pas de sessionId, générer une réponse d'erreur
         return {
           action: 'error',
-          response: '❌ Session non disponible. Veuillez rafraîchir la page et réessayer.'
+          response: '❌ Session non disponible. Veuillez rafraîchir la page et réessayer.',
+          shouldUseOpenAI: false
         };
       }
     }
