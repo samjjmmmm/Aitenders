@@ -30,11 +30,11 @@ export default function UC3Page() {
   // State for managing fade transition between mockup views
   const [showNewProject, setShowNewProject] = useState(false);
   
-  // Auto-cycle between the two views
+  // Auto-cycle between the two views with staggered timing
   useEffect(() => {
     const interval = setInterval(() => {
       setShowNewProject(prev => !prev);
-    }, 4000); // Switch every 4 seconds
+    }, 6000); // Switch every 6 seconds to allow for staggered animations
     
     return () => clearInterval(interval);
   }, []);
@@ -324,11 +324,25 @@ export default function UC3Page() {
             <div className="flex justify-center lg:justify-end">
               <div className="relative w-full max-w-lg">
                 
-                {/* New Project Image - Fade In/Out */}
+                {/* Background Decorative Elements - Appear First */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: showNewProject ? 1 : 0, scale: showNewProject ? 1 : 0.8 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: 0 }}
+                  className="absolute -top-8 -right-8 w-24 h-24 bg-purple-200/20 rounded-full blur-2xl z-5"
+                ></motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: showNewProject ? 1 : 0, scale: showNewProject ? 1 : 0.8 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                  className="absolute -bottom-8 -left-8 w-32 h-32 bg-blue-200/15 rounded-full blur-3xl z-5"
+                ></motion.div>
+
+                {/* New Project Image - Fade In/Out with Delay */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: showNewProject ? 1 : 0 }}
-                  transition={{ duration: 1.2, ease: "easeInOut" }}
+                  transition={{ duration: 1, ease: "easeInOut", delay: showNewProject ? 2 : 0 }}
                   className="absolute inset-0 z-20"
                   style={{ pointerEvents: showNewProject ? 'auto' : 'none' }}
                 >
@@ -338,7 +352,7 @@ export default function UC3Page() {
                        }}>
                     <img 
                       src={newProjectImage} 
-                      alt="Aitenders New Project Dashboard" 
+                      alt="Aitenders Agents Dashboard" 
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -348,7 +362,7 @@ export default function UC3Page() {
                 <motion.div
                   initial={{ opacity: 1 }}
                   animate={{ opacity: showNewProject ? 0 : 1 }}
-                  transition={{ duration: 1.2, ease: "easeInOut" }}
+                  transition={{ duration: 1, ease: "easeInOut", delay: showNewProject ? 0 : 2 }}
                   className="relative z-10"
                 >
                   <div className="bg-white rounded-3xl shadow-2xl border border-gray-100/50 overflow-hidden backdrop-blur-sm"
@@ -456,24 +470,38 @@ export default function UC3Page() {
                   </div>
                 </motion.div>
                 
-                {/* Floating Success Notifications - Always visible */}
-                <div className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-medium animate-bounce z-30">
+                {/* Floating Success Notifications - Appear after 1 second with "Agents Aitenders" */}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: showNewProject ? 1 : 0, y: showNewProject ? 0 : 10 }}
+                  transition={{ duration: 0.6, ease: "easeOut", delay: showNewProject ? 1 : 0 }}
+                  className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-medium z-30"
+                >
                   <div className="flex items-center space-x-2">
                     <MdCheckCircle className="w-4 h-4" />
-                    <span>Requirements analyzed</span>
+                    <span>{showNewProject ? "Agents Aitenders" : "Requirements analyzed"}</span>
                   </div>
-                </div>
+                </motion.div>
                 
-                <div className="absolute -bottom-4 -left-4 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-medium animate-pulse z-30">
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: showNewProject ? 1 : 0, y: showNewProject ? 0 : -10 }}
+                  transition={{ duration: 0.6, ease: "easeOut", delay: showNewProject ? 1.2 : 0 }}
+                  className="absolute -bottom-4 -left-4 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-medium z-30"
+                >
                   <div className="flex items-center space-x-2">
                     <MdNotifications className="w-4 h-4" />
-                    <span>Teams notified</span>
+                    <span>{showNewProject ? "Agents activés" : "Teams notified"}</span>
                   </div>
-                </div>
+                </motion.div>
                 
-                {/* Background Decorative Elements */}
-                <div className="absolute -top-8 -right-8 w-24 h-24 bg-purple-200/20 rounded-full blur-2xl"></div>
-                <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-blue-200/15 rounded-full blur-3xl"></div>
+                {/* Static Background Decorative Elements for Original View */}
+                {!showNewProject && (
+                  <>
+                    <div className="absolute -top-8 -right-8 w-24 h-24 bg-purple-200/20 rounded-full blur-2xl"></div>
+                    <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-blue-200/15 rounded-full blur-3xl"></div>
+                  </>
+                )}
               </div>
             </div>
           </div>

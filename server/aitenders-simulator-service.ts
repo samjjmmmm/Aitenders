@@ -150,7 +150,7 @@ class AitendersSimulatorService {
     this.sessions.set(sessionId, session);
 
     // RETOURNER DIRECTEMENT LA PREMIÈRE QUESTION STRUCTURÉE
-    return `📊 **SIMULATEUR ROI AITENDERS - ONE VOICE**
+    return `📊 **SIMULATEUR ROI AITENDERS POUR VOS BESOINS**
 
 ⏱️ Temps estimé : 3-5 minutes
 📧 Vous recevrez votre rapport détaillé par email
