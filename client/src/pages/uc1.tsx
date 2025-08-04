@@ -136,6 +136,58 @@ export default function UC1Page() {
         kpi2: { label: 'Positionnement marché', value: '+52%', icon: MdGpsFixed },
         kpi3: { label: 'Arguments différenciants', value: '+39%', icon: MdSearch }
       }
+    },
+    'success-prediction': {
+      name: 'Prédiction de Succès',
+      description: 'Analyse prédictive basée sur l\'IA pour évaluer la probabilité de gain de chaque opportunité commerciale.',
+      icon: MdEmojiEvents,
+      iconColor: 'text-purple-600',
+      integration: {
+        title: 'Intégration dans le scoring des opportunités',
+        steps: ['Analyse historique', 'Machine Learning', 'Score prédictif'],
+        visual: 'Tableau de bord avec scores en temps réel et recommandations d\'allocation de ressources'
+      },
+      valueProposition: {
+        buyer: {
+          title: 'Optimisation des ressources commerciales',
+          benefits: ['Focus sur les opportunités à fort potentiel', 'Réduction des efforts sur les dossiers perdants', 'ROI commercial optimisé']
+        },
+        user: {
+          title: 'Prise de décision éclairée',
+          benefits: ['Confiance renforcée dans les choix', 'Priorisation objective', 'Moins de stress commercial']
+        }
+      },
+      impact: {
+        kpi1: { label: 'Taux de conversion', value: '+35%', icon: MdTrendingUp },
+        kpi2: { label: 'Précision prédictive', value: '91%', icon: MdEmojiEvents },
+        kpi3: { label: 'Temps implémentation', value: '2 sem', icon: MdAccessTime }
+      }
+    },
+    'multi-format-export': {
+      name: 'Export Multi-Format',
+      description: 'Génération automatique de vos propositions dans tous les formats professionnels avec charte graphique personnalisée.',
+      icon: MdContentCopy,
+      iconColor: 'text-pink-600',
+      integration: {
+        title: 'Intégration dans le workflow de finalisation',
+        steps: ['Validation contenu', 'Application charte', 'Export automatique'],
+        visual: 'Interface de génération avec aperçu temps réel et options de personnalisation'
+      },
+      valueProposition: {
+        buyer: {
+          title: 'Cohérence et professionnalisme',
+          benefits: ['Image de marque uniforme', 'Respect des standards client', 'Livraison dans les formats requis']
+        },
+        user: {
+          title: 'Efficacité de production',
+          benefits: ['Économie de temps de mise en forme', 'Élimination des erreurs format', 'Focus sur le contenu']
+        }
+      },
+      impact: {
+        kpi1: { label: 'Gain temps finalisation', value: '+60%', icon: MdContentCopy },
+        kpi2: { label: 'Conformité formats', value: '100%', icon: MdVerified },
+        kpi3: { label: 'Temps déploiement', value: 'Immédiat', icon: MdFlashOn }
+      }
     }
   };
 
@@ -902,9 +954,16 @@ export default function UC1Page() {
             {/* Learning Engine */}
             <div className="group">
               <div 
-                className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
+                className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
                 onClick={() => handleToppingClick('learning-engine')}
               >
+                {/* Expand Icon - appears on hover */}
+                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <MdArrowForward className="w-4 h-4 text-white transform rotate-45" />
+                  </div>
+                </div>
+                
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdTrendingUp className="w-8 h-8 text-white" />
                 </div>
@@ -914,9 +973,16 @@ export default function UC1Page() {
                   L'IA apprend de vos succès et échecs pour optimiser continuellement la qualité et la pertinence de vos futures propositions.
                 </p>
 
-                <div className="flex items-center text-cyan-400 font-medium">
-                  <span className="text-sm">Amélioration continue</span>
-                  <MdAnalytics className="w-4 h-4 ml-2" />
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-cyan-400 font-medium">
+                    <span className="text-sm">Amélioration continue</span>
+                    <MdAnalytics className="w-4 h-4 ml-2" />
+                  </div>
+                  
+                  {/* Click indicator */}
+                  <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
+                    Cliquez pour détails
+                  </div>
                 </div>
               </div>
             </div>
@@ -924,9 +990,16 @@ export default function UC1Page() {
             {/* Multi-Client Customization */}
             <div className="group">
               <div 
-                className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
+                className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
                 onClick={() => handleToppingClick('client-customization')}
               >
+                {/* Expand Icon - appears on hover */}
+                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <MdArrowForward className="w-4 h-4 text-white transform rotate-45" />
+                  </div>
+                </div>
+                
                 <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdGroups className="w-8 h-8 text-white" />
                 </div>
@@ -936,9 +1009,16 @@ export default function UC1Page() {
                   Adaptation automatique du ton, des arguments et de la structure selon le profil et l'historique de chaque client cible.
                 </p>
 
-                <div className="flex items-center text-green-400 font-medium">
-                  <span className="text-sm">Personnalisation IA</span>
-                  <MdAutoAwesome className="w-4 h-4 ml-2" />
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-green-400 font-medium">
+                    <span className="text-sm">Personnalisation IA</span>
+                    <MdAutoAwesome className="w-4 h-4 ml-2" />
+                  </div>
+                  
+                  {/* Click indicator */}
+                  <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
+                    Cliquez pour détails
+                  </div>
                 </div>
               </div>
             </div>
@@ -946,9 +1026,15 @@ export default function UC1Page() {
             {/* Competitive Intelligence */}
             <div className="group">
               <div 
-                className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
+                className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
                 onClick={() => handleToppingClick('competitive-intelligence')}
               >
+                {/* Expand Icon - appears on hover */}
+                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <MdArrowForward className="w-4 h-4 text-white transform rotate-45" />
+                  </div>
+                </div>
                 <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdSearch className="w-8 h-8 text-white" />
                 </div>
@@ -958,16 +1044,32 @@ export default function UC1Page() {
                   Analyse automatique du marché et suggestions d'arguments différenciants basés sur les tendances sectorielles.
                 </p>
 
-                <div className="flex items-center text-orange-400 font-medium">
-                  <span className="text-sm">Veille concurrentielle</span>
-                  <MdGpsFixed className="w-4 h-4 ml-2" />
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-orange-400 font-medium">
+                    <span className="text-sm">Veille concurrentielle</span>
+                    <MdGpsFixed className="w-4 h-4 ml-2" />
+                  </div>
+                  
+                  {/* Click indicator */}
+                  <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
+                    Cliquez pour détails
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Success Prediction */}
             <div className="group">
-              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
+              <div 
+                className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
+                onClick={() => handleToppingClick('success-prediction')}
+              >
+                {/* Expand Icon - appears on hover */}
+                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <MdArrowForward className="w-4 h-4 text-white transform rotate-45" />
+                  </div>
+                </div>
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transformduration-300">
                   <MdEmojiEvents className="w-8 h-8 text-white" />
                 </div>
@@ -977,16 +1079,32 @@ export default function UC1Page() {
                   Score de probabilité de gain calculé en temps réel pour optimiser l'allocation de vos ressources commerciales.
                 </p>
 
-                <div className="flex items-center text-purple-400 font-medium">
-                  <span className="text-sm">Prédictif</span>
-                  <MdTrackChanges className="w-4 h-4 ml-2" />
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-purple-400 font-medium">
+                    <span className="text-sm">Prédictif</span>
+                    <MdTrackChanges className="w-4 h-4 ml-2" />
+                  </div>
+                  
+                  {/* Click indicator */}
+                  <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
+                    Cliquez pour détails
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Multi-Format Export */}
             <div className="group">
-              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
+              <div 
+                className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
+                onClick={() => handleToppingClick('multi-format-export')}
+              >
+                {/* Expand Icon - appears on hover */}
+                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <MdArrowForward className="w-4 h-4 text-white transform rotate-45" />
+                  </div>
+                </div>
                 <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdContentCopy className="w-8 h-8 text-white" />
                 </div>
@@ -996,9 +1114,16 @@ export default function UC1Page() {
                   Génération automatique dans tous les formats requis : PDF, Word, PowerPoint avec charte graphique intégrée.
                 </p>
 
-                <div className="flex items-center text-pink-400 font-medium">
-                  <span className="text-sm">Formats multiples</span>
-                  <MdSwapHoriz className="w-4 h-4 ml-2" />
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-pink-400 font-medium">
+                    <span className="text-sm">Formats multiples</span>
+                    <MdSwapHoriz className="w-4 h-4 ml-2" />
+                  </div>
+                  
+                  {/* Click indicator */}
+                  <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
+                    Cliquez pour détails
+                  </div>
                 </div>
               </div>
             </div>
