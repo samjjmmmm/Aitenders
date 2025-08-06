@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Header from "@/components/header";
+import ProductHero from "@/components/product-hero";
 import ClientLogos from "@/components/client-logos";
 import ContactSection from "@/components/contact-section";
 import ChatInterface from "@/components/chat-interface";
