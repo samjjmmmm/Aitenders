@@ -13,7 +13,6 @@ import { UC5 } from "@/pages/uc5";
 import UC6Page from "@/pages/uc6";
 import UC7Page from "@/pages/uc7";
 import UC8Page from "@/pages/uc8";
-import ProductDemoPage from "@/pages/product-demo";
 import SimulatorAdmin from "@/pages/simulator-admin";
 import MailingAdmin from "@/pages/mailing-admin";
 import NotFound from "@/pages/not-found";
@@ -30,7 +29,6 @@ function Router() {
       <Route path="/uc6" component={UC6Page} />
       <Route path="/uc7" component={UC7Page} />
       <Route path="/uc8" component={UC8Page} />
-      <Route path="/product-demo" component={ProductDemoPage} />
       <Route path="/admin/simulator" component={SimulatorAdmin} />
       <Route path="/admin/mailing" component={MailingAdmin} />
       <Route component={NotFound} />
