@@ -26,7 +26,10 @@ import newProjectImage from "@assets/Selection(24)_1754328031324.png";
 import ChatSection from "@/components/chat-section";
 import ChatInterface from "@/components/chat-interface";
 import Lottie from 'lottie-react';
-import lottieAnimation from '@assets/UC-3_1755004661252.json';
+import lottieAnimation from '../assets/UC-3_1755004661252.json';
+import wow1Animation from '../assets/wow-1.json';
+import wow2Animation from '../assets/wow-2.json';
+import wow3Animation from '../assets/wow-3.json';
 
 export default function UC3Page() {
   // State for managing continuous animation loop
@@ -484,87 +487,34 @@ export default function UC3Page() {
               </div>
             </div>
             <div className="order-2">
-              <Card className="p-10 bg-gradient-to-br from-blue-50 to-indigo-100 border border-blue-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
-                   style={{
-                     boxShadow: '0 25px 50px -12px rgba(59, 130, 246, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-                   }}>
-                <div className="bg-white rounded-xl p-4 border border-blue-200 shadow-sm">
-                  <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Document Analysis</h4>
-                    <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <MdDescription className="w-4 h-4 text-blue-600" />
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Requirements extraction</span>
-                      <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
-                        <MdCheckCircle className="w-3 h-3 text-white" />
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Data classification</span>
-                      <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
-                        <MdCheckCircle className="w-3 h-3 text-white" />
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
-                      <span className="text-sm text-gray-700">Insight generation</span>
-                      <div className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
-                        <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Card>
+              <div className="flex justify-center items-center h-full">
+                <Lottie 
+                  animationData={wow1Animation}
+                  loop={true}
+                  autoplay={true}
+                  className="w-full h-full max-w-[400px] max-h-[400px]"
+                  style={{ 
+                    filter: 'drop-shadow(0 8px 32px rgba(59, 130, 246, 0.2))'
+                  }}
+                />
+              </div>
             </div>
           </div>
 
           {/* Feature 2: Orchestrate Expert Teams - Text Right, Card Left */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-2 lg:order-1">
-              <Card className="p-10 bg-gradient-to-br from-purple-50 to-pink-100 border border-purple-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
-                   style={{
-                     boxShadow: '0 25px 50px -12px rgba(147, 51, 234, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-                   }}>
-                <div className="bg-white rounded-xl p-4 border border-purple-200 shadow-sm">
-                  <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Expert Coordination</h4>
-                    <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-                      <MdAccountBox className="w-4 h-4 text-purple-600" />
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
-                      <div className="flex items-center space-x-2">
-                        <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
-                          <span className="text-xs text-white font-medium">T</span>
-                        </div>
-                        <span className="text-sm text-gray-700">Technical specialist</span>
-                      </div>
-                      <span className="text-xs text-gray-500">24 tasks</span>
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
-                      <div className="flex items-center space-x-2">
-                        <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                          <span className="text-xs text-white font-medium">L</span>
-                        </div>
-                        <span className="text-sm text-gray-700">Legal specialist</span>
-                      </div>
-                      <span className="text-xs text-gray-500">18 tasks</span>
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
-                      <div className="flex items-center space-x-2">
-                        <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center">
-                          <span className="text-xs text-white font-medium">C</span>
-                        </div>
-                        <span className="text-sm text-gray-700">Commercial specialist</span>
-                      </div>
-                      <span className="text-xs text-gray-500">31 tasks</span>
-                    </div>
-                  </div>
-                </div>
-              </Card>
+              <div className="flex justify-center items-center h-full">
+                <Lottie 
+                  animationData={wow2Animation}
+                  loop={true}
+                  autoplay={true}
+                  className="w-full h-full max-w-[400px] max-h-[400px]"
+                  style={{ 
+                    filter: 'drop-shadow(0 8px 32px rgba(147, 51, 234, 0.2))'
+                  }}
+                />
+              </div>
             </div>
             <div className="order-1 lg:order-2">
               <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
@@ -597,35 +547,17 @@ export default function UC3Page() {
               </div>
             </div>
             <div className="order-2">
-              <Card className="p-10 bg-gradient-to-br from-green-50 to-emerald-100 border border-green-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
-                   style={{
-                     boxShadow: '0 25px 50px -12px rgba(34, 197, 94, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-                   }}>
-                <div className="bg-white rounded-xl p-4 border border-green-200 shadow-sm">
-                  <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Version Control</h4>
-                    <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-                      <MdSettings className="w-4 h-4 text-green-600" />
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Document v2.3 detected</span>
-                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">New</span>
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-yellow-50 rounded-lg border border-yellow-200">
-                      <span className="text-sm text-gray-700">3 requirements updated</span>
-                      <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full">Alert</span>
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
-                      <span className="text-sm text-gray-700">Team notification sent</span>
-                      <div className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
-                        <MdMessage className="w-3 h-3 text-white" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Card>
+              <div className="flex justify-center items-center h-full">
+                <Lottie 
+                  animationData={wow3Animation}
+                  loop={true}
+                  autoplay={true}
+                  className="w-full h-full max-w-[400px] max-h-[400px]"
+                  style={{ 
+                    filter: 'drop-shadow(0 8px 32px rgba(34, 197, 94, 0.2))'
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
