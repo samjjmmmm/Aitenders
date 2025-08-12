@@ -26,6 +26,10 @@ import bouyguesLogo from "@assets/Bouyges_1753711339292.png";
 import colasLogo from "@assets/Colas_1753711339292.png";
 import ChatSection from "@/components/chat-section";
 import ChatInterface from "@/components/chat-interface";
+import Lottie from 'lottie-react';
+import wow1Uc4Animation from '../assets/wow-1-uc4.json';
+import wow2Uc4Animation from '../assets/wow-2-uc4.json';
+import wow3Uc4Animation from '../assets/wow-3-uc4.json';
 
 export default function UC4Page() {
   // Target audience data with interactive content - UC4 adapted
@@ -572,33 +576,18 @@ export default function UC4Page() {
             </div>
 
             <div className="order-2">
-              <Card className="p-10 bg-gradient-to-br from-purple-50 to-indigo-100 border border-purple-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
-                    style={{
-                      boxShadow: '0 25px 50px -12px rgba(139, 92, 246, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-                    }}>
-                <div className="bg-white rounded-xl p-4 border border-purple-200 shadow-sm">
-                  <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Fiche Synthétique Contrat</h4>
-                    <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-                      <MdFlashOn className="w-4 h-4 text-purple-600" />
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Durée & Reconduction</span>
-                      <MdCheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Délais de préavis</span>
-                      <MdCheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">SLA & Pénalités</span>
-                      <MdCheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                  </div>
-                </div>
-              </Card>
+              <div className="flex justify-center items-center h-full">
+                <Lottie 
+                  animationData={wow1Uc4Animation}
+                  loop={true}
+                  autoplay={true}
+                  className="w-full h-full max-w-[400px] max-h-[400px]"
+                  style={{ 
+                    transform: 'scale(1.5)',
+                    filter: 'drop-shadow(0 8px 32px rgba(139, 92, 246, 0.2))'
+                  }}
+                />
+              </div>
             </div>
           </div>
           {/* Feature 2: Accès ciblé aux clauses critiques - Text Left, Card Right */}
@@ -621,33 +610,18 @@ export default function UC4Page() {
             </div>
 
             <div className="order-2 lg:order-1">
-              <Card className="p-10 bg-gradient-to-br from-green-50 to-emerald-100 border border-green-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
-                    style={{
-                      boxShadow: '0 25px 50px -12px rgba(16, 185, 129, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-                    }}>
-                <div className="bg-white rounded-xl p-4 border border-green-200 shadow-sm">
-                  <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Clauses critiques</h4>
-                    <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-                      <MdGavel className="w-4 h-4 text-green-600" />
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Durée du contrat</span>
-                      <MdCheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Conditions de résiliation</span>
-                      <MdCheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Pénalités & SLA</span>
-                      <MdCheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                  </div>
-                </div>
-              </Card>
+              <div className="flex justify-center items-center h-full">
+                <Lottie 
+                  animationData={wow2Uc4Animation}
+                  loop={true}
+                  autoplay={true}
+                  className="w-full h-full max-w-[400px] max-h-[400px]"
+                  style={{ 
+                    transform: 'scale(1.5)',
+                    filter: 'drop-shadow(0 8px 32px rgba(16, 185, 129, 0.2))'
+                  }}
+                />
+              </div>
             </div>
           </div>
 
@@ -673,33 +647,18 @@ export default function UC4Page() {
             </div>
 
             <div className="order-2">
-              <Card className="p-10 bg-gradient-to-br from-indigo-50 to-purple-100 border border-indigo-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
-                    style={{
-                      boxShadow: '0 25px 50px -12px rgba(99, 102, 241, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-                    }}>
-                <div className="bg-white rounded-xl p-4 border border-indigo-200 shadow-sm">
-                  <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Q&A Contractuel</h4>
-                    <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
-                      <MdCheckCircle className="w-4 h-4 text-indigo-600" />
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between py-2 px-3 bg-indigo-50 rounded-lg border border-indigo-200">
-                      <span className="text-sm text-gray-700">Quel est le préavis ?</span>
-                      <MdCheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-indigo-50 rounded-lg border border-indigo-200">
-                      <span className="text-sm text-gray-700">Quelle est la durée de l’engagement ?</span>
-                      <MdCheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-indigo-50 rounded-lg border border-indigo-200">
-                      <span className="text-sm text-gray-700">Quelles sont les pénalités applicables ?</span>
-                      <MdCheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                  </div>
-                </div>
-              </Card>
+              <div className="flex justify-center items-center h-full">
+                <Lottie 
+                  animationData={wow3Uc4Animation}
+                  loop={true}
+                  autoplay={true}
+                  className="w-full h-full max-w-[400px] max-h-[400px]"
+                  style={{ 
+                    transform: 'scale(1.5)',
+                    filter: 'drop-shadow(0 8px 32px rgba(99, 102, 241, 0.2))'
+                  }}
+                />
+              </div>
             </div>
           </div>
 
