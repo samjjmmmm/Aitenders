@@ -339,182 +339,19 @@ export default function UC3Page() {
               </div>
             </div>
 
-            {/* Right Side - Enhanced Hero Visual with Lottie Animation */}
+            {/* Right Side - Lottie Animation Hero Visual */}
             <div className="flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-lg h-96 lg:h-[500px]">
-                
-                {/* =============================================== */}
-                {/* ENHANCED LOTTIE HERO ANIMATION */}
-                {/* =============================================== */}
-                
-                {/* Main Lottie Animation Container */}
-                <motion.div
-                  key={`lottie-hero-${animationKey}`}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 1.2, ease: "easeOut" }}
-                  className="absolute inset-0 z-10 flex items-center justify-center"
-                >
-                  <div className="w-full h-full bg-white rounded-3xl shadow-2xl border border-gray-100/50 overflow-hidden backdrop-blur-sm relative"
-                       style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)' }}>
-                    
-                    {/* Lottie Animation */}
-                    <div className="w-full h-full flex items-center justify-center p-8">
-                      <Lottie 
-                        animationData={lottieAnimation}
-                        loop={true}
-                        autoplay={true}
-                        className="w-full h-full max-w-[400px] max-h-[400px]"
-                        style={{ filter: 'drop-shadow(0 4px 12px rgba(56, 128, 232, 0.15))' }}
-                      />
-                    </div>
-                    
-                    {/* Subtle Gradient Overlay for Depth */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-blue-50/20 rounded-3xl pointer-events-none"></div>
-                  </div>
-                </motion.div>
-                
-                {/* Background Static Image (as fallback/enhancement) */}
-                <motion.div
-                  key={`bg-image-${animationKey}`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 0.1 }}
-                  transition={{ duration: 2, delay: 0.5 }}
-                  className="absolute inset-0 z-5"
-                >
-                  <div className="bg-white rounded-3xl shadow-lg border border-gray-100/30 overflow-hidden backdrop-blur-sm h-full opacity-20"
-                       style={{ boxShadow: '0 15px 30px -8px rgba(0, 0, 0, 0.08)' }}>
-                    <img src={newProjectImage} alt="Aitenders Dashboard Background" className="w-full h-full object-contain bg-white/50" />
-                  </div>
-                </motion.div>
-
-                {/* Enhanced Floating UI Elements around Lottie */}
-                <motion.div
-                  key={`floating-ui-${animationKey}`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 1.5 }}
-                  className="absolute inset-0 z-15 pointer-events-none"
-                >
-                  {/* AI Processing Badge - Top Left */}
-                  <motion.div
-                    initial={{ opacity: 0, x: -20, y: -20 }}
-                    animate={{ opacity: 1, x: 0, y: 0 }}
-                    transition={{ duration: 0.6, delay: 2, ease: "backOut" }}
-                    className="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1.5 rounded-full text-xs font-medium shadow-lg"
-                  >
-                    <div className="flex items-center space-x-1.5">
-                      <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                      <span>IA en cours...</span>
-                    </div>
-                  </motion.div>
-
-                  {/* Analysis Progress - Top Right */}
-                  <motion.div
-                    initial={{ opacity: 0, x: 20, y: -20 }}
-                    animate={{ opacity: 1, x: 0, y: 0 }}
-                    transition={{ duration: 0.6, delay: 2.5, ease: "backOut" }}
-                    className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1.5 rounded-full text-xs font-medium shadow-lg"
-                  >
-                    <div className="flex items-center space-x-1.5">
-                      <MdCheckCircle className="w-3 h-3" />
-                      <span>Analyse 87%</span>
-                    </div>
-                  </motion.div>
-
-                  {/* Document Count - Bottom Left */}
-                  <motion.div
-                    initial={{ opacity: 0, x: -20, y: 20 }}
-                    animate={{ opacity: 1, x: 0, y: 0 }}
-                    transition={{ duration: 0.6, delay: 3, ease: "backOut" }}
-                    className="absolute bottom-4 left-4 bg-purple-500 text-white px-3 py-1.5 rounded-full text-xs font-medium shadow-lg"
-                  >
-                    <div className="flex items-center space-x-1.5">
-                      <MdDescription className="w-3 h-3" />
-                      <span>127 docs</span>
-                    </div>
-                  </motion.div>
-
-                  {/* Teams Coordinated - Bottom Right */}
-                  <motion.div
-                    initial={{ opacity: 0, x: 20, y: 20 }}
-                    animate={{ opacity: 1, x: 0, y: 0 }}
-                    transition={{ duration: 0.6, delay: 3.5, ease: "backOut" }}
-                    className="absolute bottom-4 right-4 bg-orange-500 text-white px-3 py-1.5 rounded-full text-xs font-medium shadow-lg"
-                  >
-                    <div className="flex items-center space-x-1.5">
-                      <MdGroups className="w-3 h-3" />
-                      <span>8 équipes</span>
-                    </div>
-                  </motion.div>
-
-                  {/* Central Processing Indicator */}
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 4, ease: "backOut" }}
-                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-xl text-sm font-bold shadow-xl"
-                  >
-                    <div className="flex items-center space-x-2">
-                      <MdAutoAwesome className="w-4 h-4 animate-pulse" />
-                      <span>Coordination IA</span>
-                    </div>
-                  </motion.div>
-
-                  {/* Floating Analysis Particles */}
-                  {[...Array(8)].map((_, i) => (
-                    <motion.div
-                      key={`enhanced-particle-${animationKey}-${i}`}
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={{ 
-                        opacity: [0, 0.8, 0.8, 0], 
-                        scale: [0, 1, 1, 0],
-                        y: [0, -30, -60, -90],
-                        x: [0, Math.sin(i) * 25, Math.cos(i) * 20, 0]
-                      }}
-                      transition={{ 
-                        duration: 2.5,
-                        delay: 2 + i * 0.15,
-                        repeat: Infinity,
-                        repeatDelay: 4
-                      }}
-                      className={`absolute w-1.5 h-1.5 rounded-full z-20`}
-                      style={{
-                        left: `${15 + i * 8}%`,
-                        top: `${25 + i * 6}%`,
-                        backgroundColor: ['#3B82F6', '#8B5CF6', '#10B981', '#EF4444', '#F59E0B', '#06B6D4', '#FF6B6B', '#4ECDC4'][i]
-                      }}
-                    />
-                  ))}
-                </motion.div>
-                
-                {/* Enhanced Success Notifications */}
-                <motion.div
-                  key={`success-notification-${animationKey}`}
-                  initial={{ opacity: 0, scale: 0.8, y: -20 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 5, ease: "backOut" }}
-                  className="absolute -top-6 -right-6 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-xl shadow-xl text-sm font-bold z-30"
-                >
-                  <div className="flex items-center space-x-2">
-                    <MdCheckCircle className="w-4 h-4 animate-pulse" />
-                    <span>Analyse complète ✨</span>
-                  </div>
-                </motion.div>
-
-                {/* Atmospheric Effects */}
-                <motion.div
-                  key={`atmosphere-${animationKey}`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 2, delay: 1 }}
-                  className="absolute inset-0 pointer-events-none"
-                >
-                  <div className="absolute -top-8 -right-8 w-24 h-24 bg-purple-200/20 rounded-full blur-2xl animate-pulse"></div>
-                  <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-blue-200/15 rounded-full blur-3xl"></div>
-                  <div className="absolute top-1/2 -left-4 w-16 h-16 bg-green-200/10 rounded-full blur-xl"></div>
-                  <div className="absolute top-1/4 -right-4 w-20 h-20 bg-indigo-200/10 rounded-full blur-2xl"></div>
-                </motion.div>
+              <div className="relative w-full max-w-2xl h-[600px]">
+                <Lottie 
+                  animationData={lottieAnimation}
+                  loop={true}
+                  autoplay={true}
+                  className="w-full h-full"
+                  style={{ 
+                    transform: 'scale(1.5)',
+                    filter: 'drop-shadow(0 8px 32px rgba(56, 128, 232, 0.2))'
+                  }}
+                />
               </div>
             </div>
           </div>
