@@ -494,6 +494,7 @@ export default function UC3Page() {
                   autoplay={true}
                   className="w-full h-full max-w-[400px] max-h-[400px]"
                   style={{ 
+                    transform: 'scale(1.5)',
                     filter: 'drop-shadow(0 8px 32px rgba(59, 130, 246, 0.2))'
                   }}
                 />
@@ -511,6 +512,7 @@ export default function UC3Page() {
                   autoplay={true}
                   className="w-full h-full max-w-[400px] max-h-[400px]"
                   style={{ 
+                    transform: 'scale(1.5)',
                     filter: 'drop-shadow(0 8px 32px rgba(147, 51, 234, 0.2))'
                   }}
                 />
@@ -554,6 +556,7 @@ export default function UC3Page() {
                   autoplay={true}
                   className="w-full h-full max-w-[400px] max-h-[400px]"
                   style={{ 
+                    transform: 'scale(1.5)',
                     filter: 'drop-shadow(0 8px 32px rgba(34, 197, 94, 0.2))'
                   }}
                 />
