@@ -43,6 +43,10 @@ import ChatInterface from '@/components/chat-interface';
 import equansLogo from '@assets/Equans_1753711339292.png';
 import bouyguesLogo from '@assets/Bouyges_1753711339292.png';
 import colasLogo from '@assets/Colas_1753711339292.png';
+import Lottie from 'lottie-react';
+import wow1Uc5Animation from '../assets/wow-1-uc5.json';
+import wow2Uc5Animation from '../assets/wow-2-uc5.json';
+import wow3Uc5Animation from '../assets/wow-3-uc5.json';
 
 export function UC5() {
   const targetAudiences = [
@@ -509,35 +513,18 @@ export function UC5() {
             </div>
 
             <div className="order-2">
-              <Card className="p-10 bg-gradient-to-br from-blue-50 to-indigo-100 border border-blue-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
-                   style={{
-                     boxShadow: '0 25px 50px -12px rgba(59, 130, 246, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-                   }}>
-                <div className="bg-white rounded-xl p-4 border border-blue-200 shadow-sm">
-                  <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Suivi de projet initial</h4>
-                    <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <MdDescription className="w-4 h-4 text-blue-600" />
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Extraction des engagements clés</span>
-                      <MdCheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Classement thématique</span>
-                      <MdCheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
-                      <span className="text-sm text-gray-700">Association aux critères de suivi</span>
-                      <div className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
-                        <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Card>
+              <div className="flex justify-center items-center h-full">
+                <Lottie 
+                  animationData={wow1Uc5Animation}
+                  loop={true}
+                  autoplay={true}
+                  className="w-full h-full max-w-[400px] max-h-[400px]"
+                  style={{ 
+                    transform: 'scale(1.5)',
+                    filter: 'drop-shadow(0 8px 32px rgba(59, 130, 246, 0.2))'
+                  }}
+                />
+              </div>
             </div>
           </div>
 
@@ -546,35 +533,18 @@ export function UC5() {
           {/* Feature 2: Suivi d’actions et évolution des engagements - Text Right, Card Left */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-2 lg:order-1">
-              <Card className="p-10 bg-gradient-to-br from-purple-50 to-pink-100 border border-purple-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
-                   style={{
-                     boxShadow: '0 25px 50px -12px rgba(147, 51, 234, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-                   }}>
-                <div className="bg-white rounded-xl p-4 border border-purple-200 shadow-sm">
-                  <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Suivi des engagements</h4>
-                    <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-                      <MdAssignmentTurnedIn className="w-4 h-4 text-purple-600" />
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
-                      <span className="text-sm text-gray-700">Obligations converties en actions</span>
-                      <MdCheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
-                      <span className="text-sm text-gray-700">Historique des validations</span>
-                      <MdCheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-purple-50 rounded-lg border border-purple-200">
-                      <span className="text-sm text-gray-700">Traçabilité des modifications</span>
-                      <div className="w-4 h-4 bg-purple-500 rounded-full flex items-center justify-center">
-                        <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Card>
+              <div className="flex justify-center items-center h-full">
+                <Lottie 
+                  animationData={wow2Uc5Animation}
+                  loop={true}
+                  autoplay={true}
+                  className="w-full h-full max-w-[400px] max-h-[400px]"
+                  style={{ 
+                    transform: 'scale(1.5)',
+                    filter: 'drop-shadow(0 8px 32px rgba(147, 51, 234, 0.2))'
+                  }}
+                />
+              </div>
             </div>
 
             <div className="order-1 lg:order-2">
@@ -623,35 +593,18 @@ export function UC5() {
             </div>
 
             <div className="order-2">
-              <Card className="p-10 bg-gradient-to-br from-green-50 to-emerald-100 border border-green-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
-                   style={{
-                     boxShadow: '0 25px 50px -12px rgba(34, 197, 94, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-                   }}>
-                <div className="bg-white rounded-xl p-4 border border-green-200 shadow-sm">
-                  <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Alertes Proactives</h4>
-                    <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-                      <MdSettings className="w-4 h-4 text-green-600" />
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Nouvelle échéance détectée</span>
-                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">New</span>
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-yellow-50 rounded-lg border border-yellow-200">
-                      <span className="text-sm text-gray-700">Contradiction dans 2 clauses</span>
-                      <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full">Alert</span>
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
-                      <span className="text-sm text-gray-700">Notification envoyée aux équipes</span>
-                      <div className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
-                        <MdMessage className="w-3 h-3 text-white" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Card>
+              <div className="flex justify-center items-center h-full">
+                <Lottie 
+                  animationData={wow3Uc5Animation}
+                  loop={true}
+                  autoplay={true}
+                  className="w-full h-full max-w-[400px] max-h-[400px]"
+                  style={{ 
+                    transform: 'scale(1.5)',
+                    filter: 'drop-shadow(0 8px 32px rgba(34, 197, 94, 0.2))'
+                  }}
+                />
+              </div>
             </div>
           </div>
 
