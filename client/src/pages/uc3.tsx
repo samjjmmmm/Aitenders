@@ -235,7 +235,7 @@ export default function UC3Page() {
       {/* Header/Navbar */}
       <Header />
       {/* Hero Section - Professional SaaS Design */}
-      <section className="py-12 md:py-16 lg:py-20 xl:py-24 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-white via-slate-50/30 to-purple-50/20 relative overflow-hidden">
+      <section className="py-16 md:py-24 lg:py-32 xl:py-40 px-8 md:px-12 lg:px-16 xl:px-20 bg-gradient-to-br from-white via-slate-50/30 to-purple-50/20 relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Large flowing gradient blob - top left */}
@@ -264,11 +264,11 @@ export default function UC3Page() {
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 xl:gap-32 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 lg:gap-28 xl:gap-36 items-center">
             
             {/* Left Side - Content */}
-            <div className="text-left">
-              <div className="mb-12">
+            <div className="text-left max-w-2xl">
+              <div className="mb-16">
                 <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-purple-50 to-purple-100/80 text-purple-800 border-purple-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Maitrisez Vos Offres Complexes</Badge>
                 
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
@@ -340,8 +340,8 @@ export default function UC3Page() {
             </div>
 
             {/* Right Side - Lottie Animation Hero Visual */}
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-2xl h-[600px]">
+            <div className="flex justify-center lg:justify-end lg:pl-8">
+              <div className="relative w-full max-w-2xl h-[600px] lg:ml-8">
                 <Lottie 
                   animationData={lottieAnimation}
                   loop={true}
