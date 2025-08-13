@@ -25,7 +25,7 @@ import colasLogo from "@assets/Colas_1753711339292.png";
 
 // Import hero image
 import heroImage from "@assets/Dell XPS 15__1754046364427.png";
-import containerUc1Image from "@assets/Container_1755077625603.png";
+import containerUc1Image from "@assets/Pressure Measurement Detail View_1755078619377.png";
 import ChatSection from "@/components/chat-section";
 import ChatInterface from "@/components/chat-interface";
 import ToppingModal from "@/components/topping-modal";
