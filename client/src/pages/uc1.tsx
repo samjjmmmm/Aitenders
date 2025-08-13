@@ -25,7 +25,7 @@ import colasLogo from "@assets/Colas_1753711339292.png";
 
 // Import hero image
 import heroImage from "@assets/Dell XPS 15__1754046364427.png";
-import containerUc1Image from "@assets/Pressure Measurement Detail View_1755079516857.png";
+import containerUc1Image from "@assets/&ST_1755090032624.png";
 import containerUc1SecondImage from "@assets/2ND_1755082953938.png";
 import ChatSection from "@/components/chat-section";
 import ChatInterface from "@/components/chat-interface";
@@ -609,7 +609,7 @@ export default function UC1Page() {
           </div>
 
           {/* Feature 1: Structuration IA immédiate - Text Left, Card Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 lg:gap-32 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-1">
               <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdFlashOn className="w-10 h-10 text-white" />
@@ -629,7 +629,7 @@ export default function UC1Page() {
               </p>
             </div>
             <div className="order-2">
-              <div className="flex justify-center items-center h-full pl-12 pr-8 py-8">
+              <div className="flex justify-center items-center h-full pl-20 pr-8 py-8">
                 <img 
                   src={containerUc1Image}
                   alt="Analyse IA - Résumé projet"
