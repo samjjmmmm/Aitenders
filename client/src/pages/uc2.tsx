@@ -28,6 +28,7 @@ import Lottie from 'lottie-react';
 import wow1Uc2Animation from '../assets/wow-1-uc2.json';
 import wow2Uc2Animation from '../assets/wow-2-uc2.json';
 import wow3Uc2Animation from '../assets/wow-3-uc2.json';
+import uc2FirstFeatureImage from "@assets/uc 2-1_1755101484948.png";
 
 export default function UC2Page() {
   // Target audience data with interactive content - UC2 adapted
@@ -582,11 +583,10 @@ export default function UC2Page() {
             </div>
             <div className="order-2">
               <div className="flex justify-center items-center h-full">
-                <Lottie 
-                  animationData={wow1Uc2Animation}
-                  loop={true}
-                  autoplay={true}
-                  className="w-full h-full max-w-[400px] max-h-[400px]"
+                <img 
+                  src={uc2FirstFeatureImage}
+                  alt="Analyse IA - Progression structuration et catégorisation"
+                  className="w-full h-auto max-w-[400px] rounded-3xl shadow-2xl"
                   style={{ 
                     transform: 'scale(1.5)',
                     filter: 'drop-shadow(0 8px 32px rgba(59, 130, 246, 0.2))'
