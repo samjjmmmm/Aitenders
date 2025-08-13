@@ -588,7 +588,7 @@ export default function UC2Page() {
                   alt="Analyse IA - Progression structuration et catégorisation"
                   className="w-full h-auto max-w-[400px] rounded-3xl shadow-2xl"
                   style={{ 
-                    transform: 'scale(1.5)',
+                    transform: 'scale(1.0)',
                     filter: 'drop-shadow(0 8px 32px rgba(59, 130, 246, 0.2))'
                   }}
                 />
