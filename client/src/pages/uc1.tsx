@@ -27,6 +27,7 @@ import colasLogo from "@assets/Colas_1753711339292.png";
 import heroImage from "@assets/Dell XPS 15__1754046364427.png";
 import containerUc1Image from "@assets/&ST_1755090032624.png";
 import containerUc1SecondImage from "@assets/2ND_1755082953938.png";
+import containerUc1ThirdImage from "@assets/3RD_1755095206907.png";
 import ChatSection from "@/components/chat-section";
 import ChatInterface from "@/components/chat-interface";
 import ToppingModal from "@/components/topping-modal";
@@ -697,35 +698,17 @@ export default function UC1Page() {
               </p>
             </div>
             <div className="order-2">
-              <Card className="p-10 bg-gradient-to-br from-green-50 to-emerald-100 border border-green-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
-                   style={{
-                     boxShadow: '0 25px 50px -12px rgba(34, 197, 94, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-                   }}>
-                <div className="bg-white rounded-xl p-4 border border-green-200 shadow-sm">
-                  <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Validation Guidée</h4>
-                    <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-                      <MdSecurity className="w-4 h-4 text-green-600" />
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Processus structuré</span>
-                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Actif</span>
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Traçabilité complète</span>
-                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Documenté</span>
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Dossier conformité</span>
-                      <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
-                        <MdVerified className="w-3 h-3 text-white" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Card>
+              <div className="flex justify-center items-center h-full pl-20 pr-8 py-8">
+                <img 
+                  src={containerUc1ThirdImage}
+                  alt="Validation IA - Interface de validation"
+                  className="w-full h-auto max-w-[500px] rounded-3xl shadow-2xl"
+                  style={{
+                    transform: 'scale(0.67)',
+                    filter: 'drop-shadow(0 25px 50px rgba(34, 197, 94, 0.15))'
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
