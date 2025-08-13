@@ -644,7 +644,7 @@ export default function UC1Page() {
           </div>
 
           {/* Feature 2: Synthèse visuelle claire - Text Right, Card Left */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 lg:gap-32 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-2 lg:order-1">
               <div className="flex justify-center items-center h-full pl-20 pr-8 py-8">
                 <img 
