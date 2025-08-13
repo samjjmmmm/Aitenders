@@ -25,6 +25,7 @@ import colasLogo from "@assets/Colas_1753711339292.png";
 
 // Import hero image
 import heroImage from "@assets/Dell XPS 15__1754046364427.png";
+import containerUc1Image from "@assets/Container_1755077476265.png";
 import ChatSection from "@/components/chat-section";
 import ChatInterface from "@/components/chat-interface";
 import ToppingModal from "@/components/topping-modal";
@@ -627,35 +628,16 @@ export default function UC1Page() {
               </p>
             </div>
             <div className="order-2">
-              <Card className="p-10 bg-gradient-to-br from-blue-50 to-indigo-100 border border-blue-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
-                   style={{
-                     boxShadow: '0 25px 50px -12px rgba(59, 130, 246, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-                   }}>
-                <div className="bg-white rounded-xl p-4 border border-blue-200 shadow-sm">
-                  <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Bid Generation</h4>
-                    <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <MdFlashOn className="w-4 h-4 text-blue-600" />
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Technical response ready</span>
-                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Complete</span>
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
-                      <span className="text-sm text-gray-700">Commercial proposal generated</span>
-                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">90%</span>
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-orange-50 rounded-lg border border-orange-200">
-                      <span className="text-sm text-gray-700">Final review pending</span>
-                      <div className="w-4 h-4 bg-orange-500 rounded-full flex items-center justify-center">
-                        <MdAccessTime className="w-3 h-3 text-white" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Card>
+              <div className="flex justify-center items-center h-full">
+                <img 
+                  src={containerUc1Image}
+                  alt="Analyse IA - Résumé projet"
+                  className="w-full h-auto max-w-[500px] rounded-3xl shadow-2xl"
+                  style={{
+                    filter: 'drop-shadow(0 25px 50px rgba(59, 130, 246, 0.15))'
+                  }}
+                />
+              </div>
             </div>
           </div>
 
