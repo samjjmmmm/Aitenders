@@ -635,7 +635,7 @@ export default function UC1Page() {
                   alt="Analyse IA - Résumé projet"
                   className="w-full h-auto max-w-[500px] rounded-3xl shadow-2xl"
                   style={{
-                    transform: 'scale(2.0)',
+                    transform: 'scale(1.33)',
                     filter: 'drop-shadow(0 25px 50px rgba(59, 130, 246, 0.15))'
                   }}
                 />
