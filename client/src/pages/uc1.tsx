@@ -704,7 +704,7 @@ export default function UC1Page() {
                   alt="Validation IA - Interface de validation"
                   className="w-full h-auto max-w-[500px] rounded-3xl shadow-2xl"
                   style={{
-                    transform: 'scale(0.67)',
+                    transform: 'scale(1.0)',
                     filter: 'drop-shadow(0 25px 50px rgba(34, 197, 94, 0.15))'
                   }}
                 />
