@@ -628,13 +628,13 @@ export default function UC1Page() {
               </p>
             </div>
             <div className="order-2">
-              <div className="flex justify-center items-center h-full">
+              <div className="flex justify-center items-center h-full p-8">
                 <img 
                   src={containerUc1Image}
                   alt="Analyse IA - Résumé projet"
                   className="w-full h-auto max-w-[500px] rounded-3xl shadow-2xl"
                   style={{
-                    transform: 'scale(1.0)',
+                    transform: 'scale(1.5)',
                     filter: 'drop-shadow(0 25px 50px rgba(59, 130, 246, 0.15))'
                   }}
                 />
