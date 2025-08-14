@@ -28,7 +28,7 @@ import ChatInterface from "@/components/chat-interface";
 import Lottie from 'lottie-react';
 import lottieAnimation from '../assets/UC-3_1755004661252.json';
 import wow1Animation from '../assets/wow-1.json';
-import wow2Animation from '../assets/wow-2.json';
+import wow2Animation from '../assets/wow-2-uc3-updated.json';
 import wow3Animation from '../assets/wow-3.json';
 import uc3FirstFeatureImage from "@assets/33_1755170264011.png";
 
