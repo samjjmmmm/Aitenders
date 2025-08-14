@@ -555,11 +555,11 @@ export default function UC3Page() {
                 <img 
                   src={uc3ThirdFeatureImage}
                   alt="Pilotage des évolutions - Détection automatique des changements"
-                  className="w-full h-auto max-w-[280px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[500px] rounded-2xl shadow-2xl"
+                  className="w-full h-auto max-w-[280px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[500px]"
                   style={{ 
                     transform: 'scale(1.4)',
-                    filter: 'drop-shadow(0 8px 32px rgba(34, 197, 94, 0.2))',
-                    objectFit: 'contain'
+                    objectFit: 'contain',
+                    backgroundColor: 'transparent'
                   }}
                 />
               </div>
