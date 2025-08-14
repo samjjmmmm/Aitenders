@@ -488,6 +488,9 @@ export default function UC1Page() {
                   loop={true}
                   autoplay={true}
                   className="w-full h-auto max-w-none"
+                  style={{
+                    transform: 'scale(1.5)'
+                  }}
                 />
               </div>
             </div>
