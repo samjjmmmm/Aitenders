@@ -481,13 +481,13 @@ export default function UC1Page() {
             </div>
 
             {/* Right Side - Hero Animation */}
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative w-full">
+            <div className="flex justify-center lg:justify-end items-center">
+              <div className="relative w-full flex justify-center">
                 <Lottie 
                   animationData={heroAnimation}
                   loop={true}
                   autoplay={true}
-                  className="w-full h-auto max-w-none"
+                  className="w-full h-auto max-w-lg"
                   style={{
                     transform: 'scale(1.5)'
                   }}
