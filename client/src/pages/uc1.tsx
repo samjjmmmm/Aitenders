@@ -24,7 +24,7 @@ import bouyguesLogo from "@assets/Bouyges_1753711339292.png";
 import colasLogo from "@assets/Colas_1753711339292.png";
 
 // Import hero image
-import heroImage from "@assets/Dell XPS 15__1754046364427.png";
+import heroAnimation from '../assets/hero-uc1-animation.json';
 import containerUc1Image from "@assets/&ST_1755090032624.png";
 import containerUc1SecondImage from "@assets/2ND_1755082953938.png";
 import containerUc1ThirdImage from "@assets/3RD_1755095206907.png";
@@ -32,6 +32,7 @@ import ChatSection from "@/components/chat-section";
 import ChatInterface from "@/components/chat-interface";
 import ToppingModal from "@/components/topping-modal";
 import { AitendersSimulatorFinal } from "@/components/aitenders-simulator-final";
+import Lottie from 'lottie-react';
 
 export default function UC1Page() {
   const [selectedTopping, setSelectedTopping] = useState<any>(null);
@@ -479,12 +480,13 @@ export default function UC1Page() {
               </div>
             </div>
 
-            {/* Right Side - Hero Image */}
+            {/* Right Side - Hero Animation */}
             <div className="flex justify-center lg:justify-end">
               <div className="relative w-full">
-                <img 
-                  src={heroImage}
-                  alt="Aitenders Document Review Interface"
+                <Lottie 
+                  animationData={heroAnimation}
+                  loop={true}
+                  autoplay={true}
                   className="w-full h-auto max-w-none"
                 />
               </div>
