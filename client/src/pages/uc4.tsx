@@ -617,7 +617,7 @@ export default function UC4Page() {
                   alt="Accès ciblé aux clauses critiques - Interface de recherche contractuelle"
                   className="w-full h-auto max-w-[280px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[500px] rounded-2xl shadow-2xl"
                   style={{ 
-                    transform: 'scale(1.4)',
+                    transform: 'scale(0.5)',
                     filter: 'drop-shadow(0 8px 32px rgba(16, 185, 129, 0.2))',
                     objectFit: 'contain'
                   }}
