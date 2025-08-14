@@ -30,6 +30,7 @@ import wow2Uc2Animation from '../assets/wow-2-uc2.json';
 import wow3Uc2Animation from '../assets/wow-3-uc2.json';
 import uc2FirstFeatureImage from "@assets/uc 2-1_1755101484948.png";
 import uc2SecondFeatureImage from "@assets/Group 75_1755160285095.png";
+import uc2ThirdFeatureImage from "@assets/UC22_1755163044585.png";
 
 export default function UC2Page() {
   // Target audience data with interactive content - UC2 adapted
@@ -652,15 +653,15 @@ export default function UC2Page() {
               </p>
             </div>
             <div className="order-2">
-              <div className="flex justify-center items-center h-full">
-                <Lottie 
-                  animationData={wow3Uc2Animation}
-                  loop={true}
-                  autoplay={true}
-                  className="w-full h-full max-w-[400px] max-h-[400px]"
+              <div className="flex justify-center items-center h-full px-4 sm:px-6 lg:px-8">
+                <img 
+                  src={uc2ThirdFeatureImage}
+                  alt="Analyse IA - Pilotez chaque évolution contractuelle"
+                  className="w-full h-auto max-w-[280px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[500px] rounded-2xl shadow-2xl"
                   style={{ 
-                    transform: 'scale(1.5)',
-                    filter: 'drop-shadow(0 8px 32px rgba(34, 197, 94, 0.2))'
+                    transform: 'scale(1.4)',
+                    filter: 'drop-shadow(0 8px 32px rgba(34, 197, 94, 0.2))',
+                    objectFit: 'contain'
                   }}
                 />
               </div>
