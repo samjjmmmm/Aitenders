@@ -583,14 +583,15 @@ export default function UC2Page() {
               </p>
             </div>
             <div className="order-2">
-              <div className="flex justify-center items-center h-full">
+              <div className="flex justify-center items-center h-full px-4 sm:px-6 lg:px-8">
                 <img 
                   src={uc2FirstFeatureImage}
                   alt="Analyse IA - Progression structuration et catégorisation"
-                  className="w-full h-auto max-w-[400px] rounded-3xl shadow-2xl"
+                  className="w-full h-auto max-w-[280px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[500px] rounded-2xl shadow-2xl"
                   style={{ 
-                    transform: 'scale(2.0)',
-                    filter: 'drop-shadow(0 8px 32px rgba(59, 130, 246, 0.2))'
+                    transform: 'scale(1.4)',
+                    filter: 'drop-shadow(0 8px 32px rgba(59, 130, 246, 0.2))',
+                    objectFit: 'contain'
                   }}
                 />
               </div>
