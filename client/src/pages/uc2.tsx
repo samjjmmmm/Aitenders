@@ -523,8 +523,8 @@ export default function UC2Page() {
         </div>
       </section>
 
-      {/* Solution Section - Alternating Layout Design */}
-      <section className="py-32 px-8 bg-gradient-to-br from-white via-slate-50/20 to-white relative overflow-hidden">
+      {/* Features Section - Professional Card Grid Layout */}
+      <section className="py-16 md:py-24 px-4 bg-gradient-to-br from-white via-slate-50/20 to-white relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Large flowing accent - top center */}
@@ -553,11 +553,13 @@ export default function UC2Page() {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-12 md:mb-16 lg:mb-20">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-blue-600">copilote IA</span> qui sécurise la gestion de vos projets moyens</h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
-              Découvrez, pilotez et sécurisez chaque clause dès le premier jour. 
-
+          {/* Section Header */}
+          <div className="text-center mb-12">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-4 md:mb-6 leading-tight tracking-tight">
+              Votre <span className="text-blue-600">copilote IA</span> qui sécurise la gestion de vos projets moyens
+            </h1>
+            <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
+              Découvrez, pilotez et sécurisez chaque clause dès le premier jour.
             </p>
           </div>
 
@@ -595,6 +597,120 @@ export default function UC2Page() {
                 />
               </div>
             </div>
+          </div>
+
+          {/* Features Grid - Responsive: 1 col mobile, 2 col tablet, 3 col desktop */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            
+            {/* Feature Card 1: Structuration IA */}
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 md:p-8 h-full flex flex-col">
+              <div className="space-y-6 flex-1">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
+                  <MdFlashOn className="w-8 h-8 text-white" />
+                </div>
+                
+                <div className="space-y-4">
+                  <h3 className="text-xl md:text-2xl font-semibold text-gray-900 leading-tight">
+                    Structuration automatique du périmètre <span style={{ color: '#FF6A00' }}>dès le jour 1</span>
+                  </h3>
+                  
+                  <div className="aspect-[4320/3006] w-full mb-4 rounded-xl overflow-hidden shadow-md">
+                    <img 
+                      src={uc2FirstFeatureImage}
+                      alt="Analyse IA - Progression structuration et catégorisation"
+                      className="w-full h-full object-contain"
+                      style={{ 
+                        filter: 'drop-shadow(0 4px 16px rgba(59, 130, 246, 0.1))'
+                      }}
+                    />
+                  </div>
+                  
+                  <p className="text-base md:text-lg text-gray-600 leading-relaxed" style={{ maxWidth: '68ch' }}>
+                    Grâce à l'IA d'Aitenders, vos documents sont instantanément segmentés et organisés : lots, sous‑ensembles et critères contractuels sont classés et hiérarchisés en quelques minutes.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="mt-6 pt-4 border-t border-gray-100">
+                <p className="text-sm md:text-base font-semibold text-blue-600">
+                  Une vision consolidée et priorisée, prête dès le premier jour !
+                </p>
+              </div>
+            </div>
+
+            {/* Feature Card 2: Contrôle clause critique */}
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 md:p-8 h-full flex flex-col">
+              <div className="space-y-6 flex-1">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center shadow-lg">
+                  <MdGroups className="w-8 h-8 text-white" />
+                </div>
+                
+                <div className="space-y-4">
+                  <h3 className="text-xl md:text-2xl font-semibold text-gray-900 leading-tight">
+                    Contrôlez chaque <span style={{ color: '#FF6A00' }}>clause critique</span> de votre projet
+                  </h3>
+                  
+                  <div className="aspect-[4320/3006] w-full mb-4 rounded-xl overflow-hidden shadow-md">
+                    <img 
+                      src={uc2SecondFeatureImage}
+                      alt="Analyse IA - Contrôlez chaque clause critique"
+                      className="w-full h-full object-contain"
+                      style={{ 
+                        filter: 'drop-shadow(0 4px 16px rgba(251, 146, 60, 0.1))'
+                      }}
+                    />
+                  </div>
+                  
+                  <p className="text-base md:text-lg text-gray-600 leading-relaxed" style={{ maxWidth: '68ch' }}>
+                    Aitenders identifie et hiérarchise automatiquement toutes les clauses sensibles : responsabilités, engagements, pénalités et conditions critiques.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="mt-6 pt-4 border-t border-gray-100">
+                <p className="text-sm md:text-base font-semibold text-orange-600">
+                  Une validation contractuelle proactive, dès le jour 1
+                </p>
+              </div>
+            </div>
+
+            {/* Feature Card 3: Évolution contractuelle */}
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 md:p-8 h-full flex flex-col md:col-span-2 lg:col-span-1">
+              <div className="space-y-6 flex-1">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg">
+                  <MdSecurity className="w-8 h-8 text-white" />
+                </div>
+                
+                <div className="space-y-4">
+                  <h3 className="text-xl md:text-2xl font-semibold text-gray-900 leading-tight">
+                    Pilotez chaque <span style={{ color: '#FF6A00' }}>évolution contractuelle</span> en temps réel
+                  </h3>
+                  
+                  <div className="aspect-[4320/3006] w-full mb-4 rounded-xl overflow-hidden shadow-md bg-gray-50 flex items-center justify-center">
+                    <Lottie 
+                      animationData={wow3Uc2Animation}
+                      loop={true}
+                      autoplay={true}
+                      className="w-full h-full max-w-[300px] max-h-[300px]"
+                      style={{ 
+                        filter: 'drop-shadow(0 4px 16px rgba(34, 197, 94, 0.1))'
+                      }}
+                    />
+                  </div>
+                  
+                  <p className="text-base md:text-lg text-gray-600 leading-relaxed" style={{ maxWidth: '68ch' }}>
+                    Toutes vos questions-réponses, versions et ajustements documentaires sont consolidés et tracés automatiquement par l'IA.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="mt-6 pt-4 border-t border-gray-100">
+                <p className="text-sm md:text-base font-semibold text-green-600">
+                  Zéro surprise, zéro version perdue, zéro risque d'oubli
+                </p>
+              </div>
+            </div>
+
           </div>
 
           {/* Feature 2: Synthèse visuelle claire - Text Right, Card Left */}
