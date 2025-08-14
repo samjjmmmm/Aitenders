@@ -584,7 +584,7 @@ export default function UC4Page() {
                   alt="Fiche contrat intelligente - Projet Hôpital Grand Ouest"
                   className="w-full h-auto max-w-[280px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[500px] rounded-2xl shadow-2xl"
                   style={{ 
-                    transform: 'scale(1)',
+                    transform: 'scale(1.1)',
                     filter: 'drop-shadow(0 8px 32px rgba(139, 92, 246, 0.2))',
                     objectFit: 'contain'
                   }}
