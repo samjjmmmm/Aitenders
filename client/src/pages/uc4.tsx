@@ -31,6 +31,7 @@ import wow1Uc4Animation from '../assets/wow-1-uc4.json';
 import wow2Uc4Animation from '../assets/wow-2-uc4.json';
 import wow3Uc4Animation from '../assets/wow-3-uc4.json';
 import uc4SecondFeatureImage from "@assets/41_1755176709158.png";
+import uc4FirstFeatureImage from "@assets/41_1755177410587.png";
 
 export default function UC4Page() {
   // Target audience data with interactive content - UC4 adapted
@@ -577,15 +578,15 @@ export default function UC4Page() {
             </div>
 
             <div className="order-2">
-              <div className="flex justify-center items-center h-full">
-                <Lottie 
-                  animationData={wow1Uc4Animation}
-                  loop={true}
-                  autoplay={true}
-                  className="w-full h-full max-w-[400px] max-h-[400px]"
+              <div className="flex justify-center items-center h-full px-4 sm:px-6 lg:px-8">
+                <img 
+                  src={uc4FirstFeatureImage}
+                  alt="Fiche contrat intelligente - Projet Hôpital Grand Ouest"
+                  className="w-full h-auto max-w-[280px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[500px] rounded-2xl shadow-2xl"
                   style={{ 
-                    transform: 'scale(1.5)',
-                    filter: 'drop-shadow(0 8px 32px rgba(139, 92, 246, 0.2))'
+                    transform: 'scale(1)',
+                    filter: 'drop-shadow(0 8px 32px rgba(139, 92, 246, 0.2))',
+                    objectFit: 'contain'
                   }}
                 />
               </div>
