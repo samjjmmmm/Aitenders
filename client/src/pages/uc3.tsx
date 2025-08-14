@@ -31,6 +31,7 @@ import wow1Animation from '../assets/wow-1.json';
 import wow2Animation from '../assets/wow-2-uc3-updated.json';
 import wow3Animation from '../assets/wow-3.json';
 import uc3FirstFeatureImage from "@assets/33_1755170264011.png";
+import uc3ThirdFeatureImage from "@assets/333_1755176266561.png";
 
 export default function UC3Page() {
   // State for managing continuous animation loop
@@ -550,15 +551,15 @@ export default function UC3Page() {
               </div>
             </div>
             <div className="order-2">
-              <div className="flex justify-center items-center h-full">
-                <Lottie 
-                  animationData={wow3Animation}
-                  loop={true}
-                  autoplay={true}
-                  className="w-full h-full max-w-[400px] max-h-[400px]"
+              <div className="flex justify-center items-center h-full px-4 sm:px-6 lg:px-8">
+                <img 
+                  src={uc3ThirdFeatureImage}
+                  alt="Pilotage des évolutions - Détection automatique des changements"
+                  className="w-full h-auto max-w-[280px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[500px] rounded-2xl shadow-2xl"
                   style={{ 
-                    transform: 'scale(1.5)',
-                    filter: 'drop-shadow(0 8px 32px rgba(34, 197, 94, 0.2))'
+                    transform: 'scale(1.4)',
+                    filter: 'drop-shadow(0 8px 32px rgba(34, 197, 94, 0.2))',
+                    objectFit: 'contain'
                   }}
                 />
               </div>
