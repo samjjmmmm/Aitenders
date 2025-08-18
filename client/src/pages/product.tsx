@@ -114,28 +114,28 @@ const lifecycleStages = [
 // FAQ Data
 const faqData = [
   {
-    question: "Comment Aitenders s'intègre-t-il à nos processus existants ?",
-    answer: "La plateforme s'adapte à vos méthodes de travail actuelles, sans bouleverser vos outils ni vos équipes."
+    question: "How does Aitenders integrate with existing workflows?",
+    answer: "Aitenders integrates seamlessly with your current processes through our flexible API, Microsoft Office integration, and support for popular project management tools. Our implementation team works with you to ensure minimal disruption to your existing workflows."
   },
   {
-    question: "Quels types d'appels d'offres peut-on gérer avec Aitenders ?",
-    answer: "Tous types : marchés publics, privés, multi-lots, internationaux — quel que soit le secteur."
+    question: "What types of tenders can Aitenders handle?",
+    answer: "Aitenders is designed to handle any type of tender, from simple procurement to complex multi-billion infrastructure projects. Our AI adapts to various industries including construction, engineering, IT services, consulting, and government contracts."
   },
   {
-    question: "Nos données sont-elles sécurisées avec Aitenders ?",
-    answer: "Oui. L'infrastructure respecte des standards stricts (hébergement dédié, chiffrement, SSO, etc.)."
+    question: "How secure is our data with Aitenders?",
+    answer: "Security is our top priority. We implement enterprise-grade security measures including SOC 2 compliance, end-to-end encryption, role-based access controls, and regular security audits. Your data is isolated and protected at all times."
   },
   {
-    question: "Peut-on adapter Aitenders à notre secteur ou nos besoins spécifiques ?",
-    answer: "Oui. L'outil est modulaire et configurable selon vos enjeux métier et votre organisation."
+    question: "Can we customize Aitenders for our specific industry needs?",
+    answer: "Absolutely. Aitenders offers extensive customization options including industry-specific templates, custom scoring criteria, tailored workflows, and specialized compliance rules. Our team works closely with you to configure the platform for your unique requirements."
   },
   {
-    question: "Quel accompagnement proposez-vous lors de la mise en place ?",
-    answer: "Nous assurons un onboarding complet : cadrage, paramétrage, formation, support technique."
+    question: "What kind of support do you provide during implementation?",
+    answer: "We provide comprehensive support including dedicated implementation specialists, training sessions for your team, migration assistance for existing data, and ongoing technical support. Most clients are fully operational within 2-4 weeks."
   },
   {
-    question: "Comment mesurer le ROI d'Aitenders ?",
-    answer: "Par le temps gagné, la baisse d'erreurs, l'augmentation de réponses déposées et de taux de réussite."
+    question: "How do we measure ROI with Aitenders?",
+    answer: "Aitenders provides detailed analytics showing time savings, win rate improvements, and process efficiency gains. Most clients see a 3-5x ROI within the first year through increased win rates, faster bid preparation, and reduced manual effort."
   }
 ];
 
@@ -573,7 +573,116 @@ const ProductPage = () => {
         </div>
       </section>
 
-      
+      {/* 3A. ENTERPRISE SECURITY BANNER */}
+      <section 
+        style={{ 
+          background: "#FFFFFF",
+          padding: "6rem 0",
+          color: "#0F172A",
+          textAlign: "center",
+          position: "relative",
+          overflow: "hidden"
+        }}
+      >
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-10 -right-20 w-60 h-60 bg-gradient-to-br from-blue-400/10 to-indigo-400/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 -left-20 w-60 h-60 bg-gradient-to-br from-purple-400/10 to-pink-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
+        </div>
+
+        <div className="grid-container relative">
+          <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+            <h3 
+              style={{ 
+                fontSize: "1.75rem", 
+                fontWeight: "700", 
+                marginBottom: "1rem",
+                color: "#0F172A"
+              }}
+            >
+              Enterprise-grade security
+            </h3>
+            <p 
+              style={{ 
+                fontSize: "1.2rem", 
+                opacity: "0.8",
+                lineHeight: "1.6",
+                marginBottom: "2rem",
+                maxWidth: "600px",
+                margin: "0 auto 2rem",
+                color: "#374151"
+              }}
+            >
+              Aitenders is built for high-stakes industries. With end-to-end encryption, role-based access, and full audit trails, your data and workflows stay secure and compliant from day one.
+            </p>
+            <div className="flex justify-center gap-6 flex-wrap">
+              <div style={{ 
+                backgroundColor: "#F3F4F6", 
+                padding: "1rem 1.5rem", 
+                borderRadius: "12px",
+                border: "1px solid #E5E7EB"
+              }}>
+                <div style={{ fontWeight: "700", fontSize: "1rem", color: "#1F2937" }}>SOC 2 Type II</div>
+              </div>
+              <div style={{ 
+                backgroundColor: "#F3F4F6", 
+                padding: "1rem 1.5rem", 
+                borderRadius: "12px",
+                border: "1px solid #E5E7EB"
+              }}>
+                <div style={{ fontWeight: "700", fontSize: "1rem", color: "#1F2937" }}>GDPR compliant</div>
+              </div>
+              <div style={{ 
+                backgroundColor: "#F3F4F6", 
+                padding: "1rem 1.5rem", 
+                borderRadius: "12px",
+                border: "1px solid #E5E7EB"
+              }}>
+                <div style={{ fontWeight: "700", fontSize: "1rem", color: "#1F2937" }}>ISO 27001-ready</div>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div style={{ textAlign: "center" }}>
+            <h3 
+              style={{ 
+                fontSize: "2rem", 
+                fontWeight: "700", 
+                color: "#0F172A",
+                marginBottom: "2rem"
+              }}
+            >
+              Ready to transform your tender process?
+            </h3>
+            <button 
+              style={{ 
+                background: "linear-gradient(135deg, #3880E8 0%, #2563EB 100%)", 
+                color: "#FFFFFF",
+                padding: "1.25rem 3rem",
+                borderRadius: "16px",
+                fontWeight: "700",
+                fontSize: "1.125rem",
+                border: "none",
+                cursor: "pointer",
+                boxShadow: "0 16px 40px rgba(56,128,232,0.4), 0 4px 0 rgba(255,255,255,0.2) inset",
+                transition: "all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+                letterSpacing: "0.3px"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-4px) scale(1.05)";
+                e.currentTarget.style.boxShadow = "0 24px 50px rgba(56,128,232,0.5), 0 4px 0 rgba(255,255,255,0.25) inset";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0) scale(1)";
+                e.currentTarget.style.boxShadow = "0 16px 40px rgba(56,128,232,0.4), 0 4px 0 rgba(255,255,255,0.2) inset";
+              }}
+            >
+              Request a Demo
+            </button>
+          </div>
+        </div>
+      </section>
 
       {/* 3B. COMPARISON SECTION */}
       {/* <ComparisonSection /> */}
@@ -941,7 +1050,7 @@ const ProductPage = () => {
                 marginBottom: "1rem"
               }}
             >
-              Vos questions sur Aitenders
+              Frequently Asked Questions
             </h2>
             <p 
               style={{
@@ -951,7 +1060,7 @@ const ProductPage = () => {
                 margin: "0 auto"
               }}
             >
-              Obtenez des réponses aux questions courantes sur la mise en œuvre et les fonctionnalités d'Aitenders.
+              Get answers to common questions about Aitenders implementation and features.
             </p>
           </div>
 
