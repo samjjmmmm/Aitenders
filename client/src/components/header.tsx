@@ -106,17 +106,9 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
         </div>
       </div>
 
-      {/* Menu Backdrop - No blur, just background coverage */}
-      {isMenuOpen && (
-        <div 
-          className="fixed inset-0 bg-white z-40"
-          onClick={closeMenu}
-        />
-      )}
-
       {/* Slide-out Menu - Only render when needed */}
       {isMenuOpen && (
-        <div className="fixed top-0 right-0 h-full w-80 bg-aitenders-white-blue shadow-2xl transform translate-x-0 transition-transform duration-300 ease-in-out z-50 animate-in slide-in-from-right">
+        <div className="fixed top-0 right-0 h-full w-80 bg-aitenders-white-blue shadow-2xl transform translate-x-0 transition-transform duration-300 ease-in-out z-30 animate-in slide-in-from-right">
         <div className="p-6">
           <div className="flex justify-between items-center mb-8">
             <span className="text-xl font-bold text-aitenders-black">Menu</span>
