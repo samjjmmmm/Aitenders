@@ -1152,7 +1152,7 @@ const ProductPage = () => {
               margin: "0 auto 1.5rem"
             }}
           >
-            Ready to Win Your Next Tender with AI?
+            Structurez vos appels d'offres. Alignez vos équipes. Livrez sans erreur.
           </h2>
           <p 
             style={{
