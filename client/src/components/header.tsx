@@ -129,11 +129,11 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
             </Button>
           </div>
           
-          <nav className="space-y-6">
+          <nav className="space-y-4">
             {/* Home Button */}
             <Link href="/">
               <div 
-                className="flex items-center text-lg text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors cursor-pointer"
+                className="flex items-center py-2 text-lg text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors cursor-pointer"
                 onClick={closeMenu}
               >
                 <Home className="w-5 h-5 mr-3" />
@@ -141,16 +141,18 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
               </div>
             </Link>
             
-            <a 
-              href="#products" 
-              className="block text-lg text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors"
-              onClick={closeMenu}
-            >
-              Products
-            </a>
+            <div className="py-2">
+              <a 
+                href="#products" 
+                className="block text-lg text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors"
+                onClick={closeMenu}
+              >
+                Products
+              </a>
+            </div>
             
             {/* Use Cases with Dropdown */}
-            <div className="space-y-2">
+            <div className="py-2">
               <div 
                 className="flex items-center justify-between text-lg text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors cursor-pointer"
                 onClick={() => setIsUseCasesOpen(!isUseCasesOpen)}
@@ -212,31 +214,37 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
               )}
             </div>
             
-            <Link href="/word-addon">
-              <div 
-                className="block text-lg text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors cursor-pointer"
+            <div className="py-2">
+              <Link href="/word-addon">
+                <div 
+                  className="block text-lg text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors cursor-pointer"
+                  onClick={closeMenu}
+                >
+                  Word Add-in
+                </div>
+              </Link>
+            </div>
+            
+            <div className="py-2">
+              <Link href="/privacy">
+                <div 
+                  className="block text-lg text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors cursor-pointer"
+                  onClick={closeMenu}
+                >
+                  Privacy
+                </div>
+              </Link>
+            </div>
+            
+            <div className="py-2">
+              <a 
+                href="#about" 
+                className="block text-lg text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors"
                 onClick={closeMenu}
               >
-                Word Add-in
-              </div>
-            </Link>
-            
-            <Link href="/privacy">
-              <div 
-                className="block text-lg text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors cursor-pointer"
-                onClick={closeMenu}
-              >
-                Privacy
-              </div>
-            </Link>
-            
-            <a 
-              href="#about" 
-              className="block text-lg text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors"
-              onClick={closeMenu}
-            >
-              About Us
-            </a>
+                About Us
+              </a>
+            </div>
             
             <div className="pt-6 border-t border-aitenders-light-blue">
               <div className="space-y-4 text-sm text-aitenders-dark-blue">
