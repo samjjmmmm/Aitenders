@@ -436,7 +436,7 @@ const ProductPage = () => {
                 Win More Tenders,{" "}
                 <span className="relative">
                   <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                    Spend Less Time
+                    Simplifiez votre gestion des appels d'offres et réduisez les risques d'erreurs
                   </span>
                   <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-600/30 to-indigo-600/30 rounded-full"></div>
                 </span>
