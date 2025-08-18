@@ -834,73 +834,76 @@ export default function UC1Page() {
 
         {/* KPI Grid */}
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 xl:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
 
-            {/* KPI 1 */}
+            {/* KPI 1 - Time Reduction */}
             <div className="group">
-              <div className="bg-white rounded-2xl p-8 lg:p-10 text-center border border-slate-200/60 hover:border-emerald-300/60 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-100/50 transform hover:-translate-y-3 h-full flex flex-col justify-between min-h-[280px] lg:min-h-[300px] relative overflow-hidden">
-                {/* Subtle background gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/40 via-green-25/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500"></div>
+              <div className="bg-white rounded-3xl p-8 text-center border border-gray-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-xl shadow-lg h-full flex flex-col justify-between min-h-[260px] relative">
+                {/* Clean background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/30 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
                 {/* Icon */}
                 <div className="relative z-10 mb-6">
-                  <div className="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center shadow-lg shadow-emerald-200/50 group-hover:scale-110 transition-transform duration-300">
-                    <MdAccessTime className="w-7 h-7 text-white" />
+                  <div className="w-16 h-16 mx-auto rounded-2xl bg-emerald-500 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
+                    <MdAccessTime className="w-8 h-8 text-white" />
                   </div>
                 </div>
                 
                 {/* Metric */}
                 <div className="relative z-10 flex-1 flex flex-col justify-center">
-                  <div className="text-5xl lg:text-6xl xl:text-7xl font-black text-slate-800 mb-6 leading-none tracking-tight group-hover:text-emerald-700 transition-colors duration-300">
+                  <div className="text-4xl lg:text-5xl font-bold text-emerald-600 mb-4 leading-tight tracking-tight">
                     -50% à -70%
                   </div>
-                  <p className="text-lg lg:text-xl text-slate-600 font-medium leading-snug max-w-[220px] mx-auto">Réduction du temps d'analyse</p>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">Gain de temps</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">Réduction du temps d'analyse des documents</p>
                 </div>
               </div>
             </div>
 
-            {/* KPI 2 */}
+            {/* KPI 2 - Quality Assurance */}
             <div className="group">
-              <div className="bg-white rounded-2xl p-8 lg:p-10 text-center border border-slate-200/60 hover:border-blue-300/60 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-100/50 transform hover:-translate-y-3 h-full flex flex-col justify-between min-h-[280px] lg:min-h-[300px] relative overflow-hidden">
-                {/* Subtle background gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 via-cyan-25/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500"></div>
+              <div className="bg-white rounded-3xl p-8 text-center border border-gray-200 hover:border-blue-300 transition-all duration-300 hover:shadow-xl shadow-lg h-full flex flex-col justify-between min-h-[260px] relative">
+                {/* Clean background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
                 {/* Icon */}
                 <div className="relative z-10 mb-6">
-                  <div className="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center shadow-lg shadow-blue-200/50 group-hover:scale-110 transition-transform duration-300">
-                    <MdVerified className="w-7 h-7 text-white" />
+                  <div className="w-16 h-16 mx-auto rounded-2xl bg-blue-500 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
+                    <MdVerified className="w-8 h-8 text-white" />
                   </div>
                 </div>
                 
                 {/* Metric */}
                 <div className="relative z-10 flex-1 flex flex-col justify-center">
-                  <div className="text-5xl lg:text-6xl xl:text-7xl font-black text-slate-800 mb-6 leading-none tracking-tight group-hover:text-blue-700 transition-colors duration-300">
+                  <div className="text-4xl lg:text-5xl font-bold text-blue-600 mb-4 leading-tight tracking-tight">
                     100%
                   </div>
-                  <p className="text-lg lg:text-xl text-slate-600 font-medium leading-snug max-w-[220px] mx-auto">des critères critiques vérifiés et documentés</p>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">Conformité</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">Critères critiques vérifiés et documentés</p>
                 </div>
               </div>
             </div>
 
-            {/* KPI 3 */}
-            <div className="group">
-              <div className="bg-white rounded-2xl p-8 lg:p-10 text-center border border-slate-200/60 hover:border-amber-300/60 transition-all duration-500 hover:shadow-2xl hover:shadow-amber-100/50 transform hover:-translate-y-3 h-full flex flex-col justify-between min-h-[280px] lg:min-h-[300px] relative overflow-hidden">
-                {/* Subtle background gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-50/40 via-orange-25/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500"></div>
+            {/* KPI 3 - Peace of Mind */}
+            <div className="group md:col-span-2 lg:col-span-1">
+              <div className="bg-white rounded-3xl p-8 text-center border border-gray-200 hover:border-purple-300 transition-all duration-300 hover:shadow-xl shadow-lg h-full flex flex-col justify-between min-h-[260px] relative">
+                {/* Clean background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-50/30 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
                 {/* Icon */}
                 <div className="relative z-10 mb-6">
-                  <div className="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shadow-lg shadow-amber-200/50 group-hover:scale-110 transition-transform duration-300">
-                    <MdEmojiEvents className="w-7 h-7 text-white" />
+                  <div className="w-16 h-16 mx-auto rounded-2xl bg-purple-500 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
+                    <MdEmojiEvents className="w-8 h-8 text-white" />
                   </div>
                 </div>
                 
                 {/* Metric */}
                 <div className="relative z-10 flex-1 flex flex-col justify-center">
-                  <div className="text-5xl lg:text-6xl xl:text-7xl font-black text-slate-800 mb-6 leading-none tracking-tight group-hover:text-amber-700 transition-colors duration-300">
-                    +++ Sérénité
+                  <div className="text-3xl lg:text-4xl font-bold text-purple-600 mb-4 leading-tight tracking-tight">
+                    Sérénité maximale
                   </div>
-                  <p className="text-lg lg:text-xl text-slate-600 font-medium leading-snug max-w-[220px] mx-auto">Confiance renforcée du management, moins de stress, zéro escalade interne</p>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">Impact organisationnel</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">Confiance renforcée, stress réduit, zéro escalade interne</p>
                 </div>
               </div>
             </div>
