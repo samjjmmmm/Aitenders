@@ -108,7 +108,7 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
 
       {/* Slide-out Menu - Only render when needed */}
       {isMenuOpen && (
-        <div className="fixed top-0 right-0 h-full w-80 bg-aitenders-white-blue shadow-2xl transform translate-x-0 transition-transform duration-300 ease-in-out z-30 animate-in slide-in-from-right">
+        <div className="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform translate-x-0 transition-transform duration-300 ease-in-out z-30 animate-in slide-in-from-right border-l border-gray-200">
         <div className="p-6">
           <div className="flex justify-between items-center mb-8">
             <span className="text-xl font-bold text-aitenders-black">Menu</span>
