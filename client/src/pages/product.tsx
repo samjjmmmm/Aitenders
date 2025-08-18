@@ -720,7 +720,7 @@ const ProductPage = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg mr-6">
                   <Search className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-slate-900">🔍 Analyse</h3>
+                <h3 className="text-3xl md:text-4xl font-bold text-slate-900">Analyse</h3>
               </div>
               <h4 className="text-xl font-semibold text-blue-600 mb-4">Lire plus vite. Identifier l'essentiel.</h4>
               <p className="text-lg text-slate-600 leading-relaxed mb-6">
@@ -728,7 +728,7 @@ const ProductPage = () => {
               </p>
               <div className="flex items-center text-lg font-semibold text-green-600">
                 <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>
-                🔄 Ce que ça change : Qualification plus rapide, réduction des erreurs, meilleure visibilité sur les risques.
+                Ce que ça change : Qualification plus rapide, réduction des erreurs, meilleure visibilité sur les risques.
               </div>
             </div>
             <div className="flex justify-center">
@@ -758,7 +758,7 @@ const ProductPage = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center shadow-lg mr-6">
                   <FileText className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-slate-900">✍️ Write</h3>
+                <h3 className="text-3xl md:text-4xl font-bold text-slate-900"> Write</h3>
               </div>
               <h4 className="text-xl font-semibold text-green-600 mb-4">Répondre avec méthode. Ne pas repartir de zéro.</h4>
               <p className="text-lg text-slate-600 leading-relaxed mb-6">
@@ -766,7 +766,7 @@ const ProductPage = () => {
               </p>
               <div className="flex items-center text-lg font-semibold text-green-600">
                 <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>
-                🧠 Ce que ça change : Réponses plus cohérentes, délais de production réduits, moins de pression sur les équipes.
+                Ce que ça change : Réponses plus cohérentes, délais de production réduits, moins de pression sur les équipes.
               </div>
             </div>
           </div>
@@ -778,7 +778,7 @@ const ProductPage = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg mr-6">
                   <BarChart3 className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-slate-900">🛠 Pilot</h3>
+                <h3 className="text-3xl md:text-4xl font-bold text-slate-900">Pilot</h3>
               </div>
               <h4 className="text-xl font-semibold text-purple-600 mb-4">Suivre ce qui a été promis. Et livrer.</h4>
               <p className="text-lg text-slate-600 leading-relaxed mb-6">
@@ -786,7 +786,7 @@ const ProductPage = () => {
               </p>
               <div className="flex items-center text-lg font-semibold text-green-600">
                 <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>
-                📊 Ce que ça change : Moins de dérives projets, meilleure coordination avec le client, traçabilité complète des actions.
+                Ce que ça change : Moins de dérives projets, meilleure coordination avec le client, traçabilité complète des actions.
               </div>
             </div>
             <div className="flex justify-center">
@@ -816,7 +816,7 @@ const ProductPage = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg mr-6">
                   <Database className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-slate-900">🧠 Knowledge</h3>
+                <h3 className="text-3xl md:text-4xl font-bold text-slate-900">Knowledge</h3>
               </div>
               <h4 className="text-xl font-semibold text-orange-600 mb-4">Capitaliser sur chaque réponse. Valoriser l'expérience.</h4>
               <p className="text-lg text-slate-600 leading-relaxed mb-6">
@@ -824,7 +824,7 @@ const ProductPage = () => {
               </p>
               <div className="flex items-center text-lg font-semibold text-green-600">
                 <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>
-                🔁 Ce que ça change : Moins de travail inutile, montée en compétence accélérée, et qualité constante dans le temps.
+                Ce que ça change : Moins de travail inutile, montée en compétence accélérée, et qualité constante dans le temps.
               </div>
             </div>
           </div>
