@@ -114,28 +114,28 @@ const lifecycleStages = [
 // FAQ Data
 const faqData = [
   {
-    question: "How does Aitenders integrate with existing workflows?",
-    answer: "Aitenders integrates seamlessly with your current processes through our flexible API, Microsoft Office integration, and support for popular project management tools. Our implementation team works with you to ensure minimal disruption to your existing workflows."
+    question: "Comment Aitenders s'intègre-t-il à nos processus existants ?",
+    answer: "La plateforme s'adapte à vos méthodes de travail actuelles, sans bouleverser vos outils ni vos équipes."
   },
   {
-    question: "What types of tenders can Aitenders handle?",
-    answer: "Aitenders is designed to handle any type of tender, from simple procurement to complex multi-billion infrastructure projects. Our AI adapts to various industries including construction, engineering, IT services, consulting, and government contracts."
+    question: "Quels types d'appels d'offres peut-on gérer avec Aitenders ?",
+    answer: "Tous types : marchés publics, privés, multi-lots, internationaux — quel que soit le secteur."
   },
   {
-    question: "How secure is our data with Aitenders?",
-    answer: "Security is our top priority. We implement enterprise-grade security measures including SOC 2 compliance, end-to-end encryption, role-based access controls, and regular security audits. Your data is isolated and protected at all times."
+    question: "Nos données sont-elles sécurisées avec Aitenders ?",
+    answer: "Oui. L'infrastructure respecte des standards stricts (hébergement dédié, chiffrement, SSO, etc.)."
   },
   {
-    question: "Can we customize Aitenders for our specific industry needs?",
-    answer: "Absolutely. Aitenders offers extensive customization options including industry-specific templates, custom scoring criteria, tailored workflows, and specialized compliance rules. Our team works closely with you to configure the platform for your unique requirements."
+    question: "Peut-on adapter Aitenders à notre secteur ou nos besoins spécifiques ?",
+    answer: "Oui. L'outil est modulaire et configurable selon vos enjeux métier et votre organisation."
   },
   {
-    question: "What kind of support do you provide during implementation?",
-    answer: "We provide comprehensive support including dedicated implementation specialists, training sessions for your team, migration assistance for existing data, and ongoing technical support. Most clients are fully operational within 2-4 weeks."
+    question: "Quel accompagnement proposez-vous lors de la mise en place ?",
+    answer: "Nous assurons un onboarding complet : cadrage, paramétrage, formation, support technique."
   },
   {
-    question: "How do we measure ROI with Aitenders?",
-    answer: "Aitenders provides detailed analytics showing time savings, win rate improvements, and process efficiency gains. Most clients see a 3-5x ROI within the first year through increased win rates, faster bid preparation, and reduced manual effort."
+    question: "Comment mesurer le ROI d'Aitenders ?",
+    answer: "Par le temps gagné, la baisse d'erreurs, l'augmentation de réponses déposées et de taux de réussite."
   }
 ];
 
@@ -1050,7 +1050,7 @@ const ProductPage = () => {
                 marginBottom: "1rem"
               }}
             >
-              Frequently Asked Questions
+              Vos questions sur Aitenders
             </h2>
             <p 
               style={{
@@ -1060,7 +1060,7 @@ const ProductPage = () => {
                 margin: "0 auto"
               }}
             >
-              Get answers to common questions about Aitenders implementation and features.
+              Obtenez des réponses aux questions courantes sur la mise en œuvre et les fonctionnalités d'Aitenders.
             </p>
           </div>
 
