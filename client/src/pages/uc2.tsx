@@ -769,39 +769,24 @@ export default function UC2Page() {
                   {/* KPI 1 - 50% du temps */}
                   <div className="group">
                     <Card className="h-full p-8 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 text-center">
-                      <div className="mb-6">
-                        <div className="text-4xl md:text-5xl font-bold text-green-600 mb-2">50%</div>
-                        <h4 className="text-lg font-semibold text-gray-900">du temps d'analyse initiale</h4>
-                      </div>
-                      <p className="text-gray-600 text-sm leading-relaxed">
-                        Traval d'organisation des données et du projet réalisé immédiatement
-                      </p>
+                      <div className="text-4xl md:text-5xl font-bold text-green-600 mb-2">50%</div>
+                      <h4 className="text-lg font-semibold text-gray-900">du temps d'analyse initiale</h4>
                     </Card>
                   </div>
 
-                  {/* KPI 2 - Cohérence */}
+                  {/* KPI 2 - 100% des clauses */}
                   <div className="group">
                     <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 text-center">
-                      <div className="mb-6">
-                        <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">Cohérence</div>
-                        <h4 className="text-lg font-semibold text-gray-900">100% des clauses critiques identifiées</h4>
-                      </div>
-                      <p className="text-gray-600 text-sm leading-relaxed">
-                        Organisation homogène des réponses pour une crédibilité renforcée
-                      </p>
+                      <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">100%</div>
+                      <h4 className="text-lg font-semibold text-gray-900">des clauses critiques identifiées</h4>
                     </Card>
                   </div>
 
-                  {/* KPI 3 - 0 rejet */}
+                  {/* KPI 3 - 0 surprise */}
                   <div className="group">
                     <Card className="h-full p-8 bg-gradient-to-br from-purple-50 to-violet-50 border border-purple-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 text-center">
-                      <div className="mb-6">
-                        <div className="text-4xl md:text-5xl font-bold text-purple-600 mb-2">0</div>
-                        <h4 className="text-lg font-semibold text-gray-900">surprise, remise en cause évitée</h4>
-                      </div>
-                      <p className="text-gray-600 text-sm leading-relaxed">
-                        Aucune non-conformité formulée pour sécuriser vos soumissions
-                      </p>
+                      <div className="text-4xl md:text-5xl font-bold text-purple-600 mb-2">0</div>
+                      <h4 className="text-lg font-semibold text-gray-900">surprise, remise en cause évitée</h4>
                     </Card>
                   </div>
 
@@ -811,13 +796,10 @@ export default function UC2Page() {
                 <div className="mt-8 flex justify-center">
                   <div className="max-w-md">
                     <Card className="p-6 bg-gradient-to-br from-orange-50 to-amber-50 border border-orange-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 text-center">
-                      <div className="flex items-center justify-center mb-4">
-                        <MdTrendingUp className="w-8 h-8 text-orange-600 mr-3" />
-                        <h4 className="text-lg font-semibold text-gray-900">+ Offre plus rapide propre et compétitive</h4>
+                      <div className="flex items-center justify-center">
+                        <MdTrendingUp className="w-6 h-6 text-orange-600 mr-2" />
+                        <h4 className="text-lg font-semibold text-gray-900">Offre plus rapide propre et compétitive</h4>
                       </div>
-                      <p className="text-gray-600 text-sm leading-relaxed">
-                        Délais optimisés et qualité garantie pour maximiser vos chances de succès
-                      </p>
                     </Card>
                   </div>
                 </div>
