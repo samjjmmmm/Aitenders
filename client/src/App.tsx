@@ -13,6 +13,7 @@ import { UC5 } from "@/pages/uc5";
 import UC6Page from "@/pages/uc6";
 import UC7Page from "@/pages/uc7";
 import UC8Page from "@/pages/uc8";
+import WordAddonPage from "@/pages/word-addon";
 import PrivacyPage from "@/pages/privacy";
 import SimulatorAdmin from "@/pages/simulator-admin";
 import MailingAdmin from "@/pages/mailing-admin";
@@ -30,6 +31,7 @@ function Router() {
       <Route path="/uc6" component={UC6Page} />
       <Route path="/uc7" component={UC7Page} />
       <Route path="/uc8" component={UC8Page} />
+      <Route path="/word-addon" component={WordAddonPage} />
       <Route path="/privacy" component={PrivacyPage} />
       <Route path="/admin/simulator" component={SimulatorAdmin} />
       <Route path="/admin/mailing" component={MailingAdmin} />
