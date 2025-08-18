@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 :root {
+  /* Set a single source of truth for width (scoped var is fine) */
+  --sidebar-width: 280px;
+  
   /* Brand Colors - #112646, #FBFCFF, #3880E8, #F5F9FE, #EBF2FD, #C3D9F8, #0B1A2E */
   --background: hsl(217, 100%, 99%); /* #FBFCFF */
   --foreground: hsl(220, 62%, 9%); /* #0B1A2E */
@@ -124,5 +127,39 @@
   
   .scrollbar-visible::-webkit-scrollbar-corner {
     background: #e5e7eb;
+  }
+  
+  /* Make the existing sidebar fixed, opaque, and above content */
+  .left-sidebar {
+    position: fixed;       /* pin it */
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: var(--sidebar-width);
+    background: #0f172a;   /* solid color, no alpha */
+    opacity: 1 !important;             /* kill any previous transparency */
+    backdrop-filter: none !important;  /* kill blur/translucency */
+    mix-blend-mode: normal !important; /* prevent blending with alerts/toasts */
+    z-index: 1000;         /* above content but below modals if any */
+    border-right: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    overflow-y: auto;      /* sidebar scrolls independently if long */
+  }
+
+  /* Ensure page content never sits under the sidebar */
+  .main-content {
+    margin-left: var(--sidebar-width);
+  }
+
+  /* Keep layout sane on small screens (preserve existing mobile if present) */
+  @media (max-width: 1023px) {
+    .main-content { margin-left: 0; }
+    /* If the project already uses a drawer on mobile, keep that JS/HTML.
+       Only ensure the panel is opaque (no transparency) if it uses the same root: */
+    .left-sidebar {
+      background: #0f172a;
+      opacity: 1 !important;
+      backdrop-filter: none !important;
+    }
   }
 }
