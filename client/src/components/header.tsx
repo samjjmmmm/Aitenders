@@ -212,6 +212,15 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
               )}
             </div>
             
+            <Link href="/privacy">
+              <div 
+                className="block text-lg text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors cursor-pointer"
+                onClick={closeMenu}
+              >
+                Privacy
+              </div>
+            </Link>
+            
             <a 
               href="#about" 
               className="block text-lg text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors"
