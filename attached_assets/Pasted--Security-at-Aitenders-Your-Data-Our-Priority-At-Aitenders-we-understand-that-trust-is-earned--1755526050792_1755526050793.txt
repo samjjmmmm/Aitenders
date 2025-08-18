@@ -1,0 +1,103 @@
+🔐 Security at Aitenders
+
+Your Data, Our Priority
+
+At Aitenders, we understand that trust is earned through transparency, resilience, and best-in-class practices. Our platform is designed with enterprise-grade security in mind, offering secure infrastructure, encrypted data flows, and strong access controls—so you can focus on winning tenders and managing projects without compromise.
+
+✅ Platform Security Highlights
+🔒 Secure by Design
+
+Data Encryption in Transit: All data exchanged between your browser and our servers is encrypted using HTTPS and SFTP over SSH protocols.
+
+Isolated Workspaces: Your data is always separated from other clients, ensuring complete tenant isolation across projects and users.
+
+🏢 Infrastructure Options to Match Your Needs
+
+Multi-tenant Environment for smaller teams (Base)
+
+Dedicated Infrastructure for larger or regulated organizations (Project, Builder, Architect, Master tiers)
+
+Backups & Disaster Recovery:
+
+Daily & Monthly backups
+
+2:1 or 3:1 redundancy setups depending on tier
+
+Full restore capabilities included
+
+🔐 Access & Identity
+👤 Role-Based Access Control
+
+Admin-defined permissions ensure the right people access the right data, across your teams and business units.
+
+🔐 SSO Integration
+
+Available on Architect and Master tiers, Aitenders supports Single Sign-On (SSO) for seamless and secure access across your organization.
+
+🧷 Data Privacy & Confidentiality
+🇪🇺 EU-Based Data Hosting
+
+All customer data is securely hosted within the European Union, aligned with GDPR compliance and European data sovereignty principles.
+
+🔐 No Data Sharing or Snooping
+
+We don’t use your data to train models. Your documents remain yours—confidential, untouched, and never accessed without your permission.
+
+🛡️ Optional Database Encryption
+
+Clients on Architect or Master tiers can activate data-at-rest encryption with enterprise-grade protocols (available as a paid option).
+
+📊 Operational Security
+🧭 Service-Level Commitments (SLA)
+
+Availability SLA: 99% (Base & Project), 99.5% (Builder+)
+
+Incident Response SLA:
+
+P1 issues: Resolved in as little as 12h (Master tier)
+
+Full coverage for P1–P3 incidents with guaranteed response windows
+
+🧪 Monitoring & Maintenance
+
+24/7 infrastructure monitoring
+
+Regular patches and updates applied without disruption
+
+Optional version control & rollback for documents
+
+🔁 Data Control & Reversibility
+
+We empower clients to maintain full control over their data at every stage.
+
+Daily backups for business continuity
+
+90-day retention after contract termination
+
+Full export capabilities for offboarding or migration
+
+🧠 AI Model Security
+
+All tiers have access to Aitenders’ proprietary AI models
+
+Architect & Master tiers can:
+
+Fine-tune models (on quote)
+
+Connect your own LLMs (on quote)
+
+Host models in isolated, secure infrastructure
+
+📄 Certifications & Compliance (Coming Soon)
+
+We are committed to best practices and industry standards. Upcoming certifications and audits will include:
+
+ISO 27001
+
+SOC 2 Readiness
+
+Continuous GDPR alignment
+
+🚀 Enterprise-Ready
+
+Whether you're in construction, defense, energy, or procurement, Aitenders is built to handle your operational and security needs. From secure document management to advanced tender workflows, you're covered with a platform that meets the standards of highly regulated sectors.
