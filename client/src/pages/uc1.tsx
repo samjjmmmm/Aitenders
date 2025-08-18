@@ -489,11 +489,11 @@ export default function UC1Page() {
                   loop
                   muted
                   playsInline
-                  className="w-full h-auto max-w-lg rounded-lg shadow-lg"
+                  className="w-full h-auto max-w-lg"
                   style={{
-                    transform: 'scale(1.5)',
-                    width: '600px',
-                    height: '400px',
+                    transform: 'scale(1.2)',
+                    width: '500px',
+                    height: '350px',
                     objectFit: 'contain'
                   }}
                 />
