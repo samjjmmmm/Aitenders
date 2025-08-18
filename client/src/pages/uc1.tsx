@@ -494,7 +494,7 @@ export default function UC1Page() {
                     transform: 'scale(1.5)',
                     width: '600px',
                     height: '400px',
-                    objectFit: 'cover'
+                    objectFit: 'contain'
                   }}
                 />
               </div>
