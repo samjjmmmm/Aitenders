@@ -834,49 +834,73 @@ export default function UC1Page() {
 
         {/* KPI Grid */}
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 xl:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 xl:gap-12">
 
             {/* KPI 1 */}
             <div className="group">
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 lg:p-6 xl:p-8 text-center border border-green-100 hover:border-green-200 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2 h-full flex flex-col justify-center items-center min-h-[220px] lg:min-h-[240px] xl:min-h-[260px] relative overflow-hidden">
-                {/* Subtle background accent */}
-                <div className="absolute inset-0 bg-gradient-to-br from-green-100/30 to-emerald-100/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
+              <div className="bg-white rounded-2xl p-8 lg:p-10 text-center border border-slate-200/60 hover:border-emerald-300/60 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-100/50 transform hover:-translate-y-3 h-full flex flex-col justify-between min-h-[280px] lg:min-h-[300px] relative overflow-hidden">
+                {/* Subtle background gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/40 via-green-25/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500"></div>
                 
-                <div className="relative z-10 flex flex-col items-center justify-center h-full">
-                  <div className="text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-green-600 to-emerald-600 bg-clip-text text-transparent mb-4 lg:mb-3 xl:mb-4 group-hover:scale-105 transition-transform duration-300 leading-none">
+                {/* Icon */}
+                <div className="relative z-10 mb-6">
+                  <div className="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center shadow-lg shadow-emerald-200/50 group-hover:scale-110 transition-transform duration-300">
+                    <MdAccessTime className="w-7 h-7 text-white" />
+                  </div>
+                </div>
+                
+                {/* Metric */}
+                <div className="relative z-10 flex-1 flex flex-col justify-center">
+                  <div className="text-5xl lg:text-6xl xl:text-7xl font-black text-slate-800 mb-6 leading-none tracking-tight group-hover:text-emerald-700 transition-colors duration-300">
                     -50% à -70%
                   </div>
-                  <p className="text-base lg:text-sm xl:text-base text-gray-700 font-semibold leading-relaxed max-w-[200px] mx-auto">Réduction du temps d'analyse</p>
+                  <p className="text-lg lg:text-xl text-slate-600 font-medium leading-snug max-w-[220px] mx-auto">Réduction du temps d'analyse</p>
                 </div>
               </div>
             </div>
 
             {/* KPI 2 */}
             <div className="group">
-              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 lg:p-6 xl:p-8 text-center border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2 h-full flex flex-col justify-center items-center min-h-[220px] lg:min-h-[240px] xl:min-h-[260px] relative overflow-hidden">
-                {/* Subtle background accent */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-100/30 to-cyan-100/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
+              <div className="bg-white rounded-2xl p-8 lg:p-10 text-center border border-slate-200/60 hover:border-blue-300/60 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-100/50 transform hover:-translate-y-3 h-full flex flex-col justify-between min-h-[280px] lg:min-h-[300px] relative overflow-hidden">
+                {/* Subtle background gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 via-cyan-25/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500"></div>
                 
-                <div className="relative z-10 flex flex-col items-center justify-center h-full">
-                  <div className="text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4 lg:mb-3 xl:mb-4 group-hover:scale-105 transition-transform duration-300 leading-none">
+                {/* Icon */}
+                <div className="relative z-10 mb-6">
+                  <div className="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center shadow-lg shadow-blue-200/50 group-hover:scale-110 transition-transform duration-300">
+                    <MdVerified className="w-7 h-7 text-white" />
+                  </div>
+                </div>
+                
+                {/* Metric */}
+                <div className="relative z-10 flex-1 flex flex-col justify-center">
+                  <div className="text-5xl lg:text-6xl xl:text-7xl font-black text-slate-800 mb-6 leading-none tracking-tight group-hover:text-blue-700 transition-colors duration-300">
                     100%
                   </div>
-                  <p className="text-base lg:text-sm xl:text-base text-gray-700 font-semibold leading-relaxed max-w-[200px] mx-auto">des critères critiques vérifiés et documentés</p>
+                  <p className="text-lg lg:text-xl text-slate-600 font-medium leading-snug max-w-[220px] mx-auto">des critères critiques vérifiés et documentés</p>
                 </div>
               </div>
             </div>
 
             {/* KPI 3 */}
             <div className="group">
-              <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-8 lg:p-6 xl:p-8 text-center border border-orange-100 hover:border-orange-200 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2 h-full flex flex-col justify-center items-center min-h-[220px] lg:min-h-[240px] xl:min-h-[260px] relative overflow-hidden">
-                {/* Subtle background accent */}
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-100/30 to-red-100/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
+              <div className="bg-white rounded-2xl p-8 lg:p-10 text-center border border-slate-200/60 hover:border-amber-300/60 transition-all duration-500 hover:shadow-2xl hover:shadow-amber-100/50 transform hover:-translate-y-3 h-full flex flex-col justify-between min-h-[280px] lg:min-h-[300px] relative overflow-hidden">
+                {/* Subtle background gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-50/40 via-orange-25/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500"></div>
                 
-                <div className="relative z-10 flex flex-col items-center justify-center h-full">
-                  <div className="text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-orange-600 to-red-600 bg-clip-text text-transparent mb-4 lg:mb-3 xl:mb-4 group-hover:scale-105 transition-transform duration-300 leading-none">
+                {/* Icon */}
+                <div className="relative z-10 mb-6">
+                  <div className="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shadow-lg shadow-amber-200/50 group-hover:scale-110 transition-transform duration-300">
+                    <MdEmojiEvents className="w-7 h-7 text-white" />
+                  </div>
+                </div>
+                
+                {/* Metric */}
+                <div className="relative z-10 flex-1 flex flex-col justify-center">
+                  <div className="text-5xl lg:text-6xl xl:text-7xl font-black text-slate-800 mb-6 leading-none tracking-tight group-hover:text-amber-700 transition-colors duration-300">
                     +++ Sérénité
                   </div>
-                  <p className="text-base lg:text-sm xl:text-base text-gray-700 font-semibold leading-relaxed max-w-[200px] mx-auto">Confiance renforcée du management, moins de stress, zéro escalade interne</p>
+                  <p className="text-lg lg:text-xl text-slate-600 font-medium leading-snug max-w-[220px] mx-auto">Confiance renforcée du management, moins de stress, zéro escalade interne</p>
                 </div>
               </div>
             </div>
