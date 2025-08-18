@@ -189,7 +189,7 @@ const ProductPage = () => {
               </h1>
               
               <p className="text-xl md:text-2xl text-blue-100 mb-12 leading-relaxed font-medium">
-                Streamline document analysis, boost win rates, and reduce bid preparation time by 70% with enterprise-grade AI.
+                Dès l'appel d'offres jusqu'à la livraison, Aitenders est votre copilote – conçu pour aller plus vite et rester aligné.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6">
