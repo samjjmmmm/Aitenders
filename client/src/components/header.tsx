@@ -221,6 +221,18 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
               </a>
             </div>
             
+            <div className="py-2">
+              <a 
+                href="https://aitenders.welcomekit.co/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-lg text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors"
+                onClick={closeMenu}
+              >
+                Career
+              </a>
+            </div>
+            
             <div className="pt-6 border-t border-aitenders-light-blue">
               <div className="space-y-4 text-sm text-aitenders-dark-blue">
                 <div>
