@@ -216,34 +216,7 @@ const ProductPage = () => {
                     e.currentTarget.style.boxShadow = "0 16px 40px rgba(56,128,232,0.4), 0 4px 0 rgba(255,255,255,0.2) inset";
                   }}
                 >
-                  🚀 Request Demo
-                </button>
-
-                <button 
-                  style={{ 
-                    background: "rgba(255,255,255,0.1)", 
-                    color: "#FFFFFF",
-                    padding: "1.25rem 3rem",
-                    borderRadius: "16px",
-                    fontWeight: "600",
-                    fontSize: "1.125rem",
-                    border: "2px solid rgba(255,255,255,0.2)",
-                    cursor: "pointer",
-                    backdropFilter: "blur(10px)",
-                    transition: "all 0.3s ease"
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "rgba(255,255,255,0.2)";
-                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.4)";
-                    e.currentTarget.style.transform = "translateY(-2px)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "rgba(255,255,255,0.1)";
-                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)";
-                    e.currentTarget.style.transform = "translateY(0)";
-                  }}
-                >
-                  📞 Talk to Sales
+                  Demander une démo
                 </button>
               </div>
 
