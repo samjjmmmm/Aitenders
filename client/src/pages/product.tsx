@@ -579,9 +579,9 @@ const ProductPage = () => {
       {/* 3A. ENTERPRISE SECURITY BANNER */}
       <section 
         style={{ 
-          background: "linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #374151 100%)",
+          background: "#FFFFFF",
           padding: "6rem 0",
-          color: "#FBFCFF",
+          color: "#0F172A",
           textAlign: "center",
           position: "relative",
           overflow: "hidden"
@@ -599,7 +599,8 @@ const ProductPage = () => {
               style={{ 
                 fontSize: "1.75rem", 
                 fontWeight: "700", 
-                marginBottom: "1rem"
+                marginBottom: "1rem",
+                color: "#0F172A"
               }}
             >
               Enterprise-grade security
@@ -607,39 +608,40 @@ const ProductPage = () => {
             <p 
               style={{ 
                 fontSize: "1.2rem", 
-                opacity: "0.9",
+                opacity: "0.8",
                 lineHeight: "1.6",
                 marginBottom: "2rem",
                 maxWidth: "600px",
-                margin: "0 auto 2rem"
+                margin: "0 auto 2rem",
+                color: "#374151"
               }}
             >
               Aitenders is built for high-stakes industries. With end-to-end encryption, role-based access, and full audit trails, your data and workflows stay secure and compliant from day one.
             </p>
             <div className="flex justify-center gap-6 flex-wrap">
               <div style={{ 
-                backgroundColor: "rgba(255,255,255,0.1)", 
+                backgroundColor: "#F3F4F6", 
                 padding: "1rem 1.5rem", 
                 borderRadius: "12px",
-                border: "1px solid rgba(255,255,255,0.2)"
+                border: "1px solid #E5E7EB"
               }}>
-                <div style={{ fontWeight: "700", fontSize: "1rem" }}>SOC 2 Type II</div>
+                <div style={{ fontWeight: "700", fontSize: "1rem", color: "#1F2937" }}>SOC 2 Type II</div>
               </div>
               <div style={{ 
-                backgroundColor: "rgba(255,255,255,0.1)", 
+                backgroundColor: "#F3F4F6", 
                 padding: "1rem 1.5rem", 
                 borderRadius: "12px",
-                border: "1px solid rgba(255,255,255,0.2)"
+                border: "1px solid #E5E7EB"
               }}>
-                <div style={{ fontWeight: "700", fontSize: "1rem" }}>GDPR compliant</div>
+                <div style={{ fontWeight: "700", fontSize: "1rem", color: "#1F2937" }}>GDPR compliant</div>
               </div>
               <div style={{ 
-                backgroundColor: "rgba(255,255,255,0.1)", 
+                backgroundColor: "#F3F4F6", 
                 padding: "1rem 1.5rem", 
                 borderRadius: "12px",
-                border: "1px solid rgba(255,255,255,0.2)"
+                border: "1px solid #E5E7EB"
               }}>
-                <div style={{ fontWeight: "700", fontSize: "1rem" }}>ISO 27001-ready</div>
+                <div style={{ fontWeight: "700", fontSize: "1rem", color: "#1F2937" }}>ISO 27001-ready</div>
               </div>
             </div>
           </div>
