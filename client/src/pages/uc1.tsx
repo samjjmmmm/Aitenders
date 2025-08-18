@@ -420,7 +420,7 @@ export default function UC1Page() {
                 </h1>
 
                 <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]">
-                  La seule plateforme pensée pour les petits projets à cycles courts : Agents IA d'analyse des points clés, automatisation d'une synthèse et validation guidée. Vous transformez des jours de relectureet d'analyse en <span className="text-purple-600">heures</span>, gagnez en sérénité et livrez une offre solide et incontestable — sans surcharge ni faux départs.
+                  La seule plateforme pensée pour les petits projets à cycles courts : Agents IA d'analyse des points clés, automatisation d'une synthèse et validation guidée. Vous transformez des Heures de relecture et d'analyse en <span className="text-purple-600">minutes</span>, gagnez en sérénité et livrez une offre solide et incontestable — sans surcharge ni faux départs.
                 </p>
               </div>
 
@@ -489,7 +489,12 @@ export default function UC1Page() {
                   autoplay={true}
                   className="w-full h-auto max-w-lg"
                   style={{
-                    transform: 'scale(1.5)'
+                    transform: 'scale(1.5)',
+                    width: '600px',
+                    height: '400px'
+                  }}
+                  rendererSettings={{
+                    preserveAspectRatio: 'xMidYMid meet'
                   }}
                 />
               </div>
