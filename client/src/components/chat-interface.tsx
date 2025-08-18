@@ -59,11 +59,11 @@ export default function ChatInterface({
     }, 50); // Reduced timeout for faster scrolling
   };
 
-  // Function to focus input field
+  // Function to focus input field without scrolling page
   const focusInput = () => {
     setTimeout(() => {
       if (inputRef.current && !isClosed) {
-        inputRef.current.focus();
+        inputRef.current.focus({ preventScroll: true });
       }
     }, 100);
   };
@@ -79,11 +79,14 @@ export default function ChatInterface({
     }
   });
 
-  // Auto-scroll to bottom and focus input whenever messages change
+  // Auto-scroll to bottom whenever messages change (without auto-focus on load)
   useEffect(() => {
     if (messages && messages.length > 0) {
       scrollToBottom();
-      focusInput();
+      // Only focus input if chat is actively being used (not on initial page load)
+      if (!isClosed && isExpanded) {
+        focusInput();
+      }
     }
   }, [messages]);
 
