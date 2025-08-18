@@ -693,7 +693,7 @@ const ProductPage = () => {
       {/* 4. BUILT FOR TENDER COMPLEXITY SECTION */}
       {/* <HomeTenderComplexitySection /> */}
 
-      {/* 4B. ADDITIONAL COMPLEXITY SECTION */}
+      {/* 4B. FEATURES SECTION */}
       <section className="py-32 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 50%, #F1F5F9 100%)" }}>
         {/* Background decorative elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -703,143 +703,136 @@ const ProductPage = () => {
         </div>
 
         <div className="container mx-auto px-4 max-w-7xl relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-            {/* Left Column - Content */}
-            <div>
-              <div className="inline-flex items-center px-4 py-2 bg-blue-100/80 backdrop-blur-sm border border-blue-200/50 rounded-full mb-8">
-                <div className="w-2 h-2 bg-blue-600 rounded-full mr-3 animate-pulse"></div>
-                <span className="text-sm font-bold text-blue-700 uppercase tracking-wider">Built for Tender Complexity</span>
-              </div>
-
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-8 leading-tight">
-                Intelligence that adapts to your{" "}
-                <span className="relative">
-                  <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                    most complex tenders
-                  </span>
-                  <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-600/30 to-indigo-600/30 rounded-full"></div>
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100/80 backdrop-blur-sm border border-blue-200/50 rounded-full mb-8">
+              <div className="w-2 h-2 bg-blue-600 rounded-full mr-3 animate-pulse"></div>
+              <span className="text-sm font-bold text-blue-700 uppercase tracking-wider">Modules Aitenders</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-8 leading-tight">
+              Quatre modules pour{" "}
+              <span className="relative">
+                <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                  transformer votre processus
                 </span>
-              </h2>
+                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-600/30 to-indigo-600/30 rounded-full"></div>
+              </span>
+            </h2>
+          </div>
 
-              <p className="text-xl md:text-2xl text-slate-600 mb-12 leading-relaxed font-medium">
-                From multi-billion infrastructure projects to specialized compliance requirements, our AI scales with your ambition.
+          {/* Feature 1: Analyse - Left aligned */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+            <div>
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg mr-6">
+                  <Search className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-3xl md:text-4xl font-bold text-slate-900">🔍 Analyse</h3>
+              </div>
+              <h4 className="text-xl font-semibold text-blue-600 mb-4">Lire plus vite. Identifier l'essentiel.</h4>
+              <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                Le module Analyse automatise la lecture et la classification des documents d'appel d'offres. Il extrait les exigences clés, détecte les contradictions et classe les contenus par catégorie. Votre équipe sait où agir, dès le départ.
               </p>
-
-              {/* Feature highlights */}
-              <div className="space-y-8">
-                <div className="flex items-start gap-6 group">
-                  <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-3">AI-Powered Clause Recognition</h3>
-                    <p className="text-lg text-slate-600 leading-relaxed">Extracts legal, technical, and financial clauses automatically from multi-format RFPs</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-6 group">
-                  <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
-                    </svg>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-3">Content-Aware Risk Detection</h3>
-                    <p className="text-lg text-slate-600 leading-relaxed">Flags non-standard or contradictory clauses with AI-driven risk scoring</p>
-                  </div>
+              <div className="flex items-center text-lg font-semibold text-green-600">
+                <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>
+                🔄 Ce que ça change : Qualification plus rapide, réduction des erreurs, meilleure visibilité sur les risques.
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <div className="w-full max-w-md h-80 bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl shadow-xl flex items-center justify-center border border-blue-200">
+                <div className="text-center">
+                  <Search className="w-16 h-16 text-blue-600 mx-auto mb-4" />
+                  <div className="text-blue-800 font-semibold">Document Analysis</div>
+                  <div className="text-blue-600 text-sm">AI-Powered Classification</div>
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Right Column - Enhanced Visual */}
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-lg" style={{ perspective: "1000px" }}>
-                {/* Main AI Dashboard Container */}
-                <div 
-                  className="relative w-full h-96 rounded-3xl shadow-2xl overflow-hidden group hover:shadow-3xl transition-all duration-500"
-                  style={{ 
-                    background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)",
-                    border: "1px solid rgba(59, 130, 246, 0.1)"
-                  }}
-                >
-                  {/* Dashboard Header */}
-                  <div className="h-16 bg-gradient-to-r from-blue-600 to-indigo-600 flex items-center px-6">
-                    <div className="flex gap-2">
-                      <div className="w-3 h-3 rounded-full bg-white/30"></div>
-                      <div className="w-3 h-3 rounded-full bg-white/30"></div>
-                      <div className="w-3 h-3 rounded-full bg-white/30"></div>
-                    </div>
-                    <div className="ml-auto text-white text-sm font-semibold">AI Tender Analysis</div>
-                  </div>
-
-                  {/* Content Area */}
-                  <div className="p-6 space-y-6">
-                    {/* Document Analysis Status */}
-                    <div className="bg-blue-50/80 rounded-xl p-4 border border-blue-100">
-                      <div className="flex items-center justify-between mb-3">
-                        <h4 className="text-sm font-bold text-blue-900">Document Intelligence</h4>
-                        <div className="text-xs text-blue-600 bg-blue-100 px-2 py-1 rounded-full">Active</div>
-                      </div>
-                      <div className="space-y-2">
-                        <div className="flex justify-between text-xs text-blue-700">
-                          <span>Clause Extraction</span>
-                          <span>98%</span>
-                        </div>
-                        <div className="w-full bg-blue-200 rounded-full h-2">
-                          <div className="h-2 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" style={{ width: "98%" }}></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Risk Analysis */}
-                    <div className="bg-amber-50/80 rounded-xl p-4 border border-amber-100">
-                      <div className="flex items-center justify-between mb-3">
-                        <h4 className="text-sm font-bold text-amber-900">Risk Detection</h4>
-                        <div className="text-xs text-amber-600 bg-amber-100 px-2 py-1 rounded-full">2 Flags</div>
-                      </div>
-                      <div className="space-y-2">
-                        <div className="text-xs text-amber-700">Non-standard payment terms detected</div>
-                        <div className="text-xs text-amber-700">Compliance deviation in Section 4.2</div>
-                      </div>
-                    </div>
-
-                    {/* Complexity Metrics */}
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-slate-50 rounded-lg p-3 text-center">
-                        <div className="text-lg font-bold text-slate-800">847</div>
-                        <div className="text-xs text-slate-600">Clauses Parsed</div>
-                      </div>
-                      <div className="bg-slate-50 rounded-lg p-3 text-center">
-                        <div className="text-lg font-bold text-slate-800">12</div>
-                        <div className="text-xs text-slate-600">Risk Areas</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Animated indicators */}
-                  <div className="absolute top-20 right-6 w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                  <div className="absolute top-32 right-4 w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: "0.5s" }}></div>
-                  <div className="absolute bottom-20 left-6 w-2 h-2 bg-amber-400 rounded-full animate-pulse" style={{ animationDelay: "1s" }}></div>
-
-                  {/* Floating data points */}
-                  <div className="absolute top-24 left-8 w-4 h-4 bg-blue-100 rounded-full animate-float opacity-60"></div>
-                  <div className="absolute bottom-32 right-8 w-3 h-3 bg-indigo-100 rounded-full animate-float opacity-60" style={{ animationDelay: "1.5s" }}></div>
+          {/* Feature 2: Write - Right aligned */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+            <div className="order-2 lg:order-1 flex justify-center">
+              <div className="w-full max-w-md h-80 bg-gradient-to-br from-green-50 to-green-100 rounded-3xl shadow-xl flex items-center justify-center border border-green-200">
+                <div className="text-center">
+                  <FileText className="w-16 h-16 text-green-600 mx-auto mb-4" />
+                  <div className="text-green-800 font-semibold">Smart Writing</div>
+                  <div className="text-green-600 text-sm">Template-Based Generation</div>
                 </div>
-
-                {/* Shadow effect */}
-                <div 
-                  className="absolute inset-0 rounded-3xl blur-xl opacity-20 -z-10"
-                  style={{ 
-                    background: "linear-gradient(135deg, #3B82F6 0%, #6366F1 100%)",
-                    transform: "translateY(20px) scale(0.95)"
-                  }}
-                />
               </div>
             </div>
+            <div className="order-1 lg:order-2">
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center shadow-lg mr-6">
+                  <FileText className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-3xl md:text-4xl font-bold text-slate-900">✍️ Write</h3>
+              </div>
+              <h4 className="text-xl font-semibold text-green-600 mb-4">Répondre avec méthode. Ne pas repartir de zéro.</h4>
+              <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                Write permet de structurer vos réponses à partir de contenus existants. Vous reliez chaque réponse à l'exigence correspondante, vous réutilisez ce qui a déjà fonctionné, et vous réduisez le temps de rédaction.
+              </p>
+              <div className="flex items-center text-lg font-semibold text-green-600">
+                <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>
+                🧠 Ce que ça change : Réponses plus cohérentes, délais de production réduits, moins de pression sur les équipes.
+              </div>
+            </div>
+          </div>
 
+          {/* Feature 3: Pilot - Left aligned */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+            <div>
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg mr-6">
+                  <BarChart3 className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-3xl md:text-4xl font-bold text-slate-900">🛠 Pilot</h3>
+              </div>
+              <h4 className="text-xl font-semibold text-purple-600 mb-4">Suivre ce qui a été promis. Et livrer.</h4>
+              <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                Pilot vous aide à suivre l'exécution du contrat : engagements pris, livrables attendus, écarts constatés. Vous pilotez en temps réel l'avancement de chaque projet, sans dépendre de fichiers dispersés.
+              </p>
+              <div className="flex items-center text-lg font-semibold text-green-600">
+                <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>
+                📊 Ce que ça change : Moins de dérives projets, meilleure coordination avec le client, traçabilité complète des actions.
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <div className="w-full max-w-md h-80 bg-gradient-to-br from-purple-50 to-purple-100 rounded-3xl shadow-xl flex items-center justify-center border border-purple-200">
+                <div className="text-center">
+                  <BarChart3 className="w-16 h-16 text-purple-600 mx-auto mb-4" />
+                  <div className="text-purple-800 font-semibold">Project Tracking</div>
+                  <div className="text-purple-600 text-sm">Real-time Monitoring</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Feature 4: Knowledge - Right aligned */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="order-2 lg:order-1 flex justify-center">
+              <div className="w-full max-w-md h-80 bg-gradient-to-br from-orange-50 to-orange-100 rounded-3xl shadow-xl flex items-center justify-center border border-orange-200">
+                <div className="text-center">
+                  <Database className="w-16 h-16 text-orange-600 mx-auto mb-4" />
+                  <div className="text-orange-800 font-semibold">Knowledge Base</div>
+                  <div className="text-orange-600 text-sm">Centralized Learning</div>
+                </div>
+              </div>
+            </div>
+            <div className="order-1 lg:order-2">
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg mr-6">
+                  <Database className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-3xl md:text-4xl font-bold text-slate-900">🧠 Knowledge</h3>
+              </div>
+              <h4 className="text-xl font-semibold text-orange-600 mb-4">Capitaliser sur chaque réponse. Valoriser l'expérience.</h4>
+              <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                Avec Knowledge, chaque contenu produit devient un actif réutilisable. Vous centralisez les réponses validées, les retours d'expérience et les éléments clés pour accélérer les réponses futures et éviter la redondance.
+              </p>
+              <div className="flex items-center text-lg font-semibold text-green-600">
+                <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>
+                🔁 Ce que ça change : Moins de travail inutile, montée en compétence accélérée, et qualité constante dans le temps.
+              </div>
+            </div>
           </div>
         </div>
 
