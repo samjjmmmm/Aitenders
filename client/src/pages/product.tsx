@@ -871,7 +871,7 @@ const ProductPage = () => {
                   marginBottom: "1.5rem"
                 }}
               >
-                Security & Compliance You Can Trust
+                Sécurité et Conformité de Confiance
               </h2>
               <p 
                 style={{
@@ -881,7 +881,7 @@ const ProductPage = () => {
                   lineHeight: "1.6"
                 }}
               >
-                We take security seriously. Your data is protected with enterprise-grade security measures and compliance standards.
+                Nous prenons la sécurité au sérieux. Vos données sont protégées par des mesures de sécurité de niveau entreprise et des normes de conformité.
               </p>
               <ul 
                 style={{ 
@@ -892,10 +892,10 @@ const ProductPage = () => {
                 }}
               >
                 {[
-                  "SOC 2 Compliant",
-                  "SSO & Secure Workspace Access",
-                  "GDPR-ready",
-                  "Data Encryption & Isolation"
+                  "Conforme SOC 2",
+                  "SSO et Accès Sécurisé aux Espaces de Travail",
+                  "Conforme RGPD",
+                  "Chiffrement et Isolation des Données"
                 ].map((item, idx) => (
                   <li 
                     key={idx}
@@ -958,7 +958,7 @@ const ProductPage = () => {
                     marginBottom: "0.75rem"
                   }}
                 >
-                  Get Our Security Overview
+                  Obtenez Notre Aperçu Sécurité
                 </h3>
                 <p 
                   style={{ 
@@ -968,7 +968,7 @@ const ProductPage = () => {
                     marginBottom: "1.5rem"
                   }}
                 >
-                  Download our comprehensive security documentation to learn more about how we protect your data.
+                  Téléchargez notre documentation de sécurité complète pour en savoir plus sur la façon dont nous protégeons vos données.
                 </p>
                 <button 
                   style={{ 
@@ -992,7 +992,7 @@ const ProductPage = () => {
                   }}
                 >
                   <Download size={18} /> 
-                  <span>Download Security Overview PDF</span>
+                  <span>Télécharger l'Aperçu Sécurité PDF</span>
                 </button>
                 <div 
                   style={{ 
@@ -1014,7 +1014,7 @@ const ProductPage = () => {
                       fontSize: "0.875rem"
                     }}
                   >
-                    TRUSTED BY INDUSTRY LEADERS
+                    FAIT CONFIANCE PAR LES LEADERS DE L'INDUSTRIE
                   </div>
                   <div 
                     style={{ 
