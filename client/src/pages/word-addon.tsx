@@ -26,7 +26,7 @@ export default function WordAddonPage() {
                   1
                 </div>
                 <h2 className="text-2xl font-bold text-aitenders-dark-blue">
-                  Go on the Microsoft store just here
+                  Go on the Microsoft store <a href="https://appsource.microsoft.com/en-ca/product/office/wa200002578?tab=overview" target="_blank" rel="noopener noreferrer" className="text-aitenders-primary-blue hover:underline">just here</a>
                 </h2>
               </div>
               <div className="flex items-center space-x-4">
