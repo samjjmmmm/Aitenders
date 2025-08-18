@@ -173,11 +173,6 @@ const ProductPage = () => {
 
             {/* Left Column - Content */}
             <div>
-              <div className="inline-flex items-center px-4 py-2 bg-blue-100/20 backdrop-blur-sm border border-blue-200/30 rounded-full mb-8">
-                <div className="w-2 h-2 bg-blue-400 rounded-full mr-3 animate-pulse"></div>
-                <span className="text-sm font-bold text-blue-200 uppercase tracking-wider">AI-Powered Tender Management</span>
-              </div>
-
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-8 leading-tight">
                 L'intelligence de vos équipes Projets,{" "}
                 <span className="relative">
