@@ -157,8 +157,18 @@
     margin-left: 0;
   }
 
-  /* Add top padding for fixed header */
+  /* Add top padding for fixed header and ensure scroll position starts at top */
   .page-content {
     padding-top: 4rem; /* 64px to match header height */
+  }
+
+  /* Ensure pages load scrolled to top */
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* Reset scroll position on route changes */
+  body {
+    overflow-x: hidden;
   }
 }
