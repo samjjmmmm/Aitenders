@@ -23,8 +23,8 @@ import equansLogo from "@assets/Equans_1753711339292.png";
 import bouyguesLogo from "@assets/Bouyges_1753711339292.png";
 import colasLogo from "@assets/Colas_1753711339292.png";
 
-// Import hero image
-import heroAnimation from '../assets/hero-uc1-animation.json';
+// Import hero video
+import heroVideo from '../assets/hero-uc1-video.mp4';
 import containerUc1Image from "@assets/&ST_1755090032624.png";
 import containerUc1SecondImage from "@assets/2ND_1755082953938.png";
 import containerUc1ThirdImage from "@assets/3RD_1755095206907.png";
@@ -32,7 +32,7 @@ import ChatSection from "@/components/chat-section";
 import ChatInterface from "@/components/chat-interface";
 import ToppingModal from "@/components/topping-modal";
 import { AitendersSimulatorFinal } from "@/components/aitenders-simulator-final";
-import Lottie from 'lottie-react';
+
 
 export default function UC1Page() {
   const [selectedTopping, setSelectedTopping] = useState<any>(null);
@@ -480,21 +480,21 @@ export default function UC1Page() {
               </div>
             </div>
 
-            {/* Right Side - Hero Animation */}
+            {/* Right Side - Hero Video */}
             <div className="flex justify-center lg:justify-end items-center">
               <div className="relative w-full flex justify-center">
-                <Lottie 
-                  animationData={heroAnimation}
-                  loop={true}
-                  autoplay={true}
-                  className="w-full h-auto max-w-lg"
+                <video
+                  src={heroVideo}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-auto max-w-lg rounded-lg shadow-lg"
                   style={{
                     transform: 'scale(1.5)',
                     width: '600px',
-                    height: '400px'
-                  }}
-                  rendererSettings={{
-                    preserveAspectRatio: 'xMidYMid meet'
+                    height: '400px',
+                    objectFit: 'cover'
                   }}
                 />
               </div>
