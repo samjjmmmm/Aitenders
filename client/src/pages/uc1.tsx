@@ -377,7 +377,6 @@ export default function UC1Page() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-white">
       {/* Header/Navbar */}
       <Header />
-      <div className="main-content">
 
       {/* Hero Section - Professional SaaS Design */}
       <section className="py-12 md:py-16 lg:py-20 xl:py-24 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-white via-slate-50/30 to-blue-50/20 relative overflow-hidden">
@@ -1390,7 +1389,6 @@ export default function UC1Page() {
         onClose={() => setIsModalOpen(false)}
         topping={selectedTopping}
       />
-      </div>
     </div>
   );
 }

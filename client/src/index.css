@@ -130,36 +130,30 @@
   }
   
   /* Make the existing sidebar fixed, opaque, and above content */
-  .left-sidebar {
+  .right-sidebar {
     position: fixed;       /* pin it */
     top: 0;
-    left: 0;
+    right: 0;
     height: 100vh;
     width: var(--sidebar-width);
-    background: #0f172a;   /* solid color, no alpha */
+    background: white;     /* white background */
     opacity: 1 !important;             /* kill any previous transparency */
     backdrop-filter: none !important;  /* kill blur/translucency */
     mix-blend-mode: normal !important; /* prevent blending with alerts/toasts */
     z-index: 1000;         /* above content but below modals if any */
-    border-right: 1px solid rgba(0,0,0,0.08);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    border-left: 1px solid rgba(0,0,0,0.08);
+    box-shadow: -8px 0 24px rgba(0,0,0,0.18);
     overflow-y: auto;      /* sidebar scrolls independently if long */
+    transform: translateX(100%); /* hidden by default */
+    transition: transform 0.3s ease-in-out;
   }
 
-  /* Ensure page content never sits under the sidebar */
+  .right-sidebar.open {
+    transform: translateX(0); /* shown when open */
+  }
+
+  /* Remove main content margin since sidebar is now hidden by default */
   .main-content {
-    margin-left: var(--sidebar-width);
-  }
-
-  /* Keep layout sane on small screens (preserve existing mobile if present) */
-  @media (max-width: 1023px) {
-    .main-content { margin-left: 0; }
-    /* If the project already uses a drawer on mobile, keep that JS/HTML.
-       Only ensure the panel is opaque (no transparency) if it uses the same root: */
-    .left-sidebar {
-      background: #0f172a;
-      opacity: 1 !important;
-      backdrop-filter: none !important;
-    }
+    margin-left: 0;
   }
 }
