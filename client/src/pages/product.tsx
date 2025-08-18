@@ -709,13 +709,7 @@ const ProductPage = () => {
               <span className="text-sm font-bold text-blue-700 uppercase tracking-wider">Modules Aitenders</span>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-8 leading-tight">
-              Quatre modules pour{" "}
-              <span className="relative">
-                <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                  transformer votre processus
-                </span>
-                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-600/30 to-indigo-600/30 rounded-full"></div>
-              </span>
+              De l'analyse à la livraison, tout ce qu'il faut pour maîtriser vos appels d'offres
             </h2>
           </div>
 
