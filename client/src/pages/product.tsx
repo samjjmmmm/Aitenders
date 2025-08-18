@@ -179,10 +179,10 @@ const ProductPage = () => {
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-8 leading-tight">
-                Transform Your Tender Process with{" "}
+                L'intelligence de vos équipes Projets,{" "}
                 <span className="relative">
                   <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                    AI Intelligence
+                    démultipliée par l'IA
                   </span>
                   <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-400/50 to-cyan-400/50 rounded-full"></div>
                 </span>
