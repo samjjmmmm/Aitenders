@@ -117,13 +117,14 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
             </Link>
             
             <div className="py-2">
-              <a 
-                href="#products" 
-                className="block text-lg text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors"
-                onClick={closeMenu}
-              >
-                Products
-              </a>
+              <Link href="/product">
+                <div 
+                  className="block text-lg text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors cursor-pointer"
+                  onClick={closeMenu}
+                >
+                  Product
+                </div>
+              </Link>
             </div>
             
             {/* Use Cases with Dropdown */}
