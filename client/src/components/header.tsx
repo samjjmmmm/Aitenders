@@ -109,7 +109,7 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
       {/* Menu Backdrop - No blur, just background coverage */}
       {isMenuOpen && (
         <div 
-          className="fixed inset-0 bg-white/95 z-40"
+          className="fixed inset-0 bg-white z-40"
           onClick={closeMenu}
         />
       )}
