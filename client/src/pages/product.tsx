@@ -1154,17 +1154,7 @@ const ProductPage = () => {
           >
             Structurez vos appels d'offres. Alignez vos équipes. Livrez sans erreur.
           </h2>
-          <p 
-            style={{
-              fontSize: "1.25rem",
-              opacity: "0.8",
-              maxWidth: "700px",
-              margin: "0 auto 2rem",
-              lineHeight: "1.6"
-            }}
-          >
-            Let us show you how your team can save hours and deliver 100% compliance.
-          </p>
+          
           <button 
             style={{ 
               backgroundColor: "#3880E8", 
