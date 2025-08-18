@@ -178,7 +178,7 @@ const ProductPage = () => {
                 <span className="text-sm font-bold text-blue-200 uppercase tracking-wider">AI-Powered Tender Management</span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-8 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-8 leading-tight">
                 L'intelligence de vos équipes Projets,{" "}
                 <span className="relative">
                   <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
