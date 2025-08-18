@@ -453,8 +453,8 @@ const ProductPage = () => {
                     <Zap className="w-8 h-8 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-3">70% Faster Bid Preparation</h3>
-                    <p className="text-lg text-slate-600 leading-relaxed">Automated requirement extraction and intelligent template matching dramatically reduce manual work.</p>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">Préparation des offres 70 % plus rapide</h3>
+                    <p className="text-lg text-slate-600 leading-relaxed">L'extraction automatique des exigences et l'utilisation de modèles intelligents réduisent fortement le travail manuel.</p>
                   </div>
                 </div>
                 
@@ -463,8 +463,8 @@ const ProductPage = () => {
                     <TrendingUp className="w-8 h-8 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-3">3.5x Higher Win Rates</h3>
-                    <p className="text-lg text-slate-600 leading-relaxed">AI-powered insights help you craft more compelling and compliant proposals that win.</p>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">Taux de réussite multiplié par 3,5</h3>
+                    <p className="text-lg text-slate-600 leading-relaxed">Les recommandations basées sur l'IA permettent de produire des réponses plus pertinentes et conformes.</p>
                   </div>
                 </div>
                 
@@ -473,8 +473,8 @@ const ProductPage = () => {
                     <CheckSquare className="w-8 h-8 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-3">100% Compliance Guaranteed</h3>
-                    <p className="text-lg text-slate-600 leading-relaxed">Automated compliance checking ensures you never miss critical requirements or deadlines.</p>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">100 % de conformité garantie</h3>
+                    <p className="text-lg text-slate-600 leading-relaxed">Le contrôle automatisé de la conformité vous assure de ne manquer aucune exigence ni échéance.</p>
                   </div>
                 </div>
               </div>
