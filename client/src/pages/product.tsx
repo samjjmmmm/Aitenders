@@ -443,7 +443,7 @@ const ProductPage = () => {
               </h2>
               
               <p className="text-xl text-slate-600 mb-12 leading-relaxed">
-                Stop losing to competitors because of inefficient processes. Our AI-powered platform ensures you never miss critical requirements and always submit your strongest possible bid.
+                Aitenders aide les équipes à répondre plus rapidement aux appels d'offres, sans passer à côté des informations essentielles. La plateforme réduit le temps passé à rechercher dans les documents, facilite l'analyse des exigences et évite les envois tardifs ou incomplets. Grâce à l'extraction automatisée, au suivi des versions et aux outils de conformité intégrés, chaque membre de l'équipe dispose des bonnes informations au bon moment. La solution est sécurisée, évolutive, et adaptée aux équipes qui gèrent des projets complexes en parallèle.
               </p>
               
               {/* Key benefits */}
