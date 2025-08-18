@@ -25,11 +25,13 @@ export function AitendersSimulatorFinal({ useCase, className = '' }: AitendersSi
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    // Disabled auto-scroll to prevent page-level scrolling issues
+    // Users can manually scroll within the simulator if needed
   };
 
   useEffect(() => {
-    scrollToBottom();
+    // Disabled auto-scroll to prevent page jumping to simulator on load
+    // scrollToBottom();
   }, [steps]);
 
   useEffect(() => {
