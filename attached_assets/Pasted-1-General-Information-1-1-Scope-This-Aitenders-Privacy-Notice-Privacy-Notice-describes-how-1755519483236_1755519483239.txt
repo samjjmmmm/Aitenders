@@ -1,0 +1,84 @@
+1.   General Information
+
+1.1 Scope This Aitenders Privacy Notice (“Privacy Notice”) describes how we collect, process, and disclose information related to you as a natural person (“Personal Data”), and what rights you have with respect to the processing of your Personal Data. Under the prerequisite that we act as Controller, this Privacy Notice applies when you:
+
+visit any of our websites or social media pages,
+access or use any of our applications or platforms, such as Aitenders.com and related instances, Aitenders Academy, Aitenders Community and the Aitenders Client Portal,
+access our cloud application
+register and/or attend to any events hosted or attended by Aitenders,
+contact our customer support,
+do business with us or,
+otherwise interact or communicate with us. 
+These services are hereinafter collectively referred to as the “Services”. If you decline to provide your Personal Data or ask us to delete it, you may not be able to access or use the Services. 
+Reserved: Candidate
+1.2 Name of Controller and Data Protection Officer When we refer to “Aitenders” in this Privacy Notice, we mean the Aitenders entity that is responsible for the means and purposes of the processing and therefore acts as the Controller of your Personal Data, as follows: 
+
+Aitenders SAS if you are located outside North America and for all website activities Address: 20 rue professeur Benoit Lauras 42000 Saint Etienne
+Contact details of Data Protection Officer: privacy@Aitenders.com
+Any requests or questions related to data protection may be addressed to privacy@Aitenders.com.
+1.3 Update of the Privacy Policy We may change or substitute this Privacy Notice at any time in our sole discretion. You should check back regularly for the most up-to-date version of this Privacy Notice and whenever you access one of our Services.  
+
+2. Data Categories 
+
+The categories of data we process depend on your interactions with us and may include one or more of the following data categories. 
+2.1  Contact and Business Data For the use of certain Services, contact data may be processed. Contact Data consists of last name, first name, email address, physical address, phone number, country of origin and similar contact information, including in some circumstances usernames and passwords. These may be supplemented by business data such as position, company name and other similar information. 
+2.2  Communication and Transaction Data Communication data refers to the data resulting from your interaction with us, e.g., emails, chat messages, webinars visited, files downloaded, and product interest information. We may also collect registration information related to your attendance at one of our events, including travel information, scheduling information, food preferences or allergies, and accessibility requests. 
+2.3  Application-Related Usage Data As is true of most hosted services providers, we automatically gather and analyze information on how and whether specific features of our Services are used, such as details about which of our applications and versions are being used, user interactions with the Services (including searches and other actions taken by users), the pages and files viewed, which online trainings are attended, the types of data sources queried, the types of visualizations built, system configuration information, the number of steps in a workflow, the type(s) of operations used and the queries submitted, as well as hardware properties such as CPU type and amount of RAM, logfile data, and date and time stamps associated with use of the Services. Some on-premise applications provide administrative tools that allow customers to opt out of the collection of Usage Data through the configuration settings. These options are not available for our hosted products, which automatically collect all Usage Data. 
+2.4 Device and Browser Data When you visit one of our websites or applications, online and technical information from your computer or mobile device may be collected, such as: device type, location, information about the browser type and version, the operating system and version, the ISP or mobile carrier, the IP Address (or proxy server) and geographic areas derived from your IP address, time and date of access, duration of access, referring URL (if any), and identifiers that help us recognize your device and validate that you are a licensed user.
+
+3. Origin of the data 
+
+In most cases, you provide the Personal Data directly to us by accessing one of our websites or by registering and/or using one of the Services. We may also obtain Personal Data from your employer in the context of providing the Services or from third party suppliers, social networks, or partners. To enable collection of data we might use cookies, web beacons or similar technologies (see additional information provided in our Cookie Notice).  
+
+4. Purposes for processing 
+
+We use the Personal Data collected as described in this Privacy Notice, as specified in any agreement that incorporates this Privacy Notice, or as disclosed to you in connection with the Services. We do not carry out any statistical evaluation of a data subject’s behavior (profiling); in particular, there is no automated decision-making (see Art. 22 Para. 1 and Para. 4 GDPR and Art. 6 Para. 1(b) GDPR). 
+4.1  Providing the Requested Service We process your Personal Data to fulfill our contractual obligations to you, including to:
+
+Provide and deliver products and services (including updates thereto);
+Operate and improve our operations, systems, products and services; 
+Understand your preferences to enhance your experience; and
+Provide service and support, such as sending confirmations, invoices, technical notices, updates, security alerts and administrative messages and providing customer support and troubleshooting.
+4.2  Comments and Questions If you contact us via our website, via email or in any other way, we process your Personal Data to understand and respond to your request and to provide customer service. In such circumstances, your request might be internally forwarded to the responsible department at Aitenders. 
+4.3  Sales & Marketing Activities We may use your email address for direct advertising, to communicate news about upcoming events, products, and services, and for surveys. We also use your email address, which we receive in connection with the sale of a product or service, for direct advertising of products or services similar to the ones you ordered. Our marketing emails permit you to opt-out of receiving further communications by selecting the “unsubscribe” link. In addition, you may opt-out from marketing communication at any time by contacting privacy@Aitenders.com.
+4.4  Statistics To improve performance of the Services, to assess and improve the customer and user experience, to identify future opportunities for development of the Services, and to assess capacity requirements, we may analyze aggregated, anonymized or statistical information based on Personal Data.
+4.5  Security & Compliance We may analyze your Personal Data to maintain the security of the Services and facilities, to enforce our terms and conditions; to protect against, investigate and deter fraudulent, unauthorized, or illegal activity; and to avoid and detect attacks on our website or applications or misuse of our Services. 
+
+5.  Lawfulness of Processing 
+
+When we collect and use your Personal Data, we will only do so where at least one of the following applies:
+
+We need to process your Personal Data to perform our responsibilities under our contract with you and to provide you with tools and services. [see Art.6 Para 1(b) GDPR]
+We have a legitimate interest to process your personal information. [see Art.6 Para 1(f) GDPR]
+You have given consent to process Personal Data. [see Art.6 Para. 1(a) GDPR]
+It is necessary for us to process your Personal Data to comply with a legal obligation. [see Art.6 Para. 1(c) GDPR] 
+
+6. Cookies and other Tracking Technologies 
+
+We use session-based and persistent “cookies” and similar technologies such as web beacons to increase user-friendliness and compile information about the usage of our websites and applications. Cookies are created either by us (first-party cookies) or by third-party providers determined by us (third-party cookies). The following describes the types of further cookies we utilize:
+
+Necessary Cookies. Necessary Cookies are for basic website functionality, e.g., session cookies to transmit the website, authentication cookies, and security cookies. These cookies are strictly necessary for the operation of the website.
+Functional Cookies. Functional Cookies enhance functions, performance, and services on the website, e.g., cookies used to analyze site traffic, cookies for market research, and cookies to display advertising that is not directed to a particular individual.
+Marketing Cookies. Marketing Cookies track activity across websites in order to understand your interests, to direct targeted advertising to you, and to track the performance of our advertisements.
+Please find detailed information on cookies in our Cookie Notice 
+
+7. Recipients 
+
+Your Personal Data may be transferred to affiliates and partners of Aitenders as well as to a limited number of service providers (Processors) that perform processing operations such as database monitoring, hosting services, ticketing or provisioning of software tools. These service providers process Personal Data on our instructions only and have implemented state-of-the-art technical and organizational measures to safeguard the processed data. All Processors have been selected carefully and are closely monitored.
+When we ask third parties to host or present at certain events like webinars or training, we may forward your Personal Data to the respective third party who may use this data to provide access to the event or may contact you for related marketing purposes.
+If Personal Data is transferred to subsidiaries, partners service providers or third parties located outside the European Economic Area (EEA) which are not subject to an adequacy decision by the European Commission we will ensure that such recipient offers an adequate level of data protection, for instance by entering into EU Standard Contractual Clauses (SCCs) and implementing additional safeguards in accordance with legal requirements, or we will ask you for your prior individual consent to such international data transfers.
+We may disclose your Personal Data to comply with legal requirements, such as in response to a court order or a subpoena. In such an event, we will use all reasonable and lawfully available measures to object to overbroad, unclear or otherwise inappropriate requests for information, and will cooperate with those seeking a protective order unless we are legally prohibited from doing so. We may also share Personal Data with our auditors, attorneys or other advisors under professional obligations of confidentiality in connection with corporate functions. 
+
+8. Duration of Data Storage 
+
+Your Personal Data will be deleted upon your request or as soon as it is no longer required to achieve the purpose for which the Personal Data has been collected, namely, to provide the requested Services. If legal regulations (e.g., by fiscal, commercial, or contractual law) apply that require longer storage of your Personal Data, or if we need your Personal Data to assert legal claims or defend against legal claims, we will store your Personal Data until the expiration of the corresponding storage period or until the settlement of the claims.
+Any user account and its related data in applications where we act as Controller will be deleted upon your request or after three years of inactivity. 
+
+9. Your Rights 
+
+9.1 GDPR Upon request, we will inform you whether and which data we have stored about you. Insofar as the legal requirements are met, you have the right to have this data corrected, blocked or deleted. You also have the right to receive Personal Data which you have provided to us, in a structured, commonly used, and machine-readable format and have the right to transmit those data to another Controller under conditions and in accordance with the Regulation.
+Insofar as we process your data on the basis of the balancing of interests, you have a right of objection if the legal requirements are met.
+Where we are relying on consent to process your Personal Data you may withdraw your consent at any time for the future. However, this will not affect the lawfulness of any processing carried out before you withdraw your consent. You may exercise your rights by contacting us in writing, with a proof of your identity, at privacy@Aitenders.com. If you are resident of the EU, you also have the right to direct questions or complaints to the lead supervisory authority.
+9.2 California Privacy Rights This section provides additional details about the Personal Data we collect about California residents and the rights afforded to them under the California Consumer Privacy Act or “CCPA.” We are extending the same rights to all residents of the U.S. For purposes of the CCPA, the defined term “Personal Data” is the same as the term “Personal Information” as such term is defined in the CCPA. For more details about the Personal Data, we have collected over the last 12 months, including the categories of sources, please see respective sections above. We collect this information for the business and commercial purposes described above. We share this information with the categories of third parties described above. We do not sell, as such term is defined in the CCPA, the Personal Data we collect and will not sell use it without providing a right to opt out. However, we do use third-party cookies for our advertising purposes as further described in our Cookie Notice. Further, we sometimes share Personal Data with our partners, or they share your Personal Data with us, but only if you have consented to have such information be shared.
+Subject to certain limitations, the CCPA provides you the right to request to know more details about the categories or specific pieces of Personal Data we collect (including how we use and disclose this information), to delete your Personal Data, to opt out of any “sales” that may be occurring, and to not be discriminated against for exercising these rights.
+You may make a request pursuant to your rights under the CCPA by contacting us at privacy@Aitenders.com. We will verify your request using the information associated with your account (if any), including email address. Government identification may be required. You can also designate an authorized agent to exercise these rights on your behalf.
