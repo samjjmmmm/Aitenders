@@ -378,6 +378,7 @@ export default function UC1Page() {
       {/* Header/Navbar */}
       <Header />
 
+      <div className="page-content">
       {/* Hero Section - Professional SaaS Design */}
       <section className="py-12 md:py-16 lg:py-20 xl:py-24 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-white via-slate-50/30 to-blue-50/20 relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
@@ -1389,6 +1390,7 @@ export default function UC1Page() {
         onClose={() => setIsModalOpen(false)}
         topping={selectedTopping}
       />
+      </div>
     </div>
   );
 }

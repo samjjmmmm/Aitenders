@@ -288,6 +288,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       <Header language={language} onLanguageChange={setLanguage} />
       
+      <div className="page-content">
       {/* Hero Section */}
       <main className="relative">
         <div className="max-w-5xl mx-auto px-4 pt-8 pb-6">
@@ -475,6 +476,7 @@ export default function HomePage() {
 
       {/* Reduced padding for chat alignment */}
       <div className="h-4"></div>
+      </div>
     </div>
   );
 }

@@ -156,4 +156,9 @@
   .main-content {
     margin-left: 0;
   }
+
+  /* Add top padding for fixed header */
+  .page-content {
+    padding-top: 4rem; /* 64px to match header height */
+  }
 }
