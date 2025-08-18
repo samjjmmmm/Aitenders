@@ -427,10 +427,7 @@ const ProductPage = () => {
             
             {/* Left Column - Content */}
             <div>
-              <div className="inline-flex items-center px-4 py-2 bg-blue-100/80 backdrop-blur-sm border border-blue-200/50 rounded-full mb-8">
-                <div className="w-2 h-2 bg-blue-600 rounded-full mr-3 animate-pulse"></div>
-                <span className="text-sm font-bold text-blue-700 uppercase tracking-wider">Why Choose Aitenders</span>
-              </div>
+              
               
               <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 leading-tight">
                 {" "}
