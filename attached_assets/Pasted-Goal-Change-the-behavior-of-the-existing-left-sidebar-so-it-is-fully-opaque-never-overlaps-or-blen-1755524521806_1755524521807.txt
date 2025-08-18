@@ -1,0 +1,86 @@
+Goal: Change the behavior of the existing left sidebar so it is fully opaque, never overlaps or blends with page content, and the main content is offset accordingly.
+Do not rebuild or redesign anything.
+
+Absolute constraints (do not violate):
+
+Do not create or delete files.
+
+Do not rename classes, ids, components, or variables.
+
+Do not edit markup/JS beyond what is explicitly requested below.
+
+Do not change colors, spacing, fonts, or behavior of anything outside the sidebar and the single main content wrapper needed for the offset.
+
+Apart from the changes below, do not update or change anything else in the project.
+
+What to change (CSS-first, minimal edits):
+
+Locate the root element/class of the existing left sidebar (the container that holds the nav links). I’ll call it <SIDEBAR_ROOT> below—replace this with the actual class/selector you find (e.g., .sidebar, .sidenav, aside.nav etc.).
+
+Locate the main page content wrapper that sits next to the sidebar (the element that wraps the page content). I’ll call it <MAIN_CONTENT_ROOT> below—replace this with the actual selector (e.g., .main, .page, .content).
+
+In the project’s existing stylesheet for the layout (the same file that currently styles the sidebar), add/adjust only these rules (overrides allowed, use !important only where needed to defeat existing transparency):
+
+/* Set a single source of truth for width (scoped var is fine) */
+:root { --sidebar-width: 280px; }
+
+/* Make the existing sidebar fixed, opaque, and above content */
+<SIDEBAR_ROOT> {
+  position: fixed;       /* pin it */
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: var(--sidebar-width);
+  background: #0f172a;   /* solid color, no alpha */
+  opacity: 1 !important;             /* kill any previous transparency */
+  backdrop-filter: none !important;  /* kill blur/translucency */
+  mix-blend-mode: normal !important; /* prevent blending with alerts/toasts */
+  z-index: 1000;         /* above content but below modals if any */
+  border-right: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  overflow-y: auto;      /* sidebar scrolls independently if long */
+}
+
+/* Ensure page content never sits under the sidebar */
+<MAIN_CONTENT_ROOT> {
+  margin-left: var(--sidebar-width);
+}
+
+/* Keep layout sane on small screens (preserve existing mobile if present) */
+@media (max-width: 1023px) {
+  <MAIN_CONTENT_ROOT> { margin-left: 0; }
+  /* If the project already uses a drawer on mobile, keep that JS/HTML.
+     Only ensure the panel is opaque (no transparency) if it uses the same root: */
+  <SIDEBAR_ROOT> {
+    background: #0f172a;
+    opacity: 1 !important;
+    backdrop-filter: none !important;
+  }
+}
+
+
+Important removals/overrides (still CSS-only):
+
+If <SIDEBAR_ROOT> currently sets opacity < 1, background: rgba(..., < 1), backdrop-filter, filter, or mix-blend-mode, override them as shown above.
+
+If <SIDEBAR_ROOT> currently uses position: absolute or relative and the content slides underneath, change it to position: fixed as above.
+
+Do not alter global body/html styles except for the two declarations above; we only need the margin on <MAIN_CONTENT_ROOT>.
+
+Z-index contract:
+
+Keep <SIDEBAR_ROOT> at z-index: 1000. Do not raise other components. Do not lower existing modals/toasts; if a global modal uses a higher z-index, leave it unchanged.
+
+Acceptance tests (must all pass):
+
+On desktop (≥1024px), the sidebar is fully opaque, 280px wide, fixed to the left, and page content starts at exactly 280px (no overlap).
+
+Scrolling the sidebar does not move the page content.
+
+Alerts like “High risk detected” are never visible under the sidebar.
+
+On mobile, existing drawer behavior (if any) remains; the panel is opaque with no transparency or blur.
+
+No other visual or behavioral changes anywhere on the site.
+
+Reminder: Apart from these edits, do not update or change anything else in the repository.
