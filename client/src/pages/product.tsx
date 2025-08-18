@@ -433,7 +433,7 @@ const ProductPage = () => {
               </div>
               
               <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 leading-tight">
-                Win More Tenders,{" "}
+                {" "}
                 <span className="relative">
                   <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                     Simplifiez votre gestion des appels d'offres et réduisez les risques d'erreurs
