@@ -149,7 +149,7 @@ const ProductPage = () => {
   return (
     <div className="min-h-screen bg-aitenders-white-blue">
       <Header />
-      
+
       {/* 1. HERO SECTION */}
       <section 
         style={{ 
@@ -170,14 +170,14 @@ const ProductPage = () => {
 
         <div className="grid-container relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            
+
             {/* Left Column - Content */}
             <div>
               <div className="inline-flex items-center px-4 py-2 bg-blue-100/20 backdrop-blur-sm border border-blue-200/30 rounded-full mb-8">
                 <div className="w-2 h-2 bg-blue-400 rounded-full mr-3 animate-pulse"></div>
                 <span className="text-sm font-bold text-blue-200 uppercase tracking-wider">AI-Powered Tender Management</span>
               </div>
-              
+
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-8 leading-tight">
                 L'intelligence de vos équipes Projets,{" "}
                 <span className="relative">
@@ -187,11 +187,11 @@ const ProductPage = () => {
                   <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-400/50 to-cyan-400/50 rounded-full"></div>
                 </span>
               </h1>
-              
+
               <p className="text-xl md:text-2xl text-blue-100 mb-12 leading-relaxed font-medium">
                 Dès l'appel d'offres jusqu'à la livraison, Aitenders est votre copilote – conçu pour aller plus vite et rester aligné.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-6">
                 <button 
                   style={{ 
@@ -218,7 +218,7 @@ const ProductPage = () => {
                 >
                   🚀 Request Demo
                 </button>
-                
+
                 <button 
                   style={{ 
                     background: "rgba(255,255,255,0.1)", 
@@ -246,7 +246,7 @@ const ProductPage = () => {
                   📞 Talk to Sales
                 </button>
               </div>
-              
+
               {/* Stats row */}
               <div className="flex items-center gap-8 mt-12 pt-8 border-t border-white/20">
                 <div className="text-center">
@@ -263,11 +263,11 @@ const ProductPage = () => {
                 </div>
               </div>
             </div>
-            
+
             {/* Right Column - Interactive Dashboard Preview */}
             <div className="flex justify-center lg:justify-end">
               <div className="relative w-full max-w-lg" style={{ perspective: "1000px" }}>
-                
+
                 {/* Main Dashboard Container */}
                 <div 
                   className="relative w-full h-96 rounded-3xl shadow-2xl overflow-hidden group hover:shadow-3xl transition-all duration-500"
@@ -286,7 +286,7 @@ const ProductPage = () => {
                     </div>
                     <div className="ml-auto text-white text-sm font-semibold">Aitenders Dashboard</div>
                   </div>
-                  
+
                   {/* Content Area */}
                   <div className="p-6 space-y-6">
                     {/* Quick Stats */}
@@ -300,7 +300,7 @@ const ProductPage = () => {
                         <div className="text-xs text-green-600">Win Rate</div>
                       </div>
                     </div>
-                    
+
                     {/* AI Analysis Progress */}
                     <div className="bg-amber-50/80 rounded-xl p-4 border border-amber-100">
                       <div className="flex items-center justify-between mb-3">
@@ -320,7 +320,7 @@ const ProductPage = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     {/* Recent Activity */}
                     <div className="space-y-2">
                       <div className="text-xs font-semibold text-slate-700 mb-2">Recent Activity</div>
@@ -340,17 +340,17 @@ const ProductPage = () => {
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Animated indicators */}
                   <div className="absolute top-20 right-6 w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
                   <div className="absolute top-32 right-4 w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: "0.5s" }}></div>
                   <div className="absolute bottom-20 left-6 w-2 h-2 bg-amber-400 rounded-full animate-pulse" style={{ animationDelay: "1s" }}></div>
-                  
+
                   {/* Floating data points */}
                   <div className="absolute top-24 left-8 w-4 h-4 bg-blue-100 rounded-full animate-float opacity-60"></div>
                   <div className="absolute bottom-32 right-8 w-3 h-3 bg-indigo-100 rounded-full animate-float opacity-60" style={{ animationDelay: "1.5s" }}></div>
                 </div>
-                
+
                 {/* Shadow effect */}
                 <div 
                   className="absolute inset-0 rounded-3xl blur-xl opacity-20 -z-10"
@@ -361,7 +361,7 @@ const ProductPage = () => {
                 />
               </div>
             </div>
-            
+
           </div>
         </div>
       </section>
@@ -424,11 +424,11 @@ const ProductPage = () => {
       >
         <div className="grid-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            
+
             {/* Left Column - Content */}
             <div>
-              
-              
+
+
               <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 leading-tight">
                 {" "}
                 <span className="relative">
@@ -438,11 +438,11 @@ const ProductPage = () => {
                   <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-600/30 to-indigo-600/30 rounded-full"></div>
                 </span>
               </h2>
-              
+
               <p className="text-xl text-slate-600 mb-12 leading-relaxed">
                 Aitenders aide les équipes à répondre plus rapidement aux appels d'offres, sans passer à côté des informations essentielles. La plateforme réduit le temps passé à rechercher dans les documents, facilite l'analyse des exigences et évite les envois tardifs ou incomplets. Grâce à l'extraction automatisée, au suivi des versions et aux outils de conformité intégrés, chaque membre de l'équipe dispose des bonnes informations au bon moment. La solution est sécurisée, évolutive, et adaptée aux équipes qui gèrent des projets complexes en parallèle.
               </p>
-              
+
               {/* Key benefits */}
               <div className="space-y-8">
                 <div className="flex items-start gap-6 group">
@@ -454,7 +454,7 @@ const ProductPage = () => {
                     <p className="text-lg text-slate-600 leading-relaxed">L'extraction automatique des exigences et l'utilisation de modèles intelligents réduisent fortement le travail manuel.</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-6 group">
                   <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <TrendingUp className="w-8 h-8 text-white" />
@@ -464,7 +464,7 @@ const ProductPage = () => {
                     <p className="text-lg text-slate-600 leading-relaxed">Les recommandations basées sur l'IA permettent de produire des réponses plus pertinentes et conformes.</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-6 group">
                   <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <CheckSquare className="w-8 h-8 text-white" />
@@ -476,7 +476,7 @@ const ProductPage = () => {
                 </div>
               </div>
             </div>
-            
+
             {/* Right Column - Enhanced ROI Visual */}
             <div className="flex justify-center lg:justify-end">
               <div className="relative w-full max-w-lg">
@@ -493,7 +493,7 @@ const ProductPage = () => {
                     <h4 className="text-lg font-bold text-white mb-2">ROI Impact Analysis</h4>
                     <p className="text-sm text-slate-300">12-month performance metrics</p>
                   </div>
-                  
+
                   {/* Chart Content */}
                   <div className="p-6 space-y-6">
                     {/* Before/After Comparison */}
@@ -512,7 +512,7 @@ const ProductPage = () => {
                           </div>
                         </div>
                       </div>
-                      
+
                       <div>
                         <div className="flex justify-between text-sm text-slate-300 mb-2">
                           <span>Win Rate</span>
@@ -527,7 +527,7 @@ const ProductPage = () => {
                           </div>
                         </div>
                       </div>
-                      
+
                       <div>
                         <div className="flex justify-between text-sm text-slate-300 mb-2">
                           <span>Compliance Issues</span>
@@ -543,7 +543,7 @@ const ProductPage = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     {/* ROI Summary */}
                     <div className="bg-blue-500/20 rounded-xl p-4 border border-blue-500/30">
                       <div className="text-center">
@@ -552,12 +552,12 @@ const ProductPage = () => {
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Animated elements */}
                   <div className="absolute top-20 right-6 w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
                   <div className="absolute bottom-20 left-6 w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: "1s" }}></div>
                 </div>
-                
+
                 {/* Shadow effect */}
                 <div 
                   className="absolute inset-0 rounded-3xl blur-xl opacity-30 -z-10"
@@ -568,7 +568,7 @@ const ProductPage = () => {
                 />
               </div>
             </div>
-            
+
           </div>
         </div>
       </section>
@@ -848,7 +848,7 @@ const ProductPage = () => {
         `}</style>
       </section>
 
-      
+
 
       {/* 6. SECURITY & COMPLIANCE SECTION */}
       <section 
@@ -1154,7 +1154,7 @@ const ProductPage = () => {
           >
             Structurez vos appels d'offres. Alignez vos équipes. Livrez sans erreur.
           </h2>
-          
+
           <button 
             style={{ 
               backgroundColor: "#3880E8", 
@@ -1174,7 +1174,7 @@ const ProductPage = () => {
               e.currentTarget.style.boxShadow = "none";
             }}
           >
-            🚀 Book Your Demo Now
+            Réserver Votre Démo Maintenant
           </button>
         </div>
       </section>
