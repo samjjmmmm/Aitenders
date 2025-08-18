@@ -106,7 +106,13 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
         </div>
       </div>
 
-
+      {/* Menu Backdrop - No blur, just background coverage */}
+      {isMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-white/95 z-40"
+          onClick={closeMenu}
+        />
+      )}
 
       {/* Slide-out Menu - Only render when needed */}
       {isMenuOpen && (
