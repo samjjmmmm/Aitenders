@@ -693,7 +693,7 @@ export default function UC1Page() {
           </div>
 
           {/* Feature 3: Validation guidée - Text Left, Card Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 lg:gap-32 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-1">
               <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
                 <MdSecurity className="w-10 h-10 text-white" />
