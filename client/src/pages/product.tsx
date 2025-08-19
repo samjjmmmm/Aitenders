@@ -598,22 +598,29 @@ const ProductPage = () => {
                 Ce que ça change : Qualification plus rapide, réduction des erreurs, meilleure visibilité sur les risques.
               </div>
             </div>
-            <div className="flex justify-center items-center relative min-h-[600px] lg:min-h-[500px]">
-              <div className="w-full max-w-lg relative z-10">
-                <div className="relative aspect-square">
-                  <img 
-                    src={analyseUIImage} 
-                    alt="Aitenders Analysis Interface"
-                    className="absolute inset-0 w-full h-full object-contain"
-                    style={{ 
-                      transform: "scale(1.8)", 
-                      transformOrigin: "center center",
-                      maxWidth: "none",
-                      maxHeight: "none"
-                    }}
-                  />
-                </div>
-              </div>
+            <div className="flex justify-center items-center relative">
+              <figure
+                className="
+                  feature-illustration
+                  relative z-10 w-full max-w-2xl
+                  mx-auto
+                  rounded-2xl
+                  shadow-2xl
+                  border border-slate-200/60
+                  bg-white
+                  overflow-hidden
+                "
+                style={{ maxHeight: 560 }}
+              >
+                <img
+                  src={analyseUIImage}
+                  alt="Aitenders — interface d'analyse"
+                  className="block w-full h-auto object-contain"
+                  loading="lazy"
+                  decoding="async"
+                  sizes="(min-width: 1024px) 560px, (min-width: 768px) 80vw, 100vw"
+                />
+              </figure>
             </div>
           </div>
 
@@ -722,6 +729,16 @@ const ProductPage = () => {
 
           .hover\\:shadow-3xl:hover {
             box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+          }
+
+          .feature-illustration img { 
+            display: block; 
+          }
+          
+          @media (max-width: 1024px) {
+            .feature-illustration { 
+              max-height: 520px; 
+            }
           }
         `}</style>
       </section>
