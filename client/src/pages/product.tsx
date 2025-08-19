@@ -232,99 +232,131 @@ const ProductPage = () => {
               </div>
             </div>
 
-            {/* Right Column - Interactive Dashboard Preview */}
+            {/* Right Column - Aitenders Document Analysis Interface */}
             <div className="flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-lg" style={{ perspective: "1000px" }}>
+              <div className="relative w-full max-w-2xl" style={{ perspective: "1000px" }}>
 
-                {/* Main Dashboard Container */}
+                {/* Main Interface Container */}
                 <div 
-                  className="relative w-full h-96 rounded-3xl shadow-2xl overflow-hidden group hover:shadow-3xl transition-all duration-500"
+                  className="relative w-full h-96 rounded-2xl shadow-2xl overflow-hidden group hover:shadow-3xl transition-all duration-500"
                   style={{ 
                     background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)",
                     border: "1px solid rgba(59, 130, 246, 0.1)",
-                    transform: "rotateY(-5deg) rotateX(5deg)"
+                    transform: "rotateY(-3deg) rotateX(3deg)"
                   }}
                 >
-                  {/* Dashboard Header */}
-                  <div className="h-16 bg-gradient-to-r from-blue-600 to-indigo-600 flex items-center px-6">
-                    <div className="flex gap-2">
-                      <div className="w-3 h-3 rounded-full bg-white/30"></div>
-                      <div className="w-3 h-3 rounded-full bg-white/30"></div>
-                      <div className="w-3 h-3 rounded-full bg-white/30"></div>
+                  {/* Header with Aitenders logo */}
+                  <div className="h-12 bg-white border-b border-gray-200 flex items-center px-4">
+                    <div className="flex items-center gap-2">
+                      <div className="w-6 h-6 bg-blue-600 rounded flex items-center justify-center">
+                        <span className="text-white text-xs font-bold">A</span>
+                      </div>
+                      <span className="text-sm font-semibold text-gray-700">Aitenders</span>
                     </div>
-                    <div className="ml-auto text-white text-sm font-semibold">Aitenders Dashboard</div>
-                  </div>
-
-                  {/* Content Area */}
-                  <div className="p-6 space-y-6">
-                    {/* Quick Stats */}
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-blue-50/80 rounded-xl p-4 border border-blue-100">
-                        <div className="text-2xl font-bold text-blue-900">24</div>
-                        <div className="text-xs text-blue-600">Active Tenders</div>
-                      </div>
-                      <div className="bg-green-50/80 rounded-xl p-4 border border-green-100">
-                        <div className="text-2xl font-bold text-green-900">87%</div>
-                        <div className="text-xs text-green-600">Win Rate</div>
-                      </div>
-                    </div>
-
-                    {/* AI Analysis Progress */}
-                    <div className="bg-amber-50/80 rounded-xl p-4 border border-amber-100">
-                      <div className="flex items-center justify-between mb-3">
-                        <h4 className="text-sm font-bold text-amber-900">AI Document Analysis</h4>
-                        <div className="text-xs text-amber-600 bg-amber-100 px-2 py-1 rounded-full">Processing</div>
-                      </div>
-                      <div className="space-y-2">
-                        <div className="flex justify-between text-xs text-amber-700">
-                          <span>Requirements Extraction</span>
-                          <span>94%</span>
-                        </div>
-                        <div className="w-full bg-amber-200 rounded-full h-2">
-                          <div 
-                            className="h-2 bg-gradient-to-r from-amber-500 to-amber-600 rounded-full transition-all duration-1000" 
-                            style={{ width: "94%" }}
-                          ></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Recent Activity */}
-                    <div className="space-y-2">
-                      <div className="text-xs font-semibold text-slate-700 mb-2">Recent Activity</div>
-                      <div className="space-y-1">
-                        <div className="flex items-center gap-2 text-xs text-slate-600">
-                          <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                          <span>New tender: Infrastructure Project Alpha</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-xs text-slate-600">
-                          <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                          <span>Compliance check completed</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-xs text-slate-600">
-                          <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-                          <span>Team collaboration active</span>
-                        </div>
-                      </div>
+                    <div className="ml-auto flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                      <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+                      <div className="w-3 h-3 rounded-full bg-green-400"></div>
                     </div>
                   </div>
 
-                  {/* Animated indicators */}
-                  <div className="absolute top-20 right-6 w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                  <div className="absolute top-32 right-4 w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: "0.5s" }}></div>
-                  <div className="absolute bottom-20 left-6 w-2 h-2 bg-amber-400 rounded-full animate-pulse" style={{ animationDelay: "1s" }}></div>
+                  {/* Interface Content */}
+                  <div className="flex h-80">
+                    {/* Left Sidebar - Document List */}
+                    <div className="w-1/2 bg-gray-50 border-r border-gray-200 overflow-y-auto">
+                      {/* Document List Header */}
+                      <div className="p-3 border-b border-gray-200">
+                        <div className="text-xs font-semibold text-gray-600 mb-2">Liste de documents</div>
+                        <div className="text-xs text-gray-500">DOSSIER A • 15 Documents</div>
+                      </div>
 
-                  {/* Floating data points */}
-                  <div className="absolute top-24 left-8 w-4 h-4 bg-blue-100 rounded-full animate-float opacity-60"></div>
-                  <div className="absolute bottom-32 right-8 w-3 h-3 bg-indigo-100 rounded-full animate-float opacity-60" style={{ animationDelay: "1.5s" }}></div>
+                      {/* Document Items */}
+                      <div className="space-y-1 p-2">
+                        {[
+                          { name: "1_AO_modification.pdf", status: "green", type: "PDF" },
+                          { name: "Adossement sur DELTA", status: "blue", type: "DOC" },
+                          { name: "AO_Engagement.pdf", status: "green", type: "PDF" },
+                          { name: "CDPF.pdf", status: "green", type: "PDF" },
+                          { name: "Ouvrage_Abaque_APJ..", status: "orange", type: "PDF" },
+                          { name: "Ouvrage_Commun_ZL..", status: "orange", type: "PDF" },
+                          { name: "Règlement_premiere.pdf", status: "red", type: "PDF" },
+                        ].map((doc, idx) => (
+                          <div key={idx} className={`flex items-center gap-2 p-2 rounded text-xs hover:bg-gray-100 cursor-pointer ${idx === 0 ? 'bg-blue-50 border border-blue-200' : ''}`}>
+                            <div className={`w-2 h-2 rounded-full ${
+                              doc.status === 'green' ? 'bg-green-500' : 
+                              doc.status === 'blue' ? 'bg-blue-500' :
+                              doc.status === 'orange' ? 'bg-orange-500' : 'bg-red-500'
+                            }`}></div>
+                            <span className="flex-1 truncate text-gray-700">{doc.name}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Right Panel - Analysis Details */}
+                    <div className="w-1/2 bg-white">
+                      {/* Panel Header */}
+                      <div className="p-3 border-b border-gray-200 flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs font-semibold text-gray-700">Aitenders</span>
+                          <div className="flex gap-1">
+                            <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+                            <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+                            <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+                          </div>
+                          <span className="text-xs text-gray-600">Détail</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <button className="text-xs bg-blue-600 text-white px-2 py-1 rounded">Exporter l'analyse</button>
+                          <span className="text-xs text-gray-600">Synthèse de la catégorie</span>
+                        </div>
+                      </div>
+
+                      {/* Analysis Content */}
+                      <div className="p-3 space-y-3 text-xs">
+                        {/* Category Tags */}
+                        <div className="flex flex-wrap gap-1">
+                          <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs">Technique</span>
+                          <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">Études</span>
+                        </div>
+
+                        {/* Analysis Items */}
+                        <div className="space-y-2">
+                          {[
+                            { category: "Exigences du contractant", priority: "high", text: "Traitement de la conduite d'air..." },
+                            { category: "Admissibilité technique", priority: "low", text: "1 point" },
+                            { category: "Contraintes spécifiques", priority: "medium", text: "Référence" },
+                            { category: "Exigences de l'acheteur", priority: "high", text: "Proposition de la conduite d'air..." },
+                            { category: "Conformité du contrat", priority: "low", text: "1 point" },
+                          ].map((item, idx) => (
+                            <div key={idx} className="flex items-start gap-2 p-2 bg-gray-50 rounded">
+                              <div className={`w-1.5 h-1.5 rounded-full mt-1 ${
+                                item.priority === 'high' ? 'bg-red-500' :
+                                item.priority === 'medium' ? 'bg-orange-500' : 'bg-green-500'
+                              }`}></div>
+                              <div className="flex-1">
+                                <div className="text-xs font-medium text-gray-700">{item.category}</div>
+                                <div className="text-xs text-gray-600 mt-1">{item.text}</div>
+                              </div>
+                              <div className="flex gap-1">
+                                <div className="w-4 h-4 bg-gray-200 rounded"></div>
+                                <div className="w-4 h-4 bg-gray-200 rounded"></div>
+                                <div className="w-4 h-4 bg-gray-200 rounded"></div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Shadow effect */}
                 <div 
-                  className="absolute inset-0 rounded-3xl blur-xl opacity-20 -z-10"
+                  className="absolute inset-0 rounded-2xl blur-xl opacity-20 -z-10"
                   style={{ 
                     background: "linear-gradient(135deg, #3B82F6 0%, #6366F1 100%)",
-                    transform: "translateY(20px) scale(0.95)"
+                    transform: "translateY(15px) scale(0.95)"
                   }}
                 />
               </div>
