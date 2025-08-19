@@ -34,6 +34,9 @@ import {
 // Import the analysis UI image
 import analyseUIImage from "@assets/Container_1755591723285.png";
 
+// Import the write UI image
+import writeUIImage from "@assets/UI 2_1755592576247.png";
+
 // Import required components
 // HomeTenderComplexitySection and ComparisonSection are commented out as they don't exist yet
 
@@ -626,14 +629,29 @@ const ProductPage = () => {
 
           {/* Feature 2: Write - Right aligned */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
-            <div className="order-2 lg:order-1 flex justify-center">
-              <div className="w-full max-w-md h-80 bg-gradient-to-br from-green-50 to-green-100 rounded-3xl shadow-xl flex items-center justify-center border border-green-200">
-                <div className="text-center">
-                  <FileText className="w-16 h-16 text-green-600 mx-auto mb-4" />
-                  <div className="text-green-800 font-semibold">Smart Writing</div>
-                  <div className="text-green-600 text-sm">Template-Based Generation</div>
-                </div>
-              </div>
+            <div className="order-2 lg:order-1 flex justify-center items-center relative">
+              <figure
+                className="
+                  feature-illustration
+                  relative z-10 w-full max-w-2xl
+                  mx-auto
+                  rounded-2xl
+                  shadow-2xl
+                  border border-slate-200/60
+                  bg-white
+                  overflow-hidden
+                "
+                style={{ maxHeight: 560 }}
+              >
+                <img
+                  src={writeUIImage}
+                  alt="Aitenders — interface de rédaction"
+                  className="block w-full h-auto object-contain"
+                  loading="lazy"
+                  decoding="async"
+                  sizes="(min-width: 1024px) 560px, (min-width: 768px) 80vw, 100vw"
+                />
+              </figure>
             </div>
             <div className="order-1 lg:order-2">
               <div className="flex items-center mb-6">
