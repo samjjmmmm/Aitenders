@@ -581,7 +581,7 @@ const ProductPage = () => {
           </div>
 
           {/* Feature 1: Analyse - Left aligned */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32 py-8">
             <div>
               <div className="flex items-center mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg mr-6">
@@ -598,17 +598,21 @@ const ProductPage = () => {
                 Ce que ça change : Qualification plus rapide, réduction des erreurs, meilleure visibilité sur les risques.
               </div>
             </div>
-            <div className="flex justify-center items-center">
-              <div className="w-full max-w-lg">
-                <img 
-                  src={analyseUIImage} 
-                  alt="Aitenders Analysis Interface"
-                  className="w-full h-auto mx-auto block"
-                  style={{ 
-                    transform: "scale(2)", 
-                    transformOrigin: "center center"
-                  }}
-                />
+            <div className="flex justify-center items-center relative min-h-[600px] lg:min-h-[500px]">
+              <div className="w-full max-w-lg relative z-10">
+                <div className="relative aspect-square">
+                  <img 
+                    src={analyseUIImage} 
+                    alt="Aitenders Analysis Interface"
+                    className="absolute inset-0 w-full h-full object-contain"
+                    style={{ 
+                      transform: "scale(1.8)", 
+                      transformOrigin: "center center",
+                      maxWidth: "none",
+                      maxHeight: "none"
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
