@@ -32,7 +32,7 @@ import {
 } from "lucide-react";
 
 // Import the analysis UI image
-import analyseUIImage from "@assets/UI-ANALYSE_1755591497817.png";
+import analyseUIImage from "@assets/Container_1755591723285.png";
 
 // Import required components
 // HomeTenderComplexitySection and ComparisonSection are commented out as they don't exist yet
