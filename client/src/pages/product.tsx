@@ -641,12 +641,16 @@ const ProductPage = () => {
                   bg-white
                   overflow-hidden
                 "
-                style={{ maxHeight: 560 }}
+                style={{ maxHeight: 560, padding: "0.5rem" }}
               >
                 <img
                   src={writeUIImage}
                   alt="Aitenders — interface de rédaction"
                   className="block w-full h-auto object-contain"
+                  style={{ 
+                    transform: "scale(1.15)", 
+                    transformOrigin: "center center"
+                  }}
                   loading="lazy"
                   decoding="async"
                   sizes="(min-width: 1024px) 560px, (min-width: 768px) 80vw, 100vw"

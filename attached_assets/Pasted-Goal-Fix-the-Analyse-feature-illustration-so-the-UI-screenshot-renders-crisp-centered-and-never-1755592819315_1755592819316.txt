@@ -1,0 +1,93 @@
+Goal: Fix the “Analyse” feature illustration so the UI screenshot renders crisp, centered, and never overlaps/clips content at any breakpoint.
+
+Context/Symptoms:
+
+In ProductPage, the “Analyse” block uses:
+
+className="absolute inset-0 w-full h-full object-contain"
+
+style={{ transform: "scale(1.8)", transformOrigin: "center center", maxWidth: "none", maxHeight: "none" }}
+
+wrapped by a relative aspect-square container.
+
+This combination causes overflow/clipping on desktop and awkward scaling on smaller viewports.
+
+What to change (acceptance criteria):
+
+Remove any forced scaling (transform: scale(...)) and absolute positioning of the image.
+
+Replace the aspect-square box with a responsive container that constrains max width/height and lets the image size naturally (object-contain).
+
+Ensure the image is centered, has rounded corners and a soft shadow, and never exceeds the container (no cropping).
+
+Add loading="lazy" and decoding="async", and a proper sizes attribute for responsiveness.
+
+On mobile/tablet, the image should shrink to fit the column with no horizontal scroll.
+
+On large screens, cap height around 520–560px to avoid dominating the layout.
+
+Keep decorative background effects from overlapping the image (use z-10 on the figure and overflow-visible in the grid item if needed).
+
+Test breakpoints: 360px, 768px, 1024px, 1280px.
+
+Deliverables:
+
+Refactor the JSX for the “Analyse” image block as below (or equivalent).
+
+No other visual regressions.
+
+Drop-in fix (replace only the image block inside the “Analyse” section)
+{/* RIGHT COLUMN — Analyse screenshot (fixed) */}
+<div className="flex justify-center items-center relative">
+  <figure
+    className="
+      feature-illustration
+      relative z-10 w-full max-w-2xl
+      mx-auto
+      rounded-2xl
+      shadow-2xl
+      border border-slate-200/60
+      bg-white
+      overflow-hidden
+    "
+    style={{ maxHeight: 560 }}
+  >
+    <img
+      src={analyseUIImage}
+      alt="Aitenders — interface d’analyse"
+      className="block w-full h-auto object-contain"
+      loading="lazy"
+      decoding="async"
+      sizes="(min-width: 1024px) 560px, (min-width: 768px) 80vw, 100vw"
+    />
+  </figure>
+</div>
+
+
+And remove this old wrapper and styles from your code:
+
+{/* OLD (remove) */}
+<div className="w-full max-w-lg relative z-10">
+  <div className="relative aspect-square">
+    <img
+      src={analyseUIImage}
+      className="absolute inset-0 w-full h-full object-contain"
+      style={{
+        transform: "scale(1.8)",
+        transformOrigin: "center center",
+        maxWidth: "none",
+        maxHeight: "none"
+      }}
+    />
+  </div>
+</div>
+
+
+Optional (tiny helper CSS):
+
+<style>{`
+  .feature-illustration img { display:block; }
+  @media (max-width: 1024px) {
+    .feature-illustration { max-height: 520px; }
+  }
+`}</style>
