@@ -639,9 +639,9 @@ const ProductPage = () => {
                   shadow-2xl
                   border border-slate-200/60
                   bg-white
-                  overflow-hidden
+                  overflow-visible
                 "
-                style={{ maxHeight: 560, padding: "0.5rem" }}
+                style={{ maxHeight: 640, padding: "1rem" }}
               >
                 <img
                   src={writeUIImage}
