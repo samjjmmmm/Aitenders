@@ -1,0 +1,58 @@
+Remove any “box/card” styling (rounded corners, borders, shadows, background) around the mock UI screenshots.
+
+Make the screenshots render crisp and slightly smaller (because assets are 4× from Figma) while staying responsive.
+
+File to edit: UC1Page component (the file shown above).
+
+Changes
+
+In the three “Feature” sections that show the screenshots
+(containerUc1Image, containerUc1SecondImage, containerUc1ThirdImage), update the wrapper <div> and <img> so there is no rounded radius, no box shadow, no border, no background.
+Replace each wrapper + image with this exact structure:
+
+<div className="relative flex justify-center items-center h-full px-0 py-6">
+  <img
+    src={containerUc1Image} // (or containerUc1SecondImage / containerUc1ThirdImage)
+    alt="Mock UI"
+    className="block w-[640px] md:w-[760px] lg:w-[880px] max-w-full h-auto select-none pointer-events-none object-contain"
+    style={{
+      // scale down a bit because assets are exported @4x
+      transform: 'scale(0.92)',
+      transformOrigin: 'center',
+      imageRendering: 'auto', // keep it smooth
+      filter: 'none'
+    }}
+  />
+</div>
+
+
+Remove from those three <img> tags (and their wrappers) any of the following if present:
+
+rounded-*, shadow-*, border, bg-*, backdrop-*, drop-shadow*
+
+Custom inline shadows like filter: 'drop-shadow(...)'
+
+Ensure the first hero video keeps its current scale, but for consistency, update its inline styles to use the same pattern (object-fit and no borders):
+
+<video
+  src={heroVideo}
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="w-full h-auto max-w-lg block object-contain"
+  style={{ transform: 'scale(1.1)', transformOrigin: 'center' }}
+/>
+
+
+Do not re-introduce any card-like container around these media blocks. The goal is that the screenshots look like flat, edge-to-edge UI mocks with no box around them.
+
+Keep all other sections unchanged.
+
+Acceptance
+
+The three feature screenshots render with no rounded corners, no shadow, no border, no tinted background.
+
+They are slightly smaller than the raw 4× asset (about 92% scale) and responsive (w-[640–880px] across breakpoints).
+
+No visual “box” remains around the mock UI cards.

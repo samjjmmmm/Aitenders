@@ -641,14 +641,16 @@ export default function UC1Page() {
               </p>
             </div>
             <div className="order-2">
-              <div className="flex justify-center items-center h-full pl-20 pr-8 py-8">
-                <img 
+              <div className="relative flex justify-center items-center h-full px-0 py-6">
+                <img
                   src={containerUc1Image}
-                  alt="Analyse IA - Résumé projet"
-                  className="w-full h-auto max-w-[500px] rounded-3xl shadow-2xl"
+                  alt="Mock UI"
+                  className="block w-[640px] md:w-[760px] lg:w-[880px] max-w-full h-auto select-none pointer-events-none object-contain"
                   style={{
-                    transform: 'scale(1.33)',
-                    filter: 'drop-shadow(0 25px 50px rgba(59, 130, 246, 0.15))'
+                    transform: 'scale(0.92)',
+                    transformOrigin: 'center',
+                    imageRendering: 'auto',
+                    filter: 'none'
                   }}
                 />
               </div>
@@ -658,14 +660,16 @@ export default function UC1Page() {
           {/* Feature 2: Synthèse visuelle claire - Text Right, Card Left */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 lg:gap-32 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-2 lg:order-1">
-              <div className="flex justify-center items-center h-full pl-20 pr-8 py-8">
-                <img 
+              <div className="relative flex justify-center items-center h-full px-0 py-6">
+                <img
                   src={containerUc1SecondImage}
-                  alt="Synthèse Visuelle - Interface IA"
-                  className="w-full h-auto max-w-[500px] rounded-3xl shadow-2xl"
+                  alt="Mock UI"
+                  className="block w-[640px] md:w-[760px] lg:w-[880px] max-w-full h-auto select-none pointer-events-none object-contain"
                   style={{
-                    transform: 'scale(1.33)',
-                    filter: 'drop-shadow(0 25px 50px rgba(251, 146, 60, 0.15))'
+                    transform: 'scale(0.92)',
+                    transformOrigin: 'center',
+                    imageRendering: 'auto',
+                    filter: 'none'
                   }}
                 />
               </div>
@@ -709,14 +713,16 @@ export default function UC1Page() {
               </p>
             </div>
             <div className="order-2">
-              <div className="flex justify-center items-center h-full pl-20 pr-8 py-8">
-                <img 
+              <div className="relative flex justify-center items-center h-full px-0 py-6">
+                <img
                   src={containerUc1ThirdImage}
-                  alt="Validation IA - Interface de validation"
-                  className="w-full h-auto max-w-[500px] rounded-3xl shadow-2xl"
+                  alt="Mock UI"
+                  className="block w-[640px] md:w-[760px] lg:w-[880px] max-w-full h-auto select-none pointer-events-none object-contain"
                   style={{
-                    transform: 'scale(1.33)',
-                    filter: 'drop-shadow(0 25px 50px rgba(34, 197, 94, 0.15))'
+                    transform: 'scale(0.92)',
+                    transformOrigin: 'center',
+                    imageRendering: 'auto',
+                    filter: 'none'
                   }}
                 />
               </div>
