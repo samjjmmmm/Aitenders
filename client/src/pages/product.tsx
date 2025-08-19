@@ -599,7 +599,7 @@ const ProductPage = () => {
               </div>
             </div>
             <div className="flex justify-center items-center">
-              <div className="w-full max-w-lg overflow-hidden">
+              <div className="w-full max-w-lg">
                 <img 
                   src={analyseUIImage} 
                   alt="Aitenders Analysis Interface"
