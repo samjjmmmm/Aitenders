@@ -37,6 +37,9 @@ import analyseUIImage from "@assets/Container_1755591723285.png";
 // Import the write UI image
 import writeUIImage from "@assets/UI 2_1755592757928.png";
 
+// Import the pilot UI image
+import pilotUIImage from "@assets/UI 3_1755595225786.png";
+
 // Import required components
 // HomeTenderComplexitySection and ComparisonSection are commented out as they don't exist yet
 
@@ -693,14 +696,33 @@ const ProductPage = () => {
                 Ce que ça change : Moins de dérives projets, meilleure coordination avec le client, traçabilité complète des actions.
               </div>
             </div>
-            <div className="flex justify-center">
-              <div className="w-full max-w-md h-80 bg-gradient-to-br from-purple-50 to-purple-100 rounded-3xl shadow-xl flex items-center justify-center border border-purple-200">
-                <div className="text-center">
-                  <BarChart3 className="w-16 h-16 text-purple-600 mx-auto mb-4" />
-                  <div className="text-purple-800 font-semibold">Project Tracking</div>
-                  <div className="text-purple-600 text-sm">Real-time Monitoring</div>
-                </div>
-              </div>
+            <div className="flex justify-center items-center relative">
+              <figure
+                className="
+                  feature-illustration
+                  relative z-10 w-full max-w-2xl
+                  mx-auto
+                  rounded-2xl
+                  shadow-2xl
+                  border border-slate-200/60
+                  bg-white
+                  overflow-visible
+                "
+                style={{ maxHeight: 640, padding: "1rem" }}
+              >
+                <img
+                  src={pilotUIImage}
+                  alt="Aitenders — interface de pilotage"
+                  className="block w-full h-auto object-contain"
+                  style={{ 
+                    transform: "scale(1.15)", 
+                    transformOrigin: "center center"
+                  }}
+                  loading="lazy"
+                  decoding="async"
+                  sizes="(min-width: 1024px) 560px, (min-width: 768px) 80vw, 100vw"
+                />
+              </figure>
             </div>
           </div>
 
