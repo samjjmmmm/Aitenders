@@ -417,8 +417,8 @@ const ProductPage = () => {
                 >
                   {/* Chart Header */}
                   <div className="p-6 border-b border-slate-600/50">
-                    <h4 className="text-lg font-bold text-white mb-2">ROI Impact Analysis</h4>
-                    <p className="text-sm text-slate-300">12-month performance metrics</p>
+                    <h4 className="text-lg font-bold text-white mb-2">Analyse d'Impact ROI</h4>
+                    <p className="text-sm text-slate-300">Métriques de performance sur 12 mois</p>
                   </div>
 
                   {/* Chart Content */}
@@ -427,45 +427,45 @@ const ProductPage = () => {
                     <div className="space-y-4">
                       <div>
                         <div className="flex justify-between text-sm text-slate-300 mb-2">
-                          <span>Bid Preparation Time</span>
+                          <span>Temps de Préparation des Offres</span>
                           <span className="text-red-400">-70%</span>
                         </div>
                         <div className="flex gap-2">
                           <div className="flex-1 bg-red-400/20 rounded-lg p-2 text-center">
-                            <div className="text-xs text-red-400">Before: 40hrs</div>
+                            <div className="text-xs text-red-400">Avant : 40h</div>
                           </div>
                           <div className="flex-1 bg-green-400/20 rounded-lg p-2 text-center">
-                            <div className="text-xs text-green-400">After: 12hrs</div>
+                            <div className="text-xs text-green-400">Après : 12h</div>
                           </div>
                         </div>
                       </div>
 
                       <div>
                         <div className="flex justify-between text-sm text-slate-300 mb-2">
-                          <span>Win Rate</span>
+                          <span>Taux de Réussite</span>
                           <span className="text-green-400">+250%</span>
                         </div>
                         <div className="flex gap-2">
                           <div className="flex-1 bg-red-400/20 rounded-lg p-2 text-center">
-                            <div className="text-xs text-red-400">Before: 25%</div>
+                            <div className="text-xs text-red-400">Avant : 25%</div>
                           </div>
                           <div className="flex-1 bg-green-400/20 rounded-lg p-2 text-center">
-                            <div className="text-xs text-green-400">After: 87%</div>
+                            <div className="text-xs text-green-400">Après : 87%</div>
                           </div>
                         </div>
                       </div>
 
                       <div>
                         <div className="flex justify-between text-sm text-slate-300 mb-2">
-                          <span>Compliance Issues</span>
+                          <span>Problèmes de Conformité</span>
                           <span className="text-green-400">-100%</span>
                         </div>
                         <div className="flex gap-2">
                           <div className="flex-1 bg-red-400/20 rounded-lg p-2 text-center">
-                            <div className="text-xs text-red-400">Before: 15%</div>
+                            <div className="text-xs text-red-400">Avant : 15%</div>
                           </div>
                           <div className="flex-1 bg-green-400/20 rounded-lg p-2 text-center">
-                            <div className="text-xs text-green-400">After: 0%</div>
+                            <div className="text-xs text-green-400">Après : 0%</div>
                           </div>
                         </div>
                       </div>
@@ -475,7 +475,7 @@ const ProductPage = () => {
                     <div className="bg-blue-500/20 rounded-xl p-4 border border-blue-500/30">
                       <div className="text-center">
                         <div className="text-3xl font-bold text-blue-400 mb-1">520%</div>
-                        <div className="text-sm text-blue-300">Average ROI in Year 1</div>
+                        <div className="text-sm text-blue-300">ROI Moyen en Année 1</div>
                       </div>
                     </div>
                   </div>
