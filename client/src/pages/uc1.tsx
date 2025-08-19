@@ -27,7 +27,7 @@ import colasLogo from "@assets/Colas_1753711339292.png";
 import heroVideo from '../assets/hero-uc1-video.mp4';
 import containerUc1Image from "@assets/UI 1_1755608329140.png";
 import containerUc1SecondImage from "@assets/2ND_1755082953938.png";
-import containerUc1ThirdImage from "@assets/3RD_1755095206907.png";
+import containerUc1ThirdImage from "@assets/wow 3_1755615689683.png";
 import ChatSection from "@/components/chat-section";
 import ChatInterface from "@/components/chat-interface";
 import ToppingModal from "@/components/topping-modal";
