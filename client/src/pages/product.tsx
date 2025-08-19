@@ -249,17 +249,25 @@ const ProductPage = () => {
                   className="relative w-full rounded-3xl shadow-2xl overflow-hidden group hover:shadow-3xl transition-all duration-500"
                   style={{ 
                     aspectRatio: "16/9",
-                    border: "1px solid rgba(59, 130, 246, 0.1)"
+                    border: "1px solid rgba(59, 130, 246, 0.1)",
+                    background: "linear-gradient(135deg, #1e293b 0%, #334155 100%)"
                   }}
                 >
+                  {/* Custom video overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-indigo-900/20 z-10 pointer-events-none"></div>
+                  
                   <iframe
-                    src="https://www.youtube.com/embed/ma1UFP-PXZ8?rel=0&showinfo=0&modestbranding=1&autoplay=0&controls=1"
+                    src="https://www.youtube.com/embed/ma1UFP-PXZ8?rel=0&showinfo=0&modestbranding=1&autoplay=0&controls=1&color=white&iv_load_policy=3&cc_load_policy=0&disablekb=1&fs=1&playsinline=1"
                     title="Aitenders Platform Demo"
-                    className="absolute inset-0 w-full h-full"
-                    frameBorder="0"
+                    className="absolute inset-0 w-full h-full border-0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                   />
+                  
+                  {/* Custom branding overlay */}
+                  <div className="absolute bottom-4 left-4 z-20 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 pointer-events-none">
+                    <div className="text-xs font-semibold text-slate-800">Aitenders Platform Demo</div>
+                  </div>
                 </div>
 
                 {/* Shadow effect */}
