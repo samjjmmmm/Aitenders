@@ -28,7 +28,7 @@ import Lottie from 'lottie-react';
 import wow1Uc2Animation from '../assets/wow-1-uc2.json';
 import wow2Uc2Animation from '../assets/wow-2-uc2.json';
 import wow3Uc2Animation from '../assets/wow-3-uc2.json';
-import uc2FirstFeatureImage from "@assets/uc 2-1_1755101484948.png";
+import uc2FirstFeatureImage from "@assets/uc2-structuration-perimetre.png";
 import uc2SecondFeatureImage from "@assets/Group 75_1755160285095.png";
 import uc2ThirdFeatureImage from "@assets/UC22_1755163044585.png";
 
