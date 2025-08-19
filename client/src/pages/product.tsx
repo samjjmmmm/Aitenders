@@ -398,25 +398,26 @@ const ProductPage = () => {
         }}
       >
         <div className="grid-container">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 leading-tight">
+              {" "}
+              <span className="relative">
+                <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                  Simplifiez votre gestion des appels d'offres et réduisez les risques d'erreurs
+                </span>
+                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-600/30 to-indigo-600/30 rounded-full"></div>
+              </span>
+            </h2>
+
+            <p className="text-xl text-slate-600 mb-12 leading-relaxed max-w-4xl mx-auto">
+              Aitenders permet de répondre plus vite aux appels d'offres en automatisant l'analyse, le suivi et la conformité. Chaque équipe accède aux bonnes informations, au bon moment.
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
             {/* Left Column - Content */}
             <div>
-
-
-              <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 leading-tight text-center">
-                {" "}
-                <span className="relative">
-                  <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                    Simplifiez votre gestion des appels d'offres et réduisez les risques d'erreurs
-                  </span>
-                  <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-600/30 to-indigo-600/30 rounded-full"></div>
-                </span>
-              </h2>
-
-              <p className="text-xl text-slate-600 mb-12 leading-relaxed">
-                Aitenders permet de répondre plus vite aux appels d'offres en automatisant l'analyse, le suivi et la conformité. Chaque équipe accède aux bonnes informations, au bon moment.
-              </p>
 
               {/* Key benefits */}
               <div className="space-y-8">
