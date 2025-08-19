@@ -31,6 +31,9 @@ import {
   PieChart
 } from "lucide-react";
 
+// Import the analysis UI image
+import analyseUIImage from "@assets/UI-ANALYSE_1755591057142.png";
+
 // Import required components
 // HomeTenderComplexitySection and ComparisonSection are commented out as they don't exist yet
 
@@ -598,7 +601,7 @@ const ProductPage = () => {
             <div className="flex justify-center">
               <div className="w-full max-w-lg">
                 <img 
-                  src="/attached_assets/UI-ANALYSE_1755591057142.png" 
+                  src={analyseUIImage} 
                   alt="Aitenders Analysis Interface"
                   className="w-full h-auto rounded-2xl shadow-2xl"
                 />
