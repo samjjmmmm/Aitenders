@@ -596,11 +596,98 @@ const ProductPage = () => {
               </div>
             </div>
             <div className="flex justify-center">
-              <div className="w-full max-w-md h-80 bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl shadow-xl flex items-center justify-center border border-blue-200">
-                <div className="text-center">
-                  <Search className="w-16 h-16 text-blue-600 mx-auto mb-4" />
-                  <div className="text-blue-800 font-semibold">Document Analysis</div>
-                  <div className="text-blue-600 text-sm">AI-Powered Classification</div>
+              <div className="w-full max-w-lg h-96 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
+                {/* Header */}
+                <div className="bg-gray-50 px-4 py-3 border-b border-gray-200 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="text-sm font-semibold text-gray-700">Aitenders</div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                    <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                  </div>
+                </div>
+
+                {/* Content Area */}
+                <div className="flex h-full">
+                  {/* Left Sidebar */}
+                  <div className="w-1/3 bg-gray-50 p-3 border-r border-gray-200">
+                    <div className="text-xs font-semibold text-gray-600 mb-3">Liste de documents</div>
+                    <div className="space-y-2">
+                      <div className="text-xs text-gray-600 p-2 bg-white rounded border">Résumé du DCE</div>
+                      <div className="text-xs text-gray-600 p-2 hover:bg-blue-50 rounded">Acte d'engagement</div>
+                      <div className="text-xs text-gray-600 p-2 hover:bg-blue-50 rounded">CCTP Lot 1</div>
+                      <div className="text-xs text-gray-600 p-2 hover:bg-blue-50 rounded">CCTP Lot 2</div>
+                      <div className="text-xs text-gray-600 p-2 hover:bg-blue-50 rounded">Diagramme Alluvial_12.1</div>
+                    </div>
+                  </div>
+
+                  {/* Main Content */}
+                  <div className="w-2/3 p-4">
+                    {/* Top Section */}
+                    <div className="mb-4">
+                      <div className="text-sm font-semibold text-gray-800 mb-2">1. Indications générales et description des ouvrages</div>
+                      <div className="text-xs text-gray-600 mb-3">1.1. OBJET DES TRAVAUX</div>
+                      <div className="text-xs text-gray-600 mb-2">1.2. LOCALISATION</div>
+                      <div className="text-xs text-gray-600 mb-3">1.3. DESCRIPTION DES OUVRAGES</div>
+                    </div>
+
+                    {/* Analysis Results */}
+                    <div className="bg-blue-50 rounded-lg p-3">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="text-xs font-semibold text-gray-700">Aitenders</div>
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs text-gray-600">Détail</span>
+                          <span className="text-xs text-blue-600">Exporter l'analyse</span>
+                          <span className="text-xs bg-blue-600 text-white px-2 py-1 rounded">Synthèse de la catégorie</span>
+                        </div>
+                      </div>
+                      
+                      {/* Analysis Table */}
+                      <div className="bg-white rounded border">
+                        <div className="grid grid-cols-4 gap-2 p-2 border-b text-xs font-medium text-gray-600">
+                          <div>Critère</div>
+                          <div>Valeur</div>
+                          <div>Réponse</div>
+                          <div>Description</div>
+                        </div>
+                        
+                        {/* Sample rows */}
+                        <div className="p-2 space-y-1">
+                          <div className="grid grid-cols-4 gap-2 text-xs">
+                            <div className="text-gray-700">Traitement de la classification</div>
+                            <div className="text-gray-600">190</div>
+                            <div className="flex items-center gap-1">
+                              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                              <span>✓</span>
+                            </div>
+                            <div className="text-gray-600 truncate">Traitement de la nomenclature</div>
+                          </div>
+                          
+                          <div className="grid grid-cols-4 gap-2 text-xs">
+                            <div className="text-gray-700">Régularité de la classification</div>
+                            <div className="text-gray-600">1</div>
+                            <div className="flex items-center gap-1">
+                              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                              <span>✗</span>
+                            </div>
+                            <div className="text-gray-600 truncate">Conforme règlement</div>
+                          </div>
+                          
+                          <div className="grid grid-cols-4 gap-2 text-xs">
+                            <div className="text-gray-700">Garanties</div>
+                            <div className="text-gray-600">14</div>
+                            <div className="flex items-center gap-1">
+                              <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                              <span>!</span>
+                            </div>
+                            <div className="text-gray-600 truncate">1 référence</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
