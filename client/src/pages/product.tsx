@@ -598,7 +598,7 @@ const ProductPage = () => {
             <div className="flex justify-center">
               <div className="w-full max-w-lg">
                 <img 
-                  src="/attached_assets/UI-ANALYSE_1755590792843.png" 
+                  src="/attached_assets/UI-ANALYSE_1755591057142.png" 
                   alt="Aitenders Analysis Interface"
                   className="w-full h-auto rounded-2xl shadow-2xl"
                 />
