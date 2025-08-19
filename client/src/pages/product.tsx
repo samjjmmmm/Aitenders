@@ -598,13 +598,16 @@ const ProductPage = () => {
                 Ce que ça change : Qualification plus rapide, réduction des erreurs, meilleure visibilité sur les risques.
               </div>
             </div>
-            <div className="flex justify-center">
-              <div className="w-full max-w-lg">
+            <div className="flex justify-center items-center">
+              <div className="w-full max-w-lg overflow-hidden">
                 <img 
                   src={analyseUIImage} 
                   alt="Aitenders Analysis Interface"
-                  className="w-full h-auto"
-                  style={{ transform: "scale(2)" }}
+                  className="w-full h-auto mx-auto block"
+                  style={{ 
+                    transform: "scale(2)", 
+                    transformOrigin: "center center"
+                  }}
                 />
               </div>
             </div>
