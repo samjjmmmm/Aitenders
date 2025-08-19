@@ -603,8 +603,8 @@ const ProductPage = () => {
                 <img 
                   src={analyseUIImage} 
                   alt="Aitenders Analysis Interface"
-                  className="w-full h-auto shadow-lg"
-                  style={{ transform: "scale(1)" }}
+                  className="w-full h-auto"
+                  style={{ transform: "scale(2)" }}
                 />
               </div>
             </div>
