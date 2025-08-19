@@ -647,7 +647,7 @@ export default function UC1Page() {
                   alt="Mock UI"
                   className="block w-[640px] md:w-[760px] lg:w-[880px] max-w-full h-auto select-none pointer-events-none object-contain"
                   style={{
-                    transform: 'scale(0.92)',
+                    transform: 'scale(1.42)',
                     transformOrigin: 'center',
                     imageRendering: 'auto',
                     filter: 'none'
@@ -666,7 +666,7 @@ export default function UC1Page() {
                   alt="Mock UI"
                   className="block w-[640px] md:w-[760px] lg:w-[880px] max-w-full h-auto select-none pointer-events-none object-contain"
                   style={{
-                    transform: 'scale(0.92)',
+                    transform: 'scale(1.42)',
                     transformOrigin: 'center',
                     imageRendering: 'auto',
                     filter: 'none'
@@ -719,7 +719,7 @@ export default function UC1Page() {
                   alt="Mock UI"
                   className="block w-[640px] md:w-[760px] lg:w-[880px] max-w-full h-auto select-none pointer-events-none object-contain"
                   style={{
-                    transform: 'scale(0.92)',
+                    transform: 'scale(1.42)',
                     transformOrigin: 'center',
                     imageRendering: 'auto',
                     filter: 'none'
