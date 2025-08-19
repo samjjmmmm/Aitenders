@@ -241,91 +241,25 @@ const ProductPage = () => {
               </div>
             </div>
 
-            {/* Right Column - Interactive Dashboard Preview */}
+            {/* Right Column - Video Hero */}
             <div className="flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-lg" style={{ perspective: "1000px" }}>
-
-                {/* Main Dashboard Container */}
+              <div className="relative w-full max-w-lg">
+                {/* Video Container */}
                 <div 
-                  className="relative w-full h-96 rounded-3xl shadow-2xl overflow-hidden group hover:shadow-3xl transition-all duration-500"
+                  className="relative w-full rounded-3xl shadow-2xl overflow-hidden group hover:shadow-3xl transition-all duration-500"
                   style={{ 
-                    background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)",
-                    border: "1px solid rgba(59, 130, 246, 0.1)",
-                    transform: "rotateY(-5deg) rotateX(5deg)"
+                    aspectRatio: "16/9",
+                    border: "1px solid rgba(59, 130, 246, 0.1)"
                   }}
                 >
-                  {/* Dashboard Header */}
-                  <div className="h-16 bg-gradient-to-r from-blue-600 to-indigo-600 flex items-center px-6">
-                    <div className="flex gap-2">
-                      <div className="w-3 h-3 rounded-full bg-white/30"></div>
-                      <div className="w-3 h-3 rounded-full bg-white/30"></div>
-                      <div className="w-3 h-3 rounded-full bg-white/30"></div>
-                    </div>
-                    <div className="ml-auto text-white text-sm font-semibold">Aitenders Dashboard</div>
-                  </div>
-
-                  {/* Content Area */}
-                  <div className="p-6 space-y-6">
-                    {/* Quick Stats */}
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-blue-50/80 rounded-xl p-4 border border-blue-100">
-                        <div className="text-2xl font-bold text-blue-900">24</div>
-                        <div className="text-xs text-blue-600">Active Tenders</div>
-                      </div>
-                      <div className="bg-green-50/80 rounded-xl p-4 border border-green-100">
-                        <div className="text-2xl font-bold text-green-900">87%</div>
-                        <div className="text-xs text-green-600">Win Rate</div>
-                      </div>
-                    </div>
-
-                    {/* AI Analysis Progress */}
-                    <div className="bg-amber-50/80 rounded-xl p-4 border border-amber-100">
-                      <div className="flex items-center justify-between mb-3">
-                        <h4 className="text-sm font-bold text-amber-900">AI Document Analysis</h4>
-                        <div className="text-xs text-amber-600 bg-amber-100 px-2 py-1 rounded-full">Processing</div>
-                      </div>
-                      <div className="space-y-2">
-                        <div className="flex justify-between text-xs text-amber-700">
-                          <span>Requirements Extraction</span>
-                          <span>94%</span>
-                        </div>
-                        <div className="w-full bg-amber-200 rounded-full h-2">
-                          <div 
-                            className="h-2 bg-gradient-to-r from-amber-500 to-amber-600 rounded-full transition-all duration-1000" 
-                            style={{ width: "94%" }}
-                          ></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Recent Activity */}
-                    <div className="space-y-2">
-                      <div className="text-xs font-semibold text-slate-700 mb-2">Recent Activity</div>
-                      <div className="space-y-1">
-                        <div className="flex items-center gap-2 text-xs text-slate-600">
-                          <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                          <span>New tender: Infrastructure Project Alpha</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-xs text-slate-600">
-                          <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                          <span>Compliance check completed</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-xs text-slate-600">
-                          <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-                          <span>Team collaboration active</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Animated indicators */}
-                  <div className="absolute top-20 right-6 w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                  <div className="absolute top-32 right-4 w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: "0.5s" }}></div>
-                  <div className="absolute bottom-20 left-6 w-2 h-2 bg-amber-400 rounded-full animate-pulse" style={{ animationDelay: "1s" }}></div>
-
-                  {/* Floating data points */}
-                  <div className="absolute top-24 left-8 w-4 h-4 bg-blue-100 rounded-full animate-float opacity-60"></div>
-                  <div className="absolute bottom-32 right-8 w-3 h-3 bg-indigo-100 rounded-full animate-float opacity-60" style={{ animationDelay: "1.5s" }}></div>
+                  <iframe
+                    src="https://www.youtube.com/embed/ma1UFP-PXZ8?rel=0&showinfo=0&modestbranding=1&autoplay=0&controls=1"
+                    title="Aitenders Platform Demo"
+                    className="absolute inset-0 w-full h-full"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
                 </div>
 
                 {/* Shadow effect */}
