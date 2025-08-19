@@ -357,26 +357,33 @@ const ProductPage = () => {
               Trusted by Industry Leaders
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-              {/* Company logo placeholders - in a real implementation, these would be actual logos */}
               <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "60px" }}>
-                <div style={{ width: "120px", height: "40px", backgroundColor: "#E5E7EB", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "12px", color: "#9CA3AF" }}>
-                  Fortune 500
-                </div>
+                <img 
+                  src="https://7b296e3cdc356653bd8ddc60d0118593.cdn.bubble.io/cdn-cgi/image/w=192,h=77,f=auto,dpr=1,fit=contain/f1678788131510x657691839410021800/logo%20client_vinci.png" 
+                  alt="Vinci" 
+                  className="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity"
+                />
               </div>
               <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "60px" }}>
-                <div style={{ width: "120px", height: "40px", backgroundColor: "#E5E7EB", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "12px", color: "#9CA3AF" }}>
-                  Construction Leader
-                </div>
+                <img 
+                  src="https://7b296e3cdc356653bd8ddc60d0118593.cdn.bubble.io/cdn-cgi/image/w=192,h=77,f=auto,dpr=1,fit=contain/f1678788145140x676564290904210200/logo%20client_eiffage.png" 
+                  alt="Eiffage" 
+                  className="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity"
+                />
               </div>
               <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "60px" }}>
-                <div style={{ width: "120px", height: "40px", backgroundColor: "#E5E7EB", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "12px", color: "#9CA3AF" }}>
-                  Infrastructure Corp
-                </div>
+                <img 
+                  src="https://7b296e3cdc356653bd8ddc60d0118593.cdn.bubble.io/cdn-cgi/image/w=192,h=77,f=auto,dpr=1,fit=contain/f1678788168917x606403587556325600/logo%20client_equans.png" 
+                  alt="Equans" 
+                  className="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity"
+                />
               </div>
               <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "60px" }}>
-                <div style={{ width: "120px", height: "40px", backgroundColor: "#E5E7EB", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "12px", color: "#9CA3AF" }}>
-                  Engineering Firm
-                </div>
+                <img 
+                  src="https://7b296e3cdc356653bd8ddc60d0118593.cdn.bubble.io/cdn-cgi/image/w=192,h=77,f=auto,dpr=1,fit=contain/f1678788157547x760109737354937000/logo%20client_nge.png" 
+                  alt="NGE" 
+                  className="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity"
+                />
               </div>
             </div>
           </div>
