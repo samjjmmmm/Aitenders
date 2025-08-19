@@ -35,7 +35,7 @@ import {
 import analyseUIImage from "@assets/Container_1755591723285.png";
 
 // Import the write UI image
-import writeUIImage from "@assets/UI 2_1755592576247.png";
+import writeUIImage from "@assets/UI 2_1755592757928.png";
 
 // Import required components
 // HomeTenderComplexitySection and ComparisonSection are commented out as they don't exist yet
