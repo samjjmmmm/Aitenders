@@ -30,7 +30,7 @@ import wow2Uc2Animation from '../assets/wow-2-uc2.json';
 import wow3Uc2Animation from '../assets/wow-3-uc2.json';
 import uc2FirstFeatureImage from "@assets/UI 1_1755620075131.png";
 import uc2SecondFeatureImage from "@assets/Group 75_1755160285095.png";
-import uc2ThirdFeatureImage from "@assets/UC22_1755163044585.png";
+import uc2ThirdFeatureImage from "@assets/wow 3_1755682931580.png";
 
 export default function UC2Page() {
   // Target audience data with interactive content - UC2 adapted
