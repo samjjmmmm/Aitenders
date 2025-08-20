@@ -30,7 +30,7 @@ import Lottie from 'lottie-react';
 import wow1Uc4Animation from '../assets/wow-1-uc4.json';
 import wow2Uc4Animation from '../assets/wow-2-uc4.json';
 import wow3Uc4Animation from '../assets/wow-3-uc4.json';
-import uc4SecondFeatureImage from "@assets/41_1755176709158.png";
+import uc4SecondFeatureImage from "@assets/wow 2_1755706536721.png";
 import uc4FirstFeatureImage from "@assets/wow 1_1755701209581.png";
 import uc4ThirdFeatureImage from "@assets/43_1755177874563.png";
 
