@@ -31,6 +31,7 @@ import wow1Animation from '../assets/wow-1.json';
 import wow2Animation from '../assets/wow-2-uc3-updated.json';
 import wow3Animation from '../assets/wow-3.json';
 import uc3FirstFeatureImage from "@assets/33_1755170264011.png";
+import uc3SecondFeatureImage from "@assets/wow 2_1755694076094.png";
 import uc3ThirdFeatureImage from "@assets/333_1755176266561.png";
 
 export default function UC3Page() {
@@ -507,15 +508,15 @@ export default function UC3Page() {
           {/* Feature 2: Orchestrate Expert Teams - Text Right, Card Left */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-2 lg:order-1">
-              <div className="flex justify-center items-center h-full">
-                <Lottie 
-                  animationData={wow2Animation}
-                  loop={true}
-                  autoplay={true}
-                  className="w-full h-full max-w-[400px] max-h-[400px]"
+              <div className="flex justify-center items-center h-full px-4 sm:px-6 lg:px-8">
+                <img 
+                  src={uc3SecondFeatureImage}
+                  alt="Collaborez entre experts sans friction - Gestion collaborative des documents"
+                  className="w-full h-auto max-w-[280px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[500px] rounded-2xl shadow-2xl"
                   style={{ 
-                    transform: 'scale(1.5)',
-                    filter: 'drop-shadow(0 8px 32px rgba(147, 51, 234, 0.2))'
+                    transform: 'scale(1.4)',
+                    filter: 'drop-shadow(0 8px 32px rgba(147, 51, 234, 0.2))',
+                    objectFit: 'contain'
                   }}
                 />
               </div>
