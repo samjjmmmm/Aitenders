@@ -193,6 +193,210 @@ export default function UC1Page() {
         kpi2: { label: 'Conformité formats', value: '100%', icon: MdVerified },
         kpi3: { label: 'Temps déploiement', value: 'Immédiat', icon: MdFlashOn }
       }
+    },
+    'project-summary': {
+      name: 'Résumé Automatique du Projet',
+      description: 'Génération automatique d\'un résumé exécutif structuré à partir de tous les documents du dossier d\'appel d\'offres.',
+      icon: MdDescription,
+      iconColor: 'text-blue-600',
+      integration: {
+        title: 'Intégration dans le workflow d\'analyse',
+        steps: ['Analyse documents', 'Extraction clés', 'Génération résumé'],
+        visual: 'L\'IA analyse tous les documents fournis et génère automatiquement un résumé structuré avec les points clés, enjeux et exigences principales.'
+      },
+      valueProposition: {
+        buyer: {
+          title: 'Directeurs Commerciaux',
+          benefits: [
+            'Vue d\'ensemble immédiate de chaque opportunité',
+            'Prise de décision go/no-go accélérée',
+            'Allocation optimale des ressources'
+          ]
+        },
+        user: {
+          title: 'Chargés d\'Affaires',
+          benefits: [
+            'Compréhension rapide des enjeux projet',
+            'Points d\'attention identifiés automatiquement',
+            'Base solide pour la stratégie d\'offre'
+          ]
+        }
+      },
+      impact: {
+        kpi1: { label: 'Temps compréhension projet', value: '-70%', icon: MdAccessTime },
+        kpi2: { label: 'Qualité analyse préliminaire', value: '+85%', icon: MdStars },
+        kpi3: { label: 'Réactivité commerciale', value: '+45%', icon: MdTrendingUp }
+      }
+    },
+    'implicit-requirements': {
+      name: 'Détection des Exigences Implicites',
+      description: 'Identification automatique des attentes non exprimées et des exigences cachées dans les documents d\'appel d\'offres.',
+      icon: MdSearch,
+      iconColor: 'text-emerald-600',
+      integration: {
+        title: 'Analyse sémantique avancée',
+        steps: ['Analyse textuelle', 'Détection patterns', 'Exigences implicites'],
+        visual: 'Moteur IA qui détecte les sous-entendus, références croisées et exigences non explicitement formulées.'
+      },
+      valueProposition: {
+        buyer: {
+          title: 'Directeurs Commerciaux',
+          benefits: [
+            'Réduction des risques d\'offres non conformes',
+            'Différenciation par compréhension fine',
+            'Moins de clarifications post-soumission'
+          ]
+        },
+        user: {
+          title: 'Chargés d\'Affaires',
+          benefits: [
+            'Anticipation des attentes client',
+            'Offres plus complètes et précises',
+            'Confiance renforcée dans la réponse'
+          ]
+        }
+      },
+      impact: {
+        kpi1: { label: 'Conformité offres', value: '+92%', icon: MdVerified },
+        kpi2: { label: 'Taux de clarifications', value: '-65%', icon: MdWarning },
+        kpi3: { label: 'Précision réponses', value: '+78%', icon: MdGpsFixed }
+      }
+    },
+    'document-summary': {
+      name: 'Résumé Intelligent par Document',
+      description: 'Synthèse automatique de chaque document avec extraction des points clés et classification par importance.',
+      icon: MdTableChart,
+      iconColor: 'text-orange-600',
+      integration: {
+        title: 'Traitement documentaire intelligent',
+        steps: ['Analyse document', 'Extraction points clés', 'Classification importance'],
+        visual: 'Interface avec résumés structurés par document, points clés surlignés et niveau d\'importance indiqué.'
+      },
+      valueProposition: {
+        buyer: {
+          title: 'Directeurs Commerciaux',
+          benefits: [
+            'Lecture rapide des dossiers complexes',
+            'Identification immédiate des risques',
+            'Priorisation efficace des actions'
+          ]
+        },
+        user: {
+          title: 'Chargés d\'Affaires',
+          benefits: [
+            'Gain de temps considérable en lecture',
+            'Points critiques jamais manqués',
+            'Navigation fluide dans la documentation'
+          ]
+        }
+      },
+      impact: {
+        kpi1: { label: 'Temps analyse documents', value: '-80%', icon: MdAccessTime },
+        kpi2: { label: 'Points clés identifiés', value: '100%', icon: MdCheckCircle },
+        kpi3: { label: 'Efficacité lecture', value: '+120%', icon: MdTrendingUp }
+      }
+    },
+    'document-hierarchy': {
+      name: 'Gestion Dynamique de la Hiérarchie',
+      description: 'Organisation automatique des documents par importance, dépendances et impact sur l\'offre.',
+      icon: MdAccountTree,
+      iconColor: 'text-purple-600',
+      integration: {
+        title: 'Structuration intelligente des dossiers',
+        steps: ['Analyse relations', 'Hiérarchisation', 'Navigation optimisée'],
+        visual: 'Arbre interactif montrant les relations entre documents avec niveaux de priorité et chemins de lecture optimisés.'
+      },
+      valueProposition: {
+        buyer: {
+          title: 'Directeurs Commerciaux',
+          benefits: [
+            'Vision claire de l\'architecture documentaire',
+            'Priorisation objective des efforts',
+            'Réduction des oublis critiques'
+          ]
+        },
+        user: {
+          title: 'Chargés d\'Affaires',
+          benefits: [
+            'Parcours de lecture optimisé',
+            'Dépendances documentaires clarifiées',
+            'Efficacité maximale dans l\'analyse'
+          ]
+        }
+      },
+      impact: {
+        kpi1: { label: 'Organisation documentaire', value: '+95%', icon: MdAccountTree },
+        kpi2: { label: 'Efficacité navigation', value: '+75%', icon: MdSwapHoriz },
+        kpi3: { label: 'Compréhension globale', value: '+68%', icon: MdStars }
+      }
+    },
+    'content-categorization': {
+      name: 'Catégorisation Intelligente',
+      description: 'Classification automatique du contenu par thématiques avec création d\'un arbre de navigation intuitif.',
+      icon: MdSchema,
+      iconColor: 'text-pink-600',
+      integration: {
+        title: 'Taxonomie automatique du contenu',
+        steps: ['Analyse sémantique', 'Classification thématique', 'Arbre navigation'],
+        visual: 'Interface avec catégories automatiques, tags intelligents et arbre thématique pour navigation rapide.'
+      },
+      valueProposition: {
+        buyer: {
+          title: 'Directeurs Commerciaux',
+          benefits: [
+            'Accès rapide à l\'information recherchée',
+            'Vue transversale par thématique',
+            'Exploitation optimale de la documentation'
+          ]
+        },
+        user: {
+          title: 'Chargés d\'Affaires',
+          benefits: [
+            'Recherche intuitive par sujet',
+            'Regroupement logique des informations',
+            'Productivité maximale dans l\'analyse'
+          ]
+        }
+      },
+      impact: {
+        kpi1: { label: 'Rapidité recherche info', value: '+85%', icon: MdSearch },
+        kpi2: { label: 'Organisation contenu', value: '+90%', icon: MdSchema },
+        kpi3: { label: 'Exhaustivité analyse', value: '+72%', icon: MdCheckCircle }
+      }
+    },
+    'project-chat': {
+      name: 'Chat Contextuel avec le Projet',
+      description: 'Assistant IA conversationnel qui répond aux questions sur le projet en temps réel avec références aux sources.',
+      icon: MdMessage,
+      iconColor: 'text-indigo-600',
+      integration: {
+        title: 'Assistant intelligent intégré',
+        steps: ['Question naturelle', 'Analyse contextuelle', 'Réponse sourcée'],
+        visual: 'Interface de chat avec réponses instantanées, références aux documents sources et suggestions de questions.'
+      },
+      valueProposition: {
+        buyer: {
+          title: 'Directeurs Commerciaux',
+          benefits: [
+            'Réponses immédiates aux questions urgentes',
+            'Pas de dépendance aux experts internes',
+            'Accélération de la prise de décision'
+          ]
+        },
+        user: {
+          title: 'Chargés d\'Affaires',
+          benefits: [
+            'Clarifications instantanées',
+            'Exploration interactive du dossier',
+            'Autonomie complète dans l\'analyse'
+          ]
+        }
+      },
+      impact: {
+        kpi1: { label: 'Temps résolution questions', value: '-90%', icon: MdAccessTime },
+        kpi2: { label: 'Autonomie utilisateur', value: '+95%', icon: MdPeople },
+        kpi3: { label: 'Qualité réponses', value: '+88%', icon: MdStars }
+      }
     }
   };
 
