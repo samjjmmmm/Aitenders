@@ -962,7 +962,17 @@ export default function UC1Page() {
 
             {/* 1️⃣ Résumé automatique du projet */}
             <div className="group">
-              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
+              <div 
+                className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
+                onClick={() => handleToppingClick('project-summary')}
+              >
+                {/* Expand Icon - appears on hover */}
+                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <MdArrowForward className="w-4 h-4 text-white transform rotate-45" />
+                  </div>
+                </div>
+
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdDescription className="w-8 h-8 text-white" />
                 </div>
@@ -972,16 +982,33 @@ export default function UC1Page() {
                   Génération instantanée d'un résumé clair des objectifs et du contexte du projet, affiché sur le dashboard.
                 </p>
 
-                <div className="flex items-center text-cyan-400 font-medium">
-                  <span className="text-sm">Project Summary</span>
-                  <MdAutoAwesome className="w-4 h-4 ml-2" />
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-cyan-400 font-medium">
+                    <span className="text-sm">Project Summary</span>
+                    <MdAutoAwesome className="w-4 h-4 ml-2" />
+                  </div>
+                  
+                  {/* Click indicator */}
+                  <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
+                    Cliquez pour détails
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* 2️⃣ Détection des exigences implicites */}
             <div className="group">
-              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
+              <div 
+                className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
+                onClick={() => handleToppingClick('implicit-requirements')}
+              >
+                {/* Expand Icon - appears on hover */}
+                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <MdArrowForward className="w-4 h-4 text-white transform rotate-45" />
+                  </div>
+                </div>
+
                 <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdSearch className="w-8 h-8 text-white" />
                 </div>
@@ -991,16 +1018,33 @@ export default function UC1Page() {
                   L'IA identifie automatiquement les "exigences cachées" (non exprimées clairement) dans les documents.
                 </p>
 
-                <div className="flex items-center text-green-400 font-medium">
-                  <span className="text-sm">Implicit Requirement Detector</span>
-                  <MdWarning className="w-4 h-4 ml-2" />
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-green-400 font-medium">
+                    <span className="text-sm">Implicit Requirement Detector</span>
+                    <MdWarning className="w-4 h-4 ml-2" />
+                  </div>
+                  
+                  {/* Click indicator */}
+                  <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
+                    Cliquez pour détails
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* 3️⃣ Résumé intelligent de chaque document */}
             <div className="group">
-              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
+              <div 
+                className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
+                onClick={() => handleToppingClick('document-summary')}
+              >
+                {/* Expand Icon - appears on hover */}
+                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <MdArrowForward className="w-4 h-4 text-white transform rotate-45" />
+                  </div>
+                </div>
+
                 <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdContentCopy className="w-8 h-8 text-white" />
                 </div>
@@ -1010,16 +1054,33 @@ export default function UC1Page() {
                   Chaque document est résumé en quelques lignes, disponible dans le doc center et réutilisable par l'IA.
                 </p>
 
-                <div className="flex items-center text-orange-400 font-medium">
-                  <span className="text-sm">Document Summary</span>
-                  <MdCreate className="w-4 h-4 ml-2" />
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-orange-400 font-medium">
+                    <span className="text-sm">Document Summary</span>
+                    <MdCreate className="w-4 h-4 ml-2" />
+                  </div>
+                  
+                  {/* Click indicator */}
+                  <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
+                    Cliquez pour détails
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* 4️⃣ Gestion dynamique de la hiérarchie documentaire */}
             <div className="group">
-              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
+              <div 
+                className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
+                onClick={() => handleToppingClick('document-hierarchy')}
+              >
+                {/* Expand Icon - appears on hover */}
+                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <MdArrowForward className="w-4 h-4 text-white transform rotate-45" />
+                  </div>
+                </div>
+
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdAccountTree className="w-8 h-8 text-white" />
                 </div>
@@ -1029,16 +1090,33 @@ export default function UC1Page() {
                   Les documents sont automatiquement classés selon leur importance, définie par l'utilisateur ou l'IA.
                 </p>
 
-                <div className="flex items-center text-purple-400 font-medium">
-                  <span className="text-sm">Document Precedence</span>
-                  <MdSchema className="w-4 h-4 ml-2" />
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-purple-400 font-medium">
+                    <span className="text-sm">Document Precedence</span>
+                    <MdSchema className="w-4 h-4 ml-2" />
+                  </div>
+                  
+                  {/* Click indicator */}
+                  <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
+                    Cliquez pour détails
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* 5️⃣ Catégorisation intelligente & arbre thématique */}
             <div className="group">
-              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
+              <div 
+                className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
+                onClick={() => handleToppingClick('content-categorization')}
+              >
+                {/* Expand Icon - appears on hover */}
+                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <MdArrowForward className="w-4 h-4 text-white transform rotate-45" />
+                  </div>
+                </div>
+
                 <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdCallSplit className="w-8 h-8 text-white" />
                 </div>
@@ -1048,16 +1126,33 @@ export default function UC1Page() {
                   Les informations sont automatiquement classées par thème (juridique, technique, planning…) et restituées sous forme d'arbre visuel.
                 </p>
 
-                <div className="flex items-center text-pink-400 font-medium">
-                  <span className="text-sm">Content Categorization</span>
-                  <MdTimeline className="w-4 h-4 ml-2" />
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-pink-400 font-medium">
+                    <span className="text-sm">Content Categorization</span>
+                    <MdTimeline className="w-4 h-4 ml-2" />
+                  </div>
+                  
+                  {/* Click indicator */}
+                  <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
+                    Cliquez pour détails
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* 6️⃣ Chat contextuel avec le projet */}
             <div className="group">
-              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
+              <div 
+                className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
+                onClick={() => handleToppingClick('project-chat')}
+              >
+                {/* Expand Icon - appears on hover */}
+                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <MdArrowForward className="w-4 h-4 text-white transform rotate-45" />
+                  </div>
+                </div>
+
                 <div className="w-16 h-16 bg-gradient-to-br from-red-400 to-red-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdMessage className="w-8 h-8 text-white" />
                 </div>
@@ -1067,9 +1162,16 @@ export default function UC1Page() {
                   L'utilisateur interroge son projet en langage naturel ("Quels sont les critères de sélection ?", "Y a-t-il une clause pénalité ?") et obtient une réponse directe avec la source.
                 </p>
 
-                <div className="flex items-center text-red-400 font-medium">
-                  <span className="text-sm">Chat with Project Data</span>
-                  <MdMessage className="w-4 h-4 ml-2" />
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-red-400 font-medium">
+                    <span className="text-sm">Chat with Project Data</span>
+                    <MdMessage className="w-4 h-4 ml-2" />
+                  </div>
+                  
+                  {/* Click indicator */}
+                  <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
+                    Cliquez pour détails
+                  </div>
                 </div>
               </div>
             </div>
