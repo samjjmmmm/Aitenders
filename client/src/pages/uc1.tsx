@@ -960,227 +960,116 @@ export default function UC1Page() {
           {/* Toppings Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
 
-            {/* Learning Engine */}
+            {/* 1️⃣ Résumé automatique du projet */}
             <div className="group">
-              <div 
-                className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
-                onClick={() => handleToppingClick('learning-engine')}
-              >
-                {/* Expand Icon - appears on hover */}
-                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                    <MdArrowForward className="w-4 h-4 text-white transform rotate-45" />
-                  </div>
-                </div>
-                
+              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <MdTrendingUp className="w-8 h-8 text-white" />
+                  <MdDescription className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Moteur d'Apprentissage</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Résumé automatique du projet</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  L'IA apprend de vos succès et échecs pour optimiser continuellement la qualité et la pertinence de vos futures propositions.
+                  Génération instantanée d'un résumé clair des objectifs et du contexte du projet, affiché sur le dashboard.
                 </p>
 
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center text-cyan-400 font-medium">
-                    <span className="text-sm">Amélioration continue</span>
-                    <MdAnalytics className="w-4 h-4 ml-2" />
-                  </div>
-                  
-                  {/* Click indicator */}
-                  <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
-                    Cliquez pour détails
-                  </div>
+                <div className="flex items-center text-cyan-400 font-medium">
+                  <span className="text-sm">Project Summary</span>
+                  <MdAutoAwesome className="w-4 h-4 ml-2" />
                 </div>
               </div>
             </div>
 
-            {/* Multi-Client Customization */}
+            {/* 2️⃣ Détection des exigences implicites */}
             <div className="group">
-              <div 
-                className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
-                onClick={() => handleToppingClick('client-customization')}
-              >
-                {/* Expand Icon - appears on hover */}
-                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                    <MdArrowForward className="w-4 h-4 text-white transform rotate-45" />
-                  </div>
-                </div>
-                
+              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
                 <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <MdGroups className="w-8 h-8 text-white" />
-                </div>
-
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Personnalisation Client</h3>
-                <p className="text-gray-200 leading-relaxed mb-6">
-                  Adaptation automatique du ton, des arguments et de la structure selon le profil et l'historique de chaque client cible.
-                </p>
-
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center text-green-400 font-medium">
-                    <span className="text-sm">Personnalisation IA</span>
-                    <MdAutoAwesome className="w-4 h-4 ml-2" />
-                  </div>
-                  
-                  {/* Click indicator */}
-                  <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
-                    Cliquez pour détails
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Competitive Intelligence */}
-            <div className="group">
-              <div 
-                className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
-                onClick={() => handleToppingClick('competitive-intelligence')}
-              >
-                {/* Expand Icon - appears on hover */}
-                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                    <MdArrowForward className="w-4 h-4 text-white transform rotate-45" />
-                  </div>
-                </div>
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdSearch className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Intelligence Concurrentielle</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Détection des exigences implicites</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  Analyse automatique du marché et suggestions d'arguments différenciants basés sur les tendances sectorielles.
+                  L'IA identifie automatiquement les "exigences cachées" (non exprimées clairement) dans les documents.
                 </p>
 
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center text-orange-400 font-medium">
-                    <span className="text-sm">Veille concurrentielle</span>
-                    <MdGpsFixed className="w-4 h-4 ml-2" />
-                  </div>
-                  
-                  {/* Click indicator */}
-                  <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
-                    Cliquez pour détails
-                  </div>
+                <div className="flex items-center text-green-400 font-medium">
+                  <span className="text-sm">Implicit Requirement Detector</span>
+                  <MdWarning className="w-4 h-4 ml-2" />
                 </div>
               </div>
             </div>
 
-            {/* Success Prediction */}
+            {/* 3️⃣ Résumé intelligent de chaque document */}
             <div className="group">
-              <div 
-                className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
-                onClick={() => handleToppingClick('success-prediction')}
-              >
-                {/* Expand Icon - appears on hover */}
-                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                    <MdArrowForward className="w-4 h-4 text-white transform rotate-45" />
-                  </div>
-                </div>
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transformduration-300">
-                  <MdEmojiEvents className="w-8 h-8 text-white" />
-                </div>
-
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Prédiction de Succès</h3>
-                <p className="text-gray-200 leading-relaxed mb-6">
-                  Score de probabilité de gain calculé en temps réel pour optimiser l'allocation de vos ressources commerciales.
-                </p>
-
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center text-purple-400 font-medium">
-                    <span className="text-sm">Prédictif</span>
-                    <MdTrackChanges className="w-4 h-4 ml-2" />
-                  </div>
-                  
-                  {/* Click indicator */}
-                  <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
-                    Cliquez pour détails
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Multi-Format Export */}
-            <div className="group">
-              <div 
-                className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
-                onClick={() => handleToppingClick('multi-format-export')}
-              >
-                {/* Expand Icon - appears on hover */}
-                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                    <MdArrowForward className="w-4 h-4 text-white transform rotate-45" />
-                  </div>
-                </div>
-                <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdContentCopy className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Export Multi-Format</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Résumé intelligent de chaque document</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  Génération automatique dans tous les formats requis : PDF, Word, PowerPoint avec charte graphique intégrée.
+                  Chaque document est résumé en quelques lignes, disponible dans le doc center et réutilisable par l'IA.
                 </p>
 
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center text-pink-400 font-medium">
-                    <span className="text-sm">Formats multiples</span>
-                    <MdSwapHoriz className="w-4 h-4 ml-2" />
-                  </div>
-                  
-                  {/* Click indicator */}
-                  <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
-                    Cliquez pour détails
-                  </div>
+                <div className="flex items-center text-orange-400 font-medium">
+                  <span className="text-sm">Document Summary</span>
+                  <MdCreate className="w-4 h-4 ml-2" />
                 </div>
               </div>
             </div>
 
-            {/* Performance Analytics */}
+            {/* 4️⃣ Gestion dynamique de la hiérarchie documentaire */}
+            <div className="group">
+              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <MdAccountTree className="w-8 h-8 text-white" />
+                </div>
+
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Gestion dynamique de la hiérarchie documentaire</h3>
+                <p className="text-gray-200 leading-relaxed mb-6">
+                  Les documents sont automatiquement classés selon leur importance, définie par l'utilisateur ou l'IA.
+                </p>
+
+                <div className="flex items-center text-purple-400 font-medium">
+                  <span className="text-sm">Document Precedence</span>
+                  <MdSchema className="w-4 h-4 ml-2" />
+                </div>
+              </div>
+            </div>
+
+            {/* 5️⃣ Catégorisation intelligente & arbre thématique */}
+            <div className="group">
+              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <MdCallSplit className="w-8 h-8 text-white" />
+                </div>
+
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Catégorisation intelligente & arbre thématique</h3>
+                <p className="text-gray-200 leading-relaxed mb-6">
+                  Les informations sont automatiquement classées par thème (juridique, technique, planning…) et restituées sous forme d'arbre visuel.
+                </p>
+
+                <div className="flex items-center text-pink-400 font-medium">
+                  <span className="text-sm">Content Categorization</span>
+                  <MdTimeline className="w-4 h-4 ml-2" />
+                </div>
+              </div>
+            </div>
+
+            {/* 6️⃣ Chat contextuel avec le projet */}
             <div className="group">
               <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
                 <div className="w-16 h-16 bg-gradient-to-br from-red-400 to-red-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <MdDashboard className="w-8 h-8 text-white" />
+                  <MdMessage className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Analytics Avancées</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Chat contextuel avec le projet</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  Tableau de bord avec métriques de performance commerciale, taux de conversion et ROI par type de projet.
+                  L'utilisateur interroge son projet en langage naturel ("Quels sont les critères de sélection ?", "Y a-t-il une clause pénalité ?") et obtient une réponse directe avec la source.
                 </p>
 
                 <div className="flex items-center text-red-400 font-medium">
-                  <span className="text-sm">Business Intelligence</span>
-                  <MdTableChart className="w-4 h-4 ml-2" />
-                </div>
-              </div>
-            </div>
-
-            {/* Team Collaboration */}
-            <div className="group md:col-span-2 lg:col-span-3">
-              <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2">
-                <div className="flex flex-col md:flex-row items-start md:items-center gap-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <MdPeople className="w-8 h-8 text-white" />
-                  </div>
-
-                  <div className="flex-1">
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Collaboration d'équipe native, workflows fluides</h3>
-                    <p className="text-gray-200 text-lg leading-relaxed mb-6">
-                      Workflows collaboratifs intégrés permettant la révision, validation et finalisation en équipe avec traçabilité complète et notifications intelligentes.
-                    </p>
-
-                    <div className="flex flex-wrap gap-4">
-                      <div className="flex items-center text-indigo-400 font-medium bg-white/10 px-4 py-2 rounded-lg">
-                        <span className="text-sm">Révision collaborative</span>
-                        <MdGroups className="w-4 h-4 ml-2" />
-                      </div>
-                      <div className="flex items-center text-cyan-400 font-medium bg-white/10 px-4 py-2 rounded-lg">
-                        <span className="text-sm">Validation workflow</span>
-                        <MdVerified className="w-4 h-4 ml-2" />
-                      </div>
-                    </div>
-                  </div>
+                  <span className="text-sm">Chat with Project Data</span>
+                  <MdMessage className="w-4 h-4 ml-2" />
                 </div>
               </div>
             </div>
