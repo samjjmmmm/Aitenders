@@ -32,7 +32,7 @@ import wow2Animation from '../assets/wow-2-uc3-updated.json';
 import wow3Animation from '../assets/wow-3.json';
 import uc3FirstFeatureImage from "@assets/33_1755170264011.png";
 import uc3SecondFeatureImage from "@assets/wow 2_1755694076094.png";
-import uc3ThirdFeatureImage from "@assets/333_1755176266561.png";
+import uc3ThirdFeatureImage from "@assets/wow 3_1755698579312.png";
 
 export default function UC3Page() {
   // State for managing continuous animation loop
