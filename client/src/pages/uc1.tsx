@@ -23,8 +23,8 @@ import equansLogo from "@assets/Equans_1753711339292.png";
 import bouyguesLogo from "@assets/Bouyges_1753711339292.png";
 import colasLogo from "@assets/Colas_1753711339292.png";
 
-// Import hero video
-import heroVideo from '../assets/hero-uc1-video.mp4';
+// Import hero image
+import uc1HeroImage from '../assets/uc1-hero-image.png';
 import containerUc1Image from "@assets/UI 1_1755608329140.png";
 import containerUc1SecondImage from "@assets/2ND_1755082953938.png";
 import containerUc1ThirdImage from "@assets/wow 3_1755616987675.png";
@@ -685,15 +685,12 @@ export default function UC1Page() {
               </div>
             </div>
 
-            {/* Right Side - Hero Video */}
+            {/* Right Side - Hero Image */}
             <div className="flex justify-center lg:justify-end items-center">
               <div className="relative w-full flex justify-center">
-                <video
-                  src={heroVideo}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
+                <img
+                  src={uc1HeroImage}
+                  alt="Aitenders UC1 Interface"
                   className="w-full h-auto max-w-lg"
                   style={{
                     transform: 'scale(1.6)',
