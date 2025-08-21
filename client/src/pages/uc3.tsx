@@ -271,11 +271,10 @@ export default function UC3Page() {
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 lg:gap-28 xl:gap-36 items-center">
+          {/* Content Section */}
+          <div className="text-center">
             
-            {/* Left Side - Content */}
-            <div className="text-left max-w-2xl">
-              <div className="mb-16">
+              <div className="mb-12">
                 <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-purple-50 to-purple-100/80 text-purple-800 border-purple-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Maitrisez Vos Offres Complexes</Badge>
                 
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
@@ -344,22 +343,41 @@ export default function UC3Page() {
                   
                 </div>
               </div>
-            </div>
 
-            {/* Right Side - Hero Image */}
-            <div className="flex justify-center lg:justify-end lg:pl-8">
-              <div className="relative w-full max-w-2xl lg:ml-8">
-                <img
-                  src={uc3HeroImage}
-                  alt="Aitenders UC3 Interface - Complex Tender Analysis Dashboard"
-                  className="w-full h-auto"
-                  style={{
-                    transform: 'scale(1.70)',
-                    transformOrigin: 'center',
-                    objectFit: 'contain',
-                    filter: 'drop-shadow(0 8px 32px rgba(56, 128, 232, 0.2))'
-                  }}
-                />
+              {/* CTA Buttons - Side by Side */}
+              <div className="mb-16 flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
+                >
+                  Réservez une Démo
+                </Button>
+                
+                <Button 
+                  variant="ghost" 
+                  className="text-purple-600 hover:text-purple-700 hover:bg-purple-50/80 px-6 py-4 text-xl font-medium underline decoration-2 underline-offset-4 rounded-2xl transition-all duration-300"
+                >
+                  Téléchargez le cas d'usage →
+                </Button>
+              </div>
+          </div>
+
+          {/* Hero Image - Bottom */}
+          <div className="w-full max-w-7xl mx-auto mt-8">
+              <div className="flex justify-center items-center">
+                <div className="relative flex justify-center items-center h-full px-0 py-6">
+                  <img
+                    src={uc3HeroImage}
+                    alt="Aitenders UC3 Interface - Complex Tender Analysis Dashboard"
+                    className="block w-[640px] md:w-[760px] lg:w-[880px] max-w-full h-auto select-none pointer-events-none object-contain"
+                    style={{
+                      transform: 'scale(1.42)',
+                      transformOrigin: 'center',
+                      imageRendering: 'auto',
+                      filter: 'none'
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
