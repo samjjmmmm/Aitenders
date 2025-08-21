@@ -322,7 +322,7 @@ export default function UC2Page() {
                   alt="Aitenders UC2 Interface - Medium Project Management Dashboard"
                   className="w-full h-auto"
                   style={{
-                    transform: 'scale(2.4)',
+                    transform: 'scale(1.68)',
                     transformOrigin: 'center',
                     objectFit: 'contain',
                     filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15))'
