@@ -49,6 +49,7 @@ import wow2Uc5Animation from '../assets/wow-2-uc5.json';
 import wow3Uc5Animation from '../assets/wow-3-uc5.json';
 import uc5SecondFeatureImage from "@assets/wow 2_1755751777579.png";
 import uc5ThirdFeatureImage from "@assets/WOW 3_1755757958470.png";
+import uc5HeroImage from "@assets/HERO UC 5_1755773586589.png";
 
 export function UC5() {
   const targetAudiences = [
@@ -308,80 +309,20 @@ export function UC5() {
               </div>
             </div>
 
-            {/* Right Side - Realistic Product Mockup */}
+            {/* Right Side - Hero Image */}
             <div className="flex justify-center lg:justify-end">
               <div className="relative w-full max-w-lg">
-                
-                {/* Main Dashboard Mockup */}
-                <div className="bg-white rounded-3xl shadow-2xl border border-gray-100/50 overflow-hidden backdrop-blur-sm"
-                     style={{
-                       boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-                     }}>
-                  
-                  {/* Browser Header */}
-                  <div className="bg-gray-100 px-6 py-4 flex items-center justify-between border-b border-gray-200">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                      <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                      <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                    </div>
-                    <div className="text-sm text-gray-600 font-medium">AItenders - Project Tracking</div>
-                    <div className="w-6"></div>
-                  </div>
-                  
-                  {/* Dashboard Content */}
-                  <div className="p-6 space-y-6">
-                    
-                    {/* Project Header */}
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-900">Projet Infrastructure</h3>
-                        <p className="text-sm text-gray-600">Suivi proactif des engagements</p>
-                      </div>
-                      <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                    </div>
-                    
-                    {/* Progress Metrics */}
-                    <div className="grid grid-cols-3 gap-4">
-                      <div className="text-center p-3 bg-blue-50 rounded-lg">
-                        <div className="text-xl font-bold text-blue-600">{activeAudience.dashboardData.requirements.progress}%</div>
-                        <div className="text-xs text-gray-600">Engagements</div>
-                      </div>
-                      <div className="text-center p-3 bg-green-50 rounded-lg">
-                        <div className="text-xl font-bold text-green-600">{activeAudience.dashboardData.coordination.progress}%</div>
-                        <div className="text-xs text-gray-600">Actions</div>
-                      </div>
-                      <div className="text-center p-3 bg-purple-50 rounded-lg">
-                        <div className="text-xl font-bold text-purple-600">{activeAudience.dashboardData.compliance.progress}%</div>
-                        <div className="text-xs text-gray-600">Conformité</div>
-                      </div>
-                    </div>
-                    
-                    {/* Active Tasks */}
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between p-3 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
-                        <div className="flex items-center space-x-3">
-                          <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                          <span className="text-sm font-medium text-gray-800">{activeAudience.notification}</span>
-                        </div>
-                        <span className="text-xs text-gray-600">2h</span>
-                      </div>
-                      
-                      <div className="flex items-center justify-between p-3 bg-blue-50 rounded-lg border-l-4 border-blue-400">
-                        <div className="flex items-center space-x-3">
-                          <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                          <span className="text-sm font-medium text-gray-800">{activeAudience.alert}</span>
-                        </div>
-                        <span className="text-xs text-gray-600">1j</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Floating Action Button */}
-                <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full shadow-xl flex items-center justify-center">
-                  <MdAnalytics className="w-8 h-8 text-white" />
-                </div>
+                <img
+                  src={uc5HeroImage}
+                  alt="Aitenders UC5 Interface - Project Management and Engagement Tracking"
+                  className="w-full h-auto"
+                  style={{
+                    transform: 'scale(1.68)',
+                    transformOrigin: 'center',
+                    objectFit: 'contain',
+                    filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15))'
+                  }}
+                />
               </div>
             </div>
           </div>
