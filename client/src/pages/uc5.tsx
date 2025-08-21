@@ -47,6 +47,7 @@ import Lottie from 'lottie-react';
 import wow1Uc5Animation from '../assets/wow-1-uc5.json';
 import wow2Uc5Animation from '../assets/wow-2-uc5.json';
 import wow3Uc5Animation from '../assets/wow-3-uc5.json';
+import uc5SecondFeatureImage from "@assets/wow 2_1755751777579.png";
 
 export function UC5() {
   const targetAudiences = [
@@ -534,16 +535,17 @@ export function UC5() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-2 lg:order-1">
               <div className="flex justify-center items-center h-full">
-                <Lottie 
-                  animationData={wow2Uc5Animation}
-                  loop={true}
-                  autoplay={true}
-                  className="w-full h-full max-w-[400px] max-h-[400px]"
-                  style={{ 
-                    transform: 'scale(1.5)',
-                    filter: 'drop-shadow(0 8px 32px rgba(147, 51, 234, 0.2))'
-                  }}
-                />
+                <figure className="w-full max-w-[500px] mx-auto">
+                  <img 
+                    src={uc5SecondFeatureImage}
+                    alt="Aitenders engagement tracking interface showing commitment evolution and detailed document management"
+                    className="w-full h-auto object-contain"
+                    style={{
+                      imageRendering: 'crisp-edges',
+                      filter: 'drop-shadow(0 8px 32px rgba(147, 51, 234, 0.2))'
+                    }}
+                  />
+                </figure>
               </div>
             </div>
 
