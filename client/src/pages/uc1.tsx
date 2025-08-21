@@ -1019,24 +1019,25 @@ export default function UC1Page() {
 
             {/* KPI 1 - Time Reduction */}
             <div className="group">
-              <div className="bg-white rounded-3xl p-8 text-center border border-gray-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-xl shadow-lg h-full flex flex-col justify-between min-h-[260px] relative">
-                {/* Clean background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/30 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-3xl p-8 text-center border border-gray-700 hover:border-gray-500 transition-all duration-300 hover:shadow-2xl hover:shadow-gray-900/50 shadow-xl h-full flex flex-col justify-between min-h-[260px] relative overflow-hidden">
+                {/* Subtle gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/10 to-transparent rounded-3xl opacity-60"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-white/10 to-transparent rounded-full blur-2xl"></div>
                 
                 {/* Icon */}
                 <div className="relative z-10 mb-6">
-                  <div className="w-16 h-16 mx-auto rounded-2xl bg-emerald-500 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
+                  <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-gray-700 to-gray-600 flex items-center justify-center shadow-lg border border-gray-600 group-hover:scale-105 transition-transform duration-300">
                     <MdAccessTime className="w-8 h-8 text-white" />
                   </div>
                 </div>
                 
                 {/* Metric */}
                 <div className="relative z-10 flex-1 flex flex-col justify-center">
-                  <div className="text-4xl lg:text-5xl font-bold text-emerald-600 mb-4 leading-tight tracking-tight">
+                  <div className="text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight tracking-tight">
                     -50% à -70%
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">Gain de temps</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">Réduction du temps d'analyse des documents</p>
+                  <h3 className="text-lg font-semibold text-white mb-2">Gain de temps</h3>
+                  <p className="text-sm text-gray-300 leading-relaxed">Réduction du temps d'analyse des documents</p>
                 </div>
               </div>
             </div>
