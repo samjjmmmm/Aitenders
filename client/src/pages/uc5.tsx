@@ -49,7 +49,7 @@ import wow2Uc5Animation from '../assets/wow-2-uc5.json';
 import wow3Uc5Animation from '../assets/wow-3-uc5.json';
 import uc5SecondFeatureImage from "@assets/wow 2_1755751777579.png";
 import uc5ThirdFeatureImage from "@assets/WOW 3_1755757958470.png";
-import uc5HeroImage from "@assets/HERO UC 5_1755773586589.png";
+import uc5HeroImage from "@assets/HERO UC 5_1755774540751.png";
 
 export function UC5() {
   const targetAudiences = [
