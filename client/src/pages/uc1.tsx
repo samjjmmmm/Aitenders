@@ -613,7 +613,16 @@ export default function UC1Page() {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="flex flex-col items-center text-center space-y-8 md:space-y-12 lg:space-y-16">
+          <motion.div 
+            className="flex flex-col items-center text-center space-y-8 md:space-y-12 lg:space-y-16"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ 
+              duration: 0.8, 
+              ease: "easeOut",
+              delay: 0.1
+            }}
+          >
             
             {/* Content UC1 - Top */}
             <div className="w-full max-w-5xl px-4">
@@ -649,7 +658,16 @@ export default function UC1Page() {
             </div>
 
             {/* Hero Image - Bottom */}
-            <div className="w-full max-w-7xl mx-auto mt-8">
+            <motion.div 
+              className="w-full max-w-7xl mx-auto mt-8"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ 
+                duration: 0.8, 
+                ease: "easeOut",
+                delay: 0.3
+              }}
+            >
               <div className="flex justify-center items-center">
                 <div className="relative flex justify-center items-center h-full px-0 py-6">
                   <img
@@ -665,8 +683,8 @@ export default function UC1Page() {
                   />
                 </div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
