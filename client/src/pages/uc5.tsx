@@ -243,7 +243,7 @@ export function UC5() {
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="flex flex-col items-center text-center space-y-16 md:space-y-20 lg:space-y-24">
+          <div className="flex flex-col items-center text-center space-y-8 md:space-y-12 lg:space-y-16">
             
             {/* Content UC5 - Top */}
             <div className="w-full max-w-5xl px-4">
@@ -284,29 +284,7 @@ export function UC5() {
                 </Button>
               </div>
 
-              {/* Trust Elements */}
-              <div className="border-t border-gray-100 pt-8">
-                <p className="text-sm text-gray-500 mb-6">
-                  Déjà adopté par les leaders de la gestion de projets complexes
-                </p>
 
-                <div className="flex items-center space-x-8">
-                  <div className="flex items-center text-sm text-gray-600">
-                    <div className="flex -space-x-2 mr-3">
-                      <div className="w-12 h-12 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center shadow-sm overflow-hidden">
-                        <img src={equansLogo} alt="Equans logo" className="w-10 h-6 object-contain" />
-                      </div>
-                      <div className="w-12 h-12 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center shadow-sm overflow-hidden">
-                        <img src={bouyguesLogo} alt="Bouygues logo" className="w-10 h-6 object-contain" />
-                      </div>
-                      <div className="w-12 h-12 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center shadow-sm overflow-hidden">
-                        <img src={colasLogo} alt="Colas logo" className="w-10 h-6 object-contain" />
-                      </div>
-                    </div>
-                    <span>Plébiscité par les acteurs de référence</span>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Hero Image - Bottom */}
