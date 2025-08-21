@@ -613,10 +613,10 @@ export default function UC1Page() {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 xl:gap-32 items-center">
-
-            {/* Left Side - Content */}
-            <div className="text-left">
+          <div className="flex flex-col items-center text-center space-y-8 md:space-y-12 lg:space-y-16">
+            
+            {/* Content UC1 - Top */}
+            <div className="w-full max-w-5xl px-4">
               <div className="mb-12">
                 <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Accélérez l'Analyse Des Offres Répétitives</Badge>
 
@@ -629,18 +629,15 @@ export default function UC1Page() {
                 </p>
               </div>
 
-              {/* Primary CTA */}
-              <div className="mb-16">
+              {/* CTA Buttons - Side by Side */}
+              <div className="mb-16 flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <Button 
                   size="lg" 
-                  className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto"
+                  className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
                 >
                   Réservez une Démo
                 </Button>
-              </div>
-
-              {/* Secondary CTA - Less Prominent */}
-              <div className="mb-20">
+                
                 <Button 
                   variant="ghost" 
                   className="text-blue-600 hover:text-blue-700 hover:bg-blue-50/80 px-6 py-4 text-xl font-medium underline decoration-2 underline-offset-4 rounded-2xl transition-all duration-300"
@@ -649,54 +646,22 @@ export default function UC1Page() {
                 </Button>
               </div>
 
-              {/* Trust Elements */}
-              <div className="border-t border-gray-100 pt-8">
-                <p className="text-sm text-gray-500 mb-6">Solution de référence pour les offres rapides et efficaces</p>
-
-                {/* Customer Logos / Trust Indicators */}
-                <div className="flex items-center space-x-8">
-                  <div className="flex items-center text-sm text-gray-600">
-                    <div className="flex -space-x-2 mr-3">
-                      <div className="w-12 h-12 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center shadow-sm overflow-hidden">
-                        <img 
-                          src={equansLogo} 
-                          alt="Equans logo" 
-                          className="w-10 h-6 object-contain"
-                        />
-                      </div>
-                      <div className="w-12 h-12 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center shadow-sm overflow-hidden">
-                        <img 
-                          src={bouyguesLogo} 
-                          alt="Bouygues logo" 
-                          className="w-10 h-6 object-contain"
-                        />
-                      </div>
-                      <div className="w-12 h-12 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center shadow-sm overflow-hidden">
-                        <img 
-                          src={colasLogo} 
-                          alt="Colas logo" 
-                          className="w-10 h-6 object-contain"
-                        />
-                      </div>
-                    </div>
-                    <span>Adopté par les leaders de la construction</span>
-                  </div>
-                </div>
-              </div>
             </div>
 
-            {/* Right Side - Hero Image */}
-            <div className="flex justify-center lg:justify-end items-center">
-              <div className="relative w-full flex justify-center">
+            {/* Hero Image - Bottom */}
+            <div className="w-full flex justify-center px-4">
+              <div className="relative w-full max-w-5xl">
                 <img
                   src={uc1HeroImage}
                   alt="Aitenders UC1 Interface"
-                  className="w-full h-auto max-w-lg"
+                  className="w-full h-auto mx-auto"
                   style={{
                     transform: 'scale(2.4)',
-                    width: '500px',
-                    height: '350px',
-                    objectFit: 'contain'
+                    transformOrigin: 'center center',
+                    objectFit: 'contain',
+                    filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15))',
+                    maxWidth: '100%',
+                    height: 'auto'
                   }}
                 />
               </div>
