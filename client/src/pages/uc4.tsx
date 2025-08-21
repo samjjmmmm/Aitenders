@@ -33,6 +33,7 @@ import wow3Uc4Animation from '../assets/wow-3-uc4.json';
 import uc4SecondFeatureImage from "@assets/wow 2_1755706536721.png";
 import uc4FirstFeatureImage from "@assets/wow 1_1755701209581.png";
 import uc4ThirdFeatureImage from "@assets/43_1755177874563.png";
+import uc4HeroImage from "@assets/HERO UC 4_1755769685086.png";
 
 export default function UC4Page() {
   // Target audience data with interactive content - UC4 adapted
@@ -315,133 +316,20 @@ export default function UC4Page() {
               </div>
             </div>
 
-            {/* Right Side - Realistic Product Mockup */}
+            {/* Right Side - Hero Image */}
             <div className="flex justify-center lg:justify-end">
               <div className="relative w-full max-w-lg">
-                
-                {/* Main Dashboard Mockup */}
-                <div className="bg-white rounded-3xl shadow-2xl border border-gray-100/50 overflow-hidden backdrop-blur-sm"
-                     style={{
-                       boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-                     }}>
-                  
-                  {/* Browser Header */}
-                  <div className="bg-gray-100 px-6 py-4 flex items-center justify-between border-b border-gray-200">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                      <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                      <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                    </div>
-                    <div className="text-sm text-gray-600 font-medium">AItenders - Contract Analytics</div>
-                    <div className="w-12"></div>
-                  </div>
-                  
-                  {/* Dashboard Content */}
-                  <div className="p-8">
-                    
-                    {/* Header */}
-                    <div className="flex items-center justify-between mb-8">
-                      <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-2">Multi-lot Construction Contract</h3>
-                        <p className="text-gray-600">€85M project • 12 risk clauses</p>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
-                        <span className="text-sm text-gray-600">Analyzing</span>
-                      </div>
-                    </div>
-                    
-                    {/* Risk Overview */}
-                    <div className="grid grid-cols-2 gap-6 mb-8">
-                      <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-6 border border-red-100">
-                        <div className="text-3xl font-bold text-red-700 mb-2">12</div>
-                        <div className="text-sm text-gray-600">Critical clauses identified</div>
-                      </div>
-                      <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border border-blue-100">
-                        <div className="text-3xl font-bold text-blue-700 mb-2">€2.3M</div>
-                        <div className="text-sm text-gray-600">Potential risk exposure</div>
-                      </div>
-                    </div>
-                    
-                    {/* Risk Categories */}
-                    <div className="space-y-4">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-4">Risk Analysis</h4>
-                      
-                      <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
-                        <div className="flex items-center space-x-3">
-                          <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center">
-                            <MdWarning className="w-5 h-5 text-white" />
-                          </div>
-                          <div>
-                            <div className="font-medium text-gray-900">Penalty Clauses</div>
-                            <div className="text-sm text-gray-600">High financial exposure</div>
-                          </div>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <div className="w-20 bg-gray-200 rounded-full h-2">
-                            <div className="bg-red-500 h-2 rounded-full" style={{width: '92%'}}></div>
-                          </div>
-                          <span className="text-sm font-medium text-red-600">Critical</span>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
-                        <div className="flex items-center space-x-3">
-                          <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center">
-                            <MdAccessTime className="w-5 h-5 text-white" />
-                          </div>
-                          <div>
-                            <div className="font-medium text-gray-900">Delivery Terms</div>
-                            <div className="text-sm text-gray-600">Timeline constraints</div>
-                          </div>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <div className="w-20 bg-gray-200 rounded-full h-2">
-                            <div className="bg-orange-500 h-2 rounded-full" style={{width: '78%'}}></div>
-                          </div>
-                          <span className="text-sm font-medium text-orange-600">High</span>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
-                        <div className="flex items-center space-x-3">
-                          <div className="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center">
-                            <MdShield className="w-5 h-5 text-white" />
-                          </div>
-                          <div>
-                            <div className="font-medium text-gray-900">Insurance Coverage</div>
-                            <div className="text-sm text-gray-600">Liability limits</div>
-                          </div>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <div className="w-20 bg-gray-200 rounded-full h-2">
-                            <div className="bg-yellow-500 h-2 rounded-full" style={{width: '65%'}}></div>
-                          </div>
-                          <span className="text-sm font-medium text-yellow-600">Medium</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Floating Risk Alerts */}
-                <div className="absolute -top-4 -right-4 bg-red-500 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-medium animate-bounce">
-                  <div className="flex items-center space-x-2">
-                    <MdWarning className="w-4 h-4" />
-                    <span>High risk detected</span>
-                  </div>
-                </div>
-                
-                <div className="absolute -bottom-4 -left-4 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-xl text-sm font-medium animate-pulse">
-                  <div className="flex items-center space-x-2">
-                    <MdCheckCircle className="w-4 h-4" />
-                    <span>Analysis complete</span>
-                  </div>
-                </div>
-                
-                {/* Background Decorative Elements */}
-                <div className="absolute -top-8 -right-8 w-24 h-24 bg-blue-200/20 rounded-full blur-2xl"></div>
-                <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-orange-200/15 rounded-full blur-3xl"></div>
+                <img
+                  src={uc4HeroImage}
+                  alt="Aitenders UC4 Interface - Contract Analysis and Evidence Management"
+                  className="w-full h-auto"
+                  style={{
+                    transform: 'scale(1.68)',
+                    transformOrigin: 'center',
+                    objectFit: 'contain',
+                    filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15))'
+                  }}
+                />
               </div>
             </div>
           </div>
