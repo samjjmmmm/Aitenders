@@ -48,6 +48,7 @@ import wow1Uc5Animation from '../assets/wow-1-uc5.json';
 import wow2Uc5Animation from '../assets/wow-2-uc5.json';
 import wow3Uc5Animation from '../assets/wow-3-uc5.json';
 import uc5SecondFeatureImage from "@assets/wow 2_1755751777579.png";
+import uc5ThirdFeatureImage from "@assets/WOW 3_1755757958470.png";
 
 export function UC5() {
   const targetAudiences = [
@@ -596,16 +597,17 @@ export function UC5() {
 
             <div className="order-2">
               <div className="flex justify-center items-center h-full">
-                <Lottie 
-                  animationData={wow3Uc5Animation}
-                  loop={true}
-                  autoplay={true}
-                  className="w-full h-full max-w-[400px] max-h-[400px]"
-                  style={{ 
-                    transform: 'scale(1.5)',
-                    filter: 'drop-shadow(0 8px 32px rgba(34, 197, 94, 0.2))'
-                  }}
-                />
+                <figure className="w-full max-w-[500px] mx-auto">
+                  <img 
+                    src={uc5ThirdFeatureImage}
+                    alt="Aitenders contract search interface showing intelligent document filtering and detection capabilities"
+                    className="w-full h-auto object-contain"
+                    style={{
+                      imageRendering: 'crisp-edges',
+                      filter: 'drop-shadow(0 8px 32px rgba(34, 197, 94, 0.2))'
+                    }}
+                  />
+                </figure>
               </div>
             </div>
           </div>
