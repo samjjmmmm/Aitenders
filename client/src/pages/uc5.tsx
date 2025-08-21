@@ -246,7 +246,7 @@ export function UC5() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 xl:gap-32 items-center">
             
             {/* Left Side - Content UC5 */}
-            <div className="text-left">
+            <div className="text-left order-1 lg:order-1">
               <div className="mb-12">
                 <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-indigo-50 to-purple-100/80 text-purple-800 border-purple-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">
                  Suivi des contrats semi-complexes
@@ -310,7 +310,7 @@ export function UC5() {
             </div>
 
             {/* Right Side - Hero Image */}
-            <div className="flex justify-center lg:justify-end">
+            <div className="flex justify-center lg:justify-end order-2 lg:order-2">
               <div className="relative w-full max-w-lg">
                 <img
                   src={uc5HeroImage}
