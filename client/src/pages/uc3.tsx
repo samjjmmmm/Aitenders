@@ -33,6 +33,7 @@ import wow3Animation from '../assets/wow-3.json';
 import uc3FirstFeatureImage from "@assets/33_1755170264011.png";
 import uc3SecondFeatureImage from "@assets/wow 2_1755694076094.png";
 import uc3ThirdFeatureImage from "@assets/wow 3_1755698579312.png";
+import uc3HeroImage from "@assets/HERO UC 3_1755765733932.png";
 
 export default function UC3Page() {
   // State for managing continuous animation loop
@@ -345,16 +346,17 @@ export default function UC3Page() {
               </div>
             </div>
 
-            {/* Right Side - Lottie Animation Hero Visual */}
+            {/* Right Side - Hero Image */}
             <div className="flex justify-center lg:justify-end lg:pl-8">
-              <div className="relative w-full max-w-2xl h-[600px] lg:ml-8">
-                <Lottie 
-                  animationData={lottieAnimation}
-                  loop={true}
-                  autoplay={true}
-                  className="w-full h-full"
-                  style={{ 
-                    transform: 'scale(1.5)',
+              <div className="relative w-full max-w-2xl lg:ml-8">
+                <img
+                  src={uc3HeroImage}
+                  alt="Aitenders UC3 Interface - Complex Tender Analysis Dashboard"
+                  className="w-full h-auto"
+                  style={{
+                    transform: 'scale(1.68)',
+                    transformOrigin: 'center',
+                    objectFit: 'contain',
                     filter: 'drop-shadow(0 8px 32px rgba(56, 128, 232, 0.2))'
                   }}
                 />
