@@ -243,63 +243,60 @@ export default function UC4Page() {
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 xl:gap-32 items-center">
-            
-            {/* Left Side - Content */}
-            <div className="text-left">
-              <div className="mb-12">
-                <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Consultation intelligente petits contrats</Badge>
-                
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                  Mettez vos contrats <span className="text-purple-600">u service de vos projets</span>
-                </h1>
-                
-                <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]">
-                  La seule plateforme pensée pour rendre vos contrats de petits projets clairs et actionnables.
-                  Accédez instantanément aux clauses clés grâce à une fiche synthétique intelligente.
-                  Chaque acteur du projet consulte, comprend et agit sans ouvrir le PDF ni dépendre du juridique, pour des décisions rapides et alignées..</p>
-              </div>
-              
-              {/* Primary CTA */}
-              <div className="mb-16">
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto"
-                >
-                  Réservez une Démo
-                </Button>
-              </div>
-              
-              {/* Secondary CTA - Less Prominent */}
-              <div className="mb-20">
-                <Button 
-                  variant="ghost" 
-                  className="text-blue-600 hover:text-blue-700 hover:bg-blue-50/80 px-6 py-4 text-xl font-medium underline decoration-2 underline-offset-4 rounded-2xl transition-all duration-300"
-                >
-                  Téléchargez le cas d'usage →
-                </Button>
-              </div>
-              
-              
+          
+          {/* Content Section - Top */}
+          <div className="text-center mb-16 md:mb-20 lg:mb-24">
+            {/* Badge */}
+            <div className="mb-8 md:mb-12">
+              <Badge className="bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm">
+                Pilotez les offres moyennes
+              </Badge>
             </div>
-
-            {/* Right Side - Hero Image */}
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-lg">
-                <img
-                  src={uc4HeroImage}
-                  alt="Aitenders UC4 Interface - Contract Analysis and Evidence Management"
-                  className="w-full h-auto"
-                  style={{
-                    transform: 'scale(1.68)',
-                    transformOrigin: 'center',
-                    objectFit: 'contain',
-                    filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15))'
-                  }}
-                />
-              </div>
+            
+            {/* Main Headline */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-6 md:mb-8 leading-[1.1] tracking-tight">
+              Pilotez les <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">offres moyennes</span>
+            </h1>
+            
+            {/* Subheadline */}
+            <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-700 mb-8 md:mb-10 font-light leading-relaxed max-w-5xl mx-auto">
+              Découvrez, pilotez et sécurisez chaque clause <span className="text-purple-600 font-semibold">dès le premier jour</span>.
+            </h2>
+            
+            {/* Body Copy */}
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-10 md:mb-12 max-w-4xl mx-auto">
+              La seule plateforme conçue pour transformer des dossiers moyens (1 à 10 M€) en une vision contractuelle claire dès le premier jour : structuration IA du périmètre, détection immédiate des clauses critiques et pilotage dynamique des Q&A et versions. Vous réduisez de moitié votre temps d'analyse, rassurez votre direction et livrez une réponse compétitive, sans risque de dernière minute.
+            </p>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 md:mb-20">
+              <Button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-12 py-6 text-xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
+                Réservez une Démo
+              </Button>
+              <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-6 text-lg font-semibold rounded-3xl transition-all duration-300">
+                <MdArrowForward className="w-5 h-5 mr-2" />
+                Téléchargez le cas d'usage →
+              </Button>
             </div>
           </div>
+          
+          {/* Hero Image Section - Bottom */}
+          <div className="flex justify-center">
+            <div className="relative w-full max-w-6xl">
+              <img
+                src={uc4HeroImage}
+                alt="Aitenders UC4 Interface - Contract Analysis and Evidence Management"
+                className="w-full h-auto"
+                style={{
+                  transform: 'scale(1.0)',
+                  transformOrigin: 'center',
+                  objectFit: 'contain',
+                  filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15))'
+                }}
+              />
+            </div>
+          </div>
+          
         </div>
       </section>
 
