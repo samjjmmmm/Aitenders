@@ -212,7 +212,7 @@ export default function UC2Page() {
       <Header />
 
       {/* Hero Section - Professional SaaS Design */}
-      <section className="py-12 md:py-16 lg:py-20 xl:py-24 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-white via-slate-50/30 to-blue-50/20 relative overflow-hidden">
+      <section className="py-12 md:py-16 lg:py-20 xl:py-24 px-4 md:px-6 lg:px-8 relative overflow-hidden" style={{ backgroundColor: '#EBF2FD' }}>
         {/* Subtle Abstract Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Large flowing gradient blob - top left */}
