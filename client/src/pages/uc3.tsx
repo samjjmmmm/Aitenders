@@ -346,9 +346,9 @@ export default function UC3Page() {
               </div>
             </div>
 
-            {/* Right Side - Hero Image */}
-            <div className="flex justify-center lg:justify-end lg:pl-8">
-              <div className="relative w-full max-w-2xl lg:ml-8">
+            {/* Hero Image at bottom */}
+            <div className="lg:col-span-2 flex justify-center">
+              <div className="relative w-full max-w-4xl">
                 <img
                   src={uc3HeroImage}
                   alt="Aitenders UC3 Interface - Complex Tender Analysis Dashboard"
