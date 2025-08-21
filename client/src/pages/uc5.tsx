@@ -243,10 +243,10 @@ export function UC5() {
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 xl:gap-32 items-center">
+          <div className="flex flex-col items-center text-center space-y-12 md:space-y-16 lg:space-y-20">
             
-            {/* Left Side - Content UC5 */}
-            <div className="text-left order-1 lg:order-1">
+            {/* Content UC5 - Top */}
+            <div className="w-full max-w-4xl">
               <div className="mb-12">
                 <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-indigo-50 to-purple-100/80 text-purple-800 border-purple-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">
                  Suivi des contrats semi-complexes
@@ -309,9 +309,9 @@ export function UC5() {
               </div>
             </div>
 
-            {/* Right Side - Hero Image */}
-            <div className="flex justify-center lg:justify-end order-2 lg:order-2">
-              <div className="relative w-full max-w-lg">
+            {/* Hero Image - Bottom */}
+            <div className="w-full flex justify-center">
+              <div className="relative w-full max-w-4xl">
                 <img
                   src={uc5HeroImage}
                   alt="Aitenders UC5 Interface - Project Management and Engagement Tracking"
