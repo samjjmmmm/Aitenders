@@ -243,10 +243,10 @@ export function UC5() {
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="flex flex-col items-center text-center space-y-12 md:space-y-16 lg:space-y-20">
+          <div className="flex flex-col items-center text-center space-y-16 md:space-y-20 lg:space-y-24">
             
             {/* Content UC5 - Top */}
-            <div className="w-full max-w-4xl">
+            <div className="w-full max-w-5xl px-4">
               <div className="mb-12">
                 <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-indigo-50 to-purple-100/80 text-purple-800 border-purple-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">
                  Suivi des contrats semi-complexes
@@ -310,17 +310,19 @@ export function UC5() {
             </div>
 
             {/* Hero Image - Bottom */}
-            <div className="w-full flex justify-center">
-              <div className="relative w-full max-w-4xl">
+            <div className="w-full flex justify-center px-4">
+              <div className="relative w-full max-w-6xl">
                 <img
                   src={uc5HeroImage}
                   alt="Aitenders UC5 Interface - Project Management and Engagement Tracking"
-                  className="w-full h-auto"
+                  className="w-full h-auto mx-auto"
                   style={{
-                    transform: 'scale(1.68)',
-                    transformOrigin: 'center',
+                    transform: 'scale(1.2)',
+                    transformOrigin: 'center center',
                     objectFit: 'contain',
-                    filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15))'
+                    filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15))',
+                    maxWidth: '100%',
+                    height: 'auto'
                   }}
                 />
               </div>
