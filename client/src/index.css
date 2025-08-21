@@ -172,3 +172,25 @@
     overflow-x: hidden;
   }
 }
+
+/* Boundary for consistent horizontal breathing room */
+.site-boundary,
+main.site-boundary {
+  max-width: 1200px;               /* keeps line length professional on large screens */
+  margin-inline: auto;             /* centers the content */
+  padding-inline: clamp(16px, 4vw, 48px); /* guarantees edge padding on small/medium screens */
+  box-sizing: border-box;          /* ensures padding doesn't break widths */
+}
+
+/* If the page already uses main without a class, allow the rule to apply safely */
+main {
+  box-sizing: border-box;
+}
+
+/* Optional escape hatch: if any hero/illustration MUST go full-bleed, 
+   add class="full-bleed" to that specific section */
+.full-bleed {
+  margin-inline: calc(50% - 50vw);
+  max-width: 100vw;
+  padding-inline: 0;
+}

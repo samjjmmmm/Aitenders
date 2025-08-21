@@ -1,0 +1,63 @@
+Goal (and only goal):
+Fix the page’s horizontal padding so the content never touches the viewport edges on small/medium screens and stays nicely centered on large screens. Do not change anything else anywhere (no colors, fonts, sizes, spacing between components, JS, or markup structure beyond the single wrapper described below).
+
+Implementation plan (minimal + reversible):
+
+Add one wrapper around the entire main content (everything that visually forms the page content).
+
+If there’s a <main> already, use it. Otherwise, wrap the main content in a <div class="site-boundary">…</div>.
+
+Do not nest extra wrappers inside sections; just the one outer wrapper.
+
+Add exactly this CSS (append to the end of the global stylesheet so it safely overrides without touching other styles):
+
+/* Boundary for consistent horizontal breathing room */
+.site-boundary,
+main.site-boundary {
+  max-width: 1200px;               /* keeps line length professional on large screens */
+  margin-inline: auto;             /* centers the content */
+  padding-inline: clamp(16px, 4vw, 48px); /* guarantees edge padding on small/medium screens */
+  box-sizing: border-box;          /* ensures padding doesn’t break widths */
+}
+
+/* If the page already uses main without a class, allow the rule to apply safely */
+main {
+  box-sizing: border-box;
+}
+
+/* Optional escape hatch: if any hero/illustration MUST go full-bleed, 
+   add class="full-bleed" to that specific section */
+.full-bleed {
+  margin-inline: calc(50% - 50vw);
+  max-width: 100vw;
+  padding-inline: 0;
+}
+
+
+Do not modify any other selectors, variables, component spacing, or layout rules. Only add the wrapper and the CSS above.
+
+Acceptance criteria (must pass):
+
+At viewport widths 360px, 768px, 1024px: the main text and buttons have visible side padding; no element touches the viewport edge.
+
+At 1440px and 1920px: content is centered and constrained; no stretching edge-to-edge.
+
+No visual regressions to typography, buttons, cards, or component spacing.
+
+No changes to behavior or JS.
+
+Notes:
+
+If a big hero image or decorative gradient needs to remain full-bleed, give that one element class="full-bleed" so it intentionally escapes the boundary. Do not apply full-bleed anywhere else.
+
+Deliverables:
+
+The single wrapper added (prefer <main class="site-boundary"> if <main> exists).
+
+The CSS block appended to the global stylesheet.
+
+Before/after screenshots at 768px and 1440px widths to confirm padding.
+
+Out of scope: Anything beyond horizontal padding/max-width centering. No refactors, no component tweaks, no utility class rewrites.
+
+If you want, I can also give you a quick one-liner version that ap
