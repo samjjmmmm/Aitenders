@@ -807,9 +807,6 @@ export default function UC1Page() {
           {/* Feature 1: Structuration IA immédiate - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 lg:gap-32 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-1">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
-                <MdFlashOn className="w-10 h-10 text-white" />
-              </div>
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Structuration instantanée pour un premier "go / no-go"  <span className="text-purple-600">immédiat</span> </h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                 Grâce aux assistants IA, vos documents sont instantanément analysés, classés et priorisés : critères d’intérêt, points critiques et preuves associées sont détectés en quelques minutes.
