@@ -292,7 +292,7 @@ export function UC5() {
                   alt="Aitenders UC5 Interface - Project Management and Engagement Tracking"
                   className="w-full h-auto mx-auto"
                   style={{
-                    transform: 'scale(1.1)',
+                    transform: 'scale(1.3)',
                     transformOrigin: 'center center',
                     objectFit: 'contain',
                     filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15))',
