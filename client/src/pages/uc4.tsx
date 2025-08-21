@@ -280,40 +280,7 @@ export default function UC4Page() {
                 </Button>
               </div>
               
-              {/* Trust Elements */}
-              <div className="border-t border-gray-100 pt-8">
-                <p className="text-sm text-gray-500 mb-6">Solution de référence pour l'analyse contractuelle intelligente</p>
-                
-                {/* Customer Logos / Trust Indicators */}
-                <div className="flex items-center space-x-8">
-                  <div className="flex items-center text-sm text-gray-600">
-                    <div className="flex -space-x-2 mr-3">
-                      <div className="w-12 h-12 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center shadow-sm overflow-hidden">
-                        <img 
-                          src={equansLogo} 
-                          alt="Equans logo" 
-                          className="w-10 h-6 object-contain"
-                        />
-                      </div>
-                      <div className="w-12 h-12 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center shadow-sm overflow-hidden">
-                        <img 
-                          src={bouyguesLogo} 
-                          alt="Bouygues logo" 
-                          className="w-10 h-6 object-contain"
-                        />
-                      </div>
-                      <div className="w-12 h-12 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center shadow-sm overflow-hidden">
-                        <img 
-                          src={colasLogo} 
-                          alt="Colas logo" 
-                          className="w-10 h-6 object-contain"
-                        />
-                      </div>
-                    </div>
-                    <span>Adopté par les leaders de la construction</span>
-                  </div>
-                </div>
-              </div>
+              
             </div>
 
             {/* Right Side - Hero Image */}
