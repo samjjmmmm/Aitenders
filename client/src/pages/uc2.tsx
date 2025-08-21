@@ -211,7 +211,7 @@ export default function UC2Page() {
       {/* Header/Navbar */}
       <Header />
 
-      <main className="site-boundary">
+      <main>
       {/* Hero Section - Professional SaaS Design */}
       <section className="py-12 md:py-16 lg:py-20 xl:py-24 relative overflow-hidden" style={{ backgroundColor: '#EBF2FD' }}>
         {/* Subtle Abstract Background Effects */}
@@ -241,7 +241,7 @@ export default function UC2Page() {
                }}></div>
         </div>
 
-        <div className="relative z-10">
+        <div className="content-boundary relative z-10">
           {/* Content Section */}
           <div className="text-center">
               <div className="mb-12">
@@ -326,7 +326,7 @@ export default function UC2Page() {
                }}></div>
         </div>
 
-        <div className="relative z-10">
+        <div className="content-boundary relative z-10">
 
           {/* Main Feature Card */}
           <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20"
@@ -403,7 +403,7 @@ export default function UC2Page() {
                }}></div>
         </div>
 
-        <div className="relative z-10">
+        <div className="content-boundary relative z-10">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-blue-600">copilote IA</span> qui sécurise la gestion de vos projets moyens</h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
@@ -523,7 +523,7 @@ export default function UC2Page() {
 
         {/* User-Focused Results Section - UC2 */}
         <section className="py-16 md:py-20 lg:py-24 bg-white">
-          <div className="">
+          <div className="content-boundary">
 
             <div className="mb-20 md:mb-24 lg:mb-28">
               <div className="text-center mb-12 md:mb-16">
@@ -682,7 +682,7 @@ export default function UC2Page() {
                }}></div>
         </div>
 
-        <div className="relative z-10">
+        <div className="content-boundary relative z-10">
           {/* Section Header */}
           <div className="text-center mb-16 md:mb-20 lg:mb-24">
             <div className="inline-flex items-center justify-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6 md:mb-8">
@@ -866,7 +866,7 @@ export default function UC2Page() {
 
 
       <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
-        <div className="">
+        <div className="content-boundary">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:mb-8 leading-[1.1] tracking-tight">
               Nos <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">appels d'offres référence</span> sur les projets moyens

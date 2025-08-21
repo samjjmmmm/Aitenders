@@ -173,24 +173,31 @@
   }
 }
 
-/* Boundary for consistent horizontal breathing room */
-.site-boundary,
-main.site-boundary {
-  max-width: 1200px;               /* keeps line length professional on large screens */
-  margin-inline: auto;             /* centers the content */
-  padding-inline: clamp(16px, 4vw, 48px); /* guarantees edge padding on small/medium screens */
-  box-sizing: border-box;          /* ensures padding doesn't break widths */
+/* Append to the end of the global stylesheet */
+.content-boundary {
+  max-width: 1200px;                       /* professional line-length on large screens */
+  margin-inline: auto;                     /* center horizontally */
+  padding-inline: clamp(16px, 4vw, 48px);  /* guaranteed side padding on small/medium */
+  box-sizing: border-box;                  /* include padding in total width */
 }
 
-/* If the page already uses main without a class, allow the rule to apply safely */
-main {
-  box-sizing: border-box;
+/* Optional: a slightly narrower variant for long-form text sections */
+.content-boundary--narrow {
+  max-width: 960px;
 }
 
-/* Optional escape hatch: if any hero/illustration MUST go full-bleed, 
-   add class="full-bleed" to that specific section */
+/* Escape hatch for specific elements that must span full width inside a section */
 .full-bleed {
   margin-inline: calc(50% - 50vw);
   max-width: 100vw;
   padding-inline: 0;
+}
+
+/* Safety: media should not overflow the boundary */
+.content-boundary img,
+.content-boundary video,
+.content-boundary canvas,
+.content-boundary svg {
+  max-width: 100%;
+  height: auto;
 }
