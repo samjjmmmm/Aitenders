@@ -264,18 +264,15 @@ export function UC5() {
                 </p>
               </div>
 
-              {/* Primary CTA */}
-              <div className="mb-16">
+              {/* CTA Buttons - Side by Side */}
+              <div className="mb-16 flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <Button 
                   size="lg" 
-                  className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto"
+                  className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
                 >
                   Réservez une Démo
                 </Button>
-              </div>
-
-              {/* Secondary CTA */}
-              <div className="mb-20">
+                
                 <Button 
                   variant="ghost" 
                   className="text-purple-600 hover:text-purple-700 hover:bg-purple-50/80 px-6 py-4 text-xl font-medium underline decoration-2 underline-offset-4 rounded-2xl transition-all duration-300"
@@ -289,13 +286,13 @@ export function UC5() {
 
             {/* Hero Image - Bottom */}
             <div className="w-full flex justify-center px-4">
-              <div className="relative w-full max-w-6xl">
+              <div className="relative w-full max-w-5xl">
                 <img
                   src={uc5HeroImage}
                   alt="Aitenders UC5 Interface - Project Management and Engagement Tracking"
                   className="w-full h-auto mx-auto"
                   style={{
-                    transform: 'scale(1.2)',
+                    transform: 'scale(1.1)',
                     transformOrigin: 'center center',
                     objectFit: 'contain',
                     filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15))',
