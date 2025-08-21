@@ -271,12 +271,11 @@ export default function UC3Page() {
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 lg:gap-28 xl:gap-36 items-center">
-            
-            {/* Left Side - Content */}
-            <div className="text-left max-w-2xl">
+          <div className="text-center">
+            {/* Centered Content */}
+            <div className="max-w-5xl mx-auto">
               <div className="mb-16">
-                <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-purple-50 to-purple-100/80 text-purple-800 border-purple-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Maitrisez Vos Offres Complexes</Badge>
+                <Badge className="mb-8 bg-gradient-to-r from-purple-50 to-purple-100/80 text-purple-800 border-purple-200/50 text-lg font-semibold px-6 py-3 rounded-full shadow-sm">Maitrisez Vos Offres Complexes</Badge>
                 
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
                   Chaque exigence traitée, <span className="text-purple-600">chaque risque maîtrisé</span>
@@ -288,27 +287,22 @@ export default function UC3Page() {
               
               
               
-              {/* Primary CTA */}
-              <div className="mb-16">
+              {/* CTAs Side by Side */}
+              <div className="mb-16 flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <Button 
                   size="lg" 
-                  className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto"
+                  className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   Réservez une Démo
                 </Button>
-              </div>
-              
-              {/* Secondary CTA - Less Prominent */}
-              <div className="mb-20">
+                
                 <Button 
                   variant="ghost" 
-                  className="text-purple-600 hover:text-purple-700 hover:bg-purple-50/80 px-6 py-4 text-xl font-medium underline decoration-2 underline-offset-4 rounded-2xl transition-all duration-300"
+                  className="text-purple-600 hover:text-purple-700 hover:bg-purple-50/80 px-6 py-4 text-lg font-medium underline decoration-2 underline-offset-4 rounded-xl transition-all duration-300"
                 >
                   Téléchargez le cas d'usage →
                 </Button>
               </div>
-              
-              {/* Trust Elements */}
               <div className="border-t border-gray-100 pt-8">
                 <p className="text-sm text-gray-500 mb-6">Mentionné parmi les 25 meilleures solutions d’IA et de ML</p>
                 
