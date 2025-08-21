@@ -650,22 +650,18 @@ export default function UC1Page() {
 
             {/* Hero Image - Bottom */}
             <div className="w-full flex justify-center px-4 mt-8">
-              <div className="relative w-full max-w-4xl">
-                <figure className="w-full mx-auto">
-                  <img
-                    src={uc1HeroImage}
-                    alt="Aitenders UC1 Interface"
-                    className="w-full h-auto mx-auto"
-                    style={{
-                      transform: 'scale(1.0)',
-                      transformOrigin: 'center center',
-                      objectFit: 'contain',
-                      filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.12))',
-                      maxWidth: '100%',
-                      height: 'auto'
-                    }}
-                  />
-                </figure>
+              <div className="relative flex justify-center items-center h-full px-0 py-6">
+                <img
+                  src={uc1HeroImage}
+                  alt="Aitenders UC1 Interface"
+                  className="block w-[640px] md:w-[760px] lg:w-[880px] max-w-full h-auto select-none pointer-events-none object-contain"
+                  style={{
+                    transform: 'scale(1.12)',
+                    transformOrigin: 'center',
+                    imageRendering: 'auto',
+                    filter: 'none'
+                  }}
+                />
               </div>
             </div>
           </div>
