@@ -26,7 +26,7 @@ import colasLogo from "@assets/Colas_1753711339292.png";
 // Import hero image
 import uc1HeroImage from "@assets/UC1_1755784114648.png";
 import containerUc1Image from "@assets/wow 1_1755783954069.png";
-import containerUc1SecondImage from "@assets/2ND_1755082953938.png";
+import containerUc1SecondImage from "@assets/wow 2_1755784888651.png";
 import containerUc1ThirdImage from "@assets/wow 3_1755616987675.png";
 import ChatSection from "@/components/chat-section";
 import ChatInterface from "@/components/chat-interface";
