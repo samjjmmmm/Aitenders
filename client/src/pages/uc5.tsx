@@ -242,7 +242,7 @@ export function UC5() {
                }}></div>
         </div>
         
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="content-boundary relative z-10">
           <div className="flex flex-col items-center text-center space-y-8 md:space-y-12 lg:space-y-16">
             
             {/* Content UC5 - Top */}
@@ -328,7 +328,7 @@ export function UC5() {
                }}></div>
         </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="content-boundary relative z-10">
           <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20"
                style={{
                  boxShadow: '0 32px 64px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.05)'
@@ -401,7 +401,7 @@ export function UC5() {
                }}></div>
         </div>
         
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="content-boundary relative z-10">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
               Votre <span className="text-purple-600">copilote IA</span> pour anticiper et maîtriser vos <span className="text-purple-600">claims</span>
@@ -537,7 +537,7 @@ export function UC5() {
 
       {/* User-Focused Results Section - UC5 */}
       <section className="py-16 md:py-20 lg:py-24 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className="content-boundary">
           <div className="mb-20 md:mb-24 lg:mb-28">
             <div className="text-center mb-12 md:mb-16">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
@@ -729,7 +729,7 @@ export function UC5() {
                }}></div>
         </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="content-boundary relative z-10">
           {/* Section Header */}
           <div className="text-center mb-16 md:mb-20 lg:mb-24">
             <div className="inline-flex items-center justify-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6 md:mb-8">
@@ -884,7 +884,7 @@ export function UC5() {
 
       {/* Real Projects Section */}
       <section className="py-16 md:py-20 lg:py-24 px-4 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
-        <div className="max-w-7xl mx-auto">
+        <div className="content-boundary">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:mb-8 leading-[1.1] tracking-tight">
               Nos <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">projets référence</span> sur les contrats semi-complexes
@@ -1089,7 +1089,7 @@ export function UC5() {
 
       {/* CTA Section */}
       <section className="py-16 md:py-20 lg:py-24 px-4 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="content-boundary text-center">
           <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
             Prêt à Maîtriser Votre Prochaine Offre Complexe ?
           </h3>
