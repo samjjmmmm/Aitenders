@@ -348,7 +348,7 @@ export default function UC3Page() {
                   alt="Aitenders UC3 Interface - Complex Tender Analysis Dashboard"
                   className="w-full h-auto"
                   style={{
-                    transform: 'scale(0.34)',
+                    transform: 'scale(0.408)',
                     transformOrigin: 'center',
                     objectFit: 'contain',
                     filter: 'drop-shadow(0 8px 32px rgba(56, 128, 232, 0.2))'
