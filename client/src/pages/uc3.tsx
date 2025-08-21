@@ -242,7 +242,7 @@ export default function UC3Page() {
       {/* Header/Navbar */}
       <Header />
       {/* Hero Section - Professional SaaS Design */}
-      <section className="py-16 md:py-24 lg:py-32 xl:py-40 px-8 md:px-12 lg:px-16 xl:px-20 bg-gradient-to-br from-white via-slate-50/30 to-purple-50/20 relative overflow-hidden">
+      <section className="py-16 md:py-24 lg:py-32 xl:py-40 bg-gradient-to-br from-white via-slate-50/30 to-purple-50/20 relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Large flowing gradient blob - top left */}
@@ -270,7 +270,7 @@ export default function UC3Page() {
                }}></div>
         </div>
         
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="content-boundary relative z-10">
           <div className="text-center">
             {/* Centered Content */}
             <div className="max-w-5xl mx-auto">
@@ -361,7 +361,7 @@ export default function UC3Page() {
       </section>
       
       {/* Pain Points Section - Main Feature Card + Supporting Cards */}
-      <section className="py-16 md:py-20 lg:py-24 px-8 bg-gradient-to-br from-slate-50 via-gray-50 to-purple-50/20 relative overflow-hidden">
+      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-slate-50 via-gray-50 to-purple-50/20 relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Large atmospheric blob - right side */}
@@ -389,7 +389,7 @@ export default function UC3Page() {
                }}></div>
         </div>
         
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="content-boundary relative z-10">
           
           {/* Main Feature Card */}
           <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20"
@@ -435,7 +435,7 @@ export default function UC3Page() {
       </section>
       
       {/* Solution Section - Alternating Layout Design */}
-      <section className="py-32 px-8 bg-gradient-to-br from-white via-slate-50/20 to-white relative overflow-hidden">
+      <section className="py-32 bg-gradient-to-br from-white via-slate-50/20 to-white relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Large flowing accent - top center */}
@@ -463,7 +463,7 @@ export default function UC3Page() {
                }}></div>
         </div>
         
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="content-boundary relative z-10">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-purple-600">copilote IA </span> qui simplifie la gestion des appels d’offres complexes</h1>
             <h3 className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">Structurez, collaborez et maîtrisez vos appels d’offres complexes, sans aucun angle mort.</h3>
@@ -567,8 +567,8 @@ export default function UC3Page() {
 
 
       {/* KPI Section - High Impact Design */}
-      <section className="py-16 md:py-20 lg:py-24 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-16 md:py-20 lg:py-24 bg-white">
+        <div className="content-boundary">
 
           
           
@@ -702,7 +702,7 @@ export default function UC3Page() {
 
       
       {/* Toppings Section - Wow Features & Additional Functionalities */}
-      <section className="py-16 md:py-20 lg:py-24 px-4 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 relative overflow-hidden">
+      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 relative overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0">
           {/* Animated gradient orbs */}
@@ -723,7 +723,7 @@ export default function UC3Page() {
                }}></div>
         </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="content-boundary relative z-10">
           {/* Section Header */}
           <div className="text-center mb-16 md:mb-20 lg:mb-24">
             <div className="inline-flex items-center justify-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6 md:mb-8">
@@ -904,8 +904,8 @@ export default function UC3Page() {
       </section>
 
       {/* Real Projects Section */}
-      <section className="py-16 md:py-20 lg:py-24 px-4 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+        <div className="content-boundary">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:mb-8 leading-[1.1] tracking-tight">
               Nos <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">appels d'offres référence</span> sur les multi-lots complexes
