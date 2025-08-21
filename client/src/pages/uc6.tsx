@@ -31,6 +31,9 @@ import bouyguesLogo from "@assets/Bouyges_1753711339292.png";
 import colasLogo from "@assets/Colas_1753711339292.png";
 import ChatSection from "@/components/chat-section";
 import ChatInterface from "@/components/chat-interface";
+import wow1Image from "@assets/WOW 1_1755782640243.png";
+import wow2Image from "@assets/WOW 2_1755782640245.png";
+import wow3Image from "@assets/WOW 3_1755782640245.png";
 
 export default function UC6Page() {
   // Target audience data with interactive content
@@ -550,51 +553,45 @@ export default function UC6Page() {
               </div>
             </div>
 
-            {/* Carte à droite */}
+            {/* Image à droite */}
             <div className="order-2">
-              <Card className="p-10 bg-gradient-to-br from-purple-50 to-indigo-100 border border-purple-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
-                   style={{
-                     boxShadow: '0 25px 50px -12px rgba(139, 92, 246, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-                   }}>
-                <div className="bg-white rounded-xl p-4 border border-purple-200 shadow-sm">
-                  <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700">Analyse Contractuelle IA</h4>
-                    <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-                      <MdDescription className="w-4 h-4 text-purple-600" />
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Extraction des exigences</span>
-                      <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
-                        <MdCheckCircle className="w-3 h-3 text-white" />
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-green-50 rounded-lg border border-green-200">
-                      <span className="text-sm text-gray-700">Classification automatique</span>
-                      <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
-                        <MdCheckCircle className="w-3 h-3 text-white" />
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between py-2 px-3 bg-blue-50 rounded-lg border border-blue-200">
-                      <span className="text-sm text-gray-700">Détection des contradictions</span>
-                      <div className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
-                        <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Card>
+              <figure className="w-full mx-auto">
+                <img
+                  src={wow1Image}
+                  alt="Aitenders Interface - Vision totale des exigences dès le premier jour"
+                  className="w-full h-auto mx-auto"
+                  style={{
+                    transform: 'scale(1.0)',
+                    transformOrigin: 'center center',
+                    objectFit: 'contain',
+                    filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15))',
+                    maxWidth: '100%',
+                    height: 'auto'
+                  }}
+                />
+              </figure>
             </div>
           </div>
           {/* Feature 2: Pilotage Collectif - Text Right, Card Left */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             {/* Carte à gauche */}
             <div className="order-2 lg:order-1">
-              <Card className="p-10 bg-gradient-to-br from-purple-50 to-indigo-100 border border-purple-200/50 rounded-3xl transition-all duration-500 transform hover:-translate-y-2"
-                   style={{
-                     boxShadow: '0 25px 50px -12px rgba(147, 51, 234, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-                   }}>
+              <figure className="w-full mx-auto">
+                <img
+                  src={wow2Image}
+                  alt="Aitenders Interface - Pilotage collectif pour performance continue"
+                  className="w-full h-auto mx-auto"
+                  style={{
+                    transform: 'scale(1.0)',
+                    transformOrigin: 'center center',
+                    objectFit: 'contain',
+                    filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15))',
+                    maxWidth: '100%',
+                    height: 'auto'
+                  }}
+                />
+              </figure>
+
                 <div className="bg-white rounded-xl p-4 border border-purple-200 shadow-sm">
                   <div className="flex items-center justify-between mb-4">
                     <h4 className="text-sm font-semibold text-gray-700">Pilotage Collaboratif</h4>
