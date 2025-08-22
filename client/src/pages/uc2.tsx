@@ -134,19 +134,21 @@ export default function UC2Page() {
       projectDirectorsDesc: "Manage the delivery of medium projects with advanced monitoring and control tools. Ensure operational compliance and customer satisfaction across the entire portfolio.",
       operationsManagers: "Operations Managers",
       operationsManagersDesc: "Standardize operational processes for medium projects with a methodical approach. Optimize resources and reduce delays through intelligent automation.",
-
+      
       // Solution Section Titles and Content
-      solutionMainTitle: "Your AI co-pilot securing the management of your medium projects",
-      solutionSubtitle: "Discover, manage and secure every clause from day one.",
-      feature1Title: "Automatic structuring of scope from day 1",
-      feature1Text: "Thanks to Aitenders' AI, your documents are instantly segmented and organized: lots, sub-packages and contractual criteria are classified and structured within minutes. The Proposal Manager immediately has a consolidated vision of the scope: blocking points and sensitive clauses are identified effortlessly, enabling an informed 'go / no-go' decision from day one.",
-      feature1Highlight: "A consolidated and prioritized vision, ready from the first day!",
-      feature2Title: "Control every critical clause of your project",
-      feature2Text: "Aitenders automatically identifies and prioritizes all sensitive clauses: responsibilities, commitments, penalties, and critical conditions. At the same time, the AI checks document consistency and flags contradictions, duplicates, and gaps, for a reliable and complete analysis. The Proposal Manager gets a clear view of risk areas in minutes, ready to be corrected and validated without wasting time.",
-      feature2Highlight: "Proactive contractual validation, from day 1",
-      feature3Title: "Manage every contractual change in real time",
-      feature3Text: "All your Q&As, versions and document adjustments are consolidated and tracked automatically by AI. The Proposal Manager follows every change in real time, visualizes gaps, receives alerts, and ensures that nothing is forgotten or modified without validation. No more fragmented follow-ups by email or spreadsheets: everything is centralized in a smooth, reliable cockpit.",
-      feature3Highlight: "No surprises, no version lost, no risk of omission",
+      solution_section: {
+        mainTitle: "Your AI co-pilot securing the management of your medium projects",
+        subtitle: "Discover, manage and secure every clause from day one.",
+        feature1_title: "Automatic structuring of scope from day 1",
+        feature1_text: "Thanks to Aitenders' AI, your documents are instantly segmented and organized: lots, sub-packages and contractual criteria are classified and structured within minutes. The Proposal Manager immediately has a consolidated vision of the scope: blocking points and sensitive clauses are identified effortlessly, enabling an informed 'go / no-go' decision from day one.",
+        feature1_highlight: "A consolidated and prioritized vision, ready from the first day!",
+        feature2_title: "Control every critical clause of your project",
+        feature2_text: "Aitenders automatically identifies and prioritizes all sensitive clauses: responsibilities, commitments, penalties, and critical conditions. At the same time, the AI checks document consistency and flags contradictions, duplicates, and gaps, for a reliable and complete analysis. The Proposal Manager gets a clear view of risk areas in minutes, ready to be corrected and validated without wasting time.",
+        feature2_highlight: "Proactive contractual validation, from day 1",
+        feature3_title: "Manage every contractual change in real time",
+        feature3_text: "All your Q&As, versions and document adjustments are consolidated and tracked automatically by AI. The Proposal Manager follows every change in real time, visualizes gaps, receives alerts, and ensures that nothing is forgotten or modified without validation. No more fragmented follow-ups by email or spreadsheets: everything is centralized in a smooth, reliable cockpit.",
+        feature3_highlight: "No surprises, no version lost, no risk of omission",
+      },
 
       // Legacy mappings for existing page structure
       painPoint1Title: "Growing complexity difficult to manage",
@@ -180,7 +182,17 @@ export default function UC2Page() {
       diff2Title: "Advanced Collaborative Intelligence",
       diff2Desc: "AI specialized in multi-team coordination and dependency management",
       diff3Title: "Flexibility and Standardization",
-      diff3Desc: "Adaptive processes that adjust to the specific complexity of each project"
+      diff3Desc: "Adaptive processes that adjust to the specific complexity of each project",
+      
+      // Results Section Cards
+      results_section: {
+        card1_title: "Commercial Director or Bid Director",
+        card1_subtitle: "Rapid decision-making, enhanced credibility, zero surprises",
+        card1_text: "Ensure from day one that every critical clause is identified, every commitment under control, and every risk covered. You walk into the committee with a solid, immediately approvable offer, with no mental load and no unnecessary escalation.",
+        card2_title: "Proposal Manager, Contract Manager or Project Manager",
+        card2_subtitle: "Clear analysis, smooth follow-up, zero stress",
+        card2_text: "Start on day +1 with a structured and prioritized base generated by AI: every criterion is classified, every sensitive clause detected, every version tracked. You go from being under pressure to being a strategic pilot, able to prove your offer's solidity at any time.",
+      }
     }
   };
 
@@ -605,24 +617,21 @@ export default function UC2Page() {
 
         <div className="content-boundary relative z-10">
           <div className="text-center mb-8 md:mb-12 lg:mb-16 xl:mb-20 fade-in-up">
-            <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-blue-600">copilote IA</span> qui sécurise la gestion de vos projets moyens</h1>
+            <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 leading-[1.1] tracking-tight">{t('uc2.solution_section.mainTitle')}</h1>
             <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
-              Découvrez, pilotez et sécurisez chaque clause dès le premier jour. 
+              {t('uc2.solution_section.subtitle')}
             </p>
           </div>
 
           {/* Feature 1: Structuration IA immédiate - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 lg:gap-16 xl:gap-20 items-center mb-10 md:mb-16 lg:mb-20 xl:mb-24">
             <div className="order-1 fade-in-left lg:pr-6">
-              <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 leading-[1.1] tracking-tight">Structuration automatique du périmètre   <span className="text-purple-600">dès le jour 1</span> </h3>
+              <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 leading-[1.1] tracking-tight">{t('uc2.solution_section.feature1_title')}</h3>
               <p className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 md:mb-8 font-light">
-                Grâce à l’IA d’Aitenders, vos documents sont instantanément segmentés et organisés : lots, sous‑ensembles et critères contractuels sont classés et hiérarchisés en quelques minutes.
-                <br /><br />
-                Le Responsable Offre dispose immédiatement d’une vision consolidée du périmètre : points bloquants et clauses sensibles sont identifiés sans effort, permettant une décision “go / no‑go” éclairée dès le premier jour.
-
+                {t('uc2.solution_section.feature1_text')}
               </p>
               <p className="text-base md:text-lg font-semibold text-blue-600">
-                Une vision consolidée et priorisée, prête dès le premier jour !
+                {t('uc2.solution_section.feature1_highlight')}
               </p>
             </div>
             <div className="order-2 fade-in-right lg:pl-6">
@@ -658,16 +667,13 @@ export default function UC2Page() {
               </div>
             </div>
             <div className="order-1 lg:order-2 fade-in-right lg:pl-6">
-              <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 leading-[1.1] tracking-tight">Contrôlez chaque  <span className="text-orange-600">clause critique</span> de votre projet</h3>
+              <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 leading-[1.1] tracking-tight">{t('uc2.solution_section.feature2_title')}</h3>
               <p className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 md:mb-8 font-light">
-                Aitenders identifie et hiérarchise automatiquement toutes les clauses sensibles : responsabilités, engagements, pénalités et conditions critiques. 
-                En parallèle, l’IA contrôle la cohérence des documents et signale contradictions, doublons et écarts, pour une analyse fiable et complète.
-                <br /><br />
-                Le Responsable Offre obtient en quelques minutes une vision claire des zones à risque, prête à être corrigée et validée sans perte de temps.
-                </p>
+                {t('uc2.solution_section.feature2_text')}
+              </p>
 
               <p className="text-base md:text-lg font-semibold text-orange-600">
-                Une validation contractuelle proactive, dès le jour 1
+                {t('uc2.solution_section.feature2_highlight')}
               </p>
             </div>
           </div>
@@ -675,15 +681,12 @@ export default function UC2Page() {
           {/* Feature 3: Validation guidée - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-1 lg:pr-6 fade-in-left">
-              <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 leading-[1.1] tracking-tight">Pilotez chaque <span className="text-green-600">évolution contractuelle</span> en temps réel</h3>
+              <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 leading-[1.1] tracking-tight">{t('uc2.solution_section.feature3_title')}</h3>
               <p className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 md:mb-8 font-light">
-              Toutes vos questions-réponses, versions et ajustements documentaires sont consolidés et tracés automatiquement par l’IA. 
-              Le Responsable Offre suit chaque changement en temps réel, visualise les écarts, reçoit des alertes et s’assure que rien n’est oublié ou modifié sans validation.
-              <br /><br />
-              Fini les suivis éclatés par emails ou fichiers multiples : tout est centralisé dans un cockpit fluide et fiable.
+                {t('uc2.solution_section.feature3_text')}
               </p>
               <p className="text-lg font-semibold text-green-600">
-              Zéro surprise, zéro version perdue, zéro risque d’oubli
+                {t('uc2.solution_section.feature3_highlight')}
               </p>
             </div>
             <div className="order-2 fade-in-right">
@@ -730,29 +733,27 @@ export default function UC2Page() {
                         <MdAccountBalance className="w-7 h-7 text-white" />
                       </div>
                       <div>
-                        <h4 className="text-xl font-bold text-gray-900">Directeur Commercial ou Directeur des Offres</h4>
-                        <p className="text-sm text-gray-600">Décision rapide, crédibilité renforcée, zéro surprise</p>
+                        <h4 className="text-xl font-bold text-gray-900">{t('uc2.results_section.card1_title')}</h4>
+                        <p className="text-sm text-gray-600">{t('uc2.results_section.card1_subtitle')}</p>
                       </div>
                     </div>
 
                     <p className="text-gray-700 text-base leading-relaxed mb-4">
-                      Garantissez dès le premier jour que chaque clause critique est identifiée, chaque engagement maîtrisé 
-                      et chaque risque couvert. Vous arrivez en comité avec une offre solide, immédiatement validable, 
-                      sans charge mentale ni escalade inutile.
+                      {t('uc2.results_section.card1_text')}
                     </p>
 
                     <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
                       <div className="flex items-start">
                         <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                        <span>Zéro clause oubliée, zéro incohérence détectée trop tard</span>
+                        <span>Aucune clause oubliée, aucune incohérence détectée trop tard</span>
                       </div>
                       <div className="flex items-start">
                         <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                        <span>Décision "go / no-go" prise sans délai</span>
+                        <span>Décision go / no-go prise sans délai</span>
                       </div>
                       <div className="flex items-start">
                         <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                        <span>Crédibilité renforcée devant le top management</span>
+                        <span>Crédibilité renforcée devant la direction générale</span>
                       </div>
                     </div>
                   </Card>
@@ -766,29 +767,27 @@ export default function UC2Page() {
                         <MdManageAccounts className="w-7 h-7 text-white" />
                       </div>
                       <div>
-                        <h4 className="text-xl font-bold text-gray-900">Responsable Offre, Contract Manager ou Chef de Projet</h4>
-                        <p className="text-sm text-gray-600">Analyse claire, suivi fluide, zéro stress</p>
+                        <h4 className="text-xl font-bold text-gray-900">{t('uc2.results_section.card2_title')}</h4>
+                        <p className="text-sm text-gray-600">{t('uc2.results_section.card2_subtitle')}</p>
                       </div>
                     </div>
 
                     <p className="text-gray-700 text-base leading-relaxed mb-4">
-                      Démarrez dès J+1 sur une base structurée et priorisée par l’IA : chaque critère est classé, 
-                      chaque clause sensible détectée et chaque version tracée. Vous passez d’un rôle sous pression 
-                      à celui d’un pilote stratégique, capable de prouver la solidité de son offre à tout moment.
+                      {t('uc2.results_section.card2_text')}
                     </p>
 
                     <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
                       <div className="flex items-start">
                         <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                        <span>Analyse prête dès le premier jour, sans tri manuel</span>
+                        <span>Analyse prête dès le premier jour, aucun tri manuel</span>
                       </div>
                       <div className="flex items-start">
                         <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                        <span>Zéro stress, zéro surprises, zéro allers-retours inutiles</span>
+                        <span>Aucun stress, aucune surprise, aucun aller-retour inutile</span>
                       </div>
                       <div className="flex items-start">
                         <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                        <span>Contrôle total sur chaque clause et chaque version</span>
+                        <span>Maîtrise totale de chaque clause et de chaque version</span>
                       </div>
                     </div>
                   </Card>
@@ -1227,7 +1226,7 @@ export default function UC2Page() {
               </div>
 
               {/* Embedded Aitenders ROI Simulator Final */}
-              <AitendersSimulatorFinal useCase="UC2" className="w-full" />
+              <AitendersSimulatorFinal className="w-full" />
 
             </div>
           </div>
