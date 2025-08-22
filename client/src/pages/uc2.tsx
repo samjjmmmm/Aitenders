@@ -1033,24 +1033,22 @@ export default function UC2Page() {
         </div>
       </section>
 
-      {/* projets de référence */}
-
-
+      {/* Reference Projects Section */}
       <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
         <div className="content-boundary">
           <div className="text-center mb-12 md:mb-16 lg:mb-20 fade-in-up">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:mb-8 leading-[1.1] tracking-tight">
-              Nos <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">appels d'offres référence</span> sur les projets moyens
+              {t('uc2.reference_projects.headline')}
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Découvrez comment nos clients transforment leurs projets moyens avec l'IA Aitenders
+              {t('uc2.reference_projects.subtitle')}
             </p>
           </div>
 
           {/* 3 Real Projects Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 mb-16 md:mb-20">
 
-            {/* Project 1: Centre Logistique Régional */}
+            {/* Project 1: Regional Logistics Center */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1062,40 +1060,39 @@ export default function UC2Page() {
                   <MdBusiness className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Centre Logistique Régional</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{t('uc2.reference_projects.project1.title')}</h3>
                 <div className="mb-4">
-                  <Badge className="bg-purple-100 text-purple-800 font-medium">Logistique</Badge>
+                  <Badge className="bg-purple-100 text-purple-800 font-medium">{t('uc2.reference_projects.project1.sector')}</Badge>
                 </div>
-                <div className="text-xl font-bold text-purple-600 mb-4">Offre : 8.5 Millions €</div>
+                <div className="text-xl font-bold text-purple-600 mb-4">{t('uc2.reference_projects.project1.offer')}</div>
 
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  Construction d'un hub logistique moderne de 25,000 m² avec systèmes automatisés et aires de manœuvre. 
-                  Coordination de 10 lots techniques spécialisés incluant manutention, sécurité et connectivité.
+                  {t('uc2.reference_projects.project1.desc')}
                 </p>
 
                 <div className="space-y-3">
                   <h4 className="font-semibold text-gray-900 mb-3">Impact client :</h4>
                   <div className="flex items-center text-sm text-gray-700">
                     <MdTrendingUp className="w-4 h-4 mr-2 text-green-500" />
-                    <span><strong>Productivité :</strong> +55% temps économisé coordination</span>
+                    <span>{t('uc2.reference_projects.project1.impact.productivity')}</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-700">
                     <MdVerified className="w-4 h-4 mr-2 text-blue-500" />
-                    <span><strong>Conformité :</strong> Normes logistiques respectées</span>
+                    <span>{t('uc2.reference_projects.project1.impact.compliance')}</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-700">
                     <MdTrackChanges className="w-4 h-4 mr-2 text-purple-500" />
-                    <span><strong>Traçabilité :</strong> Suivi multi-lots intégré</span>
+                    <span>{t('uc2.reference_projects.project1.impact.traceability')}</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-700">
                     <MdGroups className="w-4 h-4 mr-2 text-orange-500" />
-                    <span><strong>Collaboration :</strong> 10 équipes synchronisées</span>
+                    <span>{t('uc2.reference_projects.project1.impact.collaboration')}</span>
                   </div>
                 </div>
               </div>
             </motion.div>
 
-            {/* Project 2: Réhabilitation Quartier Urbain */}
+            {/* Project 2: Urban District Rehabilitation */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1107,40 +1104,39 @@ export default function UC2Page() {
                   <MdGpsFixed className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Réhabilitation Quartier Urbain</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{t('uc2.reference_projects.project2.title')}</h3>
                 <div className="mb-4">
-                  <Badge className="bg-blue-100 text-blue-800 font-medium">Urbain</Badge>
+                  <Badge className="bg-blue-100 text-blue-800 font-medium">{t('uc2.reference_projects.project2.sector')}</Badge>
                 </div>
-                <div className="text-xl font-bold text-blue-600 mb-4">Offre : 6.2 Millions €</div>
+                <div className="text-xl font-bold text-blue-600 mb-4">{t('uc2.reference_projects.project2.offer')}</div>
 
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  Rénovation complète d'un quartier résidentiel avec 200 logements, espaces verts et commerces. 
-                  Gestion coordonnée des réseaux, voiries et contraintes d'occupation sur 5 hectares.
+                  {t('uc2.reference_projects.project2.desc')}
                 </p>
 
                 <div className="space-y-3">
                   <h4 className="font-semibold text-gray-900 mb-3">Impact client :</h4>
                   <div className="flex items-center text-sm text-gray-700">
                     <MdTrendingUp className="w-4 h-4 mr-2 text-green-500" />
-                    <span><strong>Productivité :</strong> +62% accélération études</span>
+                    <span>{t('uc2.reference_projects.project2.impact.productivity')}</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-700">
                     <MdVerified className="w-4 h-4 mr-2 text-blue-500" />
-                    <span><strong>Conformité :</strong> Urbanisme validé</span>
+                    <span>{t('uc2.reference_projects.project2.impact.compliance')}</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-700">
                     <MdTrackChanges className="w-4 h-4 mr-2 text-purple-500" />
-                    <span><strong>Traçabilité :</strong> Phases coordonnées</span>
+                    <span>{t('uc2.reference_projects.project2.impact.traceability')}</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-700">
                     <MdGroups className="w-4 h-4 mr-2 text-orange-500" />
-                    <span><strong>Collaboration :</strong> 15 corps de métier</span>
+                    <span>{t('uc2.reference_projects.project2.impact.collaboration')}</span>
                   </div>
                 </div>
               </div>
             </motion.div>
 
-            {/* Project 3: Campus Universitaire */}
+            {/* Project 3: Modern University Campus */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1152,34 +1148,33 @@ export default function UC2Page() {
                   <MdSecurity className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Campus Universitaire Moderne</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{t('uc2.reference_projects.project3.title')}</h3>
                 <div className="mb-4">
-                  <Badge className="bg-green-100 text-green-800 font-medium">Éducation</Badge>
+                  <Badge className="bg-green-100 text-green-800 font-medium">{t('uc2.reference_projects.project3.sector')}</Badge>
                 </div>
-                <div className="text-xl font-bold text-green-600 mb-4">Offre : 4.8 Millions €</div>
+                <div className="text-xl font-bold text-green-600 mb-4">{t('uc2.reference_projects.project3.offer')}</div>
 
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  Construction d'un campus de 15,000 m² avec amphithéâtres, laboratoires et résidences étudiantes. 
-                  Intégration de technologies numériques et espaces collaboratifs sur site de 8 hectares.
+                  {t('uc2.reference_projects.project3.desc')}
                 </p>
 
                 <div className="space-y-3">
                   <h4 className="font-semibold text-gray-900 mb-3">Impact client :</h4>
                   <div className="flex items-center text-sm text-gray-700">
                     <MdTrendingUp className="w-4 h-4 mr-2 text-green-500" />
-                    <span><strong>Productivité :</strong> +48% réduction délais</span>
+                    <span>{t('uc2.reference_projects.project3.impact.productivity')}</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-700">
                     <MdVerified className="w-4 h-4 mr-2 text-blue-500" />
-                    <span><strong>Conformité :</strong> Standards académiques</span>
+                    <span>{t('uc2.reference_projects.project3.impact.compliance')}</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-700">
                     <MdTrackChanges className="w-4 h-4 mr-2 text-purple-500" />
-                    <span><strong>Traçabilité :</strong> Validation continue</span>
+                    <span>{t('uc2.reference_projects.project3.impact.traceability')}</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-700">
                     <MdGroups className="w-4 h-4 mr-2 text-orange-500" />
-                    <span><strong>Collaboration :</strong> 18 lots coordonnés</span>
+                    <span>{t('uc2.reference_projects.project3.impact.collaboration')}</span>
                   </div>
                 </div>
               </div>
@@ -1202,14 +1197,14 @@ export default function UC2Page() {
               <div className="text-center mb-6 md:mb-8">
                 <div className="inline-flex items-center justify-center px-4 md:px-6 py-2 md:py-3 bg-purple-100 rounded-full border border-purple-200 mb-4 md:mb-6">
                   <MdAnalytics className="w-4 h-4 md:w-5 md:h-5 text-purple-600 mr-2" />
-                  <span className="text-purple-700 font-semibold text-xs md:text-sm">Simulateur ROI Intégré</span>
+                  <span className="text-purple-700 font-semibold text-xs md:text-sm">{t('uc2.roi_simulator.badge')}</span>
                 </div>
 
                 <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 md:mb-4">
-                  Calculez votre <span className="text-purple-600">ROI en temps réel</span>
+                  {t('uc2.roi_simulator.headline')}
                 </h3>
                 <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
-                  Simulateur intelligent intégré à la page pour une analyse immédiate de vos projets
+                  {t('uc2.roi_simulator.subtext')}
                 </p>
               </div>
 
@@ -1228,22 +1223,22 @@ export default function UC2Page() {
         transparent={true}
         customActions={[
           {
-            label: "Nos cas d'usage",
+            label: t('uc2.chat_actions.use_cases'),
             icon: <span className="text-gray-400">+</span>,
             onClick: () => {} // Navigate to use cases
           },
           {
-            label: "Demo UC2",
+            label: t('uc2.chat_actions.demo'),
             icon: <MdPlayArrow className="w-3 h-3 text-gray-400" />,
             onClick: () => {} // Launch UC2 demo
           },
           {
-            label: "ROI Calculator", 
+            label: t('uc2.chat_actions.roi'), 
             icon: <MdAnalytics className="w-3 h-3 text-gray-400" />,
             onClick: () => {} // Open ROI calculator
           },
           {
-            label: "Contact Expert",
+            label: t('uc2.chat_actions.contact'),
             icon: <MdMail className="w-3 h-3 text-gray-400" />,
             onClick: () => {} // Contact form
           }
