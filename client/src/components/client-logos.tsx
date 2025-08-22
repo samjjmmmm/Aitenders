@@ -1,8 +1,11 @@
+import { useGlobalTranslations } from '@/contexts/TranslationContext';
+
 interface ClientLogosProps {
   language?: 'en' | 'fr';
 }
 
 export default function ClientLogos({ language = 'fr' }: ClientLogosProps) {
+  const { t } = useGlobalTranslations();
   const logos = [
     {
       name: "Vinci",
@@ -33,7 +36,8 @@ export default function ClientLogos({ language = 'fr' }: ClientLogosProps) {
   // Duplicate logos for seamless scroll
   const duplicatedLogos = [...logos, ...logos];
 
-  const t = {
+  // Legacy fallback translations
+  const fallbackT = {
     fr: {
       title: "Approuvé par les Leaders de l'Industrie",
       subtitle: "Rejoignez les entreprises de premier plan qui font confiance à Aitenders pour leur gestion d'appels d'offres"
@@ -48,9 +52,11 @@ export default function ClientLogos({ language = 'fr' }: ClientLogosProps) {
     <section className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-aitenders-black mb-4">{t[language].title}</h2>
+          <h2 className="text-3xl font-bold text-aitenders-black mb-4">
+            {t('client.title', fallbackT[language]?.title)}
+          </h2>
           <p className="text-lg text-aitenders-dark-blue">
-            {t[language].subtitle}
+            {t('client.subtitle', fallbackT[language]?.subtitle)}
           </p>
         </div>
         
