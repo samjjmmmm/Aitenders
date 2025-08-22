@@ -443,26 +443,47 @@ export default function UC6Page() {
         </div>
       </section>
 
-      {/* Pain Points Section */}
+      {/* Requirements Section */}
       <section className="py-16 md:py-20 lg:py-24 bg-gray-50">
         <div className="content-boundary">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Défis de la Transformation Organisationnelle
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
+              Exigence ↔ Rédaction ↔ Preuve, <span className="text-purple-600">chaque engagement tenu</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Les obstacles qui freinent l'évolution de votre organisation et limitent votre capacité d'innovation
-            </p>
-          </div>
+            
+            <div className="space-y-6 text-lg text-gray-700 leading-relaxed mb-8">
+              <p>
+                Aujourd'hui, la gestion manuelle via <strong>Excel, emails et workshops dispersés</strong> alourdit les processus, multiplie les risques 
+                d'erreurs et consomme un temps critique. Demain, avec Aitenders, chaque exigence – explicite ou implicite – sera reliée 
+                à ses livrables, intégrée dans vos documents finaux, et suivie comme un fil conducteur vivant de la production.
+              </p>
+              
+              <p>
+                Aitenders accompagne vos équipes dans la <strong>maîtrise totale des exigences</strong> tout au long de l'exécution, en garantissant 
+                la couverture complète, la traçabilité des décisions et la conformité contractuelle. Résultat : des projets menés sans 
+                écart, sans litige, et en totale confiance.
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {painPoints.map((point, index) => (
-              <Card key={index} className="p-8 text-center hover:shadow-lg transition-shadow duration-300">
-                <point.icon className="w-16 h-16 text-red-500 mx-auto mb-6" />
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{point.title}</h3>
-                <p className="text-gray-600">{point.description}</p>
-              </Card>
-            ))}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                data-testid="button-contact"
+              >
+                Contactez-nous!
+              </Button>
+              
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-purple-600 text-purple-600 hover:bg-purple-50 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
+                data-testid="button-demo"
+              >
+                <MdPlayArrow className="w-5 h-5 mr-2" />
+                Voir la démo
+              </Button>
+            </div>
           </div>
         </div>
       </section>
