@@ -912,36 +912,6 @@ export default function UC6Page() {
       </motion.section>
 
 
-      {/* Differentiators Section */}
-      <motion.section 
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true, margin: "-100px" }}
-        className="py-16 md:py-20 lg:py-24 bg-white">
-        <div className="content-boundary">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Pourquoi Choisir Aitenders ?
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Une approche unique qui combine intelligence artificielle et expertise métier
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {differentiators.map((diff, index) => (
-              <Card key={index} className="p-8 text-center hover:shadow-lg transition-shadow duration-300">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <MdStars className="w-8 h-8 text-purple-600" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{diff.title}</h3>
-                <p className="text-gray-600">{diff.description}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </motion.section>
 
       {/* Case Studies Section - UC6 Specific Projects */}
       <motion.section 
