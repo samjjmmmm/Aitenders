@@ -1,39 +1,59 @@
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Card } from '@/components/ui/card';
 import { 
-  MdSchedule, MdCheckCircle, MdWarning, MdPeople, MdTrendingUp, MdSecurity, 
-  MdFlashOn, MdArrowForward, MdGpsFixed, MdVerifiedUser, MdAnalytics, MdEmojiEvents, 
-  MdMessage, MdShield, MdGroups, MdDescription, MdSettings, MdAccountBox, MdBusiness, 
-  MdEngineering, MdGavel, MdTableChart, MdAccessTime, MdContentCopy, MdRefresh, MdSearch,
-  MdDashboard, MdBolt, MdEdit, MdNotifications, MdVerified, MdSwapHoriz, MdPlayArrow,
-  MdClose, MdCheck, MdStars, MdCloudSync, MdCreate, MdAutoAwesome, MdLink, 
-  MdAccountTree, MdTrackChanges, MdCallSplit, MdSchema, MdGppBad, MdTimeline, 
-  MdRotateRight, MdFlag, MdMail,
+  MdFlashOn, 
+  MdGroups, 
+  MdSecurity, 
+  MdWarning, 
+  MdDescription, 
+  MdAccountBox, 
+  MdBusiness, 
+  MdEngineering, 
+  MdAnalytics, 
+  MdStars,
+  MdSettings,
+  MdShield,
+  MdVerifiedUser,
+  MdTableChart,
+  MdPlayArrow,
+  MdMail,
+  MdCheckCircle,
   MdAssignmentTurnedIn,
-  MdBusinessCenter,
-  MdPerson,
-  MdGppGood,
+  MdMessage,
+  MdRotateRight,
+  MdTrendingUp,
+  MdDashboard,
+  MdQuestionAnswer,
+  MdAutoAwesome,
+  MdTrackChanges,
+  MdAccountTree,
+  MdTimeline,
   MdHistory,
-  MdHandshake,
-  MdSchool
-} from "react-icons/md";
-import { FaUsers, FaShieldAlt, FaChartBar, FaFileAlt, FaCogs } from "react-icons/fa";
-import ContactSection from "@/components/contact-section";
-import Header from "@/components/header";
-import UC3AnalysisCard from "@/components/UC3AnalysisCard";
-import { useState } from "react";
-import { motion } from "framer-motion";
-
-// Import client logos
-import equansLogo from "@assets/Equans_1753711339292.png";
-import bouyguesLogo from "@assets/Bouyges_1753711339292.png";
-import colasLogo from "@assets/Colas_1753711339292.png";
-import ChatSection from "@/components/chat-section";
-import ChatInterface from "@/components/chat-interface";
+  MdNotificationsActive,
+  MdFlag,
+  MdVerified
+} from 'react-icons/md';
+import { FaUsers } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import Header from '@/components/header';
+import ContactSection from '@/components/contact-section';
+import ChatInterface from '@/components/chat-interface';
+import ClientLogos from '@/components/client-logos';
+import { AitendersSimulatorFinal } from '@/components/aitenders-simulator-final';
+import equansLogo from '@assets/Equans_1753711339292.png';
+import bouyguesLogo from '@assets/Bouyges_1753711339292.png';
+import colasLogo from '@assets/Colas_1753711339292.png';
+import Lottie from 'lottie-react';
+import wow1Uc5Animation from '../assets/wow-1-uc5.json';
+import wow2Uc5Animation from '../assets/wow-2-uc5.json';
+import wow3Uc5Animation from '../assets/wow-3-uc5.json';
+import uc5SecondFeatureImage from "@assets/wow 2_1755751777579.png";
+import uc5ThirdFeatureImage from "@assets/WOW 3_1755757958470.png";
+import uc5HeroImage from "@assets/HERO UC 5_1755774540751.png";
 
 export default function UC6Page() {
-  // Target audience data with interactive content
   const targetAudiences = [
     {
       id: 'digital-transformation',
@@ -68,7 +88,7 @@ export default function UC6Page() {
     {
       id: 'innovation-leaders',
       title: 'Directeurs innovation',
-      icon: MdGavel,
+      icon: MdEngineering,
       iconColor: 'text-green-600',
       iconBg: 'bg-green-100',
       description: 'Accélérez l\'innovation organisationnelle avec une plateforme intelligente qui identifie les opportunités d\'amélioration et mesure l\'impact des initiatives. Créez une culture d\'innovation durable et mesurable.',
@@ -83,7 +103,7 @@ export default function UC6Page() {
     {
       id: 'operations-directors',
       title: 'Directeurs opérationnels',
-      icon: MdEngineering,
+      icon: MdAnalytics,
       iconColor: 'text-orange-600',
       iconBg: 'bg-orange-100',
       description: 'Optimisez la performance opérationnelle avec une vision consolidée des processus métier. Identifiez les goulots d\'étranglement, automatisez les tâches répétitives et pilotez l\'amélioration continue.',
@@ -94,21 +114,6 @@ export default function UC6Page() {
       },
       notification: '🔧 Ops optimisées',
       alert: '📋 Performance +15%'
-    },
-    {
-      id: 'strategy-directors',
-      title: 'Directeurs stratégie',
-      icon: MdAnalytics,
-      iconColor: 'text-indigo-600',
-      iconBg: 'bg-indigo-100',
-      description: 'Alignez la stratégie organisationnelle avec l\'exécution opérationnelle grâce à des tableaux de bord stratégiques. Anticipez les tendances, mesurez l\'impact des décisions et ajustez la trajectoire en temps réel.',
-      dashboardData: {
-        requirements: { progress: 100, color: 'green' },
-        coordination: { progress: 95, color: 'blue' },
-        compliance: { progress: 98, color: 'purple' }
-      },
-      notification: '💼 Stratégie alignée',
-      alert: '🎯 Objectifs: 95%'
     }
   ];
 
@@ -210,311 +215,346 @@ export default function UC6Page() {
       {/* Header/Navbar */}
       <Header />
       
-      {/* Hero Section */}
-      <section className="py-12 md:py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-white via-slate-50/30 to-purple-50/20 relative overflow-hidden">
-        <div className="content-boundary">
-          {/* Subtle Abstract Background Effects */}
-          <div className="absolute inset-0 pointer-events-none">
-            {/* Large flowing gradient blob - top left */}
-            <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full opacity-30 blur-3xl"
-                 style={{
-                   background: 'radial-gradient(circle, #F5F9FE 0%, #EBF2FD 40%, #C3D9F8 70%, transparent 100%)'
-                 }}></div>
-            
-            {/* Medium accent blob - center right */}
-            <div className="absolute top-1/3 -right-16 w-80 h-80 rounded-full opacity-20 blur-2xl"
-                 style={{
-                   background: 'radial-gradient(circle, #C3D9F8 0%, #3880E8 30%, transparent 70%)'
-                 }}></div>
-            
-            {/* Small atmospheric accent - bottom */}
-            <div className="absolute -bottom-16 left-1/4 w-64 h-64 rounded-full opacity-25 blur-3xl"
-                 style={{
-                   background: 'linear-gradient(135deg, #FBFCFF 0%, #F5F9FE 50%, #EBF2FD 100%)'
-                 }}></div>
-            
-            {/* Flowing wave accent - mobile optimized */}
-            <div className="absolute top-1/2 left-0 w-full h-32 opacity-15 blur-xl lg:opacity-20"
-                 style={{
-                   background: 'linear-gradient(90deg, transparent 0%, #F5F9FE 20%, #C3D9F8 40%, #EBF2FD 60%, transparent 100%)'
-                 }}></div>
-          </div>
+      {/* Hero Section - Professional SaaS Design */}
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="py-12 md:py-16 lg:py-20 xl:py-24 px-4 md:px-6 lg:px-8 relative overflow-hidden" style={{ backgroundColor: '#F5F9FE' }}>
+        {/* Subtle Abstract Background Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Large flowing gradient blob - top left */}
+          <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full opacity-30 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #F0F8FF 0%, #E6F3FF 40%, #B3D9FF 70%, transparent 100%)'
+               }}></div>
           
-          <div className="max-w-7xl mx-auto relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 xl:gap-32 items-center">
-              
-              {/* Left Side - Content */}
-              <div className="text-left">
-                <div className="mb-12">
-                  <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-purple-50 to-purple-100/80 text-purple-800 border-purple-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Exécution des Projets Complexes</Badge>
-                  
-                  <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                    De l'exigence à la livraison, chaque engagement tenu, <span className="text-purple-600">Zéro écart, zéro surprise.</span>
-                  </h1>
-                  
-                  <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]"> Chaque exigence est reliée à ses livrables et suivie en temps réel.Vous réduisez les risques opérationnels et financiers tout en garantissant conformité, traçabilité et collaboration fluide entre équipes.</p>
-                </div>
-                
-                {/* Primary CTA */}
-                <div className="mb-16">
-                  <Button 
-                    size="lg" 
-                    className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto"
-                  >
-                   Réservez une Démo
-                  </Button>
-                </div>
-                
-                {/* Secondary CTA - Less Prominent */}
-                <div className="mb-20">
-                  <Button 
-                    variant="ghost" 
-                    className="text-purple-600 hover:text-purple-700 hover:bg-purple-50/80 px-6 py-4 text-xl font-medium underline decoration-2 underline-offset-4 rounded-2xl transition-all duration-300"
-                  >
-                    Téléchargez le cas d'usage
-                  </Button>
-                </div>
-                
-                {/* Trust Elements */}
-                <div className="border-t border-gray-100 pt-8">
-                  <p className="text-sm text-gray-500 mb-6">Partenaire de transformation des leaders du secteur</p>
-                  
-                  {/* Customer Logos / Trust Indicators */}
-                  <div className="flex items-center space-x-8">
-                    <div className="flex items-center text-sm text-gray-600">
-                      <div className="flex -space-x-2 mr-3">
-                        <div className="w-12 h-12 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center shadow-sm overflow-hidden">
-                          <img 
-                            src={equansLogo} 
-                            alt="Equans logo" 
-                            className="w-10 h-6 object-contain"
-                          />
-                        </div>
-                        <div className="w-12 h-12 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center shadow-sm overflow-hidden">
-                          <img 
-                            src={bouyguesLogo} 
-                            alt="Bouygues logo" 
-                            className="w-10 h-6 object-contain"
-                          />
-                        </div>
-                        <div className="w-12 h-12 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center shadow-sm overflow-hidden">
-                          <img 
-                            src={colasLogo} 
-                            alt="Colas logo" 
-                            className="w-10 h-6 object-contain"
-                          />
-                        </div>
-                      </div>
-                      <span>Accompagne la transformation des entreprises leaders</span>
-                    </div>
-                  </div>
-                </div>
+          {/* Medium accent blob - center right */}
+          <div className="absolute top-1/3 -right-16 w-80 h-80 rounded-full opacity-20 blur-2xl"
+               style={{
+                 background: 'radial-gradient(circle, #B3D9FF 0%, #2563EB 30%, transparent 70%)'
+               }}></div>
+          
+          {/* Small atmospheric accent - bottom */}
+          <div className="absolute -bottom-16 left-1/4 w-64 h-64 rounded-full opacity-25 blur-3xl"
+               style={{
+                 background: 'linear-gradient(135deg, #FAFCFF 0%, #F0F8FF 50%, #E6F3FF 100%)'
+               }}></div>
+          
+          {/* Flowing wave accent - mobile optimized */}
+          <div className="absolute top-1/2 left-0 w-full h-32 opacity-15 blur-xl lg:opacity-20"
+               style={{
+                 background: 'linear-gradient(90deg, transparent 0%, #F0F8FF 20%, #B3D9FF 40%, #E6F3FF 60%, transparent 100%)'
+               }}></div>
+        </div>
+        
+        <div className="content-boundary relative z-10">
+          <div className="flex flex-col items-center text-center space-y-8 md:space-y-12 lg:space-y-16">
+            
+            {/* Content UC6 - Top */}
+            <div className="w-full max-w-5xl px-4">
+              <div className="mb-12">
+                <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-purple-50 to-purple-100/80 text-purple-800 border-purple-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">
+                  Exécution des Projets Complexes
+                </Badge>
+
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+                  De l'exigence à la livraison, chaque engagement tenu, <span className="text-purple-600">Zéro écart, zéro surprise.</span>
+                </h1>
+
+                <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]">
+                  <span className="text-purple-300">La première plateforme conçue pour maîtriser les projets complexes :</span> 
+                  Chaque exigence est reliée à ses livrables et suivie en temps réel. Vous réduisez les risques opérationnels et financiers 
+                  tout en garantissant conformité, traçabilité et collaboration fluide entre équipes 
+                  <span className="text-purple-600"> avec une maîtrise totale des engagements</span>.
+                </p>
               </div>
 
-              {/* Right Side - Realistic Product Mockup */}
-              <div className="flex justify-center lg:justify-end">
-                <div className="relative w-full max-w-lg">
-                  
-                  {/* Main Dashboard Mockup */}
-                  <div className="bg-white rounded-3xl shadow-2xl border border-gray-100/50 overflow-hidden backdrop-blur-sm"
-                       style={{
-                         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-                       }}>
-                    
-                    {/* Browser Header */}
-                    <div className="bg-gray-100 px-6 py-4 flex items-center justify-between border-b border-gray-200">
-                      <div className="flex items-center space-x-2">
-                        <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                        <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                        <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                      </div>
-                      <div className="text-xs text-gray-500 font-medium">aitenders.com/uc6-transformation</div>
-                      <div className="w-16"></div>
-                    </div>
+              {/* CTA Buttons - Side by Side */}
+              <div className="mb-16 flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
+                  data-testid="button-demo"
+                >
+                  Réservez une Démo
+                </Button>
+                
+                <Button 
+                  variant="ghost" 
+                  className="text-purple-600 hover:text-purple-700 hover:bg-purple-50/80 px-6 py-4 text-xl font-medium underline decoration-2 underline-offset-4 rounded-2xl transition-all duration-300"
+                  data-testid="button-download"
+                >
+                  Téléchargez le cas d'usage →
+                </Button>
+              </div>
+            </div>
 
-                    {/* Dashboard Content */}
-                    <div className="p-6 bg-gradient-to-br from-gray-50 to-blue-50/30">
-                      
-                      {/* Header */}
-                      <div className="flex items-center justify-between mb-6">
-                        <div>
-                          <h3 className="text-lg font-bold text-gray-900">Transformation Dashboard</h3>
-                          <p className="text-sm text-gray-600">Pilotage temps réel</p>
-                        </div>
-                        <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
-                          <MdAutoAwesome className="w-5 h-5 text-purple-600" />
-                        </div>
-                      </div>
-
-                      {/* Metrics Grid */}
-                      <div className="grid grid-cols-3 gap-4 mb-6">
-                        <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
-                          <div className="flex items-center justify-between mb-2">
-                            <span className="text-xs font-medium text-gray-500">Exigences</span>
-                            <MdCheckCircle className="w-4 h-4 text-green-500" />
-                          </div>
-                          <div className="flex items-center space-x-2">
-                            <span className="text-lg font-bold text-gray-900">{activeAudience.dashboardData.requirements.progress}%</span>
-                            <div className="w-8 h-2 bg-gray-200 rounded-full overflow-hidden">
-                              <div 
-                                className={`h-full ${activeAudience.dashboardData.requirements.color === 'green' ? 'bg-green-500' : 'bg-blue-500'} rounded-full transition-all duration-500`}
-                                style={{ width: `${activeAudience.dashboardData.requirements.progress}%` }}
-                              />
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
-                          <div className="flex items-center justify-between mb-2">
-                            <span className="text-xs font-medium text-gray-500">Coordination</span>
-                            <MdGroups className="w-4 h-4 text-blue-500" />
-                          </div>
-                          <div className="flex items-center space-x-2">
-                            <span className="text-lg font-bold text-gray-900">{activeAudience.dashboardData.coordination.progress}%</span>
-                            <div className="w-8 h-2 bg-gray-200 rounded-full overflow-hidden">
-                              <div 
-                                className="h-full bg-blue-500 rounded-full transition-all duration-500"
-                                style={{ width: `${activeAudience.dashboardData.coordination.progress}%` }}
-                              />
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
-                          <div className="flex items-center justify-between mb-2">
-                            <span className="text-xs font-medium text-gray-500">Conformité</span>
-                            <MdSecurity className="w-4 h-4 text-purple-500" />
-                          </div>
-                          <div className="flex items-center space-x-2">
-                            <span className="text-lg font-bold text-gray-900">{activeAudience.dashboardData.compliance.progress}%</span>
-                            <div className="w-8 h-2 bg-gray-200 rounded-full overflow-hidden">
-                              <div 
-                                className="h-full bg-purple-500 rounded-full transition-all duration-500"
-                                style={{ width: `${activeAudience.dashboardData.compliance.progress}%` }}
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Active Projects */}
-                      <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm mb-4">
-                        <div className="flex items-center justify-between mb-3">
-                          <span className="text-sm font-medium text-gray-700">Projets Actifs</span>
-                          <span className="text-xs text-gray-500">12 en cours</span>
-                        </div>
-                        <div className="space-y-2">
-                          <div className="flex items-center justify-between">
-                            <span className="text-xs text-gray-600">Infrastructure Digitale</span>
-                            <span className="text-xs font-medium text-green-600">85%</span>
-                          </div>
-                          <div className="flex items-center justify-between">
-                            <span className="text-xs text-gray-600">Formation Équipes</span>
-                            <span className="text-xs font-medium text-blue-600">72%</span>
-                          </div>
-                          <div className="flex items-center justify-between">
-                            <span className="text-xs text-gray-600">Processus Métier</span>
-                            <span className="text-xs font-medium text-purple-600">94%</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Notifications */}
-                      <div className="space-y-2">
-                        <div className="bg-green-50 rounded-lg p-3 border border-green-100">
-                          <div className="flex items-center space-x-2">
-                            <MdCheckCircle className="w-4 h-4 text-green-600" />
-                            <span className="text-xs font-medium text-green-800">{activeAudience.notification}</span>
-                          </div>
-                        </div>
-                        <div className="bg-blue-50 rounded-lg p-3 border border-blue-100">
-                          <div className="flex items-center space-x-2">
-                            <MdTrendingUp className="w-4 h-4 text-blue-600" />
-                            <span className="text-xs font-medium text-blue-800">{activeAudience.alert}</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            {/* Hero Image - Bottom */}
+            <div className="w-full flex justify-center px-4">
+              <div className="relative w-full max-w-5xl">
+                <img
+                  src={uc5HeroImage}
+                  alt="Aitenders UC6 Interface - Complex Project Management and Requirements Tracking"
+                  className="w-full h-auto mx-auto"
+                  style={{
+                    transform: 'scale(1.3)',
+                    transformOrigin: 'center center',
+                    objectFit: 'contain',
+                    filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15))',
+                    maxWidth: '100%',
+                    height: 'auto'
+                  }}
+                />
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      {/* Requirements Section */}
-      <section className="py-16 md:py-20 lg:py-24 bg-gray-50">
-        <div className="content-boundary">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
-              Exigence ↔ Rédaction ↔ Preuve, <span className="text-purple-600">chaque engagement tenu</span>
-            </h2>
-            
-            <div className="space-y-6 text-lg text-gray-700 leading-relaxed mb-8">
-              <p>
+      {/* Pain Points Section - Main Feature Card + Supporting Cards */}
+      <motion.section 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-100px" }}
+        className="py-16 md:py-20 lg:py-24 px-8 bg-gradient-to-br from-slate-50 via-gray-50 to-purple-50/20 relative overflow-hidden">
+        {/* Subtle Abstract Background Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-16 -right-40 w-[500px] h-[500px] rounded-full opacity-25 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #F5F9FE 0%, #C3D9F8 50%, #EBF2FD 80%, transparent 100%)'
+               }}></div>
+          <div className="absolute top-1/3 -left-24 w-72 h-72 rounded-full opacity-20 blur-2xl"
+               style={{
+                 background: 'linear-gradient(135deg, #EBF2FD 0%, #C3D9F8 60%, transparent 100%)'
+               }}></div>
+          <div className="absolute bottom-20 right-1/4 w-48 h-48 rounded-full opacity-15 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #3880E8 0%, #C3D9F8 40%, transparent 80%)'
+               }}></div>
+          <div className="absolute bottom-0 left-0 w-full h-24 opacity-10 blur-xl lg:opacity-15"
+               style={{
+                 background: 'linear-gradient(90deg, #F5F9FE 0%, transparent 30%, #FBFCFF 70%, #EBF2FD 100%)'
+               }}></div>
+        </div>
+
+        <div className="content-boundary relative z-10">
+          <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20"
+               style={{
+                 boxShadow: '0 32px 64px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+               }}>
+
+            {/* Background Overlays */}
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-50/30 via-blue-50/20 to-indigo-50/25 rounded-3xl"></div>
+            <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-purple-100/25 to-transparent rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-blue-100/20 to-transparent rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+
+            {/* Content */}
+            <div className="relative z-10 text-center">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+                Exigence ↔ Rédaction ↔ Preuve, <span className="text-purple-600">chaque engagement tenu</span>
+              </h2>
+
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                 Aujourd'hui, la gestion manuelle via <strong>Excel, emails et workshops dispersés</strong> alourdit les processus, multiplie les risques 
                 d'erreurs et consomme un temps critique. Demain, avec Aitenders, chaque exigence – explicite ou implicite – sera reliée 
                 à ses livrables, intégrée dans vos documents finaux, et suivie comme un fil conducteur vivant de la production.
               </p>
-              
-              <p>
+
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                 Aitenders accompagne vos équipes dans la <strong>maîtrise totale des exigences</strong> tout au long de l'exécution, en garantissant 
                 la couverture complète, la traçabilité des décisions et la conformité contractuelle. Résultat : des projets menés sans 
                 écart, sans litige, et en totale confiance.
               </p>
-            </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                data-testid="button-contact"
-              >
-                Contactez-nous!
-              </Button>
-              
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-purple-600 text-purple-600 hover:bg-purple-50 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
-                data-testid="button-demo"
-              >
-                <MdPlayArrow className="w-5 h-5 mr-2" />
-                Voir la démo
-              </Button>
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+                <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
+                        data-testid="button-contact">
+                  Contactez-nous!
+                </Button>
+                <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white px-12 py-6 text-xl font-semibold rounded-3xl transition-all duration-300"
+                        data-testid="button-demo-video">
+                  <MdPlayArrow className="w-6 h-6 mr-2" />
+                  Voir la démo
+                </Button>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      {/* Solutions Section */}
-      <section className="py-16 md:py-20 lg:py-24 bg-white">
-        <div className="content-boundary">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Notre Approche de Transformation
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Une plateforme intelligente qui accompagne votre organisation dans sa transformation
-            </p>
+      {/* Solution Section - Alternating Layout Design */}
+      <motion.section 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-100px" }}
+        className="py-32 px-8 bg-gradient-to-br from-white via-slate-50/20 to-white relative overflow-hidden">
+        {/* Subtle Abstract Background Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Large flowing accent - top center */}
+          <div className="absolute -top-20 left-1/3 w-96 h-96 rounded-full opacity-20 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #FAFCFF 0%, #F0F8FF 30%, #B3D9FF 70%, transparent 100%)'
+               }}></div>
+          
+          {/* Medium directional blob - middle left */}
+          <div className="absolute top-1/2 -left-32 w-80 h-80 rounded-full opacity-15 blur-2xl"
+               style={{
+                 background: 'linear-gradient(45deg, #E6F3FF 0%, #B3D9FF 50%, #2563EB 90%, transparent 100%)'
+               }}></div>
+          
+          {/* Atmospheric accent - bottom right */}
+          <div className="absolute -bottom-24 -right-32 w-[400px] h-[400px] rounded-full opacity-25 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #F0F8FF 0%, #E6F3FF 40%, transparent 100%)'
+               }}></div>
+          
+          {/* Subtle flowing wave - center */}
+          <div className="absolute top-1/2 left-0 w-full h-40 opacity-10 blur-xl lg:opacity-15"
+               style={{
+                 background: 'linear-gradient(90deg, transparent 0%, #B3D9FF 25%, #F0F8FF 50%, #E6F3FF 75%, transparent 100%)'
+               }}></div>
+        </div>
+        
+        <div className="content-boundary relative z-10">
+          <div className="text-center mb-12 md:mb-16 lg:mb-20">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+              Votre <span className="text-purple-600">copilote IA</span> pour anticiper et maîtriser vos <span className="text-purple-600">exigences</span>
+            </h1>
+            <h3 className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Orchestrez la transformation organisationnelle avec une plateforme intelligente qui fédère les équipes, 
+              mesure l'impact et accélère l'adoption du changement à tous les niveaux.
+            </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {solutions.map((solution, index) => (
-              <Card key={index} className="p-8 text-center hover:shadow-lg transition-shadow duration-300">
-                <solution.icon className="w-16 h-16 text-purple-600 mx-auto mb-6" />
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{solution.title}</h3>
-                <p className="text-gray-600">{solution.description}</p>
-              </Card>
-            ))}
+          {/* Feature 1: Organisation intelligente UC6 - Text Left, Animation Right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
+            <div className="order-1">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+                Orchestrez la Transformation <span className="text-purple-600">Intelligemment</span>
+              </h3>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
+                IA qui analyse l'organisation et propose des parcours de transformation personnalisés et évolutifs. 
+                Démarrez avec une roadmap claire, des objectifs mesurables et des jalons adaptés à votre contexte.
+                <span className="text-purple-600"> Transformation pilotée par l'intelligence, pas par l'intuition.</span>
+              </p>
+              <div className="flex items-center text-lg font-bold text-blue-500">
+                <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
+                Parcours de transformation personnalisés et mesurables
+              </div>
+            </div>
+
+            <div className="order-2">
+              <div className="flex justify-center items-center h-full">
+                <Lottie 
+                  animationData={wow1Uc5Animation}
+                  loop={true}
+                  autoplay={true}
+                  className="w-full h-full max-w-[400px] max-h-[400px]"
+                  style={{ 
+                    transform: 'scale(1.5)',
+                    filter: 'drop-shadow(0 8px 32px rgba(59, 130, 246, 0.2))'
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Feature 2: Fédérez les Équipes - Text Right, Image Left */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
+            <div className="order-2 lg:order-1">
+              <div className="flex justify-center items-center h-full">
+                <figure className="w-full max-w-[500px] mx-auto">
+                  <img 
+                    src={uc5SecondFeatureImage}
+                    alt="Aitenders team collaboration interface showing transformation progress and team coordination"
+                    className="w-full h-auto object-contain"
+                    style={{
+                      imageRendering: 'crisp-edges',
+                      filter: 'drop-shadow(0 8px 32px rgba(147, 51, 234, 0.2))'
+                    }}
+                  />
+                </figure>
+              </div>
+            </div>
+
+            <div className="order-1 lg:order-2">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+                Fédérez les Équipes Autour <span className="text-purple-600">d'Objectifs Communs</span>
+              </h3>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
+                Créez une culture collaborative avec des outils de suivi partagés et des métriques transparentes. 
+                Chaque équipe comprend son rôle dans la transformation globale et dispose des indicateurs 
+                pour mesurer sa contribution.
+                <span className="text-purple-600"> Alignement stratégique et opérationnel en temps réel.</span>
+              </p>
+              <div className="flex items-center text-lg font-bold text-blue-500">
+                <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
+                Culture collaborative et métriques partagées
+              </div>
+            </div>
+          </div>
+
+          {/* Feature 3: Pilotez l'Impact - Text Left, Image Right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
+            <div className="order-1">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+                Pilotez l'Impact <span className="text-purple-600">en Temps Réel</span>
+              </h3>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
+                Tableaux de bord stratégiques qui mesurent l'adoption, l'engagement et la performance globale. 
+                Anticipez les résistances, ajustez la stratégie et démontrez la valeur créée à chaque étape.
+                <span className="text-purple-600"> Transformation visible, mesurable et ajustable.</span>
+              </p>
+              <div className="flex items-center text-lg font-bold text-blue-500">
+                <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
+                Pilotage stratégique avec métriques d'impact
+              </div>
+            </div>
+
+            <div className="order-2">
+              <div className="flex justify-center items-center h-full">
+                <figure className="w-full max-w-[500px] mx-auto">
+                  <img 
+                    src={uc5ThirdFeatureImage}
+                    alt="Aitenders real-time impact dashboard showing transformation metrics and strategic indicators"
+                    className="w-full h-auto object-contain"
+                    style={{
+                      imageRendering: 'crisp-edges',
+                      filter: 'drop-shadow(0 8px 32px rgba(147, 51, 234, 0.2))'
+                    }}
+                  />
+                </figure>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Target Audience Section */}
-      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-purple-50 to-blue-50">
-        <div className="content-boundary">
+      <motion.section 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-100px" }}
+        className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-purple-50 to-blue-50 relative overflow-hidden">
+        {/* Subtle Abstract Background Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 -right-32 w-80 h-80 rounded-full opacity-20 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #DDD6FE 0%, #C4B5FD 50%, transparent 100%)'
+               }}></div>
+          <div className="absolute bottom-16 -left-24 w-64 h-64 rounded-full opacity-15 blur-2xl"
+               style={{
+                 background: 'linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 60%, transparent 100%)'
+               }}></div>
+        </div>
+
+        <div className="content-boundary relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               Conçu pour les Leaders de la Transformation
@@ -525,7 +565,7 @@ export default function UC6Page() {
           </div>
 
           {/* Interactive Audience Selector */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
             {targetAudiences.map((audience) => (
               <Card 
                 key={audience.id}
@@ -547,10 +587,15 @@ export default function UC6Page() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* User Journey Section */}
-      <section className="py-16 md:py-20 lg:py-24 bg-white">
+      <motion.section 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-100px" }}
+        className="py-16 md:py-20 lg:py-24 bg-white">
         <div className="content-boundary">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -578,10 +623,15 @@ export default function UC6Page() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* KPIs Section */}
-      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-purple-600 to-blue-600 text-white">
+      <motion.section 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-100px" }}
+        className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-purple-600 to-blue-600 text-white">
         <div className="content-boundary">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
@@ -603,10 +653,15 @@ export default function UC6Page() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Differentiators Section */}
-      <section className="py-16 md:py-20 lg:py-24 bg-white">
+      <motion.section 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-100px" }}
+        className="py-16 md:py-20 lg:py-24 bg-white">
         <div className="content-boundary">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -629,12 +684,186 @@ export default function UC6Page() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      {/* Contact Section */}
-      <ContactSection />
+      {/* Case Studies Section - UC6 Specific Projects */}
+      <motion.section 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-100px" }}
+        className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-slate-50 via-gray-50 to-purple-50/20 relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 -right-40 w-96 h-96 rounded-full opacity-20 blur-3xl"
+               style={{
+                 background: 'radial-gradient(circle, #F5F9FE 0%, #C3D9F8 50%, transparent 100%)'
+               }}></div>
+          <div className="absolute bottom-32 -left-32 w-80 h-80 rounded-full opacity-15 blur-2xl"
+               style={{
+                 background: 'linear-gradient(135deg, #EBF2FD 0%, #C3D9F8 60%, transparent 100%)'
+               }}></div>
+        </div>
 
-      {/* Chat Interface */}
+        <div className="content-boundary relative z-10">
+          <div className="text-center mb-16 md:mb-20">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Projets de Transformation Menés avec Succès
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Découvrez comment Aitenders accompagne les organisations dans leur transformation
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 md:mb-20">
+            {/* Project 1: Digital Transformation */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="group"
+            >
+              <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-purple-100 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                  <MdAutoAwesome className="w-8 h-8 text-white" />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">Transformation Digitale Globale</h3>
+                <div className="mb-4">
+                  <Badge className="bg-purple-100 text-purple-800 font-medium">Tech</Badge>
+                </div>
+                <div className="text-xl font-bold text-purple-600 mb-4">450 processus transformés</div>
+                
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Transformation digitale complète d'une multinationale avec orchestration de 450 processus métier, 
+                  formation de 2,000 collaborateurs et déploiement sur 15 pays.
+                </p>
+                
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-gray-900 mb-3">Impact client :</h4>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdTrendingUp className="w-4 h-4 mr-2 text-green-500" />
+                    <span><strong>Adoption :</strong> 85% en 6 mois</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdVerified className="w-4 h-4 mr-2 text-blue-500" />
+                    <span><strong>Performance :</strong> +40% productivité</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdTrackChanges className="w-4 h-4 mr-2 text-purple-500" />
+                    <span><strong>ROI :</strong> 250% sur 2 ans</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Project 2: Organizational Change */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="group"
+            >
+              <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-100 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                  <MdGroups className="w-8 h-8 text-white" />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">Restructuration Organisationnelle</h3>
+                <div className="mb-4">
+                  <Badge className="bg-blue-100 text-blue-800 font-medium">Services</Badge>
+                </div>
+                <div className="text-xl font-bold text-blue-600 mb-4">12 entités fusionnées</div>
+                
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Fusion de 12 entités avec harmonisation des processus, redéfinition des rôles et 
+                  accompagnement du changement pour 3,500 collaborateurs.
+                </p>
+                
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-gray-900 mb-3">Impact client :</h4>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdTrendingUp className="w-4 h-4 mr-2 text-green-500" />
+                    <span><strong>Engagement :</strong> 78% satisfaction</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdVerified className="w-4 h-4 mr-2 text-blue-500" />
+                    <span><strong>Efficacité :</strong> +35% synergies</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdTrackChanges className="w-4 h-4 mr-2 text-purple-500" />
+                    <span><strong>Délai :</strong> 8 mois vs 18 prévus</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Project 3: Innovation Implementation */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="group"
+            >
+              <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-green-100 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6">
+                  <MdTimeline className="w-8 h-8 text-white" />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">Programme Innovation Agile</h3>
+                <div className="mb-4">
+                  <Badge className="bg-green-100 text-green-800 font-medium">Innovation</Badge>
+                </div>
+                <div className="text-xl font-bold text-green-600 mb-4">25 initiatives lancées</div>
+                
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Déploiement d'un programme d'innovation agile avec 25 initiatives, méthodologie lean startup 
+                  et culture d'expérimentation dans toute l'organisation.
+                </p>
+                
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-gray-900 mb-3">Impact client :</h4>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdTrendingUp className="w-4 h-4 mr-2 text-green-500" />
+                    <span><strong>Innovation :</strong> 15 projets déployés</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdVerified className="w-4 h-4 mr-2 text-blue-500" />
+                    <span><strong>Culture :</strong> 90% équipes formées</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-700">
+                    <MdTrackChanges className="w-4 h-4 mr-2 text-purple-500" />
+                    <span><strong>Valeur :</strong> €5M nouveaux revenus</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Client Logos Scrolling Banner */}
+          <div className="mb-16 md:mb-20">
+            <ClientLogos language="fr" />
+          </div>
+
+          {/* Simulateur ROI Intégré */}
+          <div className="bg-white rounded-3xl shadow-2xl border border-purple-100 p-8 md:p-12">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                Simulateur ROI Intégré
+              </h3>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Calculez votre ROI en temps réel pour vos projets de transformation
+              </p>
+            </div>
+            
+            <div className="max-w-4xl mx-auto">
+              <AitendersSimulatorFinal useCase="UC6" />
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Chat Interface with UC6-specific actions */}
       <ChatInterface 
         language="fr"
         transparent={true}
