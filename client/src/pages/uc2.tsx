@@ -15,6 +15,7 @@ import { FaUsers, FaShieldAlt, FaChartBar, FaFileAlt, FaCogs } from "react-icons
 import ContactSection from "@/components/contact-section";
 import Header from "@/components/header";
 import UC3AnalysisCard from "@/components/UC3AnalysisCard";
+import ClientLogos from "@/components/client-logos";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
@@ -1055,27 +1056,7 @@ export default function UC2Page() {
 
           {/* Client Logos Scrolling Banner */}
           <div className="mb-8 md:mb-16 lg:mb-20 fade-in-up">
-            <div className="bg-white rounded-xl md:rounded-2xl shadow-md md:shadow-lg border border-gray-100 p-4 md:p-6 overflow-hidden">
-              <div className="flex items-center justify-center mb-3 md:mb-4">
-                <h3 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 mb-2 md:mb-4 text-center">Ils nous font confiance pour leurs projets moyens</h3>
-              </div>
-              <div className="relative w-full overflow-hidden">
-                <div className="flex logo-scroll space-x-12 whitespace-nowrap justify-center items-center">
-                  {/* First set of logos */}
-                  <img src={equansLogo} alt="Equans" className="h-3 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  <img src={bouyguesLogo} alt="Bouygues" className="h-3 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  <img src={colasLogo} alt="Colas" className="h-3 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  {/* Duplicate set for seamless loop */}
-                  <img src={equansLogo} alt="Equans" className="h-3 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  <img src={bouyguesLogo} alt="Bouygues" className="h-3 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  <img src={colasLogo} alt="Colas" className="h-3 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  {/* Third set for smooth continuation */}
-                  <img src={equansLogo} alt="Equans" className="h-3 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  <img src={bouyguesLogo} alt="Bouygues" className="h-3 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  <img src={colasLogo} alt="Colas" className="h-3 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                </div>
-              </div>
-            </div>
+            <ClientLogos language="fr" />
           </div>
 
           {/* Integrated Chat Simulator - Enhanced */}
