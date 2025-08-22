@@ -911,35 +911,6 @@ export default function UC6Page() {
         </div>
       </motion.section>
 
-      {/* KPIs Section */}
-      <motion.section 
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true, margin: "-100px" }}
-        className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-purple-600 to-blue-600 text-white">
-        <div className="content-boundary">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              Résultats Mesurables, Impact Démontré
-            </h2>
-            <p className="text-xl text-purple-100 max-w-3xl mx-auto">
-              Les métriques qui comptent pour mesurer le succès de votre transformation
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {kpis.map((kpi, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-white mb-4">
-                  {kpi.metric}
-                </div>
-                <p className="text-purple-100">{kpi.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
 
       {/* Differentiators Section */}
       <motion.section 
