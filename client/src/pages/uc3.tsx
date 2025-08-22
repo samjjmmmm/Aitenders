@@ -534,8 +534,7 @@ export default function UC3Page() {
               visibleElements.has('feature-1') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
             }`}
           >
-            <div className="order-1">
-
+            <div className="order-1 pr-4 lg:pr-8">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Démarrez le projet sur une donnée pré-organisée et intelligente <span className="text-purple-600">dès le jour 1</span></h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                 Grâce aux assistants IA, les documents sont automatiquement structurés en base de données, les informations classifiés, les exigences identifiées, les points clés résumés, les contradictions et similitudes détectées etc ... 
@@ -584,8 +583,7 @@ export default function UC3Page() {
                 />
               </div>
             </div>
-            <div className="order-1 lg:order-2">
-
+            <div className="order-1 lg:order-2 pl-4 lg:pl-8">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Collaborez entre experts <span className="text-purple-600">sans friction</span>, assurez la conformité initiale <span className="text-purple-600">sans effort.</span></h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">Aitenders permet de générer de manière collaborative et structurée la matrice de conformité, l’allocation des exigences aux experts, et une structuration des livrables à produire. 
                 <p>
@@ -603,11 +601,11 @@ export default function UC3Page() {
           <div 
             ref={(el) => registerElement('feature-3', el)}
             data-scroll-id="feature-3"
-            className={`grid grid-cols-1 lg:grid-cols-2 gap-20 items-center transition-all duration-1000 delay-800 ${
+            className={`grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center transition-all duration-1000 delay-800 ${
               visibleElements.has('feature-3') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
             }`}
           >
-            <div className="order-1">
+            <div className="order-1 pr-4 lg:pr-8">
 
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">       Pilotez chaque évolution de l’offre,<span className="text-purple-600">sans rien laisser passer</span> </h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">Les changements documentaires sont détectés et versionnés automatiquement, avec comparaison instantanée. Le pilotage intégré des Q&A signale chaque écart, permettant à l’équipe d’en mesurer l’impact et d’agir sans délai. <p>               <span className="text-purple-600"> Le responsable de l'offre </span> s'assure ainsi d'identifier en amont les erreurs de version, les oublis et les non‑conformités : plus de “trous dans la raquette”...</p> </p>
