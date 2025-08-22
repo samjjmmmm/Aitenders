@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { Loader2, Send, Calculator } from 'lucide-react';
+import { useGlobalTranslations } from '@/contexts/TranslationContext';
 
 interface AitendersSimulatorFinalProps {
   useCase: string;
@@ -17,6 +18,7 @@ interface SimulationStep {
 }
 
 export function AitendersSimulatorFinal({ useCase, className = '' }: AitendersSimulatorFinalProps) {
+  const { t } = useGlobalTranslations();
   const [steps, setSteps] = useState<SimulationStep[]>([]);
   const [isProcessing, setIsProcessing] = useState(false);
   const [userInput, setUserInput] = useState('');
@@ -146,10 +148,10 @@ export function AitendersSimulatorFinal({ useCase, className = '' }: AitendersSi
             <Calculator className="w-8 h-8 text-[#3880E8]" />
             <div>
               <h3 className="text-xl font-semibold text-[#112646]">
-                Simulateur ROI Aitenders
+                {t('uc2.simulator.title', 'Simulateur ROI Aitenders')}
               </h3>
               <p className="text-gray-600 text-sm">
-                Cas d'usage: {useCase} • Simulation Multi-Projets
+                {t('uc2.simulator.useCase', 'Cas d\'usage')}: {useCase} • {t('uc2.simulator.multiProject', 'Simulation Multi-Projets')}
               </p>
             </div>
           </div>
@@ -209,7 +211,7 @@ export function AitendersSimulatorFinal({ useCase, className = '' }: AitendersSi
                 <div className="flex-1">
                   <div className="bg-[#F5F9FE] rounded-lg p-4 border border-[#EBF2FD]">
                     <p className="text-[#112646]">
-                      Traitement en cours...
+                      {t('uc2.simulator.processing', 'Traitement en cours...')}
                     </p>
                   </div>
                 </div>
@@ -224,7 +226,7 @@ export function AitendersSimulatorFinal({ useCase, className = '' }: AitendersSi
             <div className="flex gap-2">
               <Input
                 type="text"
-                placeholder="Tapez votre réponse ici..."
+                placeholder={t('uc2.simulator.inputPlaceholder', 'Tapez votre réponse ici...')}
                 value={userInput}
                 onChange={(e) => setUserInput(e.target.value)}
                 onKeyPress={handleKeyPress}
@@ -244,7 +246,7 @@ export function AitendersSimulatorFinal({ useCase, className = '' }: AitendersSi
               </Button>
             </div>
             <p className="text-xs text-gray-500 mt-2">
-              💡 Vous pouvez répondre en langage naturel ou utiliser les formats suggérés
+              {t('uc2.simulator.helpText', '💡 Vous pouvez répondre en langage naturel ou utiliser les formats suggérés')}
             </p>
           </div>
         </CardContent>

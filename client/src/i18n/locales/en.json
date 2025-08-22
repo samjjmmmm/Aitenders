@@ -145,6 +145,14 @@
       "demo": "UC2 Demo",
       "roi": "ROI Calculator",
       "contact": "Contact Expert"
+    },
+    "simulator": {
+      "title": "Aitenders ROI Simulator",
+      "useCase": "Use case:",
+      "multiProject": "Multi-Project Simulation",
+      "processing": "Processing...",
+      "inputPlaceholder": "Type your response here...",
+      "helpText": "💡 You can respond in natural language or use the suggested formats"
     }
   }
 }
