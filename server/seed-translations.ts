@@ -8,7 +8,7 @@ const uc2TranslationKeys = {
   'uc2.hero.span': 'dès le premier jour.',
   'uc2.hero.description': 'La seule plateforme conçue pour transformer des dossiers moyens (1 à 10 M€) en une vision contractuelle claire dès le premier jour : structuration IA du périmètre, détection immédiate des clauses critiques et pilotage dynamique des Q&A et versions. Vous réduisez de moitié votre temps d\'analyse, rassurez votre direction et livrez une réponse compétitive, sans risque de dernière minute.',
   'uc2.hero.demoButton': 'Réservez une Démo',
-  'uc2.hero.downloadButton': 'Téléchargez le cas d\'usage →',
+  'uc2.hero.downloadButton': 'Testez l\'impact →',
 
   // Pain Points Section
   'uc2.painPoints.headline': 'Votre offre, 100 % claire, 0 % surprise',
@@ -64,7 +64,7 @@ const uc2EnglishTranslations = {
   'uc2.hero.span': 'from day one.',
   'uc2.hero.description': 'The only platform designed to transform medium-size tenders (€1M–10M) into a clear contractual vision from the very first day: AI structuring of scope, immediate detection of critical clauses, and dynamic management of Q&As and versions. You cut analysis time in half, reassure your management, and deliver a competitive answer with no last-minute risk.',
   'uc2.hero.demoButton': 'Book a Demo',
-  'uc2.hero.downloadButton': 'Download the use case →',
+  'uc2.hero.downloadButton': 'Test the impact →',
 
   'uc2.painPoints.headline': 'Your offer, 100% clear, 0% surprise',
   'uc2.painPoints.text1': 'On medium-size projects, your teams juggle tight deadlines, hidden critical clauses and scattered versions—at the risk of costly errors and endless back-and-forths.',
@@ -114,7 +114,7 @@ const uc2SpanishTranslations = {
   'uc2.hero.span': 'desde el primer día.',
   'uc2.hero.description': 'La única plataforma diseñada para transformar las licitaciones de tamaño mediano (€1M–10M) en una visión contractual clara desde el primer día: estructuración AI del alcance, detección inmediata de cláusulas críticas, y gestión dinámica de Q&As y versiones.',
   'uc2.hero.demoButton': 'Reservar una Demo',
-  'uc2.hero.downloadButton': 'Descargar el caso de uso →',
+  'uc2.hero.downloadButton': 'Probar el impacto →',
 
   'uc2.painPoints.headline': 'Tu oferta, 100% clara, 0% sorpresas',
   'uc2.painPoints.text1': 'En proyectos de tamaño mediano, tus equipos manejan plazos ajustados, cláusulas críticas ocultas y versiones dispersas—con el riesgo de errores costosos e intercambios interminables.',
@@ -164,7 +164,7 @@ const uc2GermanTranslations = {
   'uc2.hero.span': 'vom ersten Tag an.',
   'uc2.hero.description': 'Die einzige Plattform, die entwickelt wurde, um mittelgroße Ausschreibungen (€1M–10M) ab dem ersten Tag in eine klare vertragliche Sicht zu verwandeln: KI-Strukturierung des Umfangs, sofortige Erkennung kritischer Klauseln und dynamisches Management von Q&As und Versionen.',
   'uc2.hero.demoButton': 'Demo buchen',
-  'uc2.hero.downloadButton': 'Anwendungsfall herunterladen →',
+  'uc2.hero.downloadButton': 'Wirkung testen →',
 
   'uc2.painPoints.headline': 'Ihr Angebot, 100% klar, 0% Überraschungen',
   'uc2.painPoints.text1': 'Bei mittelgroßen Projekten jonglieren Ihre Teams mit engen Terminen, versteckten kritischen Klauseln und verstreuten Versionen—mit dem Risiko kostspieliger Fehler und endloser Hin- und Her-Gespräche.',
