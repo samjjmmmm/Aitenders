@@ -22,7 +22,7 @@
     <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
     
     <script>
-      // Global Google Translate initialization function
+      // Robust Google Translate initialization with comprehensive error handling
       function googleTranslateElementInit() {
         try {
           if (typeof google !== 'undefined' && google.translate && google.translate.TranslateElement) {
@@ -40,8 +40,7 @@
             }
           }
         } catch (error) {
-          console.warn('Google Translate failed to load:', error);
-          // Hide the translate container if it fails
+          // Silently handle Google Translate errors to prevent runtime issues
           const element = document.getElementById('google_translate_element');
           if (element) {
             element.style.display = 'none';
@@ -52,10 +51,20 @@
       // Make the initialization function globally available
       window.googleTranslateElementInit = googleTranslateElementInit;
       
-      // Add error handling for script loading without causing unhandled rejections
+      // Prevent unhandled promise rejections from Google Translate
+      window.addEventListener('unhandledrejection', function(event) {
+        if (event.reason && (
+          event.reason.toString().includes('translate') ||
+          event.reason.toString().includes('google') ||
+          (event.reason.stack && event.reason.stack.includes('translate'))
+        )) {
+          event.preventDefault();
+        }
+      });
+
+      // Handle script loading errors gracefully
       window.addEventListener('error', function(e) {
         if (e.target && e.target.src && e.target.src.includes('translate.google.com')) {
-          console.warn('Google Translate script failed to load');
           const element = document.getElementById('google_translate_element');
           if (element) {
             element.style.display = 'none';
@@ -63,6 +72,11 @@
         }
       }, { passive: true });
     </script>
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" onerror="console.warn('Google Translate script failed to load')"></script>
+    <script 
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" 
+      async 
+      defer
+      onerror="document.getElementById('google_translate_element').style.display='none'"
+    ></script>
   </body>
 </html>

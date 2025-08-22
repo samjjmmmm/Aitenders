@@ -27,11 +27,11 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
   // Initialize Google Translate on component mount and location changes
   useEffect(() => {
     let retryCount = 0;
-    const maxRetries = 10;
+    const maxRetries = 5;
 
     const initGoogleTranslate = () => {
-      if (typeof window !== 'undefined' && (window as any).google && (window as any).google.translate) {
-        try {
+      try {
+        if (typeof window !== 'undefined' && (window as any).google && (window as any).google.translate) {
           const element = document.getElementById('google_translate_element');
           if (element && !element.hasChildNodes()) {
             new (window as any).google.translate.TranslateElement(
@@ -44,17 +44,21 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
               'google_translate_element'
             );
           }
-        } catch (error) {
-          console.warn('Google Translate initialization failed:', error);
+        } else if (retryCount < maxRetries) {
+          retryCount++;
+          setTimeout(initGoogleTranslate, 500);
         }
-      } else if (retryCount < maxRetries) {
-        retryCount++;
-        setTimeout(initGoogleTranslate, 300);
+      } catch (error) {
+        // Silently handle errors to prevent runtime issues
+        const element = document.getElementById('google_translate_element');
+        if (element) {
+          element.style.display = 'none';
+        }
       }
     };
 
-    // Initialize on mount and when location changes to ensure it persists
-    const timeoutId = setTimeout(initGoogleTranslate, 100);
+    // Initialize with delay to ensure DOM is ready
+    const timeoutId = setTimeout(initGoogleTranslate, 200);
     
     return () => clearTimeout(timeoutId);
   }, [location]); // Re-run when location changes
