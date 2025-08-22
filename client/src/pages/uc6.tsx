@@ -553,56 +553,140 @@ export default function UC6Page() {
         </div>
       </motion.section>
 
-      {/* Target Audience Section */}
+      {/* User-Focused Results Section - UC6 */}
       <motion.section 
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true, margin: "-100px" }}
-        className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-purple-50 to-blue-50 relative overflow-hidden">
-        {/* Subtle Abstract Background Effects */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 -right-32 w-80 h-80 rounded-full opacity-20 blur-3xl"
-               style={{
-                 background: 'radial-gradient(circle, #DDD6FE 0%, #C4B5FD 50%, transparent 100%)'
-               }}></div>
-          <div className="absolute bottom-16 -left-24 w-64 h-64 rounded-full opacity-15 blur-2xl"
-               style={{
-                 background: 'linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 60%, transparent 100%)'
-               }}></div>
-        </div>
+        className="py-16 md:py-20 lg:py-24 px-4 bg-white">
+        <div className="content-boundary">
+          <div className="mb-20 md:mb-24 lg:mb-28">
+            <div className="text-center mb-12 md:mb-16">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
+                Ce que vos équipes obtiennent concrètement avec Aitenders
+              </h3>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                Une maîtrise totale des exigences complexes, une fois impliqué dans vos projets 
+                complexes. Des résultats concrets, traçables et performants.
+              </p>
+            </div>
 
-        <div className="content-boundary relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Conçu pour les Leaders de la Transformation
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Des solutions personnalisées selon votre rôle et vos enjeux stratégiques
-            </p>
+            {/* Results Grid - 2 Cards */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16 md:mb-20">
+
+              {/* Pour le Buyer */}
+              <div className="group">
+                <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/50 hover:border-blue-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4">
+                      <MdAccountBox className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900">Pour le Buyer</h4>
+                      <p className="text-sm text-gray-600">Contract ou directeur execution</p>
+                    </div>
+                  </div>
+
+                  <p className="text-gray-700 text-base leading-relaxed mb-4">
+                    Vous en place pilote fragmente en vision globale claire 
+                    et immédiatement accessible. Le bon et sa manière des exigences 
+                    qui génère suis les enjeux sans atteindre de surchage.
+                  </p>
+
+                  <ul className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      Maîtrise des risques contractuels et financiers
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      Traçabilité politique des decisions
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      Passage fluide aux enjeux stratégiques vs détails
+                    </li>
+                  </ul>
+                </Card>
+              </div>
+
+              {/* Pour vos équipes */}
+              <div className="group">
+                <Card className="h-full p-8 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50 hover:border-green-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-4">
+                      <MdGroups className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900">Pour vos équipes</h4>
+                      <p className="text-sm text-gray-600">Chefs Technique et Exécution</p>
+                    </div>
+                  </div>
+
+                  <p className="text-gray-700 text-base leading-relaxed mb-4">
+                    effectivement aisées d'inage étenique relatif aux finalables et demande 
+                    entre rentals et nouveau réalisation exiges regroupement.
+                  </p>
+
+                  <ul className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      Vérité structurer et traçabilité méthodologique
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      Toutes une etre sur des décisions collaboratives et qualification
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      Génération d'outputs de couverture complète
+                    </li>
+                  </ul>
+                </Card>
+              </div>
+            </div>
           </div>
 
-          {/* Interactive Audience Selector */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            {targetAudiences.map((audience) => (
-              <Card 
-                key={audience.id}
-                className={`p-6 cursor-pointer transition-all duration-300 hover:shadow-lg ${
-                  activeAudience.id === audience.id 
-                    ? 'ring-2 ring-purple-500 shadow-lg' 
-                    : 'hover:ring-1 hover:ring-purple-300'
-                }`}
-                onClick={() => setActiveAudience(audience)}
-              >
-                <div className="flex items-center space-x-4 mb-4">
-                  <div className={`w-12 h-12 rounded-full ${audience.iconBg} flex items-center justify-center`}>
-                    <audience.icon className={`w-6 h-6 ${audience.iconColor}`} />
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900">{audience.title}</h3>
+          {/* KPI Grid - 3 Metrics */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            {/* KPI 1 - 80% */}
+            <div className="group">
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-6 md:p-8 text-center border border-green-100 hover:border-green-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
+                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-green-600 to-emerald-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
+                  80 %
                 </div>
-                <p className="text-gray-600 text-sm">{audience.description}</p>
-              </Card>
-            ))}
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">
+                  du temps passé réduit dès le premier jour
+                </p>
+              </div>
+            </div>
+
+            {/* KPI 2 - -50% */}
+            <div className="group">
+              <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-3xl p-6 md:p-8 text-center border border-purple-100 hover:border-purple-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
+                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-purple-600 to-violet-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300 leading-tight">
+                  -50 %
+                </div>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">
+                  de ration passé sur les rounds de révision et 
+                  de décisions
+                </p>
+              </div>
+            </div>
+
+            {/* KPI 3 - 100% */}
+            <div className="group">
+              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-6 md:p-8 text-center border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
+                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
+                  100 %
+                </div>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">
+                  de couverture et de traçabilité des exigences
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </motion.section>
