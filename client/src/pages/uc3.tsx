@@ -15,7 +15,7 @@ import { FaUsers, FaShieldAlt, FaChartBar, FaFileAlt, FaCogs } from "react-icons
 import ContactSection from "@/components/contact-section";
 import Header from "@/components/header";
 import UC3AnalysisCard from "@/components/UC3AnalysisCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 // Import client logos
@@ -40,6 +40,42 @@ import { AitendersSimulatorFinal } from "@/components/aitenders-simulator-final"
 export default function UC3Page() {
   // State for managing continuous animation loop
   const [animationKey, setAnimationKey] = useState(0);
+  
+  // Scroll animation hook
+  const useScrollAnimation = () => {
+    const [visibleElements, setVisibleElements] = useState(new Set());
+    const elementsRef = useRef(new Map());
+
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const id = entry.target.getAttribute('data-scroll-id');
+            if (entry.isIntersecting) {
+              setVisibleElements(prev => new Set(prev).add(id));
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: '50px' }
+      );
+
+      elementsRef.current.forEach((element) => {
+        if (element) observer.observe(element);
+      });
+
+      return () => observer.disconnect();
+    }, []);
+
+    const registerElement = (id, element) => {
+      if (element) {
+        elementsRef.current.set(id, element);
+      }
+    };
+
+    return { visibleElements, registerElement };
+  };
+
+  const { visibleElements, registerElement } = useScrollAnimation();
   
   // ANIMATION TIMING CONFIGURATION - 7 SECOND LOOP
   // ==============================================
@@ -273,10 +309,22 @@ export default function UC3Page() {
         </div>
         
         <div className="content-boundary relative z-10">
-          <div className="text-center">
+          <div 
+            ref={(el) => registerElement('hero-main', el)}
+            data-scroll-id="hero-main"
+            className={`text-center transition-all duration-1000 ${
+              visibleElements.has('hero-main') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             {/* Centered Content */}
             <div className="max-w-5xl mx-auto">
-              <div className="mb-16">
+              <div 
+                ref={(el) => registerElement('hero-content', el)}
+                data-scroll-id="hero-content"
+                className={`mb-16 transition-all duration-1000 delay-200 ${
+                  visibleElements.has('hero-content') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+              >
                 <Badge className="mb-8 bg-gradient-to-r from-purple-50 to-purple-100/80 text-purple-800 border-purple-200/50 text-lg font-semibold px-6 py-3 rounded-full shadow-sm">Maitrisez Vos Offres Complexes</Badge>
                 
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
@@ -319,7 +367,13 @@ export default function UC3Page() {
 
             {/* Hero Image at bottom */}
             <div className="lg:col-span-2 flex justify-center">
-              <div className="relative w-full max-w-4xl">
+              <div 
+                ref={(el) => registerElement('hero-image', el)}
+                data-scroll-id="hero-image"
+                className={`relative w-full max-w-4xl transition-all duration-1000 delay-500 ${
+                  visibleElements.has('hero-image') ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+                }`}
+              >
                 <img
                   src={uc3HeroImage}
                   alt="Aitenders UC3 Interface - Complex Tender Analysis Dashboard"
@@ -339,6 +393,13 @@ export default function UC3Page() {
       
       {/* Pain Points Section - Main Feature Card + Supporting Cards */}
       <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-slate-50 via-gray-50 to-purple-50/20 relative overflow-hidden">
+        <div 
+          ref={(el) => registerElement('pain-points', el)}
+          data-scroll-id="pain-points"
+          className={`transition-all duration-1000 ${
+            visibleElements.has('pain-points') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
         {/* Subtle Abstract Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Large atmospheric blob - right side */}
@@ -369,7 +430,12 @@ export default function UC3Page() {
         <div className="content-boundary relative z-10">
           
           {/* Main Feature Card */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20"
+          <div 
+            ref={(el) => registerElement('main-feature-card', el)}
+            data-scroll-id="main-feature-card"
+            className={`bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20 transition-all duration-1000 delay-300 ${
+              visibleElements.has('main-feature-card') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+            }`}
                style={{
                  boxShadow: '0 32px 64px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.05)'
                }}>
@@ -409,10 +475,18 @@ export default function UC3Page() {
             </div>
           </div>
         </div>
+        </div>
       </section>
       
       {/* Solution Section - Alternating Layout Design */}
       <section className="py-32 bg-gradient-to-br from-white via-slate-50/20 to-white relative overflow-hidden">
+        <div 
+          ref={(el) => registerElement('solution-section', el)}
+          data-scroll-id="solution-section"
+          className={`transition-all duration-1000 ${
+            visibleElements.has('solution-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
         {/* Subtle Abstract Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Large flowing accent - top center */}
@@ -441,13 +515,25 @@ export default function UC3Page() {
         </div>
         
         <div className="content-boundary relative z-10">
-          <div className="text-center mb-12 md:mb-16 lg:mb-20">
+          <div 
+            ref={(el) => registerElement('solution-header', el)}
+            data-scroll-id="solution-header"
+            className={`text-center mb-12 md:mb-16 lg:mb-20 transition-all duration-1000 delay-200 ${
+              visibleElements.has('solution-header') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-purple-600">copilote IA </span> qui simplifie la gestion des appels d’offres complexes</h1>
             <h3 className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">Structurez, collaborez et maîtrisez vos appels d’offres complexes, sans aucun angle mort.</h3>
           </div>
 
           {/* Feature 1: Structure Complex Projects - Text Left, Card Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
+          <div 
+            ref={(el) => registerElement('feature-1', el)}
+            data-scroll-id="feature-1"
+            className={`grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24 transition-all duration-1000 delay-400 ${
+              visibleElements.has('feature-1') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+            }`}
+          >
             <div className="order-1">
 
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Démarrez le projet sur une donnée pré-organisée et intelligente <span className="text-purple-600">dès le jour 1</span></h3>
@@ -477,7 +563,13 @@ export default function UC3Page() {
           </div>
 
           {/* Feature 2: Orchestrate Expert Teams - Text Right, Card Left */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
+          <div 
+            ref={(el) => registerElement('feature-2', el)}
+            data-scroll-id="feature-2"
+            className={`grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24 transition-all duration-1000 delay-600 ${
+              visibleElements.has('feature-2') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+            }`}
+          >
             <div className="order-2 lg:order-1">
               <div className="flex justify-center items-center h-full px-4 sm:px-6 lg:px-8">
                 <img 
@@ -508,7 +600,13 @@ export default function UC3Page() {
           </div>
 
           {/* Feature 3: Control Every Evolution - Text Left, Card Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div 
+            ref={(el) => registerElement('feature-3', el)}
+            data-scroll-id="feature-3"
+            className={`grid grid-cols-1 lg:grid-cols-2 gap-20 items-center transition-all duration-1000 delay-800 ${
+              visibleElements.has('feature-3') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+            }`}
+          >
             <div className="order-1">
 
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">       Pilotez chaque évolution de l’offre,<span className="text-purple-600">sans rien laisser passer</span> </h3>
@@ -534,17 +632,30 @@ export default function UC3Page() {
             </div>
           </div>
         </div>
+        </div>
       </section>
 
 
       {/* KPI Section - High Impact Design */}
       <section className="py-16 md:py-20 lg:py-24 bg-white">
-        <div className="content-boundary">
+        <div 
+          ref={(el) => registerElement('kpi-section', el)}
+          data-scroll-id="kpi-section"
+          className={`content-boundary transition-all duration-1000 ${
+            visibleElements.has('kpi-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
 
           
           
           {/* User-Focused Results Section - Before KPIs */}
-          <div className="mb-20 md:mb-24 lg:mb-28">
+          <div 
+            ref={(el) => registerElement('user-results', el)}
+            data-scroll-id="user-results"
+            className={`mb-20 md:mb-24 lg:mb-28 transition-all duration-1000 delay-200 ${
+              visibleElements.has('user-results') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             <div className="text-center mb-12 md:mb-16">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Ce que vos équipes obtiennent concrètement avec Aitenders</h3>
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Une réponse sans angle mort pour vos appels d’offres complexes : conformité garantie, 
@@ -553,7 +664,13 @@ export default function UC3Page() {
             </div>
             
             {/* Results Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            <div 
+              ref={(el) => registerElement('results-grid', el)}
+              data-scroll-id="results-grid"
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 transition-all duration-1000 delay-400 ${
+                visibleElements.has('results-grid') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
               
               {/* Responsable d'offre Results */}
               <div className="group">
@@ -634,7 +751,13 @@ export default function UC3Page() {
           </div>
           
           {/* KPI Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div 
+            ref={(el) => registerElement('kpi-grid', el)}
+            data-scroll-id="kpi-grid"
+            className={`grid grid-cols-1 lg:grid-cols-3 gap-8 transition-all duration-1000 delay-600 ${
+              visibleElements.has('kpi-grid') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             
             {/* KPI 1 */}
             <div className="group">
@@ -674,6 +797,13 @@ export default function UC3Page() {
       
       {/* Toppings Section - Wow Features & Additional Functionalities */}
       <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 relative overflow-hidden">
+        <div 
+          ref={(el) => registerElement('toppings-section', el)}
+          data-scroll-id="toppings-section"
+          className={`transition-all duration-1000 ${
+            visibleElements.has('toppings-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
         {/* Background Effects */}
         <div className="absolute inset-0">
           {/* Animated gradient orbs */}
@@ -696,7 +826,13 @@ export default function UC3Page() {
 
         <div className="content-boundary relative z-10">
           {/* Section Header */}
-          <div className="text-center mb-16 md:mb-20 lg:mb-24">
+          <div 
+            ref={(el) => registerElement('toppings-header', el)}
+            data-scroll-id="toppings-header"
+            className={`text-center mb-16 md:mb-20 lg:mb-24 transition-all duration-1000 delay-200 ${
+              visibleElements.has('toppings-header') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             <div className="inline-flex items-center justify-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6 md:mb-8">
               <MdStars className="w-5 h-5 text-yellow-400 mr-2" />
               <span className="text-white font-semibold text-sm md:text-base">Fonctionnalités Wow</span>
@@ -712,7 +848,13 @@ export default function UC3Page() {
           </div>
 
           {/* Toppings Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+          <div 
+            ref={(el) => registerElement('toppings-grid', el)}
+            data-scroll-id="toppings-grid"
+            className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 transition-all duration-1000 delay-400 ${
+              visibleElements.has('toppings-grid') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             
             {/* Bulk Versioning */}
             <div className="group">
@@ -872,12 +1014,25 @@ export default function UC3Page() {
             </Button>
           </div>
         </div>
+        </div>
       </section>
 
       {/* Real Projects Section */}
       <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
-        <div className="content-boundary">
-          <div className="text-center mb-12 md:mb-16 lg:mb-20">
+        <div 
+          ref={(el) => registerElement('projects-section', el)}
+          data-scroll-id="projects-section"
+          className={`content-boundary transition-all duration-1000 ${
+            visibleElements.has('projects-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
+          <div 
+            ref={(el) => registerElement('projects-header', el)}
+            data-scroll-id="projects-header"
+            className={`text-center mb-12 md:mb-16 lg:mb-20 transition-all duration-1000 delay-200 ${
+              visibleElements.has('projects-header') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:mb-8 leading-[1.1] tracking-tight">
               Nos <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">appels d'offres référence</span> sur les multi-lots complexes
             </h2>
@@ -1026,13 +1181,25 @@ export default function UC3Page() {
           </div>
 
           {/* Client Logos Scrolling Banner */}
-          <div className="mb-16 md:mb-20">
+          <div 
+            ref={(el) => registerElement('client-logos', el)}
+            data-scroll-id="client-logos"
+            className={`mb-16 md:mb-20 transition-all duration-1000 delay-600 ${
+              visibleElements.has('client-logos') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             <ClientLogos language="fr" />
           </div>
           
 
           {/* Integrated Chat Simulator */}
-          <div className="bg-gradient-to-br from-purple-50 via-white to-blue-50 rounded-3xl shadow-2xl border border-purple-100 p-8 md:p-12 relative overflow-hidden">
+          <div 
+            ref={(el) => registerElement('simulator-section', el)}
+            data-scroll-id="simulator-section"
+            className={`bg-gradient-to-br from-purple-50 via-white to-blue-50 rounded-3xl shadow-2xl border border-purple-100 p-8 md:p-12 relative overflow-hidden transition-all duration-1000 delay-800 ${
+              visibleElements.has('simulator-section') ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+            }`}
+          >
             {/* Background decoration */}
             <div className="absolute inset-0 bg-gradient-to-r from-purple-100/20 to-blue-100/20 opacity-50"></div>
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-purple-200/30 to-transparent rounded-full blur-3xl"></div>
