@@ -176,6 +176,7 @@ const uc2TranslationKeys = {
   // Solutions
   'uc2.solutions.title1': 'Analyse exhaustive des exigences',
   'uc2.solutions.description1': 'IA spécialisée qui identifie et structure automatiquement toutes les requirements cachées ou explicites',
+  'uc2.solutions.title2': 'Coordination collaborative intégrée',
   'uc2.solutions.description2': 'Workflows collaboratifs intégrés pour une coordination fluide entre tous les contributeurs',
   'uc2.solutions.title3': 'Validation automatique de conformité',
   'uc2.solutions.description3': 'Contrôles systématiques qui garantissent l\'adhérence complète aux specifications du client',
