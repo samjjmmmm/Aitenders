@@ -36,15 +36,139 @@ import uc2ThirdFeatureImage from "@assets/wow 3_1755698476634.png";
 import uc2HeroImage from "@assets/HERO UC 2_1755763267253.png";
 
 export default function UC2Page() {
+  const [language, setLanguage] = useState<'en' | 'fr'>('fr');
+
+  // Translations
+  const t = {
+    fr: {
+      // Hero Section
+      badge: "Pilotez les offres moyennes",
+      heroTitle: "Découvrez, pilotez et sécurisez chaque clause",
+      heroSpan: "dès le premier jour.",
+      heroDescription: "La seule plateforme conçue pour transformer des dossiers moyens (1 à 10 M€) en une vision contractuelle claire dès le premier jour : structuration IA du périmètre, détection immédiate des clauses critiques et pilotage dynamique des Q&A et versions. Vous réduisez de moitié votre temps d'analyse, rassurez votre direction et livrez une réponse compétitive, sans risque de dernière minute.",
+      demoButton: "Réservez une Démo",
+      downloadButton: "Téléchargez le cas d'usage →",
+      
+      // Target Audiences
+      proposalManagers: "Proposal Managers",
+      proposalManagersDesc: "Gérez des projets moyens avec complexité modérée tout en maintenant la qualité et les délais. Coordonnez efficacement les équipes techniques et commerciales pour produire des offres structurées et convaincantes.",
+      technicalManagers: "Managers techniques",
+      technicalManagersDesc: "Supervisez la cohérence technique des propositions moyennes avec des workflows optimisés. Assurez la qualité des livrables techniques tout en respectant les contraintes budgétaires et temporelles.",
+      commercialDirectors: "Directeurs commerciaux",
+      commercialDirectorsDesc: "Optimisez votre pipeline de projets moyens avec une visibilité complète sur les performances et les risques. Maximisez le taux de conversion grâce à des processus standardisés et efficaces.",
+      projectDirectors: "Directeurs de projets",
+      projectDirectorsDesc: "Pilotez la livraison de projets moyens avec des outils de suivi et de contrôle avancés. Assurez la conformité opérationnelle et la satisfaction client sur l'ensemble du portfolio.",
+      operationsManagers: "Responsables opérationnels",
+      operationsManagersDesc: "Standardisez les processus opérationnels pour les projets moyens avec une approche méthodique. Optimisez les ressources et réduisez les délais grâce à l'automatisation intelligente.",
+      
+      // Pain Points
+      painPoint1Title: "Complexité croissante difficile à gérer",
+      painPoint1Desc: "Les projets moyens nécessitent plus de coordination et de ressources, créant des risques de dépassement et d'erreurs",
+      painPoint2Title: "Processus peu standardisés",
+      painPoint2Desc: "Manque de méthodologie claire pour gérer efficacement les projets de taille intermédiaire",
+      painPoint3Title: "Coordination équipes complexe",
+      painPoint3Desc: "Difficultés à aligner les équipes techniques et commerciales sur des projets multi-disciplinaires",
+      
+      // Solutions
+      solution1Title: "Gestion intelligente des projets moyens",
+      solution1Desc: "IA spécialisée qui coordonne automatiquement les ressources et optimise les processus pour les projets intermédiaires",
+      solution2Title: "Workflows standardisés et flexibles",
+      solution2Desc: "Méthodologies éprouvées adaptées à la complexité des projets moyens avec personnalisation selon les besoins",
+      solution3Title: "Contrôle qualité automatisé",
+      solution3Desc: "Validation systématique des livrables et suivi proactif des risques pour maintenir l'excellence",
+      
+      // User Journey
+      journey1Title: "Analysez votre projet moyen",
+      journey1Desc: "Importez vos documents et laissez l'IA structurer automatiquement les exigences et les ressources nécessaires",
+      journey2Title: "Coordonnez vos équipes",
+      journey2Desc: "Organisez efficacement les interactions entre équipes techniques et commerciales avec des workflows optimisés",
+      journey3Title: "Livrez avec excellence",
+      journey3Desc: "Suivez l'avancement en temps réel et assurez la qualité des livrables avec des contrôles automatisés",
+      
+      // KPIs
+      kpi1Desc: "Réduction du temps de coordination",
+      kpi2Desc: "Amélioration de la qualité des livrables",
+      kpi3Desc: "Délai moyen de structuration projet",
+      kpi4Desc: "Traçabilité des processus",
+      
+      // Differentiators
+      diff1Title: "Solution Optimisée Projets Moyens",
+      diff1Desc: "Conçue spécifiquement pour équilibrer complexité et efficacité sur les projets intermédiaires",
+      diff2Title: "Intelligence Collaborative Avancée",
+      diff2Desc: "IA spécialisée dans la coordination multi-équipes et la gestion des dépendances",
+      diff3Title: "Flexibilité et Standardisation",
+      diff3Desc: "Processus adaptatifs qui s'ajustent à la complexité spécifique de chaque projet"
+    },
+    en: {
+      // Hero Section
+      badge: "Manage Medium Projects",
+      heroTitle: "Discover, manage and secure every clause",
+      heroSpan: "from day one.",
+      heroDescription: "The only platform designed to transform medium-sized files (€1-10M) into a clear contractual vision from day one: AI structuring of scope, immediate detection of critical clauses and dynamic management of Q&A and versions. You reduce your analysis time by half, reassure your management and deliver a competitive response, without last-minute risk.",
+      demoButton: "Book a Demo",
+      downloadButton: "Download the use case →",
+      
+      // Target Audiences
+      proposalManagers: "Proposal Managers",
+      proposalManagersDesc: "Manage medium projects with moderate complexity while maintaining quality and deadlines. Effectively coordinate technical and commercial teams to produce structured and convincing proposals.",
+      technicalManagers: "Technical Managers",
+      technicalManagersDesc: "Supervise the technical consistency of medium proposals with optimized workflows. Ensure the quality of technical deliverables while respecting budgetary and time constraints.",
+      commercialDirectors: "Commercial Directors",
+      commercialDirectorsDesc: "Optimize your medium project pipeline with complete visibility on performance and risks. Maximize conversion rate through standardized and efficient processes.",
+      projectDirectors: "Project Directors",
+      projectDirectorsDesc: "Manage the delivery of medium projects with advanced monitoring and control tools. Ensure operational compliance and customer satisfaction across the entire portfolio.",
+      operationsManagers: "Operations Managers",
+      operationsManagersDesc: "Standardize operational processes for medium projects with a methodical approach. Optimize resources and reduce delays through intelligent automation.",
+      
+      // Pain Points
+      painPoint1Title: "Growing complexity difficult to manage",
+      painPoint1Desc: "Medium projects require more coordination and resources, creating risks of overruns and errors",
+      painPoint2Title: "Poorly standardized processes",
+      painPoint2Desc: "Lack of clear methodology to efficiently manage intermediate-sized projects",
+      painPoint3Title: "Complex team coordination",
+      painPoint3Desc: "Difficulties in aligning technical and commercial teams on multi-disciplinary projects",
+      
+      // Solutions
+      solution1Title: "Intelligent medium project management",
+      solution1Desc: "Specialized AI that automatically coordinates resources and optimizes processes for intermediate projects",
+      solution2Title: "Standardized and flexible workflows",
+      solution2Desc: "Proven methodologies adapted to medium project complexity with customization according to needs",
+      solution3Title: "Automated quality control",
+      solution3Desc: "Systematic validation of deliverables and proactive risk monitoring to maintain excellence",
+      
+      // User Journey
+      journey1Title: "Analyze your medium project",
+      journey1Desc: "Import your documents and let AI automatically structure requirements and necessary resources",
+      journey2Title: "Coordinate your teams",
+      journey2Desc: "Efficiently organize interactions between technical and commercial teams with optimized workflows",
+      journey3Title: "Deliver with excellence",
+      journey3Desc: "Track progress in real-time and ensure deliverable quality with automated controls",
+      
+      // KPIs
+      kpi1Desc: "Reduction in coordination time",
+      kpi2Desc: "Improvement in deliverable quality",
+      kpi3Desc: "Average project structuring time",
+      kpi4Desc: "Process traceability",
+      
+      // Differentiators
+      diff1Title: "Optimized Medium Project Solution",
+      diff1Desc: "Specifically designed to balance complexity and efficiency on intermediate projects",
+      diff2Title: "Advanced Collaborative Intelligence",
+      diff2Desc: "AI specialized in multi-team coordination and dependency management",
+      diff3Title: "Flexibility and Standardization",
+      diff3Desc: "Adaptive processes that adjust to the specific complexity of each project"
+    }
+  };
+
   // Target audience data with interactive content - UC2 adapted
   const targetAudiences = [
     {
       id: 'proposal-managers',
-      title: 'Proposal Managers',
+      title: t[language].proposalManagers,
       icon: MdAccountBox,
       iconColor: 'text-purple-600',
       iconBg: 'bg-purple-100',
-      description: 'Gérez des projets moyens avec complexité modérée tout en maintenant la qualité et les délais. Coordonnez efficacement les équipes techniques et commerciales pour produire des offres structurées et convaincantes.',
+      description: t[language].proposalManagersDesc,
       dashboardData: {
         requirements: { progress: 100, color: 'green' },
         coordination: { progress: 78, color: 'blue' },
@@ -55,11 +179,11 @@ export default function UC2Page() {
     },
     {
       id: 'technical-managers',
-      title: 'Managers techniques',
+      title: t[language].technicalManagers,
       icon: MdBusiness,
       iconColor: 'text-blue-600',
       iconBg: 'bg-blue-100',
-      description: 'Supervisez la cohérence technique des propositions moyennes avec des workflows optimisés. Assurez la qualité des livrables techniques tout en respectant les contraintes budgétaires et temporelles.',
+      description: t[language].technicalManagersDesc,
       dashboardData: {
         requirements: { progress: 95, color: 'green' },
         coordination: { progress: 88, color: 'blue' },
@@ -70,11 +194,11 @@ export default function UC2Page() {
     },
     {
       id: 'commercial-directors',
-      title: 'Directeurs commerciaux',
+      title: t[language].commercialDirectors,
       icon: MdGavel,
       iconColor: 'text-green-600',
       iconBg: 'bg-green-100',
-      description: 'Optimisez votre pipeline de projets moyens avec une visibilité complète sur les performances et les risques. Maximisez le taux de conversion grâce à des processus standardisés et efficaces.',
+      description: t[language].commercialDirectorsDesc,
       dashboardData: {
         requirements: { progress: 100, color: 'green' },
         coordination: { progress: 95, color: 'blue' },
@@ -85,11 +209,11 @@ export default function UC2Page() {
     },
     {
       id: 'project-directors',
-      title: 'Directeurs de projets',
+      title: t[language].projectDirectors,
       icon: MdEngineering,
       iconColor: 'text-orange-600',
       iconBg: 'bg-orange-100',
-      description: 'Pilotez la livraison de projets moyens avec des outils de suivi et de contrôle avancés. Assurez la conformité opérationnelle et la satisfaction client sur l\'ensemble du portfolio.',
+      description: t[language].projectDirectorsDesc,
       dashboardData: {
         requirements: { progress: 100, color: 'green' },
         coordination: { progress: 85, color: 'blue' },
@@ -100,11 +224,11 @@ export default function UC2Page() {
     },
     {
       id: 'operations-managers',
-      title: 'Responsables opérationnels',
+      title: t[language].operationsManagers,
       icon: MdAnalytics,
       iconColor: 'text-indigo-600',
       iconBg: 'bg-indigo-100',
-      description: 'Standardisez les processus opérationnels pour les projets moyens avec une approche méthodique. Optimisez les ressources et réduisez les délais grâce à l\'automatisation intelligente.',
+      description: t[language].operationsManagersDesc,
       dashboardData: {
         requirements: { progress: 100, color: 'green' },
         coordination: { progress: 92, color: 'blue' },
@@ -142,56 +266,56 @@ export default function UC2Page() {
   const painPoints = [
     {
       icon: MdWarning,
-      title: "Complexité croissante difficile à gérer",
-      description: "Les projets moyens nécessitent plus de coordination et de ressources, créant des risques de dépassement et d'erreurs"
+      title: t[language].painPoint1Title,
+      description: t[language].painPoint1Desc
     },
     {
       icon: MdDescription,
-      title: "Processus peu standardisés",
-      description: "Manque de méthodologie claire pour gérer efficacement les projets de taille intermédiaire"
+      title: t[language].painPoint2Title,
+      description: t[language].painPoint2Desc
     },
     {
       icon: FaUsers,
-      title: "Coordination équipes complexe",
-      description: "Difficultés à aligner les équipes techniques et commerciales sur des projets multi-disciplinaires"
+      title: t[language].painPoint3Title,
+      description: t[language].painPoint3Desc
     }
   ];
 
   const solutions = [
     {
       icon: MdFlashOn,
-      title: "Gestion intelligente des projets moyens",
-      description: "IA spécialisée qui coordonne automatiquement les ressources et optimise les processus pour les projets intermédiaires"
+      title: t[language].solution1Title,
+      description: t[language].solution1Desc
     },
     {
       icon: MdGroups,
-      title: "Workflows standardisés et flexibles",
-      description: "Méthodologies éprouvées adaptées à la complexité des projets moyens avec personnalisation selon les besoins"
+      title: t[language].solution2Title,
+      description: t[language].solution2Desc
     },
     {
       icon: MdSecurity,
-      title: "Contrôle qualité automatisé",
-      description: "Validation systématique des livrables et suivi proactif des risques pour maintenir l'excellence"
+      title: t[language].solution3Title,
+      description: t[language].solution3Desc
     }
   ];
 
   const userJourneySteps = [
     {
       step: "1",
-      title: "Analysez votre projet moyen",
-      description: "Importez vos documents et laissez l'IA structurer automatiquement les exigences et les ressources nécessaires",
+      title: t[language].journey1Title,
+      description: t[language].journey1Desc,
       icon: MdDescription
     },
     {
       step: "2", 
-      title: "Coordonnez vos équipes",
-      description: "Organisez efficacement les interactions entre équipes techniques et commerciales avec des workflows optimisés",
+      title: t[language].journey2Title,
+      description: t[language].journey2Desc,
       icon: MdGroups
     },
     {
       step: "3",
-      title: "Livrez avec excellence", 
-      description: "Suivez l'avancement en temps réel et assurez la qualité des livrables avec des contrôles automatisés",
+      title: t[language].journey3Title, 
+      description: t[language].journey3Desc,
       icon: MdSecurity
     }
   ];
@@ -199,41 +323,41 @@ export default function UC2Page() {
   const kpis = [
     {
       metric: "70%",
-      description: "Réduction du temps de coordination"
+      description: t[language].kpi1Desc
     },
     {
       metric: "85%",
-      description: "Amélioration de la qualité des livrables"
+      description: t[language].kpi2Desc
     },
     {
       metric: "3-5 jours",
-      description: "Délai moyen de structuration projet"
+      description: t[language].kpi3Desc
     },
     {
       metric: "100%",
-      description: "Traçabilité des processus"
+      description: t[language].kpi4Desc
     }
   ];
 
   const differentiators = [
     {
-      title: "Solution Optimisée Projets Moyens",
-      description: "Conçue spécifiquement pour équilibrer complexité et efficacité sur les projets intermédiaires"
+      title: t[language].diff1Title,
+      description: t[language].diff1Desc
     },
     {
-      title: "Intelligence Collaborative Avancée",
-      description: "IA spécialisée dans la coordination multi-équipes et la gestion des dépendances"
+      title: t[language].diff2Title,
+      description: t[language].diff2Desc
     },
     {
-      title: "Flexibilité et Standardisation",
-      description: "Processus adaptatifs qui s'ajustent à la complexité spécifique de chaque projet"
+      title: t[language].diff3Title,
+      description: t[language].diff3Desc
     }
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-white">
       {/* Header/Navbar */}
-      <Header />
+      <Header language={language} onLanguageChange={setLanguage} />
 
       <main>
       {/* Hero Section - Professional SaaS Design */}
@@ -279,7 +403,7 @@ export default function UC2Page() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
-                  <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Pilotez les offres moyennes</Badge>
+                  <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">{t[language].badge}</Badge>
                 </motion.div>
 
                 <motion.h1 
@@ -288,7 +412,7 @@ export default function UC2Page() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
                 >
-                  Découvrez, pilotez et sécurisez chaque clause <span className="text-purple-600">dès le premier jour.</span>
+                  {t[language].heroTitle} <span className="text-purple-600">{t[language].heroSpan}</span>
                 </motion.h1>
 
                 <motion.p 
@@ -313,14 +437,14 @@ export default function UC2Page() {
                   size="lg" 
                   className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
                 >
-                  Réservez une Démo
+                  {t[language].demoButton}
                 </Button>
                 
                 <Button 
                   variant="ghost" 
                   className="text-blue-600 hover:text-blue-700 hover:bg-blue-50/80 px-6 py-4 text-xl font-medium underline decoration-2 underline-offset-4 rounded-2xl transition-all duration-300"
                 >
-                  Téléchargez le cas d'usage →
+                  {t[language].downloadButton}
                 </Button>
               </motion.div>
           </div>
@@ -1092,7 +1216,7 @@ export default function UC2Page() {
 
       {/* Chat Interface with UC2-specific actions */}
       <ChatInterface 
-        language="fr"
+        language={language}
         transparent={true}
         customActions={[
           {
