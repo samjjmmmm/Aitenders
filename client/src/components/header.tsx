@@ -24,16 +24,21 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
     setShowLanguageMenu(false);
   };
 
-  // Initialize Google Translate on component mount and location changes
+  // Initialize Google Translate with aggressive retry logic
   useEffect(() => {
     let retryCount = 0;
-    const maxRetries = 5;
+    const maxRetries = 20;
+    let intervalId: NodeJS.Timeout;
 
     const initGoogleTranslate = () => {
       try {
         if (typeof window !== 'undefined' && (window as any).google && (window as any).google.translate) {
           const element = document.getElementById('google_translate_element');
-          if (element && !element.hasChildNodes()) {
+          if (element) {
+            // Clear any existing content first
+            element.innerHTML = '';
+            
+            // Initialize Google Translate
             new (window as any).google.translate.TranslateElement(
               {
                 pageLanguage: 'fr',
@@ -43,25 +48,59 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
               },
               'google_translate_element'
             );
+            
+            // Clear the retry interval if successful
+            if (intervalId) {
+              clearInterval(intervalId);
+            }
+            
+            return true;
           }
-        } else if (retryCount < maxRetries) {
-          retryCount++;
-          setTimeout(initGoogleTranslate, 500);
         }
+        return false;
       } catch (error) {
-        // Silently handle errors to prevent runtime issues
-        const element = document.getElementById('google_translate_element');
-        if (element) {
-          element.style.display = 'none';
-        }
+        return false;
       }
     };
 
-    // Initialize with delay to ensure DOM is ready
-    const timeoutId = setTimeout(initGoogleTranslate, 200);
-    
-    return () => clearTimeout(timeoutId);
-  }, [location]); // Re-run when location changes
+    // Try immediate initialization
+    if (!initGoogleTranslate()) {
+      // If failed, set up aggressive retry with interval
+      intervalId = setInterval(() => {
+        if (retryCount < maxRetries) {
+          retryCount++;
+          initGoogleTranslate();
+        } else {
+          clearInterval(intervalId);
+          // Show fallback if Google Translate fails completely
+          const fallback = document.getElementById('language_selector');
+          if (fallback) {
+            fallback.style.display = 'block';
+          }
+        }
+      }, 300);
+    }
+
+    return () => {
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+    };
+  }, [location]);
+
+  // Force re-initialization when page changes
+  useEffect(() => {
+    const element = document.getElementById('google_translate_element');
+    if (element && (window as any).googleTranslateElementInit) {
+      setTimeout(() => {
+        try {
+          (window as any).googleTranslateElementInit();
+        } catch (e) {
+          // Ignore errors
+        }
+      }, 100);
+    }
+  }, [location]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-aitenders-white-blue border-b border-aitenders-light-blue">
@@ -81,7 +120,12 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
           {/* Right Section */}
           <div className="flex items-center space-x-3">
             {/* Google Translate Widget */}
-            <div id="google_translate_element" className="google-translate-container"></div>
+            <div id="google_translate_element" className="google-translate-container">
+              <select id="language_selector" className="fallback-language-selector" style={{display: 'none'}}>
+                <option value="fr">FR</option>
+                <option value="en">EN</option>
+              </select>
+            </div>
             
             {/* Language Switcher */}
             <div className="relative">

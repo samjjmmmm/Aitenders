@@ -22,12 +22,15 @@
     <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
     
     <script>
-      // Robust Google Translate initialization with comprehensive error handling
+      // Enhanced Google Translate initialization with multiple retry mechanisms
       function googleTranslateElementInit() {
         try {
           if (typeof google !== 'undefined' && google.translate && google.translate.TranslateElement) {
             const element = document.getElementById('google_translate_element');
-            if (element && !element.hasChildNodes()) {
+            if (element) {
+              // Clear existing content to avoid conflicts
+              element.innerHTML = '';
+              
               new google.translate.TranslateElement(
                 {
                   pageLanguage: 'fr',
@@ -37,19 +40,41 @@
                 },
                 'google_translate_element'
               );
+              
+              // Force visibility after initialization
+              setTimeout(() => {
+                const combo = element.querySelector('.goog-te-combo');
+                if (combo) {
+                  combo.style.display = 'inline-block';
+                  element.style.display = 'inline-flex';
+                }
+              }, 100);
             }
           }
         } catch (error) {
-          // Silently handle Google Translate errors to prevent runtime issues
-          const element = document.getElementById('google_translate_element');
-          if (element) {
-            element.style.display = 'none';
-          }
+          // Retry initialization after a delay
+          setTimeout(() => {
+            try {
+              googleTranslateElementInit();
+            } catch (e) {
+              // Final fallback - show basic selector
+              const element = document.getElementById('google_translate_element');
+              const fallback = document.getElementById('language_selector');
+              if (element && fallback) {
+                fallback.style.display = 'block';
+              }
+            }
+          }, 1000);
         }
       }
 
-      // Make the initialization function globally available
+      // Make functions globally available
       window.googleTranslateElementInit = googleTranslateElementInit;
+      
+      // Additional initialization trigger for React components
+      window.forceGoogleTranslateInit = function() {
+        setTimeout(googleTranslateElementInit, 200);
+      };
       
       // Prevent unhandled promise rejections from Google Translate
       window.addEventListener('unhandledrejection', function(event) {
