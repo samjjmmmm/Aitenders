@@ -423,11 +423,11 @@ export default function UC6Page() {
         <div className="content-boundary relative z-10">
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-              Votre <span className="text-purple-600">copilote IA</span> pour anticiper et maîtriser vos <span className="text-purple-600">exigences</span>
+              Votre <span className="text-purple-600">copilote IA</span> pour exécuter vos projets complexes sans écart
             </h1>
             <h3 className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Orchestrez la transformation organisationnelle avec une plateforme intelligente qui fédère les équipes, 
-              mesure l'impact et accélère l'adoption du changement à tous les niveaux.
+              Démarrez avec une base contractuelle exhaustive, pilotez collectivement chaque exigence et 
+              assurez une conformité contrôlée jusqu'à la livraison finale.
             </h3>
           </div>
 
@@ -435,16 +435,22 @@ export default function UC6Page() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-1">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Orchestrez la Transformation <span className="text-purple-600">Intelligemment</span>
+                Démarrez l'exécution avec une <span className="text-purple-600">vision totale, dès le premier jour</span>
               </h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                IA qui analyse l'organisation et propose des parcours de transformation personnalisés et évolutifs. 
-                Démarrez avec une roadmap claire, des objectifs mesurables et des jalons adaptés à votre contexte.
-                <span className="text-purple-600"> Transformation pilotée par l'intelligence, pas par l'intuition.</span>
+                Dès le changement des documents, les questionnaires et enjeux sont 
+                impactés et suivis automatiquement toutes les exigences 
+                <strong>explicites et implicites</strong>, identifiez les contradictions et créent 
+                choisir pour eux documents sources.
+              </p>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
+                Vous pouvez d'un puzzle fragment à une vision globale, claire 
+                et immédiatement exploitable – sans interprétation manuelle ni 
+                perte d'informations.
               </p>
               <div className="flex items-center text-lg font-bold text-blue-500">
                 <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
-                Parcours de transformation personnalisés et mesurables
+                80% de durée réduit pour cadrer dès le jour 1
               </div>
             </div>
 
@@ -484,17 +490,22 @@ export default function UC6Page() {
 
             <div className="order-1 lg:order-2">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Fédérez les Équipes Autour <span className="text-purple-600">d'Objectifs Communs</span>
+                Faites de votre <span className="text-purple-600">pilotage collectif</span> un levier de performance continue
               </h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Créez une culture collaborative avec des outils de suivi partagés et des métriques transparentes. 
-                Chaque équipe comprend son rôle dans la transformation globale et dispose des indicateurs 
-                pour mesurer sa contribution.
-                <span className="text-purple-600"> Alignement stratégique et opérationnel en temps réel.</span>
+                Grâce à l'analyse guidée à vos métriques dédiées, clarifiez aux 
+                performis les <strong>budgets, coûts, délais</strong> et enjeux/risques au fur'une partie nécessaires. Les 
+                impacts de vos actions seront enfin décidé au temps réel 
+                pour voir autres solutions autant possible.
+              </p>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
+                Le groupe peut être en <strong>pilotage Vivant</strong>, capable d'intégrer 
+                les changements, saire flexion et de maintenir l'alignement 
+                collectif tout au long du plus long.
               </p>
               <div className="flex items-center text-lg font-bold text-blue-500">
                 <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
-                Culture collaborative et métriques partagées
+                30% de gain de temps sur les cycles de revue et décision
               </div>
             </div>
           </div>
@@ -503,16 +514,23 @@ export default function UC6Page() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-1">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Pilotez l'Impact <span className="text-purple-600">en Temps Réel</span>
+                Maîtrisez la <span className="text-purple-600">couverture de vos exigences</span> jusqu'à la dernière ligne
               </h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Tableaux de bord stratégiques qui mesurent l'adoption, l'engagement et la performance globale. 
-                Anticipez les résistances, ajustez la stratégie et démontrez la valeur créée à chaque étape.
-                <span className="text-purple-600"> Transformation visible, mesurable et ajustable.</span>
+                Toutes les exigences — <strong>explicites, implicites ou disséminées</strong> en 
+                exigences dans leurs — sont fonctionnelles aux hundreds et 
+                intégrez dans vos documents finaux. Choisir organise cette 
+                nouvelle logique de justifiées à notre.
+              </p>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
+                Grace aux références croisées et à une base centralisée, la 
+                conformité devient en fil <strong>conducteur Vivant</strong> intégré à chaque 
+                étape de votre trajectoire d'exécution basée en assurés dé 
+                temps de typologies.
               </p>
               <div className="flex items-center text-lg font-bold text-blue-500">
                 <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
-                Pilotage stratégique avec métriques d'impact
+                Contrôle généralisé et total transparent
               </div>
             </div>
 
