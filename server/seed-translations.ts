@@ -107,6 +107,106 @@ const uc2EnglishTranslations = {
   'common.cta.contactSales': 'Contact Sales',
 };
 
+// Spanish translations for UC2
+const uc2SpanishTranslations = {
+  'uc2.hero.badge': 'Gestionar ofertas medianas',
+  'uc2.hero.title': 'Descubrir, gestionar y asegurar cada cláusula',
+  'uc2.hero.span': 'desde el primer día.',
+  'uc2.hero.description': 'La única plataforma diseñada para transformar las licitaciones de tamaño mediano (€1M–10M) en una visión contractual clara desde el primer día: estructuración AI del alcance, detección inmediata de cláusulas críticas, y gestión dinámica de Q&As y versiones.',
+  'uc2.hero.demoButton': 'Reservar una Demo',
+  'uc2.hero.downloadButton': 'Descargar el caso de uso →',
+
+  'uc2.painPoints.headline': 'Tu oferta, 100% clara, 0% sorpresas',
+  'uc2.painPoints.text1': 'En proyectos de tamaño mediano, tus equipos manejan plazos ajustados, cláusulas críticas ocultas y versiones dispersas—con el riesgo de errores costosos e intercambios interminables.',
+  'uc2.painPoints.text2': 'Con Aitenders, estructura automáticamente cada licitación desde el primer día, detecta instantáneamente cláusulas sensibles, y gestiona tus Q&As y versiones en un panel central.',
+  'uc2.painPoints.optimizeButton': 'Optimizar Tus Proyectos Medianos!',
+  'uc2.painPoints.demoButton': 'Ver la Demo',
+
+  'uc2.audiences.proposalManagers': 'Gestores de Propuestas',
+  'uc2.audiences.proposalManagersDesc': 'Gestionar proyectos medianos con complejidad moderada manteniendo calidad y plazos.',
+  'uc2.audiences.technicalManagers': 'Gestores Técnicos',
+  'uc2.audiences.technicalManagersDesc': 'Supervisar la consistencia técnica de propuestas medianas con flujos optimizados.',
+  'uc2.audiences.commercialDirectors': 'Directores Comerciales',
+  'uc2.audiences.commercialDirectorsDesc': 'Optimizar tu pipeline de proyectos medianos con visibilidad completa sobre rendimiento y riesgos.',
+
+  'uc2.solutions.title1': 'Gestión inteligente de proyectos medianos',
+  'uc2.solutions.desc1': 'AI especializada que coordina automáticamente recursos y optimiza procesos para proyectos intermedios',
+  'uc2.solutions.title2': 'Flujos estandarizados y flexibles',
+  'uc2.solutions.desc2': 'Metodologías probadas adaptadas a la complejidad de proyectos medianos con personalización según necesidades',
+  'uc2.solutions.title3': 'Control de calidad automatizado',
+  'uc2.solutions.desc3': 'Validación sistemática de entregables y monitoreo proactivo de riesgos para mantener la excelencia',
+
+  'uc2.features.mainTitle': 'Tu co-piloto AI asegurando la gestión de tus proyectos medianos',
+  'uc2.features.subtitle': 'Descubrir, gestionar y asegurar cada cláusula desde el primer día.',
+  'uc2.features.feature1Title': 'Estructuración automática del alcance desde el día 1',
+  'uc2.features.feature1Text': 'Gracias a la AI de Aitenders, tus documentos se segmentan y organizan instantáneamente.',
+  'uc2.features.feature1Highlight': 'Una visión consolidada y priorizada, lista desde el primer día!',
+  'uc2.features.feature2Title': 'Controlar cada cláusula crítica de tu proyecto',
+  'uc2.features.feature2Text': 'Aitenders identifica y prioriza automáticamente todas las cláusulas sensibles.',
+  'uc2.features.feature2Highlight': 'Validación contractual proactiva, desde el día 1',
+
+  'common.nav.home': 'Inicio',
+  'common.nav.solutions': 'Soluciones',
+  'common.nav.pricing': 'Precios',
+  'common.nav.contact': 'Contacto',
+  'common.nav.language': 'Idioma',
+
+  'common.cta.bookDemo': 'Reservar demo',
+  'common.cta.learnMore': 'Saber más',
+  'common.cta.getStarted': 'Comenzar',
+  'common.cta.contactSales': 'Contactar Ventas',
+};
+
+// German translations for UC2
+const uc2GermanTranslations = {
+  'uc2.hero.badge': 'Mittelgroße Angebote verwalten',
+  'uc2.hero.title': 'Entdecken, verwalten und sichern Sie jede Klausel',
+  'uc2.hero.span': 'vom ersten Tag an.',
+  'uc2.hero.description': 'Die einzige Plattform, die entwickelt wurde, um mittelgroße Ausschreibungen (€1M–10M) ab dem ersten Tag in eine klare vertragliche Sicht zu verwandeln: KI-Strukturierung des Umfangs, sofortige Erkennung kritischer Klauseln und dynamisches Management von Q&As und Versionen.',
+  'uc2.hero.demoButton': 'Demo buchen',
+  'uc2.hero.downloadButton': 'Anwendungsfall herunterladen →',
+
+  'uc2.painPoints.headline': 'Ihr Angebot, 100% klar, 0% Überraschungen',
+  'uc2.painPoints.text1': 'Bei mittelgroßen Projekten jonglieren Ihre Teams mit engen Terminen, versteckten kritischen Klauseln und verstreuten Versionen—mit dem Risiko kostspieliger Fehler und endloser Hin- und Her-Gespräche.',
+  'uc2.painPoints.text2': 'Mit Aitenders strukturieren Sie automatisch jede Ausschreibung vom ersten Tag an, erkennen sofort sensible Klauseln und verwalten Ihre Q&As und Versionen in einem zentralen Cockpit.',
+  'uc2.painPoints.optimizeButton': 'Optimieren Sie Ihre mittleren Projekte!',
+  'uc2.painPoints.demoButton': 'Demo ansehen',
+
+  'uc2.audiences.proposalManagers': 'Proposal Manager',
+  'uc2.audiences.proposalManagersDesc': 'Verwalten Sie mittelgroße Projekte mit moderater Komplexität unter Beibehaltung von Qualität und Terminen.',
+  'uc2.audiences.technicalManagers': 'Technische Manager',
+  'uc2.audiences.technicalManagersDesc': 'Überwachen Sie die technische Konsistenz mittelgroßer Vorschläge mit optimierten Arbeitsabläufen.',
+  'uc2.audiences.commercialDirectors': 'Kommerzielle Direktoren',
+  'uc2.audiences.commercialDirectorsDesc': 'Optimieren Sie Ihre Pipeline für mittlere Projekte mit vollständiger Sichtbarkeit auf Leistung und Risiken.',
+
+  'uc2.solutions.title1': 'Intelligentes Management mittelgroßer Projekte',
+  'uc2.solutions.desc1': 'Spezialisierte KI, die automatisch Ressourcen koordiniert und Prozesse für Zwischenprojekte optimiert',
+  'uc2.solutions.title2': 'Standardisierte und flexible Arbeitsabläufe',
+  'uc2.solutions.desc2': 'Bewährte Methoden, angepasst an die Komplexität mittelgroßer Projekte mit Anpassung nach Bedarf',
+  'uc2.solutions.title3': 'Automatisierte Qualitätskontrolle',
+  'uc2.solutions.desc3': 'Systematische Validierung von Liefergegenständen und proaktive Risikoüberwachung zur Aufrechterhaltung der Exzellenz',
+
+  'uc2.features.mainTitle': 'Ihr KI-Copilot zur Sicherung der Verwaltung Ihrer mittleren Projekte',
+  'uc2.features.subtitle': 'Entdecken, verwalten und sichern Sie jede Klausel vom ersten Tag an.',
+  'uc2.features.feature1Title': 'Automatische Strukturierung des Umfangs ab Tag 1',
+  'uc2.features.feature1Text': 'Dank Aitenders KI werden Ihre Dokumente sofort segmentiert und organisiert.',
+  'uc2.features.feature1Highlight': 'Eine konsolidierte und priorisierte Sicht, bereit ab dem ersten Tag!',
+  'uc2.features.feature2Title': 'Kontrollieren Sie jede kritische Klausel Ihres Projekts',
+  'uc2.features.feature2Text': 'Aitenders identifiziert und priorisiert automatisch alle sensiblen Klauseln.',
+  'uc2.features.feature2Highlight': 'Proaktive vertragliche Validierung, ab Tag 1',
+
+  'common.nav.home': 'Startseite',
+  'common.nav.solutions': 'Lösungen',
+  'common.nav.pricing': 'Preise',
+  'common.nav.contact': 'Kontakt',
+  'common.nav.language': 'Sprache',
+
+  'common.cta.bookDemo': 'Demo buchen',
+  'common.cta.learnMore': 'Mehr erfahren',
+  'common.cta.getStarted': 'Loslegen',
+  'common.cta.contactSales': 'Vertrieb kontaktieren',
+};
+
 // Initialize languages and UC2 translations
 export async function seedTranslations() {
   console.log('🌱 Seeding translations...');
@@ -129,6 +229,20 @@ export async function seedTranslations() {
     }
     
     console.log('✅ UC2 English translations seeded');
+
+    // Add Spanish translations
+    for (const [key, spanishValue] of Object.entries(uc2SpanishTranslations)) {
+      await translationService.setTranslation(key, 'es', spanishValue);
+    }
+    
+    console.log('✅ UC2 Spanish translations seeded');
+
+    // Add German translations
+    for (const [key, germanValue] of Object.entries(uc2GermanTranslations)) {
+      await translationService.setTranslation(key, 'de', germanValue);
+    }
+    
+    console.log('✅ UC2 German translations seeded');
     console.log(`📊 Total keys: ${Object.keys(uc2TranslationKeys).length}`);
     
     return true;

@@ -15,6 +15,7 @@ interface HeaderProps {
 export default function Header({ language, onLanguageChange }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isUseCasesOpen, setIsUseCasesOpen] = useState(false);
+  const [showLanguageMenu, setShowLanguageMenu] = useState(false);
   const [location] = useLocation();
   
   // Get global translation system
@@ -24,6 +25,7 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
   const closeMenu = () => {
     setIsMenuOpen(false);
     setIsUseCasesOpen(false);
+    setShowLanguageMenu(false);
   };
 
 
@@ -47,21 +49,58 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
           <div className="flex items-center space-x-3">
 
             
-            {/* Simple Language Switcher */}
-            <div className="flex items-center space-x-2">
-              <button
-                onClick={() => changeLanguage('fr')}
-                className={`px-2 py-1 text-xs rounded ${currentLanguage === 'fr' ? 'bg-aitenders-primary-blue text-white' : 'text-aitenders-dark-blue hover:bg-aitenders-pale-blue'}`}
+            {/* Language Selector */}
+            <div className="relative">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setShowLanguageMenu(!showLanguageMenu)}
+                className="rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue px-3 py-1 h-8 text-xs font-medium"
               >
-                FR
-              </button>
-              <span className="text-aitenders-light-blue">|</span>
-              <button
-                onClick={() => changeLanguage('en')}
-                className={`px-2 py-1 text-xs rounded ${currentLanguage === 'en' ? 'bg-aitenders-primary-blue text-white' : 'text-aitenders-dark-blue hover:bg-aitenders-pale-blue'}`}
-              >
-                EN
-              </button>
+                <Globe className="w-3 h-3 mr-1" />
+                {currentLanguage?.toUpperCase()}
+              </Button>
+              
+              {showLanguageMenu && (
+                <div className="absolute right-0 top-full mt-1 bg-white border border-aitenders-light-blue rounded-lg shadow-lg py-1 z-[1000] min-w-[160px]">
+                  <button
+                    onClick={() => {
+                      changeLanguage('fr');
+                      setShowLanguageMenu(false);
+                    }}
+                    className={`block w-full text-left px-3 py-2 text-sm hover:bg-aitenders-pale-blue transition-colors ${currentLanguage === 'fr' ? 'bg-aitenders-pale-blue font-medium' : ''}`}
+                  >
+                    🇫🇷 Français
+                  </button>
+                  <button
+                    onClick={() => {
+                      changeLanguage('en');
+                      setShowLanguageMenu(false);
+                    }}
+                    className={`block w-full text-left px-3 py-2 text-sm hover:bg-aitenders-pale-blue transition-colors ${currentLanguage === 'en' ? 'bg-aitenders-pale-blue font-medium' : ''}`}
+                  >
+                    🇬🇧 English
+                  </button>
+                  <button
+                    onClick={() => {
+                      changeLanguage('es');
+                      setShowLanguageMenu(false);
+                    }}
+                    className={`block w-full text-left px-3 py-2 text-sm hover:bg-aitenders-pale-blue transition-colors ${currentLanguage === 'es' ? 'bg-aitenders-pale-blue font-medium' : ''}`}
+                  >
+                    🇪🇸 Español
+                  </button>
+                  <button
+                    onClick={() => {
+                      changeLanguage('de');
+                      setShowLanguageMenu(false);
+                    }}
+                    className={`block w-full text-left px-3 py-2 text-sm hover:bg-aitenders-pale-blue transition-colors ${currentLanguage === 'de' ? 'bg-aitenders-pale-blue font-medium' : ''}`}
+                  >
+                    🇩🇪 Deutsch
+                  </button>
+                </div>
+              )}
             </div>
 
             {/* Menu Button */}
