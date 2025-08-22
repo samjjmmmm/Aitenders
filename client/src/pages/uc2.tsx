@@ -9,7 +9,7 @@ import {
   MdDashboard, MdBolt, MdEdit, MdNotifications, MdVerified, MdSwapHoriz, MdPlayArrow,
   MdClose, MdCheck, MdStars, MdCloudSync, MdCreate, MdAutoAwesome, MdLink, 
   MdAccountTree, MdTrackChanges, MdCallSplit, MdSchema, MdGppBad, MdTimeline, 
-  MdRotateRight, MdFlag, MdMail
+  MdRotateRight, MdFlag, MdMail, MdAccountBalance, MdManageAccounts
 } from "react-icons/md";
 import { FaUsers, FaShieldAlt, FaChartBar, FaFileAlt, FaCogs } from "react-icons/fa";
 import ContactSection from "@/components/contact-section";
@@ -581,8 +581,8 @@ export default function UC2Page() {
                 <div className="group fade-in-left">
                   <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
                     <div className="flex items-center mb-6">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4">
-                        <MdBusiness className="w-6 h-6 text-white" />
+                      <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-5 shadow-lg">
+                        <MdAccountBalance className="w-7 h-7 text-white" />
                       </div>
                       <div>
                         <h4 className="text-xl font-bold text-gray-900">Directeur Commercial ou Directeur des Offres</h4>
@@ -617,8 +617,8 @@ export default function UC2Page() {
                 <div className="group fade-in-right">
                   <Card className="h-full p-8 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
                     <div className="flex items-center mb-6">
-                      <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-4">
-                        <MdEngineering className="w-6 h-6 text-white" />
+                      <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-5 shadow-lg">
+                        <MdManageAccounts className="w-7 h-7 text-white" />
                       </div>
                       <div>
                         <h4 className="text-xl font-bold text-gray-900">Responsable Offre, Contract Manager ou Chef de Projet</h4>
