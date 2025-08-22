@@ -26,6 +26,7 @@ import bouyguesLogo from "@assets/Bouyges_1753711339292.png";
 import colasLogo from "@assets/Colas_1753711339292.png";
 import ChatSection from "@/components/chat-section";
 import ChatInterface from "@/components/chat-interface";
+import ClientLogos from "@/components/client-logos";
 import Lottie from 'lottie-react';
 import wow1Uc4Animation from '../assets/wow-1-uc4.json';
 import wow2Uc4Animation from '../assets/wow-2-uc4.json';
@@ -919,20 +920,7 @@ export default function UC4Page() {
           </div>
 
           {/* Client Logos Scrolling Banner */}
-          <div className="mb-16 md:mb-20">
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 overflow-hidden">
-              <div className="flex items-center justify-center mb-4">
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Ils nous font confiance pour leurs contrats complexes</h3>
-              </div>
-              <div className="flex items-center justify-center space-x-12 animate-pulse">
-                <img src={equansLogo} alt="Equans" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
-                <img src={bouyguesLogo} alt="Bouygues" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
-                <img src={colasLogo} alt="Colas" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
-                <img src={equansLogo} alt="Equans" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
-                <img src={bouyguesLogo} alt="Bouygues" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
-              </div>
-            </div>
-          </div>
+          <ClientLogos />
 
           {/* Integrated Chat Simulator */}
           <div className="bg-white rounded-3xl shadow-2xl border border-purple-100 p-8 md:p-12">
