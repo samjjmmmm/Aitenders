@@ -1062,17 +1062,17 @@ export default function UC2Page() {
               <div className="relative w-full overflow-hidden">
                 <div className="flex logo-scroll space-x-12 whitespace-nowrap justify-center items-center">
                   {/* First set of logos */}
-                  <img src={equansLogo} alt="Equans" className="h-5 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  <img src={bouyguesLogo} alt="Bouygues" className="h-5 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  <img src={colasLogo} alt="Colas" className="h-5 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
+                  <img src={equansLogo} alt="Equans" className="h-3 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
+                  <img src={bouyguesLogo} alt="Bouygues" className="h-3 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
+                  <img src={colasLogo} alt="Colas" className="h-3 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
                   {/* Duplicate set for seamless loop */}
-                  <img src={equansLogo} alt="Equans" className="h-5 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  <img src={bouyguesLogo} alt="Bouygues" className="h-5 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  <img src={colasLogo} alt="Colas" className="h-5 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
+                  <img src={equansLogo} alt="Equans" className="h-3 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
+                  <img src={bouyguesLogo} alt="Bouygues" className="h-3 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
+                  <img src={colasLogo} alt="Colas" className="h-3 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
                   {/* Third set for smooth continuation */}
-                  <img src={equansLogo} alt="Equans" className="h-5 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  <img src={bouyguesLogo} alt="Bouygues" className="h-5 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  <img src={colasLogo} alt="Colas" className="h-5 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
+                  <img src={equansLogo} alt="Equans" className="h-3 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
+                  <img src={bouyguesLogo} alt="Bouygues" className="h-3 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
+                  <img src={colasLogo} alt="Colas" className="h-3 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
                 </div>
               </div>
             </div>
