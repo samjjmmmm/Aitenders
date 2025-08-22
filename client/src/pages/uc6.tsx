@@ -57,6 +57,7 @@ import wow3Uc5Animation from '../assets/wow-3-uc5.json';
 import uc5SecondFeatureImage from "@assets/wow 2_1755751777579.png";
 import uc5ThirdFeatureImage from "@assets/WOW 3_1755757958470.png";
 import uc5HeroImage from "@assets/HERO UC 5_1755774540751.png";
+import uc6HeroImage from "@assets/HERO UC 6_1755862567206.png";
 
 export default function UC6Page() {
   const targetAudiences = [
@@ -299,7 +300,7 @@ export default function UC6Page() {
             <div className="w-full flex justify-center px-4">
               <div className="relative w-full max-w-5xl">
                 <img
-                  src={uc5HeroImage}
+                  src={uc6HeroImage}
                   alt="Aitenders UC6 Interface - Complex Project Management and Requirements Tracking"
                   className="w-full h-auto mx-auto"
                   style={{
