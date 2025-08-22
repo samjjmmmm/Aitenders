@@ -33,7 +33,12 @@ import {
   MdHistory,
   MdNotificationsActive,
   MdFlag,
-  MdVerified
+  MdVerified,
+  MdArrowForward,
+  MdLink,
+  MdManageAccounts,
+  MdPerson,
+  MdSwapHoriz
 } from 'react-icons/md';
 import { FaUsers } from 'react-icons/fa';
 import { motion } from 'framer-motion';
@@ -697,38 +702,211 @@ export default function UC6Page() {
         </div>
       </motion.section>
 
-      {/* User Journey Section */}
+      {/* Toppings Section - UC6 Strategic Features */}
       <motion.section 
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true, margin: "-100px" }}
-        className="py-16 md:py-20 lg:py-24 bg-white">
-        <div className="content-boundary">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Votre Parcours de Transformation
+        className="py-16 md:py-20 lg:py-24 px-4 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-96 h-96 rounded-full opacity-20 blur-3xl animate-pulse"
+               style={{
+                 background: 'linear-gradient(135deg, #8B5CF6 0%, #3B82F6 50%, #06B6D4 100%)'
+               }}></div>
+          <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full opacity-15 blur-3xl animate-pulse delay-1000"
+               style={{
+                 background: 'linear-gradient(135deg, #EC4899 0%, #8B5CF6 50%, #3B82F6 100%)'
+               }}></div>
+          <div className="absolute inset-0 opacity-5"
+               style={{
+                 backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)',
+                 backgroundSize: '40px 40px'
+               }}></div>
+        </div>
+
+        <div className="content-boundary relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-16 md:mb-20 lg:mb-24">
+            <div className="inline-flex items-center justify-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6 md:mb-8">
+              <MdStars className="w-5 h-5 text-yellow-400 mr-2" />
+              <span className="text-white font-semibold text-sm md:text-base">Fonctionnalités Premium</span>
+            </div>
+
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:mb-8 leading-[1.1] tracking-tight">
+              Des <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-400 to-cyan-400">toppings stratégiques</span> pour l'exécution sans faille de vos projets complexes
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Une méthodologie éprouvée en 3 étapes pour orchestrer votre évolution organisationnelle
+
+            <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed font-light">
+              Activez les fonctionnalités Premium et pilotez sereinement. Votre maîtrise devient totale, votre gouvernance cohérente, traçabilité et performance consolidées à chaque étape du projet.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {userJourneySteps.map((step, index) => (
-              <div key={index} className="text-center">
-                <div className="relative mb-8">
-                  <div className="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <step.icon className="w-10 h-10 text-purple-600" />
-                  </div>
-                  <div className="absolute top-8 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                    {step.step}
+          {/* Toppings Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+
+            {/* 1️⃣ Exigences natives aux livrables */}
+            <div className="group">
+              <div className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer">
+                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <MdArrowForward className="w-4 h-4 text-white transform rotate-45" />
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
+
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <MdLink className="w-8 h-8 text-white" />
+                </div>
+
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Exigences natives aux livrables</h3>
+                <p className="text-gray-200 leading-relaxed mb-6">
+                  Chaque livrable hérite automatiquement des exigences métier et techniques pertinentes, tracées depuis sa conception.
+                </p>
+
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-blue-400 font-medium">
+                    <span className="text-sm">Livrable natifs</span>
+                    <MdAutoAwesome className="w-4 h-4 ml-2" />
+                  </div>
+                  <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
+                    Découvrir →
+                  </div>
+                </div>
               </div>
-            ))}
+            </div>
+
+            {/* 2️⃣ Gestion des exigences client */}
+            <div className="group">
+              <div className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer">
+                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <MdArrowForward className="w-4 h-4 text-white transform rotate-45" />
+                  </div>
+                </div>
+
+                <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <MdManageAccounts className="w-8 h-8 text-white" />
+                </div>
+
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Gestion des exigences client</h3>
+                <p className="text-gray-200 leading-relaxed mb-6">
+                  Suivi automatisé des changements contractuels, validation et impact sur la performance consolidée projet.
+                </p>
+
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-pink-400 font-medium">
+                    <span className="text-sm">Exigences client</span>
+                    <MdPerson className="w-4 h-4 ml-2" />
+                  </div>
+                  <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
+                    Découvrir →
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 3️⃣ Couverture de conformité intelligente */}
+            <div className="group">
+              <div className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer">
+                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <MdArrowForward className="w-4 h-4 text-white transform rotate-45" />
+                  </div>
+                </div>
+
+                <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <MdVerified className="w-8 h-8 text-white" />
+                </div>
+
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Couverture de conformité intelligente</h3>
+                <p className="text-gray-200 leading-relaxed mb-6">
+                  Contrôle permanent et automatisé de toutes actions métier, technique et qualité contre toutes les dérives.
+                </p>
+
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-green-400 font-medium">
+                    <span className="text-sm">Conformité continue</span>
+                    <MdShield className="w-4 h-4 ml-2" />
+                  </div>
+                  <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
+                    Découvrir →
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 4️⃣ Auditages tracés */}
+            <div className="group">
+              <div className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer">
+                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <MdArrowForward className="w-4 h-4 text-white transform rotate-45" />
+                  </div>
+                </div>
+
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-violet-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <MdHistory className="w-8 h-8 text-white" />
+                </div>
+
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Auditages tracés</h3>
+                <p className="text-gray-200 leading-relaxed mb-6">
+                  Centralisez l'auditabilité avec la genèse complète qui automatiquement référence, justifie et démontre.
+                </p>
+
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-purple-400 font-medium">
+                    <span className="text-sm">Audit tracé</span>
+                    <MdHistory className="w-4 h-4 ml-2" />
+                  </div>
+                  <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
+                    Découvrir →
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 5️⃣ Collaboration multi-équipement */}
+            <div className="group md:col-span-2 lg:col-span-1">
+              <div className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer">
+                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <MdArrowForward className="w-4 h-4 text-white transform rotate-45" />
+                  </div>
+                </div>
+
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-yellow-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <MdGroups className="w-8 h-8 text-white" />
+                </div>
+
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Collaboration multi-équipementment</h3>
+                <p className="text-gray-200 leading-relaxed mb-6">
+                  Des espaces collaboratifs intelligents qui coordonnent automatiquement chaque acteur métier et technique.
+                </p>
+
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-orange-400 font-medium">
+                    <span className="text-sm">Équipes connectées</span>
+                    <MdSwapHoriz className="w-4 h-4 ml-2" />
+                  </div>
+                  <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
+                    Découvrir →
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Section */}
+          <div className="text-center mt-16 md:mt-20">
+            <p className="text-lg text-gray-300 mb-8 max-w-3xl mx-auto">
+              Chaque topping digitalise vos outils de contrôle, de validation et de performance.
+            </p>
+            
+            <button className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold rounded-full hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+              <span>Découvrir tous les toppings</span>
+              <MdArrowForward className="w-5 h-5 ml-2" />
+            </button>
           </div>
         </div>
       </motion.section>
