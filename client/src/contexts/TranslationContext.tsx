@@ -1,0 +1,92 @@
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import { useQuery } from '@tanstack/react-query';
+
+interface Language {
+  code: string;
+  name: string;
+  isDefault: boolean;
+  isActive: boolean;
+}
+
+interface TranslationContextType {
+  currentLanguage: string;
+  changeLanguage: (languageCode: string) => void;
+  languages: Language[];
+  t: (key: string, fallback?: string) => string;
+  isLoading: boolean;
+  translations: Record<string, string>;
+}
+
+const TranslationContext = createContext<TranslationContextType | undefined>(undefined);
+
+interface TranslationProviderProps {
+  children: React.ReactNode;
+}
+
+export function TranslationProvider({ children }: TranslationProviderProps) {
+  const [currentLanguage, setCurrentLanguage] = useState<string>('fr');
+
+  // Fetch available languages
+  const { data: languages = [] } = useQuery({
+    queryKey: ['/api/translations/languages'],
+    staleTime: 1000 * 60 * 10, // 10 minutes
+  });
+
+  // Fetch translations for current language
+  const { data: translations = {}, isLoading } = useQuery({
+    queryKey: ['/api/translations', currentLanguage],
+    queryFn: async () => {
+      const response = await fetch(`/api/translations/${currentLanguage}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch translations');
+      }
+      return response.json();
+    },
+    enabled: !!currentLanguage,
+    staleTime: 1000 * 60 * 5, // 5 minutes
+  });
+
+  // Translation function with fallback
+  const t = (key: string, fallback?: string): string => {
+    if (isLoading) return fallback || key;
+    return translations[key] || fallback || key;
+  };
+
+  // Change language function
+  const changeLanguage = (languageCode: string) => {
+    setCurrentLanguage(languageCode);
+    // Store in localStorage for persistence
+    localStorage.setItem('aitenders-language', languageCode);
+  };
+
+  // Initialize language from localStorage or default to French
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem('aitenders-language');
+    if (savedLanguage) {
+      setCurrentLanguage(savedLanguage);
+    }
+  }, []);
+
+  const value: TranslationContextType = {
+    currentLanguage,
+    changeLanguage,
+    languages,
+    t,
+    isLoading,
+    translations,
+  };
+
+  return (
+    <TranslationContext.Provider value={value}>
+      {children}
+    </TranslationContext.Provider>
+  );
+}
+
+export function useGlobalTranslations() {
+  const context = useContext(TranslationContext);
+  if (context === undefined) {
+    throw new Error('useGlobalTranslations must be used within a TranslationProvider');
+  }
+  return context;
+}

@@ -18,7 +18,7 @@ import UC3AnalysisCard from "@/components/UC3AnalysisCard";
 import ClientLogos from "@/components/client-logos";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { useTranslations } from "@/hooks/useTranslations";
+import { useGlobalTranslations } from "@/contexts/TranslationContext";
 
 // Import client logos
 import equansLogo from "@assets/Equans_1753711339292.png";
@@ -37,7 +37,7 @@ import uc2ThirdFeatureImage from "@assets/wow 3_1755698476634.png";
 import uc2HeroImage from "@assets/HERO UC 2_1755763267253.png";
 
 export default function UC2Page() {
-  const { t, currentLanguage, changeLanguage, languages } = useTranslations('uc2');
+  const { t, currentLanguage, changeLanguage, languages } = useGlobalTranslations();
 
   // Legacy translations object - to be removed gradually
   const legacyT = {
@@ -381,7 +381,7 @@ export default function UC2Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-white">
       {/* Header/Navbar */}
-      <Header language={currentLanguage} onLanguageChange={changeLanguage} />
+      <Header />
 
       <main>
       {/* Hero Section - Professional SaaS Design */}

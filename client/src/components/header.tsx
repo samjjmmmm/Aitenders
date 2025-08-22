@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, ChevronRight, Home, Globe } from "lucide-react";
 import { Link, useLocation } from "wouter";
-import { useTranslations } from "@/hooks/useTranslations";
+import { useGlobalTranslations } from "@/contexts/TranslationContext";
 
 // Import Aitenders logo
 import aitendersLogo from "@assets/Untitled(4)_1753712731718.png";
@@ -12,14 +12,14 @@ interface HeaderProps {
   onLanguageChange?: (lang: string) => void;
 }
 
-export default function Header({ language = 'fr', onLanguageChange }: HeaderProps) {
+export default function Header({ language, onLanguageChange }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isUseCasesOpen, setIsUseCasesOpen] = useState(false);
   const [showLanguageMenu, setShowLanguageMenu] = useState(false);
   const [location] = useLocation();
   
-  // Get available languages from translation system
-  const { languages } = useTranslations();
+  // Get global translation system
+  const { currentLanguage, changeLanguage, languages } = useGlobalTranslations();
   
   // Close menu when location changes
   const closeMenu = () => {
@@ -70,7 +70,7 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
                 className="rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue px-3 py-1 h-8 text-xs font-medium"
               >
                 <Globe className="w-3 h-3 mr-1" />
-                {language?.toUpperCase()}
+                {currentLanguage?.toUpperCase()}
               </Button>
               
               {showLanguageMenu && (
@@ -79,10 +79,11 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
                     <button
                       key={lang.code}
                       onClick={() => {
+                        changeLanguage(lang.code);
                         onLanguageChange?.(lang.code);
                         setShowLanguageMenu(false);
                       }}
-                      className={`block w-full text-left px-3 py-1 text-xs hover:bg-aitenders-pale-blue ${language === lang.code ? 'bg-aitenders-pale-blue font-medium' : ''}`}
+                      className={`block w-full text-left px-3 py-1 text-xs hover:bg-aitenders-pale-blue ${currentLanguage === lang.code ? 'bg-aitenders-pale-blue font-medium' : ''}`}
                     >
                       {lang.code.toUpperCase()} - {lang.name}
                     </button>
