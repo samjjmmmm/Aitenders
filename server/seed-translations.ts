@@ -40,7 +40,7 @@ const uc2TranslationKeys = {
   'uc2.features.feature1Text': 'Grâce à l'IA d\'Aitenders, vos documents sont instantanément segmentés et organisés : lots, sous‑ensembles et critères contractuels sont classifiés et structurés en quelques minutes. Le Proposal Manager dispose immédiatement d\'une vision consolidée du périmètre : points bloquants et clauses sensibles sont identifiés sans effort, permettant une décision « go / no‑go » éclairée dès le premier jour.',
   'uc2.features.feature1Highlight': 'Une vision consolidée et priorisée, prête dès le premier jour !',
   'uc2.features.feature2Title': 'Maîtrisez chaque clause critique de votre projet',
-  'uc2.features.feature2Text': 'Aitenders identifie et priorise automatiquement toutes les clauses sensibles : responsabilités, engagements, pénalités et conditions critiques. En parallèle, l\'IA vérifie la cohérence documentaire et signale contradictions, doublons et lacunes, pour une analyse fiable et complète. Le Proposal Manager obtient en quelques minutes une vision claire des zones de risque, prêtes à être corrigées et validées sans perte de temps.',
+  'uc2.features.feature2Text': 'Aitenders identifie et priorise automatiquement toutes les clauses sensibles : responsabilités, engagements, pénalités et conditions critiques. En parallèle, l'IA vérifie la cohérence documentaire et signale contradictions, doublons et lacunes, pour une analyse fiable et complète. Le Proposal Manager obtient en quelques minutes une vision claire des zones de risque, prêtes à être corrigées et validées sans perte de temps.',
   'uc2.features.feature2Highlight': 'Validation contractuelle proactive, dès J+1',
 
   // Solution Section
@@ -50,10 +50,10 @@ const uc2TranslationKeys = {
   'uc2.solution_section.feature1_text': 'Grâce à l\'IA d\'Aitenders, vos documents sont instantanément segmentés et organisés : lots, sous-ensembles et critères contractuels sont classifiés et structurés en quelques minutes. Le Proposal Manager dispose immédiatement d\'une vision consolidée du périmètre : points bloquants et clauses sensibles sont identifiés sans effort, permettant une décision go / no-go éclairée dès le premier jour.',
   'uc2.solution_section.feature1_highlight': 'Une vision consolidée et priorisée, prête dès le premier jour !',
   'uc2.solution_section.feature2_title': 'Maîtrisez chaque clause critique de votre projet',
-  'uc2.solution_section.feature2_text': 'Aitenders identifie et hiérarchise automatiquement toutes les clauses sensibles : responsabilités, engagements, pénalités et conditions critiques. Parallèlement, l\'IA vérifie la cohérence documentaire et signale contradictions, doublons et lacunes, pour une analyse fiable et complète. Le Proposal Manager obtient en quelques minutes une vision claire des zones de risque, prêtes à être corrigées et validées sans perte de temps.',
+  'uc2.solution_section.feature2_text': 'Aitenders identifie et hiérarchise automatiquement toutes les clauses sensibles : responsabilités, engagements, pénalités et conditions critiques. Parallèlement, l'IA vérifie la cohérence documentaire et signale contradictions, doublons et lacunes, pour une analyse fiable et complète. Le Proposal Manager obtient en quelques minutes une vision claire des zones de risque, prêtes à être corrigées et validées sans perte de temps.',
   'uc2.solution_section.feature2_highlight': 'Validation contractuelle proactive, dès le J1',
   'uc2.solution_section.feature3_title': 'Pilotez chaque évolution contractuelle en temps réel',
-  'uc2.solution_section.feature3_text': 'Toutes vos Q&A, versions et ajustements de documents sont consolidés et trackés automatiquement par l\'IA. Le Proposal Manager suit chaque modification en temps réel, visualise les écarts, reçoit des alertes et s\'assure que rien n\'est oublié ou modifié sans validation. Fini les suivis fragmentés par email ou tableurs : tout est centralisé dans un cockpit fluide et fiable.',
+  'uc2.solution_section.feature3_text': 'Toutes vos Q&A, versions et ajustements de documents sont consolidés et trackés automatiquement par l'IA. Le Proposal Manager suit chaque modification en temps réel, visualise les écarts, reçoit des alertes et s\'assure que rien n\'est oublié ou modifié sans validation. Fini les suivis fragmentés par email ou tableurs : tout est centralisé dans un cockpit fluide et fiable.',
   'uc2.solution_section.feature3_highlight': 'Aucune surprise, aucune version perdue, aucun risque d\'oubli',
 
   // Toppings - Complete Wow Features Section
@@ -182,7 +182,7 @@ const uc2EnglishTranslations = {
   'uc2.audiences.technicalManagers': 'Technical Managers',
   'uc2.audiences.technicalManagersDesc': 'Supervise the technical consistency of medium proposals with optimized workflows. Ensure the quality of technical deliverables while respecting budgetary and time constraints.',
   'uc2.audiences.commercialDirectors': 'Commercial Directors',
-  'uc2.audiences.commercialDirectorsDesc': 'Optimize your medium project pipeline with complete visibility on performance and risks. Maximize conversion rate through standardized and efficient processes.',
+  'uc2.audiences.commercialDirectorsDesc': 'Optimize your pipeline of medium projects with complete visibility on performance and risks. Maximize conversion rate through standardized and efficient processes.',
 
   'uc2.solutions.title1': 'Intelligent medium project management',
   'uc2.solutions.desc1': 'Specialized AI that automatically coordinates resources and optimizes processes for intermediate projects',
@@ -515,7 +515,7 @@ const uc2GermanTranslations = {
   'uc2.solution_section.subtitle': 'Entdecken, verwalten und sichern Sie jede Klausel vom ersten Tag an.',
   'uc2.solution_section.feature1_title': 'Automatische Umfangsstrukturierung ab Tag 1',
   'uc2.solution_section.feature1_text': 'Dank Aitenders KI werden Ihre Dokumente sofort segmentiert und organisiert: Lose, Teilpakete und vertragliche Kriterien werden in wenigen Minuten klassifiziert und strukturiert. Der Proposal Manager hat sofort einen konsolidierten Überblick über den Umfang: Blockierungspunkte und sensible Klauseln werden mühelos identifiziert, was eine fundierte Go/No-Go-Entscheidung vom ersten Tag an ermöglicht.',
-  'uc2.solution_section.feature1_highlight': 'Eine konsolidierte und priorisierte Sicht, bereit vom ersten Tag an!',
+  'uc2.solution_section.feature1_highlight': 'Eine konsolidierte und priorisierte Sicht, bereit ab dem ersten Tag!',
   'uc2.solution_section.feature2_title': 'Beherrschen Sie jede kritische Klausel Ihres Projekts',
   'uc2.solution_section.feature2_text': 'Aitenders identifiziert und priorisiert automatisch alle sensiblen Klauseln: Verantwortlichkeiten, Verpflichtungen, Strafen und kritische Bedingungen. Gleichzeitig prüft die KI die Dokumentenkonsistenz und kennzeichnet Widersprüche, Duplikate und Lücken für eine zuverlässige und vollständige Analyse. Der Proposal Manager erhält in wenigen Minuten einen klaren Überblick über Risikobereiche, die bereit sind, ohne Zeitverlust korrigiert und validiert zu werden.',
   'uc2.solution_section.feature2_highlight': 'Proaktive vertragliche Validierung, ab Tag 1',
@@ -578,7 +578,7 @@ const uc2GermanTranslations = {
   // ROI Simulator
   'uc2.roi_simulator.badge': 'Integrierter ROI-Simulator',
   'uc2.roi_simulator.headline': 'Berechnen Sie Ihren ROI in Echtzeit',
-  'uc2.roi_simulator.subtext': 'Intelligenter Simulator, der in die Seite integriert ist, für sofortige Analyse Ihrer Projekte',
+  'uc2.roi_simulator.subtext': 'Intelligenter Simulator in die Seite integriert für sofortige Analyse Ihrer Projekte',
 
   // Chat Actions
   'uc2.chat_actions.use_cases': 'Unsere Anwendungsfälle',
