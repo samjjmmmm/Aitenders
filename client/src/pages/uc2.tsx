@@ -1045,19 +1045,19 @@ export default function UC2Page() {
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Ils nous font confiance pour leurs projets moyens</h3>
               </div>
               <div className="relative w-full overflow-hidden">
-                <div className="flex logo-scroll space-x-16 whitespace-nowrap justify-center items-center">
+                <div className="flex logo-scroll space-x-12 whitespace-nowrap justify-center items-center">
                   {/* First set of logos */}
-                  <img src={equansLogo} alt="Equans" className="h-8 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  <img src={bouyguesLogo} alt="Bouygues" className="h-8 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  <img src={colasLogo} alt="Colas" className="h-8 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
+                  <img src={equansLogo} alt="Equans" className="h-5 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
+                  <img src={bouyguesLogo} alt="Bouygues" className="h-5 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
+                  <img src={colasLogo} alt="Colas" className="h-5 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
                   {/* Duplicate set for seamless loop */}
-                  <img src={equansLogo} alt="Equans" className="h-8 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  <img src={bouyguesLogo} alt="Bouygues" className="h-8 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  <img src={colasLogo} alt="Colas" className="h-8 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
+                  <img src={equansLogo} alt="Equans" className="h-5 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
+                  <img src={bouyguesLogo} alt="Bouygues" className="h-5 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
+                  <img src={colasLogo} alt="Colas" className="h-5 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
                   {/* Third set for smooth continuation */}
-                  <img src={equansLogo} alt="Equans" className="h-8 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  <img src={bouyguesLogo} alt="Bouygues" className="h-8 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  <img src={colasLogo} alt="Colas" className="h-8 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
+                  <img src={equansLogo} alt="Equans" className="h-5 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
+                  <img src={bouyguesLogo} alt="Bouygues" className="h-5 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
+                  <img src={colasLogo} alt="Colas" className="h-5 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
                 </div>
               </div>
             </div>
