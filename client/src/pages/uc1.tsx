@@ -32,6 +32,7 @@ import ChatSection from "@/components/chat-section";
 import ChatInterface from "@/components/chat-interface";
 import ToppingModal from "@/components/topping-modal";
 import { AitendersSimulatorFinal } from "@/components/aitenders-simulator-final";
+import ClientLogos from "@/components/client-logos";
 
 
 export default function UC1Page() {
@@ -1544,27 +1545,7 @@ export default function UC1Page() {
 
           {/* Client Logos Scrolling Banner */}
           <div className="mb-16 md:mb-20 fade-in-up">
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 overflow-hidden">
-              <div className="flex items-center justify-center mb-4">
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Ils nous font confiance pour leurs offres répétitives</h3>
-              </div>
-              <div className="relative w-full overflow-hidden">
-                <div className="flex logo-scroll space-x-16 whitespace-nowrap justify-center items-center">
-                  {/* First set of logos */}
-                  <img src={equansLogo} alt="Equans" className="h-8 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  <img src={bouyguesLogo} alt="Bouygues" className="h-8 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  <img src={colasLogo} alt="Colas" className="h-8 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  {/* Duplicate set for seamless loop */}
-                  <img src={equansLogo} alt="Equans" className="h-8 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  <img src={bouyguesLogo} alt="Bouygues" className="h-8 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  <img src={colasLogo} alt="Colas" className="h-8 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  {/* Third set for smooth continuation */}
-                  <img src={equansLogo} alt="Equans" className="h-8 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  <img src={bouyguesLogo} alt="Bouygues" className="h-8 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                  <img src={colasLogo} alt="Colas" className="h-8 opacity-60 hover:opacity-100 transition-opacity flex-shrink-0" />
-                </div>
-              </div>
-            </div>
+            <ClientLogos language="fr" />
           </div>
 
           {/* Integrated Chat Simulator - Enhanced */}
