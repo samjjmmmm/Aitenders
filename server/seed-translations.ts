@@ -44,6 +44,7 @@ const uc2TranslationKeys = {
   'uc2.features.feature2Highlight': 'Validation contractuelle proactive, dès J+1',
 
   // Solution Section
+  'uc2.solution_section.mainTitle': 'Votre copilote IA qui sécurise la gestion de vos projets moyens',
   'uc2.solution_section.title': 'Votre copilote IA qui sécurise la gestion de vos projets moyens',
   'uc2.solution_section.subtitle': 'Découvrez, pilotez et sécurisez chaque clause dès le premier jour.',
   'uc2.solution_section.feature1_title': 'Structuration automatique du périmètre dès le J1',
@@ -184,6 +185,7 @@ const uc2EnglishTranslations = {
   'uc2.audiences.commercialDirectors': 'Commercial Directors',
   'uc2.audiences.commercialDirectorsDesc': 'Optimize your pipeline of medium projects with complete visibility on performance and risks. Maximize conversion rate through standardized and efficient processes.',
 
+  'uc2.solution_section.mainTitle': 'Your AI co-pilot securing the management of your medium projects',
   'uc2.solutions.title1': 'Intelligent medium project management',
   'uc2.solutions.desc1': 'Specialized AI that automatically coordinates resources and optimizes processes for intermediate projects',
   'uc2.solutions.title2': 'Standardized and flexible workflows',
@@ -339,6 +341,7 @@ const uc2SpanishTranslations = {
   'uc2.audiences.commercialDirectors': 'Directores Comerciales',
   'uc2.audiences.commercialDirectorsDesc': 'Optimizar tu pipeline de proyectos medianos con visibilidad completa sobre rendimiento y riesgos.',
 
+  'uc2.solution_section.mainTitle': 'Su copiloto IA que asegura la gestión de sus proyectos medianos',
   'uc2.solutions.title1': 'Gestión inteligente de proyectos medianos',
   'uc2.solutions.desc1': 'AI especializada que coordina automáticamente recursos y optimiza procesos para proyectos intermedios',
   'uc2.solutions.title2': 'Flujos estandarizados y flexibles',
@@ -481,6 +484,7 @@ const uc2GermanTranslations = {
   'uc2.hero.demoButton': 'Demo buchen',
   'uc2.hero.downloadButton': 'Wirkung testen →',
 
+  'uc2.solution_section.mainTitle': 'Ihr KI-Kopilot, der die Verwaltung Ihrer mittleren Projekte sichert',
   'uc2.painPoints.headline': 'Ihr Angebot, 100% klar, 0% Überraschungen',
   'uc2.painPoints.text1': 'Bei mittelgroßen Projekten jonglieren Ihre Teams mit engen Terminen, versteckten kritischen Klauseln und verstreuten Versionen—mit dem Risiko kostspieliger Fehler und endloser Hin- und Her-Gespräche.',
   'uc2.painPoints.text2': 'Mit Aitenders strukturieren Sie automatisch jede Ausschreibung vom ersten Tag an, erkennen sofort sensible Klauseln und verwalten Ihre Q&As und Versionen in einem zentralen Cockpit.',
