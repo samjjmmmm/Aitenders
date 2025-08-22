@@ -37,7 +37,7 @@ import uc2ThirdFeatureImage from "@assets/wow 3_1755698476634.png";
 import uc2HeroImage from "@assets/HERO UC 2_1755763267253.png";
 
 export default function UC2Page() {
-  const { t } = useGlobalTranslations();
+  const { t, language } = useGlobalTranslations();
 
   // Target audience data with interactive content - UC2 adapted
   const targetAudiences = [
@@ -1008,7 +1008,7 @@ export default function UC2Page() {
 
           {/* Client Logos Scrolling Banner */}
           <div className="mb-8 md:mb-16 lg:mb-20 fade-in-up">
-            <ClientLogos language={currentLanguage} />
+            <ClientLogos language={language} />
           </div>
 
           {/* Integrated Chat Simulator - Enhanced */}
@@ -1034,7 +1034,7 @@ export default function UC2Page() {
               </div>
 
               {/* Embedded Aitenders ROI Simulator Final */}
-              <AitendersSimulatorFinal className="w-full" />
+              <AitendersSimulatorFinal className="w-full" useCase="uc2" />
 
             </div>
           </div>
@@ -1044,7 +1044,7 @@ export default function UC2Page() {
 
       {/* Chat Interface with UC2-specific actions */}
       <ChatInterface 
-        language={currentLanguage}
+        language={language}
         transparent={true}
         customActions={[
           {
