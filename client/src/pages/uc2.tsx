@@ -529,7 +529,7 @@ export default function UC2Page() {
 
           {/* Feature 3: Validation guidée - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
-            <div className="order-1 lg:pr-6">
+            <div className="order-1 lg:pr-6 fade-in-left">
               <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 leading-[1.1] tracking-tight">Pilotez chaque <span className="text-green-600">évolution contractuelle</span> en temps réel</h3>
               <p className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 md:mb-8 font-light">
               Toutes vos questions-réponses, versions et ajustements documentaires sont consolidés et tracés automatiquement par l’IA. 
@@ -541,7 +541,7 @@ export default function UC2Page() {
               Zéro surprise, zéro version perdue, zéro risque d’oubli
               </p>
             </div>
-            <div className="order-2">
+            <div className="order-2 fade-in-right">
               <div className="flex justify-center items-center h-full px-4 sm:px-6 lg:px-8">
                 <img 
                   src={uc2ThirdFeatureImage}
@@ -565,7 +565,7 @@ export default function UC2Page() {
           <div className="content-boundary">
 
             <div className="mb-20 md:mb-24 lg:mb-28">
-              <div className="text-center mb-12 md:mb-16">
+              <div className="text-center mb-12 md:mb-16 fade-in-up">
                 <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
                   Ce que nos utilisateurs obtiennent concrètement pour les offres moyennes
                 </h3>
@@ -578,7 +578,7 @@ export default function UC2Page() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 
                 {/* Acheteur - Directeur Commercial / Offres */}
-                <div className="group">
+                <div className="group fade-in-left">
                   <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
                     <div className="flex items-center mb-6">
                       <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4">
@@ -614,7 +614,7 @@ export default function UC2Page() {
                 </div>
 
                 {/* Utilisateur - Responsable Offre / Contract Manager / Chef de Projet */}
-                <div className="group">
+                <div className="group fade-in-right">
                   <Card className="h-full p-8 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
                     <div className="flex items-center mb-6">
                       <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-4">
@@ -652,7 +652,7 @@ export default function UC2Page() {
               </div>
 
               {/* KPI Content Box */}
-              <div className="mt-16 md:mt-20 lg:mt-24">
+              <div className="mt-16 md:mt-20 lg:mt-24 fade-in-up">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
                   
                   {/* KPI 1 - 50% du temps */}
@@ -723,7 +723,7 @@ export default function UC2Page() {
 
         <div className="content-boundary relative z-10">
           {/* Section Header */}
-          <div className="text-center mb-16 md:mb-20 lg:mb-24">
+          <div className="text-center mb-16 md:mb-20 lg:mb-24 fade-in-up">
             <div className="inline-flex items-center justify-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6 md:mb-8">
               <MdStars className="w-5 h-5 text-yellow-400 mr-2" />
               <span className="text-white font-semibold text-sm md:text-base">Fonctionnalités Wow</span>
@@ -742,7 +742,7 @@ export default function UC2Page() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
 
             {/* Intelligence Prédictive */}
-            <div className="group">
+            <div className="group fade-in-up">
               <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdTrendingUp className="w-8 h-8 text-white" />
@@ -761,7 +761,7 @@ export default function UC2Page() {
             </div>
 
             {/* Collaboration Adaptive */}
-            <div className="group">
+            <div className="group fade-in-up">
               <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
                 <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdGroups className="w-8 h-8 text-white" />
@@ -780,7 +780,7 @@ export default function UC2Page() {
             </div>
 
             {/* Métriques Intelligentes */}
-            <div className="group">
+            <div className="group fade-in-up">
               <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
                 <div className="w-16h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdTableChart className="w-8 h-8 text-white" />
@@ -799,7 +799,7 @@ export default function UC2Page() {
             </div>
 
             {/* Gestion des Risques */}
-            <div className="group">
+            <div className="group fade-in-up">
               <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdSecurity className="w-8 h-8 text-white" />
@@ -818,7 +818,7 @@ export default function UC2Page() {
             </div>
 
             {/* Templates Intelligents */}
-            <div className="group">
+            <div className="group fade-in-up">
               <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
                 <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdContentCopy className="w-8 h-8 text-white" />
@@ -837,7 +837,7 @@ export default function UC2Page() {
             </div>
 
             {/* Apprentissage Continu */}
-            <div className="group">
+            <div className="group fade-in-up">
               <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
                 <div className="w-16 h-16 bg-gradient-to-br from-red-400 to-red-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdRotateRight className="w-8 h-8 text-white" />
@@ -856,7 +856,7 @@ export default function UC2Page() {
             </div>
 
             {/* Intégration Écosystème */}
-            <div className="group md:col-span-2 lg:col-span-3">
+            <div className="group md:col-span-2 lg:col-span-3 fade-in-up">
               <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2">
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-8">
                   <div className="w-16 h-16 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -906,7 +906,7 @@ export default function UC2Page() {
 
       <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
         <div className="content-boundary">
-          <div className="text-center mb-12 md:mb-16 lg:mb-20">
+          <div className="text-center mb-12 md:mb-16 lg:mb-20 fade-in-up">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:mb-8 leading-[1.1] tracking-tight">
               Nos <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">appels d'offres référence</span> sur les projets moyens
             </h2>
