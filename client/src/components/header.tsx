@@ -41,6 +41,9 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
           
           {/* Right Section */}
           <div className="flex items-center space-x-3">
+            {/* Google Translate Widget */}
+            <div id="google_translate_element" className="google-translate-container"></div>
+            
             {/* Language Switcher */}
             <div className="relative">
               <Button

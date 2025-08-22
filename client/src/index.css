@@ -202,3 +202,70 @@
   max-width: 100%;
   height: auto;
 }
+
+/* Google Translate Widget Styling */
+.google-translate-container {
+  font-size: 12px;
+}
+
+/* Style the Google Translate dropdown to match the site design */
+#google_translate_element {
+  display: inline-block;
+}
+
+#google_translate_element .goog-te-combo {
+  background: hsl(217, 100%, 99%) !important; /* --aitenders-white-blue */
+  border: 1px solid hsl(218, 72%, 88%) !important; /* --aitenders-light-blue */
+  border-radius: 0.5rem !important;
+  padding: 4px 8px !important;
+  font-size: 12px !important;
+  color: hsl(220, 62%, 9%) !important; /* --aitenders-black */
+  outline: none !important;
+  transition: all 0.2s ease !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+
+#google_translate_element .goog-te-combo:hover {
+  background: hsl(218, 100%, 97%) !important; /* --aitenders-pale-blue */
+  border-color: hsl(219, 79%, 70%) !important; /* --aitenders-primary-blue */
+}
+
+#google_translate_element .goog-te-combo:focus {
+  border-color: hsl(219, 79%, 70%) !important; /* --aitenders-primary-blue */
+  box-shadow: 0 0 0 2px hsl(219, 79%, 70%, 0.1) !important;
+}
+
+/* Hide the Google Translate banner */
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+/* Hide the Google Translate logo */
+.goog-te-gadget img {
+  display: none !important;
+}
+
+/* Style the "Powered by" text */
+.goog-te-gadget {
+  font-size: 0 !important;
+  color: transparent !important;
+}
+
+.goog-te-gadget > span > a {
+  display: none !important;
+}
+
+/* Remove the colon after "Select Language" */
+.goog-te-gadget .goog-te-combo {
+  margin: 0 !important;
+}
+
+/* Make sure the widget is vertically centered */
+#google_translate_element {
+  display: flex;
+  align-items: center;
+}
