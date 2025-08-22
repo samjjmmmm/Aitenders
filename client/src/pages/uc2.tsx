@@ -24,6 +24,7 @@ import bouyguesLogo from "@assets/Bouyges_1753711339292.png";
 import colasLogo from "@assets/Colas_1753711339292.png";
 import ChatSection from "@/components/chat-section";
 import ChatInterface from "@/components/chat-interface";
+import { AitendersSimulatorFinal } from "@/components/aitenders-simulator-final";
 import Lottie from 'lottie-react';
 import wow1Uc2Animation from '../assets/wow-1-uc2.json';
 import wow2Uc2Animation from '../assets/wow-2-uc2.json';
@@ -1053,39 +1054,31 @@ export default function UC2Page() {
             </div>
           </div>
 
-          {/* Integrated Chat Simulator */}
-          <div className="bg-white rounded-3xl shadow-2xl border border-purple-100 p-8 md:p-12">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                Vous voulez voir l'impact sur <span className="text-purple-600">vos projets ?</span>
-              </h3>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Découvrez en 2 minutes le potentiel d'optimisation spécifique à votre contexte
-              </p>
-            </div>
+          {/* Integrated Chat Simulator - Enhanced */}
+          <div className="bg-gradient-to-br from-purple-50 via-white to-blue-50 rounded-3xl shadow-2xl border border-purple-100 p-8 md:p-12 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-100/20 to-blue-100/20 opacity-50"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-purple-200/30 to-transparent rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-blue-200/30 to-transparent rounded-full blur-2xl"></div>
             
-            <div className="max-w-4xl mx-auto">
-              <ChatInterface 
-                language="fr"
-                customActions={[
-                  {
-                    label: "🚀 Simulateur ROI",
-                    icon: <MdAnalytics className="w-4 h-4" />,
-                    onClick: () => {}
-                  },
-                  {
-                    label: "📋 Nos Cas d'Usage",
-                    icon: <MdDashboard className="w-4 h-4" />,
-                    onClick: () => {}
-                  },
-                  {
-                    label: "💬 Parler à un Expert",
-                    icon: <MdMail className="w-4 h-4" />,
-                    onClick: () => {}
-                  }
-                ]}
-                transparent={true}
-              />
+            <div className="relative z-10">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center justify-center px-6 py-3 bg-purple-100 rounded-full border border-purple-200 mb-6">
+                  <MdAnalytics className="w-5 h-5 text-purple-600 mr-2" />
+                  <span className="text-purple-700 font-semibold text-sm">Simulateur ROI Intégré</span>
+                </div>
+                
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                  Calculez votre <span className="text-purple-600">ROI en temps réel</span>
+                </h3>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  Simulateur intelligent intégré à la page pour une analyse immédiate de vos projets
+                </p>
+              </div>
+              
+              {/* Embedded Aitenders ROI Simulator Final */}
+              <AitendersSimulatorFinal useCase="UC2" className="w-full" />
+              
             </div>
           </div>
         </div>
