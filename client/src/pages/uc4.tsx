@@ -17,7 +17,7 @@ import { FaUsers, FaShieldAlt, FaChartBar, FaFileAlt, FaCogs } from "react-icons
 import ContactSection from "@/components/contact-section";
 import Header from "@/components/header";
 import UC3AnalysisCard from "@/components/UC3AnalysisCard";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 // Import client logos
@@ -38,6 +38,40 @@ import uc4ThirdFeatureImage from "@assets/43_1755177874563.png";
 import uc4HeroImage from "@assets/HERO UC 4_1755793077078.png";
 
 export default function UC4Page() {
+  // Scroll animation state
+  const [visibleElements, setVisibleElements] = useState(new Set());
+  const observerRef = useRef(null);
+
+  // Register element for scroll animation
+  const registerElement = (id, element) => {
+    if (element && observerRef.current) {
+      element.setAttribute('data-scroll-id', id);
+      observerRef.current.observe(element);
+    }
+    return element;
+  };
+
+  // Setup intersection observer for scroll animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.getAttribute('data-scroll-id');
+          if (entry.isIntersecting) {
+            setVisibleElements(prev => new Set([...prev, id]));
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    );
+    
+    observerRef.current = observer;
+    return () => observer.disconnect();
+  }, []);
+
   // Target audience data with interactive content - UC4 adapted
   const targetAudiences = [
     {
@@ -247,7 +281,13 @@ export default function UC4Page() {
         <div className="content-boundary relative z-10">
           
           {/* Content Section - Top */}
-          <div className="text-center mb-16 md:mb-20 lg:mb-24">
+          <div 
+            ref={(el) => registerElement('hero-content', el)}
+            data-scroll-id="hero-content"
+            className={`text-center mb-16 md:mb-20 lg:mb-24 transition-all duration-1000 ${
+              visibleElements.has('hero-content') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             {/* Badge */}
             <div className="mb-8 md:mb-12">
               <Badge className="bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm">
@@ -283,7 +323,13 @@ export default function UC4Page() {
           </div>
           
           {/* Hero Image Section - Bottom */}
-          <div className="flex justify-center">
+          <div 
+            ref={(el) => registerElement('hero-image', el)}
+            data-scroll-id="hero-image"
+            className={`flex justify-center transition-all duration-1000 delay-200 ${
+              visibleElements.has('hero-image') ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+            }`}
+          >
             <div className="relative w-full max-w-6xl">
               <img
                 src={uc4HeroImage}
@@ -334,7 +380,12 @@ export default function UC4Page() {
         <div className="content-boundary relative z-10">
           
           {/* Main Feature Card */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20"
+          <div 
+            ref={(el) => registerElement('pain-points-card', el)}
+            data-scroll-id="pain-points-card"
+            className={`bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20 transition-all duration-1000 delay-300 ${
+              visibleElements.has('pain-points-card') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
                style={{
                  boxShadow: '0 32px 64px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.05)'
                }}>
@@ -405,7 +456,13 @@ export default function UC4Page() {
         </div>
         
         <div className="content-boundary relative z-10">
-          <div className="text-center mb-12 md:mb-16 lg:mb-20">
+          <div 
+            ref={(el) => registerElement('solution-header', el)}
+            data-scroll-id="solution-header"
+            className={`text-center mb-12 md:mb-16 lg:mb-20 transition-all duration-1000 delay-200 ${
+              visibleElements.has('solution-header') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-blue-600">copilote IA</span> qui fait parler vos contrats</h1>
             <h3 className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Chaque clause utile, chaque décision sécurisée : accédez aux éléments clés de vos contrats dès le jour 1, sans relecture fastidieuse.
@@ -413,7 +470,13 @@ export default function UC4Page() {
           </div>
 
           {/* Feature 1: Fiche contrat intelligente - Text Left, Card Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
+          <div 
+            ref={(el) => registerElement('feature-1', el)}
+            data-scroll-id="feature-1"
+            className={`grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24 transition-all duration-1000 delay-400 ${
+              visibleElements.has('feature-1') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+            }`}
+          >
             <div className="order-1">
 
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
@@ -446,7 +509,13 @@ export default function UC4Page() {
             </div>
           </div>
           {/* Feature 2: Accès ciblé aux clauses critiques - Text Left, Card Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
+          <div 
+            ref={(el) => registerElement('feature-2', el)}
+            data-scroll-id="feature-2"
+            className={`grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24 transition-all duration-1000 delay-600 ${
+              visibleElements.has('feature-2') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+            }`}
+          >
             <div className="order-1 lg:order-2">
 
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
@@ -479,7 +548,13 @@ export default function UC4Page() {
           </div>
 
           {/* Feature 3: Q&A Contractuel - Text Left, Card Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
+          <div 
+            ref={(el) => registerElement('feature-3', el)}
+            data-scroll-id="feature-3"
+            className={`grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24 transition-all duration-1000 delay-800 ${
+              visibleElements.has('feature-3') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+            }`}
+          >
             <div className="order-1">
 
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
@@ -522,7 +597,13 @@ export default function UC4Page() {
         <div className="content-boundary">
 
           {/* User-Focused Results Section - Before KPIs */}
-          <div className="mb-20 md:mb-24 lg:mb-28">
+          <div 
+            ref={(el) => registerElement('user-results', el)}
+            data-scroll-id="user-results"
+            className={`mb-20 md:mb-24 lg:mb-28 transition-all duration-1000 delay-300 ${
+              visibleElements.has('user-results') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             <div className="text-center mb-12 md:mb-16">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
                 Ce que nos utilisateurs obtiennent concrètement pour les petits projets en exécution
@@ -616,7 +697,13 @@ export default function UC4Page() {
           </div>
 
           {/* KPI Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div 
+            ref={(el) => registerElement('kpi-section', el)}
+            data-scroll-id="kpi-section"
+            className={`grid grid-cols-1 lg:grid-cols-3 gap-8 transition-all duration-1000 delay-400 ${
+              visibleElements.has('kpi-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
 
             {/* KPI 1 */}
             <div className="group">
@@ -681,7 +768,13 @@ export default function UC4Page() {
 
         <div className="content-boundary relative z-10">
           {/* Section Header */}
-          <div className="text-center mb-16 md:mb-20 lg:mb-24">
+          <div 
+            ref={(el) => registerElement('toppings-header', el)}
+            data-scroll-id="toppings-header"
+            className={`text-center mb-16 md:mb-20 lg:mb-24 transition-all duration-1000 delay-200 ${
+              visibleElements.has('toppings-header') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             <div className="inline-flex items-center justify-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6 md:mb-8">
               <MdStars className="w-5 h-5 text-yellow-400 mr-2" />
               <span className="text-white font-semibold text-sm md:text-base">Fonctionnalités Additionnelles</span>
@@ -697,7 +790,13 @@ export default function UC4Page() {
           </div>
 
           {/* Toppings Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+          <div 
+            ref={(el) => registerElement('toppings-grid', el)}
+            data-scroll-id="toppings-grid"
+            className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 transition-all duration-1000 delay-400 ${
+              visibleElements.has('toppings-grid') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
 
             {/* Recherche Thématique */}
             <div className="group">
@@ -921,10 +1020,24 @@ export default function UC4Page() {
           </div>
 
           {/* Client Logos Scrolling Banner */}
-          <ClientLogos />
+          <div 
+            ref={(el) => registerElement('client-logos', el)}
+            data-scroll-id="client-logos"
+            className={`transition-all duration-1000 delay-300 ${
+              visibleElements.has('client-logos') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
+            <ClientLogos />
+          </div>
 
           {/* Simulateur ROI Intégré */}
-          <div className="bg-white rounded-3xl shadow-2xl border border-purple-100 p-8 md:p-12">
+          <div 
+            ref={(el) => registerElement('roi-simulator', el)}
+            data-scroll-id="roi-simulator"
+            className={`bg-white rounded-3xl shadow-2xl border border-purple-100 p-8 md:p-12 transition-all duration-1000 delay-500 ${
+              visibleElements.has('roi-simulator') ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+            }`}
+          >
             <div className="text-center mb-8">
               <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                 Simulateur ROI Intégré
