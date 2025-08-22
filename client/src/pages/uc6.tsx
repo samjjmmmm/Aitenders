@@ -761,12 +761,12 @@ export default function UC6Page() {
 
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Exigences natives aux livrables</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  Chaque livrable hérite automatiquement des exigences métier et techniques pertinentes, tracées depuis sa conception.
+                  Chaque livrable hérite automatiquement des exigences métier et techniques pertinentes, depuis sa conception et une traçabilité précise, depuis et au plus proche possible totalement.
                 </p>
 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center text-blue-400 font-medium">
-                    <span className="text-sm">Livrable natifs</span>
+                    <span className="text-sm">Exigences natives</span>
                     <MdAutoAwesome className="w-4 h-4 ml-2" />
                   </div>
                   <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
@@ -791,7 +791,7 @@ export default function UC6Page() {
 
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Gestion des exigences client</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  Suivi automatisé des changements contractuels, validation et impact sur la performance consolidée projet.
+                  Déploiement automatisé des changements exigences de base comportant validation et impact sur la performance consolidée projet par attributs intelligents.
                 </p>
 
                 <div className="flex items-center justify-between">
@@ -821,7 +821,7 @@ export default function UC6Page() {
 
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Couverture de conformité intelligente</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  Contrôle permanent et automatisé de toutes actions métier, technique et qualité contre toutes les dérives.
+                  Contrôle permanent et automatisé de toutes actions métier, technique et qualité contre toutes les dérives pour atteindre la conformité au contrat.
                 </p>
 
                 <div className="flex items-center justify-between">
@@ -851,7 +851,7 @@ export default function UC6Page() {
 
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Auditages tracés</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  Centralisez l'auditabilité avec la genèse complète qui automatiquement référence, justifie et démontre.
+                  Chaque décision est documentée et l'auditabilité automatique est basée sur les preuves et sa traçabilité pour compléter le projet à tout moment.
                 </p>
 
                 <div className="flex items-center justify-between">
@@ -879,9 +879,9 @@ export default function UC6Page() {
                   <MdGroups className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Collaboration multi-équipementment</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Collaboration multi-équipements</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  Des espaces collaboratifs intelligents qui coordonnent automatiquement chaque acteur métier et technique.
+                  Un espace collectif de chaque discipline coordination automatiquement chaque acteur métier et techniques dans intervenantion.
                 </p>
 
                 <div className="flex items-center justify-between">
