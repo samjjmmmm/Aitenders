@@ -40,7 +40,7 @@ export default function UC2Page() {
   const { t, currentLanguage, changeLanguage, languages } = useGlobalTranslations();
 
   // Legacy translations object - to be removed gradually
-  const legacyT = {
+  const legacyT: Record<string, any> = {
     fr: {
       // Hero Section
       badge: "Pilotez les offres moyennes",

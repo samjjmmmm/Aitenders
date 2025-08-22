@@ -27,13 +27,13 @@ export function TranslationProvider({ children }: TranslationProviderProps) {
   const [currentLanguage, setCurrentLanguage] = useState<string>('fr');
 
   // Fetch available languages
-  const { data: languages = [] } = useQuery({
+  const { data: languages = [] } = useQuery<Language[]>({
     queryKey: ['/api/translations/languages'],
     staleTime: 1000 * 60 * 10, // 10 minutes
   });
 
   // Fetch translations for current language
-  const { data: translations = {}, isLoading } = useQuery({
+  const { data: translations = {}, isLoading } = useQuery<Record<string, string>>({
     queryKey: ['/api/translations', currentLanguage],
     queryFn: async () => {
       const response = await fetch(`/api/translations/${currentLanguage}`);
