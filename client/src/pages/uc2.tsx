@@ -427,7 +427,7 @@ export default function UC2Page() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
-                  <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">{t('uc2.hero.badge')}</Badge>
+                  <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Pilotez les offres moyennes</Badge>
                 </motion.div>
 
                 <motion.h1 
@@ -436,7 +436,7 @@ export default function UC2Page() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
                 >
-                  {t('uc2.hero.title')} <span className="text-purple-600">{t('uc2.hero.span')}</span>
+                  Découvrez, pilotez et sécurisez chaque clause <span className="text-purple-600">dès le premier jour.</span>
                 </motion.h1>
 
                 <motion.p 
@@ -461,14 +461,14 @@ export default function UC2Page() {
                   size="lg" 
                   className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
                 >
-                  {t('uc2.hero.demoButton')}
+                  Réservez une Démo
                 </Button>
                 
                 <Button 
                   variant="ghost" 
                   className="text-blue-600 hover:text-blue-700 hover:bg-blue-50/80 px-6 py-4 text-xl font-medium underline decoration-2 underline-offset-4 rounded-2xl transition-all duration-300"
                 >
-                  Testez l'impact
+                  Testez l'impact →
                 </Button>
               </motion.div>
           </div>
