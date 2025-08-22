@@ -135,7 +135,7 @@ const uc1TranslationKeys = {
 
   // Journey
   'uc1.journey.title1': 'Analysez le cahier des charges',
-  'uc1.journey.description1': 'Importez votre appel d\'offres et laissez l'IA extraire automatiquement toutes les exigences clés',
+  'uc1.journey.description1': 'Importez votre appel d\'offres et laissez l\'IA extraire automatiquement toutes les exigences clés',
   'uc1.journey.title2': 'Générez votre réponse structurée',
   'uc1.journey.description2': 'Créez instantanément une proposition complète avec argumentaires adaptés et conformité assurée',
   'uc1.journey.title3': 'Personnalisez et finalisez',
@@ -173,7 +173,7 @@ const uc1TranslationKeys = {
 
   // Journey Section (detailed)
   'uc1.journey.title1': 'Analysez le cahier des charges',
-  'uc1.journey.description1': 'Importez votre appel d\'offres et laissez l'IA extraire automatiquement toutes les exigences clés',
+  'uc1.journey.description1': 'Importez votre appel d\'offres et laissez l\'IA extraire automatiquement toutes les exigences clés',
   'uc1.journey.title2': 'Générez votre réponse structurée',
   'uc1.journey.description2': 'Créez instantanément une proposition complète avec argumentaires adaptés et conformité assurée',
   'uc1.journey.title3': 'Personnalisez et finalisez',
@@ -256,6 +256,23 @@ const uc1TranslationKeys = {
   'uc1.roi_simulator.badge': 'Simulateur ROI Intégré',
   'uc1.roi_simulator.headline': 'Calculez votre ROI en temps réel',
   'uc1.roi_simulator.subtext': 'Simulateur intelligent intégré à la page pour une analyse immédiate de vos petits projets',
+
+  // Results Section - Role-based Benefits
+  'uc1.results.role1_title': 'Responsables d\'Offres',
+  'uc1.results.role1_subtitle': 'Analyse et validation rapide des opportunités',
+  'uc1.results.role1_text1': 'Transformation complète du processus d\'analyse des appels d\'offres pour une prise de décision éclairée et rapide.',
+  'uc1.results.role1_benefit1': '75% de temps d\'analyse économisé',
+  'uc1.results.role1_benefit2': '100% des critères critiques identifiés',
+  'uc1.results.role1_benefit3': 'Go/No-Go immédiat et documenté',
+  'uc1.results.role1_benefit4': 'Zéro oubli critique, maîtrise totale',
+
+  'uc1.results.role2_title': 'Directeurs Commerciaux',
+  'uc1.results.role2_subtitle': 'Vision stratégique et décision commerciale',
+  'uc1.results.role2_text1': 'Vision stratégique claire et prise de décision commercial optimisée grâce à l\'intelligence artificielle avancée.',
+  'uc1.results.role2_benefit1': 'Décision go/no-go immédiate',
+  'uc1.results.role2_benefit2': 'Analyse des risques automatisée',
+  'uc1.results.role2_benefit3': 'Optimisation du pipeline commercial',
+  'uc1.results.role2_benefit4': 'ROI prévisible et documenté',
 
   // Chat Actions
   'uc1.chat_actions.use_cases': 'Nos cas d\'usage',
@@ -765,8 +782,9 @@ const allUCEnglishTranslations = {
   'uc1.chat_actions.contact': 'Contact Expert',
 };
 
-// UC3 English
-'uc3.hero.badge': 'Master large projects',
+// UC3 English Translation Keys  
+const uc3EnglishTranslationKeys = {
+  'uc3.hero.badge': 'Master large projects',
 'uc3.hero.title': 'Coordinate and manage your mega-projects',
 'uc3.hero.span': 'with surgical precision.',
 'uc3.hero.description': 'The enterprise solution for large international projects (> €10M).',
