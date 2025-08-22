@@ -38,78 +38,7 @@ import { useGlobalTranslations } from "@/contexts/TranslationContext";
 
 
 export default function UC1Page() {
-  const { t, currentLanguage, changeLanguage, languages } = useGlobalTranslations();
-
-  // Legacy translations object - to be removed gradually
-  const legacyT: Record<string, any> = {
-    fr: {
-      // Hero Section
-      badge: "Accélérez l'Analyse Des Offres Répétitives",
-      heroTitle: "Une analyse go/no go",
-      heroSpan: "immediate",
-      heroTitle2: ", alignée avec vos",
-      heroSpan2: "processus interne.",
-      heroDescription: "La seule plateforme pensée pour les petits projets à cycles courts : Agents IA d'analyse des points clés, automatisation d'une synthèse et validation guidée. Vous transformez des Heures de relecture et d'analyse en",
-      heroDescriptionSpan: "minutes",
-      heroDescription2: ", gagnez en sérénité et livrez une offre solide et incontestable — sans surcharge ni faux départs.",
-      demoButton: "Réservez une Démo",
-      downloadButton: "Téléchargez le cas d'usage →",
-
-      // Pain Points Section
-      painPointsHeadline: "Go / No-Go immédiat",
-      painPointsHeadlineSpan: ", process interne garanti",
-      painPointsText1: "Sur les petits projets, la pression est double : analyser vite et prouver que tout a été lu, compris et contrôlé.",
-      painPointsText2: "Sans support transversal (qualité, juridique), chaque oubli peut coûter cher en marge en exécution et du coup en crédibilité interne.",
-      painPointsText3: "Avec Aitenders, vous obtenez en quelques minutes une vision claire et priorisée de vos documents pour un go/no‑go immédiat. La plateforme guide ensuite la validation et archive chaque contrôle, garantissant que vos obligations internes sont remplies sans surcharge.",
-      painPointsContactButton: "Contact Commercial",
-      painPointsDemoButton: "Voir la Démo Rapide"
-    },
-    en: {
-      // Hero Section
-      badge: "Accelerate Repetitive Offer Analysis",
-      heroTitle: "Immediate go/no-go analysis",
-      heroSpan: "immediate",
-      heroTitle2: ", aligned with your",
-      heroSpan2: "internal processes.",
-      heroDescription: "The only platform designed for small projects with short cycles: AI agents for key point analysis, automated synthesis and guided validation. You transform hours of review and analysis into",
-      heroDescriptionSpan: "minutes",
-      heroDescription2: ", gain peace of mind and deliver a solid and uncontestable offer — without overload or false starts.",
-      demoButton: "Book a Demo",
-      downloadButton: "Download the use case →",
-
-      // Pain Points Section
-      painPointsHeadline: "Immediate Go / No-Go",
-      painPointsHeadlineSpan: ", internal process guaranteed",
-      painPointsText1: "On small projects, the pressure is twofold: analyze quickly and prove that everything has been read, understood and controlled.",
-      painPointsText2: "Without cross-functional support (quality, legal), each oversight can cost dearly in execution margin and consequently in internal credibility.",
-      painPointsText3: "With Aitenders, you get a clear and prioritized view of your documents in minutes for immediate go/no‑go. The platform then guides validation and archives each check, ensuring your internal obligations are fulfilled without overload.",
-      painPointsContactButton: "Commercial Contact",
-      painPointsDemoButton: "See Quick Demo"
-    },
-    es: {
-      // Hero Section
-      badge: "Acelera el Análisis de Ofertas Repetitivas",
-      heroTitle: "Análisis go/no-go",
-      heroSpan: "inmediato",
-      heroTitle2: ", alineado con sus",
-      heroSpan2: "procesos internos.",
-      heroDescription: "La única plataforma pensada para proyectos pequeños con ciclos cortos: Agentes IA de análisis de puntos clave, automatización de síntesis y validación guiada. Transformas horas de revisión y análisis en",
-      heroDescriptionSpan: "minutos",
-      heroDescription2: ", ganas tranquilidad y entregas una oferta sólida e incontestable — sin sobrecarga ni falsos arranques.",
-      demoButton: "Reservar una Demo",
-      downloadButton: "Descargar el caso de uso →",
-
-      // Pain Points Section
-      painPointsHeadline: "Go / No-Go inmediato",
-      painPointsHeadlineSpan: ", proceso interno garantizado",
-      painPointsText1: "En proyectos pequeños, la presión es doble: analizar rápido y demostrar que todo ha sido leído, entendido y controlado.",
-      painPointsText2: "Sin apoyo transversal (calidad, jurídico), cada olvido puede costar caro en margen de ejecución y por ende en credibilidad interna.",
-      painPointsText3: "Con Aitenders, obtienes en minutos una visión clara y priorizada de tus documentos para un go/no‑go inmediato. La plataforma luego guía la validación y archiva cada control, garantizando que tus obligaciones internas se cumplan sin sobrecarga.",
-      painPointsContactButton: "Contacto Comercial",
-      painPointsDemoButton: "Ver Demo Rápida"
-    }
-  };
-
+  const { t } = useGlobalTranslations();
   const [selectedTopping, setSelectedTopping] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
@@ -725,10 +654,10 @@ export default function UC1Page() {
             {/* Content UC1 - Top */}
             <div className="w-full max-w-5xl px-4">
               <div className="mb-12">
-                <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">{legacyT[currentLanguage]?.badge || legacyT['fr'].badge}</Badge>
+                <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">{t('uc1.hero.badge')}</Badge>
 
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                  {legacyT[currentLanguage]?.heroTitle || legacyT['fr'].heroTitle} <span className="text-purple-600">{legacyT[currentLanguage]?.heroSpan || legacyT['fr'].heroSpan}</span>{legacyT[currentLanguage]?.heroTitle2 || legacyT['fr'].heroTitle2} <span className="text-purple-600">{legacyT[currentLanguage]?.heroSpan2 || legacyT['fr'].heroSpan2}</span>
+                  {t('uc1.hero.title')} <span className="text-purple-600">{t('uc1.hero.span')}</span>{t('uc1.hero.title2')} <span className="text-purple-600">{t('uc1.hero.span2')}</span>
                 </h1>
 
                 <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]">
@@ -743,14 +672,14 @@ export default function UC1Page() {
                   className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
                   onClick={() => setIsBookingModalOpen(true)}
                 >
-                  {legacyT[currentLanguage]?.demoButton || legacyT['fr'].demoButton}
+                  {t('uc1.hero.demoButton')}
                 </Button>
                 
                 <Button 
                   variant="ghost" 
                   className="text-blue-600 hover:text-blue-700 hover:bg-blue-50/80 px-6 py-4 text-xl font-medium underline decoration-2 underline-offset-4 rounded-2xl transition-all duration-300"
                 >
-                  {legacyT[currentLanguage]?.downloadButton || legacyT['fr'].downloadButton}
+                  {t('uc1.hero.downloadButton')}
                 </Button>
               </div>
 
