@@ -494,9 +494,6 @@ export default function UC2Page() {
               </div>
             </div>
             <div className="order-1 lg:order-2">
-              <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
-                <MdGroups className="w-10 h-10 text-white" />
-              </div>
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Contrôlez chaque  <span className="text-orange-600">clause critique</span> de votre projet</h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                 Aitenders identifie et hiérarchise automatiquement toutes les clauses sensibles : responsabilités, engagements, pénalités et conditions critiques. 
@@ -516,9 +513,6 @@ export default function UC2Page() {
           {/* Feature 3: Validation guidée - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-1">
-              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
-                <MdSecurity className="w-10 h-10 text-white" />
-              </div>
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Pilotez chaque <span className="text-green-600">évolution contractuelle</span> en temps réel</h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
               Toutes vos questions-réponses, versions et ajustements documentaires sont consolidés et tracés automatiquement par l’IA. 
