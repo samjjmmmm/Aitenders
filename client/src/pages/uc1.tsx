@@ -15,7 +15,7 @@ import { FaUsers, FaShieldAlt, FaChartBar, FaFileAlt, FaCogs } from "react-icons
 import ContactSection from "@/components/contact-section";
 import Header from "@/components/header";
 import UC3AnalysisCard from "@/components/UC3AnalysisCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 // Import client logos
@@ -37,6 +37,28 @@ import { AitendersSimulatorFinal } from "@/components/aitenders-simulator-final"
 export default function UC1Page() {
   const [selectedTopping, setSelectedTopping] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Scroll animations
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with animation classes
+    const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-in');
+    animatedElements.forEach(el => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   // Topping modal data for UC1
   const toppingsData = {
@@ -720,7 +742,7 @@ export default function UC1Page() {
         <div className="max-w-7xl mx-auto relative z-10">
 
           {/* Main Feature Card */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20"
+          <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20 fade-in-up"
                style={{
                  boxShadow: '0 32px 64px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.05)'
                }}>
@@ -797,7 +819,7 @@ export default function UC1Page() {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-12 md:mb-16 lg:mb-20">
+          <div className="text-center mb-12 md:mb-16 lg:mb-20 fade-in-up">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-blue-600">copilote IA</span> qui accélère l'analyse de vos petits projets</h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
               Décidez vite et prouvez que tout a été contrôlé, en moins de 48h.
@@ -806,7 +828,7 @@ export default function UC1Page() {
 
           {/* Feature 1: Structuration IA immédiate - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 lg:gap-32 items-center mb-16 md:mb-20 lg:mb-24">
-            <div className="order-1">
+            <div className="order-1 fade-in-left">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Structuration instantanée pour un premier "go / no-go"  <span className="text-purple-600">immédiat</span> </h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                 Grâce aux assistants IA, vos documents sont instantanément analysés, classés et priorisés : critères d’intérêt, points critiques et preuves associées sont détectés en quelques minutes.
@@ -840,7 +862,7 @@ export default function UC1Page() {
 
           {/* Feature 2: Synthèse visuelle claire - Text Right, Card Left */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 lg:gap-32 items-center mb-16 md:mb-20 lg:mb-24">
-            <div className="order-2 lg:order-1">
+            <div className="order-2 lg:order-1 fade-in-left">
               <div className="relative flex justify-center items-center h-full px-0 py-6">
                 <img
                   src={containerUc1SecondImage}
@@ -855,7 +877,7 @@ export default function UC1Page() {
                 />
               </div>
             </div>
-            <div className="order-1 lg:order-2">
+            <div className="order-1 lg:order-2 fade-in-right">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Accédez à une vision  <span className="text-orange-600">claire</span> de votre projet</h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                Aitenders génère une vue claire et priorisée de l'ensemble des critères détectés, avec leurs valeurs et les liens directs vers les documents sources.
@@ -872,7 +894,7 @@ export default function UC1Page() {
 
           {/* Feature 3: Validation guidée - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 lg:gap-32 items-center mb-16 md:mb-20 lg:mb-24">
-            <div className="order-1">
+            <div className="order-1 fade-in-left">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Validez et archivez chaque point <span className="text-green-600">sans effort</span></h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                 Aitenders vous guide pas à pas pour confirmer, ajuster ou rejeter chaque élément identifié par l'IA.
@@ -887,7 +909,7 @@ export default function UC1Page() {
                 Finies les zones grises : tout est validé et tracé.
               </p>
             </div>
-            <div className="order-2">
+            <div className="order-2 fade-in-right">
               <div className="relative flex justify-center items-center h-full px-0 py-6">
                 <img
                   src={containerUc1ThirdImage}
@@ -912,7 +934,7 @@ export default function UC1Page() {
 
 
           <div className="mb-20 md:mb-24 lg:mb-28">
-          <div className="text-center mb-12 md:mb-16">
+          <div className="text-center mb-12 md:mb-16 fade-in-up">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Ce que nos utilisateurs obtiennent concrètement pour les petites offres</h3>
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Des résultats mesurables pour chaque profil d'utilisateur</p>
             </div>
@@ -920,7 +942,7 @@ export default function UC1Page() {
           {/* Results Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Directeur commercial directeyr de projet offre */}
-            <div className="group">
+            <div className="group fade-in-left">
               <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4">
@@ -965,7 +987,7 @@ export default function UC1Page() {
 
 
             {/* chef de projets */}
-            <div className="group">
+            <div className="group fade-in-right">
               <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4">
@@ -1014,7 +1036,7 @@ export default function UC1Page() {
         </div>
 
         {/* KPI Grid */}
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto fade-in-up">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
 
             {/* KPI 1 - Time Reduction */}
@@ -1118,7 +1140,7 @@ export default function UC1Page() {
 
         <div className="max-w-7xl mx-auto relative z-10">
           {/* Section Header */}
-          <div className="text-center mb-16 md:mb-20 lg:mb-24">
+          <div className="text-center mb-16 md:mb-20 lg:mb-24 fade-in-up">
             <div className="inline-flex items-center justify-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6 md:mb-8">
               <MdStars className="w-5 h-5 text-yellow-400 mr-2" />
               <span className="text-white font-semibold text-sm md:text-base">Fonctionnalités Wow</span>
@@ -1137,7 +1159,7 @@ export default function UC1Page() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
 
             {/* 1️⃣ Résumé automatique du projet */}
-            <div className="group">
+            <div className="group fade-in-up">
               <div 
                 className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
                 onClick={() => handleToppingClick('project-summary')}
@@ -1173,7 +1195,7 @@ export default function UC1Page() {
             </div>
 
             {/* 2️⃣ Détection des exigences implicites */}
-            <div className="group">
+            <div className="group fade-in-up">
               <div 
                 className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
                 onClick={() => handleToppingClick('implicit-requirements')}
@@ -1209,7 +1231,7 @@ export default function UC1Page() {
             </div>
 
             {/* 3️⃣ Résumé intelligent de chaque document */}
-            <div className="group">
+            <div className="group fade-in-up">
               <div 
                 className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
                 onClick={() => handleToppingClick('document-summary')}
@@ -1245,7 +1267,7 @@ export default function UC1Page() {
             </div>
 
             {/* 4️⃣ Gestion dynamique de la hiérarchie documentaire */}
-            <div className="group">
+            <div className="group fade-in-up">
               <div 
                 className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
                 onClick={() => handleToppingClick('document-hierarchy')}
@@ -1281,7 +1303,7 @@ export default function UC1Page() {
             </div>
 
             {/* 5️⃣ Catégorisation intelligente & arbre thématique */}
-            <div className="group">
+            <div className="group fade-in-up">
               <div 
                 className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
                 onClick={() => handleToppingClick('content-categorization')}
@@ -1317,7 +1339,7 @@ export default function UC1Page() {
             </div>
 
             {/* 6️⃣ Chat contextuel avec le projet */}
-            <div className="group">
+            <div className="group fade-in-up">
               <div 
                 className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full cursor-pointer"
                 onClick={() => handleToppingClick('project-chat')}
@@ -1372,7 +1394,7 @@ export default function UC1Page() {
       {/* Real Projects Section */}
       <section className="py-16 md:py-20 lg:py-24 px-4 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12 md:mb-16 lg:mb-20">
+          <div className="text-center mb-12 md:mb-16 lg:mb-20 fade-in-up">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:mb-8 leading-[1.1] tracking-tight">
               Nos <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">appels d'offres référence</span> sur les petits projets
             </h2>
@@ -1521,7 +1543,7 @@ export default function UC1Page() {
           </div>
 
           {/* Client Logos Scrolling Banner */}
-          <div className="mb-16 md:mb-20">
+          <div className="mb-16 md:mb-20 fade-in-up">
             <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 overflow-hidden">
               <div className="flex items-center justify-center mb-4">
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Ils nous font confiance pour leurs offres répétitives</h3>
@@ -1546,7 +1568,7 @@ export default function UC1Page() {
           </div>
 
           {/* Integrated Chat Simulator - Enhanced */}
-          <div className="bg-gradient-to-br from-purple-50 via-white to-blue-50 rounded-3xl shadow-2xl border border-purple-100 p-8 md:p-12 relative overflow-hidden">
+          <div className="bg-gradient-to-br from-purple-50 via-white to-blue-50 rounded-3xl shadow-2xl border border-purple-100 p-8 md:p-12 relative overflow-hidden fade-in-up">
             {/* Background decoration */}
             <div className="absolute inset-0 bg-gradient-to-r from-purple-100/20 to-blue-100/20 opacity-50"></div>
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-purple-200/30 to-transparent rounded-full blur-3xl"></div>
