@@ -49,7 +49,7 @@ export default function UC2Page() {
       heroDescription: "La seule plateforme conçue pour transformer des dossiers moyens (1 à 10 M€) en une vision contractuelle claire dès le premier jour : structuration IA du périmètre, détection immédiate des clauses critiques et pilotage dynamique des Q&A et versions. Vous réduisez de moitié votre temps d'analyse, rassurez votre direction et livrez une réponse compétitive, sans risque de dernière minute.",
       demoButton: "Réservez une Démo",
       downloadButton: "Téléchargez le cas d'usage →",
-      
+
       // Target Audiences
       proposalManagers: "Proposal Managers",
       proposalManagersDesc: "Gérez des projets moyens avec complexité modérée tout en maintenant la qualité et les délais. Coordonnez efficacement les équipes techniques et commerciales pour produire des offres structurées et convaincantes.",
@@ -61,7 +61,7 @@ export default function UC2Page() {
       projectDirectorsDesc: "Pilotez la livraison de projets moyens avec des outils de suivi et de contrôle avancés. Assurez la conformité opérationnelle et la satisfaction client sur l'ensemble du portfolio.",
       operationsManagers: "Responsables opérationnels",
       operationsManagersDesc: "Standardisez les processus opérationnels pour les projets moyens avec une approche méthodique. Optimisez les ressources et réduisez les délais grâce à l'automatisation intelligente.",
-      
+
       // Pain Points
       painPoint1Title: "Complexité croissante difficile à gérer",
       painPoint1Desc: "Les projets moyens nécessitent plus de coordination et de ressources, créant des risques de dépassement et d'erreurs",
@@ -69,7 +69,7 @@ export default function UC2Page() {
       painPoint2Desc: "Manque de méthodologie claire pour gérer efficacement les projets de taille intermédiaire",
       painPoint3Title: "Coordination équipes complexe",
       painPoint3Desc: "Difficultés à aligner les équipes techniques et commerciales sur des projets multi-disciplinaires",
-      
+
       // Solutions
       solution1Title: "Gestion intelligente des projets moyens",
       solution1Desc: "IA spécialisée qui coordonne automatiquement les ressources et optimise les processus pour les projets intermédiaires",
@@ -77,7 +77,7 @@ export default function UC2Page() {
       solution2Desc: "Méthodologies éprouvées adaptées à la complexité des projets moyens avec personnalisation selon les besoins",
       solution3Title: "Contrôle qualité automatisé",
       solution3Desc: "Validation systématique des livrables et suivi proactif des risques pour maintenir l'excellence",
-      
+
       // User Journey
       journey1Title: "Analysez votre projet moyen",
       journey1Desc: "Importez vos documents et laissez l'IA structurer automatiquement les exigences et les ressources nécessaires",
@@ -85,13 +85,13 @@ export default function UC2Page() {
       journey2Desc: "Organisez efficacement les interactions entre équipes techniques et commerciales avec des workflows optimisés",
       journey3Title: "Livrez avec excellence",
       journey3Desc: "Suivez l'avancement en temps réel et assurez la qualité des livrables avec des contrôles automatisés",
-      
+
       // KPIs
       kpi1Desc: "Réduction du temps de coordination",
       kpi2Desc: "Amélioration de la qualité des livrables",
       kpi3Desc: "Délai moyen de structuration projet",
       kpi4Desc: "Traçabilité des processus",
-      
+
       // Differentiators
       diff1Title: "Solution Optimisée Projets Moyens",
       diff1Desc: "Conçue spécifiquement pour équilibrer complexité et efficacité sur les projets intermédiaires",
@@ -99,7 +99,7 @@ export default function UC2Page() {
       diff2Desc: "IA spécialisée dans la coordination multi-équipes et la gestion des dépendances",
       diff3Title: "Flexibilité et Standardisation",
       diff3Desc: "Processus adaptatifs qui s'ajustent à la complexité spécifique de chaque projet",
-      
+
       // Pain Points Section
       painPointsHeadline: "Votre offre, 100 % claire, 0 % surprise",
       painPointsText1: "Sur les projets moyen, vos équipes jonglent entre délais serrés, clauses critiques cachées et versions dispersées, au risque d'erreurs coûteuses et d'allers‑retours interminables.",
@@ -115,14 +115,14 @@ export default function UC2Page() {
       heroDescription: "The only platform designed to transform medium-size tenders (€1M–10M) into a clear contractual vision from the very first day: AI structuring of scope, immediate detection of critical clauses, and dynamic management of Q&As and versions. You cut analysis time in half, reassure your management, and deliver a competitive answer with no last-minute risk.",
       demoButton: "Book a Demo",
       downloadButton: "Download the use case →",
-      
+
       // Pain Points Section
       painPointsHeadline: "Your offer, 100% clear, 0% surprise",
       painPointsText1: "On medium-size projects, your teams juggle tight deadlines, hidden critical clauses and scattered versions—at the risk of costly errors and endless back-and-forths.",
       painPointsText2: "With Aitenders, automatically structure each tender from day one, instantly detect sensitive clauses, and manage your Q&As and versions in a central cockpit. Result: analysis twice as fast, no forgotten clauses, and a validated, competitive offer with no stress.",
       painPointsOptimizeButton: "Optimize Your Medium Projects!",
       painPointsDemoButton: "See the Demo",
-      
+
       // Target Audiences
       proposalManagers: "Proposal Manager, Contract Manager or Project Manager",
       proposalManagersDesc: "Start on day +1 with a structured and prioritized base generated by AI: every criterion is classified, every sensitive clause detected, every version tracked. You go from being under pressure to being a strategic pilot, able to prove your offer's solidity at any time.",
@@ -134,7 +134,7 @@ export default function UC2Page() {
       projectDirectorsDesc: "Manage the delivery of medium projects with advanced monitoring and control tools. Ensure operational compliance and customer satisfaction across the entire portfolio.",
       operationsManagers: "Operations Managers",
       operationsManagersDesc: "Standardize operational processes for medium projects with a methodical approach. Optimize resources and reduce delays through intelligent automation.",
-      
+
       // Solution Section Titles and Content
       solutionMainTitle: "Your AI co-pilot securing the management of your medium projects",
       solutionSubtitle: "Discover, manage and secure every clause from day one.",
@@ -147,7 +147,7 @@ export default function UC2Page() {
       feature3Title: "Manage every contractual change in real time",
       feature3Text: "All your Q&As, versions and document adjustments are consolidated and tracked automatically by AI. The Proposal Manager follows every change in real time, visualizes gaps, receives alerts, and ensures that nothing is forgotten or modified without validation. No more fragmented follow-ups by email or spreadsheets: everything is centralized in a smooth, reliable cockpit.",
       feature3Highlight: "No surprises, no version lost, no risk of omission",
-      
+
       // Legacy mappings for existing page structure
       painPoint1Title: "Growing complexity difficult to manage",
       painPoint1Desc: "Medium projects require more coordination and resources, creating risks of overruns and errors",
@@ -155,26 +155,26 @@ export default function UC2Page() {
       painPoint2Desc: "Lack of clear methodology to efficiently manage intermediate-sized projects",
       painPoint3Title: "Complex team coordination",
       painPoint3Desc: "Difficulties in aligning technical and commercial teams on multi-disciplinary projects",
-      
+
       solution1Title: "Intelligent medium project management",
       solution1Desc: "Specialized AI that automatically coordinates resources and optimizes processes for intermediate projects",
       solution2Title: "Standardized and flexible workflows",
       solution2Desc: "Proven methodologies adapted to medium project complexity with customization according to needs",
       solution3Title: "Automated quality control",
       solution3Desc: "Systematic validation of deliverables and proactive risk monitoring to maintain excellence",
-      
+
       journey1Title: "Analyze your medium project",
       journey1Desc: "Import your documents and let AI automatically structure requirements and necessary resources",
       journey2Title: "Coordinate your teams",
       journey2Desc: "Efficiently organize interactions between technical and commercial teams with optimized workflows",
       journey3Title: "Deliver with excellence",
       journey3Desc: "Track progress in real-time and ensure deliverable quality with automated controls",
-      
+
       kpi1Desc: "Reduction in coordination time",
       kpi2Desc: "Improvement in deliverable quality",
       kpi3Desc: "Average project structuring time",
       kpi4Desc: "Process traceability",
-      
+
       diff1Title: "Optimized Medium Project Solution",
       diff1Desc: "Specifically designed to balance complexity and efficiency on intermediate projects",
       diff2Title: "Advanced Collaborative Intelligence",
@@ -445,8 +445,7 @@ export default function UC2Page() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.7 }}
                 >
-
-                  La seule plateforme conçue pour transformer des dossiers moyens (1 à 10 M€) en une vision contractuelle claire dès le premier jour : structuration IA du périmètre, détection immédiate des clauses critiques et pilotage dynamique des Q&A et versions. Vous réduisez de moitié votre temps d’analyse, rassurez votre direction et livrez une réponse compétitive, sans risque de dernière minute. 
+                  {t('uc2.hero.description')}
                 </motion.p>
               </motion.div>
 
@@ -463,7 +462,7 @@ export default function UC2Page() {
                 >
                   {t('uc2.hero.demoButton')}
                 </Button>
-                
+
                 <Button 
                   variant="ghost" 
                   className="text-blue-600 hover:text-blue-700 hover:bg-blue-50/80 px-6 py-4 text-xl font-medium underline decoration-2 underline-offset-4 rounded-2xl transition-all duration-300"
@@ -499,7 +498,7 @@ export default function UC2Page() {
         </div>
       </section>
 
-      
+
       {/* Pain Points Section - Main Feature Card + Supporting Cards */}
       <section className="py-8 md:py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50/20 relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
@@ -548,28 +547,26 @@ export default function UC2Page() {
 
               {/* Main Headline */}
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Votre offre, 100 % claire, 0 % surprise  
+                {t('uc2.painPoints.headline')}
               </h2>
 
               {/* Body Copy */}
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-              Sur les projets moyen, vos équipes jonglent entre délais serrés, clauses critiques cachées et versions dispersées, au risque d’erreurs coûteuses et d’allers‑retours interminables.   
+                {t('uc2.painPoints.text1')}
               </p>
 
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-
-
-                Avec Aitenders, structurez automatiquement chaque dossier dès le jour 1, détectez instantanément les clauses sensibles et pilotez vos Q&A et versions dans un cockpit centralisé. Résultat : une analyse deux fois plus rapide, zéro clause oubliée, et une offre compétitive validée sans stress. 
+                {t('uc2.painPoints.text2')}
               </p>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mb-8 md:mb-12 lg:mb-16">
                 <Button className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 md:px-12 lg:px-16 py-4 md:py-6 lg:py-7 text-lg md:text-xl lg:text-2xl font-bold rounded-2xl md:rounded-3xl shadow-lg md:shadow-xl hover:shadow-xl md:hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 md:hover:-translate-y-2 hover:scale-105">
-                  Optimisez Vos Projets Moyens!
+                  {t('uc2.painPoints.optimizeButton')}
                 </Button>
                 <Button variant="outline" className="w-full sm:w-auto border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 md:px-10 lg:px-12 py-3 md:py-5 lg:py-6 text-base md:text-lg lg:text-xl font-semibold rounded-2xl md:rounded-3xl transition-all duration-300">
                   <MdPlayArrow className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 mr-2" />
-                  Voir la Démonstration
+                  {t('uc2.painPoints.demoButton')}
                 </Button>
               </div>
             </div>
@@ -668,7 +665,7 @@ export default function UC2Page() {
                 <br /><br />
                 Le Responsable Offre obtient en quelques minutes une vision claire des zones à risque, prête à être corrigée et validée sans perte de temps.
                 </p>
-          
+
               <p className="text-base md:text-lg font-semibold text-orange-600">
                 Une validation contractuelle proactive, dès le jour 1
               </p>
@@ -706,7 +703,7 @@ export default function UC2Page() {
           </div>
         </div>
       </section>
-      
+
 
         {/* User-Focused Results Section - UC2 */}
         <section className="py-16 md:py-20 lg:py-24 bg-white">
@@ -802,7 +799,7 @@ export default function UC2Page() {
               {/* KPI Content Box */}
               <div className="mt-16 md:mt-20 lg:mt-24 fade-in-up">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-                  
+
                   {/* KPI 1 - 50% du temps */}
                   <div className="group">
                     <Card className="h-full p-8 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 text-center">
@@ -846,7 +843,7 @@ export default function UC2Page() {
           </div>
         </section>
 
-        
+
         {/* Toppings Section - Wow Features & Additional Functionalities */}
       <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 relative overflow-hidden">
         {/* Background Effects */}
@@ -1065,7 +1062,7 @@ export default function UC2Page() {
 
           {/* 3 Real Projects Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 mb-16 md:mb-20">
-            
+
             {/* Project 1: Centre Logistique Régional */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -1077,18 +1074,18 @@ export default function UC2Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
                   <MdBusiness className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">Centre Logistique Régional</h3>
                 <div className="mb-4">
                   <Badge className="bg-purple-100 text-purple-800 font-medium">Logistique</Badge>
                 </div>
                 <div className="text-xl font-bold text-purple-600 mb-4">Offre : 8.5 Millions €</div>
-                
+
                 <p className="text-gray-600 leading-relaxed mb-6">
                   Construction d'un hub logistique moderne de 25,000 m² avec systèmes automatisés et aires de manœuvre. 
                   Coordination de 10 lots techniques spécialisés incluant manutention, sécurité et connectivité.
                 </p>
-                
+
                 <div className="space-y-3">
                   <h4 className="font-semibold text-gray-900 mb-3">Impact client :</h4>
                   <div className="flex items-center text-sm text-gray-700">
@@ -1122,18 +1119,18 @@ export default function UC2Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
                   <MdGpsFixed className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">Réhabilitation Quartier Urbain</h3>
                 <div className="mb-4">
                   <Badge className="bg-blue-100 text-blue-800 font-medium">Urbain</Badge>
                 </div>
                 <div className="text-xl font-bold text-blue-600 mb-4">Offre : 6.2 Millions €</div>
-                
+
                 <p className="text-gray-600 leading-relaxed mb-6">
                   Rénovation complète d'un quartier résidentiel avec 200 logements, espaces verts et commerces. 
                   Gestion coordonnée des réseaux, voiries et contraintes d'occupation sur 5 hectares.
                 </p>
-                
+
                 <div className="space-y-3">
                   <h4 className="font-semibold text-gray-900 mb-3">Impact client :</h4>
                   <div className="flex items-center text-sm text-gray-700">
@@ -1167,18 +1164,18 @@ export default function UC2Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6">
                   <MdSecurity className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">Campus Universitaire Moderne</h3>
                 <div className="mb-4">
                   <Badge className="bg-green-100 text-green-800 font-medium">Éducation</Badge>
                 </div>
                 <div className="text-xl font-bold text-green-600 mb-4">Offre : 4.8 Millions €</div>
-                
+
                 <p className="text-gray-600 leading-relaxed mb-6">
                   Construction d'un campus de 15,000 m² avec amphithéâtres, laboratoires et résidences étudiantes. 
                   Intégration de technologies numériques et espaces collaboratifs sur site de 8 hectares.
                 </p>
-                
+
                 <div className="space-y-3">
                   <h4 className="font-semibold text-gray-900 mb-3">Impact client :</h4>
                   <div className="flex items-center text-sm text-gray-700">
@@ -1213,14 +1210,14 @@ export default function UC2Page() {
             <div className="absolute inset-0 bg-gradient-to-r from-purple-100/20 to-blue-100/20 opacity-50"></div>
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-purple-200/30 to-transparent rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-blue-200/30 to-transparent rounded-full blur-2xl"></div>
-            
+
             <div className="relative z-10">
               <div className="text-center mb-6 md:mb-8">
                 <div className="inline-flex items-center justify-center px-4 md:px-6 py-2 md:py-3 bg-purple-100 rounded-full border border-purple-200 mb-4 md:mb-6">
                   <MdAnalytics className="w-4 h-4 md:w-5 md:h-5 text-purple-600 mr-2" />
                   <span className="text-purple-700 font-semibold text-xs md:text-sm">Simulateur ROI Intégré</span>
                 </div>
-                
+
                 <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 md:mb-4">
                   Calculez votre <span className="text-purple-600">ROI en temps réel</span>
                 </h3>
@@ -1228,10 +1225,10 @@ export default function UC2Page() {
                   Simulateur intelligent intégré à la page pour une analyse immédiate de vos projets
                 </p>
               </div>
-              
+
               {/* Embedded Aitenders ROI Simulator Final */}
               <AitendersSimulatorFinal useCase="UC2" className="w-full" />
-              
+
             </div>
           </div>
         </div>
