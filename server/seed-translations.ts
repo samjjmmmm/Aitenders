@@ -42,6 +42,8 @@ const uc2TranslationKeys = {
   'uc2.features.feature2Title': 'Maîtrisez chaque clause critique de votre projet',
   'uc2.features.feature2Text': 'Aitenders identifie et priorise automatiquement toutes les clauses sensibles : responsabilités, engagements, pénalités et conditions critiques. En parallèle, l\'IA vérifie la cohérence documentaire et signale contradictions, doublons et lacunes, pour une analyse fiable et complète. Le Proposal Manager obtient en quelques minutes une vision claire des zones de risque, prêtes à être corrigées et validées sans perte de temps.',
   'uc2.features.feature2Highlight': 'Validation contractuelle proactive, dès J+1',
+  'uc2.features.feature3Title': 'Suivi centralisé et dynamique des versions et des Q&A',
+  'uc2.features.feature3Text': 'Toutes vos Q&A, versions et ajustements de documents sont consolidés et trackés automatiquement par l\'IA. Le Proposal Manager suit chaque modification en temps réel, visualise les écarts, reçoit des alertes et s\'assure que rien n\'est oublié ou modifié sans validation. Fini les suivis fragmentés par email ou tableurs : tout est centralisé dans un cockpit fluide et fiable.',
 
   // Reference Projects Section
   'uc2.reference_projects.headline': 'Nos appels d\'offres de référence sur les projets moyens',
@@ -126,6 +128,8 @@ const uc2EnglishTranslations = {
   'uc2.features.feature2Title': 'Control every critical clause of your project',
   'uc2.features.feature2Text': 'Aitenders automatically identifies and prioritizes all sensitive clauses.',
   'uc2.features.feature2Highlight': 'Proactive contractual validation, from day 1',
+  'uc2.features.feature3Title': 'Centralized and dynamic tracking of versions and Q&As',
+  'uc2.features.feature3Text': 'All your Q&As, versions, and document adjustments are consolidated and tracked automatically by AI. The Proposal Manager tracks each modification in real-time, visualizes discrepancies, receives alerts, and ensures nothing is forgotten or modified without validation. No more fragmented tracking via email or spreadsheets: everything is centralized in a fluid and reliable cockpit.',
 
   // Reference Projects Section
   'uc2.reference_projects.headline': 'Our reference tenders on medium projects',
@@ -208,6 +212,8 @@ const uc2SpanishTranslations = {
   'uc2.features.feature2Title': 'Controlar cada cláusula crítica de tu proyecto',
   'uc2.features.feature2Text': 'Aitenders identifica y prioriza automáticamente todas las cláusulas sensibles.',
   'uc2.features.feature2Highlight': 'Validación contractual proactiva, desde el día 1',
+  'uc2.features.feature3Title': 'Seguimiento centralizado y dinámico de versiones y Q&A',
+  'uc2.features.feature3Text': 'Todas tus Q&A, versiones y ajustes de documentos se consolidan y rastrean automáticamente por la IA. El Gestor de Propuestas realiza un seguimiento de cada modificación en tiempo real, visualiza discrepancias, recibe alertas y se asegura de que nada se olvide ni se modifique sin validación. Se acabaron los seguimientos fragmentados por correo electrónico o hojas de cálculo: todo se centraliza en un cockpit fluido y fiable.',
 
   // Reference Projects Section
   'uc2.reference_projects.headline': 'Nuestras licitaciones de referencia en proyectos medianos',
@@ -290,6 +296,8 @@ const uc2GermanTranslations = {
   'uc2.features.feature2Title': 'Kontrollieren Sie jede kritische Klausel Ihres Projekts',
   'uc2.features.feature2Text': 'Aitenders identifiziert und priorisiert automatisch alle sensiblen Klauseln.',
   'uc2.features.feature2Highlight': 'Proaktive vertragliche Validierung, ab Tag 1',
+  'uc2.features.feature3Title': 'Zentralisierte und dynamische Verfolgung von Versionen und Q&As',
+  'uc2.features.feature3Text': 'Alle Ihre Q&As, Versionen und Dokumentenanpassungen werden automatisch von der KI konsolidiert und verfolgt. Der Proposal Manager verfolgt jede Änderung in Echtzeit, visualisiert Abweichungen, erhält Benachrichtigungen und stellt sicher, dass nichts vergessen oder ohne Validierung geändert wird. Keine fragmentierten Verfolgungen mehr per E-Mail oder Tabellenkalkulation: Alles ist in einem flüssigen und zuverlässigen Cockpit zentralisiert.',
 
   // Reference Projects Section
   'uc2.reference_projects.headline': 'Unsere Referenzangebote für mittelgroße Projekte',
@@ -338,7 +346,7 @@ const uc2GermanTranslations = {
 // Initialize languages and UC2 translations
 export async function seedTranslations() {
   console.log('🌱 Seeding translations...');
-  
+
   try {
     // Initialize supported languages
     await translationService.initializeLanguages();
@@ -348,31 +356,31 @@ export async function seedTranslations() {
     for (const [key, frenchValue] of Object.entries(uc2TranslationKeys)) {
       await translationService.setTranslation(key, 'fr', frenchValue);
     }
-    
+
     console.log('✅ UC2 French translations seeded');
 
     // Add English translations
     for (const [key, englishValue] of Object.entries(uc2EnglishTranslations)) {
       await translationService.setTranslation(key, 'en', englishValue);
     }
-    
+
     console.log('✅ UC2 English translations seeded');
 
     // Add Spanish translations
     for (const [key, spanishValue] of Object.entries(uc2SpanishTranslations)) {
       await translationService.setTranslation(key, 'es', spanishValue);
     }
-    
+
     console.log('✅ UC2 Spanish translations seeded');
 
     // Add German translations
     for (const [key, germanValue] of Object.entries(uc2GermanTranslations)) {
       await translationService.setTranslation(key, 'de', germanValue);
     }
-    
+
     console.log('✅ UC2 German translations seeded');
     console.log(`📊 Total keys: ${Object.keys(uc2TranslationKeys).length}`);
-    
+
     return true;
   } catch (error) {
     console.error('❌ Error seeding translations:', error);
