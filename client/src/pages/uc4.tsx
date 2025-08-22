@@ -413,9 +413,7 @@ export default function UC4Page() {
           {/* Feature 1: Fiche contrat intelligente - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-1">
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
-                <MdDescription className="w-10 h-10 text-white" />
-              </div>
+
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Fiche contrat intelligente, disponible <span className="text-purple-600">dès le premier jour</span>
               </h3>
@@ -448,9 +446,7 @@ export default function UC4Page() {
           {/* Feature 2: Accès ciblé aux clauses critiques - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-1 lg:order-2">
-              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
-                <MdSearch className="w-10 h-10 text-white" />
-              </div>
+
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Accès ciblé aux clauses critiques, <span className="text-green-600">sans relecture</span>
               </h3>
@@ -483,9 +479,7 @@ export default function UC4Page() {
           {/* Feature 3: Q&A Contractuel - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-1">
-              <div className="w-20 h-20 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
-                <MdCheckCircle className="w-10 h-10 text-white" />
-              </div>
+
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Posez une question, <span className="text-indigo-600">l’IA vous répond</span>
               </h3>
