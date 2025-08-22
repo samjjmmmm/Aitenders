@@ -447,9 +447,7 @@ export default function UC3Page() {
           {/* Feature 1: Structure Complex Projects - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-1">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
-                <MdFlashOn className="w-10 h-10 text-white" />
-              </div>
+
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Démarrez le projet sur une donnée pré-organisée et intelligente <span className="text-purple-600">dès le jour 1</span></h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                 Grâce aux assistants IA, les documents sont automatiquement structurés en base de données, les informations classifiés, les exigences identifiées, les points clés résumés, les contradictions et similitudes détectées etc ... 
@@ -493,9 +491,7 @@ export default function UC3Page() {
               </div>
             </div>
             <div className="order-1 lg:order-2">
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
-                <MdGroups className="w-10 h-10 text-white" />
-              </div>
+
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Collaborez entre experts <span className="text-purple-600">sans friction</span>, assurez la conformité initiale <span className="text-purple-600">sans effort.</span></h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">Aitenders permet de générer de manière collaborative et structurée la matrice de conformité, l’allocation des exigences aux experts, et une structuration des livrables à produire. 
                 <p>
@@ -512,9 +508,7 @@ export default function UC3Page() {
           {/* Feature 3: Control Every Evolution - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="order-1">
-              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
-                <MdSecurity className="w-10 h-10 text-white" />
-              </div>
+
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">       Pilotez chaque évolution de l’offre,<span className="text-purple-600">sans rien laisser passer</span> </h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">Les changements documentaires sont détectés et versionnés automatiquement, avec comparaison instantanée. Le pilotage intégré des Q&A signale chaque écart, permettant à l’équipe d’en mesurer l’impact et d’agir sans délai. <p>               <span className="text-purple-600"> Le responsable de l'offre </span> s'assure ainsi d'identifier en amont les erreurs de version, les oublis et les non‑conformités : plus de “trous dans la raquette”...</p> </p>
                <div className="flex items-center text-lg font-bold  text-blue-500">
