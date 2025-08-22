@@ -51,7 +51,7 @@ const uc1TranslationKeys = {
   // Results Section
   'uc1.results_section.headline': 'Ce que nos utilisateurs obtiennent concrètement pour les petites offres',
   'uc1.results_section.subtitle': 'Des résultats mesurables pour chaque profil d\'utilisateur',
-  
+
   // Card 1
   'uc1.results_section.card1_title': 'Directeur Commercial ou Directeur des Offres',
   'uc1.results_section.card1_subtitle': 'Décision rapide, process validé, crédibilité renforcée',
@@ -135,7 +135,7 @@ const uc1TranslationKeys = {
 
   // Journey
   'uc1.journey.title1': 'Analysez le cahier des charges',
-  'uc1.journey.description1': 'Importez votre appel d\'offres et laissez l\'IA extraire automatiquement toutes les exigences clés',
+  'uc1.journey.description1': 'Importez votre appel d\'offres et laissez l'IA extraire automatiquement toutes les exigences clés',
   'uc1.journey.title2': 'Générez votre réponse structurée',
   'uc1.journey.description2': 'Créez instantanément une proposition complète avec argumentaires adaptés et conformité assurée',
   'uc1.journey.title3': 'Personnalisez et finalisez',
@@ -199,6 +199,10 @@ const uc2TranslationKeys = {
   'uc2.kpis.description1': 'Réduction du temps de préparation',
   'uc2.kpis.description2': 'Taux de conformité des réponses',
   'uc2.kpis.description3': 'Amélioration de la coordination équipe',
+  'uc2.results_section.kpis.time': '50% du temps d\'analyse initial',
+  'uc2.results_section.kpis.clauses': '100% des clauses critiques identifiées',
+  'uc2.results_section.kpis.surprise': '0 surprise, aucun challenge de dernière minute',
+  'uc2.results_section.kpis.extra': 'Offre plus rapide, plus propre, plus compétitive',
 
   // Differentiators  
   'uc2.differentiators.title1': 'Solution Adaptée aux Projets Moyens',
@@ -879,7 +883,7 @@ const allUCSpanishTranslations = {
   'uc4.hero.badge': 'Documentos simples, procesamiento rápido',
   'uc4.hero.title': 'Analiza y estructura tus volúmenes pequeños',
   'uc4.hero.span': 'en minutos.',
-  'uc4.hero.description': 'La solución optimizada para volúmenes documentales pequeños (1-10 documentos).',
+  'uc4.hero.description': 'La solución optimizada para volúmenes documentales pequeños (1-10 documents).',
   'uc4.hero.demoButton': 'Reservar Demo',
   'uc4.hero.downloadButton': 'Probar el impacto →',
   'uc4.painPoints.headline': 'Tus documentos, analizados y estructurados instantáneamente',
@@ -1125,7 +1129,7 @@ const allUCGermanTranslations = {
   'uc3.hero.downloadButton': 'Anwendungsfall herunterladen →',
   'uc3.painPoints.headline': 'Ihr Mega-Projekt, 100% kontrolliert, 0% Improvisation',
   'uc3.painPoints.text1': 'Bei großen internationalen Projekten navigieren Ihre Teams zwischen Dutzenden von Losen.',
-  'uc3.painPoints.text2': 'Mit Aitenders orchestrieren Sie automatisch die Komplexität.',
+  'uc3.painPoints.text2': 'Mit Aitenders, orchestrieren Sie automatisch die Komplexität.',
   'uc3.painPoints.optimizeButton': 'Meistern Sie Ihre Mega-Projekte!',
   'uc3.painPoints.demoButton': 'Demo ansehen',
   'uc3.features.mainTitle': 'Ihr Kommandozentrum für Mega-Projekte',
