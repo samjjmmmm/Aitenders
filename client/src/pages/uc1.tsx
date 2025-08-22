@@ -516,56 +516,56 @@ export default function UC1Page() {
   const painPoints = [
     {
       icon: MdWarning,
-      title: "Délais serrés compromettent la qualité",
-      description: "Réponses bâclées sur les petits projets créent une image dégradée et réduisent les chances de succès"
+      title: t('uc1.pain_points.title1'),
+      description: t('uc1.pain_points.description1')
     },
     {
       icon: MdDescription,
-      title: "Processus inefficaces et répétitifs",
-      description: "Temps perdu sur des tâches manuelles récurrentes au détriment de la personnalisation et de la valeur ajoutée"
+      title: t('uc1.pain_points.title2'),
+      description: t('uc1.pain_points.description2')
     },
     {
       icon: FaUsers,
-      title: "Manque de standardisation",
-      description: "Incohérences entre les offres et absence de capitalisation sur les réussites précédentes"
+      title: t('uc1.pain_points.title3'),
+      description: t('uc1.pain_points.description3')
     }
   ];
 
   const solutions = [
     {
       icon: MdFlashOn,
-      title: "Génération rapide d'offres structurées",
-      description: "IA spécialisée qui produit des réponses complètes et conformes en quelques heures seulement"
+      title: t('uc1.solutions.title1'),
+      description: t('uc1.solutions.description1')
     },
     {
       icon: MdGroups,
-      title: "Templates et contenus pré-validés",
-      description: "Bibliothèque d'argumentaires éprouvés et de réponses standardisées pour une qualité constante"
+      title: t('uc1.solutions.title2'),
+      description: t('uc1.solutions.description2')
     },
     {
       icon: MdSecurity,
-      title: "Validation automatique des exigences",
-      description: "Vérification systématique du cahier des charges pour éviter les oublis critiques"
+      title: t('uc1.solutions.title3'),
+      description: t('uc1.solutions.description3')
     }
   ];
 
   const userJourneySteps = [
     {
       step: "1",
-      title: "Analysez le cahier des charges",
-      description: "Importez votre appel d'offres et laissez l'IA extraire automatiquement toutes les exigences clés",
+      title: t('uc1.journey.title1'),
+      description: t('uc1.journey.description1'),
       icon: MdDescription
     },
     {
       step: "2", 
-      title: "Générez votre réponse structurée",
-      description: "Créez instantanément une proposition complète avec argumentaires adaptés et conformité assurée",
+      title: t('uc1.journey.title2'),
+      description: t('uc1.journey.description2'),
       icon: MdGroups
     },
     {
       step: "3",
-      title: "Personnalisez et finalisez", 
-      description: "Affinez votre offre avec des éléments différenciants tout en gardant la structure gagnante",
+      title: t('uc1.journey.title3'), 
+      description: t('uc1.journey.description3'),
       icon: MdSecurity
     }
   ];
@@ -577,7 +577,7 @@ export default function UC1Page() {
     },
     {
       metric: "90%",
-      description: "Couverture automatique des exigences"
+      description: t('uc1.kpis.description2')
     },
     {
       metric: "2h",
@@ -585,22 +585,22 @@ export default function UC1Page() {
     },
     {
       metric: "100%",
-      description: "Conformité des livrables"
+      description: t('uc1.kpis.description4')
     }
   ];
 
   const differentiators = [
     {
-      title: "Solution Dédiée aux Petits Projets",
+      title: t('uc1.differentiators.title1'),
       description: "Optimisée spécifiquement pour la rapidité et l'efficacité sur les projets de taille réduite"
     },
     {
-      title: "Intelligence Commerciale Intégrée",
+      title: t('uc1.differentiators.title2'),
       description: "IA spécialisée dans la génération d'argumentaires convaincants et différenciants"
     },
     {
-      title: "Workflows Automatisés",
-      description: "Processus streamlinés pour maximiser la productivité des équipes commerciales"
+      title: t('uc1.differentiators.title3'),
+      description: t('uc1.differentiators.description3')
     }
   ];
 
@@ -1222,7 +1222,7 @@ export default function UC1Page() {
 
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Détection des exigences implicites</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  L'IA identifie automatiquement les "exigences cachées" (non exprimées clairement) dans les documents.
+                  {t('uc1.features.hidden_requirements')}
                 </p>
 
                 <div className="flex items-center justify-between">

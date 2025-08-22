@@ -37,317 +37,7 @@ import uc2ThirdFeatureImage from "@assets/wow 3_1755698476634.png";
 import uc2HeroImage from "@assets/HERO UC 2_1755763267253.png";
 
 export default function UC2Page() {
-  const { t, currentLanguage, changeLanguage, languages } = useGlobalTranslations();
-
-  // Legacy translations object - to be removed gradually
-  const legacyT: Record<string, any> = {
-    fr: {
-      // Hero Section
-      badge: "Pilotez les offres moyennes",
-      heroTitle: "Découvrez, pilotez et sécurisez chaque clause",
-      heroSpan: "dès le premier jour.",
-      heroDescription: "La seule plateforme conçue pour transformer des dossiers moyens (1 à 10 M€) en une vision contractuelle claire dès le premier jour : structuration IA du périmètre, détection immédiate des clauses critiques et pilotage dynamique des Q&A et versions. Vous réduisez de moitié votre temps d'analyse, rassurez votre direction et livrez une réponse compétitive, sans risque de dernière minute.",
-      demoButton: "Réservez une Démo",
-      downloadButton: "Téléchargez le cas d'usage →",
-
-      // Target Audiences
-      proposalManagers: "Proposal Managers",
-      proposalManagersDesc: "Gérez des projets moyens avec complexité modérée tout en maintenant la qualité et les délais. Coordonnez efficacement les équipes techniques et commerciales pour produire des offres structurées et convaincantes.",
-      technicalManagers: "Managers techniques",
-      technicalManagersDesc: "Supervisez la cohérence technique des propositions moyennes avec des workflows optimisés. Assurez la qualité des livrables techniques tout en respectant les contraintes budgétaires et temporelles.",
-      commercialDirectors: "Directeurs commerciaux",
-      commercialDirectorsDesc: "Optimisez votre pipeline de projets moyens avec une visibilité complète sur les performances et les risques. Maximisez le taux de conversion grâce à des processus standardisés et efficaces.",
-      projectDirectors: "Directeurs de projets",
-      projectDirectorsDesc: "Pilotez la livraison de projets moyens avec des outils de suivi et de contrôle avancés. Assurez la conformité opérationnelle et la satisfaction client sur l'ensemble du portfolio.",
-      operationsManagers: "Responsables opérationnels",
-      operationsManagersDesc: "Standardisez les processus opérationnels pour les projets moyens avec une approche méthodique. Optimisez les ressources et réduisez les délais grâce à l'automatisation intelligente.",
-
-      // Pain Points
-      painPoint1Title: "Complexité croissante difficile à gérer",
-      painPoint1Desc: "Les projets moyens nécessitent plus de coordination et de ressources, créant des risques de dépassement et d'erreurs",
-      painPoint2Title: "Processus peu standardisés",
-      painPoint2Desc: "Manque de méthodologie claire pour gérer efficacement les projets de taille intermédiaire",
-      painPoint3Title: "Coordination équipes complexe",
-      painPoint3Desc: "Difficultés à aligner les équipes techniques et commerciales sur des projets multi-disciplinaires",
-
-      // Solutions
-      solution1Title: "Gestion intelligente des projets moyens",
-      solution1Desc: "IA spécialisée qui coordonne automatiquement les ressources et optimise les processus pour les projets intermédiaires",
-      solution2Title: "Workflows standardisés et flexibles",
-      solution2Desc: "Méthodologies éprouvées adaptées à la complexité des projets moyens avec personnalisation selon les besoins",
-      solution3Title: "Contrôle qualité automatisé",
-      solution3Desc: "Validation systématique des livrables et suivi proactif des risques pour maintenir l'excellence",
-
-      // User Journey
-      journey1Title: "Analysez votre projet moyen",
-      journey1Desc: "Importez vos documents et laissez l'IA structurer automatiquement les exigences et les ressources nécessaires",
-      journey2Title: "Coordonnez vos équipes",
-      journey2Desc: "Organisez efficacement les interactions entre équipes techniques et commerciales avec des workflows optimisés",
-      journey3Title: "Livrez avec excellence",
-      journey3Desc: "Suivez l'avancement en temps réel et assurez la qualité des livrables avec des contrôles automatisés",
-
-      // KPIs
-      kpi1Desc: "Réduction du temps de coordination",
-      kpi2Desc: "Amélioration de la qualité des livrables",
-      kpi3Desc: "Délai moyen de structuration projet",
-      kpi4Desc: "Traçabilité des processus",
-
-      // Differentiators
-      diff1Title: "Solution Optimisée Projets Moyens",
-      diff1Desc: "Conçue spécifiquement pour équilibrer complexité et efficacité sur les projets intermédiaires",
-      diff2Title: "Intelligence Collaborative Avancée",
-      diff2Desc: "IA spécialisée dans la coordination multi-équipes et la gestion des dépendances",
-      diff3Title: "Flexibilité et Standardisation",
-      diff3Desc: "Processus adaptatifs qui s'ajustent à la complexité spécifique de chaque projet",
-
-      // Pain Points Section
-      painPointsHeadline: "Votre offre, 100 % claire, 0 % surprise",
-      painPointsText1: "Sur les projets moyen, vos équipes jonglent entre délais serrés, clauses critiques cachées et versions dispersées, au risque d'erreurs coûteuses et d'allers‑retours interminables.",
-      painPointsText2: "Avec Aitenders, structurez automatiquement chaque dossier dès le jour 1, détectez instantanément les clauses sensibles et pilotez vos Q&A et versions dans un cockpit centralisé. Résultat : une analyse deux fois plus rapide, zéro clause oubliée, et une offre compétitive validée sans stress.",
-      painPointsOptimizeButton: "Optimisez Vos Projets Moyens!",
-      painPointsDemoButton: "Voir la Démonstration"
-    },
-    en: {
-      // Hero Section
-      badge: "Manage medium offers",
-      heroTitle: "Discover, manage and secure every clause",
-      heroSpan: "from day one.",
-      heroDescription: "The only platform designed to transform medium-size tenders (€1M–10M) into a clear contractual vision from the very first day: AI structuring of scope, immediate detection of critical clauses, and dynamic management of Q&As and versions. You cut analysis time in half, reassure your management, and deliver a competitive answer with no last-minute risk.",
-      demoButton: "Book a Demo",
-      downloadButton: "Download the use case →",
-
-      // Pain Points Section
-      painPointsHeadline: "Your offer, 100% clear, 0% surprise",
-      painPointsText1: "On medium-size projects, your teams juggle tight deadlines, hidden critical clauses and scattered versions—at the risk of costly errors and endless back-and-forths.",
-      painPointsText2: "With Aitenders, automatically structure each tender from day one, instantly detect sensitive clauses, and manage your Q&As and versions in a central cockpit. Result: analysis twice as fast, no forgotten clauses, and a validated, competitive offer with no stress.",
-      painPointsOptimizeButton: "Optimize Your Medium Projects!",
-      painPointsDemoButton: "See the Demo",
-
-      // Target Audiences
-      proposalManagers: "Proposal Manager, Contract Manager or Project Manager",
-      proposalManagersDesc: "Start on day +1 with a structured and prioritized base generated by AI: every criterion is classified, every sensitive clause detected, every version tracked. You go from being under pressure to being a strategic pilot, able to prove your offer's solidity at any time.",
-      technicalManagers: "Technical Managers",
-      technicalManagersDesc: "Supervise the technical consistency of medium proposals with optimized workflows. Ensure the quality of technical deliverables while respecting budgetary and time constraints.",
-      commercialDirectors: "Commercial Director or Bid Director",
-      commercialDirectorsDesc: "Ensure from day one that every critical clause is identified, every commitment under control, and every risk covered. You walk into the committee with a solid, immediately approvable offer, with no mental load and no unnecessary escalation.",
-      projectDirectors: "Project Directors",
-      projectDirectorsDesc: "Manage the delivery of medium projects with advanced monitoring and control tools. Ensure operational compliance and customer satisfaction across the entire portfolio.",
-      operationsManagers: "Operations Managers",
-      operationsManagersDesc: "Standardize operational processes for medium projects with a methodical approach. Optimize resources and reduce delays through intelligent automation.",
-
-      // Solution Section Titles and Content
-      solution_section: {
-        mainTitle: "Your AI co-pilot securing the management of your medium projects",
-        subtitle: "Discover, manage and secure every clause from day one.",
-        feature1_title: "Automatic structuring of scope from day 1",
-        feature1_text: "Thanks to Aitenders' AI, your documents are instantly segmented and organized: lots, sub-packages and contractual criteria are classified and structured within minutes. The Proposal Manager immediately has a consolidated vision of the scope: blocking points and sensitive clauses are identified effortlessly, enabling an informed 'go / no-go' decision from day one.",
-        feature1_highlight: "A consolidated and prioritized vision, ready from the first day!",
-        feature2_title: "Control every critical clause of your project",
-        feature2_text: "Aitenders automatically identifies and prioritizes all sensitive clauses: responsibilities, commitments, penalties, and critical conditions. At the same time, the AI checks document consistency and flags contradictions, duplicates, and gaps, for a reliable and complete analysis. The Proposal Manager gets a clear view of risk areas in minutes, ready to be corrected and validated without wasting time.",
-        feature2_highlight: "Proactive contractual validation, from day 1",
-        feature3_title: "Manage every contractual change in real time",
-        feature3_text: "All your Q&As, versions and document adjustments are consolidated and tracked automatically by AI. The Proposal Manager follows every change in real time, visualizes gaps, receives alerts, and ensures that nothing is forgotten or modified without validation. No more fragmented follow-ups by email or spreadsheets: everything is centralized in a smooth, reliable cockpit.",
-        feature3_highlight: "No surprises, no version lost, no risk of omission",
-      },
-
-      // Legacy mappings for existing page structure
-      painPoint1Title: "Growing complexity difficult to manage",
-      painPoint1Desc: "Medium projects require more coordination and resources, creating risks of overruns and errors",
-      painPoint2Title: "Poorly standardized processes",
-      painPoint2Desc: "Lack of clear methodology to efficiently manage intermediate-sized projects",
-      painPoint3Title: "Complex team coordination",
-      painPoint3Desc: "Difficulties in aligning technical and commercial teams on multi-disciplinary projects",
-
-      solution1Title: "Intelligent medium project management",
-      solution1Desc: "Specialized AI that automatically coordinates resources and optimizes processes for intermediate projects",
-      solution2Title: "Standardized and flexible workflows",
-      solution2Desc: "Proven methodologies adapted to medium project complexity with customization according to needs",
-      solution3Title: "Automated quality control",
-      solution3Desc: "Systematic validation of deliverables and proactive risk monitoring to maintain excellence",
-
-      journey1Title: "Analyze your medium project",
-      journey1Desc: "Import your documents and let AI automatically structure requirements and necessary resources",
-      journey2Title: "Coordinate your teams",
-      journey2Desc: "Efficiently organize interactions between technical and commercial teams with optimized workflows",
-      journey3Title: "Deliver with excellence",
-      journey3Desc: "Track progress in real-time and ensure deliverable quality with automated controls",
-
-      kpi1Desc: "Reduction in coordination time",
-      kpi2Desc: "Improvement in deliverable quality",
-      kpi3Desc: "Average project structuring time",
-      kpi4Desc: "Process traceability",
-
-      diff1Title: "Optimized Medium Project Solution",
-      diff1Desc: "Specifically designed to balance complexity and efficiency on intermediate projects",
-      diff2Title: "Advanced Collaborative Intelligence",
-      diff2Desc: "AI specialized in multi-team coordination and dependency management",
-      diff3Title: "Flexibility and Standardization",
-      diff3Desc: "Adaptive processes that adjust to the specific complexity of each project",
-
-      // Results Section Cards
-      results_section: {
-        card1_title: "Commercial Director or Bid Director",
-        card1_subtitle: "Rapid decision-making, enhanced credibility, zero surprises",
-        card1_text: "Ensure from day one that every critical clause is identified, every commitment under control, and every risk covered. You walk into the committee with a solid, immediately approvable offer, with no mental load and no unnecessary escalation.",
-        card2_title: "Proposal Manager, Contract Manager or Project Manager",
-        card2_subtitle: "Clear analysis, smooth follow-up, zero stress",
-        card2_text: "Start on day +1 with a structured and prioritized base generated by AI: every criterion is classified, every sensitive clause detected, every version tracked. You go from being under pressure to being a strategic pilot, able to prove your offer's solidity at any time.",
-        
-        // Adding missing translations for English version of results_section points for completeness
-        card1_point1: "Enhanced decision-making speed",
-        card1_point2: "Improved offer credibility",
-        card1_point3: "Reduced risk of last-minute issues",
-        card2_point1: "Faster project analysis",
-        card2_point2: "Streamlined team coordination",
-        card2_point3: "Increased confidence in offer delivery",
-
-        // KPIs
-        headline: "Unlock Significant Business Value",
-        subtitle: "Aitenders empowers your teams to deliver exceptional results and optimize project outcomes.",
-        kpis: {
-          time: "Reduced analysis time",
-          clauses: "Identified critical clauses",
-          surprise: "Zero surprise factor",
-          extra: "Improved collaboration rate"
-        }
-      },
-      // Adding missing translations for the UC2 page for completeness
-      uc2: {
-        hero: {
-          badge: "Manage medium offers",
-          title: "Discover, manage and secure every clause",
-          span: "from day one.",
-          description: "The only platform designed to transform medium-size tenders (€1M–10M) into a clear contractual vision from the very first day: AI structuring of scope, immediate detection of critical clauses, and dynamic management of Q&As and versions. You cut analysis time in half, reassure your management, and deliver a competitive answer with no last-minute risk.",
-          demoButton: "Book a Demo",
-          downloadButton: "Download the use case →"
-        },
-        painPoints: {
-          headline: "Your offer, 100% clear, 0% surprise",
-          text1: "On medium-size projects, your teams juggle tight deadlines, hidden critical clauses and scattered versions—at the risk of costly errors and endless back-and-forths.",
-          text2: "With Aitenders, automatically structure each tender from day one, instantly detect sensitive clauses, and manage your Q&As and versions in a central cockpit. Result: analysis twice as fast, no forgotten clauses, and a validated, competitive offer with no stress.",
-          optimizeButton: "Optimize Your Medium Projects!",
-          demoButton: "See the Demo"
-        },
-        solution_section: {
-          mainTitle: "Your AI co-pilot securing the management of your medium projects",
-          subtitle: "Discover, manage and secure every clause from day one.",
-          feature1_title: "Automatic structuring of scope from day 1",
-          feature1_text: "Thanks to Aitenders' AI, your documents are instantly segmented and organized: lots, sub-packages and contractual criteria are classified and structured within minutes. The Proposal Manager immediately has a consolidated vision of the scope: blocking points and sensitive clauses are identified effortlessly, enabling an informed 'go / no-go' decision from day one.",
-          feature1_highlight: "A consolidated and prioritized vision, ready from the first day!",
-          feature2_title: "Control every critical clause of your project",
-          feature2_text: "Aitenders automatically identifies and prioritizes all sensitive clauses: responsibilities, commitments, penalties, and critical conditions. At the same time, the AI checks document consistency and flags contradictions, duplicates, and gaps, for a reliable and complete analysis. The Proposal Manager gets a clear view of risk areas in minutes, ready to be corrected and validated without wasting time.",
-          feature2_highlight: "Proactive contractual validation, from day 1",
-          feature3_title: "Manage every contractual change in real time",
-          feature3_text: "All your Q&As, versions and document adjustments are consolidated and tracked automatically by AI. The Proposal Manager follows every change in real time, visualizes gaps, receives alerts, and ensures that nothing is forgotten or modified without validation. No more fragmented follow-ups by email or spreadsheets: everything is centralized in a smooth, reliable cockpit.",
-          feature3_highlight: "No surprises, no version lost, no risk of omission",
-        },
-        toppings: {
-          badge: "Next-Gen Features",
-          headline: "Enhance Your Project Management with Advanced Capabilities",
-          subtitle: "Discover the powerful features designed to streamline your workflow and boost efficiency.",
-          bottom_text: "Ready to transform your medium project management?",
-          cta: "Get Started Today",
-          features: {
-            predictive: {
-              title: "Predictive Intelligence",
-              text: "Leverage AI-driven insights to anticipate project risks and optimize resource allocation.",
-              tag: "AI-Powered Analytics"
-            },
-            collaboration: {
-              title: "Adaptive Collaboration",
-              text: "Foster seamless teamwork with intelligent communication tools and real-time progress tracking.",
-              tag: "Team Synergy"
-            },
-            metrics: {
-              title: "Intelligent Metrics",
-              text: "Monitor key performance indicators with dynamic dashboards and insightful reporting.",
-              tag: "Data-Driven Decisions"
-            },
-            risks: {
-              title: "Risk Management",
-              text: "Proactively identify and mitigate potential risks with advanced threat detection and analysis.",
-              tag: "Proactive Mitigation"
-            },
-            templates: {
-              title: "Smart Templates",
-              text: "Accelerate your proposal process with customizable and AI-enhanced template libraries.",
-              tag: "Efficiency Boost"
-            },
-            learning: {
-              title: "Continuous Learning",
-              text: "Benefit from an AI that constantly learns and adapts to improve your project outcomes.",
-              tag: "AI Evolution"
-            },
-            integration: {
-              title: "Ecosystem Integration",
-              text: "Connect seamlessly with your existing tools and platforms for a unified workflow.",
-              tag: "Unified Workflow",
-              tag2: "Seamless Connectivity"
-            }
-          }
-        },
-        reference_projects: {
-          headline: "Trusted by Leading Companies",
-          subtitle: "See how our solution has transformed project management for diverse industries.",
-          project1: {
-            title: "Regional Logistics Center",
-            sector: "Logistics & Supply Chain",
-            offer: "€5M Contract",
-            desc: "Digitized and optimized the management of a large-scale logistics hub, streamlining operations and improving delivery efficiency.",
-            impact: {
-              productivity: "25% increase in operational productivity",
-              compliance: "100% compliance with contractual obligations",
-              traceability: "Full traceability of all project activities",
-              collaboration: "Enhanced collaboration between site and management teams"
-            }
-          },
-          project2: {
-            title: "Urban District Rehabilitation",
-            sector: "Construction & Urban Development",
-            offer: "€8M Contract",
-            desc: "Managed the complex rehabilitation of a major urban district, ensuring timely completion and adherence to strict regulatory standards.",
-            impact: {
-              productivity: "30% reduction in project delays",
-              compliance: "Guaranteed adherence to all environmental regulations",
-              traceability: "Real-time tracking of all construction phases",
-              collaboration: "Improved coordination among multiple contractors and stakeholders"
-            }
-          },
-          project3: {
-            title: "Modern University Campus",
-            sector: "Education & Infrastructure",
-            offer: "€7M Contract",
-            desc: "Oversaw the development of a state-of-the-art university campus, integrating smart technology and sustainable design principles.",
-            impact: {
-              productivity: "15% faster project delivery",
-              compliance: "Met all safety and accessibility standards",
-              traceability: "Complete audit trail for all financial and material movements",
-              collaboration: "Streamlined communication between architects, engineers, and university administration"
-            }
-          }
-        },
-        roi_simulator: {
-          badge: "ROI Calculator",
-          headline: "Estimate Your Potential ROI",
-          subtext: "See how Aitenders can boost your efficiency and profitability. Enter your project details below."
-        },
-        chat_actions: {
-          use_cases: "Use Cases",
-          demo: "Request Demo",
-          roi: "View ROI",
-          contact: "Contact Sales"
-        }
-      },
-      // Adding the missing translation key for the impact label
-      uc2: {
-        ...t('uc2'), // Spread existing translations to avoid overwriting
-        reference_projects: {
-          ...t('uc2.reference_projects'),
-          impact_label: "Client Impact :"
-        }
-      }
-    }
-  };
+  const { t } = useGlobalTranslations();
 
   // Target audience data with interactive content - UC2 adapted
   const targetAudiences = [
@@ -368,11 +58,11 @@ export default function UC2Page() {
     },
     {
       id: 'technical-managers',
-      title: legacyT[currentLanguage] || legacyT['fr'].technicalManagers,
+      title: t('uc2.audiences.technicalManagers'),
       icon: MdBusiness,
       iconColor: 'text-blue-600',
       iconBg: 'bg-blue-100',
-      description: legacyT[currentLanguage] || legacyT['fr'].technicalManagersDesc,
+      description: t('uc2.audiences.technicalManagersDesc'),
       dashboardData: {
         requirements: { progress: 95, color: 'green' },
         coordination: { progress: 88, color: 'blue' },
@@ -383,11 +73,11 @@ export default function UC2Page() {
     },
     {
       id: 'commercial-directors',
-      title: legacyT[currentLanguage] || legacyT['fr'].commercialDirectors,
+      title: t('uc2.audiences.commercialDirectors'),
       icon: MdGavel,
       iconColor: 'text-green-600',
       iconBg: 'bg-green-100',
-      description: legacyT[currentLanguage] || legacyT['fr'].commercialDirectorsDesc,
+      description: t('uc2.audiences.commercialDirectorsDesc'),
       dashboardData: {
         requirements: { progress: 100, color: 'green' },
         coordination: { progress: 95, color: 'blue' },
@@ -395,36 +85,6 @@ export default function UC2Page() {
       },
       notification: '🔒 Pipeline optimisé',
       alert: '✅ ROI maximisé'
-    },
-    {
-      id: 'project-directors',
-      title: legacyT[currentLanguage] || legacyT['fr'].projectDirectors,
-      icon: MdEngineering,
-      iconColor: 'text-orange-600',
-      iconBg: 'bg-orange-100',
-      description: legacyT[currentLanguage] || legacyT['fr'].projectDirectorsDesc,
-      dashboardData: {
-        requirements: { progress: 100, color: 'green' },
-        coordination: { progress: 85, color: 'blue' },
-        compliance: { progress: 98, color: 'purple' }
-      },
-      notification: '🔧 Projets pilotés',
-      alert: '📋 Conformité validée'
-    },
-    {
-      id: 'operations-managers',
-      title: legacyT[currentLanguage] || legacyT['fr'].operationsManagers,
-      icon: MdAnalytics,
-      iconColor: 'text-indigo-600',
-      iconBg: 'bg-indigo-100',
-      description: legacyT[currentLanguage] || legacyT['fr'].operationsManagersDesc,
-      dashboardData: {
-        requirements: { progress: 100, color: 'green' },
-        coordination: { progress: 92, color: 'blue' },
-        compliance: { progress: 100, color: 'purple' }
-      },
-      notification: '💼 Processus optimisés',
-      alert: '🎯 Efficacité +60%'
     }
   ];
 
@@ -455,56 +115,56 @@ export default function UC2Page() {
   const painPoints = [
     {
       icon: MdWarning,
-      title: legacyT[currentLanguage] || legacyT['fr'].painPoint1Title,
-      description: legacyT[currentLanguage] || legacyT['fr'].painPoint1Desc
+      title: t('uc2.pain_points.title1'),
+      description: t('uc2.pain_points.description1')
     },
     {
       icon: MdDescription,
-      title: legacyT[currentLanguage] || legacyT['fr'].painPoint2Title,
-      description: legacyT[currentLanguage] || legacyT['fr'].painPoint2Desc
+      title: t('uc2.pain_points.title2'),
+      description: t('uc2.pain_points.description2')
     },
     {
       icon: FaUsers,
-      title: legacyT[currentLanguage] || legacyT['fr'].painPoint3Title,
-      description: legacyT[currentLanguage] || legacyT['fr'].painPoint3Desc
+      title: t('uc2.pain_points.title3'),
+      description: t('uc2.pain_points.description3')
     }
   ];
 
   const solutions = [
     {
       icon: MdFlashOn,
-      title: legacyT[currentLanguage] || legacyT['fr'].solution1Title,
-      description: legacyT[currentLanguage] || legacyT['fr'].solution1Desc
+      title: t('uc2.solutions.title1'),
+      description: t('uc2.solutions.description1')
     },
     {
       icon: MdGroups,
-      title: legacyT[currentLanguage] || legacyT['fr'].solution2Title,
-      description: legacyT[currentLanguage] || legacyT['fr'].solution2Desc
+      title: t('uc2.solutions.title2'),
+      description: t('uc2.solutions.description2')
     },
     {
       icon: MdSecurity,
-      title: legacyT[currentLanguage] || legacyT['fr'].solution3Title,
-      description: legacyT[currentLanguage] || legacyT['fr'].solution3Desc
+      title: t('uc2.solutions.title3'),
+      description: t('uc2.solutions.description3')
     }
   ];
 
   const userJourneySteps = [
     {
       step: "1",
-      title: legacyT[currentLanguage] || legacyT['fr'].journey1Title,
-      description: legacyT[currentLanguage] || legacyT['fr'].journey1Desc,
+      title: t('uc2.journey.title1'),
+      description: t('uc2.journey.description1'),
       icon: MdDescription
     },
     {
       step: "2", 
-      title: legacyT[currentLanguage] || legacyT['fr'].journey2Title,
-      description: legacyT[currentLanguage] || legacyT['fr'].journey2Desc,
+      title: t('uc2.journey.title2'),
+      description: t('uc2.journey.description2'),
       icon: MdGroups
     },
     {
       step: "3",
-      title: legacyT[currentLanguage] || legacyT['fr'].journey3Title, 
-      description: legacyT[currentLanguage] || legacyT['fr'].journey3Desc,
+      title: t('uc2.journey.title3'), 
+      description: t('uc2.journey.description3'),
       icon: MdSecurity
     }
   ];
@@ -512,34 +172,34 @@ export default function UC2Page() {
   const kpis = [
     {
       metric: "70%",
-      description: legacyT[currentLanguage] || legacyT['fr'].kpi1Desc
+      description: t('uc2.kpis.description1')
     },
     {
       metric: "85%",
-      description: legacyT[currentLanguage] || legacyT['fr'].kpi2Desc
+      description: t('uc2.kpis.description2')
     },
     {
       metric: "3-5 jours",
-      description: legacyT[currentLanguage] || legacyT['fr'].kpi3Desc
+      description: t('uc2.kpis.description3')
     },
     {
       metric: "100%",
-      description: legacyT[currentLanguage] || legacyT['fr'].kpi4Desc
+      description: t('uc2.kpis.description4')
     }
   ];
 
   const differentiators = [
     {
-      title: legacyT[currentLanguage] || legacyT['fr'].diff1Title,
-      description: legacyT[currentLanguage] || legacyT['fr'].diff1Desc
+      title: t('uc2.differentiators.title1'),
+      description: t('uc2.differentiators.description1')
     },
     {
-      title: legacyT[currentLanguage] || legacyT['fr'].diff2Title,
-      description: legacyT[currentLanguage] || legacyT['fr'].diff2Desc
+      title: t('uc2.differentiators.title2'),
+      description: t('uc2.differentiators.description2')
     },
     {
-      title: legacyT[currentLanguage] || legacyT['fr'].diff3Title,
-      description: legacyT[currentLanguage] || legacyT['fr'].diff3Desc
+      title: t('uc2.differentiators.title3'),
+      description: t('uc2.differentiators.description3')
     }
   ];
 

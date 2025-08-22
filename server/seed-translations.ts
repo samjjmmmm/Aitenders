@@ -116,6 +116,96 @@ const uc1TranslationKeys = {
   'uc1.toppings.project_chat.desc': 'Posez n\'importe quelle question sur le projet à l\'IA et obtenez des réponses précises avec les sources.',
   'uc1.toppings.project_chat.tag': 'Project Chat',
   'uc1.toppings.project_chat.click': 'Cliquez pour détails',
+
+  // Pain Points
+  'uc1.pain_points.title1': 'Délais serrés compromettent la qualité',
+  'uc1.pain_points.description1': 'Réponses bâclées sur les petits projets créent une image dégradée et réduisent les chances de succès',
+  'uc1.pain_points.title2': 'Processus inefficaces et répétitifs',
+  'uc1.pain_points.description2': 'Temps perdu sur des tâches manuelles récurrentes au détriment de la personnalisation et de la valeur ajoutée',
+  'uc1.pain_points.title3': 'Manque de standardisation',
+  'uc1.pain_points.description3': 'Incohérences entre les offres et absence de capitalisation sur les réussites précédentes',
+
+  // Solutions
+  'uc1.solutions.title1': 'Génération rapide d\'offres structurées',
+  'uc1.solutions.description1': 'IA spécialisée qui produit des réponses complètes et conformes en quelques heures seulement',
+  'uc1.solutions.title2': 'Templates et contenus pré-validés',
+  'uc1.solutions.description2': 'Bibliothèque d\'argumentaires éprouvés et de réponses standardisées pour une qualité constante',
+  'uc1.solutions.title3': 'Validation automatique des exigences',
+  'uc1.solutions.description3': 'Vérification systématique du cahier des charges pour éviter les oublis critiques',
+
+  // Journey
+  'uc1.journey.title1': 'Analysez le cahier des charges',
+  'uc1.journey.description1': 'Importez votre appel d\'offres et laissez l\'IA extraire automatiquement toutes les exigences clés',
+  'uc1.journey.title2': 'Générez votre réponse structurée',
+  'uc1.journey.description2': 'Créez instantanément une proposition complète avec argumentaires adaptés et conformité assurée',
+  'uc1.journey.title3': 'Personnalisez et finalisez',
+  'uc1.journey.description3': 'Affinez votre offre avec des éléments différenciants tout en gardant la structure gagnante',
+
+  // KPIs
+  'uc1.kpis.description2': 'Couverture automatique des exigences',
+  'uc1.kpis.description4': 'Conformité des livrables',
+
+  // Differentiators
+  'uc1.differentiators.title1': 'Solution Dédiée aux Petits Projets',
+  'uc1.differentiators.title2': 'Intelligence Commerciale Intégrée',
+  'uc1.differentiators.title3': 'Workflows Automatisés',
+  'uc1.differentiators.description3': 'Processus streamlinés pour maximiser la productivité des équipes commerciales',
+
+  // Features
+  'uc1.features.hidden_requirements': 'L\'IA identifie automatiquement les "exigences cachées" (non exprimées clairement) dans les documents.',
+};
+
+// UC2 Translation Keys with French reference content
+const uc2TranslationKeys = {
+  // Hero Section
+  'uc2.hero.badge': 'Réponses Conformes, Livrées à Temps',
+  'uc2.hero.title': 'Réponses d\'appel d\'offres complètes',
+  'uc2.hero.span': 'en 48h maximum.',
+  'uc2.hero.description': 'La plateforme dédiée aux projets moyens (5-50 M€) : extraction automatique des exigences, génération de réponses conformes et validation collaborative. Transformez vos délais contraints en avantage concurrentiel.',
+  'uc2.hero.demoButton': 'Réservez une Démo',
+  'uc2.hero.downloadButton': 'Téléchargez le cas d\'usage →',
+
+  // Pain Points Section
+  'uc2.pain_points.title1': 'Délais serrés et exigences complexes',
+  'uc2.pain_points.description1': 'Les projets moyens cumulent complexity documentaire et contraintes temporelles, créant un stress permanent sur les équipes',
+  'uc2.pain_points.title2': 'Coordination difficile entre équipes',
+  'uc2.pain_points.description2': 'Multiplicity des intervenants complique la cohérence et la completude des réponses',
+  'uc2.pain_points.title3': 'Risques de non-conformité élevés',
+  'uc2.pain_points.description3': 'Oublis et erreurs de compliance peuvent disqualifier instantanément les meilleures propositions',
+
+  // Solutions
+  'uc2.solutions.title1': 'Analyse exhaustive des exigences',
+  'uc2.solutions.description1': 'IA spécialisée qui identifie et structure automatiquement toutes les requirements cachées ou explicites',
+  'uc2.solutions.description2': 'Workflows collaboratifs intégrés pour une coordination fluide entre tous les contributeurs',
+  'uc2.solutions.title3': 'Validation automatique de conformité',
+  'uc2.solutions.description3': 'Contrôles systématiques qui garantissent l\'adhérence complète aux specifications du client',
+
+  // Journey
+  'uc2.journey.title1': 'Structurez automatiquement les exigences',
+  'uc2.journey.description1': 'Notre IA analyse en profondeur votre appel d\'offres et structure toutes les exigences par domaines métier',
+  'uc2.journey.title2': 'Collaborez efficacement en équipe',
+  'uc2.journey.description2': 'Répartissez automatiquement le travail et synchronisez les contributions de chaque expert métier',
+  'uc2.journey.title3': 'Validez la conformité avant soumission',
+  'uc2.journey.description3': 'Vérification automatique de tous les critères obligatoires et generation du dossier final',
+
+  // Audiences
+  'uc2.audiences.projectDirectors': 'Directeurs de Projet',
+  'uc2.audiences.projectDirectorsDesc': 'Vision globale et coordination des équipes techniques',
+  'uc2.audiences.operationsManagers': 'Managers Opérationnels',
+  'uc2.audiences.operationsManagersDesc': 'Supervision des livrables et respect des délais',
+
+  // KPIs
+  'uc2.kpis.description1': 'Réduction du temps de préparation',
+  'uc2.kpis.description2': 'Taux de conformité des réponses',
+  'uc2.kpis.description3': 'Amélioration de la coordination équipe',
+
+  // Differentiators  
+  'uc2.differentiators.title1': 'Solution Adaptée aux Projets Moyens',
+  'uc2.differentiators.description1': 'Équilibre parfait entre simplicité et sophistication pour les besoins intermédiaires',
+  'uc2.differentiators.title2': 'Workflows Collaboratifs Intégrés',
+  'uc2.differentiators.description2': 'Coordination naturelle des équipes multidisciplinaires sans friction organisationnelle',
+  'uc2.differentiators.title3': 'Validation de Conformité Automatique',
+  'uc2.differentiators.description3': 'Élimination des risques de disqualification par des contrôles systématiques et intelligents',
 };
 
 // UC3 Translation Keys with French reference content
@@ -347,6 +437,7 @@ const specificUITranslations = {
 // Combine all UC translation keys
 const allUCTranslationKeys = {
   ...uc1TranslationKeys,
+  ...uc2TranslationKeys,
   ...uc3TranslationKeys,
   ...uc4TranslationKeys,
   ...uc5TranslationKeys,
