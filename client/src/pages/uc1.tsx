@@ -783,13 +783,16 @@ export default function UC1Page() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-                <HubSpotBookingModal>
-                  <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-                    {t('uc1.painPoints.contactButton')}
-                  </Button>
-                </HubSpotBookingModal>
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                  onClick={() => setIsBookingModalOpen(true)}
+                >
+                  {t('uc1.painPoints.contactButton')}
+                </Button>
+                <HubSpotBookingModal isOpen={isBookingModalOpen} onClose={() => setIsBookingModalOpen(false)} />
                 <Button variant="outline" size="lg" className="group">
-                  <Play className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
+                  <MdPlayArrow className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
                   {t('uc1.painPoints.demoButton')}
                 </Button>
               </div>
