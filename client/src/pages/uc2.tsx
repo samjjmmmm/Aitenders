@@ -223,7 +223,45 @@ export default function UC2Page() {
       useCases: "Our use cases",
       demo: "UC2 Demo",
       roi: "ROI Calculator",
-      contact: "Contact Expert"
+      contact: "Contact Expert",
+      
+      // Pain Points (mapping to existing structure)
+      painPoint1Title: "Growing complexity difficult to manage",
+      painPoint1Desc: "Medium projects require more coordination and resources, creating risks of overruns and errors",
+      painPoint2Title: "Poorly standardized processes", 
+      painPoint2Desc: "Lack of clear methodology to efficiently manage intermediate-sized projects",
+      painPoint3Title: "Complex team coordination",
+      painPoint3Desc: "Difficulties in aligning technical and commercial teams on multi-disciplinary projects",
+      
+      // Solutions (mapping to existing structure)
+      solution1Title: "Intelligent medium project management",
+      solution1Desc: "Specialized AI that automatically coordinates resources and optimizes processes for intermediate projects",
+      solution2Title: "Standardized and flexible workflows",
+      solution2Desc: "Proven methodologies adapted to medium project complexity with customization according to needs",
+      solution3Title: "Automated quality control",
+      solution3Desc: "Systematic validation of deliverables and proactive risk monitoring to maintain excellence",
+      
+      // User Journey (mapping to existing structure)
+      journey1Title: "Analyze your medium project",
+      journey1Desc: "Import your documents and let AI automatically structure requirements and necessary resources",
+      journey2Title: "Coordinate your teams", 
+      journey2Desc: "Efficiently organize interactions between technical and commercial teams with optimized workflows",
+      journey3Title: "Deliver with excellence",
+      journey3Desc: "Track progress in real-time and ensure deliverable quality with automated controls",
+      
+      // KPIs (mapping to existing structure)
+      kpi1Desc: "Reduction in coordination time",
+      kpi2Desc: "Improvement in deliverable quality", 
+      kpi3Desc: "Average project structuring time",
+      kpi4Desc: "Process traceability",
+      
+      // Differentiators (mapping to existing structure)
+      diff1Title: "Optimized Medium Project Solution",
+      diff1Desc: "Specifically designed to balance complexity and efficiency on intermediate projects",
+      diff2Title: "Advanced Collaborative Intelligence", 
+      diff2Desc: "AI specialized in multi-team coordination and dependency management",
+      diff3Title: "Flexibility and Standardization",
+      diff3Desc: "Adaptive processes that adjust to the specific complexity of each project"
     }
   };
 
