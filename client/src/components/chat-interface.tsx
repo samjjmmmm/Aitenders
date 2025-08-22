@@ -7,6 +7,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 // Toast removed to prevent UI blocking
 import { BrowserFingerprint } from "@/lib/browser-fingerprint";
+import { useTranslation } from 'react-i18next';
 
 interface ChatMessage {
   id: string;
@@ -26,12 +27,13 @@ interface ChatInterfaceProps {
   transparent?: boolean;
 }
 
-export default function ChatInterface({ 
-  language = 'fr', 
+export default function ChatInterface({
+  language = 'fr',
   onMessageSend,
   customActions = [],
   transparent = false
 }: ChatInterfaceProps) {
+  const { t } = useTranslation(); // Initialize translation hook
   const [message, setMessage] = useState("");
   const [currentPage, setCurrentPage] = useState("");
   const [browserFingerprint, setBrowserFingerprint] = useState<string | null>(null);
@@ -209,7 +211,7 @@ export default function ChatInterface({
   const sendMessageMutation = useMutation({
     mutationFn: async (messageText: string) => {
       // Send to backend with OpenAI integration and browser fingerprint
-      const response = await apiRequest("POST", "/api/chat", { 
+      const response = await apiRequest("POST", "/api/chat", {
         message: messageText,
         language: language,
         fingerprint: browserFingerprint
@@ -347,7 +349,7 @@ export default function ChatInterface({
   // Dynamic actions based on current page
   const getPageSpecificActions = () => {
     const currentPath = currentPage || window.location.pathname;
-    
+
     // Home page actions
     if (currentPath === '/') {
       return [
@@ -360,7 +362,7 @@ export default function ChatInterface({
           }
         },
         {
-          label: "Simulation / ROI", 
+          label: "Simulation / ROI",
           icon: <MdSettings className="w-3 h-3 text-gray-400" />,
           onClick: () => {
             setIsExpanded(true);
@@ -406,7 +408,7 @@ export default function ChatInterface({
           }
         },
         {
-          label: "ROI Calculator", 
+          label: "ROI Calculator",
           icon: <MdAnalytics className="w-3 h-3 text-gray-400" />,
           onClick: () => {
             setIsExpanded(true);
@@ -444,7 +446,7 @@ export default function ChatInterface({
           }
         },
         {
-          label: "ROI Calculator", 
+          label: "ROI Calculator",
           icon: <MdAnalytics className="w-3 h-3 text-gray-400" />,
           onClick: () => {
             setIsExpanded(true);
@@ -462,7 +464,7 @@ export default function ChatInterface({
       ];
     }
 
-    // UC3 page actions  
+    // UC3 page actions
     if (currentPath === '/uc3') {
       return [
         {
@@ -482,7 +484,7 @@ export default function ChatInterface({
           }
         },
         {
-          label: "ROI Calculator", 
+          label: "ROI Calculator",
           icon: <MdAnalytics className="w-3 h-3 text-gray-400" />,
           onClick: () => {
             setIsExpanded(true);
@@ -521,7 +523,7 @@ export default function ChatInterface({
           }
         },
         {
-          label: "ROI Calculator", 
+          label: "ROI Calculator",
           icon: <MdAnalytics className="w-3 h-3 text-gray-400" />,
           onClick: () => {
             setIsExpanded(true);
@@ -550,7 +552,7 @@ export default function ChatInterface({
         }
       },
       {
-        label: language === 'fr' ? 'Sécurité' : 'Security', 
+        label: language === 'fr' ? 'Sécurité' : 'Security',
         icon: <MdSecurity className="w-3 h-3 text-gray-400" />,
         onClick: () => {
           setIsExpanded(true);
@@ -582,9 +584,9 @@ export default function ChatInterface({
     onClick: () => {
       // Auto-expand chat when button is clicked
       setIsExpanded(true);
-      
+
       // Special handling for simulator button
-      if (action.label.toLowerCase().includes('simulateur') || 
+      if (action.label.toLowerCase().includes('simulateur') ||
           action.label.toLowerCase().includes('simulator') ||
           action.label.toLowerCase().includes('roi') ||
           action.label.toLowerCase().includes('simulation')) {
@@ -625,7 +627,7 @@ export default function ChatInterface({
             });
           }
         }, 100);
-        
+
         return `<a id="${linkId}" href="${url}" class="text-aitenders-primary-blue hover:text-aitenders-dark-blue underline font-medium cursor-pointer inline-block px-2 py-1 bg-aitenders-primary-blue/10 rounded hover:bg-aitenders-primary-blue/20 transition-colors">${linkText}</a>`;
       })
       .replace(/\n_____\n?/g, '<br/>') // Hide the trigger marker
@@ -818,14 +820,14 @@ export default function ChatInterface({
                       {(() => {
                         const simulatorData = detectSimulatorQuestion(msg.response || '');
                         const hideMainResponse = shouldHideResponse(msg.response);
-                        
+
                         return (
                           <div className={`inline-block ${hideMainResponse ? '' : 'bg-aitenders-pale-blue text-aitenders-dark-blue px-3 py-2 rounded-2xl rounded-tl-sm text-sm'} ${isExpanded ? 'max-w-5xl w-full' : 'max-w-md'}`}>
                             {!hideMainResponse && (
-                              <div 
-                                dangerouslySetInnerHTML={{ 
-                                  __html: formatResponse(msg.response) 
-                                }} 
+                              <div
+                                dangerouslySetInnerHTML={{
+                                  __html: formatResponse(msg.response)
+                                }}
                               />
                             )}
 
@@ -845,9 +847,9 @@ export default function ChatInterface({
                                         type="text"
                                         placeholder={field.placeholder}
                                         value={simulatorForm[field.key] || ''}
-                                        onChange={(e) => setSimulatorForm({ 
-                                          ...simulatorForm, 
-                                          [field.key]: e.target.value 
+                                        onChange={(e) => setSimulatorForm({
+                                          ...simulatorForm,
+                                          [field.key]: e.target.value
                                         })}
                                         className="h-8 text-sm w-24 border-b-2 border-blue-300 bg-white rounded-md focus:border-blue-500"
                                       />
@@ -966,7 +968,7 @@ export default function ChatInterface({
                     title={language === 'fr' ? 'Copier la conversation complète' : 'Copy full conversation'}
                   >
                     <MdContentCopy className="w-3 h-3" />
-                    {language === 'fr' ? 'Copier' : 'Copy'}
+                    {t('chat.copy', language === 'fr' ? 'Copier' : 'Copy')}
                   </Button>
                 </>
               )}
@@ -1048,7 +1050,7 @@ export default function ChatInterface({
               {language === 'fr' ? 'Adresse email requise' : 'Email address required'}
             </h3>
             <p className="text-gray-600 mb-4 text-sm">
-              {language === 'fr' 
+              {language === 'fr'
                 ? 'Veuillez saisir votre adresse email pour copier l\'ensemble de la conversation.'
                 : 'Please enter your email address to copy the full conversation.'
               }
@@ -1079,7 +1081,7 @@ export default function ChatInterface({
                 disabled={!email.trim()}
                 className="px-4 py-2 bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-white"
               >
-                {language === 'fr' ? 'Copier' : 'Copy'}
+                {t('chat.copy', language === 'fr' ? 'Copier' : 'Copy')}
               </Button>
             </div>
           </div>

@@ -145,7 +145,16 @@
       "demo": "Démo UC2",
       "roi": "Calculateur ROI",
       "contact": "Contacter un Expert"
-    },
+    }
+  },
+  "chat": {
+    "placeholder": "Poser une question",
+    "send": "Envoyer",
+    "clear": "Vider",
+    "copy": "Copier",
+    "expand": "Agrandir",
+    "collapse": "Réduire",
+    "open_chat": "Ouvrir le chat",
     "simulator": {
       "title": "Simulateur ROI Aitenders",
       "useCase": "Cas d'usage:",

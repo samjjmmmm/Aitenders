@@ -145,7 +145,16 @@
       "demo": "UC2 Demo",
       "roi": "ROI Calculator",
       "contact": "Contact Expert"
-    },
+    }
+  },
+  "chat": {
+    "placeholder": "Ask a question",
+    "send": "Send",
+    "clear": "Clear",
+    "copy": "Copy",
+    "expand": "Expand",
+    "collapse": "Collapse",
+    "open_chat": "Open chat",
     "simulator": {
       "title": "Aitenders ROI Simulator",
       "useCase": "Use case:",
