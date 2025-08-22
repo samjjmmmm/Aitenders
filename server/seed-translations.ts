@@ -153,6 +153,115 @@ const uc1TranslationKeys = {
 
   // Features
   'uc1.features.hidden_requirements': 'L\'IA identifie automatiquement les "exigences cachées" (non exprimées clairement) dans les documents.',
+
+  // UC1 Additional sections to match UC2 structure
+  // Pain Points Section (detailed)
+  'uc1.pain_points.title1': 'Délais serrés compromettent la qualité',
+  'uc1.pain_points.description1': 'Réponses bâclées sur les petits projets créent une image dégradée et réduisent les chances de succès',
+  'uc1.pain_points.title2': 'Processus inefficaces et répétitifs',
+  'uc1.pain_points.description2': 'Temps perdu sur des tâches manuelles récurrentes au détriment de la personnalisation et de la valeur ajoutée',
+  'uc1.pain_points.title3': 'Manque de standardisation',
+  'uc1.pain_points.description3': 'Incohérences entre les offres et absence de capitalisation sur les réussites précédentes',
+
+  // Solutions Section (detailed)
+  'uc1.solutions.title1': 'Génération rapide d\'offres structurées',
+  'uc1.solutions.description1': 'IA spécialisée qui produit des réponses complètes et conformes en quelques heures seulement',
+  'uc1.solutions.title2': 'Templates et contenus pré-validés',
+  'uc1.solutions.description2': 'Bibliothèque d\'argumentaires éprouvés et de réponses standardisées pour une qualité constante',
+  'uc1.solutions.title3': 'Validation automatique des exigences',
+  'uc1.solutions.description3': 'Vérification systématique du cahier des charges pour éviter les oublis critiques',
+
+  // Journey Section (detailed)
+  'uc1.journey.title1': 'Analysez le cahier des charges',
+  'uc1.journey.description1': 'Importez votre appel d\'offres et laissez l\'IA extraire automatiquement toutes les exigences clés',
+  'uc1.journey.title2': 'Générez votre réponse structurée',
+  'uc1.journey.description2': 'Créez instantanément une proposition complète avec argumentaires adaptés et conformité assurée',
+  'uc1.journey.title3': 'Personnalisez et finalisez',
+  'uc1.journey.description3': 'Affinez votre offre avec des éléments différenciants tout en gardant la structure gagnante',
+
+  // Audiences Section
+  'uc1.audiences.bidManagers': 'Responsables d\'Offres',
+  'uc1.audiences.bidManagersDesc': 'Analyse rapide et validation des opportunités commerciales',
+  'uc1.audiences.salesDirectors': 'Directeurs Commerciaux',
+  'uc1.audiences.salesDirectorsDesc': 'Vision stratégique et décision go/no-go immédiate',
+
+  // KPIs Section (detailed values)
+  'uc1.kpis.description1': 'Réduction du temps d\'analyse',
+  'uc1.kpis.description2': 'Couverture automatique des exigences',
+  'uc1.kpis.description3': 'Amélioration de la qualité des offres',
+  'uc1.kpis.description4': 'Conformité des livrables',
+  'uc1.results_section.kpis.time_value': '75% de temps d\'analyse économisé',
+  'uc1.results_section.kpis.clauses_value': '100% des critères critiques identifiés',
+  'uc1.results_section.kpis.surprise_value': '0 oubli critique, maîtrise totale',
+  'uc1.results_section.kpis.extra_value': 'Go/No-Go immédiat et documenté',
+
+  // Differentiators Section (detailed)
+  'uc1.differentiators.title1': 'Solution Dédiée aux Petits Projets',
+  'uc1.differentiators.description1': 'Optimisée spécifiquement pour les cycles courts et les budgets contraints',
+  'uc1.differentiators.title2': 'Intelligence Commerciale Intégrée',
+  'uc1.differentiators.description2': 'IA spécialisée dans l\'analyse rapide et la prise de décision commerciale',
+  'uc1.differentiators.title3': 'Workflows Automatisés',
+  'uc1.differentiators.description3': 'Processus streamlinés pour maximiser la productivité des équipes commerciales',
+
+  // Toppings Advanced Features (detailed)
+  'uc1.toppings.features.summary.title': 'Résumé automatique avancé',
+  'uc1.toppings.features.summary.text': 'Génération intelligente de synthèses multi-niveaux avec recommandations stratégiques et points d\'attention prioritaires.',
+  'uc1.toppings.features.summary.tag1': 'Synthèse Multi-Niveaux',
+  'uc1.toppings.features.summary.tag2': 'Recommandations IA',
+
+  'uc1.toppings.features.validation.title': 'Validation collaborative intelligente',
+  'uc1.toppings.features.validation.text': 'Système de validation collaborative avec workflow d\'approbation automatisé et traçabilité complète des décisions.',
+  'uc1.toppings.features.validation.tag1': 'Workflow Collaboratif',
+  'uc1.toppings.features.validation.tag2': 'Traçabilité Complète',
+
+  'uc1.toppings.features.learning.title': 'Apprentissage continu et optimisation',
+  'uc1.toppings.features.learning.text': 'L\'IA apprend de vos décisions passées et des résultats d\'offres pour améliorer continuellement ses recommandations.',
+  'uc1.toppings.features.learning.tag': 'Amélioration Continue',
+
+  'uc1.toppings.features.integration.title': 'Écosystème intégré, performance renforcée',
+  'uc1.toppings.features.integration.text': 'Connectivité native avec vos outils métier existants (ERP, CRM, outils de gestion de projet) pour une synergie parfaite.',
+  'uc1.toppings.features.integration.tag1': 'API Native',
+  'uc1.toppings.features.integration.tag2': 'Sync Temps Réel',
+
+  'uc1.toppings.bottom_text': 'Chaque fonctionnalité optimise vos petits projets pour une performance maximale',
+  'uc1.toppings.cta': 'Explorer toutes les fonctionnalités →',
+
+  // Reference Projects Section
+  'uc1.reference_projects.headline': 'Nos appels d\'offres de référence sur les petits projets',
+  'uc1.reference_projects.subtitle': 'Découvrez comment nos clients transforment leurs petits projets avec l\'IA Aitenders',
+  'uc1.reference_projects.project1.title': 'Modernisation IT PME',
+  'uc1.reference_projects.project1.sector': 'Technologies',
+  'uc1.reference_projects.project1.offer': 'Offre : 2,8 M€',
+  'uc1.reference_projects.project1.desc': 'Modernisation complète de l\'infrastructure IT d\'une PME avec migration cloud et formation équipes.',
+  'uc1.reference_projects.project1.result': 'Délai réduit de 60%, offre gagnante livrée en 24h',
+  'uc1.reference_projects.project1.impact': 'Go/No-Go immédiat, équipe rassurée, direction convaincue',
+
+  'uc1.reference_projects.project2.title': 'Rénovation Énergétique Bâtiment',
+  'uc1.reference_projects.project2.sector': 'Construction',
+  'uc1.reference_projects.project2.offer': 'Offre : 4,2 M€',
+  'uc1.reference_projects.project2.desc': 'Rénovation énergétique complète d\'un bâtiment tertiaire avec certification environnementale.',
+  'uc1.reference_projects.project2.result': 'Analyse complète en 3h, validation interne en 1 jour',
+  'uc1.reference_projects.project2.impact': 'Zéro surprise, conformité garantie, crédibilité renforcée',
+
+  'uc1.reference_projects.project3.title': 'Système de Sécurité Intégré',
+  'uc1.reference_projects.project3.sector': 'Sécurité',
+  'uc1.reference_projects.project3.offer': 'Offre : 1,5 M€',
+  'uc1.reference_projects.project3.desc': 'Déploiement d\'un système de sécurité intégré avec vidéosurveillance et contrôle d\'accès.',
+  'uc1.reference_projects.project3.result': 'Structuration immédiate, points critiques détectés',
+  'uc1.reference_projects.project3.impact': 'Décision rapide, processus maîtrisé, stress éliminé',
+
+  'uc1.reference_projects.impact_label': 'Impact client :',
+
+  // ROI Simulator
+  'uc1.roi_simulator.badge': 'Simulateur ROI Intégré',
+  'uc1.roi_simulator.headline': 'Calculez votre ROI en temps réel',
+  'uc1.roi_simulator.subtext': 'Simulateur intelligent intégré à la page pour une analyse immédiate de vos petits projets',
+
+  // Chat Actions
+  'uc1.chat_actions.use_cases': 'Nos cas d\'usage',
+  'uc1.chat_actions.demo': 'Démo UC1',
+  'uc1.chat_actions.roi': 'Calculateur ROI',
+  'uc1.chat_actions.contact': 'Expert Contact',
 };
 
 // UC2 Translation Keys with French reference content
@@ -556,6 +665,105 @@ const allUCEnglishTranslations = {
   'uc1.toppings.project_chat.tag': 'Project Chat',
   'uc1.toppings.project_chat.click': 'Click for details',
 
+  // UC1 Additional English translations to match UC2 structure
+  'uc1.pain_points.title1': 'Tight deadlines compromise quality',
+  'uc1.pain_points.description1': 'Rushed responses on small projects create a degraded image and reduce chances of success',
+  'uc1.pain_points.title2': 'Inefficient and repetitive processes',
+  'uc1.pain_points.description2': 'Time wasted on recurring manual tasks at the expense of customization and added value',
+  'uc1.pain_points.title3': 'Lack of standardization',
+  'uc1.pain_points.description3': 'Inconsistencies between offers and absence of capitalization on previous successes',
+
+  'uc1.solutions.title1': 'Rapid generation of structured offers',
+  'uc1.solutions.description1': 'Specialized AI that produces complete and compliant responses in just a few hours',
+  'uc1.solutions.title2': 'Pre-validated templates and content',
+  'uc1.solutions.description2': 'Library of proven arguments and standardized responses for consistent quality',
+  'uc1.solutions.title3': 'Automatic requirements validation',
+  'uc1.solutions.description3': 'Systematic verification of specifications to avoid critical oversights',
+
+  'uc1.journey.title1': 'Analyze the specifications',
+  'uc1.journey.description1': 'Import your tender and let AI automatically extract all key requirements',
+  'uc1.journey.title2': 'Generate your structured response',
+  'uc1.journey.description2': 'Instantly create a complete proposal with adapted arguments and assured compliance',
+  'uc1.journey.title3': 'Customize and finalize',
+  'uc1.journey.description3': 'Refine your offer with differentiating elements while keeping the winning structure',
+
+  'uc1.audiences.bidManagers': 'Bid Managers',
+  'uc1.audiences.bidManagersDesc': 'Quick analysis and validation of commercial opportunities',
+  'uc1.audiences.salesDirectors': 'Sales Directors',
+  'uc1.audiences.salesDirectorsDesc': 'Strategic vision and immediate go/no-go decision',
+
+  'uc1.kpis.description1': 'Analysis time reduction',
+  'uc1.kpis.description2': 'Automatic requirements coverage',
+  'uc1.kpis.description3': 'Offer quality improvement',
+  'uc1.kpis.description4': 'Deliverable compliance',
+  'uc1.results_section.kpis.time_value': '75% analysis time saved',
+  'uc1.results_section.kpis.clauses_value': '100% critical criteria identified',
+  'uc1.results_section.kpis.surprise_value': '0 critical oversight, total control',
+  'uc1.results_section.kpis.extra_value': 'Immediate and documented Go/No-Go',
+
+  'uc1.differentiators.title1': 'Solution Dedicated to Small Projects',
+  'uc1.differentiators.description1': 'Specifically optimized for short cycles and constrained budgets',
+  'uc1.differentiators.title2': 'Integrated Commercial Intelligence',
+  'uc1.differentiators.description2': 'AI specialized in rapid analysis and commercial decision-making',
+  'uc1.differentiators.title3': 'Automated Workflows',
+  'uc1.differentiators.description3': 'Streamlined processes to maximize commercial team productivity',
+
+  'uc1.toppings.features.summary.title': 'Advanced automatic summary',
+  'uc1.toppings.features.summary.text': 'Intelligent generation of multi-level syntheses with strategic recommendations and priority attention points.',
+  'uc1.toppings.features.summary.tag1': 'Multi-Level Synthesis',
+  'uc1.toppings.features.summary.tag2': 'AI Recommendations',
+
+  'uc1.toppings.features.validation.title': 'Intelligent collaborative validation',
+  'uc1.toppings.features.validation.text': 'Collaborative validation system with automated approval workflow and complete decision traceability.',
+  'uc1.toppings.features.validation.tag1': 'Collaborative Workflow',
+  'uc1.toppings.features.validation.tag2': 'Complete Traceability',
+
+  'uc1.toppings.features.learning.title': 'Continuous learning and optimization',
+  'uc1.toppings.features.learning.text': 'AI learns from your past decisions and offer results to continuously improve its recommendations.',
+  'uc1.toppings.features.learning.tag': 'Continuous Improvement',
+
+  'uc1.toppings.features.integration.title': 'Integrated ecosystem, enhanced performance',
+  'uc1.toppings.features.integration.text': 'Native connectivity with your existing business tools (ERP, CRM, project management tools) for perfect synergy.',
+  'uc1.toppings.features.integration.tag1': 'Native API',
+  'uc1.toppings.features.integration.tag2': 'Real-Time Sync',
+
+  'uc1.toppings.bottom_text': 'Each feature optimizes your small projects for maximum performance',
+  'uc1.toppings.cta': 'Explore all features →',
+
+  'uc1.reference_projects.headline': 'Our reference tenders for small projects',
+  'uc1.reference_projects.subtitle': 'Discover how our clients transform their small projects with Aitenders AI',
+  'uc1.reference_projects.project1.title': 'SME IT Modernization',
+  'uc1.reference_projects.project1.sector': 'Technology',
+  'uc1.reference_projects.project1.offer': 'Offer: €2.8M',
+  'uc1.reference_projects.project1.desc': 'Complete IT infrastructure modernization for SME with cloud migration and team training.',
+  'uc1.reference_projects.project1.result': '60% time reduction, winning offer delivered in 24h',
+  'uc1.reference_projects.project1.impact': 'Immediate Go/No-Go, reassured team, convinced management',
+
+  'uc1.reference_projects.project2.title': 'Building Energy Renovation',
+  'uc1.reference_projects.project2.sector': 'Construction',
+  'uc1.reference_projects.project2.offer': 'Offer: €4.2M',
+  'uc1.reference_projects.project2.desc': 'Complete energy renovation of office building with environmental certification.',
+  'uc1.reference_projects.project2.result': 'Complete analysis in 3h, internal validation in 1 day',
+  'uc1.reference_projects.project2.impact': 'Zero surprises, guaranteed compliance, enhanced credibility',
+
+  'uc1.reference_projects.project3.title': 'Integrated Security System',
+  'uc1.reference_projects.project3.sector': 'Security',
+  'uc1.reference_projects.project3.offer': 'Offer: €1.5M',
+  'uc1.reference_projects.project3.desc': 'Deployment of integrated security system with video surveillance and access control.',
+  'uc1.reference_projects.project3.result': 'Immediate structuring, critical points detected',
+  'uc1.reference_projects.project3.impact': 'Quick decision, controlled process, eliminated stress',
+
+  'uc1.reference_projects.impact_label': 'Client impact:',
+
+  'uc1.roi_simulator.badge': 'Integrated ROI Simulator',
+  'uc1.roi_simulator.headline': 'Calculate your ROI in real time',
+  'uc1.roi_simulator.subtext': 'Smart simulator integrated into the page for immediate analysis of your small projects',
+
+  'uc1.chat_actions.use_cases': 'Our use cases',
+  'uc1.chat_actions.demo': 'UC1 Demo',
+  'uc1.chat_actions.roi': 'ROI Calculator',
+  'uc1.chat_actions.contact': 'Contact Expert',
+
   // UC3 English
   'uc3.hero.badge': 'Master large projects',
   'uc3.hero.title': 'Coordinate and manage your mega-projects',
@@ -838,6 +1046,105 @@ const allUCSpanishTranslations = {
   'uc1.toppings.project_chat.tag': 'Project Chat',
   'uc1.toppings.project_chat.click': 'Clic para detalles',
 
+  // UC1 Additional Spanish translations to match UC2 structure
+  'uc1.pain_points.title1': 'Plazos ajustados comprometen la calidad',
+  'uc1.pain_points.description1': 'Respuestas apresuradas en proyectos pequeños crean una imagen degradada y reducen las posibilidades de éxito',
+  'uc1.pain_points.title2': 'Procesos ineficientes y repetitivos',
+  'uc1.pain_points.description2': 'Tiempo perdido en tareas manuales recurrentes en detrimento de la personalización y el valor añadido',
+  'uc1.pain_points.title3': 'Falta de estandarización',
+  'uc1.pain_points.description3': 'Inconsistencias entre ofertas y ausencia de capitalización sobre éxitos anteriores',
+
+  'uc1.solutions.title1': 'Generación rápida de ofertas estructuradas',
+  'uc1.solutions.description1': 'IA especializada que produce respuestas completas y conformes en solo unas horas',
+  'uc1.solutions.title2': 'Plantillas y contenidos pre-validados',
+  'uc1.solutions.description2': 'Biblioteca de argumentarios probados y respuestas estandarizadas para calidad constante',
+  'uc1.solutions.title3': 'Validación automática de requisitos',
+  'uc1.solutions.description3': 'Verificación sistemática del pliego de condiciones para evitar olvidos críticos',
+
+  'uc1.journey.title1': 'Analizar las especificaciones',
+  'uc1.journey.description1': 'Importa tu licitación y deja que la IA extraiga automáticamente todos los requisitos clave',
+  'uc1.journey.title2': 'Generar tu respuesta estructurada',
+  'uc1.journey.description2': 'Crea instantáneamente una propuesta completa con argumentos adaptados y cumplimiento asegurado',
+  'uc1.journey.title3': 'Personalizar y finalizar',
+  'uc1.journey.description3': 'Refina tu oferta con elementos diferenciadores manteniendo la estructura ganadora',
+
+  'uc1.audiences.bidManagers': 'Responsables de Ofertas',
+  'uc1.audiences.bidManagersDesc': 'Análisis rápido y validación de oportunidades comerciales',
+  'uc1.audiences.salesDirectors': 'Directores Comerciales',
+  'uc1.audiences.salesDirectorsDesc': 'Visión estratégica y decisión go/no-go inmediata',
+
+  'uc1.kpis.description1': 'Reducción del tiempo de análisis',
+  'uc1.kpis.description2': 'Cobertura automática de requisitos',
+  'uc1.kpis.description3': 'Mejora de la calidad de ofertas',
+  'uc1.kpis.description4': 'Conformidad de entregables',
+  'uc1.results_section.kpis.time_value': '75% de tiempo de análisis ahorrado',
+  'uc1.results_section.kpis.clauses_value': '100% de criterios críticos identificados',
+  'uc1.results_section.kpis.surprise_value': '0 olvido crítico, control total',
+  'uc1.results_section.kpis.extra_value': 'Go/No-Go inmediato y documentado',
+
+  'uc1.differentiators.title1': 'Solución Dedicada a Proyectos Pequeños',
+  'uc1.differentiators.description1': 'Optimizada específicamente para ciclos cortos y presupuestos limitados',
+  'uc1.differentiators.title2': 'Inteligencia Comercial Integrada',
+  'uc1.differentiators.description2': 'IA especializada en análisis rápido y toma de decisiones comerciales',
+  'uc1.differentiators.title3': 'Flujos de Trabajo Automatizados',
+  'uc1.differentiators.description3': 'Procesos optimizados para maximizar la productividad de equipos comerciales',
+
+  'uc1.toppings.features.summary.title': 'Resumen automático avanzado',
+  'uc1.toppings.features.summary.text': 'Generación inteligente de síntesis multi-nivel con recomendaciones estratégicas y puntos de atención prioritarios.',
+  'uc1.toppings.features.summary.tag1': 'Síntesis Multi-Nivel',
+  'uc1.toppings.features.summary.tag2': 'Recomendaciones IA',
+
+  'uc1.toppings.features.validation.title': 'Validación colaborativa inteligente',
+  'uc1.toppings.features.validation.text': 'Sistema de validación colaborativa con flujo de aprobación automatizado y trazabilidad completa de decisiones.',
+  'uc1.toppings.features.validation.tag1': 'Flujo Colaborativo',
+  'uc1.toppings.features.validation.tag2': 'Trazabilidad Completa',
+
+  'uc1.toppings.features.learning.title': 'Aprendizaje continuo y optimización',
+  'uc1.toppings.features.learning.text': 'La IA aprende de tus decisiones pasadas y resultados de ofertas para mejorar continuamente sus recomendaciones.',
+  'uc1.toppings.features.learning.tag': 'Mejora Continua',
+
+  'uc1.toppings.features.integration.title': 'Ecosistema integrado, rendimiento mejorado',
+  'uc1.toppings.features.integration.text': 'Conectividad nativa con tus herramientas empresariales existentes (ERP, CRM, herramientas de gestión de proyectos) para sinergia perfecta.',
+  'uc1.toppings.features.integration.tag1': 'API Nativa',
+  'uc1.toppings.features.integration.tag2': 'Sincronización Tiempo Real',
+
+  'uc1.toppings.bottom_text': 'Cada funcionalidad optimiza tus proyectos pequeños para máximo rendimiento',
+  'uc1.toppings.cta': 'Explorar todas las funcionalidades →',
+
+  'uc1.reference_projects.headline': 'Nuestras licitaciones de referencia para proyectos pequeños',
+  'uc1.reference_projects.subtitle': 'Descubre cómo nuestros clientes transforman sus proyectos pequeños con IA Aitenders',
+  'uc1.reference_projects.project1.title': 'Modernización IT PYME',
+  'uc1.reference_projects.project1.sector': 'Tecnología',
+  'uc1.reference_projects.project1.offer': 'Oferta: 2,8 M€',
+  'uc1.reference_projects.project1.desc': 'Modernización completa de infraestructura IT de PYME con migración cloud y formación de equipos.',
+  'uc1.reference_projects.project1.result': '60% reducción de tiempo, oferta ganadora entregada en 24h',
+  'uc1.reference_projects.project1.impact': 'Go/No-Go inmediato, equipo tranquilizado, dirección convencida',
+
+  'uc1.reference_projects.project2.title': 'Renovación Energética Edificio',
+  'uc1.reference_projects.project2.sector': 'Construcción',
+  'uc1.reference_projects.project2.offer': 'Oferta: 4,2 M€',
+  'uc1.reference_projects.project2.desc': 'Renovación energética completa de edificio terciario con certificación ambiental.',
+  'uc1.reference_projects.project2.result': 'Análisis completo en 3h, validación interna en 1 día',
+  'uc1.reference_projects.project2.impact': 'Cero sorpresas, cumplimiento garantizado, credibilidad reforzada',
+
+  'uc1.reference_projects.project3.title': 'Sistema de Seguridad Integrado',
+  'uc1.reference_projects.project3.sector': 'Seguridad',
+  'uc1.reference_projects.project3.offer': 'Oferta: 1,5 M€',
+  'uc1.reference_projects.project3.desc': 'Despliegue de sistema de seguridad integrado con videovigilancia y control de acceso.',
+  'uc1.reference_projects.project3.result': 'Estructuración inmediata, puntos críticos detectados',
+  'uc1.reference_projects.project3.impact': 'Decisión rápida, proceso controlado, estrés eliminado',
+
+  'uc1.reference_projects.impact_label': 'Impacto cliente:',
+
+  'uc1.roi_simulator.badge': 'Simulador ROI Integrado',
+  'uc1.roi_simulator.headline': 'Calcula tu ROI en tiempo real',
+  'uc1.roi_simulator.subtext': 'Simulador inteligente integrado en la página para análisis inmediato de tus proyectos pequeños',
+
+  'uc1.chat_actions.use_cases': 'Nuestros casos de uso',
+  'uc1.chat_actions.demo': 'Demo UC1',
+  'uc1.chat_actions.roi': 'Calculadora ROI',
+  'uc1.chat_actions.contact': 'Contactar Experto',
+
   // UC3 Spanish
   'uc3.hero.badge': 'Domina grandes proyectos',
   'uc3.hero.title': 'Coordina y gestiona tus mega-proyectos',
@@ -1119,6 +1426,105 @@ const allUCGermanTranslations = {
   'uc1.toppings.project_chat.desc': 'Stellen Sie der KI jede Frage zum Projekt und erhalten Sie präzise Antworten mit Quellen.',
   'uc1.toppings.project_chat.tag': 'Project Chat',
   'uc1.toppings.project_chat.click': 'Klicken für Details',
+
+  // UC1 Additional German translations to match UC2 structure
+  'uc1.pain_points.title1': 'Enge Fristen gefährden die Qualität',
+  'uc1.pain_points.description1': 'Hastige Antworten bei kleinen Projekten schaffen ein schlechtes Image und reduzieren Erfolgschancen',
+  'uc1.pain_points.title2': 'Ineffiziente und sich wiederholende Prozesse',
+  'uc1.pain_points.description2': 'Zeitverlust bei wiederkehrenden manuellen Aufgaben auf Kosten von Anpassung und Mehrwert',
+  'uc1.pain_points.title3': 'Mangel an Standardisierung',
+  'uc1.pain_points.description3': 'Inkonsistenzen zwischen Angeboten und fehlende Kapitalisierung früherer Erfolge',
+
+  'uc1.solutions.title1': 'Schnelle Generierung strukturierter Angebote',
+  'uc1.solutions.description1': 'Spezialisierte KI, die vollständige und konforme Antworten in nur wenigen Stunden produziert',
+  'uc1.solutions.title2': 'Vorvalidierte Vorlagen und Inhalte',
+  'uc1.solutions.description2': 'Bibliothek bewährter Argumente und standardisierter Antworten für konstante Qualität',
+  'uc1.solutions.title3': 'Automatische Anforderungsvalidierung',
+  'uc1.solutions.description3': 'Systematische Überprüfung der Spezifikationen zur Vermeidung kritischer Übersehungen',
+
+  'uc1.journey.title1': 'Spezifikationen analysieren',
+  'uc1.journey.description1': 'Importieren Sie Ihre Ausschreibung und lassen Sie KI automatisch alle Schlüsselanforderungen extrahieren',
+  'uc1.journey.title2': 'Strukturierte Antwort generieren',
+  'uc1.journey.description2': 'Erstellen Sie sofort einen vollständigen Vorschlag mit angepassten Argumenten und gesicherter Compliance',
+  'uc1.journey.title3': 'Anpassen und finalisieren',
+  'uc1.journey.description3': 'Verfeinern Sie Ihr Angebot mit differenzierenden Elementen bei Beibehaltung der Gewinnstruktur',
+
+  'uc1.audiences.bidManagers': 'Angebotsmanager',
+  'uc1.audiences.bidManagersDesc': 'Schnelle Analyse und Validierung kommerzieller Möglichkeiten',
+  'uc1.audiences.salesDirectors': 'Vertriebsdirektoren',
+  'uc1.audiences.salesDirectorsDesc': 'Strategische Vision und sofortige Go/No-Go-Entscheidung',
+
+  'uc1.kpis.description1': 'Reduzierung der Analysezeit',
+  'uc1.kpis.description2': 'Automatische Anforderungsabdeckung',
+  'uc1.kpis.description3': 'Verbesserung der Angebotsqualität',
+  'uc1.kpis.description4': 'Lieferbare Compliance',
+  'uc1.results_section.kpis.time_value': '75% gesparte Analysezeit',
+  'uc1.results_section.kpis.clauses_value': '100% kritische Kriterien identifiziert',
+  'uc1.results_section.kpis.surprise_value': '0 kritische Übersehung, totale Kontrolle',
+  'uc1.results_section.kpis.extra_value': 'Sofortiges und dokumentiertes Go/No-Go',
+
+  'uc1.differentiators.title1': 'Lösung für kleine Projekte',
+  'uc1.differentiators.description1': 'Speziell optimiert für kurze Zyklen und begrenzte Budgets',
+  'uc1.differentiators.title2': 'Integrierte kommerzielle Intelligenz',
+  'uc1.differentiators.description2': 'KI spezialisiert auf schnelle Analyse und kommerzielle Entscheidungsfindung',
+  'uc1.differentiators.title3': 'Automatisierte Workflows',
+  'uc1.differentiators.description3': 'Optimierte Prozesse zur Maximierung der Produktivität von Verkaufsteams',
+
+  'uc1.toppings.features.summary.title': 'Erweiterte automatische Zusammenfassung',
+  'uc1.toppings.features.summary.text': 'Intelligente Generierung mehrstufiger Synthesen mit strategischen Empfehlungen und prioritären Aufmerksamkeitspunkten.',
+  'uc1.toppings.features.summary.tag1': 'Mehrstufige Synthese',
+  'uc1.toppings.features.summary.tag2': 'KI-Empfehlungen',
+
+  'uc1.toppings.features.validation.title': 'Intelligente kollaborative Validierung',
+  'uc1.toppings.features.validation.text': 'Kollaboratives Validierungssystem mit automatisiertem Genehmigungsworkflow und vollständiger Entscheidungsrückverfolgbarkeit.',
+  'uc1.toppings.features.validation.tag1': 'Kollaborativer Workflow',
+  'uc1.toppings.features.validation.tag2': 'Vollständige Rückverfolgbarkeit',
+
+  'uc1.toppings.features.learning.title': 'Kontinuierliches Lernen und Optimierung',
+  'uc1.toppings.features.learning.text': 'KI lernt aus Ihren vergangenen Entscheidungen und Angebotsergebnissen, um ihre Empfehlungen kontinuierlich zu verbessern.',
+  'uc1.toppings.features.learning.tag': 'Kontinuierliche Verbesserung',
+
+  'uc1.toppings.features.integration.title': 'Integriertes Ökosystem, verbesserte Leistung',
+  'uc1.toppings.features.integration.text': 'Native Konnektivität mit Ihren bestehenden Geschäftstools (ERP, CRM, Projektmanagement-Tools) für perfekte Synergie.',
+  'uc1.toppings.features.integration.tag1': 'Native API',
+  'uc1.toppings.features.integration.tag2': 'Echtzeit-Synchronisation',
+
+  'uc1.toppings.bottom_text': 'Jede Funktion optimiert Ihre kleinen Projekte für maximale Leistung',
+  'uc1.toppings.cta': 'Alle Funktionen erkunden →',
+
+  'uc1.reference_projects.headline': 'Unsere Referenzausschreibungen für kleine Projekte',
+  'uc1.reference_projects.subtitle': 'Entdecken Sie, wie unsere Kunden ihre kleinen Projekte mit Aitenders KI transformieren',
+  'uc1.reference_projects.project1.title': 'KMU IT-Modernisierung',
+  'uc1.reference_projects.project1.sector': 'Technologie',
+  'uc1.reference_projects.project1.offer': 'Angebot: 2,8 M€',
+  'uc1.reference_projects.project1.desc': 'Vollständige IT-Infrastruktur-Modernisierung für KMU mit Cloud-Migration und Teamschulung.',
+  'uc1.reference_projects.project1.result': '60% Zeitreduzierung, Gewinner-Angebot in 24h geliefert',
+  'uc1.reference_projects.project1.impact': 'Sofortiges Go/No-Go, beruhigtes Team, überzeugte Führung',
+
+  'uc1.reference_projects.project2.title': 'Gebäude-Energiesanierung',
+  'uc1.reference_projects.project2.sector': 'Bau',
+  'uc1.reference_projects.project2.offer': 'Angebot: 4,2 M€',
+  'uc1.reference_projects.project2.desc': 'Vollständige energetische Sanierung eines Bürogebäudes mit Umweltzertifizierung.',
+  'uc1.reference_projects.project2.result': 'Vollständige Analyse in 3h, interne Validierung in 1 Tag',
+  'uc1.reference_projects.project2.impact': 'Null Überraschungen, garantierte Compliance, verstärkte Glaubwürdigkeit',
+
+  'uc1.reference_projects.project3.title': 'Integriertes Sicherheitssystem',
+  'uc1.reference_projects.project3.sector': 'Sicherheit',
+  'uc1.reference_projects.project3.offer': 'Angebot: 1,5 M€',
+  'uc1.reference_projects.project3.desc': 'Einsatz eines integrierten Sicherheitssystems mit Videoüberwachung und Zugangskontrollen.',
+  'uc1.reference_projects.project3.result': 'Sofortige Strukturierung, kritische Punkte erkannt',
+  'uc1.reference_projects.project3.impact': 'Schnelle Entscheidung, kontrollierter Prozess, eliminierter Stress',
+
+  'uc1.reference_projects.impact_label': 'Kundenauswirkung:',
+
+  'uc1.roi_simulator.badge': 'Integrierter ROI-Simulator',
+  'uc1.roi_simulator.headline': 'Berechnen Sie Ihren ROI in Echtzeit',
+  'uc1.roi_simulator.subtext': 'Intelligenter Simulator in die Seite integriert für sofortige Analyse Ihrer kleinen Projekte',
+
+  'uc1.chat_actions.use_cases': 'Unsere Anwendungsfälle',
+  'uc1.chat_actions.demo': 'UC1 Demo',
+  'uc1.chat_actions.roi': 'ROI-Rechner',
+  'uc1.chat_actions.contact': 'Experten kontaktieren',
 
   // UC3 German
   'uc3.hero.badge': 'Große Projekte meistern',
