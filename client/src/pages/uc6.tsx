@@ -56,6 +56,9 @@ import wow2Uc5Animation from '../assets/wow-2-uc5.json';
 import wow3Uc5Animation from '../assets/wow-3-uc5.json';
 import uc5SecondFeatureImage from "@assets/wow 2_1755751777579.png";
 import uc5ThirdFeatureImage from "@assets/WOW 3_1755757958470.png";
+import uc6FirstFeatureImage from "@assets/WOW 1_1755862655675.png";
+import uc6SecondFeatureImage from "@assets/WOW 2_1755862655676.png";
+import uc6ThirdFeatureImage from "@assets/WOW 3_1755862655677.png";
 import uc5HeroImage from "@assets/HERO UC 5_1755774540751.png";
 import uc6HeroImage from "@assets/HERO UC 6_1755862567206.png";
 
@@ -462,16 +465,17 @@ export default function UC6Page() {
 
             <div className="order-2">
               <div className="flex justify-center items-center h-full">
-                <Lottie 
-                  animationData={wow1Uc5Animation}
-                  loop={true}
-                  autoplay={true}
-                  className="w-full h-full max-w-[400px] max-h-[400px]"
-                  style={{ 
-                    transform: 'scale(1.5)',
-                    filter: 'drop-shadow(0 8px 32px rgba(59, 130, 246, 0.2))'
-                  }}
-                />
+                <figure className="w-full max-w-[500px] mx-auto">
+                  <img 
+                    src={uc6FirstFeatureImage}
+                    alt="Aitenders requirements tracking interface showing native requirement management"
+                    className="w-full h-auto object-contain"
+                    style={{
+                      imageRendering: 'crisp-edges',
+                      filter: 'drop-shadow(0 8px 32px rgba(59, 130, 246, 0.2))'
+                    }}
+                  />
+                </figure>
               </div>
             </div>
           </div>
@@ -482,7 +486,7 @@ export default function UC6Page() {
               <div className="flex justify-center items-center h-full">
                 <figure className="w-full max-w-[500px] mx-auto">
                   <img 
-                    src={uc5SecondFeatureImage}
+                    src={uc6SecondFeatureImage}
                     alt="Aitenders team collaboration interface showing transformation progress and team coordination"
                     className="w-full h-auto object-contain"
                     style={{
@@ -544,7 +548,7 @@ export default function UC6Page() {
               <div className="flex justify-center items-center h-full">
                 <figure className="w-full max-w-[500px] mx-auto">
                   <img 
-                    src={uc5ThirdFeatureImage}
+                    src={uc6ThirdFeatureImage}
                     alt="Aitenders real-time impact dashboard showing transformation metrics and strategic indicators"
                     className="w-full h-auto object-contain"
                     style={{
