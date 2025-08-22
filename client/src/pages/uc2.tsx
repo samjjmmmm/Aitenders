@@ -870,15 +870,15 @@ export default function UC2Page() {
           <div className="text-center mb-16 md:mb-20 lg:mb-24 fade-in-up">
             <div className="inline-flex items-center justify-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6 md:mb-8">
               <MdStars className="w-5 h-5 text-yellow-400 mr-2" />
-              <span className="text-white font-semibold text-sm md:text-base">Fonctionnalités Wow</span>
+              <span className="text-white font-semibold text-sm md:text-base">{t('uc2.toppings.badge')}</span>
             </div>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:mb-8 leading-[1.1] tracking-tight">
-              Des <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-400 to-cyan-400">capacités avancées</span> qui élèvent vos projets moyens
+              {t('uc2.toppings.headline')}
             </h2>
 
             <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed font-light">
-              Au-delà de la coordination intelligente, découvrez des fonctionnalités qui transforment la gestion de projets moyens en avantage concurrentiel.
+              {t('uc2.toppings.subtitle')}
             </p>
           </div>
 
@@ -892,32 +892,32 @@ export default function UC2Page() {
                   <MdTrendingUp className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Prédiction de Performance</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">{t('uc2.toppings.features.predictive.title')}</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  Anticipez les goulots d'étranglement et optimisez automatiquement l'allocation des ressources grâce à l'analyse prédictive avancée.
+                  {t('uc2.toppings.features.predictive.text')}
                 </p>
 
                 <div className="flex items-center text-cyan-400 font-medium">
-                  <span className="text-sm">Optimisation IA</span>
+                  <span className="text-sm">{t('uc2.toppings.features.predictive.tag')}</span>
                   <MdAnalytics className="w-4 h-4 ml-2" />
                 </div>
               </div>
             </div>
 
-            {/* Collaboration Adaptive */}
+            {/* Collaboration Adaptative */}
             <div className="group fade-in-up">
               <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
                 <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdGroups className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Collaboration Adaptive</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">{t('uc2.toppings.features.collaboration.title')}</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  Espaces de travail qui s'adaptent automatiquement à la taille et à la complexité de chaque équipe projet pour une efficacité maximale.
+                  {t('uc2.toppings.features.collaboration.text')}
                 </p>
 
                 <div className="flex items-center text-green-400 font-medium">
-                  <span className="text-sm">Adaptation dynamique</span>
+                  <span className="text-sm">{t('uc2.toppings.features.collaboration.tag')}</span>
                   <MdAutoAwesome className="w-4 h-4 ml-2" />
                 </div>
               </div>
@@ -926,17 +926,17 @@ export default function UC2Page() {
             {/* Métriques Intelligentes */}
             <div className="group fade-in-up">
               <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
-                <div className="w-16h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdTableChart className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Métriques Intelligentes</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">{t('uc2.toppings.features.metrics.title')}</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  Tableaux de bord adaptatifs qui mettent en évidence les KPIs les plus pertinents selon la phase et la complexité du projet.
+                  {t('uc2.toppings.features.metrics.text')}
                 </p>
 
                 <div className="flex items-center text-orange-400 font-medium">
-                  <span className="text-sm">KPIs dynamiques</span>
+                  <span className="text-sm">{t('uc2.toppings.features.metrics.tag')}</span>
                   <MdDashboard className="w-4 h-4 ml-2" />
                 </div>
               </div>
@@ -949,13 +949,13 @@ export default function UC2Page() {
                   <MdSecurity className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Gestion des Risques</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">{t('uc2.toppings.features.risks.title')}</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  Identification proactive des risques avec suggestions de mitigation automatiques basées sur l'historique de projets similaires.
+                  {t('uc2.toppings.features.risks.text')}
                 </p>
 
                 <div className="flex items-center text-purple-400 font-medium">
-                  <span className="text-sm">Prévention IA</span>
+                  <span className="text-sm">{t('uc2.toppings.features.risks.tag')}</span>
                   <MdWarning className="w-4 h-4 ml-2" />
                 </div>
               </div>
@@ -968,13 +968,13 @@ export default function UC2Page() {
                   <MdContentCopy className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Templates Intelligents</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">{t('uc2.toppings.features.templates.title')}</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  Génération automatique de structures projet personnalisées selon la complexité, le secteur et les exigences spécifiques.
+                  {t('uc2.toppings.features.templates.text')}
                 </p>
 
                 <div className="flex items-center text-pink-400 font-medium">
-                  <span className="text-sm">Personnalisation IA</span>
+                  <span className="text-sm">{t('uc2.toppings.features.templates.tag')}</span>
                   <MdCreate className="w-4 h-4 ml-2" />
                 </div>
               </div>
@@ -987,13 +987,13 @@ export default function UC2Page() {
                   <MdRotateRight className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Apprentissage Continu</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">{t('uc2.toppings.features.learning.title')}</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  Le système apprend de chaque projet pour optimiser automatiquement les processus et améliorer les performances futures.
+                  {t('uc2.toppings.features.learning.text')}
                 </p>
 
                 <div className="flex items-center text-red-400 font-medium">
-                  <span className="text-sm">Amélioration continue</span>
+                  <span className="text-sm">{t('uc2.toppings.features.learning.tag')}</span>
                   <MdTrendingUp className="w-4 h-4 ml-2" />
                 </div>
               </div>
@@ -1008,18 +1008,18 @@ export default function UC2Page() {
                   </div>
 
                   <div className="flex-1">
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Écosystème intégré, performance amplifiée</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">{t('uc2.toppings.features.integration.title')}</h3>
                     <p className="text-gray-200 text-lg leading-relaxed mb-6">
-                      Connectivité native avec vos outils métier existants (ERP, CRM, outils de gestion de projet) pour une synergie parfaite et des données unifiées.
+                      {t('uc2.toppings.features.integration.text')}
                     </p>
 
                     <div className="flex flex-wrap gap-4">
                       <div className="flex items-center text-indigo-400 font-medium bg-white/10 px-4 py-2 rounded-lg">
-                        <span className="text-sm">API Native</span>
+                        <span className="text-sm">{t('uc2.toppings.features.integration.tag1')}</span>
                         <MdLink className="w-4 h-4 ml-2" />
                       </div>
                       <div className="flex items-center text-cyan-400 font-medium bg-white/10 px-4 py-2 rounded-lg">
-                        <span className="text-sm">Sync Temps Réel</span>
+                        <span className="text-sm">{t('uc2.toppings.features.integration.tag2')}</span>
                         <MdSwapHoriz className="w-4 h-4 ml-2" />
                       </div>
                     </div>
@@ -1033,13 +1033,13 @@ export default function UC2Page() {
           {/* Bottom CTA */}
           <div className="text-center mt-16 md:mt-20 lg:mt-24">
             <p className="text-gray-200 text-lg mb-8">
-              Chaque fonctionnalité optimise vos projets moyens pour une performance maximale
+              {t('uc2.toppings.bottom_text')}
             </p>
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-yellow-400 via-pink-500 to-cyan-500 hover:from-yellow-500 hover:via-pink-600 hover:to-cyan-600 text-white px-12 py-6 text-xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
             >
-              Explorer toutes les fonctionnalités →
+              {t('uc2.toppings.cta')}
             </Button>
           </div>
         </div>

@@ -43,6 +43,35 @@ const uc2TranslationKeys = {
   'uc2.features.feature2Text': 'Aitenders identifie et priorise automatiquement toutes les clauses sensibles : responsabilités, engagements, pénalités et conditions critiques. En parallèle, l\'IA vérifie la cohérence documentaire et signale contradictions, doublons et lacunes, pour une analyse fiable et complète. Le Proposal Manager obtient en quelques minutes une vision claire des zones de risque, prêtes à être corrigées et validées sans perte de temps.',
   'uc2.features.feature2Highlight': 'Validation contractuelle proactive, dès J+1',
 
+  // Toppings - Complete Wow Features Section
+  'uc2.toppings.badge': 'Fonctionnalités Wow',
+  'uc2.toppings.headline': 'Des capacités avancées qui élèvent vos projets moyens',
+  'uc2.toppings.subtitle': 'Au-delà de la coordination intelligente, découvrez des fonctionnalités qui transforment la gestion de projets moyens en avantage concurrentiel.',
+  'uc2.toppings.features.predictive.title': 'Prédiction de Performance',
+  'uc2.toppings.features.predictive.text': 'Anticipez les goulots d\'étranglement et optimisez automatiquement l\'allocation des ressources grâce à l\'analyse prédictive avancée.',
+  'uc2.toppings.features.predictive.tag': 'Optimisation IA',
+  'uc2.toppings.features.collaboration.title': 'Collaboration Adaptative',
+  'uc2.toppings.features.collaboration.text': 'Espaces de travail qui s\'adaptent automatiquement à la taille et à la complexité de chaque équipe projet pour une efficacité maximale.',
+  'uc2.toppings.features.collaboration.tag': 'Adaptation dynamique',
+  'uc2.toppings.features.metrics.title': 'Métriques Intelligentes',
+  'uc2.toppings.features.metrics.text': 'Tableaux de bord adaptatifs qui mettent en évidence les KPIs les plus pertinents selon la phase et la complexité du projet.',
+  'uc2.toppings.features.metrics.tag': 'KPIs dynamiques',
+  'uc2.toppings.features.risks.title': 'Gestion des Risques',
+  'uc2.toppings.features.risks.text': 'Identification proactive des risques avec suggestions de mitigation automatiques basées sur l\'historique de projets similaires.',
+  'uc2.toppings.features.risks.tag': 'Prévention IA',
+  'uc2.toppings.features.templates.title': 'Templates Intelligents',
+  'uc2.toppings.features.templates.text': 'Génération automatique de structures projet personnalisées selon la complexité, le secteur et les exigences spécifiques.',
+  'uc2.toppings.features.templates.tag': 'Personnalisation IA',
+  'uc2.toppings.features.learning.title': 'Apprentissage Continu',
+  'uc2.toppings.features.learning.text': 'Le système apprend de chaque projet pour optimiser automatiquement les processus et améliorer les performances futures.',
+  'uc2.toppings.features.learning.tag': 'Amélioration continue',
+  'uc2.toppings.features.integration.title': 'Écosystème intégré, performance amplifiée',
+  'uc2.toppings.features.integration.text': 'Connectivité native avec vos outils métier existants (ERP, CRM, outils de gestion de projet) pour une synergie parfaite et des données unifiées.',
+  'uc2.toppings.features.integration.tag1': 'API Native',
+  'uc2.toppings.features.integration.tag2': 'Sync Temps Réel',
+  'uc2.toppings.bottom_text': 'Chaque fonctionnalité optimise vos projets moyens pour une performance maximale',
+  'uc2.toppings.cta': 'Explorer toutes les fonctionnalités →',
+
   // Common Navigation
   'common.nav.home': 'Accueil',
   'common.nav.solutions': 'Solutions',
@@ -95,6 +124,35 @@ const uc2EnglishTranslations = {
   'uc2.features.feature2Text': 'Aitenders automatically identifies and prioritizes all sensitive clauses: responsibilities, commitments, penalties, and critical conditions. At the same time, the AI checks document consistency and flags contradictions, duplicates, and gaps, for a reliable and complete analysis. The Proposal Manager gets a clear view of risk areas in minutes, ready to be corrected and validated without wasting time.',
   'uc2.features.feature2Highlight': 'Proactive contractual validation, from day 1',
 
+  // Toppings - Complete Wow Features Section
+  'uc2.toppings.badge': 'Wow Features',
+  'uc2.toppings.headline': 'Advanced capabilities that elevate your medium projects',
+  'uc2.toppings.subtitle': 'Beyond intelligent coordination, discover features that turn medium project management into a competitive advantage.',
+  'uc2.toppings.features.predictive.title': 'Performance Prediction',
+  'uc2.toppings.features.predictive.text': 'Anticipate bottlenecks and automatically optimize resource allocation with advanced predictive analytics.',
+  'uc2.toppings.features.predictive.tag': 'AI optimization',
+  'uc2.toppings.features.collaboration.title': 'Adaptive Collaboration',
+  'uc2.toppings.features.collaboration.text': 'Workspaces that automatically adapt to the size and complexity of each project team for maximum efficiency.',
+  'uc2.toppings.features.collaboration.tag': 'Dynamic adaptation',
+  'uc2.toppings.features.metrics.title': 'Smart Metrics',
+  'uc2.toppings.features.metrics.text': 'Adaptive dashboards highlighting the KPIs most relevant to the project\'s phase and complexity.',
+  'uc2.toppings.features.metrics.tag': 'Dynamic KPIs',
+  'uc2.toppings.features.risks.title': 'Risk Management',
+  'uc2.toppings.features.risks.text': 'Proactive risk identification with automatic mitigation suggestions based on similar past projects.',
+  'uc2.toppings.features.risks.tag': 'AI prevention',
+  'uc2.toppings.features.templates.title': 'Smart Templates',
+  'uc2.toppings.features.templates.text': 'Automatic generation of project structures tailored to complexity, sector, and specific requirements.',
+  'uc2.toppings.features.templates.tag': 'AI customization',
+  'uc2.toppings.features.learning.title': 'Continuous Learning',
+  'uc2.toppings.features.learning.text': 'The system learns from every project to automatically optimize processes and improve future performance.',
+  'uc2.toppings.features.learning.tag': 'Continuous improvement',
+  'uc2.toppings.features.integration.title': 'Integrated ecosystem, amplified performance',
+  'uc2.toppings.features.integration.text': 'Native connectivity with your existing business tools (ERP, CRM, project management tools) for perfect synergy and unified data.',
+  'uc2.toppings.features.integration.tag1': 'Native API',
+  'uc2.toppings.features.integration.tag2': 'Real-time sync',
+  'uc2.toppings.bottom_text': 'Each feature optimizes your medium projects for maximum performance',
+  'uc2.toppings.cta': 'Explore all features →',
+
   'common.nav.home': 'Home',
   'common.nav.solutions': 'Solutions',
   'common.nav.pricing': 'Pricing',
@@ -144,6 +202,35 @@ const uc2SpanishTranslations = {
   'uc2.features.feature2Title': 'Controlar cada cláusula crítica de tu proyecto',
   'uc2.features.feature2Text': 'Aitenders identifica y prioriza automáticamente todas las cláusulas sensibles.',
   'uc2.features.feature2Highlight': 'Validación contractual proactiva, desde el día 1',
+
+  // Toppings - Complete Wow Features Section
+  'uc2.toppings.badge': 'Funcionalidades Wow',
+  'uc2.toppings.headline': 'Capacidades avanzadas que elevan sus proyectos medianos',
+  'uc2.toppings.subtitle': 'Más allá de la coordinación inteligente, descubra funcionalidades que transforman la gestión de proyectos medianos en una ventaja competitiva.',
+  'uc2.toppings.features.predictive.title': 'Predicción de Rendimiento',
+  'uc2.toppings.features.predictive.text': 'Anticipe cuellos de botella y optimice automáticamente la asignación de recursos con análisis predictivos avanzados.',
+  'uc2.toppings.features.predictive.tag': 'Optimización IA',
+  'uc2.toppings.features.collaboration.title': 'Colaboración Adaptativa',
+  'uc2.toppings.features.collaboration.text': 'Espacios de trabajo que se adaptan automáticamente al tamaño y complejidad de cada equipo de proyecto para una máxima eficiencia.',
+  'uc2.toppings.features.collaboration.tag': 'Adaptación dinámica',
+  'uc2.toppings.features.metrics.title': 'Métricas Inteligentes',
+  'uc2.toppings.features.metrics.text': 'Paneles de control adaptativos que resaltan los KPIs más relevantes según la fase y complejidad del proyecto.',
+  'uc2.toppings.features.metrics.tag': 'KPIs dinámicos',
+  'uc2.toppings.features.risks.title': 'Gestión de Riesgos',
+  'uc2.toppings.features.risks.text': 'Identificación proactiva de riesgos con sugerencias automáticas de mitigación basadas en proyectos similares anteriores.',
+  'uc2.toppings.features.risks.tag': 'Prevención IA',
+  'uc2.toppings.features.templates.title': 'Plantillas Inteligentes',
+  'uc2.toppings.features.templates.text': 'Generación automática de estructuras de proyecto adaptadas a la complejidad, sector y requisitos específicos.',
+  'uc2.toppings.features.templates.tag': 'Personalización IA',
+  'uc2.toppings.features.learning.title': 'Aprendizaje Continuo',
+  'uc2.toppings.features.learning.text': 'El sistema aprende de cada proyecto para optimizar automáticamente los procesos y mejorar el rendimiento futuro.',
+  'uc2.toppings.features.learning.tag': 'Mejora continua',
+  'uc2.toppings.features.integration.title': 'Ecosistema integrado, rendimiento amplificado',
+  'uc2.toppings.features.integration.text': 'Conectividad nativa con sus herramientas de negocio existentes (ERP, CRM, herramientas de gestión de proyectos) para una sinergia perfecta y datos unificados.',
+  'uc2.toppings.features.integration.tag1': 'API Nativa',
+  'uc2.toppings.features.integration.tag2': 'Sync en Tiempo Real',
+  'uc2.toppings.bottom_text': 'Cada funcionalidad optimiza sus proyectos medianos para un máximo rendimiento',
+  'uc2.toppings.cta': 'Explorar todas las funcionalidades →',
 
   'common.nav.home': 'Inicio',
   'common.nav.solutions': 'Soluciones',
@@ -195,6 +282,35 @@ const uc2GermanTranslations = {
   'uc2.features.feature2Text': 'Aitenders identifiziert und priorisiert automatisch alle sensiblen Klauseln.',
   'uc2.features.feature2Highlight': 'Proaktive vertragliche Validierung, ab Tag 1',
 
+  // Toppings - Complete Wow Features Section
+  'uc2.toppings.badge': 'Wow Features',
+  'uc2.toppings.headline': 'Fortgeschrittene Fähigkeiten, die Ihre mittleren Projekte aufwerten',
+  'uc2.toppings.subtitle': 'Über die intelligente Koordination hinaus entdecken Sie Funktionen, die die Verwaltung mittlerer Projekte zu einem Wettbewerbsvorteil machen.',
+  'uc2.toppings.features.predictive.title': 'Leistungsprognose',
+  'uc2.toppings.features.predictive.text': 'Antizipieren Sie Engpässe und optimieren Sie die Ressourcenzuweisung automatisch mit fortschrittlicher prädiktiver Analytik.',
+  'uc2.toppings.features.predictive.tag': 'KI-Optimierung',
+  'uc2.toppings.features.collaboration.title': 'Adaptive Zusammenarbeit',
+  'uc2.toppings.features.collaboration.text': 'Arbeitsbereiche, die sich automatisch an die Größe und Komplexität jedes Projektteams anpassen, für maximale Effizienz.',
+  'uc2.toppings.features.collaboration.tag': 'Dynamische Anpassung',
+  'uc2.toppings.features.metrics.title': 'Intelligente Metriken',
+  'uc2.toppings.features.metrics.text': 'Adaptive Dashboards, die die für die Projektphase und -komplexität relevantesten KPIs hervorheben.',
+  'uc2.toppings.features.metrics.tag': 'Dynamische KPIs',
+  'uc2.toppings.features.risks.title': 'Risikomanagement',
+  'uc2.toppings.features.risks.text': 'Proaktive Risikoerkennung mit automatischen Vorschlägen zur Risikominderung basierend auf ähnlichen früheren Projekten.',
+  'uc2.toppings.features.risks.tag': 'KI-Prävention',
+  'uc2.toppings.features.templates.title': 'Intelligente Vorlagen',
+  'uc2.toppings.features.templates.text': 'Automatische Generierung von Projektstrukturen, zugeschnitten auf Komplexität, Branche und spezifische Anforderungen.',
+  'uc2.toppings.features.templates.tag': 'KI-Anpassung',
+  'uc2.toppings.features.learning.title': 'Kontinuierliches Lernen',
+  'uc2.toppings.features.learning.text': 'Das System lernt aus jedem Projekt, um Prozesse automatisch zu optimieren und die zukünftige Leistung zu verbessern.',
+  'uc2.toppings.features.learning.tag': 'Kontinuierliche Verbesserung',
+  'uc2.toppings.features.integration.title': 'Integriertes Ökosystem, verstärkte Leistung',
+  'uc2.toppings.features.integration.text': 'Native Konnektivität mit Ihren vorhandenen Geschäftstools (ERP, CRM, Projektmanagement-Tools) für perfekte Synergie und einheitliche Daten.',
+  'uc2.toppings.features.integration.tag1': 'Native API',
+  'uc2.toppings.features.integration.tag2': 'Echtzeit-Synchronisation',
+  'uc2.toppings.bottom_text': 'Jede Funktion optimiert Ihre mittleren Projekte für maximale Leistung',
+  'uc2.toppings.cta': 'Alle Funktionen erkunden →',
+
   'common.nav.home': 'Startseite',
   'common.nav.solutions': 'Lösungen',
   'common.nav.pricing': 'Preise',
@@ -210,7 +326,7 @@ const uc2GermanTranslations = {
 // Initialize languages and UC2 translations
 export async function seedTranslations() {
   console.log('🌱 Seeding translations...');
-  
+
   try {
     // Initialize supported languages
     await translationService.initializeLanguages();
@@ -220,31 +336,31 @@ export async function seedTranslations() {
     for (const [key, frenchValue] of Object.entries(uc2TranslationKeys)) {
       await translationService.setTranslation(key, 'fr', frenchValue);
     }
-    
+
     console.log('✅ UC2 French translations seeded');
 
     // Add English translations
     for (const [key, englishValue] of Object.entries(uc2EnglishTranslations)) {
       await translationService.setTranslation(key, 'en', englishValue);
     }
-    
+
     console.log('✅ UC2 English translations seeded');
 
     // Add Spanish translations
     for (const [key, spanishValue] of Object.entries(uc2SpanishTranslations)) {
       await translationService.setTranslation(key, 'es', spanishValue);
     }
-    
+
     console.log('✅ UC2 Spanish translations seeded');
 
     // Add German translations
     for (const [key, germanValue] of Object.entries(uc2GermanTranslations)) {
       await translationService.setTranslation(key, 'de', germanValue);
     }
-    
+
     console.log('✅ UC2 German translations seeded');
     console.log(`📊 Total keys: ${Object.keys(uc2TranslationKeys).length}`);
-    
+
     return true;
   } catch (error) {
     console.error('❌ Error seeding translations:', error);
