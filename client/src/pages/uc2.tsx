@@ -97,7 +97,14 @@ export default function UC2Page() {
       diff2Title: "Intelligence Collaborative Avancée",
       diff2Desc: "IA spécialisée dans la coordination multi-équipes et la gestion des dépendances",
       diff3Title: "Flexibilité et Standardisation",
-      diff3Desc: "Processus adaptatifs qui s'ajustent à la complexité spécifique de chaque projet"
+      diff3Desc: "Processus adaptatifs qui s'ajustent à la complexité spécifique de chaque projet",
+      
+      // Pain Points Section
+      painPointsHeadline: "Votre offre, 100 % claire, 0 % surprise",
+      painPointsText1: "Sur les projets moyen, vos équipes jonglent entre délais serrés, clauses critiques cachées et versions dispersées, au risque d'erreurs coûteuses et d'allers‑retours interminables.",
+      painPointsText2: "Avec Aitenders, structurez automatiquement chaque dossier dès le jour 1, détectez instantanément les clauses sensibles et pilotez vos Q&A et versions dans un cockpit centralisé. Résultat : une analyse deux fois plus rapide, zéro clause oubliée, et une offre compétitive validée sans stress.",
+      painPointsOptimizeButton: "Optimisez Vos Projets Moyens!",
+      painPointsDemoButton: "Voir la Démonstration"
     },
     en: {
       // Hero Section
