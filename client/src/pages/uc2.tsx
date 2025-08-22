@@ -38,7 +38,7 @@ import uc2HeroImage from "@assets/HERO UC 2_1755763267253.png";
 export default function UC2Page() {
   const [language, setLanguage] = useState<'en' | 'fr'>('fr');
 
-  // Translations
+  // Translations with comprehensive English content
   const t = {
     fr: {
       // Hero Section
@@ -133,6 +133,19 @@ export default function UC2Page() {
       projectDirectorsDesc: "Manage the delivery of medium projects with advanced monitoring and control tools. Ensure operational compliance and customer satisfaction across the entire portfolio.",
       operationsManagers: "Operations Managers",
       operationsManagersDesc: "Standardize operational processes for medium projects with a methodical approach. Optimize resources and reduce delays through intelligent automation.",
+      
+      // Solution Section Titles and Content
+      solutionMainTitle: "Your AI co-pilot securing the management of your medium projects",
+      solutionSubtitle: "Discover, manage and secure every clause from day one.",
+      feature1Title: "Automatic structuring of scope from day 1",
+      feature1Text: "Thanks to Aitenders' AI, your documents are instantly segmented and organized: lots, sub-packages and contractual criteria are classified and structured within minutes. The Proposal Manager immediately has a consolidated vision of the scope: blocking points and sensitive clauses are identified effortlessly, enabling an informed 'go / no-go' decision from day one.",
+      feature1Highlight: "A consolidated and prioritized vision, ready from the first day!",
+      feature2Title: "Control every critical clause of your project",
+      feature2Text: "Aitenders automatically identifies and prioritizes all sensitive clauses: responsibilities, commitments, penalties, and critical conditions. At the same time, the AI checks document consistency and flags contradictions, duplicates, and gaps, for a reliable and complete analysis. The Proposal Manager gets a clear view of risk areas in minutes, ready to be corrected and validated without wasting time.",
+      feature2Highlight: "Proactive contractual validation, from day 1",
+      feature3Title: "Manage every contractual change in real time",
+      feature3Text: "All your Q&As, versions and document adjustments are consolidated and tracked automatically by AI. The Proposal Manager follows every change in real time, visualizes gaps, receives alerts, and ensures that nothing is forgotten or modified without validation. No more fragmented follow-ups by email or spreadsheets: everything is centralized in a smooth, reliable cockpit.",
+      feature3Highlight: "No surprises, no version lost, no risk of omission",
       
       // Legacy mappings for existing page structure
       painPoint1Title: "Growing complexity difficult to manage",

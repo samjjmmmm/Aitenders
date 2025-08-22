@@ -1,0 +1,150 @@
+{
+  "uc2": {
+    "hero": {
+      "badge": "Pilotez les offres moyennes",
+      "headline": "Découvrez, pilotez et sécurisez chaque clause dès le premier jour.",
+      "subtext": "La seule plateforme conçue pour transformer des dossiers moyens (1 à 10 M€) en une vision contractuelle claire dès le premier jour : structuration IA du périmètre, détection immédiate des clauses critiques et pilotage dynamique des Q&A et versions. Vous réduisez de moitié votre temps d'analyse, rassurez votre direction et livrez une réponse compétitive, sans risque de dernière minute.",
+      "cta_demo": "Réservez une Démo",
+      "cta_usecase": "Téléchargez le cas d'usage →"
+    },
+    "pain_points_section": {
+      "headline": "Votre offre, 100 % claire, 0 % surprise",
+      "text1": "Sur les projets moyen, vos équipes jonglent entre délais serrés, clauses critiques cachées et versions dispersées, au risque d'erreurs coûteuses et d'allers‑retours interminables.",
+      "text2": "Avec Aitenders, structurez automatiquement chaque dossier dès le jour 1, détectez instantanément les clauses sensibles et pilotez vos Q&A et versions dans un cockpit centralisé. Résultat : une analyse deux fois plus rapide, zéro clause oubliée, et une offre compétitive validée sans stress.",
+      "cta_optimize": "Optimisez Vos Projets Moyens!",
+      "cta_demo": "Voir la Démonstration"
+    },
+    "solution_section": {
+      "title": "Votre copilote IA qui sécurise la gestion de vos projets moyens",
+      "subtitle": "Découvrez, pilotez et sécurisez chaque clause dès le premier jour.",
+      "feature1_title": "Structuration automatique du périmètre dès le J1",
+      "feature1_text": "Grâce à l'IA d'Aitenders, vos documents sont instantanément segmentés et organisés : lots, sous-ensembles et critères contractuels sont classifiés et structurés en quelques minutes. Le Proposal Manager dispose immédiatement d'une vision consolidée du périmètre : points bloquants et clauses sensibles sont identifiés sans effort, permettant une décision go / no-go éclairée dès le premier jour.",
+      "feature1_highlight": "Une vision consolidée et priorisée, prête dès le premier jour !",
+      "feature2_title": "Maîtrisez chaque clause critique de votre projet",
+      "feature2_text": "Aitenders identifie et hiérarchise automatiquement toutes les clauses sensibles : responsabilités, engagements, pénalités et conditions critiques. Parallèlement, l'IA vérifie la cohérence documentaire et signale contradictions, doublons et lacunes, pour une analyse fiable et complète. Le Proposal Manager obtient en quelques minutes une vision claire des zones de risque, prêtes à être corrigées et validées sans perte de temps.",
+      "feature2_highlight": "Validation contractuelle proactive, dès le J1",
+      "feature3_title": "Pilotez chaque évolution contractuelle en temps réel",
+      "feature3_text": "Toutes vos Q&A, versions et ajustements de documents sont consolidés et trackés automatiquement par l'IA. Le Proposal Manager suit chaque modification en temps réel, visualise les écarts, reçoit des alertes et s'assure que rien n'est oublié ou modifié sans validation. Fini les suivis fragmentés par email ou tableurs : tout est centralisé dans un cockpit fluide et fiable.",
+      "feature3_highlight": "Aucune surprise, aucune version perdue, aucun risque d'oubli"
+    },
+    "results_section": {
+      "headline": "Ce que nos utilisateurs gagnent concrètement sur les offres moyennes",
+      "subtitle": "Des résultats décisifs pour les acheteurs et équipes appels d'offres",
+      "card1_title": "Directeur Commercial ou Directeur d'Appels d'Offres",
+      "card1_subtitle": "Décision rapide, crédibilité renforcée, zéro surprise",
+      "card1_text": "Assurez-vous dès le premier jour que chaque clause critique soit identifiée, chaque engagement maîtrisé et chaque risque couvert. Vous vous présentez en comité avec une offre solide, immédiatement validable, sans charge mentale et sans escalade inutile.",
+      "card1_points": [
+        "Aucune clause oubliée, aucune incohérence détectée trop tard",
+        "Décision go / no-go prise sans délai",
+        "Crédibilité renforcée devant la direction générale"
+      ],
+      "card2_title": "Proposal Manager, Contract Manager ou Chef de Projet",
+      "card2_subtitle": "Analyse claire, suivi fluide, zéro stress",
+      "card2_text": "Démarrez au jour +1 avec une base structurée et priorisée générée par l'IA : chaque critère est classé, chaque clause sensible détectée, chaque version trackée. Vous passez d'un état sous pression à celui de pilote stratégique, capable de prouver la solidité de votre offre à tout moment.",
+      "card2_points": [
+        "Analyse prête dès le premier jour, aucun tri manuel",
+        "Aucun stress, aucune surprise, aucun aller-retour inutile",
+        "Maîtrise totale de chaque clause et de chaque version"
+      ],
+      "kpis": {
+        "time": "50% du temps d'analyse initial",
+        "clauses": "100% des clauses critiques identifiées",
+        "surprise": "0 surprise, aucun challenge de dernière minute",
+        "extra": "Offre plus rapide, plus propre, plus compétitive"
+      }
+    },
+    "wow_features": {
+      "headline": "Capacités avancées qui élèvent vos projets moyens",
+      "subtitle": "Au-delà de la coordination intelligente, découvrez des fonctionnalités qui transforment la gestion de projets moyens en avantage concurrentiel.",
+      "features": {
+        "predictive": {
+          "title": "Prédiction de Performance",
+          "text": "Anticipez les goulots d'étranglement et optimisez automatiquement l'allocation des ressources grâce à des analyses prédictives avancées.",
+          "tag": "Optimisation IA"
+        },
+        "collaboration": {
+          "title": "Collaboration Adaptative",
+          "text": "Espaces de travail qui s'adaptent automatiquement à la taille et complexité de chaque équipe projet pour un maximum d'efficacité.",
+          "tag": "Adaptation dynamique"
+        },
+        "metrics": {
+          "title": "Métriques Intelligentes",
+          "text": "Tableaux de bord adaptatifs mettant en avant les KPIs les plus pertinents selon la phase et la complexité du projet.",
+          "tag": "KPIs dynamiques"
+        },
+        "risks": {
+          "title": "Gestion des Risques",
+          "text": "Identification proactive des risques avec suggestions automatiques d'atténuation basées sur des projets similaires passés.",
+          "tag": "Prévention IA"
+        },
+        "templates": {
+          "title": "Templates Intelligents",
+          "text": "Génération automatique de structures projet adaptées à la complexité, au secteur et aux exigences spécifiques.",
+          "tag": "Personnalisation IA"
+        },
+        "learning": {
+          "title": "Apprentissage Continu",
+          "text": "Le système apprend de chaque projet pour optimiser automatiquement les processus et améliorer les performances futures.",
+          "tag": "Amélioration continue"
+        },
+        "integration": {
+          "title": "Écosystème intégré, performance amplifiée",
+          "text": "Connectivité native avec vos outils métier existants (ERP, CRM, outils de gestion de projet) pour une synergie parfaite et des données unifiées.",
+          "tags": ["API native", "Synchronisation temps réel"]
+        }
+      },
+      "cta": "Explorer toutes les fonctionnalités →"
+    },
+    "reference_projects": {
+      "headline": "Nos appels d'offres de référence sur les projets moyens",
+      "subtitle": "Découvrez comment nos clients transforment leurs projets moyens avec l'IA Aitenders",
+      "project1": {
+        "title": "Centre Logistique Régional",
+        "sector": "Logistique",
+        "offer": "Offre : 8,5 M€",
+        "desc": "Construction d'un hub logistique moderne de 25 000 m² avec systèmes automatisés et aires de manœuvre. Coordination de 10 lots techniques spécialisés incluant manutention, sécurité et connectivité.",
+        "impact": {
+          "productivity": "Productivité : +55% de temps de coordination économisé",
+          "compliance": "Conformité : Standards logistiques respectés",
+          "traceability": "Traçabilité : Suivi multi-lots intégré",
+          "collaboration": "Collaboration : 10 équipes synchronisées"
+        }
+      },
+      "project2": {
+        "title": "Réhabilitation Quartier Urbain",
+        "sector": "Urbain",
+        "offer": "Offre : 6,2 M€",
+        "desc": "Rénovation complète d'un quartier résidentiel avec 200 logements, espaces verts et commerces. Gestion coordonnée des réseaux, voirie et contraintes d'occupation sur 5 hectares.",
+        "impact": {
+          "productivity": "Productivité : +62% d'études plus rapides",
+          "compliance": "Conformité : Urbanisme validé",
+          "traceability": "Traçabilité : Phases coordonnées",
+          "collaboration": "Collaboration : 15 corps d'état impliqués"
+        }
+      },
+      "project3": {
+        "title": "Campus Universitaire Moderne",
+        "sector": "Éducation",
+        "offer": "Offre : 4,8 M€",
+        "desc": "Construction d'un campus de 15 000 m² avec amphithéâtres, laboratoires et résidences étudiantes. Intégration des technologies numériques et espaces collaboratifs sur un site de 8 hectares.",
+        "impact": {
+          "productivity": "Productivité : +48% de réduction du temps",
+          "compliance": "Conformité : Standards académiques",
+          "traceability": "Traçabilité : Validation continue",
+          "collaboration": "Collaboration : 18 lots coordonnés"
+        }
+      }
+    },
+    "roi_simulator": {
+      "badge": "Simulateur ROI Intégré",
+      "headline": "Calculez votre ROI en temps réel",
+      "subtext": "Simulateur intelligent intégré à la page pour une analyse immédiate de vos projets"
+    },
+    "chat_actions": {
+      "use_cases": "Nos cas d'usage",
+      "demo": "Démo UC2",
+      "roi": "Calculateur ROI",
+      "contact": "Contacter un Expert"
+    }
+  }
+}
