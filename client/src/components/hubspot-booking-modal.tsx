@@ -31,7 +31,7 @@ export default function HubSpotBookingModal({ isOpen, onClose }: HubSpotBookingM
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl w-full h-[80vh] max-h-[800px] p-0 overflow-hidden">
+      <DialogContent className="max-w-6xl w-full h-[90vh] max-h-[1120px] p-0 overflow-hidden">
         <DialogHeader className="p-6 pb-4 border-b">
           <div className="flex items-center justify-between">
             <DialogTitle className="text-2xl font-bold text-gray-900">
