@@ -38,7 +38,7 @@ import { useGlobalTranslations } from "@/contexts/TranslationContext";
 
 
 export default function UC1Page() {
-  const { t } = useGlobalTranslations();
+  const { t, currentLanguage } = useGlobalTranslations();
   const [selectedTopping, setSelectedTopping] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
@@ -650,7 +650,7 @@ export default function UC1Page() {
               delay: 0.1
             }}
           >
-            
+
             {/* Content UC1 - Top */}
             <div className="w-full max-w-5xl px-4">
               <div className="mb-12">
@@ -661,7 +661,7 @@ export default function UC1Page() {
                 </h1>
 
                 <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]">
-                  La seule plateforme pensée pour les petits projets à cycles courts : Agents IA d'analyse des points clés, automatisation d'une synthèse et validation guidée. Vous transformez des Heures de relecture et d'analyse en <span className="text-purple-600">minutes</span>, gagnez en sérénité et livrez une offre solide et incontestable — sans surcharge ni faux départs.
+                  La seule plateforme pensée pour les petits projets à cycles courts : Agents IA d'analyse des points clés, automatisation d\'une synthèse et validation guidée. Vous transformez des Heures de relecture et d\'analyse en <span className="text-purple-600">{t('uc1.hero.description_span')}</span>, gagnez en sérénité et livrez une offre solide et incontestable — sans surcharge ni faux départs.
                 </p>
               </div>
 
@@ -674,7 +674,7 @@ export default function UC1Page() {
                 >
                   {t('uc1.hero.demoButton')}
                 </Button>
-                
+
                 <Button 
                   variant="ghost" 
                   className="text-blue-600 hover:text-blue-700 hover:bg-blue-50/80 px-6 py-4 text-xl font-medium underline decoration-2 underline-offset-4 rounded-2xl transition-all duration-300"
@@ -764,33 +764,33 @@ export default function UC1Page() {
 
               {/* Main Headline */}
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Go / No-Go immédiat<span className="text-blue-600">, process interne garanti </span>
+                {t('uc1.painPoints.headline')}
+                <span className="text-blue-600">{t('uc1.painPoints.headline_span')}</span>
               </h2>
 
               {/* Body Copy */}
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Sur les petits projets, la pression est double : analyser vite et prouver que tout a été lu, compris et contrôlé.
-                <p>Sans support transversal (qualité, juridique), chaque oubli peut coûter cher en marge en exécution et du coup en crédibilité interne.</p>
+                {t('uc1.painPoints.text1')}
+                <p>{t('uc1.painPoints.text2')}</p>
 
               </p>
 
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Avec Aitenders, vous obtenez en quelques minutes une vision claire et priorisée de vos documents pour un go/no‑go immédiat. La plateforme guide ensuite la validation et archive chaque contrôle, garantissant que vos obligations internes sont remplies sans surcharge.
+                {t('uc1.painPoints.text3')}
 
 
               </p>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-                <Button 
-                  className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
-                  onClick={() => setIsBookingModalOpen(true)}
-                >
-                  Contact Commercial
-                </Button>
-                <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-12 py-6 text-xl font-semibold rounded-3xl transition-all duration-300">
-                  <MdPlayArrow className="w-6 h-6 mr-2" />
-                  Voir la Démo Rapide
+                <HubSpotBookingModal>
+                  <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+                    {t('uc1.painPoints.contactButton')}
+                  </Button>
+                </HubSpotBookingModal>
+                <Button variant="outline" size="lg" className="group">
+                  <Play className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
+                  {t('uc1.painPoints.demoButton')}
                 </Button>
               </div>
             </div>
@@ -829,27 +829,35 @@ export default function UC1Page() {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-12 md:mb-16 lg:mb-20 fade-in-up">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-blue-600">copilote IA</span> qui accélère l'analyse de vos petits projets</h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
-              Décidez vite et prouvez que tout a été contrôlé, en moins de 48h.
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+              {t('uc1.solution_section.mainTitle')}
+              <span className="text-blue-600">{t('uc1.solution_section.mainTitle_span')}</span>
+              <br />
+              {t('uc1.solution_section.mainTitle2')}
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              {t('uc1.solution_section.subtitle')}
             </p>
           </div>
 
           {/* Feature 1: Structuration IA immédiate - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 lg:gap-32 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-1 fade-in-left">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Structuration instantanée pour un premier "go / no-go"  <span className="text-purple-600">immédiat</span> </h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+                {t('uc1.solution_section.feature1_title')}
+                <span className="text-purple-600">{t('uc1.solution_section.feature1_span')}</span>
+              </h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                 Grâce aux assistants IA, vos documents sont instantanément analysés, classés et priorisés : critères d’intérêt, points critiques et preuves associées sont détectés en quelques minutes.
                 <br /><br />
-                Le Responsable Offre démarre ainsi avec une base claire et exploitable : vision globale du projet, identification des points bloquants éventuels et possibilité de décider quasi immédiatement d’un “go / no‑go”.
+                Le Responsable Offre démarre ainsi avec une base claire et exploitable : vision globale du projet, identification des points bloquants éventuels et possibilité de décider quasi immédiatement d’un “go / no‑go”.
               </p>
               <div className="space-y-3 mb-8">
 
 
               </div>
               <p className="text-lg font-semibold text-blue-600">
-                Votre analyse prête avant même la première réunion
+                {t('uc1.solution_section.feature1_highlight')}
               </p>
             </div>
             <div className="order-2">
@@ -887,7 +895,10 @@ export default function UC1Page() {
               </div>
             </div>
             <div className="order-1 lg:order-2 fade-in-right">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Accédez à une vision  <span className="text-orange-600">claire</span> de votre projet</h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+                {t('uc1.solution_section.feature2_title')}
+                <span className="text-orange-600">{t('uc1.solution_section.feature2_span')}</span>
+              </h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                Aitenders génère une vue claire et priorisée de l'ensemble des critères détectés, avec leurs valeurs et les liens directs vers les documents sources.
                 <br /><br />
@@ -896,7 +907,7 @@ export default function UC1Page() {
               <div className="space-y-3 mb-8">
               </div>
               <p className="text-lg font-semibold text-orange-600">
-                Votre revue interne prête en quelques minutes
+                {t('uc1.solution_section.feature2_highlight')}
               </p>
             </div>
           </div>
@@ -904,7 +915,10 @@ export default function UC1Page() {
           {/* Feature 3: Validation guidée - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 lg:gap-32 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-1 fade-in-left">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Validez et archivez chaque point <span className="text-green-600">sans effort</span></h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+                {t('uc1.solution_section.feature3_title')}
+                <span className="text-green-600">{t('uc1.solution_section.feature3_span')}</span>
+              </h3>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
                 Aitenders vous guide pas à pas pour confirmer, ajuster ou rejeter chaque élément identifié par l'IA.
                 Chaque validation est automatiquement tracée et historisée, créant un dossier de preuves complet.          
@@ -915,7 +929,7 @@ export default function UC1Page() {
 
               </div>
               <p className="text-lg font-semibold text-green-600">
-                Finies les zones grises : tout est validé et tracé.
+                {t('uc1.solution_section.feature3_highlight')}
               </p>
             </div>
             <div className="order-2 fade-in-right">
@@ -944,8 +958,8 @@ export default function UC1Page() {
 
           <div className="mb-20 md:mb-24 lg:mb-28">
           <div className="text-center mb-12 md:mb-16 fade-in-up">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Ce que nos utilisateurs obtiennent concrètement pour les petites offres</h3>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Des résultats mesurables pour chaque profil d'utilisateur</p>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">{t('uc1.results.headline')}</h3>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">{t('uc1.results.subtitle')}</p>
             </div>
 
           {/* Results Grid */}
@@ -958,36 +972,35 @@ export default function UC1Page() {
                     <MdEdit className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-gray-900">Directeur Commercial ou Directeur des Offres</h4>
-                    <p className="text-sm text-gray-600">Décision rapide, process validé, crédibilité renforcée</p>
+                    <h4 className="text-xl font-bold text-gray-900">{t('uc1.results.role1_title')}</h4>
+                    <p className="text-sm text-gray-600">{t('uc1.results.role1_subtitle')}</p>
                   </div>
                 </div>
 
                 <p className="text-gray-700 text-base leading-relaxed mb-4">
-                  Obtenez en moins de 48h une analyse complète et documentée, prête à présenter. Vous décidez dès le premier jour grâce à un go / no-go immédiat et démontrez que chaque point a été contrôlé et validé. Cette approche garantit la transparence, réduit les allers‑retours internes et renforce la confiance lors des comités.
+                  {t('uc1.results.role1_text1')}
                 </p>
 
                 <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
                   <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Décision éclairée dès J+1 grâce à une analyse instantanée
-
+                    <span>{t('uc1.results.role1_benefit1')}
                   </span>
                   </div>
                   <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>  Process interne respecté et intégralement tracé
+                    <span>  {t('uc1.results.role1_benefit2')}
 
                     </span>
                   </div>
                   <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Transparence totale sur les points critiques</span>
+                    <span>{t('uc1.results.role1_benefit3')}</span>
                   </div>
                   <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
                     <span>
-                    Crédibilité renforcée lors des comités</span>
+                    {t('uc1.results.role1_benefit4')}</span>
                   </div>
                 </div>
 
@@ -1003,36 +1016,35 @@ export default function UC1Page() {
                     <MdEdit className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-gray-900">Responsable Offre, Chef de Projet, Assistants commercial</h4>
-                    <p className="text-sm text-gray-600">Analyse rapide, validation fluide, sérénité retrouvée</p>
+                    <h4 className="text-xl font-bold text-gray-900">{t('uc1.results.role2_title')}</h4>
+                    <p className="text-sm text-gray-600">{t('uc1.results.role2_subtitle')}</p>
                   </div>
                 </div>
 
                 <p className="text-gray-700 text-base leading-relaxed mb-4">
-                  Travaillez dès le premier jour sur une base IA déjà structurée et priorisée, sans retraitement manuel. Vous disposez d’une vue synthétique et actionnable des points à valider, d’un accès immédiat aux preuves et d’un suivi clair de vos validations. Résultat : moins de stress, un gain de temps massif et la capacité de démontrer à tout moment que tout a été contrôlé et tracé.
+                  {t('uc1.results.role2_text1')}
                 </p>
 
                 <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
                   <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Moins de relectures, plus de décisions stratégiques
-
+                    <span>{t('uc1.results.role2_benefit1')}
                   </span>
                   </div>
                   <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span> Chaque point couvert, chaque preuve archivée
+                    <span>  {t('uc1.results.role2_benefit2')}
 
                     </span>
                   </div>
                   <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>Crédibilité renforcée face aux décideurs internes</span>
+                    <span>{t('uc1.results.role2_benefit3')}</span>
                   </div>
                   <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
                     <span>
-                    Validation fluide et intégralement documentée</span>
+                    {t('uc1.results.role2_benefit4')}</span>
                   </div>
                 </div>
 
@@ -1054,21 +1066,21 @@ export default function UC1Page() {
                 {/* Subtle gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/10 to-transparent rounded-3xl opacity-60"></div>
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-white/10 to-transparent rounded-full blur-2xl"></div>
-                
+
                 {/* Icon */}
                 <div className="relative z-10 mb-6">
                   <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-gray-700 to-gray-600 flex items-center justify-center shadow-lg border border-gray-600 group-hover:scale-105 transition-transform duration-300">
                     <MdAccessTime className="w-8 h-8 text-white" />
                   </div>
                 </div>
-                
+
                 {/* Metric */}
                 <div className="relative z-10 flex-1 flex flex-col justify-center">
                   <div className="text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight tracking-tight">
                     -50% à -70%
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Gain de temps</h3>
-                  <p className="text-sm text-gray-300 leading-relaxed">Réduction du temps d'analyse des documents</p>
+                  <h3 className="text-lg font-semibold text-white mb-2">{t('uc1.kpis.metric1_title')}</h3>
+                  <p className="text-sm text-gray-300 leading-relaxed">{t('uc1.kpis.metric1_description')}</p>
                 </div>
               </div>
             </div>
@@ -1078,21 +1090,21 @@ export default function UC1Page() {
               <div className="bg-white rounded-3xl p-8 text-center border border-gray-200 hover:border-blue-300 transition-all duration-300 hover:shadow-xl shadow-lg h-full flex flex-col justify-between min-h-[260px] relative">
                 {/* Clean background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
+
                 {/* Icon */}
                 <div className="relative z-10 mb-6">
                   <div className="w-16 h-16 mx-auto rounded-2xl bg-blue-500 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
                     <MdVerified className="w-8 h-8 text-white" />
                   </div>
                 </div>
-                
+
                 {/* Metric */}
                 <div className="relative z-10 flex-1 flex flex-col justify-center">
                   <div className="text-4xl lg:text-5xl font-bold text-blue-600 mb-4 leading-tight tracking-tight">
                     100%
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">Conformité</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">Critères critiques vérifiés et documentés</p>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">{t('uc1.kpis.metric2_title')}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{t('uc1.kpis.metric2_description')}</p>
                 </div>
               </div>
             </div>
@@ -1102,21 +1114,21 @@ export default function UC1Page() {
               <div className="bg-white rounded-3xl p-8 text-center border border-gray-200 hover:border-purple-300 transition-all duration-300 hover:shadow-xl shadow-lg h-full flex flex-col justify-between min-h-[260px] relative">
                 {/* Clean background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-50/30 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
+
                 {/* Icon */}
                 <div className="relative z-10 mb-6">
                   <div className="w-16 h-16 mx-auto rounded-2xl bg-purple-500 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
                     <MdEmojiEvents className="w-8 h-8 text-white" />
                   </div>
                 </div>
-                
+
                 {/* Metric */}
                 <div className="relative z-10 flex-1 flex flex-col justify-center">
                   <div className="text-3xl lg:text-4xl font-bold text-purple-600 mb-4 leading-tight tracking-tight">
-                    Sérénité maximale
+                    {t('uc1.kpis.metric3_title')}
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">Impact organisationnel</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">Confiance renforcée, stress réduit, zéro escalade interne</p>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">{t('uc1.kpis.metric3_subtitle')}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{t('uc1.kpis.metric3_description')}</p>
                 </div>
               </div>
             </div>
@@ -1152,15 +1164,17 @@ export default function UC1Page() {
           <div className="text-center mb-16 md:mb-20 lg:mb-24 fade-in-up">
             <div className="inline-flex items-center justify-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6 md:mb-8">
               <MdStars className="w-5 h-5 text-yellow-400 mr-2" />
-              <span className="text-white font-semibold text-sm md:text-base">Fonctionnalités Wow</span>
+              <span className="text-white font-semibold text-sm md:text-base">{t('uc1.features.headline')}</span>
             </div>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:mb-8 leading-[1.1] tracking-tight">
-              Des <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-400 to-cyan-400">capacités avancées</span> qui transforment votre approche commerciale
+              {t('uc1.features.title1')}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-400 to-cyan-400">{t('uc1.features.title2')}</span>
+              {t('uc1.features.title3')}
             </h2>
 
             <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed font-light">
-              Au-delà de la génération rapide, découvrez des fonctionnalités qui ajoutent une dimension stratégique à votre développement commercial.
+              {t('uc1.features.subtitle')}
             </p>
           </div>
 
@@ -1184,9 +1198,9 @@ export default function UC1Page() {
                   <MdDescription className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Résumé automatique du projet</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">{t('uc1.features.project_summary.title')}</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  Génération instantanée d'un résumé clair des objectifs et du contexte du projet, affiché sur le dashboard.
+                  {t('uc1.features.project_summary.description')}
                 </p>
 
                 <div className="flex items-center justify-between">
@@ -1194,7 +1208,7 @@ export default function UC1Page() {
                     <span className="text-sm">Project Summary</span>
                     <MdAutoAwesome className="w-4 h-4 ml-2" />
                   </div>
-                  
+
                   {/* Click indicator */}
                   <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
                     Cliquez pour détails
@@ -1220,9 +1234,9 @@ export default function UC1Page() {
                   <MdSearch className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Détection des exigences implicites</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">{t('uc1.features.implicit_requirements.title')}</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  {t('uc1.features.hidden_requirements')}
+                  {t('uc1.features.implicit_requirements.description')}
                 </p>
 
                 <div className="flex items-center justify-between">
@@ -1230,7 +1244,7 @@ export default function UC1Page() {
                     <span className="text-sm">Implicit Requirement Detector</span>
                     <MdWarning className="w-4 h-4 ml-2" />
                   </div>
-                  
+
                   {/* Click indicator */}
                   <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
                     Cliquez pour détails
@@ -1256,9 +1270,9 @@ export default function UC1Page() {
                   <MdContentCopy className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Résumé intelligent de chaque document</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">{t('uc1.features.document_summary.title')}</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  Chaque document est résumé en quelques lignes, disponible dans le doc center et réutilisable par l'IA.
+                  {t('uc1.features.document_summary.description')}
                 </p>
 
                 <div className="flex items-center justify-between">
@@ -1266,7 +1280,7 @@ export default function UC1Page() {
                     <span className="text-sm">Document Summary</span>
                     <MdCreate className="w-4 h-4 ml-2" />
                   </div>
-                  
+
                   {/* Click indicator */}
                   <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
                     Cliquez pour détails
@@ -1292,9 +1306,9 @@ export default function UC1Page() {
                   <MdAccountTree className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Gestion dynamique de la hiérarchie documentaire</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">{t('uc1.features.document_hierarchy.title')}</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  Les documents sont automatiquement classés selon leur importance, définie par l'utilisateur ou l'IA.
+                  {t('uc1.features.document_hierarchy.description')}
                 </p>
 
                 <div className="flex items-center justify-between">
@@ -1302,7 +1316,7 @@ export default function UC1Page() {
                     <span className="text-sm">Document Precedence</span>
                     <MdSchema className="w-4 h-4 ml-2" />
                   </div>
-                  
+
                   {/* Click indicator */}
                   <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
                     Cliquez pour détails
@@ -1328,9 +1342,9 @@ export default function UC1Page() {
                   <MdCallSplit className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Catégorisation intelligente & arbre thématique</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">{t('uc1.features.content_categorization.title')}</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  Les informations sont automatiquement classées par thème (juridique, technique, planning…) et restituées sous forme d'arbre visuel.
+                  {t('uc1.features.content_categorization.description')}
                 </p>
 
                 <div className="flex items-center justify-between">
@@ -1338,7 +1352,7 @@ export default function UC1Page() {
                     <span className="text-sm">Content Categorization</span>
                     <MdTimeline className="w-4 h-4 ml-2" />
                   </div>
-                  
+
                   {/* Click indicator */}
                   <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
                     Cliquez pour détails
@@ -1364,9 +1378,9 @@ export default function UC1Page() {
                   <MdMessage className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Chat contextuel avec le projet</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">{t('uc1.features.project_chat.title')}</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
-                  L'utilisateur interroge son projet en langage naturel ("Quels sont les critères de sélection ?", "Y a-t-il une clause pénalité ?") et obtient une réponse directe avec la source.
+                  {t('uc1.features.project_chat.description')}
                 </p>
 
                 <div className="flex items-center justify-between">
@@ -1374,7 +1388,7 @@ export default function UC1Page() {
                     <span className="text-sm">Chat with Project Data</span>
                     <MdMessage className="w-4 h-4 ml-2" />
                   </div>
-                  
+
                   {/* Click indicator */}
                   <div className="opacity-60 group-hover:opacity-100 transition-opacity text-white text-xs">
                     Cliquez pour détails
@@ -1388,13 +1402,13 @@ export default function UC1Page() {
           {/* Bottom CTA */}
           <div className="text-center mt-16 md:mt-20 lg:mt-24">
             <p className="text-gray-200 text-lg mb-8">
-              Chaque fonctionnalité optimise votre efficacité commerciale
+              {t('uc1.features.cta_subtitle')}
             </p>
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-yellow-400 via-pink-500 to-cyan-500 hover:from-yellow-500 hover:via-pink-600 hover:to-cyan-600 text-white px-12 py-6 text-xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
             >
-              Explorer toutes les fonctionnalités →
+              {t('uc1.features.cta_button')}
             </Button>
           </div>
         </div>
@@ -1405,16 +1419,17 @@ export default function UC1Page() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 md:mb-16 lg:mb-20 fade-in-up">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:mb-8 leading-[1.1] tracking-tight">
-              Nos <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">appels d'offres référence</span> sur les petits projets
+              {t('uc1.projects.headline1')}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">{t('uc1.projects.headline2')}</span>
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Découvrez comment nos clients optimisent leurs petits projets avec l'IA Aitenders
+              {t('uc1.projects.subtitle')}
             </p>
           </div>
 
           {/* 3 Real Projects Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 mb-16 md:mb-20">
-            
+
             {/* Project 1: Rénovation Écoles Municipales */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -1426,35 +1441,34 @@ export default function UC1Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
                   <MdBusiness className="w-8 h-8 text-white" />
                 </div>
-                
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Rénovation Écoles Municipales</h3>
+
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{t('uc1.projects.project1_title')}</h3>
                 <div className="mb-4">
-                  <Badge className="bg-purple-100 text-purple-800 font-medium">Bâtiment</Badge>
+                  <Badge className="bg-purple-100 text-purple-800 font-medium">{t('uc1.projects.project1_category')}</Badge>
                 </div>
-                <div className="text-xl font-bold text-purple-600 mb-4">Offre : 850 K€</div>
-                
+                <div className="text-xl font-bold text-purple-600 mb-4">{t('uc1.projects.project1_offer')}</div>
+
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  Programme de rénovation énergétique de 15 écoles municipales avec mise aux normes accessibilité. 
-                  Coordination simplifiée entre lots électriques, plomberie, isolation et menuiserie.
+                  {t('uc1.projects.project1_description')}
                 </p>
-                
+
                 <div className="space-y-3">
-                  <h4 className="font-semibold text-gray-900 mb-3">Impact client :</h4>
+                  <h4 className="font-semibold text-gray-900 mb-3">{t('uc1.projects.project1_impact_title')}</h4>
                   <div className="flex items-center text-sm text-gray-700">
                     <MdTrendingUp className="w-4 h-4 mr-2 text-green-500" />
-                    <span><strong>Productivité :</strong> +45% temps économisé sur préparation</span>
+                    <span>{t('uc1.projects.project1_impact1')}</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-700">
                     <MdVerified className="w-4 h-4 mr-2 text-blue-500" />
-                    <span><strong>Conformité :</strong> 100% normes respectées</span>
+                    <span>{t('uc1.projects.project1_impact2')}</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-700">
                     <MdTrackChanges className="w-4 h-4 mr-2 text-purple-500" />
-                    <span><strong>Traçabilité :</strong> Documentation automatisée</span>
+                    <span>{t('uc1.projects.project1_impact3')}</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-700">
                     <MdGroups className="w-4 h-4 mr-2 text-orange-500" />
-                    <span><strong>Collaboration :</strong> 5 corps de métier synchronisés</span>
+                    <span>{t('uc1.projects.project1_impact4')}</span>
                   </div>
                 </div>
               </div>
@@ -1471,35 +1485,34 @@ export default function UC1Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
                   <MdGpsFixed className="w-8 h-8 text-white" />
                 </div>
-                
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Aménagement Zones Commerciales</h3>
+
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{t('uc1.projects.project2_title')}</h3>
                 <div className="mb-4">
-                  <Badge className="bg-blue-100 text-blue-800 font-medium">Aménagement</Badge>
+                  <Badge className="bg-blue-100 text-blue-800 font-medium">{t('uc1.projects.project2_category')}</Badge>
                 </div>
-                <div className="text-xl font-bold text-blue-600 mb-4">Offre : 720 K€</div>
-                
+                <div className="text-xl font-bold text-blue-600 mb-4">{t('uc1.projects.project2_offer')}</div>
+
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  Création d'espaces commerciaux modernes avec parkings et voiries associées. 
-                  Gestion intégrée des réseaux, éclairage public et espaces verts sur 3 hectares.
+                  {t('uc1.projects.project2_description')}
                 </p>
-                
+
                 <div className="space-y-3">
-                  <h4 className="font-semibold text-gray-900 mb-3">Impact client :</h4>
+                  <h4 className="font-semibold text-gray-900 mb-3">{t('uc1.projects.project2_impact_title')}</h4>
                   <div className="flex items-center text-sm text-gray-700">
                     <MdTrendingUp className="w-4 h-4 mr-2 text-green-500" />
-                    <span><strong>Productivité :</strong> +38% accélération des études</span>
+                    <span>{t('uc1.projects.project2_impact1')}</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-700">
                     <MdVerified className="w-4 h-4 mr-2 text-blue-500" />
-                    <span><strong>Conformité :</strong> Normes environnementales validées</span>
+                    <span>{t('uc1.projects.project2_impact2')}</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-700">
                     <MdTrackChanges className="w-4 h-4 mr-2 text-purple-500" />
-                    <span><strong>Traçabilité :</strong> Suivi temps réel simplifié</span>
+                    <span>{t('uc1.projects.project2_impact3')}</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-700">
                     <MdGroups className="w-4 h-4 mr-2 text-orange-500" />
-                    <span><strong>Collaboration :</strong> 8 équipes coordonnées</span>
+                    <span>{t('uc1.projects.project2_impact4')}</span>
                   </div>
                 </div>
               </div>
@@ -1516,35 +1529,34 @@ export default function UC1Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6">
                   <MdSecurity className="w-8 h-8 text-white" />
                 </div>
-                
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Extension Centre de Santé</h3>
+
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{t('uc1.projects.project3_title')}</h3>
                 <div className="mb-4">
-                  <Badge className="bg-green-100 text-green-800 font-medium">Santé</Badge>
+                  <Badge className="bg-green-100 text-green-800 font-medium">{t('uc1.projects.project3_category')}</Badge>
                 </div>
-                <div className="text-xl font-bold text-green-600 mb-4">Offre : 950 K€</div>
-                
+                <div className="text-xl font-bold text-green-600 mb-4">{t('uc1.projects.project3_offer')}</div>
+
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  Extension moderne d'un centre de santé avec salles de consultation et équipements médicaux. 
-                  Coordination des lots techniques spécialisés avec contraintes d'exploitation continue.
+                  {t('uc1.projects.project3_description')}
                 </p>
-                
+
                 <div className="space-y-3">
-                  <h4 className="font-semibold text-gray-900 mb-3">Impact client :</h4>
+                  <h4 className="font-semibold text-gray-900 mb-3">{t('uc1.projects.project3_impact_title')}</h4>
                   <div className="flex items-center text-sm text-gray-700">
                     <MdTrendingUp className="w-4 h-4 mr-2 text-green-500" />
-                    <span><strong>Productivité :</strong> +52% réduction délais conception</span>
+                    <span>{t('uc1.projects.project3_impact1')}</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-700">
                     <MdVerified className="w-4 h-4 mr-2 text-blue-500" />
-                    <span><strong>Conformité :</strong> Normes sanitaires strictes</span>
+                    <span>{t('uc1.projects.project3_impact2')}</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-700">
                     <MdTrackChanges className="w-4 h-4 mr-2 text-purple-500" />
-                    <span><strong>Traçabilité :</strong> Validation médicale continue</span>
+                    <span>{t('uc1.projects.project3_impact3')}</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-700">
                     <MdGroups className="w-4 h-4 mr-2 text-orange-500" />
-                    <span><strong>Collaboration :</strong> 6 lots spécialisés</span>
+                    <span>{t('uc1.projects.project3_impact4')}</span>
                   </div>
                 </div>
               </div>
@@ -1562,25 +1574,31 @@ export default function UC1Page() {
             <div className="absolute inset-0 bg-gradient-to-r from-purple-100/20 to-blue-100/20 opacity-50"></div>
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-purple-200/30 to-transparent rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-blue-200/30 to-transparent rounded-full blur-2xl"></div>
-            
+
             <div className="relative z-10">
               <div className="text-center mb-8">
                 <div className="inline-flex items-center justify-center px-6 py-3 bg-purple-100 rounded-full border border-purple-200 mb-6">
                   <MdAnalytics className="w-5 h-5 text-purple-600 mr-2" />
-                  <span className="text-purple-700 font-semibold text-sm">Simulateur ROI Intégré</span>
+                  <span className="text-purple-700 font-semibold text-sm">{t('uc1.roi_simulator.title')}</span>
                 </div>
-                
+
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                  Calculez votre <span className="text-purple-600">ROI en temps réel</span>
+                  {t('uc1.roi_simulator.headline1')}
+                  <span className="text-purple-600">{t('uc1.roi_simulator.headline2')}</span>
                 </h3>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  Simulateur intelligent intégré à la page pour une analyse immédiate de vos projets
+                  {t('uc1.roi_simulator.subtitle')}
                 </p>
               </div>
-              
+
               {/* Embedded Aitenders ROI Simulator Final */}
-              <AitendersSimulatorFinal useCase="UC1" className="w-full" />
-              
+              <AitendersSimulatorFinal 
+                useCase="UC1" 
+                className="w-full" 
+                // Pass translations to the simulator if it uses them
+                // translations={{ title: t('simulator.title'), ... }} 
+              />
+
 
             </div>
           </div>
@@ -1618,7 +1636,7 @@ export default function UC1Page() {
 
       {/* Add padding to body to account for fixed chat */}
       <div className="h-32"></div>
-      
+
       {/* Topping Modal */}
       <ToppingModal
         isOpen={isModalOpen}
