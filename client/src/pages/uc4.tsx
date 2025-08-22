@@ -51,7 +51,11 @@ export default function UC4Page() {
           const id = entry.target.getAttribute('data-scroll-id');
           if (id) {
             if (entry.isIntersecting) {
-              setVisibleElements(prev => new Set([...prev, id]));
+              setVisibleElements(prev => {
+                const newSet = new Set(prev);
+                newSet.add(id);
+                return newSet;
+              });
             }
           }
         });
