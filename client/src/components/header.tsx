@@ -24,8 +24,11 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
     setShowLanguageMenu(false);
   };
 
-  // Initialize Google Translate on component mount
+  // Initialize Google Translate on component mount and location changes
   useEffect(() => {
+    let retryCount = 0;
+    const maxRetries = 10;
+
     const initGoogleTranslate = () => {
       if (typeof window !== 'undefined' && (window as any).google && (window as any).google.translate) {
         try {
@@ -44,20 +47,17 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
         } catch (error) {
           console.warn('Google Translate initialization failed:', error);
         }
-      } else {
-        // Retry after a short delay
-        setTimeout(initGoogleTranslate, 500);
+      } else if (retryCount < maxRetries) {
+        retryCount++;
+        setTimeout(initGoogleTranslate, 300);
       }
     };
 
-    // Initialize immediately or wait for the script to load
-    if (document.readyState === 'complete') {
-      initGoogleTranslate();
-    } else {
-      window.addEventListener('load', initGoogleTranslate);
-      return () => window.removeEventListener('load', initGoogleTranslate);
-    }
-  }, []);
+    // Initialize on mount and when location changes to ensure it persists
+    const timeoutId = setTimeout(initGoogleTranslate, 100);
+    
+    return () => clearTimeout(timeoutId);
+  }, [location]); // Re-run when location changes
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-aitenders-white-blue border-b border-aitenders-light-blue">
