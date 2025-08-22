@@ -6,6 +6,7 @@ import { z } from "zod";
 import { generateAitendersResponse } from "./openai";
 import { ragService } from "./rag-service";
 import { hubspotService } from "./hubspot-service";
+import { translationService } from "./translations";
 
 import fs from 'fs';
 import path from 'path';
@@ -755,6 +756,51 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error('Get simulation error:', error);
       res.status(500).json({ message: "Failed to fetch simulation" });
+    }
+  });
+
+  // Translation routes
+  app.get("/api/translations/languages", async (req, res) => {
+    try {
+      const languages = await translationService.getLanguages();
+      res.json(languages);
+    } catch (error) {
+      console.error('Get languages error:', error);
+      res.status(500).json({ message: "Failed to fetch languages" });
+    }
+  });
+
+  app.get("/api/translations/:languageCode", async (req, res) => {
+    try {
+      const { languageCode } = req.params;
+      const { page } = req.query;
+      
+      const translations = await translationService.getTranslations(
+        languageCode, 
+        page as string
+      );
+      
+      res.json(translations);
+    } catch (error) {
+      console.error('Get translations error:', error);
+      res.status(500).json({ message: "Failed to fetch translations" });
+    }
+  });
+
+  app.get("/api/translations/:languageCode/:key", async (req, res) => {
+    try {
+      const { languageCode, key } = req.params;
+      
+      const translation = await translationService.getTranslation(key, languageCode);
+      
+      if (!translation) {
+        return res.status(404).json({ message: "Translation not found" });
+      }
+      
+      res.json({ key, value: translation });
+    } catch (error) {
+      console.error('Get translation error:', error);
+      res.status(500).json({ message: "Failed to fetch translation" });
     }
   });
 

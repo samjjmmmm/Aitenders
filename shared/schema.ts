@@ -79,6 +79,34 @@ export const roiSimulations = pgTable('roi_simulations', {
   createdAt: timestamp('created_at').notNull().defaultNow(),
 });
 
+// Translation Tables
+export const languages = pgTable('languages', {
+  code: varchar('code', { length: 5 }).primaryKey(), // fr, en, es, de
+  name: text('name').notNull(), // Français, English, Español, Deutsch
+  isDefault: boolean('is_default').notNull().default(false), // French is default reference
+  isActive: boolean('is_active').notNull().default(true),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+});
+
+export const translationKeys = pgTable('translation_keys', {
+  id: varchar('id').primaryKey().default(sql`gen_random_uuid()`),
+  key: text('key').notNull().unique(), // uc2.hero.title, uc2.hero.subtitle, etc.
+  context: text('context'), // Description for translators
+  page: text('page'), // uc1, uc2, uc3, common, etc.
+  section: text('section'), // hero, features, cta, etc.
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+});
+
+export const translations = pgTable('translations', {
+  id: varchar('id').primaryKey().default(sql`gen_random_uuid()`),
+  keyId: varchar('key_id').notNull().references(() => translationKeys.id, { onDelete: 'cascade' }),
+  languageCode: varchar('language_code', { length: 5 }).notNull().references(() => languages.code, { onDelete: 'cascade' }),
+  value: text('value').notNull(), // The actual translated text
+  isApproved: boolean('is_approved').notNull().default(false), // For translation workflow
+  updatedAt: timestamp('updated_at').notNull().defaultNow(),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+});
+
 export const insertUserSchema = createInsertSchema(users).pick({
   username: true,
   password: true,
@@ -134,6 +162,27 @@ export const insertRoiSimulationSchema = createInsertSchema(roiSimulations).pick
   userEmail: true,
 });
 
+export const insertLanguageSchema = createInsertSchema(languages).pick({
+  code: true,
+  name: true,
+  isDefault: true,
+  isActive: true,
+});
+
+export const insertTranslationKeySchema = createInsertSchema(translationKeys).pick({
+  key: true,
+  context: true,
+  page: true,
+  section: true,
+});
+
+export const insertTranslationSchema = createInsertSchema(translations).pick({
+  keyId: true,
+  languageCode: true,
+  value: true,
+  isApproved: true,
+});
+
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type InsertContactRequest = z.infer<typeof insertContactRequestSchema>;
@@ -146,3 +195,9 @@ export type InsertSimulatorSession = z.infer<typeof insertSimulatorSessionSchema
 export type SimulatorSession = typeof simulatorSessions.$inferSelect;
 export type InsertRoiSimulation = z.infer<typeof insertRoiSimulationSchema>;
 export type RoiSimulation = typeof roiSimulations.$inferSelect;
+export type InsertLanguage = z.infer<typeof insertLanguageSchema>;
+export type Language = typeof languages.$inferSelect;
+export type InsertTranslationKey = z.infer<typeof insertTranslationKeySchema>;
+export type TranslationKey = typeof translationKeys.$inferSelect;
+export type InsertTranslation = z.infer<typeof insertTranslationSchema>;
+export type Translation = typeof translations.$inferSelect;

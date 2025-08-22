@@ -18,6 +18,7 @@ import UC3AnalysisCard from "@/components/UC3AnalysisCard";
 import ClientLogos from "@/components/client-logos";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "@/hooks/useTranslations";
 
 // Import client logos
 import equansLogo from "@assets/Equans_1753711339292.png";
@@ -36,10 +37,10 @@ import uc2ThirdFeatureImage from "@assets/wow 3_1755698476634.png";
 import uc2HeroImage from "@assets/HERO UC 2_1755763267253.png";
 
 export default function UC2Page() {
-  const [language, setLanguage] = useState<'en' | 'fr'>('fr');
+  const { t, currentLanguage, changeLanguage, languages } = useTranslations('uc2');
 
-  // Translations with comprehensive English content
-  const t = {
+  // Legacy translations object - to be removed gradually
+  const legacyT = {
     fr: {
       // Hero Section
       badge: "Pilotez les offres moyennes",
@@ -187,11 +188,11 @@ export default function UC2Page() {
   const targetAudiences = [
     {
       id: 'proposal-managers',
-      title: t[language].proposalManagers,
+      title: t('uc2.audiences.proposalManagers'),
       icon: MdAccountBox,
       iconColor: 'text-purple-600',
       iconBg: 'bg-purple-100',
-      description: t[language].proposalManagersDesc,
+      description: t('uc2.audiences.proposalManagersDesc'),
       dashboardData: {
         requirements: { progress: 100, color: 'green' },
         coordination: { progress: 78, color: 'blue' },
@@ -202,11 +203,11 @@ export default function UC2Page() {
     },
     {
       id: 'technical-managers',
-      title: t[language].technicalManagers,
+      title: legacyT[currentLanguage] || legacyT['fr'].technicalManagers,
       icon: MdBusiness,
       iconColor: 'text-blue-600',
       iconBg: 'bg-blue-100',
-      description: t[language].technicalManagersDesc,
+      description: legacyT[currentLanguage] || legacyT['fr'].technicalManagersDesc,
       dashboardData: {
         requirements: { progress: 95, color: 'green' },
         coordination: { progress: 88, color: 'blue' },
@@ -217,11 +218,11 @@ export default function UC2Page() {
     },
     {
       id: 'commercial-directors',
-      title: t[language].commercialDirectors,
+      title: legacyT[currentLanguage] || legacyT['fr'].commercialDirectors,
       icon: MdGavel,
       iconColor: 'text-green-600',
       iconBg: 'bg-green-100',
-      description: t[language].commercialDirectorsDesc,
+      description: legacyT[currentLanguage] || legacyT['fr'].commercialDirectorsDesc,
       dashboardData: {
         requirements: { progress: 100, color: 'green' },
         coordination: { progress: 95, color: 'blue' },
@@ -232,11 +233,11 @@ export default function UC2Page() {
     },
     {
       id: 'project-directors',
-      title: t[language].projectDirectors,
+      title: legacyT[currentLanguage] || legacyT['fr'].projectDirectors,
       icon: MdEngineering,
       iconColor: 'text-orange-600',
       iconBg: 'bg-orange-100',
-      description: t[language].projectDirectorsDesc,
+      description: legacyT[currentLanguage] || legacyT['fr'].projectDirectorsDesc,
       dashboardData: {
         requirements: { progress: 100, color: 'green' },
         coordination: { progress: 85, color: 'blue' },
@@ -247,11 +248,11 @@ export default function UC2Page() {
     },
     {
       id: 'operations-managers',
-      title: t[language].operationsManagers,
+      title: legacyT[currentLanguage] || legacyT['fr'].operationsManagers,
       icon: MdAnalytics,
       iconColor: 'text-indigo-600',
       iconBg: 'bg-indigo-100',
-      description: t[language].operationsManagersDesc,
+      description: legacyT[currentLanguage] || legacyT['fr'].operationsManagersDesc,
       dashboardData: {
         requirements: { progress: 100, color: 'green' },
         coordination: { progress: 92, color: 'blue' },
@@ -289,56 +290,56 @@ export default function UC2Page() {
   const painPoints = [
     {
       icon: MdWarning,
-      title: t[language].painPoint1Title,
-      description: t[language].painPoint1Desc
+      title: legacyT[currentLanguage] || legacyT['fr'].painPoint1Title,
+      description: legacyT[currentLanguage] || legacyT['fr'].painPoint1Desc
     },
     {
       icon: MdDescription,
-      title: t[language].painPoint2Title,
-      description: t[language].painPoint2Desc
+      title: legacyT[currentLanguage] || legacyT['fr'].painPoint2Title,
+      description: legacyT[currentLanguage] || legacyT['fr'].painPoint2Desc
     },
     {
       icon: FaUsers,
-      title: t[language].painPoint3Title,
-      description: t[language].painPoint3Desc
+      title: legacyT[currentLanguage] || legacyT['fr'].painPoint3Title,
+      description: legacyT[currentLanguage] || legacyT['fr'].painPoint3Desc
     }
   ];
 
   const solutions = [
     {
       icon: MdFlashOn,
-      title: t[language].solution1Title,
-      description: t[language].solution1Desc
+      title: legacyT[currentLanguage] || legacyT['fr'].solution1Title,
+      description: legacyT[currentLanguage] || legacyT['fr'].solution1Desc
     },
     {
       icon: MdGroups,
-      title: t[language].solution2Title,
-      description: t[language].solution2Desc
+      title: legacyT[currentLanguage] || legacyT['fr'].solution2Title,
+      description: legacyT[currentLanguage] || legacyT['fr'].solution2Desc
     },
     {
       icon: MdSecurity,
-      title: t[language].solution3Title,
-      description: t[language].solution3Desc
+      title: legacyT[currentLanguage] || legacyT['fr'].solution3Title,
+      description: legacyT[currentLanguage] || legacyT['fr'].solution3Desc
     }
   ];
 
   const userJourneySteps = [
     {
       step: "1",
-      title: t[language].journey1Title,
-      description: t[language].journey1Desc,
+      title: legacyT[currentLanguage] || legacyT['fr'].journey1Title,
+      description: legacyT[currentLanguage] || legacyT['fr'].journey1Desc,
       icon: MdDescription
     },
     {
       step: "2", 
-      title: t[language].journey2Title,
-      description: t[language].journey2Desc,
+      title: legacyT[currentLanguage] || legacyT['fr'].journey2Title,
+      description: legacyT[currentLanguage] || legacyT['fr'].journey2Desc,
       icon: MdGroups
     },
     {
       step: "3",
-      title: t[language].journey3Title, 
-      description: t[language].journey3Desc,
+      title: legacyT[currentLanguage] || legacyT['fr'].journey3Title, 
+      description: legacyT[currentLanguage] || legacyT['fr'].journey3Desc,
       icon: MdSecurity
     }
   ];
@@ -346,41 +347,56 @@ export default function UC2Page() {
   const kpis = [
     {
       metric: "70%",
-      description: t[language].kpi1Desc
+      description: legacyT[currentLanguage] || legacyT['fr'].kpi1Desc
     },
     {
       metric: "85%",
-      description: t[language].kpi2Desc
+      description: legacyT[currentLanguage] || legacyT['fr'].kpi2Desc
     },
     {
       metric: "3-5 jours",
-      description: t[language].kpi3Desc
+      description: legacyT[currentLanguage] || legacyT['fr'].kpi3Desc
     },
     {
       metric: "100%",
-      description: t[language].kpi4Desc
+      description: legacyT[currentLanguage] || legacyT['fr'].kpi4Desc
     }
   ];
 
   const differentiators = [
     {
-      title: t[language].diff1Title,
-      description: t[language].diff1Desc
+      title: legacyT[currentLanguage] || legacyT['fr'].diff1Title,
+      description: legacyT[currentLanguage] || legacyT['fr'].diff1Desc
     },
     {
-      title: t[language].diff2Title,
-      description: t[language].diff2Desc
+      title: legacyT[currentLanguage] || legacyT['fr'].diff2Title,
+      description: legacyT[currentLanguage] || legacyT['fr'].diff2Desc
     },
     {
-      title: t[language].diff3Title,
-      description: t[language].diff3Desc
+      title: legacyT[currentLanguage] || legacyT['fr'].diff3Title,
+      description: legacyT[currentLanguage] || legacyT['fr'].diff3Desc
     }
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-white">
+      {/* Temporary Language Selector for Testing */}
+      <div className="fixed top-20 right-4 z-50 bg-white shadow-lg rounded-lg p-3">
+        <select
+          value={currentLanguage}
+          onChange={(e) => changeLanguage(e.target.value)}
+          className="px-3 py-1 border rounded text-sm"
+        >
+          {languages.map((lang: any) => (
+            <option key={lang.code} value={lang.code}>
+              {lang.name}
+            </option>
+          ))}
+        </select>
+      </div>
+      
       {/* Header/Navbar */}
-      <Header language={language} onLanguageChange={setLanguage} />
+      <Header language={currentLanguage} onLanguageChange={changeLanguage} />
 
       <main>
       {/* Hero Section - Professional SaaS Design */}
@@ -426,7 +442,7 @@ export default function UC2Page() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
-                  <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">{t[language].badge}</Badge>
+                  <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">{t('uc2.hero.badge')}</Badge>
                 </motion.div>
 
                 <motion.h1 
@@ -435,7 +451,7 @@ export default function UC2Page() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
                 >
-                  {t[language].heroTitle} <span className="text-purple-600">{t[language].heroSpan}</span>
+                  {t('uc2.hero.title')} <span className="text-purple-600">{t('uc2.hero.span')}</span>
                 </motion.h1>
 
                 <motion.p 
@@ -460,7 +476,7 @@ export default function UC2Page() {
                   size="lg" 
                   className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
                 >
-                  {t[language].demoButton}
+                  {t('uc2.hero.demoButton')}
                 </Button>
                 
                 <Button 
@@ -1203,7 +1219,7 @@ export default function UC2Page() {
 
           {/* Client Logos Scrolling Banner */}
           <div className="mb-8 md:mb-16 lg:mb-20 fade-in-up">
-            <ClientLogos language="fr" />
+            <ClientLogos language={currentLanguage} />
           </div>
 
           {/* Integrated Chat Simulator - Enhanced */}
@@ -1239,7 +1255,7 @@ export default function UC2Page() {
 
       {/* Chat Interface with UC2-specific actions */}
       <ChatInterface 
-        language={language}
+        language={currentLanguage}
         transparent={true}
         customActions={[
           {
