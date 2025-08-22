@@ -2,13 +2,14 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, ChevronRight, Home, Globe } from "lucide-react";
 import { Link, useLocation } from "wouter";
+import { useTranslations } from "@/hooks/useTranslations";
 
 // Import Aitenders logo
 import aitendersLogo from "@assets/Untitled(4)_1753712731718.png";
 
 interface HeaderProps {
-  language?: 'en' | 'fr';
-  onLanguageChange?: (lang: 'en' | 'fr') => void;
+  language?: string;
+  onLanguageChange?: (lang: string) => void;
 }
 
 export default function Header({ language = 'fr', onLanguageChange }: HeaderProps) {
@@ -17,12 +18,27 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
   const [showLanguageMenu, setShowLanguageMenu] = useState(false);
   const [location] = useLocation();
   
+  // Get available languages from translation system
+  const { languages } = useTranslations();
+  
   // Close menu when location changes
   const closeMenu = () => {
     setIsMenuOpen(false);
     setIsUseCasesOpen(false);
     setShowLanguageMenu(false);
   };
+
+  // Close language menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (showLanguageMenu) {
+        setShowLanguageMenu(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [showLanguageMenu]);
 
 
 
@@ -58,25 +74,19 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
               </Button>
               
               {showLanguageMenu && (
-                <div className="absolute right-0 top-full mt-1 bg-aitenders-white-blue border border-aitenders-light-blue rounded-lg shadow-lg py-1 z-50">
-                  <button
-                    onClick={() => {
-                      onLanguageChange?.('fr');
-                      setShowLanguageMenu(false);
-                    }}
-                    className={`block w-full text-left px-3 py-1 text-xs hover:bg-aitenders-pale-blue ${language === 'fr' ? 'bg-aitenders-pale-blue font-medium' : ''}`}
-                  >
-                    FR - Français
-                  </button>
-                  <button
-                    onClick={() => {
-                      onLanguageChange?.('en');
-                      setShowLanguageMenu(false);
-                    }}
-                    className={`block w-full text-left px-3 py-1 text-xs hover:bg-aitenders-pale-blue ${language === 'en' ? 'bg-aitenders-pale-blue font-medium' : ''}`}
-                  >
-                    EN - English
-                  </button>
+                <div className="absolute right-0 top-full mt-1 bg-aitenders-white-blue border border-aitenders-light-blue rounded-lg shadow-lg py-1 z-50 min-w-[140px]">
+                  {Array.isArray(languages) && languages.map((lang: any) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        onLanguageChange?.(lang.code);
+                        setShowLanguageMenu(false);
+                      }}
+                      className={`block w-full text-left px-3 py-1 text-xs hover:bg-aitenders-pale-blue ${language === lang.code ? 'bg-aitenders-pale-blue font-medium' : ''}`}
+                    >
+                      {lang.code.toUpperCase()} - {lang.name}
+                    </button>
+                  ))}
                 </div>
               )}
             </div>

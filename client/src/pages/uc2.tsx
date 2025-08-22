@@ -380,21 +380,6 @@ export default function UC2Page() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-white">
-      {/* Temporary Language Selector for Testing */}
-      <div className="fixed top-20 right-4 z-50 bg-white shadow-lg rounded-lg p-3">
-        <select
-          value={currentLanguage}
-          onChange={(e) => changeLanguage(e.target.value)}
-          className="px-3 py-1 border rounded text-sm"
-        >
-          {languages.map((lang: any) => (
-            <option key={lang.code} value={lang.code}>
-              {lang.name}
-            </option>
-          ))}
-        </select>
-      </div>
-      
       {/* Header/Navbar */}
       <Header language={currentLanguage} onLanguageChange={changeLanguage} />
 
