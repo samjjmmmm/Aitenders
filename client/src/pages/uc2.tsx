@@ -715,10 +715,10 @@ export default function UC2Page() {
             <div className="mb-20 md:mb-24 lg:mb-28">
               <div className="text-center mb-12 md:mb-16 fade-in-up">
                 <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
-                  Ce que nos utilisateurs obtiennent concrètement pour les offres moyennes
+                  {t('uc2.results_section.headline')}
                 </h3>
                 <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                  Des résultats décisifs pour les acheteurs et les équipes en charge des dossiers
+                  {t('uc2.results_section.subtitle')}
                 </p>
               </div>
 
@@ -743,18 +743,12 @@ export default function UC2Page() {
                     </p>
 
                     <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
-                      <div className="flex items-start">
-                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                        <span>Aucune clause oubliée, aucune incohérence détectée trop tard</span>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                        <span>Décision go / no-go prise sans délai</span>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                        <span>Crédibilité renforcée devant la direction générale</span>
-                      </div>
+                      {t('uc2.results_section.card1_points') && t('uc2.results_section.card1_points').map((point, index) => (
+                        <div key={index} className="flex items-start">
+                          <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                          <span>{point}</span>
+                        </div>
+                      ))}
                     </div>
                   </Card>
                 </div>
@@ -777,18 +771,12 @@ export default function UC2Page() {
                     </p>
 
                     <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
-                      <div className="flex items-start">
-                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                        <span>Analyse prête dès le premier jour, aucun tri manuel</span>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                        <span>Aucun stress, aucune surprise, aucun aller-retour inutile</span>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                        <span>Maîtrise totale de chaque clause et de chaque version</span>
-                      </div>
+                      {t('uc2.results_section.card2_points') && t('uc2.results_section.card2_points').map((point, index) => (
+                        <div key={index} className="flex items-start">
+                          <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                          <span>{point}</span>
+                        </div>
+                      ))}
                     </div>
                   </Card>
                 </div>
@@ -803,7 +791,7 @@ export default function UC2Page() {
                   <div className="group">
                     <Card className="h-full p-8 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 text-center">
                       <div className="text-4xl md:text-5xl font-bold text-green-600 mb-2">50%</div>
-                      <h4 className="text-lg font-semibold text-gray-900">du temps d'analyse initiale</h4>
+                      <h4 className="text-lg font-semibold text-gray-900">{t('uc2.results_section.kpis.time')}</h4>
                     </Card>
                   </div>
 
@@ -811,7 +799,7 @@ export default function UC2Page() {
                   <div className="group">
                     <Card className="h-full p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 text-center">
                       <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">100%</div>
-                      <h4 className="text-lg font-semibold text-gray-900">des clauses critiques identifiées</h4>
+                      <h4 className="text-lg font-semibold text-gray-900">{t('uc2.results_section.kpis.clauses')}</h4>
                     </Card>
                   </div>
 
@@ -819,7 +807,7 @@ export default function UC2Page() {
                   <div className="group">
                     <Card className="h-full p-8 bg-gradient-to-br from-purple-50 to-violet-50 border border-purple-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 text-center">
                       <div className="text-4xl md:text-5xl font-bold text-purple-600 mb-2">0</div>
-                      <h4 className="text-lg font-semibold text-gray-900">surprise, remise en cause évitée</h4>
+                      <h4 className="text-lg font-semibold text-gray-900">{t('uc2.results_section.kpis.surprise')}</h4>
                     </Card>
                   </div>
 
@@ -831,7 +819,7 @@ export default function UC2Page() {
                     <Card className="p-6 bg-gradient-to-br from-orange-50 to-amber-50 border border-orange-200/50 hover:border-opacity-75 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 text-center">
                       <div className="flex items-center justify-center">
                         <MdTrendingUp className="w-6 h-6 text-orange-600 mr-2" />
-                        <h4 className="text-lg font-semibold text-gray-900">Offre plus rapide propre et compétitive</h4>
+                        <h4 className="text-lg font-semibold text-gray-900">{t('uc2.results_section.kpis.extra')}</h4>
                       </div>
                     </Card>
                   </div>
