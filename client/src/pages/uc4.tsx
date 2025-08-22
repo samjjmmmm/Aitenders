@@ -17,7 +17,7 @@ import { FaUsers, FaShieldAlt, FaChartBar, FaFileAlt, FaCogs } from "react-icons
 import ContactSection from "@/components/contact-section";
 import Header from "@/components/header";
 import UC3AnalysisCard from "@/components/UC3AnalysisCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 // Import client logos
@@ -118,6 +118,27 @@ export default function UC4Page() {
   ];
 
   const [activeAudience, setActiveAudience] = useState(targetAudiences[0]);
+
+  // Scroll animations
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .fade-in, .scale-in');
+    animatedElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   const painPoints = [
     {
@@ -247,7 +268,7 @@ export default function UC4Page() {
         <div className="content-boundary relative z-10">
           
           {/* Content Section - Top */}
-          <div className="text-center mb-16 md:mb-20 lg:mb-24">
+          <div className="text-center mb-16 md:mb-20 lg:mb-24 fade-in-up">
             {/* Badge */}
             <div className="mb-8 md:mb-12">
               <Badge className="bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm">
@@ -283,7 +304,7 @@ export default function UC4Page() {
           </div>
           
           {/* Hero Image Section - Bottom */}
-          <div className="flex justify-center">
+          <div className="flex justify-center fade-in-up">
             <div className="relative w-full max-w-6xl">
               <img
                 src={uc4HeroImage}
@@ -334,7 +355,7 @@ export default function UC4Page() {
         <div className="content-boundary relative z-10">
           
           {/* Main Feature Card */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20"
+          <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20 fade-in-up"
                style={{
                  boxShadow: '0 32px 64px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.05)'
                }}>
@@ -405,7 +426,7 @@ export default function UC4Page() {
         </div>
         
         <div className="content-boundary relative z-10">
-          <div className="text-center mb-12 md:mb-16 lg:mb-20">
+          <div className="text-center mb-12 md:mb-16 lg:mb-20 fade-in-up">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-blue-600">copilote IA</span> qui fait parler vos contrats</h1>
             <h3 className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Chaque clause utile, chaque décision sécurisée : accédez aux éléments clés de vos contrats dès le jour 1, sans relecture fastidieuse.
@@ -414,7 +435,7 @@ export default function UC4Page() {
 
           {/* Feature 1: Fiche contrat intelligente - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
-            <div className="order-1">
+            <div className="order-1 fade-in-left">
 
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Fiche contrat intelligente, disponible <span className="text-purple-600">dès le premier jour</span>
@@ -430,7 +451,7 @@ export default function UC4Page() {
               </div>
             </div>
 
-            <div className="order-2">
+            <div className="order-2 fade-in-right">
               <div className="flex justify-center items-center h-full px-4 sm:px-6 lg:px-8">
                 <img 
                   src={uc4FirstFeatureImage}
@@ -447,7 +468,7 @@ export default function UC4Page() {
           </div>
           {/* Feature 2: Accès ciblé aux clauses critiques - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
-            <div className="order-1 lg:order-2">
+            <div className="order-1 lg:order-2 fade-in-left">
 
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Accès ciblé aux clauses critiques, <span className="text-green-600">sans relecture</span>
@@ -462,7 +483,7 @@ export default function UC4Page() {
               </div>
             </div>
 
-            <div className="order-2 lg:order-1">
+            <div className="order-2 lg:order-1 fade-in-right">
               <div className="flex justify-center items-center h-full px-4 sm:px-6 lg:px-8">
                 <img 
                   src={uc4SecondFeatureImage}
@@ -480,7 +501,7 @@ export default function UC4Page() {
 
           {/* Feature 3: Q&A Contractuel - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
-            <div className="order-1">
+            <div className="order-1 fade-in-left">
 
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Posez une question, <span className="text-indigo-600">l’IA vous répond</span>
@@ -497,7 +518,7 @@ export default function UC4Page() {
               </div>
             </div>
 
-            <div className="order-2">
+            <div className="order-2 fade-in-right">
               <div className="flex justify-center items-center h-full px-4 sm:px-6 lg:px-8">
                 <img 
                   src={uc4ThirdFeatureImage}
@@ -523,7 +544,7 @@ export default function UC4Page() {
 
           {/* User-Focused Results Section - Before KPIs */}
           <div className="mb-20 md:mb-24 lg:mb-28">
-            <div className="text-center mb-12 md:mb-16">
+            <div className="text-center mb-12 md:mb-16 fade-in-up">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
                 Ce que nos utilisateurs obtiennent concrètement pour les petits projets en exécution
               </h3>
@@ -536,7 +557,7 @@ export default function UC4Page() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 
               {/* Buyer Results */}
-              <div className="group">
+              <div className="group fade-in-left">
                 <Card className="h-full p-8 bg-gradient-to-br from-indigo-50 to-purple-50 border border-indigo-200/50 hover:border-indigo-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mr-4">
@@ -575,7 +596,7 @@ export default function UC4Page() {
               </div>
 
               {/* Utilisateur Results */}
-              <div className="group">
+              <div className="group fade-in-right">
                 <Card className="h-full p-8 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50 hover:border-green-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-4">
@@ -619,7 +640,7 @@ export default function UC4Page() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
             {/* KPI 1 */}
-            <div className="group">
+            <div className="group fade-in-up">
               <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-3xl p-6 md:p-8 text-center border border-purple-100 hover:border-purple-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
                 <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
                   -60 %
@@ -631,7 +652,7 @@ export default function UC4Page() {
             </div>
 
             {/* KPI 2 */}
-            <div className="group">
+            <div className="group fade-in-up">
               <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-6 md:p-8 text-center border border-green-100 hover:border-green-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
                 <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-green-600 to-emerald-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
                   +80 %
@@ -643,7 +664,7 @@ export default function UC4Page() {
             </div>
 
             {/* KPI 3 */}
-            <div className="group">
+            <div className="group fade-in-up">
               <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-3xl p-6 md:p-8 text-center border border-indigo-100 hover:border-indigo-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
                 <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-br from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
                   100 %
@@ -681,7 +702,7 @@ export default function UC4Page() {
 
         <div className="content-boundary relative z-10">
           {/* Section Header */}
-          <div className="text-center mb-16 md:mb-20 lg:mb-24">
+          <div className="text-center mb-16 md:mb-20 lg:mb-24 fade-in-up">
             <div className="inline-flex items-center justify-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6 md:mb-8">
               <MdStars className="w-5 h-5 text-yellow-400 mr-2" />
               <span className="text-white font-semibold text-sm md:text-base">Fonctionnalités Additionnelles</span>
