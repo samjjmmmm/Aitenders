@@ -34,6 +34,7 @@ import uc3FirstFeatureImage from "@assets/33_1755170264011.png";
 import uc3SecondFeatureImage from "@assets/wow 2_1755694076094.png";
 import uc3ThirdFeatureImage from "@assets/wow 3_1755698579312.png";
 import uc3HeroImage from "@assets/HERO UC 3_1755765733932.png";
+import ClientLogos from "@/components/client-logos";
 
 export default function UC3Page() {
   // State for managing continuous animation loop
@@ -1025,18 +1026,7 @@ export default function UC3Page() {
 
           {/* Client Logos Scrolling Banner */}
           <div className="mb-16 md:mb-20">
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 overflow-hidden">
-              <div className="flex items-center justify-center mb-4">
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Ils nous font confiance pour leurs projets complexes</h3>
-              </div>
-              <div className="flex items-center justify-center space-x-12 animate-pulse">
-                <img src={equansLogo} alt="Equans" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
-                <img src={bouyguesLogo} alt="Bouygues" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
-                <img src={colasLogo} alt="Colas" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
-                <img src={equansLogo} alt="Equans" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
-                <img src={bouyguesLogo} alt="Bouygues" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
-              </div>
-            </div>
+            <ClientLogos language="fr" />
           </div>
           
 
