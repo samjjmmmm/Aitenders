@@ -1,6 +1,7 @@
 import { eq, and } from "drizzle-orm";
 import { db } from "./db";
 import { languages, translationKeys, translations, type Language, type TranslationKey, type Translation } from "@shared/schema";
+import { allFrenchTranslations, allEnglishTranslations, allSpanishTranslations, allGermanTranslations } from "./translations/index";
 
 // Translation service for managing multilingual content
 export class TranslationService {
@@ -136,6 +137,22 @@ export class TranslationService {
 
       if (existing.length === 0) {
         await db.insert(languages).values(lang);
+      }
+    }
+  }
+
+  // Initialize all translations from modular files
+  async initializeAllTranslations(): Promise<void> {
+    const translationSets = [
+      { lang: 'fr', translations: allFrenchTranslations },
+      { lang: 'en', translations: allEnglishTranslations },
+      { lang: 'es', translations: allSpanishTranslations },
+      { lang: 'de', translations: allGermanTranslations },
+    ];
+
+    for (const { lang, translations } of translationSets) {
+      for (const [key, value] of Object.entries(translations)) {
+        await this.setTranslation(key, lang, value);
       }
     }
   }
