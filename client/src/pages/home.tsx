@@ -303,141 +303,47 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Dynamic Selection Cards */}
+          {/* Main Domain Cards - Always Visible */}
           <div className="mb-6 max-w-4xl mx-auto">
 
-            {/* Step Title */}
+            {/* Main Cards Title */}
             <h2 className="text-lg font-bold text-aitenders-black mb-4 text-center">
-              {getStepTitle()}
+              {t[language].domainSelection}
             </h2>
 
-            {/* Step 1: Domain Selection */}
-            {!showUCResults && (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
-                {step1Cards.map((card) => {
-                  const Icon = card.icon;
-                  const isSelected = step1Selections.includes(card.id);
-                  return (
-                    <Card
-                      key={card.id}
-                      onClick={() => handleStep1Selection(card.id)}
-                      className={`rounded-lg p-3 shadow-sm hover:shadow-md cursor-pointer border transition-all duration-200 ease-in-out hover:scale-105 ${
-                        isSelected 
-                          ? 'border-aitenders-primary-blue bg-aitenders-pale-blue' 
-                          : 'border-aitenders-light-blue bg-aitenders-white-blue hover:border-aitenders-primary-blue'
-                      }`}
-                    >
-                      <div className="text-center">
-                        <div className={`p-2 rounded-lg mb-2 mx-auto w-fit ${card.color}`}>
-                          <Icon className="h-5 w-5" />
-                        </div>
-                        <h3 className="text-sm font-semibold text-aitenders-black">
-                          {card.title}
-                        </h3>
+            {/* Always Visible Domain Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
+              {step1Cards.map((card) => {
+                const Icon = card.icon;
+                // Map domain to UC page
+                const getUCPage = (cardId: string) => {
+                  switch(cardId) {
+                    case 'tender-management': return '/uc1';
+                    case 'contract-execution': return '/uc4'; 
+                    case 'knowledge-management': return '/uc7';
+                    default: return '/';
+                  }
+                };
+                
+                return (
+                  <Card
+                    key={card.id}
+                    onClick={() => setLocation(getUCPage(card.id))}
+                    className="rounded-lg p-3 shadow-sm hover:shadow-md cursor-pointer border border-aitenders-light-blue bg-aitenders-white-blue hover:border-aitenders-primary-blue transition-all duration-200 ease-in-out hover:scale-105"
+                  >
+                    <div className="text-center">
+                      <div className={`p-2 rounded-lg mb-2 mx-auto w-fit ${card.color}`}>
+                        <Icon className="h-5 w-5" />
                       </div>
-                    </Card>
-                  );
-                })}
-              </div>
-            )}
+                      <h3 className="text-sm font-semibold text-aitenders-black">
+                        {card.title}
+                      </h3>
+                    </div>
+                  </Card>
+                );
+              })}
+            </div>
 
-            {/* Step 2: Project Size Selection */}
-            {showStep2 && !showUCResults && (
-              <div className="animate-in fade-in duration-300">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                  {step2Cards.map((card) => {
-                    const Icon = card.icon;
-                    const isSelected = step2Selection === card.id;
-                    return (
-                      <Card
-                        key={card.id}
-                        onClick={() => handleStep2Selection(card.id)}
-                        className={`rounded-lg p-3 shadow-sm hover:shadow-md cursor-pointer border transition-all duration-200 ease-in-out hover:scale-105 ${
-                          isSelected 
-                            ? 'border-aitenders-primary-blue bg-aitenders-pale-blue' 
-                            : 'border-aitenders-light-blue bg-aitenders-white-blue hover:border-aitenders-primary-blue'
-                        }`}
-                      >
-                        <div className="text-center">
-                          <div className={`p-2 rounded-lg mb-2 mx-auto w-fit ${card.color}`}>
-                            <Icon className="h-5 w-5" />
-                          </div>
-                          <h3 className="text-sm font-semibold text-aitenders-black">
-                            {card.title}
-                          </h3>
-                        </div>
-                      </Card>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
-
-            {/* UC Results Display */}
-            {showUCResults && resultUCs.length > 0 && (
-              <div className="animate-in fade-in duration-300">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-                  {resultUCs.map((ucId) => {
-                    const ucData = ucMetadata[ucId as keyof typeof ucMetadata];
-                    return (
-                      <Card
-                        key={ucId}
-                        onClick={() => handleUCSelection(ucId)}
-                        className="rounded-xl p-4 shadow-sm hover:shadow-md cursor-pointer border border-aitenders-light-blue bg-aitenders-white-blue hover:border-aitenders-primary-blue transition-all duration-200 ease-in-out hover:scale-105"
-                      >
-                        <div className="text-center">
-                          <div className="p-3 rounded-lg mb-3 mx-auto w-fit bg-aitenders-primary-blue/10 text-aitenders-primary-blue">
-                            <MdEmojiEvents className="h-6 w-6" />
-                          </div>
-                          <h3 className="text-base font-semibold text-aitenders-black mb-1">
-                            {ucData.title}
-                          </h3>
-                          <p className="text-xs text-aitenders-dark-blue leading-tight mb-3">
-                            {ucData.description}
-                          </p>
-                          <Button 
-                            size="sm" 
-                            className="w-full bg-aitenders-primary-blue hover:bg-aitenders-dark-blue text-aitenders-white-blue"
-                          >
-                            {t[language].discoverUseCase}
-                          </Button>
-                        </div>
-                      </Card>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
-
-            {/* Selection Summary */}
-            {showUCResults && (
-              <div className="mt-4 p-3 bg-aitenders-pale-blue rounded-lg border border-aitenders-light-blue">
-                <p className="text-xs text-aitenders-dark-blue mb-2 font-medium">{t[language].yourSelection}</p>
-                <div className="flex flex-wrap gap-1 mb-2">
-                  {step1Selections.map((selectionId) => {
-                    const selectedCard = step1Cards.find(c => c.id === selectionId);
-                    return (
-                      <span
-                        key={selectionId}
-                        className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-aitenders-white-blue text-aitenders-dark-blue border border-aitenders-light-blue shadow-sm"
-                      >
-                        {selectedCard?.title}
-                      </span>
-                    );
-                  })}
-                  {step2Selection && (
-                    <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-aitenders-primary-blue/10 text-aitenders-primary-blue border border-aitenders-primary-blue/20 shadow-sm">
-                      {step2Cards.find(c => c.id === step2Selection)?.title}
-                    </span>
-                  )}
-                </div>
-                {resultUCs.length > 0 && (
-                  <p className="text-xs text-aitenders-dark-blue/60">
-                    {t[language].availableUseCases} {resultUCs.join(', ')}
-                  </p>
-                )}
-              </div>
-            )}
           </div>
         </div>
       </main>
