@@ -567,8 +567,9 @@ export default function UC6Page() {
                 Ce que vos équipes obtiennent concrètement avec Aitenders
               </h3>
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                Une maîtrise totale des exigences complexes, une fois impliqué dans vos projets 
-                complexes. Des résultats concrets, traçables et performants.
+                Une maîtrise totale des exigences pour chaque rôle impliqué dans vos projets 
+                complexes. Des résultats concrets en conformité, traçabilité et performance 
+                collective.
               </p>
             </div>
 
@@ -584,14 +585,14 @@ export default function UC6Page() {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold text-gray-900">Pour le Buyer</h4>
-                      <p className="text-sm text-gray-600">Contract ou directeur execution</p>
+                      <p className="text-sm text-gray-600">Conformité et sérénité contractuelle</p>
                     </div>
                   </div>
 
                   <p className="text-gray-700 text-base leading-relaxed mb-4">
-                    Vous en place pilote fragmente en vision globale claire 
-                    et immédiatement accessible. Le bon et sa manière des exigences 
-                    qui génère suis les enjeux sans atteindre de surchage.
+                    Livrez vos projets en toute confiance et en totale conformité, sans 
+                    surprise finale. Suivez la couverture des exigences en temps réel et 
+                    démontrez la performance lors des audits ou comités de pilotage.
                   </p>
 
                   <ul className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
@@ -601,11 +602,11 @@ export default function UC6Page() {
                     </li>
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      Traçabilité politique des decisions
+                      Prévisibilité renforcée des marges
                     </li>
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      Passage fluide aux enjeux stratégiques vs détails
+                      Crédibilité accrue vis-à-vis du donneur d'ordre
                     </li>
                   </ul>
                 </Card>
@@ -620,27 +621,32 @@ export default function UC6Page() {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold text-gray-900">Pour vos équipes</h4>
-                      <p className="text-sm text-gray-600">Chefs Technique et Exécution</p>
+                      <p className="text-sm text-gray-600">Fluidité, traçabilité et sérénité</p>
                     </div>
                   </div>
 
                   <p className="text-gray-700 text-base leading-relaxed mb-4">
-                    effectivement aisées d'inage étenique relatif aux finalables et demande 
-                    entre rentals et nouveau réalisation exiges regroupement.
+                    Bénéficiez d'une base claire, exhaustive et structurée. Collaborez 
+                    efficacement, suivez chaque exigence reliée aux livrables, et prouvez 
+                    votre travail à tout moment, sans effort supplémentaire.
                   </p>
 
                   <ul className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      Vérité structurer et traçabilité méthodologique
+                      Moins de stress et de relectures manuelles
                     </li>
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      Toutes une etre sur des décisions collaboratives et qualification
+                      Pilotage clair : qui fait quoi, avec historique et notifications
                     </li>
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      Génération d'outputs de couverture complète
+                      Rédaction intelligente et cohérente, sans reproche de zéro
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      Démonstration immédiate de la couverture complète
                     </li>
                   </ul>
                 </Card>
@@ -658,7 +664,7 @@ export default function UC6Page() {
                   80 %
                 </div>
                 <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">
-                  du temps passé réduit dès le premier jour
+                  du travail initial réalisé dès le premier jour
                 </p>
               </div>
             </div>
@@ -670,8 +676,8 @@ export default function UC6Page() {
                   -50 %
                 </div>
                 <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">
-                  de ration passé sur les rounds de révision et 
-                  de décisions
+                  de temps gagné sur les cycles de revue et 
+                  de décision
                 </p>
               </div>
             </div>
