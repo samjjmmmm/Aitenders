@@ -68,14 +68,40 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
                 size="sm"
                 onClick={() => setShowLanguageMenu(!showLanguageMenu)}
                 className="rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue px-3 py-1 h-8 text-xs font-medium"
+                data-testid="language-switcher-button"
               >
                 <Globe className="w-3 h-3 mr-1" />
                 {currentLanguage?.toUpperCase()}
               </Button>
               
               {showLanguageMenu && (
-                <div className="absolute right-0 top-full mt-1 bg-aitenders-white-blue border border-aitenders-light-blue rounded-lg shadow-lg py-1 z-50 min-w-[140px]">
-                  {Array.isArray(languages) && languages.map((lang: any) => (
+                <div className="absolute right-0 top-full mt-1 bg-white border border-aitenders-light-blue rounded-lg shadow-lg py-2 z-[1000] min-w-[140px]">
+                  {/* Always show French and English options */}
+                  <button
+                    onClick={() => {
+                      changeLanguage('fr');
+                      onLanguageChange?.('fr');
+                      setShowLanguageMenu(false);
+                    }}
+                    className={`block w-full text-left px-3 py-2 text-sm hover:bg-aitenders-pale-blue transition-colors ${currentLanguage === 'fr' ? 'bg-aitenders-pale-blue font-medium' : ''}`}
+                    data-testid="language-option-fr"
+                  >
+                    🇫🇷 FR - Français
+                  </button>
+                  <button
+                    onClick={() => {
+                      changeLanguage('en');
+                      onLanguageChange?.('en');
+                      setShowLanguageMenu(false);
+                    }}
+                    className={`block w-full text-left px-3 py-2 text-sm hover:bg-aitenders-pale-blue transition-colors ${currentLanguage === 'en' ? 'bg-aitenders-pale-blue font-medium' : ''}`}
+                    data-testid="language-option-en"
+                  >
+                    🇬🇧 EN - English
+                  </button>
+                  
+                  {/* Show additional languages from API if available */}
+                  {Array.isArray(languages) && languages.filter(lang => !['fr', 'en'].includes(lang.code)).map((lang: any) => (
                     <button
                       key={lang.code}
                       onClick={() => {
@@ -83,7 +109,8 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
                         onLanguageChange?.(lang.code);
                         setShowLanguageMenu(false);
                       }}
-                      className={`block w-full text-left px-3 py-1 text-xs hover:bg-aitenders-pale-blue ${currentLanguage === lang.code ? 'bg-aitenders-pale-blue font-medium' : ''}`}
+                      className={`block w-full text-left px-3 py-2 text-sm hover:bg-aitenders-pale-blue transition-colors ${currentLanguage === lang.code ? 'bg-aitenders-pale-blue font-medium' : ''}`}
+                      data-testid={`language-option-${lang.code}`}
                     >
                       {lang.code.toUpperCase()} - {lang.name}
                     </button>
