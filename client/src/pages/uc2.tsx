@@ -467,7 +467,7 @@ export default function UC2Page() {
 
           {/* Feature 1: Structuration IA immédiate - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 lg:gap-16 xl:gap-20 items-center mb-10 md:mb-16 lg:mb-20 xl:mb-24">
-            <div className="order-1 fade-in-left">
+            <div className="order-1 fade-in-left lg:pr-6">
               <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 leading-[1.1] tracking-tight">Structuration automatique du périmètre   <span className="text-purple-600">dès le jour 1</span> </h3>
               <p className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 md:mb-8 font-light">
                 Grâce à l’IA d’Aitenders, vos documents sont instantanément segmentés et organisés : lots, sous‑ensembles et critères contractuels sont classés et hiérarchisés en quelques minutes.
@@ -475,16 +475,12 @@ export default function UC2Page() {
                 Le Responsable Offre dispose immédiatement d’une vision consolidée du périmètre : points bloquants et clauses sensibles sont identifiés sans effort, permettant une décision “go / no‑go” éclairée dès le premier jour.
 
               </p>
-              <div className="space-y-3 mb-8">
-
-
-              </div>
-              <p className="text-lg font-semibold text-blue-600">
+              <p className="text-base md:text-lg font-semibold text-blue-600">
                 Une vision consolidée et priorisée, prête dès le premier jour !
               </p>
             </div>
-            <div className="order-2 fade-in-right">
-              <div className="flex justify-center items-center h-full px-2 sm:px-4 lg:px-6 xl:px-8">
+            <div className="order-2 fade-in-right lg:pl-6">
+              <div className="flex justify-center items-center h-full">
                 <img 
                   src={uc2FirstFeatureImage}
                   alt="Analyse IA - Progression structuration et catégorisation"
@@ -501,8 +497,8 @@ export default function UC2Page() {
 
           {/* Feature 2: Synthèse visuelle claire - Text Right, Card Left */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 lg:gap-16 xl:gap-20 items-center mb-10 md:mb-16 lg:mb-20 xl:mb-24">
-            <div className="order-2 lg:order-1 fade-in-left">
-              <div className="flex justify-center items-center h-full px-2 sm:px-4 lg:px-6 xl:px-8">
+            <div className="order-2 lg:order-1 fade-in-left lg:pr-6">
+              <div className="flex justify-center items-center h-full">
                 <img 
                   src={uc2SecondFeatureImage}
                   alt="Analyse IA - Contrôlez chaque clause critique"
@@ -515,7 +511,7 @@ export default function UC2Page() {
                 />
               </div>
             </div>
-            <div className="order-1 lg:order-2 fade-in-right">
+            <div className="order-1 lg:order-2 fade-in-right lg:pl-6">
               <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 leading-[1.1] tracking-tight">Contrôlez chaque  <span className="text-orange-600">clause critique</span> de votre projet</h3>
               <p className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 md:mb-8 font-light">
                 Aitenders identifie et hiérarchise automatiquement toutes les clauses sensibles : responsabilités, engagements, pénalités et conditions critiques. 
@@ -524,9 +520,7 @@ export default function UC2Page() {
                 Le Responsable Offre obtient en quelques minutes une vision claire des zones à risque, prête à être corrigée et validée sans perte de temps.
                 </p>
           
-              <div className="space-y-3 mb-8">
-              </div>
-              <p className="text-lg font-semibold text-orange-600">
+              <p className="text-base md:text-lg font-semibold text-orange-600">
                 Une validation contractuelle proactive, dès le jour 1
               </p>
             </div>
@@ -534,9 +528,9 @@ export default function UC2Page() {
 
           {/* Feature 3: Validation guidée - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
-            <div className="order-1">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Pilotez chaque <span className="text-green-600">évolution contractuelle</span> en temps réel</h3>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
+            <div className="order-1 lg:pr-6">
+              <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 leading-[1.1] tracking-tight">Pilotez chaque <span className="text-green-600">évolution contractuelle</span> en temps réel</h3>
+              <p className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 md:mb-8 font-light">
               Toutes vos questions-réponses, versions et ajustements documentaires sont consolidés et tracés automatiquement par l’IA. 
               Le Responsable Offre suit chaque changement en temps réel, visualise les écarts, reçoit des alertes et s’assure que rien n’est oublié ou modifié sans validation.
               <br /><br />
