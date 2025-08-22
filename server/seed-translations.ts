@@ -85,6 +85,14 @@ const uc2TranslationKeys = {
   'uc2.toppings.bottom_text': 'Chaque fonctionnalité optimise vos projets moyens pour une performance maximale',
   'uc2.toppings.cta': 'Explorer toutes les fonctionnalités →',
 
+  // Results Section - Missing keys
+  'uc2.results_section.card1_point1': 'Aucune clause oubliée, aucune incohérence détectée trop tard',
+  'uc2.results_section.card1_point2': 'Décision go / no-go prise sans délai',
+  'uc2.results_section.card1_point3': 'Crédibilité renforcée devant la direction générale',
+  'uc2.results_section.card2_point1': 'Analyse prête dès le premier jour, aucun tri manuel',
+  'uc2.results_section.card2_point2': 'Aucun stress, aucune surprise, aucun aller-retour inutile',
+  'uc2.results_section.card2_point3': 'Maîtrise totale de chaque clause et de chaque version',
+
   // Reference Projects Section
   'uc2.reference_projects.headline': 'Nos appels d\'offres de référence sur les projets moyens',
   'uc2.reference_projects.subtitle': 'Découvrez comment nos clients transforment leurs projets moyens avec l\'IA Aitenders',
@@ -207,6 +215,14 @@ const uc2EnglishTranslations = {
   'uc2.toppings.bottom_text': 'Each feature optimizes your medium projects for maximum performance',
   'uc2.toppings.cta': 'Explore all features →',
 
+  // Results Section - Missing keys
+  'uc2.results_section.card1_point1': 'No forgotten clause, no inconsistency detected too late',
+  'uc2.results_section.card1_point2': 'Go / no-go decision made without delay',
+  'uc2.results_section.card1_point3': 'Credibility reinforced before top management',
+  'uc2.results_section.card2_point1': 'Analysis ready from day one, no manual sorting',
+  'uc2.results_section.card2_point2': 'No stress, no surprises, no unnecessary back-and-forths',
+  'uc2.results_section.card2_point3': 'Full control over every clause and every version',
+
   // Reference Projects Section
   'uc2.reference_projects.headline': 'Our reference tenders on medium-size projects',
   'uc2.reference_projects.subtitle': 'See how our clients transform their medium projects with Aitenders AI',
@@ -297,6 +313,14 @@ const uc2SpanishTranslations = {
   'uc2.solution_section.feature3_title': 'Gestiona cada evolución contractual en tiempo real',
   'uc2.solution_section.feature3_text': 'Todas tus Q&As, versiones y ajustes de documentos se consolidan y rastrean automáticamente por la IA. El Gestor de Propuestas realiza un seguimiento de cada cambio en tiempo real, visualiza las desviaciones, recibe alertas y se asegura de que nada se olvide o se modifique sin aprobación. Se acabaron los seguimientos fragmentados por correo electrónico o hojas de cálculo: todo se centraliza en un cockpit fluido y fiable.',
   'uc2.solution_section.feature3_highlight': 'Sin sorpresas, sin versiones perdidas, sin riesgo de olvido',
+
+  // Results Section - Missing keys
+  'uc2.results_section.card1_point1': 'Ninguna cláusula olvidada, ninguna inconsistencia detectada demasiado tarde',
+  'uc2.results_section.card1_point2': 'Decisión ir / no ir tomada sin demora',
+  'uc2.results_section.card1_point3': 'Credibilidad reforzada ante la alta dirección',
+  'uc2.results_section.card2_point1': 'Análisis listo desde el primer día, sin clasificación manual',
+  'uc2.results_section.card2_point2': 'Sin estrés, sin sorpresas, sin intercambios innecesarios',
+  'uc2.results_section.card2_point3': 'Control total sobre cada cláusula y cada versión',
 
   // Reference Projects Section
   'uc2.reference_projects.headline': 'Nuestras ofertas de referencia en proyectos medianos',
@@ -417,6 +441,14 @@ const uc2GermanTranslations = {
   'uc2.solution_section.feature3_title': 'Steuern Sie jede vertragliche Entwicklung in Echtzeit',
   'uc2.solution_section.feature3_text': 'Alle Ihre Q&As, Versionen und Dokumentenanpassungen werden automatisch von der KI konsolidiert und verfolgt. Der Proposal Manager verfolgt jede Änderung in Echtzeit, visualisiert Abweichungen, erhält Benachrichtigungen und stellt sicher, dass nichts vergessen oder ohne Genehmigung geändert wird. Schluss mit fragmentierten Nachverfolgungen per E-Mail oder Tabellenkalkulation: Alles ist in einem flüssigen und zuverlässigen Cockpit zentralisiert.',
   'uc2.solution_section.feature3_highlight': 'Keine Überraschungen, keine verlorenen Versionen, kein Risiko des Vergessens',
+
+  // Results Section - Missing keys
+  'uc2.results_section.card1_point1': 'Keine vergessene Klausel, keine Inkonsistenz zu spät erkannt',
+  'uc2.results_section.card1_point2': 'Go / No-Go-Entscheidung ohne Verzögerung getroffen',
+  'uc2.results_section.card1_point3': 'Glaubwürdigkeit vor dem Top-Management gestärkt',
+  'uc2.results_section.card2_point1': 'Analyse vom ersten Tag bereit, keine manuelle Sortierung',
+  'uc2.results_section.card2_point2': 'Kein Stress, keine Überraschungen, keine unnötigen Hin- und Her-Gespräche',
+  'uc2.results_section.card2_point3': 'Vollständige Kontrolle über jede Klausel und jede Version',
 
   // Reference Projects Section
   'uc2.reference_projects.headline': 'Unsere Referenzangebote für mittelgroße Projekte',
