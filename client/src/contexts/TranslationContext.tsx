@@ -17,7 +17,15 @@ interface TranslationContextType {
   translations: Record<string, string>;
 }
 
-const TranslationContext = createContext<TranslationContextType | undefined>(undefined);
+// Create context with default values to prevent undefined errors
+const TranslationContext = createContext<TranslationContextType>({
+  currentLanguage: 'fr',
+  changeLanguage: () => {},
+  languages: [],
+  t: (key: string, fallback?: string) => fallback || key,
+  isLoading: false,
+  translations: {},
+});
 
 interface TranslationProviderProps {
   children: React.ReactNode;
@@ -85,8 +93,5 @@ export function TranslationProvider({ children }: TranslationProviderProps) {
 
 export function useGlobalTranslations() {
   const context = useContext(TranslationContext);
-  if (context === undefined) {
-    throw new Error('useGlobalTranslations must be used within a TranslationProvider');
-  }
   return context;
 }
