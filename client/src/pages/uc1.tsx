@@ -701,7 +701,7 @@ export default function UC1Page() {
                     alt="Aitenders UC1 Interface"
                     className="block w-[640px] md:w-[760px] lg:w-[880px] max-w-full h-auto select-none pointer-events-none object-contain"
                     style={{
-                      transform: 'scale(1.42)',
+                      transform: 'scale(1.22)',
                       transformOrigin: 'center',
                       imageRendering: 'auto',
                       filter: 'none'
