@@ -41,6 +41,7 @@ import Header from '@/components/header';
 import ContactSection from '@/components/contact-section';
 import ChatInterface from '@/components/chat-interface';
 import ClientLogos from '@/components/client-logos';
+import { AitendersSimulatorFinal } from '@/components/aitenders-simulator-final';
 import equansLogo from '@assets/Equans_1753711339292.png';
 import bouyguesLogo from '@assets/Bouyges_1753711339292.png';
 import colasLogo from '@assets/Colas_1753711339292.png';
@@ -1030,39 +1031,19 @@ export function UC5() {
             <ClientLogos language="fr" />
           </div>
 
-          {/* Integrated Chat Simulator */}
+          {/* Simulateur ROI Intégré */}
           <div className="bg-white rounded-3xl shadow-2xl border border-purple-100 p-8 md:p-12">
             <div className="text-center mb-8">
               <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                Vous voulez voir l'impact sur <span className="text-purple-600">vos projets ?</span>
+                Simulateur ROI Intégré
               </h3>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Découvrez en 2 minutes le potentiel d'optimisation spécifique à votre contexte
+                Calculez votre ROI en temps réel
               </p>
             </div>
             
             <div className="max-w-4xl mx-auto">
-              <ChatInterface 
-                language="fr"
-                customActions={[
-                  {
-                    label: "🚀 Simulateur ROI",
-                    icon: <MdAnalytics className="w-4 h-4" />,
-                    onClick: () => {}
-                  },
-                  {
-                    label: "📋 Nos Cas d'Usage",
-                    icon: <MdDashboard className="w-4 h-4" />,
-                    onClick: () => {}
-                  },
-                  {
-                    label: "💬 Parler à un Expert",
-                    icon: <MdMail className="w-4 h-4" />,
-                    onClick: () => {}
-                  }
-                ]}
-                transparent={true}
-              />
+              <AitendersSimulatorFinal useCase="UC5" />
             </div>
           </div>
         </div>
