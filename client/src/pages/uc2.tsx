@@ -479,7 +479,7 @@ export default function UC2Page() {
                   variant="ghost" 
                   className="text-blue-600 hover:text-blue-700 hover:bg-blue-50/80 px-6 py-4 text-xl font-medium underline decoration-2 underline-offset-4 rounded-2xl transition-all duration-300"
                 >
-                  Testez l'impact
+                  {t('uc2.hero.downloadButton')}
                 </Button>
               </motion.div>
           </div>
