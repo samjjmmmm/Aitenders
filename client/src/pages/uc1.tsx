@@ -769,17 +769,11 @@ export default function UC1Page() {
               </h2>
 
               {/* Body Copy */}
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                {t('uc1.painPoints.text1')}
+              <div className="text-xl text-gray-600 leading-relaxed mb-8 font-light space-y-4">
+                <p>{t('uc1.painPoints.text1')}</p>
                 <p>{t('uc1.painPoints.text2')}</p>
-
-              </p>
-
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                {t('uc1.painPoints.text3')}
-
-
-              </p>
+                <p>{t('uc1.painPoints.text3')}</p>
+              </div>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">

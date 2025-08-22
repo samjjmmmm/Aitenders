@@ -1065,9 +1065,106 @@ const allUCSpanishTranslations = {
   'uc1.toppings.project_chat.tag': 'Project Chat',
   'uc1.toppings.project_chat.click': 'Clic para detalles',
 
-  // UC1 Additional Spanish translations to match UC2 structure
+  // UC1 Pain Points - Structure harmonisée avec UC2
   'uc1.pain_points.title1': 'Plazos ajustados comprometen la calidad',
-  'uc1.pain_points.description1': 'Respuestas apresuradas en proyectos pequeños crean una imagen degradada y reducen las posibilidades de éxito',
+  'uc1.pain_points.description1': 'Las respuestas apresuradas en proyectos pequeños crean una imagen degradada y reducen las posibilidades de éxito.',
+  'uc1.pain_points.title2': 'Recursos limitados para análisis detallado', 
+  'uc1.pain_points.description2': 'Los equipos no tienen tiempo suficiente para analizar completamente todos los requisitos y riesgos.',
+  'uc1.pain_points.title3': 'Pérdida de oportunidades por falta de agilidad',
+  'uc1.pain_points.description3': 'La lentitud en la respuesta hace que se pierdan oportunidades comerciales valiosas.',
+
+  // UC1 Solutions - Structure harmonisée  
+  'uc1.solutions.title1': 'Análisis instantáneo con IA',
+  'uc1.solutions.description1': 'IA especializada que analiza todos los documentos en minutos y proporciona un resumen ejecutivo completo.',
+  'uc1.solutions.title2': 'Validación guiada paso a paso',
+  'uc1.solutions.description2': 'Proceso estructurado que garantiza que ningún punto crítico se pase por alto.',
+  'uc1.solutions.title3': 'Go/No-Go inmediato y documentado',
+  'uc1.solutions.description3': 'Decisión informada desde el primer día con trazabilidad completa del proceso.',
+
+  // UC1 Journey - Structure harmonisée
+  'uc1.journey.title1': 'Cargar documentos y analizar',
+  'uc1.journey.description1': 'IA analiza instantáneamente todos los documentos del proyecto',
+  'uc1.journey.title2': 'Validar y estructurar',
+  'uc1.journey.description2': 'Proceso guiado para validar todos los puntos detectados',
+  'uc1.journey.title3': 'Decidir y documentar',
+  'uc1.journey.description3': 'Go/No-Go inmediato con documentación completa del proceso',
+
+  // UC1 Features - Harmonisation des clés
+  'uc1.features.headline': 'Funcionalidades Avanzadas',
+  'uc1.features.title1': 'Cada funcionalidad optimiza sus ',
+  'uc1.features.title2': 'proyectos pequeños',
+  'uc1.features.title3': ' para máximo rendimiento',
+  'uc1.features.subtitle': 'Descubra todas las capacidades que hacen de Aitenders la solución líder para proyectos pequeños',
+  'uc1.features.cta_subtitle': 'Cada funcionalidad está optimizada específicamente para proyectos pequeños',
+  'uc1.features.cta_button': 'Explorar todas las funcionalidades →',
+
+  // UC1 Projects - Harmonisation
+  'uc1.projects.headline1': 'Nuestras licitaciones de referencia para ',
+  'uc1.projects.headline2': 'proyectos pequeños',
+  'uc1.projects.subtitle': 'Descubra cómo nuestros clientes transforman sus proyectos pequeños con IA Aitenders',
+  'uc1.projects.project1_title': 'Modernización IT PYME',
+  'uc1.projects.project1_category': 'Tecnología',
+  'uc1.projects.project1_offer': 'Oferta: 2,8 M€',
+  'uc1.projects.project1_description': 'Modernización completa de infraestructura IT de PYME con migración cloud y formación de equipos.',
+  'uc1.projects.project1_impact_title': 'Impacto cliente:',
+  'uc1.projects.project1_impact1': '60% reducción de tiempo',
+  'uc1.projects.project1_impact2': 'Oferta ganadora entregada en 24h',
+  'uc1.projects.project1_impact3': 'Go/No-Go inmediato',
+  'uc1.projects.project1_impact4': 'Equipo tranquilizado, dirección convencida',
+
+  'uc1.projects.project2_title': 'Renovación Energética Edificio',
+  'uc1.projects.project2_category': 'Construcción', 
+  'uc1.projects.project2_offer': 'Oferta: 4,2 M€',
+  'uc1.projects.project2_description': 'Renovación energética completa de edificio terciario con certificación ambiental.',
+  'uc1.projects.project2_impact_title': 'Impacto cliente:',
+  'uc1.projects.project2_impact1': 'Análisis completo en 3h',
+  'uc1.projects.project2_impact2': 'Validación interna en 1 día',
+  'uc1.projects.project2_impact3': 'Zero sorpresas',
+  'uc1.projects.project2_impact4': 'Cumplimiento garantizado, credibilidad reforzada',
+
+  'uc1.projects.project3_title': 'Sistema Seguridad Integrado',
+  'uc1.projects.project3_category': 'Seguridad',
+  'uc1.projects.project3_offer': 'Oferta: 3,5 M€', 
+  'uc1.projects.project3_description': 'Implementación de sistema de seguridad integrado para complejo empresarial.',
+  'uc1.projects.project3_impact_title': 'Impacto cliente:',
+  'uc1.projects.project3_impact1': 'Proceso acelerado x3',
+  'uc1.projects.project3_impact2': 'Riesgo técnico eliminado',
+  'uc1.projects.project3_impact3': 'Equipo operacional desde D+1',
+  'uc1.projects.project3_impact4': 'Confianza total en la propuesta',
+
+  // UC1 ROI Simulator
+  'uc1.roi_simulator.title': 'Simulador ROI',
+  'uc1.roi_simulator.headline1': 'Calcule su ',
+  'uc1.roi_simulator.headline2': 'ROI inmediato',
+  'uc1.roi_simulator.subtitle': 'Descubra en 3 minutos cuánto tiempo y dinero puede ahorrar con Aitenders',
+
+  // UC1 KPIs - Harmonisation
+  'uc1.kpis.metric1_title': 'Reducción tiempo análisis',
+  'uc1.kpis.metric1_description': 'Tiempo ahorrado en análisis inicial y validación de requisitos',
+  'uc1.kpis.metric2_title': 'Criterios críticos cubiertos',
+  'uc1.kpis.metric2_description': 'Garantía de que ningún punto crítico se pase por alto',
+  'uc1.kpis.metric3_title': 'Serenidad máxima',
+  'uc1.kpis.metric3_subtitle': '0 sorpresa, control total',
+  'uc1.kpis.metric3_description': 'Go/No-Go inmediato y documentado para total tranquilidad',
+
+  // UC1 Features détaillées
+  'uc1.features.project_summary.title': 'Resumen automático del proyecto',
+  'uc1.features.project_summary.description': 'Generación automática de resumen ejecutivo estructurado a partir de todos los documentos del pliego.',
+
+  'uc1.features.implicit_requirements.title': 'Detección de requisitos implícitos', 
+  'uc1.features.implicit_requirements.description': 'Identificación automática de expectativas no expresadas y requisitos ocultos en los documentos.',
+
+  'uc1.features.document_summary.title': 'Resumen inteligente por documento',
+  'uc1.features.document_summary.description': 'Síntesis automática de cada documento con extracción de puntos clave y clasificación por importancia.',
+
+  'uc1.features.document_hierarchy.title': 'Gestión dinámica de jerarquía documental',
+  'uc1.features.document_hierarchy.description': 'Organización automática de documentos por importancia, dependencias e impacto en la oferta.',
+
+  'uc1.features.content_categorization.title': 'Categorización inteligente y árbol temático',
+  'uc1.features.content_categorization.description': 'Clasificación automática del contenido por temáticas con creación de árbol de navegación intuitivo.',
+
+  'uc1.features.project_chat.title': 'Chat contextual con el proyecto',
+  'uc1.features.project_chat.description': 'Asistente IA conversacional que responde preguntas sobre el proyecto en tiempo real con referencias a fuentes.in_points.description1': 'Respuestas apresuradas en proyectos pequeños crean una imagen degradada y reducen las posibilidades de éxito',
   'uc1.pain_points.title2': 'Procesos ineficientes y repetitivos',
   'uc1.pain_points.description2': 'Tiempo perdido en tareas manuales recurrentes en detrimento de la personalización y el valor añadido',
   'uc1.pain_points.title3': 'Falta de estandarización',
