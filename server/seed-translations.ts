@@ -1,4 +1,3 @@
-
 import { translationService } from "./translations";
 
 // UC1 Translation Keys with French reference content
@@ -265,7 +264,8 @@ const uc6TranslationKeys = {
 const specificUITranslations = {
   // Impact client section (mentioned in uc2.tsx line 1086)
   'uc2.impact_client': 'Impact client :',
-  
+  'uc2.reference_projects.impact_label': 'Impact client :',
+
   // Simulator translations (mentioned in aitenders-simulator-final.tsx line 143)
   'simulator.title': 'Simulateur ROI Aitenders',
   'simulator.useCase': 'Cas d\'usage:',
@@ -497,6 +497,7 @@ const allUCEnglishTranslations = {
 
   // Specific UI translations - English
   'uc2.impact_client': 'Client impact:',
+  'uc2.reference_projects.impact_label': 'Client impact:',
   'simulator.title': 'Aitenders ROI Simulator',
   'simulator.useCase': 'Use case:',
   'simulator.multiProject': 'Multi-Project Simulation',
@@ -635,11 +636,11 @@ const allUCSpanishTranslations = {
   'uc5.hero.badge': 'Volúmenes medios, eficiencia máxima',
   'uc5.hero.title': 'Domina tus volúmenes documentales medios',
   'uc5.hero.span': 'con inteligencia aumentada.',
-  'uc5.hero.description': 'La plataforma optimizada para volúmenes documentales medios (10-500 documentos).',
+  'uc5.hero.description': 'La plataforma optimizada para volúmenes documentales medios (10-500 documents).',
   'uc5.hero.demoButton': 'Reservar Demo',
   'uc5.hero.downloadButton': 'Probar el impacto →',
   'uc5.painPoints.headline': 'Tus volúmenes medios, procesados con eficiencia industrial',
-  'uc5.painPoints.text1': 'Con decenas o cientos de documentos para procesar, tus equipos se atascan.',
+  'uc5.painPoints.text1': 'Con decenas o cientos de documents para procesar, tus equipos se atascan.',
   'uc5.painPoints.text2': 'Con Aitenders, industrializa tu procesamiento documental.',
   'uc5.painPoints.optimizeButton': 'Industrializa Tu Análisis!',
   'uc5.painPoints.demoButton': 'Ver la Demo',
@@ -661,11 +662,11 @@ const allUCSpanishTranslations = {
   'uc5.results_section.card1_point1': '10x más documentos procesados',
   'uc5.results_section.card1_point2': 'Calidad de análisis preservada',
   'uc5.results_section.card1_point3': 'Visión global automática',
-  'uc5.results_section.card2_title': 'Analista u Oficial de Estudios',
-  'uc5.results_section.card2_subtitle': 'Enfoque en experiencia, automatización de repetitivo',
+  'uc5.results_section.card2_title': 'Analista o Oficial de Estudios',
+  'uc5.results_section.card2_subtitle': 'Focus en expertise, automatización de repetitivo',
   'uc5.results_section.card2_text': 'Libérate de tareas repetitivas.',
   'uc5.results_section.card2_point1': 'Tareas repetitivas automatizadas',
-  'uc5.results_section.card2_point2': 'Enfoque en experiencia empresarial',
+  'uc5.results_section.card2_point2': 'Focus en expertise empresarial',
   'uc5.results_section.card2_point3': 'Análisis estratégico reforzado',
   'uc5.results_section.kpis.volume': '10x más documentos procesados',
   'uc5.results_section.kpis.consistency': '100% consistencia mantenida',
@@ -676,7 +677,7 @@ const allUCSpanishTranslations = {
   'uc6.hero.badge': 'Grandes volúmenes, potencia máxima',
   'uc6.hero.title': 'Domina la complejidad documental masiva',
   'uc6.hero.span': 'con IA enterprise.',
-  'uc6.hero.description': 'La solución enterprise para grandes volúmenes documentales (> 500 documentos).',
+  'uc6.hero.description': 'La solución enterprise para grandes volúmenes documentales (> 500 documents).',
   'uc6.hero.demoButton': 'Reservar Demo',
   'uc6.hero.downloadButton': 'Descargar caso de uso →',
   'uc6.painPoints.headline': 'Tu big data documental, dominado y valorizado',
@@ -693,7 +694,7 @@ const allUCSpanishTranslations = {
   'uc6.features.feature2Text': 'Detección automática de patrones complejos.',
   'uc6.features.feature2Highlight': 'Visión estratégica automática',
   'uc6.features.feature3Title': 'Tableros ejecutivos en tiempo real',
-  'uc6.features.feature3Text': 'Dashboards ejecutivos con KPIs estratégicos.',
+  'uc6.features.feature3Text': 'Tableros ejecutivos con KPIs estratégicos.',
   'uc6.results_section.headline': 'Lo que ganan nuestros usuarios en grandes volúmenes',
   'uc6.results_section.subtitle': 'Resultados transformadores para organizaciones enterprise',
   'uc6.results_section.card1_title': 'CEO o CDO',
@@ -715,6 +716,7 @@ const allUCSpanishTranslations = {
 
   // Specific UI translations - Spanish
   'uc2.impact_client': 'Impacto cliente:',
+  'uc2.reference_projects.impact_label': 'Impacto cliente:',
   'simulator.title': 'Simulador ROI Aitenders',
   'simulator.useCase': 'Caso de uso:',
   'simulator.multiProject': 'Simulación Multi-Proyectos',
@@ -933,6 +935,7 @@ const allUCGermanTranslations = {
 
   // Specific UI translations - German
   'uc2.impact_client': 'Kundenauswirkung:',
+  'uc2.reference_projects.impact_label': 'Kundenauswirkung:',
   'simulator.title': 'Aitenders ROI-Simulator',
   'simulator.useCase': 'Anwendungsfall:',
   'simulator.multiProject': 'Multi-Projekt-Simulation',
