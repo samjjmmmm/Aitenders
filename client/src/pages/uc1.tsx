@@ -33,11 +33,13 @@ import ChatInterface from "@/components/chat-interface";
 import ToppingModal from "@/components/topping-modal";
 import { AitendersSimulatorFinal } from "@/components/aitenders-simulator-final";
 import ClientLogos from "@/components/client-logos";
+import HubSpotBookingModal from "@/components/hubspot-booking-modal";
 
 
 export default function UC1Page() {
   const [selectedTopping, setSelectedTopping] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
   // Scroll animations
   useEffect(() => {
@@ -666,6 +668,7 @@ export default function UC1Page() {
                 <Button 
                   size="lg" 
                   className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
+                  onClick={() => setIsBookingModalOpen(true)}
                 >
                   Réservez une Démo
                 </Button>
@@ -777,7 +780,10 @@ export default function UC1Page() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-                <Button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
+                <Button 
+                  className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
+                  onClick={() => setIsBookingModalOpen(true)}
+                >
                   Boostez Vos Petits Projets!
                 </Button>
                 <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-12 py-6 text-xl font-semibold rounded-3xl transition-all duration-300">
@@ -1616,6 +1622,12 @@ export default function UC1Page() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         topping={selectedTopping}
+      />
+
+      {/* HubSpot Booking Modal */}
+      <HubSpotBookingModal
+        isOpen={isBookingModalOpen}
+        onClose={() => setIsBookingModalOpen(false)}
       />
       </div>
     </div>
