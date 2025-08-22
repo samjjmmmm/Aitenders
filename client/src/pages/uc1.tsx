@@ -34,9 +34,11 @@ import ToppingModal from "@/components/topping-modal";
 import { AitendersSimulatorFinal } from "@/components/aitenders-simulator-final";
 import ClientLogos from "@/components/client-logos";
 import HubSpotBookingModal from "@/components/hubspot-booking-modal";
+import { useGlobalTranslations } from "@/contexts/TranslationContext";
 
 
 export default function UC1Page() {
+  const { t } = useGlobalTranslations();
   const [selectedTopping, setSelectedTopping] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
@@ -652,10 +654,10 @@ export default function UC1Page() {
             {/* Content UC1 - Top */}
             <div className="w-full max-w-5xl px-4">
               <div className="mb-12">
-                <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Accélérez l'Analyse Des Offres Répétitives</Badge>
+                <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">{t('uc1.hero.badge')}</Badge>
 
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                  Une analyse go/no go   <span className="text-purple-600">immediate</span>, alignée avec vos <span className="text-purple-600">processus interne.</span>
+                  {t('uc1.hero.title')} <span className="text-purple-600">{t('uc1.hero.span')}</span>{t('uc1.hero.title2')} <span className="text-purple-600">{t('uc1.hero.span2')}</span>
                 </h1>
 
                 <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]">
@@ -670,14 +672,14 @@ export default function UC1Page() {
                   className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
                   onClick={() => setIsBookingModalOpen(true)}
                 >
-                  Réservez une Démo
+                  {t('uc1.hero.demoButton')}
                 </Button>
                 
                 <Button 
                   variant="ghost" 
                   className="text-blue-600 hover:text-blue-700 hover:bg-blue-50/80 px-6 py-4 text-xl font-medium underline decoration-2 underline-offset-4 rounded-2xl transition-all duration-300"
                 >
-                  Téléchargez le cas d'usage →
+                  {t('uc1.hero.downloadButton')}
                 </Button>
               </div>
 
