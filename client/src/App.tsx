@@ -9,7 +9,7 @@ import Home from "@/pages/home";
 import UC1Page from "@/pages/uc1";
 import UC2Page from "@/pages/uc2";
 import UC3Page from "@/pages/uc3";
-import UC4Page from "@/pages/uc4-simple";
+import UC4Page from "@/pages/uc4";
 import { UC5 } from "@/pages/uc5";
 import UC6Page from "@/pages/uc6";
 import UC7Page from "@/pages/uc7";

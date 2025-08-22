@@ -17,9 +17,7 @@ import { FaUsers, FaShieldAlt, FaChartBar, FaFileAlt, FaCogs } from "react-icons
 import ContactSection from "@/components/contact-section";
 import Header from "@/components/header";
 import UC3AnalysisCard from "@/components/UC3AnalysisCard";
-import ClientLogos from "@/components/client-logos";
-import { AitendersSimulatorFinal } from "@/components/aitenders-simulator-final";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 // Import client logos
@@ -29,58 +27,15 @@ import colasLogo from "@assets/Colas_1753711339292.png";
 import ChatSection from "@/components/chat-section";
 import ChatInterface from "@/components/chat-interface";
 import Lottie from 'lottie-react';
-import wow1Uc4Animation from '@assets/wow-1-uc4.json';
-import wow2Uc4Animation from '@assets/wow-2-uc4.json';
-import wow3Uc4Animation from '@assets/wow-3-uc4.json';
+import wow1Uc4Animation from '../assets/wow-1-uc4.json';
+import wow2Uc4Animation from '../assets/wow-2-uc4.json';
+import wow3Uc4Animation from '../assets/wow-3-uc4.json';
 import uc4SecondFeatureImage from "@assets/wow 2_1755706536721.png";
 import uc4FirstFeatureImage from "@assets/wow 1_1755793034506.png";
 import uc4ThirdFeatureImage from "@assets/43_1755177874563.png";
 import uc4HeroImage from "@assets/HERO UC 4_1755793077078.png";
 
 export default function UC4Page() {
-  // Scroll animation state management
-  const [visibleElements, setVisibleElements] = useState<Set<string>>(new Set());
-  const observerRef = useRef<IntersectionObserver | null>(null);
-  const elementsRef = useRef<Map<string, Element>>(new Map());
-
-  // Initialize intersection observer for scroll animations
-  useEffect(() => {
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const id = entry.target.getAttribute('data-scroll-id');
-          if (id) {
-            if (entry.isIntersecting) {
-              setVisibleElements(prev => {
-                const newSet = new Set(prev);
-                newSet.add(id);
-                return newSet;
-              });
-            }
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '-50px 0px'
-      }
-    );
-
-    return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
-    };
-  }, []);
-
-  // Register element for scroll animation
-  const registerElement = (id: string, element: Element | null) => {
-    if (element && observerRef.current) {
-      elementsRef.current.set(id, element);
-      observerRef.current.observe(element);
-    }
-  };
-
   // Target audience data with interactive content - UC4 adapted
   const targetAudiences = [
     {
@@ -290,13 +245,7 @@ export default function UC4Page() {
         <div className="content-boundary relative z-10">
           
           {/* Content Section - Top */}
-          <div 
-            ref={(el) => registerElement('hero-content', el)}
-            data-scroll-id="hero-content"
-            className={`text-center mb-16 md:mb-20 lg:mb-24 transition-all duration-1000 ${
-              visibleElements.has('hero-content') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
+          <div className="text-center mb-16 md:mb-20 lg:mb-24">
             {/* Badge */}
             <div className="mb-8 md:mb-12">
               <Badge className="bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm">
@@ -332,13 +281,7 @@ export default function UC4Page() {
           </div>
           
           {/* Hero Image Section - Bottom */}
-          <div 
-            ref={(el) => registerElement('hero-image', el)}
-            data-scroll-id="hero-image"
-            className={`flex justify-center transition-all duration-1000 delay-300 ${
-              visibleElements.has('hero-image') ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-            }`}
-          >
+          <div className="flex justify-center">
             <div className="relative w-full max-w-6xl">
               <img
                 src={uc4HeroImage}
@@ -389,12 +332,7 @@ export default function UC4Page() {
         <div className="content-boundary relative z-10">
           
           {/* Main Feature Card */}
-          <div 
-            ref={(el) => registerElement('main-feature', el)}
-            data-scroll-id="main-feature"
-            className={`bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20 transition-all duration-1000 delay-200 ${
-              visibleElements.has('main-feature') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-            }`}
+          <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20"
                style={{
                  boxShadow: '0 32px 64px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.05)'
                }}>
@@ -465,13 +403,7 @@ export default function UC4Page() {
         </div>
         
         <div className="content-boundary relative z-10">
-          <div 
-            ref={(el) => registerElement('solution-header', el)}
-            data-scroll-id="solution-header"
-            className={`text-center mb-12 md:mb-16 lg:mb-20 transition-all duration-1000 delay-200 ${
-              visibleElements.has('solution-header') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
+          <div className="text-center mb-12 md:mb-16 lg:mb-20">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-blue-600">copilote IA</span> qui fait parler vos contrats</h1>
             <h3 className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Chaque clause utile, chaque décision sécurisée : accédez aux éléments clés de vos contrats dès le jour 1, sans relecture fastidieuse.
@@ -479,15 +411,11 @@ export default function UC4Page() {
           </div>
 
           {/* Feature 1: Fiche contrat intelligente - Text Left, Card Right */}
-          <div 
-            ref={(el) => registerElement('feature-1', el)}
-            data-scroll-id="feature-1"
-            className={`grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24 transition-all duration-1000 delay-400 ${
-              visibleElements.has('feature-1') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
-            }`}
-          >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-1">
-
+              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
+                <MdDescription className="w-10 h-10 text-white" />
+              </div>
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Fiche contrat intelligente, disponible <span className="text-purple-600">dès le premier jour</span>
               </h3>
@@ -518,15 +446,11 @@ export default function UC4Page() {
             </div>
           </div>
           {/* Feature 2: Accès ciblé aux clauses critiques - Text Left, Card Right */}
-          <div 
-            ref={(el) => registerElement('feature-2', el)}
-            data-scroll-id="feature-2"
-            className={`grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24 transition-all duration-1000 delay-600 ${
-              visibleElements.has('feature-2') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
-            }`}
-          >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-1 lg:order-2">
-
+              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
+                <MdSearch className="w-10 h-10 text-white" />
+              </div>
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Accès ciblé aux clauses critiques, <span className="text-green-600">sans relecture</span>
               </h3>
@@ -557,15 +481,11 @@ export default function UC4Page() {
           </div>
 
           {/* Feature 3: Q&A Contractuel - Text Left, Card Right */}
-          <div 
-            ref={(el) => registerElement('feature-3', el)}
-            data-scroll-id="feature-3"
-            className={`grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24 transition-all duration-1000 delay-800 ${
-              visibleElements.has('feature-3') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
-            }`}
-          >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
             <div className="order-1">
-
+              <div className="w-20 h-20 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-3xl flex items-center justify-center mb-8 shadow-lg">
+                <MdCheckCircle className="w-10 h-10 text-white" />
+              </div>
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Posez une question, <span className="text-indigo-600">l’IA vous répond</span>
               </h3>
@@ -606,13 +526,7 @@ export default function UC4Page() {
         <div className="content-boundary">
 
           {/* User-Focused Results Section - Before KPIs */}
-          <div 
-            ref={(el) => registerElement('user-results', el)}
-            data-scroll-id="user-results"
-            className={`mb-20 md:mb-24 lg:mb-28 transition-all duration-1000 delay-400 ${
-              visibleElements.has('user-results') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
+          <div className="mb-20 md:mb-24 lg:mb-28">
             <div className="text-center mb-12 md:mb-16">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
                 Ce que nos utilisateurs obtiennent concrètement pour les petits projets en exécution
@@ -623,13 +537,7 @@ export default function UC4Page() {
             </div>
 
             {/* Results Grid */}
-            <div 
-              ref={(el) => registerElement('results-grid', el)}
-              data-scroll-id="results-grid"
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 transition-all duration-1000 delay-600 ${
-                visibleElements.has('results-grid') ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-              }`}
-            >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 
               {/* Buyer Results */}
               <div className="group">
@@ -712,13 +620,7 @@ export default function UC4Page() {
           </div>
 
           {/* KPI Grid */}
-          <div 
-            ref={(el) => registerElement('kpi-grid', el)}
-            data-scroll-id="kpi-grid"
-            className={`grid grid-cols-1 lg:grid-cols-3 gap-8 transition-all duration-1000 delay-800 ${
-              visibleElements.has('kpi-grid') ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-            }`}
-          >
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
             {/* KPI 1 */}
             <div className="group">
@@ -783,13 +685,7 @@ export default function UC4Page() {
 
         <div className="content-boundary relative z-10">
           {/* Section Header */}
-          <div 
-            ref={(el) => registerElement('toppings-header', el)}
-            data-scroll-id="toppings-header"
-            className={`text-center mb-16 md:mb-20 lg:mb-24 transition-all duration-1000 delay-200 ${
-              visibleElements.has('toppings-header') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
+          <div className="text-center mb-16 md:mb-20 lg:mb-24">
             <div className="inline-flex items-center justify-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6 md:mb-8">
               <MdStars className="w-5 h-5 text-yellow-400 mr-2" />
               <span className="text-white font-semibold text-sm md:text-base">Fonctionnalités Additionnelles</span>
@@ -805,13 +701,7 @@ export default function UC4Page() {
           </div>
 
           {/* Toppings Grid */}
-          <div 
-            ref={(el) => registerElement('toppings-grid', el)}
-            data-scroll-id="toppings-grid"
-            className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 transition-all duration-1000 delay-400 ${
-              visibleElements.has('toppings-grid') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-            }`}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
 
             {/* Recherche Thématique */}
             <div className="group">
@@ -1035,46 +925,54 @@ export default function UC4Page() {
           </div>
 
           {/* Client Logos Scrolling Banner */}
-          <div 
-            ref={(el) => registerElement('client-logos', el)}
-            data-scroll-id="client-logos"
-            className={`mb-16 md:mb-20 transition-all duration-1000 delay-600 ${
-              visibleElements.has('client-logos') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            <ClientLogos language="fr" />
+          <div className="mb-16 md:mb-20">
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 overflow-hidden">
+              <div className="flex items-center justify-center mb-4">
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Ils nous font confiance pour leurs contrats complexes</h3>
+              </div>
+              <div className="flex items-center justify-center space-x-12 animate-pulse">
+                <img src={equansLogo} alt="Equans" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                <img src={bouyguesLogo} alt="Bouygues" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                <img src={colasLogo} alt="Colas" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                <img src={equansLogo} alt="Equans" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+                <img src={bouyguesLogo} alt="Bouygues" className="h-8 opacity-60 hover:opacity-100 transition-opacity" />
+              </div>
+            </div>
           </div>
 
-          {/* Integrated ROI Simulator */}
-          <div 
-            ref={(el) => registerElement('simulator-section', el)}
-            data-scroll-id="simulator-section"
-            className={`bg-gradient-to-br from-purple-50 via-white to-blue-50 rounded-3xl shadow-2xl border border-purple-100 p-8 md:p-12 relative overflow-hidden transition-all duration-1000 delay-800 ${
-              visibleElements.has('simulator-section') ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-            }`}
-          >
-            {/* Background decoration */}
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-100/20 to-blue-100/20 opacity-50"></div>
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-purple-200/30 to-transparent rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-blue-200/30 to-transparent rounded-full blur-2xl"></div>
+          {/* Integrated Chat Simulator */}
+          <div className="bg-white rounded-3xl shadow-2xl border border-purple-100 p-8 md:p-12">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                Vous voulez voir l'impact sur <span className="text-purple-600">vos contrats ?</span>
+              </h3>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Découvrez en 2 minutes le potentiel de sécurisation spécifique à votre contexte
+              </p>
+            </div>
             
-            <div className="relative z-10">
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center justify-center px-6 py-3 bg-purple-100 rounded-full border border-purple-200 mb-6">
-                  <MdAnalytics className="w-5 h-5 text-purple-600 mr-2" />
-                  <span className="text-purple-700 font-semibold text-sm">Simulateur ROI Intégré</span>
-                </div>
-                
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                  Calculez votre <span className="text-purple-600">ROI en temps réel</span>
-                </h3>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  Simulateur intelligent intégré à la page pour une analyse immédiate de vos projets
-                </p>
-              </div>
-              
-              {/* Embedded Aitenders ROI Simulator Final */}
-              <AitendersSimulatorFinal useCase="UC4" className="w-full" />
+            <div className="max-w-4xl mx-auto">
+              <ChatInterface 
+                language="fr"
+                customActions={[
+                  {
+                    label: "🚀 Simulateur ROI",
+                    icon: <MdAnalytics className="w-4 h-4" />,
+                    onClick: () => {}
+                  },
+                  {
+                    label: "📋 Nos Cas d'Usage",
+                    icon: <MdDashboard className="w-4 h-4" />,
+                    onClick: () => {}
+                  },
+                  {
+                    label: "💬 Parler à un Expert",
+                    icon: <MdMail className="w-4 h-4" />,
+                    onClick: () => {}
+                  }
+                ]}
+                transparent={true}
+              />
             </div>
           </div>
         </div>
