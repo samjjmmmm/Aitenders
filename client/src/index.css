@@ -343,8 +343,8 @@ body {
   visibility: hidden !important;
 }
 
-/* Fallback language selector styling */
-.fallback-language-selector {
+/* Always visible language selector styling */
+.language-selector-always-visible {
   background: hsl(217, 100%, 99%) !important;
   border: 1px solid hsl(218, 72%, 88%) !important;
   border-radius: 9999px !important;
@@ -368,13 +368,22 @@ body {
   background-repeat: no-repeat !important;
   background-size: 12px !important;
   padding-right: 28px !important;
+  display: inline-block !important;
+  position: relative !important;
+  z-index: 20 !important;
 }
 
-.fallback-language-selector:hover {
+.language-selector-always-visible:hover {
   background: hsl(218, 100%, 97%) !important;
   border-color: hsl(219, 79%, 70%) !important;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px 0 rgb(0 0 0 / 0.06) !important;
   transform: translateY(-0.5px) !important;
+}
+
+.language-selector-always-visible:focus {
+  border-color: hsl(219, 79%, 70%) !important;
+  box-shadow: 0 0 0 3px hsl(219, 79%, 70%, 0.15) !important;
+  outline: none !important;
 }
 
 /* Force show Google Translate widget */
