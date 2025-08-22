@@ -24,6 +24,41 @@ export default function Header({ language = 'fr', onLanguageChange }: HeaderProp
     setShowLanguageMenu(false);
   };
 
+  // Initialize Google Translate on component mount
+  useEffect(() => {
+    const initGoogleTranslate = () => {
+      if (typeof window !== 'undefined' && (window as any).google && (window as any).google.translate) {
+        try {
+          const element = document.getElementById('google_translate_element');
+          if (element && !element.hasChildNodes()) {
+            new (window as any).google.translate.TranslateElement(
+              {
+                pageLanguage: 'fr',
+                includedLanguages: 'fr,en',
+                autoDisplay: false,
+                layout: (window as any).google.translate.TranslateElement.InlineLayout.SIMPLE
+              },
+              'google_translate_element'
+            );
+          }
+        } catch (error) {
+          console.warn('Google Translate initialization failed:', error);
+        }
+      } else {
+        // Retry after a short delay
+        setTimeout(initGoogleTranslate, 500);
+      }
+    };
+
+    // Initialize immediately or wait for the script to load
+    if (document.readyState === 'complete') {
+      initGoogleTranslate();
+    } else {
+      window.addEventListener('load', initGoogleTranslate);
+      return () => window.removeEventListener('load', initGoogleTranslate);
+    }
+  }, []);
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-aitenders-white-blue border-b border-aitenders-light-blue">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

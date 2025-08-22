@@ -22,11 +22,12 @@
     <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
     
     <script>
+      // Global Google Translate initialization function
       function googleTranslateElementInit() {
         try {
           if (typeof google !== 'undefined' && google.translate && google.translate.TranslateElement) {
             const element = document.getElementById('google_translate_element');
-            if (element) {
+            if (element && !element.hasChildNodes()) {
               new google.translate.TranslateElement(
                 {
                   pageLanguage: 'fr',
@@ -47,6 +48,9 @@
           }
         }
       }
+
+      // Make the initialization function globally available
+      window.googleTranslateElementInit = googleTranslateElementInit;
       
       // Add error handling for script loading without causing unhandled rejections
       window.addEventListener('error', function(e) {
