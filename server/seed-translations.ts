@@ -54,7 +54,7 @@ const uc2TranslationKeys = {
   'uc2.solution_section.feature2_text': 'Aitenders identifie et hiérarchise automatiquement toutes les clauses sensibles : responsabilités, engagements, pénalités et conditions critiques. Parallèlement, l'IA vérifie la cohérence documentaire et signale contradictions, doublons et lacunes, pour une analyse fiable et complète. Le Proposal Manager obtient en quelques minutes une vision claire des zones de risque, prêtes à être corrigées et validées sans perte de temps.',
   'uc2.solution_section.feature2_highlight': 'Validation contractuelle proactive, dès le J1',
   'uc2.solution_section.feature3_title': 'Pilotez chaque évolution contractuelle en temps réel',
-  'uc2.solution_section.feature3_text': 'Toutes vos Q&A, versions et ajustements de documents sont consolidés et trackés automatiquement par l'IA. Le Proposal Manager suit chaque modification en temps réel, visualise les écarts, reçoit des alertes et s\'assure que rien n\'est oublié ou modifié sans validation. Fini les suivis fragmentés par email ou tableurs : tout est centralisé dans un cockpit fluide et fiable.',
+  'uc2.solution_section.feature3_text': 'Toutes vos Q&A, versions et ajustements de documents sont consolidés et trackés automatiquement par l\'IA. Le Proposal Manager suit chaque modification en temps réel, visualise les écarts, reçoit des alertes et s\'assure que rien n\'est oublié ou modifié sans validation. Fini les suivis fragmentés par email ou tableurs : tout est centralisé dans un cockpit fluide et fiable.',
   'uc2.solution_section.feature3_highlight': 'Aucune surprise, aucune version perdue, aucun risque d\'oubli',
 
   // Toppings - Complete Wow Features Section
