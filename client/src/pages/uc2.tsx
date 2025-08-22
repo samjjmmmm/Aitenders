@@ -15,7 +15,7 @@ import { FaUsers, FaShieldAlt, FaChartBar, FaFileAlt, FaCogs } from "react-icons
 import ContactSection from "@/components/contact-section";
 import Header from "@/components/header";
 import UC3AnalysisCard from "@/components/UC3AnalysisCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 // Import client logos
@@ -115,6 +115,28 @@ export default function UC2Page() {
   ];
 
   const [activeAudience, setActiveAudience] = useState(targetAudiences[0]);
+
+  // Scroll animation logic
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all animated elements
+    const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .fade-in, .scale-in');
+    animatedElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   const painPoints = [
     {
@@ -330,7 +352,7 @@ export default function UC2Page() {
 
       
       {/* Pain Points Section - Main Feature Card + Supporting Cards */}
-      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50/20 relative overflow-hidden">
+      <section className="py-8 md:py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50/20 relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Large atmospheric blob - right side */}
@@ -361,7 +383,7 @@ export default function UC2Page() {
         <div className="content-boundary relative z-10">
 
           {/* Main Feature Card */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20"
+          <div className="bg-white/95 backdrop-blur-sm rounded-2xl md:rounded-3xl p-6 md:p-12 lg:p-16 xl:p-20 border border-gray-100/50 relative overflow-hidden mb-8 md:mb-16 lg:mb-20 fade-in-up"
                style={{
                  boxShadow: '0 32px 64px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.05)'
                }}>
@@ -392,12 +414,12 @@ export default function UC2Page() {
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-                <Button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
+              <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mb-8 md:mb-12 lg:mb-16">
+                <Button className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 md:px-12 lg:px-16 py-4 md:py-6 lg:py-7 text-lg md:text-xl lg:text-2xl font-bold rounded-2xl md:rounded-3xl shadow-lg md:shadow-xl hover:shadow-xl md:hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 md:hover:-translate-y-2 hover:scale-105">
                   Optimisez Vos Projets Moyens!
                 </Button>
-                <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-12 py-6 text-xl font-semibold rounded-3xl transition-all duration-300">
-                  <MdPlayArrow className="w-6 h-6 mr-2" />
+                <Button variant="outline" className="w-full sm:w-auto border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 md:px-10 lg:px-12 py-3 md:py-5 lg:py-6 text-base md:text-lg lg:text-xl font-semibold rounded-2xl md:rounded-3xl transition-all duration-300">
+                  <MdPlayArrow className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 mr-2" />
                   Voir la Démonstration
                 </Button>
               </div>
@@ -407,7 +429,7 @@ export default function UC2Page() {
       </section>
 
       {/* Solution Section - Alternating Layout Design */}
-      <section className="py-32 bg-gradient-to-br from-white via-slate-50/20 to-white relative overflow-hidden">
+      <section className="py-12 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-br from-white via-slate-50/20 to-white relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Large flowing accent - top center */}
@@ -436,19 +458,18 @@ export default function UC2Page() {
         </div>
 
         <div className="content-boundary relative z-10">
-          <div className="text-center mb-12 md:mb-16 lg:mb-20">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-blue-600">copilote IA</span> qui sécurise la gestion de vos projets moyens</h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
+          <div className="text-center mb-8 md:mb-12 lg:mb-16 xl:mb-20 fade-in-up">
+            <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-blue-600">copilote IA</span> qui sécurise la gestion de vos projets moyens</h1>
+            <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
               Découvrez, pilotez et sécurisez chaque clause dès le premier jour. 
-
             </p>
           </div>
 
           {/* Feature 1: Structuration IA immédiate - Text Left, Card Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
-            <div className="order-1">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Structuration automatique du périmètre   <span className="text-purple-600">dès le jour 1</span> </h3>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 lg:gap-16 xl:gap-20 items-center mb-10 md:mb-16 lg:mb-20 xl:mb-24">
+            <div className="order-1 fade-in-left">
+              <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 leading-[1.1] tracking-tight">Structuration automatique du périmètre   <span className="text-purple-600">dès le jour 1</span> </h3>
+              <p className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 md:mb-8 font-light">
                 Grâce à l’IA d’Aitenders, vos documents sont instantanément segmentés et organisés : lots, sous‑ensembles et critères contractuels sont classés et hiérarchisés en quelques minutes.
                 <br /><br />
                 Le Responsable Offre dispose immédiatement d’une vision consolidée du périmètre : points bloquants et clauses sensibles sont identifiés sans effort, permettant une décision “go / no‑go” éclairée dès le premier jour.
@@ -462,15 +483,15 @@ export default function UC2Page() {
                 Une vision consolidée et priorisée, prête dès le premier jour !
               </p>
             </div>
-            <div className="order-2">
-              <div className="flex justify-center items-center h-full px-4 sm:px-6 lg:px-8">
+            <div className="order-2 fade-in-right">
+              <div className="flex justify-center items-center h-full px-2 sm:px-4 lg:px-6 xl:px-8">
                 <img 
                   src={uc2FirstFeatureImage}
                   alt="Analyse IA - Progression structuration et catégorisation"
-                  className="w-full h-auto max-w-[280px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[500px] rounded-2xl shadow-2xl"
+                  className="w-full h-auto max-w-[250px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-[450px] rounded-xl md:rounded-2xl shadow-lg md:shadow-2xl"
                   style={{ 
-                    transform: 'scale(1.4)',
-                    filter: 'drop-shadow(0 8px 32px rgba(59, 130, 246, 0.2))',
+                    transform: 'scale(1.2) md:scale(1.4)',
+                    filter: 'drop-shadow(0 4px 16px rgba(59, 130, 246, 0.15)) md:drop-shadow(0 8px 32px rgba(59, 130, 246, 0.2))',
                     objectFit: 'contain'
                   }}
                 />
@@ -479,24 +500,24 @@ export default function UC2Page() {
           </div>
 
           {/* Feature 2: Synthèse visuelle claire - Text Right, Card Left */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mb-16 md:mb-20 lg:mb-24">
-            <div className="order-2 lg:order-1">
-              <div className="flex justify-center items-center h-full px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 lg:gap-16 xl:gap-20 items-center mb-10 md:mb-16 lg:mb-20 xl:mb-24">
+            <div className="order-2 lg:order-1 fade-in-left">
+              <div className="flex justify-center items-center h-full px-2 sm:px-4 lg:px-6 xl:px-8">
                 <img 
                   src={uc2SecondFeatureImage}
                   alt="Analyse IA - Contrôlez chaque clause critique"
-                  className="w-full h-auto max-w-[280px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[500px] rounded-2xl shadow-2xl"
+                  className="w-full h-auto max-w-[250px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-[450px] rounded-xl md:rounded-2xl shadow-lg md:shadow-2xl"
                   style={{ 
-                    transform: 'scale(1.4)',
-                    filter: 'drop-shadow(0 8px 32px rgba(251, 146, 60, 0.2))',
+                    transform: 'scale(1.2) md:scale(1.4)',
+                    filter: 'drop-shadow(0 4px 16px rgba(251, 146, 60, 0.15)) md:drop-shadow(0 8px 32px rgba(251, 146, 60, 0.2))',
                     objectFit: 'contain'
                   }}
                 />
               </div>
             </div>
-            <div className="order-1 lg:order-2">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Contrôlez chaque  <span className="text-orange-600">clause critique</span> de votre projet</h3>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
+            <div className="order-1 lg:order-2 fade-in-right">
+              <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 leading-[1.1] tracking-tight">Contrôlez chaque  <span className="text-orange-600">clause critique</span> de votre projet</h3>
+              <p className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 md:mb-8 font-light">
                 Aitenders identifie et hiérarchise automatiquement toutes les clauses sensibles : responsabilités, engagements, pénalités et conditions critiques. 
                 En parallèle, l’IA contrôle la cohérence des documents et signale contradictions, doublons et écarts, pour une analyse fiable et complète.
                 <br /><br />
@@ -1039,10 +1060,10 @@ export default function UC2Page() {
           </div>
 
           {/* Client Logos Scrolling Banner */}
-          <div className="mb-16 md:mb-20">
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 overflow-hidden">
-              <div className="flex items-center justify-center mb-4">
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Ils nous font confiance pour leurs projets moyens</h3>
+          <div className="mb-8 md:mb-16 lg:mb-20 fade-in-up">
+            <div className="bg-white rounded-xl md:rounded-2xl shadow-md md:shadow-lg border border-gray-100 p-4 md:p-6 overflow-hidden">
+              <div className="flex items-center justify-center mb-3 md:mb-4">
+                <h3 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 mb-2 md:mb-4 text-center">Ils nous font confiance pour leurs projets moyens</h3>
               </div>
               <div className="relative w-full overflow-hidden">
                 <div className="flex logo-scroll space-x-12 whitespace-nowrap justify-center items-center">
@@ -1064,23 +1085,23 @@ export default function UC2Page() {
           </div>
 
           {/* Integrated Chat Simulator - Enhanced */}
-          <div className="bg-gradient-to-br from-purple-50 via-white to-blue-50 rounded-3xl shadow-2xl border border-purple-100 p-8 md:p-12 relative overflow-hidden">
+          <div className="bg-gradient-to-br from-purple-50 via-white to-blue-50 rounded-2xl md:rounded-3xl shadow-lg md:shadow-2xl border border-purple-100 p-4 md:p-8 lg:p-12 relative overflow-hidden fade-in-up">
             {/* Background decoration */}
             <div className="absolute inset-0 bg-gradient-to-r from-purple-100/20 to-blue-100/20 opacity-50"></div>
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-purple-200/30 to-transparent rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-blue-200/30 to-transparent rounded-full blur-2xl"></div>
             
             <div className="relative z-10">
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center justify-center px-6 py-3 bg-purple-100 rounded-full border border-purple-200 mb-6">
-                  <MdAnalytics className="w-5 h-5 text-purple-600 mr-2" />
-                  <span className="text-purple-700 font-semibold text-sm">Simulateur ROI Intégré</span>
+              <div className="text-center mb-6 md:mb-8">
+                <div className="inline-flex items-center justify-center px-4 md:px-6 py-2 md:py-3 bg-purple-100 rounded-full border border-purple-200 mb-4 md:mb-6">
+                  <MdAnalytics className="w-4 h-4 md:w-5 md:h-5 text-purple-600 mr-2" />
+                  <span className="text-purple-700 font-semibold text-xs md:text-sm">Simulateur ROI Intégré</span>
                 </div>
                 
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 md:mb-4">
                   Calculez votre <span className="text-purple-600">ROI en temps réel</span>
                 </h3>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
                   Simulateur intelligent intégré à la page pour une analyse immédiate de vos projets
                 </p>
               </div>
