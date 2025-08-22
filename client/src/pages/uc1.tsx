@@ -784,7 +784,7 @@ export default function UC1Page() {
                   className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
                   onClick={() => setIsBookingModalOpen(true)}
                 >
-                  Contact Sales
+                  Contact Commercial
                 </Button>
                 <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-12 py-6 text-xl font-semibold rounded-3xl transition-all duration-300">
                   <MdPlayArrow className="w-6 h-6 mr-2" />
