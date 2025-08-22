@@ -1,14 +1,14 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { 
-  MdSchedule, MdCheckCircle, MdWarning, MdPeople, MdTrendingUp, MdSecurity, 
-  MdFlashOn, MdArrowForward, MdGpsFixed, MdVerifiedUser, MdAnalytics, MdEmojiEvents, 
-  MdMessage, MdShield, MdGroups, MdDescription, MdSettings, MdAccountBox, MdBusiness, 
+import {
+  MdSchedule, MdCheckCircle, MdWarning, MdPeople, MdTrendingUp, MdSecurity,
+  MdFlashOn, MdArrowForward, MdGpsFixed, MdVerifiedUser, MdAnalytics, MdEmojiEvents,
+  MdMessage, MdShield, MdGroups, MdDescription, MdSettings, MdAccountBox, MdBusiness,
   MdEngineering, MdGavel, MdTableChart, MdAccessTime, MdContentCopy, MdRefresh, MdSearch,
   MdDashboard, MdBolt, MdEdit, MdNotifications, MdVerified, MdSwapHoriz, MdPlayArrow,
-  MdClose, MdCheck, MdStars, MdCloudSync, MdCreate, MdAutoAwesome, MdLink, 
-  MdAccountTree, MdTrackChanges, MdCallSplit, MdSchema, MdGppBad, MdTimeline, 
+  MdClose, MdCheck, MdStars, MdCloudSync, MdCreate, MdAutoAwesome, MdLink,
+  MdAccountTree, MdTrackChanges, MdCallSplit, MdSchema, MdGppBad, MdTimeline,
   MdRotateRight, MdFlag, MdMail, MdAccountBalance, MdManageAccounts
 } from "react-icons/md";
 import { FaUsers, FaShieldAlt, FaChartBar, FaFileAlt, FaCogs } from "react-icons/fa";
@@ -156,14 +156,14 @@ export default function UC2Page() {
       icon: MdDescription
     },
     {
-      step: "2", 
+      step: "2",
       title: t('uc2.journey.title2'),
       description: t('uc2.journey.description2'),
       icon: MdGroups
     },
     {
       step: "3",
-      title: t('uc2.journey.title3'), 
+      title: t('uc2.journey.title3'),
       description: t('uc2.journey.description3'),
       icon: MdSecurity
     }
@@ -241,7 +241,7 @@ export default function UC2Page() {
         <div className="content-boundary relative z-10">
           {/* Content Section */}
           <div className="text-center">
-              <motion.div 
+              <motion.div
                 className="mb-12"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -255,7 +255,7 @@ export default function UC2Page() {
                   <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">{t('uc2.hero.badge')}</Badge>
                 </motion.div>
 
-                <motion.h1 
+                <motion.h1
                   className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -264,7 +264,7 @@ export default function UC2Page() {
                   {t('uc2.hero.title')} <span className="text-purple-600">{t('uc2.hero.span')}</span>
                 </motion.h1>
 
-                <motion.p 
+                <motion.p
                   className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -275,21 +275,21 @@ export default function UC2Page() {
               </motion.div>
 
               {/* CTA Buttons - Side by Side */}
-              <motion.div 
+              <motion.div
                 className="mb-16 flex flex-col sm:flex-row gap-6 justify-center items-center"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.9 }}
               >
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
                 >
                   {t('uc2.hero.demoButton')}
                 </Button>
 
-                <Button 
-                  variant="ghost" 
+                <Button
+                  variant="ghost"
                   className="text-blue-600 hover:text-blue-700 hover:bg-blue-50/80 px-6 py-4 text-xl font-medium underline decoration-2 underline-offset-4 rounded-2xl transition-all duration-300"
                 >
                   {t('uc2.hero.downloadButton')}
@@ -298,7 +298,7 @@ export default function UC2Page() {
           </div>
 
           {/* Hero Image - Bottom */}
-          <motion.div 
+          <motion.div
             className="w-full max-w-7xl mx-auto mt-8"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -449,11 +449,11 @@ export default function UC2Page() {
             </div>
             <div className="order-2 fade-in-right lg:pl-6">
               <div className="flex justify-center items-center h-full">
-                <img 
+                <img
                   src={uc2FirstFeatureImage}
                   alt="Analyse IA - Progression structuration et catégorisation"
                   className="w-full h-auto max-w-[250px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-[450px] rounded-xl md:rounded-2xl shadow-lg md:shadow-2xl"
-                  style={{ 
+                  style={{
                     transform: 'scale(1.2) md:scale(1.4)',
                     filter: 'drop-shadow(0 4px 16px rgba(59, 130, 246, 0.15)) md:drop-shadow(0 8px 32px rgba(59, 130, 246, 0.2))',
                     objectFit: 'contain'
@@ -467,11 +467,11 @@ export default function UC2Page() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 lg:gap-16 xl:gap-20 items-center mb-10 md:mb-16 lg:mb-20 xl:mb-24">
             <div className="order-2 lg:order-1 fade-in-left lg:pr-6">
               <div className="flex justify-center items-center h-full">
-                <img 
+                <img
                   src={uc2SecondFeatureImage}
                   alt="Analyse IA - Contrôlez chaque clause critique"
                   className="w-full h-auto max-w-[250px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-[450px] rounded-xl md:rounded-2xl shadow-lg md:shadow-2xl"
-                  style={{ 
+                  style={{
                     transform: 'scale(1.2) md:scale(1.4)',
                     filter: 'drop-shadow(0 4px 16px rgba(251, 146, 60, 0.15)) md:drop-shadow(0 8px 32px rgba(251, 146, 60, 0.2))',
                     objectFit: 'contain'
@@ -504,11 +504,11 @@ export default function UC2Page() {
             </div>
             <div className="order-2 fade-in-right">
               <div className="flex justify-center items-center h-full px-4 sm:px-6 lg:px-8">
-                <img 
+                <img
                   src={uc2ThirdFeatureImage}
                   alt="Analyse IA - Pilotez chaque évolution contractuelle"
                   className="w-full h-auto max-w-[280px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[500px] rounded-2xl shadow-2xl"
-                  style={{ 
+                  style={{
                     transform: 'scale(1.4)',
                     filter: 'drop-shadow(0 8px 32px rgba(34, 197, 94, 0.2))',
                     objectFit: 'contain'
@@ -848,8 +848,8 @@ export default function UC2Page() {
             <p className="text-gray-200 text-lg mb-8">
               {t('uc2.toppings.bottom_text')}
             </p>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-gradient-to-r from-yellow-400 via-pink-500 to-cyan-500 hover:from-yellow-500 hover:via-pink-600 hover:to-cyan-600 text-white px-12 py-6 text-xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
             >
               {t('uc2.toppings.cta')}
@@ -1043,7 +1043,7 @@ export default function UC2Page() {
       </main>
 
       {/* Chat Interface with UC2-specific actions */}
-      <ChatInterface 
+      <ChatInterface
         language={currentLanguage as "fr" | "en"}
         transparent={true}
         customActions={[
@@ -1058,7 +1058,7 @@ export default function UC2Page() {
             onClick: () => {} // Launch UC2 demo
           },
           {
-            label: t('uc2.chat_actions.roi'), 
+            label: t('uc2.chat_actions.roi'),
             icon: <MdAnalytics className="w-3 h-3 text-gray-400" />,
             onClick: () => {} // Open ROI calculator
           },
