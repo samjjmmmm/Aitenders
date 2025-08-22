@@ -244,21 +244,47 @@ export default function UC2Page() {
         <div className="content-boundary relative z-10">
           {/* Content Section */}
           <div className="text-center">
-              <div className="mb-12">
-                <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Pilotez les offres moyennes</Badge>
+              <motion.div 
+                className="mb-12"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                >
+                  <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">Pilotez les offres moyennes</Badge>
+                </motion.div>
 
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+                <motion.h1 
+                  className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                >
                   Découvrez, pilotez et sécurisez chaque clause <span className="text-purple-600">dès le premier jour.</span>
-                </h1>
+                </motion.h1>
 
-                <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]">
+                <motion.p 
+                  className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.7 }}
+                >
 
                   La seule plateforme conçue pour transformer des dossiers moyens (1 à 10 M€) en une vision contractuelle claire dès le premier jour : structuration IA du périmètre, détection immédiate des clauses critiques et pilotage dynamique des Q&A et versions. Vous réduisez de moitié votre temps d’analyse, rassurez votre direction et livrez une réponse compétitive, sans risque de dernière minute. 
-                </p>
-              </div>
+                </motion.p>
+              </motion.div>
 
               {/* CTA Buttons - Side by Side */}
-              <div className="mb-16 flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <motion.div 
+                className="mb-16 flex flex-col sm:flex-row gap-6 justify-center items-center"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.9 }}
+              >
                 <Button 
                   size="lg" 
                   className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
@@ -272,11 +298,16 @@ export default function UC2Page() {
                 >
                   Téléchargez le cas d'usage →
                 </Button>
-              </div>
+              </motion.div>
           </div>
 
           {/* Hero Image - Bottom */}
-          <div className="w-full max-w-7xl mx-auto mt-8">
+          <motion.div 
+            className="w-full max-w-7xl mx-auto mt-8"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.0, delay: 1.1 }}
+          >
               <div className="flex justify-center items-center">
                 <div className="relative flex justify-center items-center h-full px-0 py-6">
                   <img
@@ -292,7 +323,7 @@ export default function UC2Page() {
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
         </div>
       </section>
 
