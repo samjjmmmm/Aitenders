@@ -743,12 +743,18 @@ export default function UC2Page() {
                     </p>
 
                     <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
-                      {t('uc2.results_section.card1_points') && t('uc2.results_section.card1_points').map((point, index) => (
-                        <div key={index} className="flex items-start">
-                          <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                          <span>{point}</span>
-                        </div>
-                      ))}
+                      <div className="flex items-start">
+                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                        <span>{t('uc2.results_section.card1_point1')}</span>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                        <span>{t('uc2.results_section.card1_point2')}</span>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                        <span>{t('uc2.results_section.card1_point3')}</span>
+                      </div>
                     </div>
                   </Card>
                 </div>
@@ -771,12 +777,18 @@ export default function UC2Page() {
                     </p>
 
                     <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
-                      {t('uc2.results_section.card2_points') && t('uc2.results_section.card2_points').map((point, index) => (
-                        <div key={index} className="flex items-start">
-                          <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                          <span>{point}</span>
-                        </div>
-                      ))}
+                      <div className="flex items-start">
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                        <span>{t('uc2.results_section.card2_point1')}</span>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                        <span>{t('uc2.results_section.card2_point2')}</span>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                        <span>{t('uc2.results_section.card2_point3')}</span>
+                      </div>
                     </div>
                   </Card>
                 </div>
