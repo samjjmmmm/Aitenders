@@ -37,12 +37,11 @@ import HubSpotBookingModal from "@/components/hubspot-booking-modal";
 import { useGlobalTranslations } from "@/contexts/TranslationContext";
 
 // Import useTranslation hook for i18next
-import { useTranslation } from 'react-i18next';
+import { useGlobalTranslations } from "@/contexts/TranslationContext";
 
 
 export default function UC1Page() {
-  // Use the useTranslation hook with the 'uc1' namespace
-  const { t, i18n, ready } = useTranslation('uc1');
+  const { t, currentLanguage, isLoading: translationsLoading } = useGlobalTranslations();
   const [selectedTopping, setSelectedTopping] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
@@ -440,78 +439,78 @@ export default function UC1Page() {
   const targetAudiences = [
     {
       id: 'business-dev',
-      title: 'Business Development Managers',
+      title: t('uc1.audiences.business_dev.title'),
       icon: MdAccountBox,
       iconColor: 'text-purple-600',
       iconBg: 'bg-purple-100',
-      description: 'Répondez rapidement aux opportunités de petits projets tout en maintenant la qualité et les standards de conformité des offres. Maximisez votre taux de succès avec des réponses structurées et percutantes en un temps record.',
+      description: t('uc1.audiences.business_dev.description'),
       dashboardData: {
         requirements: { progress: 100, color: 'green' },
         coordination: { progress: 78, color: 'blue' },
         compliance: { progress: 92, color: 'purple' }
       },
-      notification: '✓ Offre générée',
-      alert: '📊 Délai: Respecté'
+      notification: t('uc1.audiences.business_dev.notification'),
+      alert: t('uc1.audiences.business_dev.alert')
     },
     {
       id: 'proposal-manager',
-      title: 'Proposal Managers',
+      title: t('uc1.audiences.proposal_manager.title'),
       icon: MdBusiness,
       iconColor: 'text-blue-600',
       iconBg: 'bg-blue-100',
-      description: 'Coordonnez plusieurs petites offres simultanément avec des processus efficaces pour ne rien laisser passer. Gérez votre pipeline d\'offres avec une visibilité complète et des workflows optimisés.',
+      description: t('uc1.audiences.proposal_manager.description'),
       dashboardData: {
         requirements: { progress: 95, color: 'green' },
         coordination: { progress: 88, color: 'blue' },
         compliance: { progress: 100, color: 'purple' }
       },
-      notification: '⚡ Pipeline optimisé',
-      alert: '📈 Efficacité: +40%'
+      notification: t('uc1.audiences.proposal_manager.notification'),
+      alert: t('uc1.audiences.proposal_manager.alert')
     },
     {
       id: 'project-director',
-      title: 'Directeurs de projets',
+      title: t('uc1.audiences.project_director.title'),
       icon: MdGavel,
       iconColor: 'text-green-600',
       iconBg: 'bg-green-100',
-      description: 'Supervisez le pipeline complet d\'offres avec une visibilité sur la qualité des propositions et les risques de conformité. Assurez une cohérence et une excellence opérationnelle sur tous vos projets.',
+      description: t('uc1.audiences.project_director.description'),
       dashboardData: {
         requirements: { progress: 100, color: 'green' },
         coordination: { progress: 95, color: 'blue' },
         compliance: { progress: 100, color: 'purple' }
       },
-      notification: '🔒 Conformité validée',
-      alert: '✅ Qualité garantie'
+      notification: t('uc1.audiences.project_director.notification'),
+      alert: t('uc1.audiences.project_director.alert')
     },
     {
       id: 'sales-director',
-      title: 'Directeurs commerciaux',
+      title: t('uc1.audiences.sales_director.title'),
       icon: MdEngineering,
       iconColor: 'text-orange-600',
       iconBg: 'bg-orange-100',
-      description: 'Augmentez votre taux de conversion sur les petits projets grâce à des réponses plus rapides et plus convaincantes. Optimisez vos ressources commerciales avec des processus automatisés.',
+      description: t('uc1.audiences.sales_director.description'),
       dashboardData: {
         requirements: { progress: 100, color: 'green' },
         coordination: { progress: 85, color: 'blue' },
         compliance: { progress: 98, color: 'purple' }
       },
-      notification: '🔧 Conversion boostée',
-      alert: '📋 ROI maximisé'
+      notification: t('uc1.audiences.sales_director.notification'),
+      alert: t('uc1.audiences.sales_director.alert')
     },
     {
       id: 'operations-manager',
-      title: 'Responsables opérationnels',
+      title: t('uc1.audiences.operations_manager.title'),
       icon: MdAnalytics,
       iconColor: 'text-indigo-600',
       iconBg: 'bg-indigo-100',
-      description: 'Streamlinz vos opérations d\'offres avec des workflows standardisés et une traçabilité complète. Réduisez les délais de réponse tout en maintenant l\'excellence opérationnelle.',
+      description: t('uc1.audiences.operations_manager.description'),
       dashboardData: {
         requirements: { progress: 100, color: 'green' },
         coordination: { progress: 92, color: 'blue' },
         compliance: { progress: 100, color: 'purple' }
       },
-      notification: '💼 Ops optimisées',
-      alert: '🎯 Efficacité +50%'
+      notification: t('uc1.audiences.operations_manager.notification'),
+      alert: t('uc1.audiences.operations_manager.alert')
     }
   ];
 
@@ -576,16 +575,16 @@ export default function UC1Page() {
 
   const kpis = [
     {
-      metric: "80%",
-      description: "Réduction du temps de rédaction d'offres"
+      metric: t('uc1.kpis.metric1_value'),
+      description: t('uc1.kpis.metric1_description')
     },
     {
-      metric: "90%",
+      metric: t('uc1.kpis.metric2_value'),
       description: t('uc1.kpis.description2')
     },
     {
-      metric: "2h",
-      description: "Délai moyen de génération d'offre"
+      metric: t('uc1.kpis.metric3_value'),
+      description: t('uc1.kpis.metric3_description')
     },
     {
       metric: "100%",
@@ -596,11 +595,11 @@ export default function UC1Page() {
   const differentiators = [
     {
       title: t('uc1.differentiators.title1'),
-      description: "Optimisée spécifiquement pour la rapidité et l'efficacité sur les projets de taille réduite"
+      description: t('uc1.differentiators.description1')
     },
     {
       title: t('uc1.differentiators.title2'),
-      description: "IA spécialisée dans la génération d'argumentaires convaincants et différenciants"
+      description: t('uc1.differentiators.description2')
     },
     {
       title: t('uc1.differentiators.title3'),
@@ -970,7 +969,8 @@ export default function UC1Page() {
                 <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
                   <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>{t('uc1.results.role1_benefit1')}</span>
+                    <span>{t('uc1.results.role1_benefit1')}
+                  </span>
                   </div>
                   <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
@@ -1119,7 +1119,7 @@ export default function UC1Page() {
             </div>
           </div>
         </div>
-        </div>
+      </div>
       </section>
 
       {/* Toppings Section - Wow Features & Additional Functionalities */}
