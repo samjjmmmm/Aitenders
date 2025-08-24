@@ -42,7 +42,7 @@ import { useTranslation } from 'react-i18next';
 
 export default function UC1Page() {
   // Use the useTranslation hook with the 'uc1' namespace
-  const { t, currentLanguage, isLoading: translationsLoading } = useTranslation('uc1');
+  const { t, i18n, ready } = useTranslation('uc1');
   const [selectedTopping, setSelectedTopping] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
@@ -970,8 +970,7 @@ export default function UC1Page() {
                 <div className="text-gray-600 text-sm leading-relaxed space-y-2 mb-4">
                   <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                    <span>{t('uc1.results.role1_benefit1')}
-                  </span>
+                    <span>{t('uc1.results.role1_benefit1')}</span>
                   </div>
                   <div className="flex items-start">
                     <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
@@ -1119,6 +1118,7 @@ export default function UC1Page() {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </section>
 
