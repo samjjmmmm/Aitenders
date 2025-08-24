@@ -11,85 +11,6 @@ export default function UC1() {
   const { t } = useGlobalTranslations();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Target audiences data
-  const targetAudiences = [
-    {
-      title: t('uc1.audiences.business_dev.title'),
-      icon: MdBusiness,
-      iconColor: 'text-blue-600',
-      iconBg: 'bg-blue-100',
-      description: t('uc1.audiences.business_dev.description'),
-      notification: t('uc1.audiences.business_dev.notification'),
-      alert: t('uc1.audiences.business_dev.alert'),
-      dashboardData: {
-        requirements: { progress: 100, color: 'green' },
-        coordination: { progress: 85, color: 'blue' },
-        compliance: { progress: 95, color: 'green' },
-        delivery: { progress: 90, color: 'green' }
-      }
-    },
-    {
-      title: t('uc1.audiences.proposal_manager.title'),
-      icon: MdAssignment,
-      iconColor: 'text-green-600',
-      iconBg: 'bg-green-100',
-      description: t('uc1.audiences.proposal_manager.description'),
-      notification: t('uc1.audiences.proposal_manager.notification'),
-      alert: t('uc1.audiences.proposal_manager.alert'),
-      dashboardData: {
-        requirements: { progress: 90, color: 'green' },
-        coordination: { progress: 95, color: 'green' },
-        compliance: { progress: 100, color: 'green' },
-        delivery: { progress: 85, color: 'blue' }
-      }
-    },
-    {
-      title: t('uc1.audiences.project_director.title'),
-      icon: MdDesktopMac,
-      iconColor: 'text-purple-600',
-      iconBg: 'bg-purple-100',
-      description: t('uc1.audiences.project_director.description'),
-      notification: t('uc1.audiences.project_director.notification'),
-      alert: t('uc1.audiences.project_director.alert'),
-      dashboardData: {
-        requirements: { progress: 100, color: 'green' },
-        coordination: { progress: 88, color: 'blue' },
-        compliance: { progress: 100, color: 'green' },
-        delivery: { progress: 92, color: 'green' }
-      }
-    },
-    {
-      title: t('uc1.audiences.sales_director.title'),
-      icon: MdTrendingUp,
-      iconColor: 'text-red-600',
-      iconBg: 'bg-red-100',
-      description: t('uc1.audiences.sales_director.description'),
-      notification: t('uc1.audiences.sales_director.notification'),
-      alert: t('uc1.audiences.sales_director.alert'),
-      dashboardData: {
-        requirements: { progress: 95, color: 'green' },
-        coordination: { progress: 90, color: 'green' },
-        compliance: { progress: 100, color: 'green' },
-        delivery: { progress: 88, color: 'blue' }
-      }
-    },
-    {
-      title: t('uc1.audiences.operations_manager.title'),
-      icon: MdSpeed,
-      iconColor: 'text-orange-600',
-      iconBg: 'bg-orange-100',
-      description: t('uc1.audiences.operations_manager.description'),
-      notification: t('uc1.audiences.operations_manager.notification'),
-      alert: t('uc1.audiences.operations_manager.alert'),
-      dashboardData: {
-        requirements: { progress: 85, color: 'blue' },
-        coordination: { progress: 100, color: 'green' },
-        compliance: { progress: 95, color: 'green' },
-        delivery: { progress: 90, color: 'green' }
-      }
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Hero Section */}
@@ -124,6 +45,17 @@ export default function UC1() {
               <button className="px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-blue-500 hover:text-blue-600 transition-colors">
                 {t('uc1.hero.downloadButton')}
               </button>
+            </div>
+          </div>
+
+          {/* Hero Image/Animation */}
+          <div className="relative max-w-5xl mx-auto">
+            <div className="aspect-video bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl shadow-2xl overflow-hidden">
+              <img 
+                src="/src/assets/uc1-hero-image.png" 
+                alt="Aitenders UC1 Demo"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -169,7 +101,6 @@ export default function UC1() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Feature 1 */}
             <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
                 <FaRocket className="w-6 h-6 text-blue-600" />
@@ -186,7 +117,6 @@ export default function UC1() {
               </div>
             </div>
 
-            {/* Feature 2 */}
             <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-6">
                 <FaShieldAlt className="w-6 h-6 text-green-600" />
@@ -204,7 +134,6 @@ export default function UC1() {
               </div>
             </div>
 
-            {/* Feature 3 */}
             <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
                 <FaCheckCircle className="w-6 h-6 text-purple-600" />
@@ -237,7 +166,6 @@ export default function UC1() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
-            {/* Card 1 */}
             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
@@ -270,7 +198,6 @@ export default function UC1() {
               </ul>
             </div>
 
-            {/* Card 2 */}
             <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-8">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
@@ -324,13 +251,13 @@ export default function UC1() {
             <div className="text-center">
               <div className="text-3xl font-bold text-orange-600 mb-2">48h</div>
               <h4 className="font-semibold text-gray-900 mb-2">{t('uc1.results_section.kpis.serenity_title')}</h4>
-              <p className="text-sm text-gray-600">Go/No-Go immédiat et documenté</p>
+              <p className="text-sm text-gray-600">{t('uc1.results_section.kpis.serenity_desc')}</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Toppings Section - Wow Features */}
+      {/* Toppings Section */}
       <section className="py-20 bg-gradient-to-br from-gray-900 to-black text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -350,7 +277,6 @@ export default function UC1() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Feature 1 */}
             <div className="bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-colors">
               <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
                 <FaLightbulb className="w-6 h-6 text-white" />
@@ -367,7 +293,6 @@ export default function UC1() {
               </div>
             </div>
 
-            {/* Feature 2 */}
             <div className="bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-colors">
               <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-4">
                 <FaChartLine className="w-6 h-6 text-white" />
@@ -384,7 +309,6 @@ export default function UC1() {
               </div>
             </div>
 
-            {/* Feature 3 */}
             <div className="bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-colors">
               <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
                 <MdCode className="w-6 h-6 text-white" />
@@ -401,7 +325,6 @@ export default function UC1() {
               </div>
             </div>
 
-            {/* Feature 4 */}
             <div className="bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-colors">
               <div className="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mb-4">
                 <FaCog className="w-6 h-6 text-white" />
@@ -418,7 +341,6 @@ export default function UC1() {
               </div>
             </div>
 
-            {/* Feature 5 */}
             <div className="bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-colors">
               <div className="w-12 h-12 bg-pink-600 rounded-lg flex items-center justify-center mb-4">
                 <FaUsers className="w-6 h-6 text-white" />
@@ -435,7 +357,6 @@ export default function UC1() {
               </div>
             </div>
 
-            {/* Feature 6 */}
             <div className="bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-colors">
               <div className="w-12 h-12 bg-cyan-600 rounded-lg flex items-center justify-center mb-4">
                 <FaClock className="w-6 h-6 text-white" />
@@ -475,7 +396,6 @@ export default function UC1() {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            {/* Project 1 */}
             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8">
               <div className="mb-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
@@ -508,7 +428,6 @@ export default function UC1() {
               </div>
             </div>
 
-            {/* Project 2 */}
             <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-8">
               <div className="mb-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
@@ -541,7 +460,6 @@ export default function UC1() {
               </div>
             </div>
 
-            {/* Project 3 */}
             <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-8">
               <div className="mb-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
@@ -592,7 +510,6 @@ export default function UC1() {
             </p>
           </div>
 
-          {/* ROI Simulator Component */}
           <div className="bg-white rounded-xl shadow-lg p-8">
             <AitendersSimulatorFinal useCase="UC1" />
           </div>
