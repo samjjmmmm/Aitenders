@@ -143,6 +143,7 @@ export class TranslationService {
 
   // Initialize all translations from modular files
   async initializeAllTranslations(): Promise<void> {
+    console.log('Initializing translations from modular files...');
     const translationSets = [
       { lang: 'fr', translations: allFrenchTranslations },
       { lang: 'en', translations: allEnglishTranslations },
@@ -151,10 +152,12 @@ export class TranslationService {
     ];
 
     for (const { lang, translations } of translationSets) {
+      console.log(`Loading ${Object.keys(translations).length} translations for ${lang}`);
       for (const [key, value] of Object.entries(translations)) {
         await this.setTranslation(key, lang, value);
       }
     }
+    console.log('All translations initialized successfully');
   }
 }
 

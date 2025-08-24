@@ -609,7 +609,7 @@ export default function UC1Page() {
       {/* Header/Navbar */}
       <Header />
 
-      <div className="page-content">
+      <main className="page-content">
       {/* Hero Section - Professional SaaS Design */}
       <section className="py-12 md:py-16 lg:py-20 xl:py-24 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-white via-slate-50/30 to-blue-50/20 relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
@@ -639,31 +639,42 @@ export default function UC1Page() {
                }}></div>
         </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div 
-            className="flex flex-col items-center text-center space-y-8 md:space-y-12 lg:space-y-16"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ 
-              duration: 0.8, 
-              ease: "easeOut",
-              delay: 0.1
-            }}
-          >
-
+        <div className="content-boundary relative z-10">
+          
             {/* Content UC1 - Top */}
             <div className="w-full max-w-5xl px-4">
-              <div className="mb-12">
-                <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">{t('uc1.hero.badge')}</Badge>
+              <motion.div
+                className="mb-12"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                >
+                  <Badge className="mb-8 md:mb-12 lg:mb-18 bg-gradient-to-r from-blue-50 to-blue-100/80 text-blue-800 border-blue-200/50 text-4xl font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-sm whitespace-nowrap">{t('uc1.hero.badge')}</Badge>
+                </motion.div>
 
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                  {t('uc1.hero.title')} <span className="text-purple-600">{t('uc1.hero.span')}</span>{t('uc1.hero.title2')} <span className="text-purple-600">{t('uc1.hero.span2')}</span>
-                </h1>
+                <motion.h1
+                  className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                >
+                  {t('uc1.hero.title')} <span className="text-purple-600">{t('uc1.hero.span')}</span>
+                </motion.h1>
 
-                <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]">
-                  La seule plateforme pensée pour les petits projets à cycles courts : Agents IA d'analyse des points clés, automatisation d\'une synthèse et validation guidée. Vous transformez des Heures de relecture et d\'analyse en <span className="text-purple-600">{t('uc1.hero.description_span')}</span>, gagnez en sérénité et livrez une offre solide et incontestable — sans surcharge ni faux départs.
-                </p>
-              </div>
+                <motion.p
+                  className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.7 }}
+                >
+                  {t('uc1.hero.description')}
+                </motion.p>
+              </motion.div>
 
               {/* CTA Buttons - Side by Side */}
               <div className="mb-16 flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -712,7 +723,6 @@ export default function UC1Page() {
                 </div>
               </div>
             </motion.div>
-          </motion.div>
         </div>
       </section>
 
@@ -745,7 +755,7 @@ export default function UC1Page() {
                }}></div>
         </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="content-boundary relative z-10">
 
           {/* Main Feature Card */}
           <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-16 lg:p-20 border border-gray-100/50 relative overflow-hidden mb-20 fade-in-up"
@@ -824,7 +834,7 @@ export default function UC1Page() {
                }}></div>
         </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="content-boundary relative z-10">
           <div className="text-center mb-12 md:mb-16 lg:mb-20 fade-in-up">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
               {t('uc1.solution_section.mainTitle')}
@@ -839,21 +849,12 @@ export default function UC1Page() {
 
           {/* Feature 1: Structuration IA immédiate - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 lg:gap-32 items-center mb-16 md:mb-20 lg:mb-24">
-            <div className="order-1 fade-in-left">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                {t('uc1.solution_section.feature1_title')}
-                <span className="text-purple-600">{t('uc1.solution_section.feature1_span')}</span>
-              </h3>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Grâce aux assistants IA, vos documents sont instantanément analysés, classés et priorisés : critères d’intérêt, points critiques et preuves associées sont détectés en quelques minutes.
-                <br /><br />
-                Le Responsable Offre démarre ainsi avec une base claire et exploitable : vision globale du projet, identification des points bloquants éventuels et possibilité de décider quasi immédiatement d’un “go / no‑go”.
+            <div className="order-1 fade-in-left lg:pr-6">
+              <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 leading-[1.1] tracking-tight">{t('uc1.solution_section.feature1_title')}</h3>
+              <p className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 md:mb-8 font-light">
+                {t('uc1.solution_section.feature1_text')}
               </p>
-              <div className="space-y-3 mb-8">
-
-
-              </div>
-              <p className="text-lg font-semibold text-blue-600">
+              <p className="text-base md:text-lg font-semibold text-blue-600">
                 {t('uc1.solution_section.feature1_highlight')}
               </p>
             </div>
@@ -891,19 +892,12 @@ export default function UC1Page() {
                 />
               </div>
             </div>
-            <div className="order-1 lg:order-2 fade-in-right">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                {t('uc1.solution_section.feature2_title')}
-                <span className="text-orange-600">{t('uc1.solution_section.feature2_span')}</span>
-              </h3>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-               Aitenders génère une vue claire et priorisée de l'ensemble des critères détectés, avec leurs valeurs et les liens directs vers les documents sources.
-                <br /><br />
-                Le Responsable Offre n'a plus besoin de parcourir des centaines de pages ou de jongler entre plusieurs fichiers : tout est rassemblé dans une synthèse visuelle, exploitable immédiatement.
+            <div className="order-1 lg:order-2 fade-in-right lg:pl-6">
+              <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 leading-[1.1] tracking-tight">{t('uc1.solution_section.feature2_title')}</h3>
+              <p className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 md:mb-8 font-light">
+                {t('uc1.solution_section.feature2_text')}
               </p>
-              <div className="space-y-3 mb-8">
-              </div>
-              <p className="text-lg font-semibold text-orange-600">
+              <p className="text-base md:text-lg font-semibold text-orange-600">
                 {t('uc1.solution_section.feature2_highlight')}
               </p>
             </div>
@@ -911,21 +905,12 @@ export default function UC1Page() {
 
           {/* Feature 3: Validation guidée - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 lg:gap-32 items-center mb-16 md:mb-20 lg:mb-24">
-            <div className="order-1 fade-in-left">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                {t('uc1.solution_section.feature3_title')}
-                <span className="text-green-600">{t('uc1.solution_section.feature3_span')}</span>
-              </h3>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Aitenders vous guide pas à pas pour confirmer, ajuster ou rejeter chaque élément identifié par l'IA.
-                Chaque validation est automatiquement tracée et historisée, créant un dossier de preuves complet.          
-                <br /><br />
-                Le responsable d'offre passe d'une validation manuelle, lente et incertaine à un processus fluide, sécurisé et incontestable.
+            <div className="order-1 fade-in-left lg:pr-6">
+              <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 leading-[1.1] tracking-tight">{t('uc1.solution_section.feature3_title')}</h3>
+              <p className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 md:mb-8 font-light">
+                {t('uc1.solution_section.feature3_text')}
               </p>
-              <div className="space-y-3 mb-8">
-
-              </div>
-              <p className="text-lg font-semibold text-green-600">
+              <p className="text-base md:text-lg font-semibold text-green-600">
                 {t('uc1.solution_section.feature3_highlight')}
               </p>
             </div>
@@ -950,7 +935,7 @@ export default function UC1Page() {
 
       {/* User-Focused Results Section - Before Additional Features */}
       <section className="py-16 md:py-20 lg:py-24 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className="content-boundary">
 
 
           <div className="mb-20 md:mb-24 lg:mb-28">
@@ -1054,7 +1039,7 @@ export default function UC1Page() {
         </div>
 
         {/* KPI Grid */}
-        <div className="max-w-7xl mx-auto fade-in-up">
+        <div className="content-boundary fade-in-up">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
 
             {/* KPI 1 - Time Reduction */}
@@ -1156,7 +1141,7 @@ export default function UC1Page() {
                }}></div>
         </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="content-boundary relative z-10">
           {/* Section Header */}
           <div className="text-center mb-16 md:mb-20 lg:mb-24 fade-in-up">
             <div className="inline-flex items-center justify-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6 md:mb-8">
@@ -1413,7 +1398,7 @@ export default function UC1Page() {
 
       {/* Real Projects Section */}
       <section className="py-16 md:py-20 lg:py-24 px-4 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
-        <div className="max-w-7xl mx-auto">
+        <div className="content-boundary">
           <div className="text-center mb-12 md:mb-16 lg:mb-20 fade-in-up">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:mb-8 leading-[1.1] tracking-tight">
               {t('uc1.projects.headline1')}
@@ -1646,7 +1631,7 @@ export default function UC1Page() {
         isOpen={isBookingModalOpen}
         onClose={() => setIsBookingModalOpen(false)}
       />
-      </div>
+      </main>
     </div>
   );
 }
