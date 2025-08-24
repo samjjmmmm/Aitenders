@@ -1,103 +1,64 @@
-
 // Traductions communes à toutes les pages
 export const commonFrenchTranslations = {
   // Navigation
   'nav.home': 'Accueil',
   'nav.product': 'Produit',
-  'nav.security': 'Sécurité',
-  'nav.privacy': 'Confidentialité',
+  'nav.pricing': 'Tarifs',
   'nav.contact': 'Contact',
   'nav.demo': 'Démo',
-  
-  // Actions communes
-  'common.button.back': 'Retour',
-  'common.button.next': 'Suivant',
-  'common.button.save': 'Enregistrer',
-  'common.button.cancel': 'Annuler',
-  'common.button.close': 'Fermer',
-  'common.button.learn_more': 'En savoir plus',
-  'common.button.contact': 'Nous contacter',
-  'common.button.demo': 'Réserver une démo',
-  
-  // Messages
-  'common.loading': 'Chargement...',
-  'common.error.generic': 'Une erreur est survenue',
-  'common.success.saved': 'Enregistré avec succès',
-  
-  // Footer
-  'footer.copyright': '© 2024 Aitenders. Tous droits réservés.',
-  'footer.privacy': 'Politique de confidentialité',
-  'footer.terms': 'Conditions d\'utilisation',
+
+  // Common buttons
+  'common.learn_more': 'En savoir plus',
+  'common.get_started': 'Commencer',
+  'common.contact_us': 'Nous contacter',
+  'common.book_demo': 'Réserver une démo',
+  'common.try_free': 'Essayer gratuitement'
 };
 
-// English translations (placeholder)
 export const commonEnglishTranslations = {
+  // Navigation
   'nav.home': 'Home',
   'nav.product': 'Product',
-  'nav.security': 'Security',
-  'nav.privacy': 'Privacy',
+  'nav.pricing': 'Pricing',
   'nav.contact': 'Contact',
   'nav.demo': 'Demo',
-  'common.button.back': 'Back',
-  'common.button.next': 'Next',
-  'common.button.save': 'Save',
-  'common.button.cancel': 'Cancel',
-  'common.button.close': 'Close',
-  'common.button.learn_more': 'Learn more',
-  'common.button.contact': 'Contact us',
-  'common.button.demo': 'Book a demo',
-  'common.loading': 'Loading...',
-  'common.error.generic': 'An error occurred',
-  'common.success.saved': 'Successfully saved',
-  'footer.copyright': '© 2024 Aitenders. All rights reserved.',
-  'footer.privacy': 'Privacy Policy',
-  'footer.terms': 'Terms of Use',
+
+  // Common buttons
+  'common.learn_more': 'Learn more',
+  'common.get_started': 'Get started',
+  'common.contact_us': 'Contact us',
+  'common.book_demo': 'Book a demo',
+  'common.try_free': 'Try for free'
 };
 
-// Spanish translations (placeholder)
 export const commonSpanishTranslations = {
+  // Navigation
   'nav.home': 'Inicio',
   'nav.product': 'Producto',
-  'nav.security': 'Seguridad',
-  'nav.privacy': 'Privacidad',
+  'nav.pricing': 'Precios',
   'nav.contact': 'Contacto',
   'nav.demo': 'Demo',
-  'common.button.back': 'Atrás',
-  'common.button.next': 'Siguiente',
-  'common.button.save': 'Guardar',
-  'common.button.cancel': 'Cancelar',
-  'common.button.close': 'Cerrar',
-  'common.button.learn_more': 'Más información',
-  'common.button.contact': 'Contáctanos',
-  'common.button.demo': 'Reservar demo',
-  'common.loading': 'Cargando...',
-  'common.error.generic': 'Ocurrió un error',
-  'common.success.saved': 'Guardado exitosamente',
-  'footer.copyright': '© 2024 Aitenders. Todos los derechos reservados.',
-  'footer.privacy': 'Política de Privacidad',
-  'footer.terms': 'Términos de Uso',
+
+  // Common buttons
+  'common.learn_more': 'Saber más',
+  'common.get_started': 'Empezar',
+  'common.contact_us': 'Contáctanos',
+  'common.book_demo': 'Reservar demo',
+  'common.try_free': 'Probar gratis'
 };
 
-// German translations (placeholder)
 export const commonGermanTranslations = {
+  // Navigation
   'nav.home': 'Startseite',
   'nav.product': 'Produkt',
-  'nav.security': 'Sicherheit',
-  'nav.privacy': 'Datenschutz',
+  'nav.pricing': 'Preise',
   'nav.contact': 'Kontakt',
   'nav.demo': 'Demo',
-  'common.button.back': 'Zurück',
-  'common.button.next': 'Weiter',
-  'common.button.save': 'Speichern',
-  'common.button.cancel': 'Abbrechen',
-  'common.button.close': 'Schließen',
-  'common.button.learn_more': 'Mehr erfahren',
-  'common.button.contact': 'Kontaktieren Sie uns',
-  'common.button.demo': 'Demo buchen',
-  'common.loading': 'Laden...',
-  'common.error.generic': 'Ein Fehler ist aufgetreten',
-  'common.success.saved': 'Erfolgreich gespeichert',
-  'footer.copyright': '© 2024 Aitenders. Alle Rechte vorbehalten.',
-  'footer.privacy': 'Datenschutzrichtlinie',
-  'footer.terms': 'Nutzungsbedingungen',
+
+  // Common buttons
+  'common.learn_more': 'Mehr erfahren',
+  'common.get_started': 'Loslegen',
+  'common.contact_us': 'Kontakt',
+  'common.book_demo': 'Demo buchen',
+  'common.try_free': 'Kostenlos testen'
 };
