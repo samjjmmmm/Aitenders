@@ -36,9 +36,6 @@ import ClientLogos from "@/components/client-logos";
 import HubSpotBookingModal from "@/components/hubspot-booking-modal";
 import { useGlobalTranslations } from "@/contexts/TranslationContext";
 
-// Import useTranslation hook for i18next
-import { useGlobalTranslations } from "@/contexts/TranslationContext";
-
 
 export default function UC1Page() {
   const { t, currentLanguage, isLoading: translationsLoading } = useGlobalTranslations();
