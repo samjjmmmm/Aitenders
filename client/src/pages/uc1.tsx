@@ -36,9 +36,13 @@ import ClientLogos from "@/components/client-logos";
 import HubSpotBookingModal from "@/components/hubspot-booking-modal";
 import { useGlobalTranslations } from "@/contexts/TranslationContext";
 
+// Import useTranslation hook for i18next
+import { useTranslation } from 'react-i18next';
+
 
 export default function UC1Page() {
-  const { t, currentLanguage } = useGlobalTranslations();
+  // Use the useTranslation hook with the 'uc1' namespace
+  const { t, currentLanguage, isLoading: translationsLoading } = useTranslation('uc1');
   const [selectedTopping, setSelectedTopping] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
@@ -640,7 +644,7 @@ export default function UC1Page() {
         </div>
 
         <div className="content-boundary relative z-10">
-          
+
             {/* Content UC1 - Top */}
             <div className="w-full max-w-5xl px-4">
               <motion.div
