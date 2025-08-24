@@ -444,7 +444,7 @@ export default function UC1Page() {
       icon: MdAccountBox,
       iconColor: 'text-purple-600',
       iconBg: 'bg-purple-100',
-      description: 'Répondez rapidement aux opportunités de petits projets tout en maintenant la qualité et les standards de conformité des offres. Maximisez votre taux de réussite avec des réponses structurées et percutantes en un temps record.',
+      description: 'Répondez rapidement aux opportunités de petits projets tout en maintenant la qualité et les standards de conformité des offres. Maximisez votre taux de succès avec des réponses structurées et percutantes en un temps record.',
       dashboardData: {
         requirements: { progress: 100, color: 'green' },
         coordination: { progress: 78, color: 'blue' },
@@ -1120,7 +1120,6 @@ export default function UC1Page() {
             </div>
           </div>
         </div>
-      </div>
       </section>
 
       {/* Toppings Section - Wow Features & Additional Functionalities */}
