@@ -6,8 +6,48 @@ export const uc1FrenchTranslations = {
   'uc1.hero.title': 'Analyse go/no-go',
   'uc1.hero.span': 'immédiate',
   'uc1.hero.description': 'La seule plateforme conçue pour les projets de petite envergure aux cycles courts (< €1M, < 3 mois). Évaluez instantanément la faisabilité technique, identifiez les risques cachés, et prenez des décisions éclairées avant d\'investir du temps dans la rédaction.',
-  'uc1.hero.demo_button': 'Réserver une démo',
-  'uc1.hero.simulator_button': 'Calculer mon ROI',
+  'uc1.hero.demoButton': 'Réserver une démo',
+  'uc1.hero.downloadButton': 'Télécharger le cas d\'usage →',
+
+  // Pain Points section
+  'uc1.painPoints.headline': 'Go / No-Go immédiat',
+  'uc1.painPoints.headline_span': ', processus interne garanti',
+  'uc1.painPoints.text1': 'Sur les petits projets, la pression est double : analyser rapidement et prouver que tout a été lu, compris et maîtrisé.',
+  'uc1.painPoints.text2': 'Sans support transversal (qualité, juridique), chaque oubli peut coûter cher en marge d\'exécution et donc en crédibilité interne.',
+  'uc1.painPoints.text3': 'Avec Aitenders, obtenez une vision claire et priorisée de vos documents en quelques minutes pour un go/no-go immédiat. La plateforme guide ensuite la validation et archive chaque contrôle, garantissant vos obligations internes sans surcharge.',
+  'uc1.painPoints.contactButton': 'Contact Commercial',
+  'uc1.painPoints.demoButton': 'Voir Démo Rapide',
+
+  // Solution section
+  'uc1.solution_section.mainTitle': 'Votre',
+  'uc1.solution_section.mainTitle_span': 'copilote IA',
+  'uc1.solution_section.mainTitle2': 'qui accélère l\'analyse de vos petits projets',
+  'uc1.solution_section.subtitle': 'Décidez rapidement et prouvez que tout a été contrôlé, en moins de 48h.',
+  
+  'uc1.solution_section.feature1_title': 'Structuration instantanée pour',
+  'uc1.solution_section.feature1_span': '"go / no-go"',
+  'uc1.solution_section.feature1_text': 'Grâce aux assistants IA, vos documents sont instantanément analysés, classés et priorisés : intérêt commercial, faisabilité technique, contraintes réglementaires.',
+  'uc1.solution_section.feature1_highlight': 'immédiat',
+  
+  'uc1.solution_section.feature2_title': 'Validation guidée et traçable',
+  'uc1.solution_section.feature2_text': 'Interface de validation step-by-step qui archive automatiquement chaque décision et justification pour audit interne.',
+  'uc1.solution_section.feature2_highlight': 'step-by-step',
+  
+  'uc1.solution_section.feature3_title': 'Templates et processus personnalisables',
+  'uc1.solution_section.feature3_text': 'Adaptez les grilles d\'analyse à vos spécificités métier et vos standards internes pour une cohérence parfaite.',
+  'uc1.solution_section.feature3_highlight': 'personnalisables',
+
+  // Results section
+  'uc1.results.headline': 'Des décisions 10x plus rapides, 3x plus précises',
+  'uc1.results.subtitle': 'Résultats mesurés sur nos clients qui traitent 50+ petits projets par an',
+  
+  'uc1.results.role1_title': 'Business Developer',
+  'uc1.results.role1_subtitle': 'Spécialisé petits projets publics',
+  'uc1.results.role1_text1': '"Avant Aitenders, je passais 3-4h par DCE pour être sûr de ne rien rater. Maintenant, j\'ai ma réponse go/no-go en 30 minutes avec tous les éléments de justification."',
+  'uc1.results.role1_benefit1': '85% de temps d\'évaluation économisé',
+  'uc1.results.role1_benefit2': '+40% de décisions go/no-go précises',
+  'uc1.results.role1_benefit3': 'x3 plus de projets rentables identifiés',
+  'uc1.results.role1_benefit4': 'Zéro oubli de contrainte critique',
 
   // Pain points section
   'uc1.pain_points.title': 'Le cauchemar des petits projets mal évalués',
@@ -123,8 +163,48 @@ export const uc1EnglishTranslations = {
   'uc1.hero.title': 'Go/no-go analysis',
   'uc1.hero.span': 'immediate',
   'uc1.hero.description': 'The only platform designed for small-scale projects with short cycles (< €1M, < 3 months). Instantly assess technical feasibility, identify hidden risks, and make informed decisions before investing time in writing.',
-  'uc1.hero.demo_button': 'Book a demo',
-  'uc1.hero.simulator_button': 'Calculate my ROI',
+  'uc1.hero.demoButton': 'Book a demo',
+  'uc1.hero.downloadButton': 'Download the use case →',
+
+  // Pain Points section
+  'uc1.painPoints.headline': 'Immediate Go / No-Go',
+  'uc1.painPoints.headline_span': ', guaranteed internal process',
+  'uc1.painPoints.text1': 'On small projects, the pressure is double: analyze quickly and prove everything has been read, understood and controlled.',
+  'uc1.painPoints.text2': 'Without cross-functional support (quality, legal), every oversight can cost dearly in execution margin and thus internal credibility.',
+  'uc1.painPoints.text3': 'With Aitenders, get a clear and prioritized view of your documents in minutes for immediate go/no-go. The platform then guides validation and archives every control, ensuring your internal obligations are met without overload.',
+  'uc1.painPoints.contactButton': 'Commercial Contact',
+  'uc1.painPoints.demoButton': 'See Quick Demo',
+
+  // Solution section
+  'uc1.solution_section.mainTitle': 'Your',
+  'uc1.solution_section.mainTitle_span': 'AI copilot',
+  'uc1.solution_section.mainTitle2': 'that accelerates analysis of your small projects',
+  'uc1.solution_section.subtitle': 'Decide quickly and prove everything has been controlled, in less than 48h.',
+  
+  'uc1.solution_section.feature1_title': 'Instant structuring for immediate',
+  'uc1.solution_section.feature1_span': '"go / no-go"',
+  'uc1.solution_section.feature1_text': 'Thanks to AI assistants, your documents are instantly analyzed, classified and prioritized: commercial interest, technical feasibility, regulatory constraints.',
+  'uc1.solution_section.feature1_highlight': 'immediate',
+  
+  'uc1.solution_section.feature2_title': 'Guided and traceable validation',
+  'uc1.solution_section.feature2_text': 'Step-by-step validation interface that automatically archives every decision and justification for internal audit.',
+  'uc1.solution_section.feature2_highlight': 'step-by-step',
+  
+  'uc1.solution_section.feature3_title': 'Customizable templates and processes',
+  'uc1.solution_section.feature3_text': 'Adapt analysis grids to your business specifics and internal standards for perfect consistency.',
+  'uc1.solution_section.feature3_highlight': 'customizable',
+
+  // Results section
+  'uc1.results.headline': 'Decisions 10x faster, 3x more accurate',
+  'uc1.results.subtitle': 'Results measured on our clients who handle 50+ small projects per year',
+  
+  'uc1.results.role1_title': 'Business Developer',
+  'uc1.results.role1_subtitle': 'Specialized in small public projects',
+  'uc1.results.role1_text1': '"Before Aitenders, I spent 3-4h per RFP to be sure not to miss anything. Now, I have my go/no-go answer in 30 minutes with all justification elements."',
+  'uc1.results.role1_benefit1': '85% evaluation time saved',
+  'uc1.results.role1_benefit2': '+40% accurate go/no-go decisions',
+  'uc1.results.role1_benefit3': 'x3 more profitable projects identified',
+  'uc1.results.role1_benefit4': 'Zero critical constraint oversight',
 
   // Pain points section
   'uc1.pain_points.title': 'The nightmare of poorly evaluated small projects',
@@ -240,8 +320,48 @@ export const uc1SpanishTranslations = {
   'uc1.hero.title': 'Análisis go/no-go',
   'uc1.hero.span': 'inmediato',
   'uc1.hero.description': 'La única plataforma diseñada para proyectos pequeños de ciclos cortos (< €1M, < 3 meses). Evalúe instantáneamente la viabilidad técnica, identifique riesgos ocultos, y tome decisiones informadas antes de invertir tiempo en la redacción.',
-  'uc1.hero.demo_button': 'Reservar demo',
-  'uc1.hero.simulator_button': 'Calcular mi ROI',
+  'uc1.hero.demoButton': 'Reservar demo',
+  'uc1.hero.downloadButton': 'Descargar el caso de uso →',
+
+  // Pain Points section
+  'uc1.painPoints.headline': 'Go / No-Go inmediato',
+  'uc1.painPoints.headline_span': ', proceso interno garantizado',
+  'uc1.painPoints.text1': 'En proyectos pequeños, la presión es doble: analizar rápidamente y demostrar que todo ha sido leído, entendido y controlado.',
+  'uc1.painPoints.text2': 'Sin soporte transversal (calidad, jurídico), cada descuido puede costar caro en margen de ejecución y por tanto en credibilidad interna.',
+  'uc1.painPoints.text3': 'Con Aitenders, obtenga una visión clara y priorizada de sus documentos en minutos para un go/no-go inmediato. La plataforma luego guía la validación y archiva cada control, garantizando sus obligaciones internas sin sobrecarga.',
+  'uc1.painPoints.contactButton': 'Contacto Comercial',
+  'uc1.painPoints.demoButton': 'Ver Demo Rápida',
+
+  // Solution section
+  'uc1.solution_section.mainTitle': 'Su',
+  'uc1.solution_section.mainTitle_span': 'copiloto IA',
+  'uc1.solution_section.mainTitle2': 'que acelera el análisis de sus proyectos pequeños',
+  'uc1.solution_section.subtitle': 'Decida rápidamente y demuestre que todo ha sido controlado, en menos de 48h.',
+  
+  'uc1.solution_section.feature1_title': 'Estructuración instantánea para',
+  'uc1.solution_section.feature1_span': '"go / no-go"',
+  'uc1.solution_section.feature1_text': 'Gracias a los asistentes IA, sus documentos son analizados, clasificados y priorizados instantáneamente: interés comercial, viabilidad técnica, restricciones regulatorias.',
+  'uc1.solution_section.feature1_highlight': 'inmediato',
+  
+  'uc1.solution_section.feature2_title': 'Validación guiada y trazable',
+  'uc1.solution_section.feature2_text': 'Interfaz de validación paso a paso que archiva automáticamente cada decisión y justificación para auditoría interna.',
+  'uc1.solution_section.feature2_highlight': 'paso a paso',
+  
+  'uc1.solution_section.feature3_title': 'Plantillas y procesos personalizables',
+  'uc1.solution_section.feature3_text': 'Adapte las rejillas de análisis a sus especificidades de negocio y estándares internos para una consistencia perfecta.',
+  'uc1.solution_section.feature3_highlight': 'personalizables',
+
+  // Results section
+  'uc1.results.headline': 'Decisiones 10x más rápidas, 3x más precisas',
+  'uc1.results.subtitle': 'Resultados medidos en nuestros clientes que manejan 50+ proyectos pequeños por año',
+  
+  'uc1.results.role1_title': 'Desarrollador de Negocios',
+  'uc1.results.role1_subtitle': 'Especializado en proyectos públicos pequeños',
+  'uc1.results.role1_text1': '"Antes de Aitenders, pasaba 3-4h por licitación para estar seguro de no perder nada. Ahora, tengo mi respuesta go/no-go en 30 minutos con todos los elementos de justificación."',
+  'uc1.results.role1_benefit1': '85% tiempo de evaluación ahorrado',
+  'uc1.results.role1_benefit2': '+40% decisiones go/no-go precisas',
+  'uc1.results.role1_benefit3': 'x3 más proyectos rentables identificados',
+  'uc1.results.role1_benefit4': 'Cero descuido de restricción crítica',
 
   // Pain points section
   'uc1.pain_points.title': 'La pesadilla de los pequeños proyectos mal evaluados',
@@ -357,8 +477,48 @@ export const uc1GermanTranslations = {
   'uc1.hero.title': 'Go/no-go-Analyse',
   'uc1.hero.span': 'sofortig',
   'uc1.hero.description': 'Die einzige Plattform für kleine Projekte mit kurzen Zyklen (< €1M, < 3 Monate). Bewerten Sie sofort die technische Machbarkeit, identifizieren Sie versteckte Risiken und treffen Sie fundierte Entscheidungen, bevor Sie Zeit in die Ausarbeitung investieren.',
-  'uc1.hero.demo_button': 'Demo buchen',
-  'uc1.hero.simulator_button': 'ROI berechnen',
+  'uc1.hero.demoButton': 'Demo buchen',
+  'uc1.hero.downloadButton': 'Use Case herunterladen →',
+
+  // Pain Points section
+  'uc1.painPoints.headline': 'Sofortige Go / No-Go',
+  'uc1.painPoints.headline_span': ', garantierter interner Prozess',
+  'uc1.painPoints.text1': 'Bei kleinen Projekten ist der Druck doppelt: schnell analysieren und beweisen, dass alles gelesen, verstanden und kontrolliert wurde.',
+  'uc1.painPoints.text2': 'Ohne funktionsübergreifende Unterstützung (Qualität, Recht) kann jedes Versehen teuer werden in Ausführungsmarge und damit interner Glaubwürdigkeit.',
+  'uc1.painPoints.text3': 'Mit Aitenders erhalten Sie in Minuten eine klare und priorisierte Sicht auf Ihre Dokumente für sofortige go/no-go. Die Plattform leitet dann die Validierung und archiviert jede Kontrolle, garantiert Ihre internen Verpflichtungen ohne Überlastung.',
+  'uc1.painPoints.contactButton': 'Kommerzieller Kontakt',
+  'uc1.painPoints.demoButton': 'Schnelle Demo sehen',
+
+  // Solution section
+  'uc1.solution_section.mainTitle': 'Ihr',
+  'uc1.solution_section.mainTitle_span': 'KI-Copilot',
+  'uc1.solution_section.mainTitle2': 'der die Analyse Ihrer kleinen Projekte beschleunigt',
+  'uc1.solution_section.subtitle': 'Entscheiden Sie schnell und beweisen Sie, dass alles kontrolliert wurde, in weniger als 48h.',
+  
+  'uc1.solution_section.feature1_title': 'Sofortige Strukturierung für',
+  'uc1.solution_section.feature1_span': '"go / no-go"',
+  'uc1.solution_section.feature1_text': 'Dank KI-Assistenten werden Ihre Dokumente sofort analysiert, klassifiziert und priorisiert: kommerzielles Interesse, technische Machbarkeit, regulatorische Einschränkungen.',
+  'uc1.solution_section.feature1_highlight': 'sofortig',
+  
+  'uc1.solution_section.feature2_title': 'Geführte und nachverfolgbare Validierung',
+  'uc1.solution_section.feature2_text': 'Schritt-für-Schritt-Validierungsschnittstelle, die automatisch jede Entscheidung und Begründung für interne Audits archiviert.',
+  'uc1.solution_section.feature2_highlight': 'Schritt-für-Schritt',
+  
+  'uc1.solution_section.feature3_title': 'Anpassbare Vorlagen und Prozesse',
+  'uc1.solution_section.feature3_text': 'Passen Sie Analyseraster an Ihre Geschäftsspezifika und internen Standards für perfekte Konsistenz an.',
+  'uc1.solution_section.feature3_highlight': 'anpassbar',
+
+  // Results section
+  'uc1.results.headline': 'Entscheidungen 10x schneller, 3x genauer',
+  'uc1.results.subtitle': 'Ergebnisse gemessen an unseren Kunden, die 50+ kleine Projekte pro Jahr bearbeiten',
+  
+  'uc1.results.role1_title': 'Business Developer',
+  'uc1.results.role1_subtitle': 'Spezialisiert auf kleine öffentliche Projekte',
+  'uc1.results.role1_text1': '"Vor Aitenders verbrachte ich 3-4h pro Ausschreibung, um sicher zu sein, nichts zu verpassen. Jetzt habe ich meine go/no-go-Antwort in 30 Minuten mit allen Begründungselementen."',
+  'uc1.results.role1_benefit1': '85% Bewertungszeit gespart',
+  'uc1.results.role1_benefit2': '+40% genaue go/no-go-Entscheidungen',
+  'uc1.results.role1_benefit3': 'x3 mehr profitable Projekte identifiziert',
+  'uc1.results.role1_benefit4': 'Null kritische Einschränkung übersehen',
 
   // Pain points section
   'uc1.pain_points.title': 'Der Alptraum schlecht bewerteter kleiner Projekte',
