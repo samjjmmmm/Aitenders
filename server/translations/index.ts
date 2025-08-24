@@ -41,6 +41,13 @@ import {
   uc1GermanTranslations 
 } from './uc1';
 
+import { 
+  uc2FrenchTranslations, 
+  uc2EnglishTranslations, 
+  uc2SpanishTranslations, 
+  uc2GermanTranslations 
+} from './uc2';
+
 // Combiner toutes les traductions en français (référence)
 export const allFrenchTranslations = {
   ...commonFrenchTranslations,
@@ -48,7 +55,8 @@ export const allFrenchTranslations = {
   ...productFrenchTranslations,
   ...securityFrenchTranslations,
   ...privacyFrenchTranslations,
-  ...uc1FrenchTranslations
+  ...uc1FrenchTranslations,
+  ...uc2FrenchTranslations
 };
 
 // Structure pour les autres langues (à compléter)
@@ -58,7 +66,8 @@ export const allEnglishTranslations = {
   ...productEnglishTranslations,
   ...securityEnglishTranslations,
   ...privacyEnglishTranslations,
-  ...uc1EnglishTranslations
+  ...uc1EnglishTranslations,
+  ...uc2EnglishTranslations
 };
 
 export const allSpanishTranslations = {
@@ -67,7 +76,8 @@ export const allSpanishTranslations = {
   ...productSpanishTranslations,
   ...securitySpanishTranslations,
   ...privacySpanishTranslations,
-  ...uc1SpanishTranslations
+  ...uc1SpanishTranslations,
+  ...uc2SpanishTranslations
 };
 
 export const allGermanTranslations = {
@@ -76,5 +86,6 @@ export const allGermanTranslations = {
   ...productGermanTranslations,
   ...securityGermanTranslations,
   ...privacyGermanTranslations,
-  ...uc1GermanTranslations
+  ...uc1GermanTranslations,
+  ...uc2GermanTranslations
 };
