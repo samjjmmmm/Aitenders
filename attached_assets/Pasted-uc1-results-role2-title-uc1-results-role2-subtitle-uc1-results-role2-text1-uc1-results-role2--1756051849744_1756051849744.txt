@@ -1,0 +1,100 @@
+uc1.results.role2_title
+uc1.results.role2_subtitle
+
+uc1.results.role2_text1
+
+uc1.results.role2_benefit1
+uc1.results.role2_benefit2
+uc1.results.role2_benefit3
+uc1.results.role2_benefit4
+-50% à -70%
+uc1.kpis.metric1_title
+uc1.kpis.metric1_description
+
+100%
+uc1.kpis.metric2_title
+uc1.kpis.metric2_description
+
+uc1.kpis.metric3_title
+uc1.kpis.metric3_subtitle
+uc1.kpis.metric3_description
+
+uc1.features.headline
+uc1.features.title1uc1.features.title2uc1.features.title3
+uc1.features.subtitle
+
+uc1.features.project_summary.title
+uc1.features.project_summary.description
+
+Project Summary
+Cliquez pour détails
+uc1.features.implicit_requirements.title
+uc1.features.implicit_requirements.description
+
+Implicit Requirement Detector
+Cliquez pour détails
+uc1.features.document_summary.title
+uc1.features.document_summary.description
+
+Document Summary
+Cliquez pour détails
+uc1.features.document_hierarchy.title
+uc1.features.document_hierarchy.description
+
+Document Precedence
+Cliquez pour détails
+uc1.features.content_categorization.title
+uc1.features.content_categorization.description
+
+Content Categorization
+Cliquez pour détails
+uc1.features.project_chat.title
+uc1.features.project_chat.description
+
+Chat with Project Data
+Cliquez pour détails
+uc1.features.cta_subtitle
+
+uc1.features.cta_button
+uc1.projects.headline1uc1.projects.headline2
+uc1.projects.subtitle
+
+uc1.projects.project1_title
+uc1.projects.project1_category
+uc1.projects.project1_offer
+uc1.projects.project1_description
+
+uc1.projects.project1_impact_title
+uc1.projects.project1_impact1
+uc1.projects.project1_impact2
+uc1.projects.project1_impact3
+uc1.projects.project1_impact4
+uc1.projects.project2_title
+uc1.projects.project2_category
+uc1.projects.project2_offer
+uc1.projects.project2_description
+
+uc1.projects.project2_impact_title
+uc1.projects.project2_impact1
+uc1.projects.project2_impact2
+uc1.projects.project2_impact3
+uc1.projects.project2_impact4
+uc1.projects.project3_title
+uc1.projects.project3_category
+uc1.projects.project3_offer
+uc1.projects.project3_description
+
+uc1.projects.project3_impact_title
+uc1.projects.project3_impact1
+uc1.projects.project3_impact2
+uc1.projects.project3_impact3
+uc1.projects.project3_impact4
+Vertraut von Branchenführern
+Schließen Sie sich führenden Unternehmen an, die Aitenders vertrauen
+
+VinciEiffageEquansNGESystraPomaVinciEiffageEquansNGESystraPoma
+uc1.roi_simulator.title
+uc1.roi_simulator.headline1uc1.roi_simulator.headline2
+uc1.roi_simulator.subtitle
+
+Simulateur ROI Aitenders
