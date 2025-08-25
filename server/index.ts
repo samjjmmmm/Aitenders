@@ -1,7 +1,7 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
-import { translationService } from './services/translationService';
+import { translationService } from './translations';
 
 const app = express();
 app.use(express.json());
