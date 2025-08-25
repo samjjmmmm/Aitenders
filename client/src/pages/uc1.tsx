@@ -9,6 +9,9 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import Header from "@/components/header";
 import uc1HeroImage from "@assets/UC1 HERO_1756117718476.png";
+import featureImage1 from "@assets/wow 1_1756122537818.png";
+import featureImage2 from "@assets/wow 2_1756122537819.png";
+import featureImage3 from "@assets/wow 3_1756122537813.png";
 
 export default function UC1() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -140,11 +143,12 @@ export default function UC1() {
                 </p>
               </div>
               <div className="lg:w-1/2">
-                <div className="bg-gray-100 rounded-xl p-6 h-80 flex items-center justify-center">
-                  <div className="text-gray-500 text-center">
-                    <FaFileAlt className="w-16 h-16 mx-auto mb-4" />
-                    <p>Interface d'analyse automatique</p>
-                  </div>
+                <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                  <img
+                    src={featureImage1}
+                    alt="Interface d'analyse automatique - Structuration des documents"
+                    className="w-full h-auto rounded-xl shadow-md"
+                  />
                 </div>
               </div>
             </div>
@@ -166,11 +170,12 @@ export default function UC1() {
                 </p>
               </div>
               <div className="lg:w-1/2">
-                <div className="bg-gray-100 rounded-xl p-6 h-80 flex items-center justify-center">
-                  <div className="text-gray-500 text-center">
-                    <FaChartLine className="w-16 h-16 mx-auto mb-4" />
-                    <p>Dashboard de synthèse projet</p>
-                  </div>
+                <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                  <img
+                    src={featureImage2}
+                    alt="Dashboard de synthèse projet - Vision claire et recherche intelligente"
+                    className="w-full h-auto rounded-xl shadow-md"
+                  />
                 </div>
               </div>
             </div>
@@ -192,11 +197,12 @@ export default function UC1() {
                 </p>
               </div>
               <div className="lg:w-1/2">
-                <div className="bg-gray-100 rounded-xl p-6 h-80 flex items-center justify-center">
-                  <div className="text-gray-500 text-center">
-                    <FaArchive className="w-16 h-16 mx-auto mb-4" />
-                    <p>Interface de validation guidée</p>
-                  </div>
+                <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                  <img
+                    src={featureImage3}
+                    alt="Interface de validation guidée - Validation et archivage automatique"
+                    className="w-full h-auto rounded-xl shadow-md"
+                  />
                 </div>
               </div>
             </div>
