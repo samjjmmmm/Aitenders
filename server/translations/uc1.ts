@@ -17,9 +17,9 @@ export const uc1FrenchTranslations = {
   // Pain Points (incl. hero reuse)
   'uc1.painPoints.headline': 'Go / No-Go immédiat',
   'uc1.painPoints.headline_span': 'process interne garanti',
-  'uc1.painPoints.text1': 'alignée avec vos',
+  'uc1.painPoints.text1': 'Sur les petits projets, la pression est double : analyser vite et prouver que tout a été lu, compris et contrôlé.',
   'uc1.painPoints.text2':
-    "Sans support transversal (qualité, juridique), chaque oubli peut coûter cher au marge et décision et en coup de crédibilité interne. Avec Aitenders, vous obtenez en quelques minutes une vision claire et priorisée de vos documents pour un go/no-go",
+    "Sans support transversal (qualité, juridique), chaque oubli peut coûter cher en marge en exécution et du coup en crédibilité interne. Avec Aitenders, vous obtenez en quelques minutes une vision claire et priorisée de vos documents pour un go/no-go",
   'uc1.painPoints.text2_span': ' immédiat',
   'uc1.painPoints.text3':
     "La plateforme guide ensuite la validation et archive chaque contrôle, garantissant que vos obligations internes sont remplies sans surcharge.",
@@ -169,9 +169,9 @@ export const uc1EnglishTranslations = {
   // Pain Points
   'uc1.painPoints.headline': 'Immediate Go / No-Go',
   'uc1.painPoints.headline_span': 'internal process guaranteed',
-  'uc1.painPoints.text1': 'aligned with your',
+  'uc1.painPoints.text1': 'On small projects, the pressure is double: analyze quickly and prove that everything has been read, understood and controlled.',
   'uc1.painPoints.text2':
-    'Without cross-functional support (quality, legal), each oversight can be costly in margin, decision-making and internal credibility. With Aitenders, you get a clear, prioritized view of your documents in minutes for a go/no-go',
+    'Without cross-functional support (quality, legal), each oversight can be costly in margin during execution and consequently in internal credibility. With Aitenders, you get a clear, prioritized view of your documents in minutes for a go/no-go',
   'uc1.painPoints.text2_span': ' decision',
   'uc1.painPoints.text3':
     'The platform then guides validation and archives every check, ensuring internal obligations are met without overload.',
@@ -316,9 +316,9 @@ export const uc1SpanishTranslations = {
   // Pain Points
   'uc1.painPoints.headline': 'Go / No-Go inmediato',
   'uc1.painPoints.headline_span': 'proceso interno garantizado',
-  'uc1.painPoints.text1': 'alineado con sus',
+  'uc1.painPoints.text1': 'En los proyectos pequeños, la presión es doble: analizar rápido y demostrar que todo ha sido leído, comprendido y controlado.',
   'uc1.painPoints.text2':
-    'Sin soporte transversal (calidad, legal), cada olvido puede costar márgenes, decisiones y credibilidad interna. Con Aitenders obtiene en minutos una vista clara y priorizada de sus documentos para un go/no-go',
+    'Sin soporte transversal (calidad, legal), cada olvido puede costar caro en margen durante la ejecución y por tanto en credibilidad interna. Con Aitenders obtiene en minutos una vista clara y priorizada de sus documentos para un go/no-go',
   'uc1.painPoints.text2_span': ' inmediato',
   'uc1.painPoints.text3':
     'La plataforma guía la validación y archiva cada control, garantizando el cumplimiento de obligaciones internas sin sobrecarga.',
@@ -474,9 +474,9 @@ export const uc1GermanTranslations = {
   // Pain Points
   'uc1.painPoints.headline': 'Go / No-Go sofort',
   'uc1.painPoints.headline_span': 'interner Prozess garantiert',
-  'uc1.painPoints.text1': 'im Einklang mit Ihren',
+  'uc1.painPoints.text1': 'Bei kleinen Projekten ist der Druck doppelt: schnell analysieren und beweisen, dass alles gelesen, verstanden und kontrolliert wurde.',
   'uc1.painPoints.text2':
-    'Ohne bereichsübergreifende Unterstützung (Qualität, Recht) kann jeder Fehler Marge, Entscheidungen und interne Glaubwürdigkeit kosten. Mit Aitenders erhalten Sie in Minuten eine klare, priorisierte Sicht für ein Go/No-Go',
+    'Ohne bereichsübergreifende Unterstützung (Qualität, Recht) kann jeder Fehler teuer werden – in der Marge während der Ausführung und folglich in der internen Glaubwürdigkeit. Mit Aitenders erhalten Sie in Minuten eine klare, priorisierte Sicht für ein Go/No-Go',
   'uc1.painPoints.text2_span': ' sofort',
   'uc1.painPoints.text3':
     'Die Plattform führt durch die Validierung und archiviert jeden Check – interne Vorgaben werden ohne Mehraufwand erfüllt.',
