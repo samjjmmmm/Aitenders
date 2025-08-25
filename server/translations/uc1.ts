@@ -78,10 +78,10 @@ export const uc1FrenchTranslations = {
   'uc1.results.testimonial1.text':
     'Obtenez en moins de 48h une analyse complète et documentée, prête à présenter. Vous décidez dès le premier jour grâce à un go / no-go immédiat et démontrez que chaque point a été contrôlé et validé. Cette approche garantit la transparence, réduit les allers‑retours internes et renforce la confiance lors des comités.',
   'uc1.results.testimonial1.benefit1':
-    "Décision éclairée dès J+1 grâce à une analyse instantanée",
-  'uc1.results.testimonial1.benefit2': "Process interne respecté et intégralement tracé",
-  'uc1.results.testimonial1.benefit3': "Transparence totale sur les points critiques",
-  'uc1.results.testimonial1.benefit4': "Crédibilité renforcée lors des comités",
+    'Décision éclairée dès J+1 grâce à une analyse instantanée',
+  'uc1.results.testimonial1.benefit2': 'Process interne respecté et intégralement tracé',
+  'uc1.results.testimonial1.benefit3': 'Transparence totale sur les points critiques',
+  'uc1.results.testimonial1.benefit4': 'Crédibilité renforcée lors des comités',
   'uc1.results.testimonial2.title':
     'Responsable Offre, Chef de Projet, Assistants commercial',
   'uc1.results.testimonial2.subtitle':
@@ -227,13 +227,15 @@ export const uc1EnglishTranslations = {
   'uc1.results_section.kpis.serenity': 'small bids',
   'uc1.results.subtitle': 'Results measured with our most active customers',
   'uc1.results.testimonial1.title':
-    'Sales Director vs. Account Executive',
+    'Sales Director or Bid Director',
+  'uc1.results.testimonial1.subtitle':
+    'Fast decision, validated process, enhanced credibility',
   'uc1.results.testimonial1.text':
-    '"We had a seasoned head of sales… Now we access that level of expertise on every small tender. With four junior reps, the upside is obvious: they now produce expertise previously reserved for veterans."',
-  'uc1.results.testimonial1.benefit1': 'Saved time: up to 80% expertise',
-  'uc1.results.testimonial1.benefit2': 'Analysis accuracy: +60%',
-  'uc1.results.testimonial1.benefit3': 'Wider coverage: 3× more analyses',
-  'uc1.results.testimonial1.benefit4': 'Auto-validation: automatic diagnostics',
+    'Get a complete, documented analysis ready to present in under 48 hours. You decide from day one with an immediate go/no-go and demonstrate that every point has been controlled and validated. This approach ensures transparency, reduces internal back-and-forth, and strengthens trust during committees.',
+  'uc1.results.testimonial1.benefit1': 'Informed decision from D+1 thanks to instant analysis',
+  'uc1.results.testimonial1.benefit2': 'Internal process respected and fully traced',
+  'uc1.results.testimonial1.benefit3': 'Total transparency on critical points',
+  'uc1.results.testimonial1.benefit4': 'Enhanced credibility during committees',
   'uc1.results.testimonial2.title':
     'Bid Manager – Project Lead Assistant (Sales)',
   'uc1.results.testimonial2.text':
@@ -375,16 +377,16 @@ export const uc1SpanishTranslations = {
   'uc1.results.subtitle':
     'Resultados medidos en nuestros clientes más activos',
   'uc1.results.testimonial1.title':
-    'Director Comercial vs. Ejecutivo de Cuentas',
+    'Director Comercial o Director de Ofertas',
+  'uc1.results.testimonial1.subtitle':
+    'Decisión rápida, proceso validado, credibilidad reforzada',
   'uc1.results.testimonial1.text':
-    '"Teníamos un jefe comercial muy experto… Ahora accedemos a ese nivel en cada licitación pequeña. Con cuatro juniors, la ventaja es clara: producen un nivel de pericia antes reservado a veteranos."',
+    'Obtenga en menos de 48h un análisis completo y documentado, listo para presentar. Decide desde el primer día gracias a un go/no-go inmediato y demuestra que cada punto ha sido controlado y validado. Este enfoque garantiza transparencia, reduce los vaivenes internos y refuerza la confianza durante los comités.',
   'uc1.results.testimonial1.benefit1':
-    'Tiempo ahorrado: hasta 80% en pericia',
-  'uc1.results.testimonial1.benefit2': 'Precisión del análisis: +60%',
-  'uc1.results.testimonial1.benefit3':
-    'Cobertura ampliada: 3× más análisis',
-  'uc1.results.testimonial1.benefit4':
-    'Validación automática: diagnóstico automático',
+    'Decisión informada desde D+1 gracias a análisis instantáneo',
+  'uc1.results.testimonial1.benefit2': 'Proceso interno respetado e integralmente trazado',
+  'uc1.results.testimonial1.benefit3': 'Transparencia total sobre puntos críticos',
+  'uc1.results.testimonial1.benefit4': 'Credibilidad reforzada durante comités',
   'uc1.results.testimonial2.title':
     'Responsable de Ofertas – Jefe de Proyecto Asistente Comercial',
   'uc1.results.testimonial2.text':
@@ -533,16 +535,16 @@ export const uc1GermanTranslations = {
   'uc1.results.subtitle':
     'Ergebnisse, gemessen bei unseren aktivsten Kunden',
   'uc1.results.testimonial1.title':
-    'Vertriebsleiter vs. Account Manager',
+    'Vertriebsleiter oder Angebotsleiter',
+  'uc1.results.testimonial1.subtitle':
+    'Schnelle Entscheidung, validierter Prozess, gestärkte Glaubwürdigkeit',
   'uc1.results.testimonial1.text':
-    '"Früher hatten wir einen sehr erfahrenen Vertriebschef… Jetzt erreichen wir dieses Niveau bei jeder kleinen Ausschreibung. Mit vier Juniors ist der Effekt offensichtlich: Expertise wie bei Veteranen."',
+    'Erhalten Sie in unter 48 Stunden eine vollständige, dokumentierte Analyse, die präsentationsbereit ist. Sie entscheiden ab dem ersten Tag dank sofortiger Go/No-Go-Entscheidung und zeigen, dass jeder Punkt kontrolliert und validiert wurde. Dieser Ansatz gewährleistet Transparenz, reduziert interne Abstimmungen und stärkt das Vertrauen in Gremien.',
   'uc1.results.testimonial1.benefit1':
-    'Zeitersparnis: bis zu 80% Expertise',
-  'uc1.results.testimonial1.benefit2': 'Analysegenauigkeit: +60%',
-  'uc1.results.testimonial1.benefit3':
-    'Größere Abdeckung: 3× mehr Analysen',
-  'uc1.results.testimonial1.benefit4':
-    'Auto-Validierung: automatische Diagnose',
+    'Fundierte Entscheidung ab T+1 dank sofortiger Analyse',
+  'uc1.results.testimonial1.benefit2': 'Interner Prozess respektiert und vollständig nachverfolgbar',
+  'uc1.results.testimonial1.benefit3': 'Vollständige Transparenz bei kritischen Punkten',
+  'uc1.results.testimonial1.benefit4': 'Gestärkte Glaubwürdigkeit in Gremien',
   'uc1.results.testimonial2.title':
     'Angebotsleiter – Projektleiter Assistent (Sales)',
   'uc1.results.testimonial2.text':
