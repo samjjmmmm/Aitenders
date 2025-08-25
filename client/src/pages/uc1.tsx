@@ -307,10 +307,8 @@ export default function UC1() {
                 <img
                   src={uc1FirstFeatureImage}
                   alt="Analyse IA - Go/No-Go immédiat pour petits projets"
-                  className="w-full h-auto max-w-[250px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-[450px] rounded-xl md:rounded-2xl shadow-lg md:shadow-2xl"
+                  className="w-full h-auto max-w-[250px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-[450px] rounded-xl md:rounded-2xl shadow-lg md:shadow-2xl scale-[1.2] md:scale-[1.4] drop-shadow-[0_4px_16px_rgba(59,130,246,0.15)] md:drop-shadow-[0_8px_32px_rgba(59,130,246,0.2)]"
                   style={{
-                    transform: 'scale(1.2) md:scale(1.4)',
-                    filter: 'drop-shadow(0 4px 16px rgba(59, 130, 246, 0.15)) md:drop-shadow(0 8px 32px rgba(59, 130, 246, 0.2))',
                     objectFit: 'contain'
                   }}
                 />
@@ -322,11 +320,7 @@ export default function UC1() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 lg:gap-16 xl:gap-20 items-center mb-10 md:mb-16 lg:mb-20 xl:mb-24">
             <div className="order-2 lg:order-1 fade-in-left lg:pr-6">
               <div className="flex justify-center items-center h-full">
-                <div className="w-full h-auto max-w-[250px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-[450px] rounded-xl md:rounded-2xl shadow-lg md:shadow-2xl bg-gradient-to-br from-green-50 to-emerald-50 p-8 flex items-center justify-center"
-                     style={{
-                       transform: 'scale(1.2) md:scale(1.4)',
-                       filter: 'drop-shadow(0 4px 16px rgba(34, 197, 94, 0.15)) md:drop-shadow(0 8px 32px rgba(34, 197, 94, 0.2))'
-                     }}>
+                <div className="w-full h-auto max-w-[250px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-[450px] rounded-xl md:rounded-2xl shadow-lg md:shadow-2xl bg-gradient-to-br from-green-50 to-emerald-50 p-8 flex items-center justify-center scale-[1.2] md:scale-[1.4] drop-shadow-[0_4px_16px_rgba(34,197,94,0.15)] md:drop-shadow-[0_8px_32px_rgba(34,197,94,0.2)]">
                   <div className="text-center">
                     <FaRocket className="w-12 h-12 text-green-600 mx-auto mb-4" />
                     <p className="text-sm font-semibold text-green-800">Templates Intelligents</p>
