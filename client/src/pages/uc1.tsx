@@ -127,12 +127,14 @@ export default function UC1() {
             </h2>
 
             <p className="text-lg text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-              {t('uc1.painPoints.text1') || 'Sur les petits projets, la pression est double : analyser vite et prouver que tout a été lu, compris et contrôlé.'}
+              Sur les petits projets, la pression est double : analyser vite et prouver que tout a été lu, compris et contrôlé.
             </p>
 
             <p className="text-lg text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-              {t('uc1.painPoints.text2') || 'Sans support transversal (qualité, juridique), chaque oubli peut coûter cher au marge et décision et en coup de crédibilité interne. Avec Aitenders, vous obtenez en quelques minutes une vision claire et priorisée de vos documents pour un go/no-go'}
-              <span className="font-semibold">{t('uc1.painPoints.text2_span') || ' immédiat'}</span>. {t('uc1.painPoints.text3') || 'La plateforme guide ensuite la validation et archive chaque contrôle, garantissant que vos obligations internes sont remplies sans surcharge.'}
+              Sans support transversal (qualité, juridique), chaque oubli peut coûter cher en marge en exécution et du coup en crédibilité interne. 
+              Avec Aitenders, vous obtenez en quelques minutes une vision claire et priorisée de vos documents pour un go/no-go 
+              <span className="font-semibold">immédiat</span>. La plateforme guide ensuite la validation et archive chaque contrôle, garantissant que vos obligations 
+              internes sont remplies sans surcharge.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
