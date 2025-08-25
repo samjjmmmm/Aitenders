@@ -113,20 +113,13 @@ export default function UC1() {
                   Structuration instantanée pour un premier "go / no-go" <span className="text-blue-600">immédiat</span>
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  Grâce aux assistants IA, vos documents sont instantanément analysés, classés et priorisés : intérêt commercial, faisabilité technique, contraintes réglementaires.
+                  Grâce aux assistants IA, vos documents sont instantanément analysés, classés et priorisés : critères d’intérêt, points critiques et preuves associées sont détectés en quelques minutes.
+
+                  Le Responsable Offre démarre ainsi avec une base claire et exploitable : vision globale du projet, identification des points bloquants éventuels et possibilité de décider quasi immédiatement d’un “go / no‑go”
                 </p>
                 <ul className="text-gray-600 space-y-2">
                   <li className="flex items-start">
-                    <FaCheckCircle className="w-5 h-5 text-green-500 mr-2 mt-1" />
-                    Le DCE contient-il des éléments critiques ?
-                  </li>
-                  <li className="flex items-start">
-                    <FaCheckCircle className="w-5 h-5 text-green-500 mr-2 mt-1" />
-                    Sommes-nous équipés pour ce que nous proposons ?
-                  </li>
-                  <li className="flex items-start">
-                    <FaCheckCircle className="w-5 h-5 text-green-500 mr-2 mt-1" />
-                    Comprenons-nous tous les enjeux finalisés ?
+                    
                   </li>
                 </ul>
                 <div className="mt-6">
