@@ -12,7 +12,7 @@ import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import Header from "@/components/header";
 import uc1HeroImage from "@assets/UC1 HERO_1755876730972.png";
-import uc1FirstFeatureImage from "@assets/uc1-hero-image.png";
+import uc1FirstFeatureImage from "@assets/UC1_1755784114648.png";
 
 export default function UC1() {
   const { t } = useGlobalTranslations();
