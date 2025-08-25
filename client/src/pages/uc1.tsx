@@ -127,23 +127,22 @@ export default function UC1() {
             </h2>
 
             <p className="text-lg text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-              Sur les petits projets, la pression est double : analyser vite et prouver que tout a été lu, compris et contrôlé.
+              {t('uc1.painPoints.text1') || 'Sur les petits projets, la pression est double : analyser vite et prouver que tout a été lu, compris et contrôlé.'}
             </p>
 
             <p className="text-lg text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-              Sans support transversal (qualité, juridique), chaque oubli peut coûter cher en marge en exécution et du coup en crédibilité interne. 
-              Avec Aitenders, vous obtenez en quelques minutes une vision claire et priorisée de vos documents pour un go/no-go 
-              <span className="font-semibold">immédiat</span>. La plateforme guide ensuite la validation et archive chaque contrôle, garantissant que vos obligations 
-              internes sont remplies sans surcharge.
+              {t('uc1.painPoints.text2') || 'Sans support transversal (qualité, juridique), chaque oubli peut coûter cher en marge et décision et en coup de crédibilité interne.'} 
+              {t('uc1.painPoints.text3') || 'Avec Aitenders, vous obtenez en quelques minutes une vision claire et priorisée de vos documents pour un go/no-go'} 
+              <span className="font-semibold">{t('uc1.painPoints.text2_span') || 'immédiat'}</span>. {t('uc1.painPoints.text3') || 'La plateforme guide ensuite la validation et archive chaque contrôle, garantissant que vos obligations internes sont remplies sans surcharge.'}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 font-medium">
-                Boostez Vos Petits Projets!
+                {t('uc1.painPoints.optimizeButton') || 'Boostez Vos Petits Projets!'}
               </Button>
 
               <Button variant="outline" className="border-blue-300 text-blue-600 hover:bg-blue-50 px-8 py-3 font-medium">
-                → Voir la Démo Rapide
+                {t('uc1.painPoints.demoButton') || '→ Voir la Démo Rapide'}
               </Button>
             </div>
           </Card>
@@ -185,10 +184,10 @@ export default function UC1() {
                   {t('uc1.solution_section.feature1_text') || 'Grâce aux assistants IA, vos documents sont instantanément analysés, classés et priorisés : critères d\'intérêt, points critiques et preuves associées sont détectés en quelques minutes.'}
                 </p>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  Le Responsable Offre démarre ainsi avec une base claire et exploitable : vision globale du projet, identification des points bloquants éventuels et possibilité de décider quasi immédiatement d'un "go / no-go".
+                  {t('uc1.solution_section.feature1_text2') || 'Le Responsable Offre démarre ainsi avec une base claire et exploitable : vision globale du projet, identification des points bloquants éventuels et possibilité de décider quasi immédiatement d\'un "go / no-go".'}
                 </p>
                 <p className="text-lg font-semibold text-blue-600">
-                  Votre analyse prête avant même la première réunion
+                  {t('uc1.solution_section.feature1_highlight2') || 'Votre analyse prête avant même la première réunion'}
                 </p>
               </div>
               <div className="lg:w-1/2">
@@ -444,8 +443,7 @@ export default function UC1() {
                 <Badge className="bg-blue-500/20 text-blue-300 px-2 py-1 text-xs border border-blue-400/30 flex-shrink-0">
 {t('uc1.advanced.feature1.tag') || 'Project Summary ✨'}
                 </Badge>
-                <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200 text-right flex-shrink-0">Cliquez pour
-                détails</span>
+                <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200 text-right flex-shrink-0">{t('uc1.advanced.clickDetails') || 'Cliquez pour détails'}</span>
               </div>
             </div>
 
@@ -462,8 +460,7 @@ export default function UC1() {
                 <Badge className="bg-green-500/20 text-green-300 px-2 py-1 text-xs border border-green-400/30 flex-shrink-0">
                   Implicit Requirements ⚠️
                 </Badge>
-                <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200 text-right flex-shrink-0">Cliquez pour
-                détails</span>
+                <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200 text-right flex-shrink-0">{t('uc1.advanced.clickDetails') || 'Cliquez pour détails'}</span>
               </div>
             </div>
 
@@ -474,14 +471,13 @@ export default function UC1() {
               </div>
               <h3 className="text-lg font-semibold mb-3 text-white">{t('uc1.advanced.feature3.title') || 'Résumé intelligent de chaque document'}</h3>
               <p className="text-purple-100 text-sm mb-4 leading-relaxed">
-                Chaque document est résumé en quelques lignes, disponible dans le doc center et réutilisable par l'IA.
+                {t('uc1.advanced.feature3.desc') || 'Chaque document est résumé en quelques lignes, disponible dans le doc center et réutilisable par l\'IA.'}
               </p>
               <div className="flex items-start justify-between gap-2">
                 <Badge className="bg-orange-500/20 text-orange-300 px-2 py-1 text-xs border border-orange-400/30 flex-shrink-0">
                   Document Summary ✓
                 </Badge>
-                <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200 text-right flex-shrink-0">Cliquez pour
-                détails</span>
+                <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200 text-right flex-shrink-0">{t('uc1.advanced.clickDetails') || 'Cliquez pour détails'}</span>
               </div>
             </div>
 
@@ -492,7 +488,7 @@ export default function UC1() {
               </div>
               <h3 className="text-lg font-semibold mb-3 text-white">{t('uc1.advanced.feature4.title') || 'Gestion dynamique de la hiérarchie documentaire'}</h3>
               <p className="text-purple-100 text-sm mb-4 leading-relaxed">
-                Les documents sont automatiquement classés selon leur importance, définie par l'utilisateur ou l'IA.
+                {t('uc1.advanced.feature4.desc') || 'Les documents sont automatiquement classés selon leur importance, définie par l\'utilisateur ou l\'IA.'}
               </p>
               <div className="flex items-start justify-between gap-2">
                 <Badge className="bg-purple-500/20 text-purple-300 px-2 py-1 text-xs border border-purple-400/30 flex-shrink-0">
@@ -510,7 +506,7 @@ détails</span>
               </div>
               <h3 className="text-lg font-semibold mb-3 text-white">{t('uc1.advanced.feature5.title') || 'Catégorisation intelligente & arbre thématique'}</h3>
               <p className="text-purple-100 text-sm mb-4 leading-relaxed">
-                Les informations sont automatiquement classées par thème (juridique, technique, planning...) et restituées sous forme d'arbre visuel.
+                {t('uc1.advanced.feature5.desc') || 'Les informations sont automatiquement classées par thème (juridique, technique, planning...) et restituées sous forme d\'arbre visuel.'}
               </p>
               <div className="flex items-start justify-between gap-2">
                 <Badge className="bg-pink-500/20 text-pink-300 px-2 py-1 text-xs border border-pink-400/30 flex-shrink-0">
@@ -528,7 +524,7 @@ détails</span>
               </div>
               <h3 className="text-lg font-semibold mb-3 text-white">{t('uc1.advanced.feature6.title') || 'Chat contextuel avec le projet'}</h3>
               <p className="text-purple-100 text-sm mb-4 leading-relaxed">
-                L'utilisateur interroge son projet en langage naturel ("Quelle sont les critères de sélection ?", "Y a-t-il une clause pénale ?") et obtient une réponse directe avec la source.
+                {t('uc1.advanced.feature6.desc') || 'L\'utilisateur interroge son projet en langage naturel ("Quelle sont les critères de sélection ?", "Y a-t-il une clause pénale ?") et obtient une réponse directe avec la source.'}
               </p>
               <div className="flex items-start justify-between gap-2">
                 <Badge className="bg-red-500/20 text-red-300 px-2 py-1 text-xs border border-red-400/30 flex-shrink-0">
