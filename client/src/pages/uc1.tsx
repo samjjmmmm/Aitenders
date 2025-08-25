@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import Header from "@/components/header";
+import uc1HeroImage from "@assets/UC1 HERO_1756117718476.png";
 
 export default function UC1() {
   const [isModalOpen, setIsModalOpen] = useState(false);
