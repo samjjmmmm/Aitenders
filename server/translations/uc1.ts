@@ -373,10 +373,10 @@ export const uc1SpanishTranslations = {
     'Fin de las zonas grises: todo validado y trazable.',
 
   // Results
-  'uc1.results.headline': 'Lo que obtienen nuestros usuarios en',
+  'uc1.results.headline': 'Lo que los usuarios logran en',
   'uc1.results_section.kpis.serenity': 'ofertas pequeñas',
   'uc1.results.subtitle':
-    'Resultados medidos en nuestros clientes más activos',
+    'Resultados medidos con nuestros clientes más activos',
   'uc1.results.testimonial1.title':
     'Director Comercial o Director de Ofertas',
   'uc1.results.testimonial1.subtitle':
@@ -529,10 +529,10 @@ export const uc1GermanTranslations = {
     'Keine Grauzonen mehr: alles validiert und nachverfolgbar.',
 
   // Results
-  'uc1.results.headline': 'Was unsere Nutzer bei',
+  'uc1.results.headline': 'Was Nutzer bei',
   'uc1.results_section.kpis.serenity': 'kleinen Angeboten erreichen',
   'uc1.results.subtitle':
-    'Ergebnisse, gemessen bei unseren aktivsten Kunden',
+    'Ergebnisse gemessen mit unseren aktivsten Kunden',
   'uc1.results.testimonial1.title':
     'Vertriebsleiter oder Angebotsleiter',
   'uc1.results.testimonial1.subtitle':
