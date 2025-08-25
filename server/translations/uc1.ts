@@ -72,7 +72,9 @@ export const uc1FrenchTranslations = {
   'uc1.results_section.kpis.serenity': 'petites offres',
   'uc1.results.subtitle': 'Des résultats mesurés sur nos clients les plus actifs',
   'uc1.results.testimonial1.title':
-    'Directeur Commercial vs Chargé des Affaires',
+    'Directeur Commercial ou Directeur des Offres',
+  'uc1.results.testimonial1.subtitle':
+    'Décision rapide, process validé, crédibilité renforcée',
   'uc1.results.testimonial1.text':
     'Obtenez en moins de 48h une analyse complète et documentée, prête à présenter. Vous décidez dès le premier jour grâce à un go / no-go immédiat et démontrez que chaque point a été contrôlé et validé. Cette approche garantit la transparence, réduit les allers‑retours internes et renforce la confiance lors des comités.',
   'uc1.results.testimonial1.benefit1':
@@ -82,6 +84,8 @@ export const uc1FrenchTranslations = {
   'uc1.results.testimonial1.benefit4': "Crédibilité renforcée lors des comités",
   'uc1.results.testimonial2.title':
     'Responsable Offre, Chef de Projet, Assistants commercial',
+  'uc1.results.testimonial2.subtitle':
+    'Analyse rapide, validation fluide, sérénité retrouvée',
   'uc1.results.testimonial2.text':
     'Travaillez dès le premier jour sur une base IA déjà structurée et priorisée, sans retraitement manuel. Vous disposez d\'une vue synthétique et actionnable des points à valider, d\'un accès immédiat aux preuves et d\'un suivi clair de vos validations. Résultat : moins de stress, un gain de temps massif et la capacité de démontrer à tout moment que tout a été contrôlé et tracé.',
   'uc1.results.testimonial2.benefit1':

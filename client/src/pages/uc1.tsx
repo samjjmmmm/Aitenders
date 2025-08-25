@@ -293,9 +293,14 @@ export default function UC1() {
             <Card className="bg-blue-50 border-blue-200 p-8">
               <div className="flex items-center mb-4">
                 <FaCheckCircle className="w-6 h-6 text-blue-600 mr-2" />
-                <h3 className="text-xl font-semibold text-gray-900">
-                  {t('uc1.results.testimonial1.title') || 'Directeur Commercial vs Chargé des Affaires'}
-                </h3>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {t('uc1.results.testimonial1.title') || 'Directeur Commercial ou Directeur des Offres'}
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    {t('uc1.results.testimonial1.subtitle') || 'Décision rapide, process validé, crédibilité renforcée'}
+                  </p>
+                </div>
               </div>
               <p className="text-gray-700 mb-6">
                 {t('uc1.results.testimonial1.text') || '"Nous avions un chef commercial apte, confirmé... Maintenant nous avons accès à son niveau d\'expertise sur chaque petit appel d\'offres. Le gain sur une équipe de 4 commerciaux junior devient évident : ils produisent maintenant un niveau d\'expertise que seuls les experts expérimentés maîtrisent"'}
@@ -324,9 +329,14 @@ export default function UC1() {
             <Card className="bg-green-50 border-green-200 p-8">
               <div className="flex items-center mb-4">
                 <FaCheckCircle className="w-6 h-6 text-green-600 mr-2" />
-                <h3 className="text-xl font-semibold text-gray-900">
-                  {t('uc1.results.testimonial2.title') || 'Responsable offres - Chef du Projet Assistant commercial'}
-                </h3>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {t('uc1.results.testimonial2.title') || 'Responsable Offre, Chef de Projet, Assistants commercial'}
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    {t('uc1.results.testimonial2.subtitle') || 'Analyse rapide, validation fluide, sérénité retrouvée'}
+                  </p>
+                </div>
               </div>
               <p className="text-gray-700 mb-6">
                 {t('uc1.results.testimonial2.text') || '"Une révolution complète sur notre capacité d\'\u00eatre réactif. Avant, je finissais par refuser des offres intéressantes faute de temps d\'analyse. Maintenant, je traite en quelques minutes ce qui me demandait des heures, sans perdre en qualité. La validation interne est transparente : chaque contrôle est documenté."'}
