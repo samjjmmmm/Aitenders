@@ -177,9 +177,7 @@ export default function UC1() {
               viewport={{ once: true }}
             >
               <div className="lg:w-1/2">
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                  <span dangerouslySetInnerHTML={{ __html: t('uc1.solution_section.feature1_title') || 'Structuration instantanée pour un<br />premier "go / no-go"' }} /> <span className="text-purple-600">{t('uc1.solution_section.feature1_highlight') || 'immédiat'}</span>
-                </h3>
+                
                 <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                   {t('uc1.solution_section.feature1_text') || 'Grâce aux assistants IA, vos documents sont instantanément analysés, classés et priorisés : critères d\'intérêt, points critiques et preuves associées sont détectés en quelques minutes.'}
                 </p>
