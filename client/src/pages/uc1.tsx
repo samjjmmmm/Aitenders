@@ -68,9 +68,7 @@ export default function UC1() {
 
             {/* Main Title */}
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-              {t('uc1.hero.title') || 'Une analyse go/no-go'} <span className="text-purple-600">{t('uc1.hero.span') || 'immédiate'}</span>,
-              <br />
-              {t('uc1.painPoints.text1') || 'alignée avec vos'} <span className="text-purple-600">{t('uc1.hero.span2') || 'processus interne'}</span>.
+              Une analyse go/no go <span className="text-purple-600">immédiate</span>, alignée avec vos <span className="text-purple-600">processus interne</span>.
             </h1>
             
             {/* Body Copy */}
