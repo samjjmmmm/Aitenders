@@ -123,26 +123,7 @@ export const uc1FrenchTranslations = {
   'uc1.painPoints.contactButton': 'Contact Commercial',
   'uc1.painPoints.demoButton': 'Voir Démo Rapide',
 
-  // Solution section
-  'uc1.solution_section.mainTitle': 'Votre',
-  'uc1.solution_section.mainTitle_span': 'copilote IA',
-  'uc1.solution_section.mainTitle2': 'qui accélère l\'analyse de vos petits projets',
-  'uc1.solution_section.subtitle': 'Décidez rapidement et prouvez que tout a été contrôlé, en moins de 48h.',
-  
-  'uc1.solution_section.feature1_title': 'Structuration instantanée pour',
-  'uc1.solution_section.feature1_span': '"go / no-go"',
-  'uc1.solution_section.feature1_text': 'Grâce aux assistants IA, vos documents sont instantanément analysés, classés et priorisés : intérêt commercial, faisabilité technique, contraintes réglementaires.',
-  'uc1.solution_section.feature1_highlight': 'immédiat',
-  
-  'uc1.solution_section.feature2_title': 'Validation guidée et traçable',
-  'uc1.solution_section.feature2_text': 'Interface de validation step-by-step qui archive automatiquement chaque décision et justification pour audit interne.',
-  'uc1.solution_section.feature2_highlight': 'step-by-step',
-  
-  'uc1.solution_section.feature3_title': 'Templates et processus personnalisables',
-  'uc1.solution_section.feature3_text': 'Adaptez les grilles d\'analyse à vos spécificités métier et vos standards internes pour une cohérence parfaite.',
-  'uc1.solution_section.feature3_highlight': 'personnalisables',
-
-  // Results section
+  // Results section aliases  
   'uc1.results.headline': 'Des décisions 10x plus rapides, 3x plus précises',
   'uc1.results.subtitle': 'Résultats mesurés sur nos clients qui traitent 50+ petits projets par an',
   
