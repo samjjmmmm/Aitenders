@@ -303,24 +303,24 @@ export default function UC1() {
                 </div>
               </div>
               <p className="text-gray-700 mb-6">
-                {t('uc1.results.testimonial1.text') || '"Nous avions un chef commercial apte, confirmé... Maintenant nous avons accès à son niveau d\'expertise sur chaque petit appel d\'offres. Le gain sur une équipe de 4 commerciaux junior devient évident : ils produisent maintenant un niveau d\'expertise que seuls les experts expérimentés maîtrisent"'}
+                {t('uc1.results.testimonial1.text') || 'Obtenez en moins de 48h une analyse complète et documentée, prête à présenter. Vous décidez dès le premier jour grâce à un go / no-go immédiat et démontrez que chaque point a été contrôlé et validé. Cette approche garantit la transparence, réduit les allers‑retours internes et renforce la confiance lors des comités.'}
               </p>
               <div className="space-y-2">
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
-                  {t('uc1.results.testimonial1.benefit1') || 'Temps économisé: jusqu\'\u00e0 80% d\'expertise'}
+                  {t('uc1.results.testimonial1.benefit1') || 'Décision éclairée dès J+1 grâce à une analyse instantanée'}
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
-                  {t('uc1.results.testimonial1.benefit2') || 'Précision dans l\'analyse: +60%'}
+                  {t('uc1.results.testimonial1.benefit2') || 'Process interne respecté et intégralement tracé'}
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
-                  {t('uc1.results.testimonial1.benefit3') || 'Couverture étendue: +3x plus d\'analyses'}
+                  {t('uc1.results.testimonial1.benefit3') || 'Transparence totale sur les points critiques'}
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
-                  {t('uc1.results.testimonial1.benefit4') || 'Validation Auto: Diagnostic automatique'}
+                  {t('uc1.results.testimonial1.benefit4') || 'Crédibilité renforcée lors des comités'}
                 </div>
               </div>
             </Card>
@@ -329,29 +329,34 @@ export default function UC1() {
             <Card className="bg-green-50 border-green-200 p-8">
               <div className="flex items-center mb-4">
                 <FaCheckCircle className="w-6 h-6 text-green-600 mr-2" />
-                <h3 className="text-xl font-semibold text-gray-900">
-                  {t('uc1.results.testimonial2.title') || 'Responsable offres - Chef du Projet Assistant commercial'}
-                </h3>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {t('uc1.results.testimonial2.title') || 'Responsable Offre, Chef de Projet, Assistants commercial'}
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    {t('uc1.results.testimonial2.subtitle') || 'Analyse rapide, validation fluide, sérénité retrouvée'}
+                  </p>
+                </div>
               </div>
               <p className="text-gray-700 mb-6">
-                {t('uc1.results.testimonial2.text') || '"Une révolution complète sur notre capacité d\'\u00eatre réactif. Avant, je finissais par refuser des offres intéressantes faute de temps d\'analyse. Maintenant, je traite en quelques minutes ce qui me demandait des heures, sans perdre en qualité. La validation interne est transparente : chaque contrôle est documenté."'}
+                {t('uc1.results.testimonial2.text') || 'Travaillez dès le premier jour sur une base IA déjà structurée et priorisée, sans retraitement manuel. Vous disposez d\'une vue synthétique et actionnable des points à valider, d\'un accès immédiat aux preuves et d\'un suivi clair de vos validations. Résultat : moins de stress, un gain de temps massif et la capacité de démontrer à tout moment que tout a été contrôlé et tracé.'}
               </p>
               <div className="space-y-2">
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
-                  {t('uc1.results.testimonial2.benefit1') || 'Temps de traitement des offres réduit'}
+                  {t('uc1.results.testimonial2.benefit1') || 'Moins de relectures, plus de décisions stratégiques'}
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
-                  {t('uc1.results.testimonial2.benefit2') || 'Traitement rapide: Tout devient facile'}
+                  {t('uc1.results.testimonial2.benefit2') || 'Chaque point couvert, chaque preuve archivée'}
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
-                  {t('uc1.results.testimonial2.benefit3') || '+150% de fréquence d\'offres traitées'}
+                  {t('uc1.results.testimonial2.benefit3') || 'Crédibilité renforcée face aux décideurs internes'}
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
-                  {t('uc1.results.testimonial2.benefit4') || 'Validation interne: Diagnostic automatisé'}
+                  {t('uc1.results.testimonial2.benefit4') || 'Validation fluide et intégralement documentée'}
                 </div>
               </div>
             </Card>
