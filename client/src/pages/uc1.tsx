@@ -3,12 +3,10 @@ import { FaCheckCircle, FaLightbulb, FaEye, FaArchive, FaFileAlt, FaChartLine, F
 import { AitendersSimulatorFinal } from "@/components/aitenders-simulator-final";
 import ClientLogos from "@/components/client-logos";
 import HubSpotBookingModal from "@/components/hubspot-booking-modal";
-import ChatInterface from "@/components/chat-interface";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import Header from "@/components/header";
-import uc1HeroImage from "@assets/uc1-hero-final.png";
 
 export default function UC1() {
   const [isModalOpen, setIsModalOpen] = useState(false);
