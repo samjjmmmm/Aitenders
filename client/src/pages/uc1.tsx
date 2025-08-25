@@ -292,32 +292,32 @@ export default function UC1() {
                 <FaCheckCircle className="w-6 h-6 text-blue-600 mr-2" />
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900">
-                    Directeur Commercial ou Directeur des Offres
+                    {t('uc1.results.testimonial1.title') || 'Directeur Commercial ou Directeur des Offres'}
                   </h3>
                   <p className="text-sm text-gray-600">
-                    Décision rapide, process validé, crédibilité renforcée
+                    {t('uc1.results.testimonial1.subtitle') || 'Décision rapide, process validé, crédibilité renforcée'}
                   </p>
                 </div>
               </div>
               <p className="text-gray-700 mb-6">
-                Obtenez en moins de 48h une analyse complète et documentée, prête à présenter. Vous décidez dès le premier jour grâce à un go / no-go immédiat et démontrez que chaque point a été contrôlé et validé. Cette approche garantit la transparence, réduit les allers-retours internes et renforce la confiance lors des comités.
+                {t('uc1.results.testimonial1.content') || 'Obtenez en moins de 48h une analyse complète et documentée, prête à présenter. Vous décidez dès le premier jour grâce à un go / no-go immédiat et démontrez que chaque point a été contrôlé et validé. Cette approche garantit la transparence, réduit les allers-retours internes et renforce la confiance lors des comités.'}
               </p>
               <div className="space-y-2">
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
-                  Décision éclairée dès J+1 grâce à une analyse instantanée
+                  {t('uc1.results.testimonial1.point1') || 'Décision éclairée dès J+1 grâce à une analyse instantanée'}
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
-                  Process interne respecté et intégralement tracé
+                  {t('uc1.results.testimonial1.point2') || 'Process interne respecté et intégralement tracé'}
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
-                  Transparence totale sur les points critiques
+                  {t('uc1.results.testimonial1.point3') || 'Transparence totale sur les points critiques'}
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
-                  Crédibilité renforcée lors des comités
+                  {t('uc1.results.testimonial1.point4') || 'Crédibilité renforcée lors des comités'}
                 </div>
               </div>
             </Card>
@@ -328,32 +328,32 @@ export default function UC1() {
                 <FaCheckCircle className="w-6 h-6 text-green-600 mr-2" />
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900">
-                    Responsable Offre, Chef de Projet, Assistants commercial
+                    {t('uc1.results.testimonial2.title') || 'Responsable Offre, Chef de Projet, Assistants commercial'}
                   </h3>
                   <p className="text-sm text-gray-600">
-                    Analyse rapide, validation fluide, sérénité retrouvée
+                    {t('uc1.results.testimonial2.subtitle') || 'Analyse rapide, validation fluide, sérénité retrouvée'}
                   </p>
                 </div>
               </div>
               <p className="text-gray-700 mb-6">
-                Travaillez dès le premier jour sur une base IA déjà structurée et priorisée, sans retraitement manuel. Vous disposez d'une vue synthétique et actionnable des points à valider, d'un accès immédiat aux preuves et d'un suivi clair de vos validations. Résultat : moins de stress, un gain de temps massif et la capacité de démontrer à tout moment que tout a été contrôlé et tracé.
+                {t('uc1.results.testimonial2.content') || 'Travaillez dès le premier jour sur une base IA déjà structurée et priorisée, sans retraitement manuel. Vous disposez d\'une vue synthétique et actionnable des points à valider, d\'un accès immédiat aux preuves et d\'un suivi clair de vos validations. Résultat : moins de stress, un gain de temps massif et la capacité de démontrer à tout moment que tout a été contrôlé et tracé.'}
               </p>
               <div className="space-y-2">
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
-                  Moins de relectures, plus de décisions stratégiques
+                  {t('uc1.results.testimonial2.point1') || 'Moins de relectures, plus de décisions stratégiques'}
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
-                  Chaque point couvert, chaque preuve archivée
+                  {t('uc1.results.testimonial2.point2') || 'Chaque point couvert, chaque preuve archivée'}
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
-                  Crédibilité renforcée face aux décideurs internes
+                  {t('uc1.results.testimonial2.point3') || 'Crédibilité renforcée face aux décideurs internes'}
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
-                  Validation fluide et intégralement documentée
+                  {t('uc1.results.testimonial2.point4') || 'Validation fluide et intégralement documentée'}
                 </div>
               </div>
             </Card>
