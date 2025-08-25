@@ -361,11 +361,12 @@ export default function UC1() {
               <p className="text-purple-100 text-sm mb-4 leading-relaxed">
                 Génération instantanée d'un résumé clair des objectifs et du contexte du projet, affiché sur le dashboard.
               </p>
-              <div className="flex items-center justify-between">
-                <Badge className="bg-blue-500/20 text-blue-300 px-3 py-1 text-xs border border-blue-400/30">
+              <div className="flex items-start justify-between gap-2">
+                <Badge className="bg-blue-500/20 text-blue-300 px-2 py-1 text-xs border border-blue-400/30 flex-shrink-0">
                   Project Summary ✨
                 </Badge>
-                <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200">Cliquez pour détails</span>
+                <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200 text-right flex-shrink-0">Cliquez pour
+                détails</span>
               </div>
             </div>
 
@@ -378,11 +379,12 @@ export default function UC1() {
               <p className="text-purple-100 text-sm mb-4 leading-relaxed">
                 L'IA identifie automatiquement les contraintes "cachées" (non explicitement clairements) dans les documents.
               </p>
-              <div className="flex items-center justify-between">
-                <Badge className="bg-green-500/20 text-green-300 px-3 py-1 text-xs border border-green-400/30">
-                  Implicit Requirements Detected ⚠️
+              <div className="flex items-start justify-between gap-2">
+                <Badge className="bg-green-500/20 text-green-300 px-2 py-1 text-xs border border-green-400/30 flex-shrink-0">
+                  Implicit Requirements ⚠️
                 </Badge>
-                <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200">Cliquez pour détails</span>
+                <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200 text-right flex-shrink-0">Cliquez pour
+                détails</span>
               </div>
             </div>
 
@@ -395,11 +397,12 @@ export default function UC1() {
               <p className="text-purple-100 text-sm mb-4 leading-relaxed">
                 Chaque document est résumé en quelques lignes, disponible dans le doc center et réutilisable par l'IA.
               </p>
-              <div className="flex items-center justify-between">
-                <Badge className="bg-orange-500/20 text-orange-300 px-3 py-1 text-xs border border-orange-400/30">
+              <div className="flex items-start justify-between gap-2">
+                <Badge className="bg-orange-500/20 text-orange-300 px-2 py-1 text-xs border border-orange-400/30 flex-shrink-0">
                   Document Summary ✓
                 </Badge>
-                <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200">Cliquez pour détails</span>
+                <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200 text-right flex-shrink-0">Cliquez pour
+                détails</span>
               </div>
             </div>
 
@@ -412,11 +415,12 @@ export default function UC1() {
               <p className="text-purple-100 text-sm mb-4 leading-relaxed">
                 Les documents sont automatiquement classés selon leur importance, définie par l'utilisateur ou l'IA.
               </p>
-              <div className="flex items-center justify-between">
-                <Badge className="bg-purple-500/20 text-purple-300 px-3 py-1 text-xs border border-purple-400/30">
+              <div className="flex items-start justify-between gap-2">
+                <Badge className="bg-purple-500/20 text-purple-300 px-2 py-1 text-xs border border-purple-400/30 flex-shrink-0">
                   Document Precedence 📋
                 </Badge>
-                <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200">Cliquez pour détails</span>
+                <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200 text-right flex-shrink-0">Cliquez pour
+détails</span>
               </div>
             </div>
 
@@ -429,11 +433,12 @@ export default function UC1() {
               <p className="text-purple-100 text-sm mb-4 leading-relaxed">
                 Les informations sont automatiquement classées par thème (juridique, technique, planning...) et restituées sous forme d'arbre visuel.
               </p>
-              <div className="flex items-center justify-between">
-                <Badge className="bg-pink-500/20 text-pink-300 px-3 py-1 text-xs border border-pink-400/30">
+              <div className="flex items-start justify-between gap-2">
+                <Badge className="bg-pink-500/20 text-pink-300 px-2 py-1 text-xs border border-pink-400/30 flex-shrink-0">
                   Content Categorization 🗂️
                 </Badge>
-                <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200">Cliquez pour détails</span>
+                <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200 text-right flex-shrink-0">Cliquez pour
+détails</span>
               </div>
             </div>
 
@@ -446,11 +451,12 @@ export default function UC1() {
               <p className="text-purple-100 text-sm mb-4 leading-relaxed">
                 L'utilisateur interroge son projet en langage naturel ("Quelle sont les critères de sélection ?", "Y a-t-il une clause pénale ?") et obtient une réponse directe avec la source.
               </p>
-              <div className="flex items-center justify-between">
-                <Badge className="bg-red-500/20 text-red-300 px-3 py-1 text-xs border border-red-400/30">
+              <div className="flex items-start justify-between gap-2">
+                <Badge className="bg-red-500/20 text-red-300 px-2 py-1 text-xs border border-red-400/30 flex-shrink-0">
                   Chat with Project Data 💬
                 </Badge>
-                <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200">Cliquez pour détails</span>
+                <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200 text-right flex-shrink-0">Cliquez pour
+détails</span>
               </div>
             </div>
           </div>
