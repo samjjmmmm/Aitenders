@@ -1,7 +1,7 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
-import { seedUC1Translations } from './seed-translations';
+import { translationService } from './services/translationService';
 
 const app = express();
 app.use(express.json());
@@ -57,8 +57,16 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // Seed UC1 translations
-  await seedUC1Translations();
+  // Initialize translation system and seed all translations
+  try {
+    await translationService.initializeLanguages();
+    console.log('✅ Languages initialized');
+
+    await translationService.initializeAllTranslations();
+    console.log('✅ All translations seeded successfully');
+  } catch (error) {
+    console.error('Error initializing translations:', error);
+  }
 
   // ALWAYS serve the app on the port specified in the environment variable PORT
   // Other ports are firewalled. Default to 5000 if not specified.

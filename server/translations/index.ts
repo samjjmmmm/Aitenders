@@ -1,4 +1,14 @@
 // Index central pour toutes les traductions
+// Re-export all translation modules for centralized access
+export * from './common';
+export * from './home';
+export * from './product';
+export * from './privacy';
+export * from './security';
+export * from './uc1';
+export * from './uc2';
+
+// Import all translation objects
 import { 
   commonFrenchTranslations, 
   commonEnglishTranslations, 
@@ -21,18 +31,18 @@ import {
 } from './product';
 
 import { 
-  securityFrenchTranslations, 
-  securityEnglishTranslations, 
-  securitySpanishTranslations, 
-  securityGermanTranslations 
-} from './security';
-
-import { 
   privacyFrenchTranslations, 
   privacyEnglishTranslations, 
   privacySpanishTranslations, 
   privacyGermanTranslations 
 } from './privacy';
+
+import { 
+  securityFrenchTranslations, 
+  securityEnglishTranslations, 
+  securitySpanishTranslations, 
+  securityGermanTranslations 
+} from './security';
 
 import { 
   uc1FrenchTranslations, 
@@ -48,44 +58,46 @@ import {
   uc2GermanTranslations 
 } from './uc2';
 
-// Combiner toutes les traductions en français (référence)
+// Combine all French translations
 export const allFrenchTranslations = {
   ...commonFrenchTranslations,
   ...homeFrenchTranslations,
   ...productFrenchTranslations,
-  ...securityFrenchTranslations,
   ...privacyFrenchTranslations,
+  ...securityFrenchTranslations,
   ...uc1FrenchTranslations,
-  ...uc2FrenchTranslations
+  ...uc2FrenchTranslations,
 };
 
-// Structure pour les autres langues (à compléter)
+// Combine all English translations
 export const allEnglishTranslations = {
   ...commonEnglishTranslations,
   ...homeEnglishTranslations,
   ...productEnglishTranslations,
-  ...securityEnglishTranslations,
   ...privacyEnglishTranslations,
+  ...securityEnglishTranslations,
   ...uc1EnglishTranslations,
-  ...uc2EnglishTranslations
+  ...uc2EnglishTranslations,
 };
 
+// Combine all Spanish translations
 export const allSpanishTranslations = {
   ...commonSpanishTranslations,
   ...homeSpanishTranslations,
   ...productSpanishTranslations,
-  ...securitySpanishTranslations,
   ...privacySpanishTranslations,
+  ...securitySpanishTranslations,
   ...uc1SpanishTranslations,
-  ...uc2SpanishTranslations
+  ...uc2SpanishTranslations,
 };
 
+// Combine all German translations
 export const allGermanTranslations = {
   ...commonGermanTranslations,
   ...homeGermanTranslations,
   ...productGermanTranslations,
-  ...securityGermanTranslations,
   ...privacyGermanTranslations,
+  ...securityGermanTranslations,
   ...uc1GermanTranslations,
-  ...uc2GermanTranslations
+  ...uc2GermanTranslations,
 };
