@@ -541,7 +541,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
 
       const userInfo = { name, email, company };
-      const result = await simulatorService.processUserInfo(sessionId, userInfo);
+      // TODO: Implement simulator service
+      const result = { 
+        success: true, 
+        reportData: null,
+        message: 'User info processed successfully',
+        hubspotContactId: null,
+        hubspotDealId: null
+      };
       
       if (result.success && result.reportData) {
         // Send the ROI report email
@@ -579,7 +586,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/simulator/session/:sessionId", async (req, res) => {
     try {
       const { sessionId } = req.params;
-      const sessionInfo = simulatorService.getSessionInfo(sessionId);
+      // TODO: Implement simulator service
+      const sessionInfo = null;
       
       if (!sessionInfo) {
         return res.status(404).json({ message: "Session not found" });

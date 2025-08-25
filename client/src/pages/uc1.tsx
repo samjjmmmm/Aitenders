@@ -580,7 +580,7 @@ détails</span>
 
           {/* Client Logos Scrolling Banner */}
           <div className="mb-8">
-            <ClientLogos language={currentLanguage} />
+            <ClientLogos language={currentLanguage as 'fr' | 'en'} />
           </div>
 
           {/* ROI Simulator */}

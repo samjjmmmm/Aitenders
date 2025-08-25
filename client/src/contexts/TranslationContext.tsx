@@ -41,7 +41,7 @@ export function TranslationProvider({ children }: TranslationProviderProps) {
   });
 
   // Fetch translations for current language
-  const { data: translations = {}, isLoading } = useQuery<Record<string, string>>({
+  const { data: translations = {}, isLoading } = useQuery({
     queryKey: ['/api/translations', currentLanguage],
     queryFn: async () => {
       const response = await fetch(`/api/translations/${currentLanguage}?_cache=${Date.now()}`);
@@ -52,11 +52,11 @@ export function TranslationProvider({ children }: TranslationProviderProps) {
       console.log(`Loaded ${Object.keys(result).length} translations for ${currentLanguage}`);
       const uc1Count = Object.keys(result).filter(k => k.startsWith('uc1.')).length;
       console.log(`UC1 translations loaded: ${uc1Count}`);
-      return result;
+      return result as Record<string, string>;
     },
     enabled: !!currentLanguage,
     staleTime: 1000 * 60 * 1, // 1 minute to force refresh
-    cacheTime: 1000 * 60 * 1, // 1 minute cache time
+    gcTime: 1000 * 60 * 1, // 1 minute garbage collection time (renamed from cacheTime)
     refetchOnMount: true,
     refetchOnWindowFocus: false,
   });
@@ -64,7 +64,8 @@ export function TranslationProvider({ children }: TranslationProviderProps) {
   // Translation function with fallback
   const t = (key: string, fallback?: string): string => {
     if (isLoading) return fallback || key;
-    return translations[key] || fallback || key;
+    const translationMap = translations || {};
+    return translationMap[key] || fallback || key;
   };
 
   // Change language function
