@@ -42,8 +42,7 @@ export const uc1FrenchTranslations = {
     'Grâce aux assistants IA, vos documents sont instantanément analysés, classés et priorisés : critères d\'intérêt, points critiques et preuves associées sont détectés en quelques minutes.',
   'uc1.solution_section.feature1_text2':
     'Le Responsable Offre démarre ainsi avec une base claire et exploitable : vision globale du projet, identification des points bloquants éventuels et possibilité de décider quasi immédiatement d\'un "go / no‑go".',
-  'uc1.solution_section.feature1_highlight2':
-    'Votre analyse prête avant même la première réunion',
+  'uc1.solution_section.feature1_highlight2': '',
 
   // Solution – Feature 2
   'uc1.solution.feature2.title': 'Accédez à une vision',
@@ -202,8 +201,7 @@ export const uc1EnglishTranslations = {
     'With AI assistants, your documents are instantly analyzed, classified and prioritized: interest criteria, critical points and supporting evidence are detected in minutes.',
   'uc1.solution_section.feature1_text2':
     'The Bid Manager thus starts with a clear and workable base: global vision of the project, identification of potential blocking points and the possibility to decide almost immediately on a "go / no-go".',
-  'uc1.solution_section.feature1_highlight2':
-    'Your analysis ready before the first meeting',
+  'uc1.solution_section.feature1_highlight2': '',
 
   // Solution – Feature 2
   'uc1.solution.feature2.title': 'Get a',
@@ -356,8 +354,7 @@ export const uc1SpanishTranslations = {
     'Con asistentes IA, sus documentos se analizan, clasifican y priorizan al instante: criterios de interés, puntos críticos y evidencias se detectan en minutes.',
   'uc1.solution_section.feature1_text2':
     'El Responsable de Ofertas así comienza con una base clara y aprovechable: visión global del proyecto, identificación de puntos de bloqueo eventuales y posibilidad de decidir casi inmediatamente un "go / no-go".',
-  'uc1.solution_section.feature1_highlight2':
-    'Su análisis listo antes de la primera reunión',
+  'uc1.solution_section.feature1_highlight2': '',
 
   // Solution – Feature 2
   'uc1.solution.feature2.title': 'Acceda a una visión',
