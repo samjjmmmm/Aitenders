@@ -1,0 +1,26 @@
+You are an expert full-stack developer helping me finalize a task in my Replit project.
+Context:
+My project uses a database-backed translation system. I have just finished creating all the necessary translation objects (French, English, Spanish, German) for a new page called "Use Case 2" and placed them in a new file located at server/translations/uc2.ts. However, these new translations are not yet active on the website because the system's central index file doesn't know about uc2.ts, and therefore the new data has not been "seeded" (loaded) into the database.
+Primary Objective:
+Your task is to integrate the new translations from server/translations/uc2.ts into the application's translation system and ensure they are loaded into the database.
+Perform the following two steps precisely.
+Step 1: Update the Master Translation Index File
+Navigate to and open the file at this exact path: server/translations/index.ts.
+This file imports all the individual translation objects and bundles them into master objects for each language.
+At the top of the file, alongside the other import statements, add the following line to import all the new translation variables from uc2.ts:
+code
+TypeScript
+import { uc2FrenchTranslations, uc2EnglishTranslations, uc2SpanishTranslations, uc2GermanTranslations } from './uc2';
+```4.  Now, locate the four exported `const` declarations: `allFrenchTranslations`, `allEnglishTranslations`, `allSpanishTranslations`, and `allGermanTranslations`.
+You must add the corresponding uc2 variable to each of these objects using the JavaScript spread (...) operator. Ensure you place it before the closing brace }.
+For allFrenchTranslations, add ...uc2FrenchTranslations,
+For allEnglishTranslations, add ...uc2EnglishTranslations,
+For allSpanishTranslations, add ...uc2SpanishTranslations,
+For allGermanTranslations, add ...uc2GermanTranslations,
+After making these four additions, save and close the server/translations/index.ts file.
+Step 2: Seed the New Translations into the Database
+Now that the code knows about the new translations, you must execute the script that loads all translations from the files into the database.
+Open the Shell tab in the Replit sidebar.
+The project contains a script specifically for this purpose. Find the correct command by inspecting the scripts section of the package.json file. The command is likely named "seed", "db:seed", or "seed:translations".
+Execute the appropriate command in the shell. For example: npm run seed.
+Monitor the output in the shell. You must wait for the script to finish. The output should show logs like "Initializing translations from modular files..." and conclude with a success message like "All translations initialized successfully."

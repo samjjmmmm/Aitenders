@@ -81,7 +81,7 @@ export const roiSimulations = pgTable('roi_simulations', {
 
 // Translation Tables
 export const languages = pgTable('languages', {
-  code: varchar('code', { length: 5 }).primaryKey(), // fr, en, es, de
+  code: varchar('code', { length: 10 }).primaryKey(), // fr, en, es, de
   name: text('name').notNull(), // Français, English, Español, Deutsch
   isDefault: boolean('is_default').notNull().default(false), // French is default reference
   isActive: boolean('is_active').notNull().default(true),
@@ -100,7 +100,7 @@ export const translationKeys = pgTable('translation_keys', {
 export const translations = pgTable('translations', {
   id: varchar('id').primaryKey().default(sql`gen_random_uuid()`),
   keyId: varchar('key_id').notNull().references(() => translationKeys.id, { onDelete: 'cascade' }),
-  languageCode: varchar('language_code', { length: 5 }).notNull().references(() => languages.code, { onDelete: 'cascade' }),
+  languageCode: varchar('language_code', { length: 10 }).notNull().references(() => languages.code, { onDelete: 'cascade' }),
   value: text('value').notNull(), // The actual translated text
   isApproved: boolean('is_approved').notNull().default(false), // For translation workflow
   updatedAt: timestamp('updated_at').notNull().defaultNow(),
