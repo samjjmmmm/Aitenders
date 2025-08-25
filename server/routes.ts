@@ -804,6 +804,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Initialize translations endpoint
+  app.post("/api/translations/initialize", async (req, res) => {
+    try {
+      await translationService.initializeLanguages();
+      await translationService.initializeAllTranslations();
+      res.json({ success: true, message: "Translations reinitialized successfully" });
+    } catch (error) {
+      console.error('Initialize translations error:', error);
+      res.status(500).json({ message: "Failed to initialize translations" });
+    }
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }
