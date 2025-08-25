@@ -61,9 +61,9 @@ export const uc2FrenchTranslations = {
   'uc2.solution_section.title': 'Votre copilote IA qui transforme la complexité en clarté',
   'uc2.solution_section.subtitle': 'Structurez, coordonnez et livrez des offres conformes en un temps record.',
   
-  'uc2.solution_section.feature1_title': 'Structuration automatique du périmètre',
-  'uc2.solution_section.feature1_text': 'Grâce aux assistants IA, vos DCE complexes sont instantanément analysés, structurés et hiérarchisés : exigences techniques, contraintes réglementaires, critères d\'évaluation.',
-  'uc2.solution_section.feature1_highlight': 'Chaque exigence est tracée, chaque impact évalué automatiquement.',
+  'uc2.solution_section.feature1_title': 'Structuration automatique du périmètre dès le premier jour',
+  'uc2.solution_section.feature1_text': 'L\'IA d\'Aitenders analyse instantanément vos documents d\'appel d\'offres et structure automatiquement le périmètre, identifie les lots, détecte les interfaces critiques et mappe chaque exigence. Vos équipes commencent avec une vision claire et complète du projet.',
+  'uc2.solution_section.feature1_highlight': 'Votre cockpit de projet opérationnel dès J+1',
   
   'uc2.solution_section.feature2_title': 'Génération de réponses conformes',
   'uc2.solution_section.feature2_text': 'Les réponses sont générées automatiquement en respectant le format demandé et en s\'appuyant sur vos références. Chaque clause critique est identifiée et traitée spécifiquement.',
