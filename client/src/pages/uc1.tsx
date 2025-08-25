@@ -176,7 +176,7 @@ export default function UC1() {
         </div>
       </section>
 
-      {/* Pain Points Section - Clean Card Design */}
+      {/* Go/No-Go Feature Section */}
       <section className="py-12 md:py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50/20 relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
@@ -199,7 +199,7 @@ export default function UC1() {
         </div>
 
         <div className="content-boundary relative z-10">
-          {/* Main Pain Points Card */}
+          {/* Go/No-Go Feature Card */}
           <div className="bg-white/95 backdrop-blur-sm rounded-2xl md:rounded-3xl p-8 md:p-12 lg:p-16 xl:p-20 border border-gray-100/50 relative overflow-hidden fade-in-up max-w-5xl mx-auto"
                style={{
                  boxShadow: '0 32px 64px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.05)'
@@ -214,16 +214,19 @@ export default function UC1() {
             <div className="relative z-10 text-center">
               {/* Main Headline */}
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 md:mb-8 leading-[1.1] tracking-tight">
-                {t('uc1.painPoints.headline')} <span className="text-blue-600">{t('uc1.painPoints.headline_span')}</span>
+                Go / No-Go immédiat, <span className="text-blue-600">process interne garanti</span>
               </h2>
 
               {/* Body Copy */}
               <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6 md:mb-8 font-light max-w-4xl mx-auto">
-                {t('uc1.painPoints.text1')}
+                Sur les petits projets, la pression est double : analyser vite et prouver que tout a été lu, compris et contrôlé.
               </p>
 
               <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-8 md:mb-12 font-light max-w-4xl mx-auto">
-                {t('uc1.painPoints.text2')}
+                Sans support transversal (qualité, juridique), chaque outil peut coûter cher en marge en exécution et du coup en crédibilité interne. 
+                Avec Aitenders, vous obtenez en quelques minutes une vision claire et priorisée de vos documents pour un go/no-go 
+                immédiat. La plateforme guide ensuite la validation et archive chaque contrôle, garantissant que vos obligations 
+                internes sont remplies sans surcharge.
               </p>
 
               {/* CTA Buttons */}
@@ -232,87 +235,14 @@ export default function UC1() {
                   className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 md:px-12 lg:px-16 py-4 md:py-6 text-lg md:text-xl font-bold rounded-2xl md:rounded-3xl shadow-lg md:shadow-xl hover:shadow-xl md:hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 md:hover:-translate-y-2 hover:scale-105"
                   onClick={() => setIsModalOpen(true)}
                 >
-                  {t('uc1.painPoints.contactButton')}
+                  Boostez Vos Petits Projets!
                 </Button>
                 <Button 
                   variant="outline" 
                   className="w-full sm:w-auto border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 md:px-10 lg:px-12 py-3 md:py-5 text-base md:text-lg font-semibold rounded-2xl md:rounded-3xl transition-all duration-300"
                 >
                   <MdPlayArrow className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-                  {t('uc1.painPoints.demoButton')}
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pain Points Section - Main Feature Card + Supporting Cards */}
-      <section className="py-8 md:py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50/20 relative overflow-hidden">
-        {/* Subtle Abstract Background Effects */}
-        <div className="absolute inset-0 pointer-events-none">
-          {/* Large atmospheric blob - right side */}
-          <div className="absolute top-16 -right-40 w-[500px] h-[500px] rounded-full opacity-25 blur-3xl"
-               style={{
-                 background: 'radial-gradient(circle, #F0F8FF 0%, #B3D9FF 50%, #E6F3FF 80%, transparent 100%)'
-               }}></div>
-
-          {/* Flowing accent - left side */}
-          <div className="absolute top-1/3 -left-24 w-72 h-72 rounded-full opacity-20 blur-2xl"
-               style={{
-                 background: 'linear-gradient(135deg, #E6F3FF 0%, #B3D9FF 60%, transparent 100%)'
-               }}></div>
-
-          {/* Small directional accent */}
-          <div className="absolute bottom-20 right-1/4 w-48 h-48 rounded-full opacity-15 blur-3xl"
-               style={{
-                 background: 'radial-gradient(circle, #2563EB 0%, #B3D9FF 40%, transparent 80%)'
-               }}></div>
-
-          {/* Mobile-optimized wave */}
-          <div className="absolute bottom-0 left-0 w-full h-24 opacity-10 blur-xl lg:opacity-15"
-               style={{
-                 background: 'linear-gradient(90deg, #F0F8FF 0%, transparent 30%, #FAFCFF 70%, #E6F3FF 100%)'
-               }}></div>
-        </div>
-
-        <div className="content-boundary relative z-10">
-          {/* Main Feature Card */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl md:rounded-3xl p-6 md:p-12 lg:p-16 xl:p-20 border border-gray-100/50 relative overflow-hidden mb-8 md:mb-16 lg:mb-20 fade-in-up"
-               style={{
-                 boxShadow: '0 32px 64px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-               }}>
-
-            {/* Multi-tone Faded Background Pattern */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-cyan-50/20 to-indigo-50/25 rounded-3xl"></div>
-            <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-blue-100/25 to-transparent rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-cyan-100/20 to-transparent rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
-
-            {/* Content Container */}
-            <div className="relative z-10 text-center">
-              {/* Main Headline */}
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                {t('uc1.painPoints.headline')} <span className="text-blue-600">{t('uc1.painPoints.headline_span')}</span>
-              </h2>
-
-              {/* Body Copy */}
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                {t('uc1.painPoints.text1')}
-              </p>
-
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                {t('uc1.painPoints.text2')}
-              </p>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mb-8 md:mb-12 lg:mb-16">
-                <Button className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 md:px-12 lg:px-16 py-4 md:py-6 lg:py-7 text-lg md:text-xl lg:text-2xl font-bold rounded-2xl md:rounded-3xl shadow-lg md:shadow-xl hover:shadow-xl md:hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 md:hover:-translate-y-2 hover:scale-105">
-                  {t('uc1.painPoints.contactButton')}
-                </Button>
-                <Button variant="outline" className="w-full sm:w-auto border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 md:px-10 lg:px-12 py-3 md:py-5 lg:py-6 text-base md:text-lg lg:text-xl font-semibold rounded-2xl md:rounded-3xl transition-all duration-300">
-                  <MdPlayArrow className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 mr-2" />
-                  {t('uc1.painPoints.demoButton')}
+                  Voir la Demo Rapide
                 </Button>
               </div>
             </div>
