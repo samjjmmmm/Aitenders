@@ -357,7 +357,7 @@ export const uc1SpanishTranslations = {
     'Estructuración instantánea para un primer<br />"go / no-go"',
   'uc1.solution_section.feature1_highlight': 'inmediato',
   'uc1.solution_section.feature1_text':
-    'Con asistentes IA, sus documentos se analizan, clasifican y priorizan al instante: criterios de interés, puntos críticos y evidencias se detectan en minutes.',
+    'Con asistentes IA, sus documentos se analizan, clasifican y priorizan al instante: criterios de interés, puntos críticos y evidencias se detectan en minutos.',
   'uc1.solution_section.feature1_text2':
     'El Responsable de Ofertas así comienza con una base clara y aprovechable: visión global del proyecto, identificación de puntos de bloqueo eventuales y posibilidad de decidir casi inmediatamente un "go / no-go".',
   'uc1.solution_section.feature1_highlight2': '',
@@ -519,6 +519,8 @@ export const uc1GermanTranslations = {
   'uc1.solution_section.feature1_highlight': 'sofort',
   'uc1.solution_section.feature1_text':
     'Mit KI-Assistenten werden Dokumente sofort analysiert, klassifiziert und priorisiert: Interessenskriterien, kritische Punkte und Nachweise in wenigen Minuten.',
+  'uc1.solution_section.feature1_text2':
+    'Der Angebotsverantwortliche startet damit mit einer klaren und nutzbaren Basis: Globale Sicht auf das Projekt, Identifizierung möglicher Blockadepunkte und die Möglichkeit, fast sofort über ein "Go / No-Go" zu entscheiden.',
 
   // Solution – Feature 2
   'uc1.solution.feature2.title': 'Erhalten Sie eine',

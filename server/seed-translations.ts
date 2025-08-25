@@ -1,4 +1,34 @@
 import { translationService } from "./translations";
+import { uc1FrenchTranslations, uc1EnglishTranslations, uc1SpanishTranslations, uc1GermanTranslations } from "./translations/uc1";
+
+// Seed UC1 translations
+export async function seedUC1Translations() {
+  try {
+    // Seed French translations
+    for (const [key, value] of Object.entries(uc1FrenchTranslations)) {
+      await translationService.setTranslation('fr', key, value);
+    }
+    
+    // Seed English translations
+    for (const [key, value] of Object.entries(uc1EnglishTranslations)) {
+      await translationService.setTranslation('en', key, value);
+    }
+    
+    // Seed Spanish translations  
+    for (const [key, value] of Object.entries(uc1SpanishTranslations)) {
+      await translationService.setTranslation('es', key, value);
+    }
+    
+    // Seed German translations
+    for (const [key, value] of Object.entries(uc1GermanTranslations)) {
+      await translationService.setTranslation('de', key, value);
+    }
+    
+    console.log('UC1 translations seeded successfully');
+  } catch (error) {
+    console.error('Error seeding UC1 translations:', error);
+  }
+}
 
 // UC1 Translation Keys with French reference content
 const uc1TranslationKeys = {

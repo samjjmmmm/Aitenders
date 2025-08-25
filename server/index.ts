@@ -1,6 +1,7 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import { seedUC1Translations } from './seed-translations';
 
 const app = express();
 app.use(express.json());
@@ -55,6 +56,9 @@ app.use((req, res, next) => {
   } else {
     serveStatic(app);
   }
+
+  // Seed UC1 translations
+  await seedUC1Translations();
 
   // ALWAYS serve the app on the port specified in the environment variable PORT
   // Other ports are firewalled. Default to 5000 if not specified.
