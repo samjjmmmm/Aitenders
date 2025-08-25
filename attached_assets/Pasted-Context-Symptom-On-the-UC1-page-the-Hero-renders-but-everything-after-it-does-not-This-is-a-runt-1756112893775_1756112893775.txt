@@ -1,0 +1,96 @@
+Context / Symptom
+On the UC1 page, the Hero renders but everything after it does not. This is a runtime render error caused by invalid inline CSS where Tailwind responsive prefixes (e.g., md:) were mistakenly placed inside React style={{ ... }} objects. React expects valid CSS there, and md: is not valid CSS, so rendering crashes mid-page.
+
+Non-negotiable constraint
+
+Do not change anything anywhere except the exact invalid style objects described below.
+No refactors, no design tweaks, no reordering, no renames, no extra dependencies.
+Keep all text, markup, components, and classes exactly the same unless it is the minimal change required to fix the runtime error.
+
+Your tasks (minimal, surgical)
+
+Confirm the runtime error
+
+Run the app and open the browser console.
+
+Capture the exact error message and stack trace (it will be something like “Invalid value for style property transform” or similar) and the file/line where it occurs.
+
+Search for any Tailwind breakpoints inside style objects
+
+In the codebase, search with this regex:
+
+style=\{\{[^}]*md:
+
+
+This will find every place where a style object contains a Tailwind token like md: (or lg: etc.).
+
+Only edit those findings.
+
+Fix pattern (move responsive values from style → className)
+
+If you see something like:
+
+style={{
+  transform: 'scale(1.2) md:scale(1.4)',
+  filter: 'drop-shadow(0 4px 16px rgba(34,197,94,0.15)) md:drop-shadow(0 8px 32px rgba(34,197,94,0.2))',
+}}
+
+
+This is invalid.
+
+Make style contain only valid CSS (no md: tokens), and move the responsive parts to className using Tailwind utilities or arbitrary values.
+
+Apply these exact code corrections (and nothing else)
+
+A) Feature 1 image (uc1FirstFeatureImage)
+
+Replace the whole <img> with this (keep everything else identical around it):
+
+<img
+  src={uc1FirstFeatureImage}
+  alt="Analyse IA - Go/No-Go immédiat pour petits projets"
+  className="
+    w-full h-auto
+    max-w-[250px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-[450px]
+    rounded-xl md:rounded-2xl
+    shadow-lg md:shadow-2xl
+    scale-[1.2] md:scale-[1.4]
+    drop-shadow-[0_4px_16px_rgba(59,130,246,0.15)]
+    md:drop-shadow-[0_8px_32px_rgba(59,130,246,0.2)]
+  "
+  style={{ objectFit: 'contain' }}
+/>
+
+
+Note: the only inline style left is objectFit. The responsive scale and drop-shadow are now Tailwind classes using arbitrary values to keep visuals unchanged.
+
+B) “Templates Intelligents” green card (the div that currently has transform: 'scale(1.2) md:scale(1.4)' and green drop-shadow in style)
+
+Replace just the className and style on that inner green container with:
+
+className="w-full h-auto max-w-[250px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-[450px] rounded-xl md:rounded-2xl shadow-lg md:shadow-2xl bg-gradient-to-br from-green-50 to-emerald-50 p-8 flex items-center justify-center
+           scale-[1.2] md:scale-[1.4]
+           drop-shadow-[0_4px_16px_rgba(34,197,94,0.15)]
+           md:drop-shadow-[0_8px_32px_rgba(34,197,94,0.2)]"
+style={{}}
+
+
+i.e., remove the invalid style.transform and style.filter values and move them into className with Tailwind arbitrary values. Leave everything else as is.
+
+Re-run and verify
+
+After the fixes, rebuild/run the app and ensure all sections after the Hero render (Go/No-Go card, Solution features, Results, Toppings, Reference Projects, ROI Simulator, Client Logos, HubSpot modal trigger).
+
+Post the console status confirming there are no remaining invalid style warnings/errors.
+
+Scope control
+
+If you find any other style={{ ... }} objects containing md:, lg:, xl: etc., apply the same move-to-className fix.
+
+Do not modify any other code, content, or styling beyond those exact fixes.
+
+Acceptance criteria
+
+The page renders fully below the Hero with zero console errors about invalid style properties.
+
+Visual result remains the same (or as close as practically possible) by using Tailwind classes (including arbitrary values) instead of invalid inline responsive CSS.
