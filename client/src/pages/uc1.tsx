@@ -177,7 +177,7 @@ export default function UC1() {
             >
               <div className="lg:w-1/2">
                 <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                  {t('uc1.solution_section.feature1_title') || 'Structuration instantanée pour un<br />premier "go / no-go"'} <span className="text-purple-600">{t('uc1.solution_section.feature1_highlight') || 'immédiat'}</span>
+                  <span dangerouslySetInnerHTML={{ __html: t('uc1.solution_section.feature1_title') || 'Structuration instantanée pour un<br />premier "go / no-go"' }} /> <span className="text-purple-600">{t('uc1.solution_section.feature1_highlight') || 'immédiat'}</span>
                 </h3>
                 <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                   {t('uc1.solution_section.feature1_text') || 'Grâce aux assistants IA, vos documents sont instantanément analysés, classés et priorisés : critères d\'intérêt, points critiques et preuves associées sont détectés en quelques minutes.'}
@@ -210,7 +210,7 @@ export default function UC1() {
             >
               <div className="lg:w-1/2">
                 <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                  {t('uc1.solution.feature2.title') || 'Accédez à une vision'} <span className="text-orange-600">{t('uc1.solution.feature2.span') || 'claire'}</span> {t('uc1.solution.feature2.title2') || 'de votre projet'}
+                  {t('uc1.solution.feature2.title') || 'Accédez à une vision'} <span className="text-orange-600">{t('uc1.solution.feature2.span') || 'claire'}</span> <span dangerouslySetInnerHTML={{ __html: t('uc1.solution.feature2.title2') || 'de<br />votre projet' }} />
                 </h3>
                 <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                   {t('uc1.solution.feature2.text1') || 'Aitenders génère une vue claire et priorisée de l\'ensemble des critères détectés, avec leurs valeurs et les liens directs vers les documents sources.'}
