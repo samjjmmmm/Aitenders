@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import Header from "@/components/header";
+import uc1HeroImage from "@assets/uc1-hero-final.png";
 
 export default function UC1() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -56,13 +57,20 @@ export default function UC1() {
           </div>
 
           {/* Hero Image - Bottom */}
-          <div className="w-full flex justify-center px-4">
-            <div className="relative w-full max-w-5xl">
-              {/* Image placeholder - will be added later */}
-              <div className="w-full h-80 bg-gray-100 rounded-xl flex items-center justify-center">
-                <div className="text-gray-500 text-center">
-                  <p>Hero image will be added here</p>
-                </div>
+          <div className="w-full max-w-7xl mx-auto mt-8">
+            <div className="flex justify-center items-center">
+              <div className="relative flex justify-center items-center h-full px-0 py-6">
+                <img
+                  src={uc1HeroImage}
+                  alt="Aitenders UC1 Interface - Fast Analysis and Go/No-Go Decision Dashboard"
+                  className="block w-[640px] md:w-[760px] lg:w-[880px] max-w-full h-auto select-none pointer-events-none object-contain"
+                  style={{
+                    transform: 'scale(1.42)',
+                    transformOrigin: 'center',
+                    imageRendering: 'auto',
+                    filter: 'none'
+                  }}
+                />
               </div>
             </div>
           </div>
