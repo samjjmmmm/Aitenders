@@ -312,78 +312,139 @@ export default function UC1() {
       </section>
 
       {/* Advanced Capabilities Section */}
-      <section className="py-16 bg-gradient-to-br from-purple-700 to-purple-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-gradient-to-br from-purple-700 via-purple-800 to-purple-900 text-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
-            <Badge className="bg-purple-600 text-white px-4 py-2 text-sm font-medium mb-6">
-              Fonctionnalités Avancées
+            <Badge className="bg-orange-500 text-white px-4 py-2 text-sm font-medium mb-6 rounded-full">
+              🌟 Fonctionnalités Wow
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Des <span className="text-yellow-400">capacités avancées</span> qui transforment votre approche commerciale
             </h2>
             <p className="text-xl text-purple-100 max-w-3xl mx-auto">
-              Au-delà de la globalisation rapide, <span className="text-yellow-400">découvrez</span> des fonctionnalités qui ajoutent une dimension stratégique à votre développement commercial.
+              Au-delà de la génération rapide, découvrez des fonctionnalités qui ajoutent une dimension stratégique à votre développement commercial.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Feature Cards */}
-            {[
-              {
-                icon: FaFileAlt,
-                title: "Résumé automatique du projet",
-                description: "Synthèse instantanée et contextuelle, recommandations automatique par niveau de priorité et de faisabilité."
-              },
-              {
-                icon: FaLightbulb,
-                title: "Détection des exigences implicites",
-                description: "Identification automatique des contraintes non explicitement mentionnées dans les documents d'appel d'offres."
-              },
-              {
-                icon: FaChartLine,
-                title: "Résumé intelligent de chaque document",
-                description: "Analyse approfondie de chaque document avec extraction des points critiques et recommandations d'actions."
-              },
-              {
-                icon: FaComments,
-                title: "Gestion dynamique de la base des documents",
-                description: "Capitalisation automatique sur vos analyses passées pour améliorer continuellement la qualité des recommandations."
-              },
-              {
-                icon: FaCog,
-                title: "Catégorisation intelligente & base interactive",
-                description: "Classification automatique par type de document, niveau de complexité et domaine d'expertise requis."
-              },
-              {
-                icon: FaTags,
-                title: "Chat contextuel avec le projet",
-                description: "Posez n'importe quelle question sur votre projet et obtenez des réponses précises basées sur l'analyse complète."
-              }
-            ].map((feature, index) => (
-              <Card key={index} className="bg-purple-800/30 border-purple-600/30 backdrop-blur-sm p-6">
-                <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
-                  <feature.icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-lg font-semibold mb-3">{feature.title}</h3>
-                <p className="text-purple-100 text-sm mb-4">{feature.description}</p>
-                <div className="flex justify-between items-center">
-                  <Badge className="bg-purple-600 text-white px-2 py-1 text-xs">
-                    {feature.title.split(' ')[0]} {feature.title.split(' ')[1]}
-                  </Badge>
-                  <span className="text-xs text-purple-300 cursor-pointer">Clic pour détails</span>
-                </div>
-              </Card>
-            ))}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {/* Feature Card 1 */}
+            <div className="bg-purple-800/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-600/30 hover:bg-purple-700/40 transition-all duration-300">
+              <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-4">
+                <FaFileAlt className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold mb-3 text-white">Résumé automatique du projet</h3>
+              <p className="text-purple-100 text-sm mb-4 leading-relaxed">
+                Génération instantanée d'un résumé clair des objectifs et du contexte du projet, affiché sur le dashboard.
+              </p>
+              <div className="flex items-center justify-between">
+                <Badge className="bg-blue-500/20 text-blue-300 px-3 py-1 text-xs border border-blue-400/30">
+                  Project Summary ✨
+                </Badge>
+                <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200">Cliquez pour détails</span>
+              </div>
+            </div>
+
+            {/* Feature Card 2 */}
+            <div className="bg-purple-800/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-600/30 hover:bg-purple-700/40 transition-all duration-300">
+              <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mb-4">
+                <FaLightbulb className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold mb-3 text-white">Détection des exigences implicites</h3>
+              <p className="text-purple-100 text-sm mb-4 leading-relaxed">
+                L'IA identifie automatiquement les contraintes "cachées" (non explicitement clairements) dans les documents.
+              </p>
+              <div className="flex items-center justify-between">
+                <Badge className="bg-green-500/20 text-green-300 px-3 py-1 text-xs border border-green-400/30">
+                  Implicit Requirements Detected ⚠️
+                </Badge>
+                <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200">Cliquez pour détails</span>
+              </div>
+            </div>
+
+            {/* Feature Card 3 */}
+            <div className="bg-purple-800/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-600/30 hover:bg-purple-700/40 transition-all duration-300">
+              <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4">
+                <FaChartLine className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold mb-3 text-white">Résumé intelligent de chaque document</h3>
+              <p className="text-purple-100 text-sm mb-4 leading-relaxed">
+                Chaque document est résumé en quelques lignes, disponible dans le doc center et réutilisable par l'IA.
+              </p>
+              <div className="flex items-center justify-between">
+                <Badge className="bg-orange-500/20 text-orange-300 px-3 py-1 text-xs border border-orange-400/30">
+                  Document Summary ✓
+                </Badge>
+                <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200">Cliquez pour détails</span>
+              </div>
+            </div>
+
+            {/* Feature Card 4 */}
+            <div className="bg-purple-800/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-600/30 hover:bg-purple-700/40 transition-all duration-300">
+              <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mb-4">
+                <FaLayerGroup className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold mb-3 text-white">Gestion dynamique de la hiérarchie documentaire</h3>
+              <p className="text-purple-100 text-sm mb-4 leading-relaxed">
+                Les documents sont automatiquement classés selon leur importance, définie par l'utilisateur ou l'IA.
+              </p>
+              <div className="flex items-center justify-between">
+                <Badge className="bg-purple-500/20 text-purple-300 px-3 py-1 text-xs border border-purple-400/30">
+                  Document Precedence 📋
+                </Badge>
+                <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200">Cliquez pour détails</span>
+              </div>
+            </div>
+
+            {/* Feature Card 5 */}
+            <div className="bg-purple-800/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-600/30 hover:bg-purple-700/40 transition-all duration-300">
+              <div className="w-12 h-12 bg-pink-500 rounded-xl flex items-center justify-center mb-4">
+                <FaCog className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold mb-3 text-white">Catégorisation intelligente & arbre thématique</h3>
+              <p className="text-purple-100 text-sm mb-4 leading-relaxed">
+                Les informations sont automatiquement classées par thème (juridique, technique, planning...) et restituées sous forme d'arbre visuel.
+              </p>
+              <div className="flex items-center justify-between">
+                <Badge className="bg-pink-500/20 text-pink-300 px-3 py-1 text-xs border border-pink-400/30">
+                  Content Categorization 🗂️
+                </Badge>
+                <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200">Cliquez pour détails</span>
+              </div>
+            </div>
+
+            {/* Feature Card 6 */}
+            <div className="bg-purple-800/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-600/30 hover:bg-purple-700/40 transition-all duration-300">
+              <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center mb-4">
+                <FaComments className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold mb-3 text-white">Chat contextuel avec le projet</h3>
+              <p className="text-purple-100 text-sm mb-4 leading-relaxed">
+                L'utilisateur interroge son projet en langage naturel ("Quelle sont les critères de sélection ?", "Y a-t-il une clause pénale ?") et obtient une réponse directe avec la source.
+              </p>
+              <div className="flex items-center justify-between">
+                <Badge className="bg-red-500/20 text-red-300 px-3 py-1 text-xs border border-red-400/30">
+                  Chat with Project Data 💬
+                </Badge>
+                <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200">Cliquez pour détails</span>
+              </div>
+            </div>
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center">
             <p className="text-purple-100 text-lg mb-6">
-              Chaque fonctionnalité apporte une efficacité commerciale.
+              Chaque fonctionnalité optimise votre efficacité commerciale
             </p>
-            <Button className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white px-8 py-3 font-medium rounded-lg">
-              Découvrir toutes les fonctionnalités →
+            <Button className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white px-8 py-3 font-medium rounded-lg shadow-lg">
+              Explorer toutes les fonctionnalités →
             </Button>
           </div>
+        </div>
+
+        {/* Background decorative elements */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute top-10 right-10 w-32 h-32 bg-purple-400/10 rounded-full blur-xl"></div>
+          <div className="absolute bottom-10 left-10 w-40 h-40 bg-purple-500/10 rounded-full blur-xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-300/5 rounded-full blur-3xl"></div>
         </div>
       </section>
 
