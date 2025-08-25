@@ -35,6 +35,8 @@ export const uc1FrenchTranslations = {
     "qui accélère l'analyse de vos petits projets",
   'uc1.solution_section.subtitle':
     "Décidez vite et prouvez que tout a été contrôlé, en moins de 48h.",
+  'uc1.solution_section.feature1_section_title':
+    'Structuration instantanée pour un premier "go / no-go" immédiat',
   'uc1.solution_section.feature1_title':
     'Structuration instantanée pour un<br />premier "go / no-go"',
   'uc1.solution_section.feature1_highlight': 'immédiat',
@@ -194,6 +196,8 @@ export const uc1EnglishTranslations = {
     'that accelerates small-project analysis',
   'uc1.solution_section.subtitle':
     'Decide fast and prove everything was checked — in under 48 hours.',
+  'uc1.solution_section.feature1_section_title':
+    'Instant structuring for an immediate first "go / no-go"',
   'uc1.solution_section.feature1_title':
     'Instant structuring for a first<br />"go / no-go"',
   'uc1.solution_section.feature1_highlight': 'immediately',
@@ -347,6 +351,8 @@ export const uc1SpanishTranslations = {
     'que acelera el análisis de proyectos pequeños',
   'uc1.solution_section.subtitle':
     'Decida rápido y demuestre que todo fue verificado, en menos de 48h.',
+  'uc1.solution_section.feature1_section_title':
+    'Estructuración instantánea para un primer "go / no-go" inmediato',
   'uc1.solution_section.feature1_title':
     'Estructuración instantánea para un primer<br />"go / no-go"',
   'uc1.solution_section.feature1_highlight': 'inmediato',
@@ -506,6 +512,8 @@ export const uc1GermanTranslations = {
     'der die Analyse kleiner Projekte beschleunigt',
   'uc1.solution_section.subtitle':
     'Schnell entscheiden und nachweisen, dass alles geprüft wurde – in unter 48 Stunden.',
+  'uc1.solution_section.feature1_section_title':
+    'Sofortige Strukturierung für ein sofortiges erstes "Go / No-Go"',
   'uc1.solution_section.feature1_title':
     'Sofortige Strukturierung für ein erstes<br />"Go / No-Go"',
   'uc1.solution_section.feature1_highlight': 'sofort',
