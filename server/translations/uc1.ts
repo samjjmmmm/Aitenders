@@ -19,10 +19,14 @@ export const uc1FrenchTranslations = {
   'uc1.painPoints.headline_span': 'process interne garanti',
   'uc1.painPoints.text1': 'Sur les petits projets, la pression est double : analyser vite et prouver que tout a été lu, compris et contrôlé.',
   'uc1.painPoints.text2':
-    "Sans support transversal (qualité, juridique), chaque oubli peut coûter cher en marge en exécution et du coup en crédibilité interne. Avec Aitenders, vous obtenez en quelques minutes une vision claire et priorisée de vos documents pour un go/no-go",
-  'uc1.painPoints.text2_span': ' immédiat',
+    "Sans support transversal (qualité, juridique), chaque oubli peut coûter cher en marge en exécution et du coup en crédibilité interne.",
+  'uc1.painPoints.text2_span': 'immédiat',
   'uc1.painPoints.text3':
+    "Avec Aitenders, vous obtenez en quelques minutes une vision claire et priorisée de vos documents pour un go/no-go",
+  'uc1.painPoints.text4':
     "La plateforme guide ensuite la validation et archive chaque contrôle, garantissant que vos obligations internes sont remplies sans surcharge.",
+  'uc1.painPoints.optimizeButton': 'Boostez Vos Petits Projets!',
+  'uc1.painPoints.demoButton': '→ Voir la Démo Rapide',
 
   // Solution section
   'uc1.solution_section.mainTitle': 'Votre',
@@ -36,6 +40,10 @@ export const uc1FrenchTranslations = {
   'uc1.solution_section.feature1_highlight': 'immédiat',
   'uc1.solution_section.feature1_text':
     "Grâce aux assistants IA, vos documents sont instantanément analysés, classés et priorisés : critères d'intérêt, points critiques et preuves associées sont détectés en quelques minutes.",
+  'uc1.solution_section.feature1_text2':
+    "Le Responsable Offre démarre ainsi avec une base claire et exploitable : vision globale du projet, identification des points bloquants éventuels et possibilité de décider quasi immédiatement d'un \"go / no-go\".",
+  'uc1.solution_section.feature1_highlight2':
+    "Votre analyse prête avant même la première réunion",
 
   // Solution – Feature 2
   'uc1.solution.feature2.title': 'Accédez à une vision',
@@ -66,23 +74,23 @@ export const uc1FrenchTranslations = {
   'uc1.results.testimonial1.title':
     'Directeur Commercial vs Chargé des Affaires',
   'uc1.results.testimonial1.text':
-    '"Nous avions un chef commercial apte, confirmé... Maintenant nous avons accès à son niveau d\'expertise sur chaque petit appel d\'offres. Le gain sur une équipe de 4 commerciaux junior devient évident : ils produisent maintenant un niveau d\'expertise que seuls les experts expérimentés maîtrisent"',
+    'Obtenez en moins de 48h une analyse complète et documentée, prête à présenter. Vous décidez dès le premier jour grâce à un go / no-go immédiat et démontrez que chaque point a été contrôlé et validé. Cette approche garantit la transparence, réduit les allers‑retours internes et renforce la confiance lors des comités.',
   'uc1.results.testimonial1.benefit1':
-    "Temps économisé: jusqu'à 80% d'expertise",
-  'uc1.results.testimonial1.benefit2': "Précision dans l'analyse: +60%",
-  'uc1.results.testimonial1.benefit3': "Couverture étendue: +3x plus d'analyses",
-  'uc1.results.testimonial1.benefit4': 'Validation Auto: Diagnostic automatique',
+    "Décision éclairée dès J+1 grâce à une analyse instantanée",
+  'uc1.results.testimonial1.benefit2': "Process interne respecté et intégralement tracé",
+  'uc1.results.testimonial1.benefit3': "Transparence totale sur les points critiques",
+  'uc1.results.testimonial1.benefit4': "Crédibilité renforcée lors des comités",
   'uc1.results.testimonial2.title':
-    'Responsable offres - Chef du Projet Assistant commercial',
+    'Responsable Offre, Chef de Projet, Assistants commercial',
   'uc1.results.testimonial2.text':
-    '"Une révolution complète sur notre capacité d\'être réactif. Avant, je finissais par refuser des offres intéressantes faute de temps d\'analyse. Maintenant, je traite en quelques minutes ce qui me demandait des heures, sans perdre en qualité. La validation interne est transparente : chaque contrôle est documenté."',
+    'Travaillez dès le premier jour sur une base IA déjà structurée et priorisée, sans retraitement manuel. Vous disposez d\'une vue synthétique et actionnable des points à valider, d\'un accès immédiat aux preuves et d\'un suivi clair de vos validations. Résultat : moins de stress, un gain de temps massif et la capacité de démontrer à tout moment que tout a été contrôlé et tracé.',
   'uc1.results.testimonial2.benefit1':
-    'Temps de traitement des offres réduit',
-  'uc1.results.testimonial2.benefit2': 'Traitement rapide: Tout devient facile',
+    "Moins de relectures, plus de décisions stratégiques",
+  'uc1.results.testimonial2.benefit2': "Chaque point couvert, chaque preuve archivée",
   'uc1.results.testimonial2.benefit3':
-    " +150% de fréquence d'offres traitées",
+    "Crédibilité renforcée face aux décideurs internes",
   'uc1.results.testimonial2.benefit4':
-    'Validation interne: Diagnostic automatisé',
+    'Validation fluide et intégralement documentée',
 
   // KPIs
   'uc1.results.kpi1.value': '-50% à -70%',

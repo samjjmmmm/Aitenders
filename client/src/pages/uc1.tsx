@@ -131,9 +131,9 @@ export default function UC1() {
             </p>
 
             <p className="text-lg text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-              {t('uc1.painPoints.text2') || 'Sans support transversal (qualité, juridique), chaque oubli peut coûter cher en marge et décision et en coup de crédibilité interne.'} 
+              {t('uc1.painPoints.text2') || 'Sans support transversal (qualité, juridique), chaque oubli peut coûter cher en marge en exécution et du coup en crédibilité interne.'} 
               {t('uc1.painPoints.text3') || 'Avec Aitenders, vous obtenez en quelques minutes une vision claire et priorisée de vos documents pour un go/no-go'} 
-              <span className="font-semibold">{t('uc1.painPoints.text2_span') || 'immédiat'}</span>. {t('uc1.painPoints.text3') || 'La plateforme guide ensuite la validation et archive chaque contrôle, garantissant que vos obligations internes sont remplies sans surcharge.'}
+              <span className="font-semibold">{t('uc1.painPoints.text2_span') || 'immédiat'}</span>. {t('uc1.painPoints.text4') || 'La plateforme guide ensuite la validation et archive chaque contrôle, garantissant que vos obligations internes sont remplies sans surcharge.'}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
