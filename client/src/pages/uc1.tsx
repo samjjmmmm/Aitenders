@@ -335,21 +335,23 @@ export default function UC1() {
       </section>
 
       {/* Advanced Capabilities Section */}
-      <section className="py-16 bg-gradient-to-br from-purple-700 via-purple-800 to-purple-900 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-purple-700 via-purple-800 to-purple-900 text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-12">
-            <Badge className="bg-orange-500 text-white px-4 py-2 text-sm font-medium mb-6 rounded-full">
-              🌟 Fonctionnalités Wow
-            </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="text-center mb-16">
+            <div className="flex justify-center mb-8">
+              <Badge className="bg-orange-500 text-white px-6 py-3 text-sm font-medium rounded-full">
+                🌟 Fonctionnalités Wow
+              </Badge>
+            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
               Des <span className="text-yellow-400">capacités avancées</span> qui transforment votre approche commerciale
             </h2>
-            <p className="text-xl text-purple-100 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-purple-100 max-w-4xl mx-auto leading-relaxed">
               Au-delà de la génération rapide, découvrez des fonctionnalités qui ajoutent une dimension stratégique à votre développement commercial.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 max-w-6xl mx-auto">
             {/* Feature Card 1 */}
             <div className="bg-purple-800/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-600/30 hover:bg-purple-700/40 transition-all duration-300">
               <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-4">
@@ -454,12 +456,14 @@ export default function UC1() {
           </div>
 
           <div className="text-center">
-            <p className="text-purple-100 text-lg mb-6">
+            <p className="text-purple-100 text-xl mb-8 max-w-2xl mx-auto">
               Chaque fonctionnalité optimise votre efficacité commerciale
             </p>
-            <Button className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white px-8 py-3 font-medium rounded-lg shadow-lg">
-              Explorer toutes les fonctionnalités →
-            </Button>
+            <div className="flex justify-center">
+              <Button className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white px-10 py-4 text-lg font-semibold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300">
+                Explorer toutes les fonctionnalités →
+              </Button>
+            </div>
           </div>
         </div>
 
