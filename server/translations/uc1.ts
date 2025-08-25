@@ -39,11 +39,11 @@ export const uc1FrenchTranslations = {
     'Structuration instantanée pour un<br />premier "go / no-go"',
   'uc1.solution_section.feature1_highlight': 'immédiat',
   'uc1.solution_section.feature1_text':
-    "Grâce aux assistants IA, vos documents sont instantanément analysés, classés et priorisés : critères d'intérêt, points critiques et preuves associées sont détectés en quelques minutes.",
+    'Grâce aux assistants IA, vos documents sont instantanément analysés, classés et priorisés : critères d\'intérêt, points critiques et preuves associées sont détectés en quelques minutes.',
   'uc1.solution_section.feature1_text2':
-    "Le Responsable Offre démarre ainsi avec une base claire et exploitable : vision globale du projet, identification des points bloquants éventuels et possibilité de décider quasi immédiatement d'un \"go / no-go\".",
+    'Le Responsable Offre démarre ainsi avec une base claire et exploitable : vision globale du projet, identification des points bloquants éventuels et possibilité de décider quasi immédiatement d\'un "go / no‑go".',
   'uc1.solution_section.feature1_highlight2':
-    "Votre analyse prête avant même la première réunion",
+    'Votre analyse prête avant même la première réunion',
 
   // Solution – Feature 2
   'uc1.solution.feature2.title': 'Accédez à une vision',
@@ -349,7 +349,7 @@ export const uc1SpanishTranslations = {
     'Estructuración instantánea para un primer<br />"go / no-go"',
   'uc1.solution_section.feature1_highlight': 'inmediato',
   'uc1.solution_section.feature1_text':
-    'Con asistentes IA, sus documentos se analizan, clasifican y priorizan al instante: criterios de interés, puntos críticos y evidencias se detectan en minutos.',
+    'Con asistentes IA, sus documentos se analizan, clasifican y priorizan al instante: criterios de interés, puntos críticos y evidencias se detectan en minutes.',
 
   // Solution – Feature 2
   'uc1.solution.feature2.title': 'Acceda a una visión',
