@@ -212,16 +212,16 @@ export default function UC1() {
             >
               <div className="lg:w-1/2">
                 <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                  Accédez à une vision <span className="text-orange-600">claire</span> de<br />votre projet
+                  {t('uc1.solution.feature2.title') || 'Accédez à une vision'} <span className="text-orange-600">{t('uc1.solution.feature2.span') || 'claire'}</span> {t('uc1.solution.feature2.title2') || 'de<br />votre projet'}
                 </h3>
                 <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                  Aitenders génère une vue claire et priorisée de l'ensemble des critères détectés, avec leurs valeurs et les liens directs vers les documents sources.
+                  {t('uc1.solution.feature2.text1') || 'Aitenders génère une vue claire et priorisée de l\'ensemble des critères détectés, avec leurs valeurs et les liens directs vers les documents sources.'}
                 </p>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  Le Responsable Offre n'a plus besoin de parcourir des centaines de pages ou de jongler entre plusieurs fichiers : tout est rassemblé dans une synthèse visuelle, exploitable immédiatement.
+                  {t('uc1.solution.feature2.text2') || 'Le Responsable Offre n\'a plus besoin de parcourir des centaines de pages ou de jongler entre plusieurs fichiers : tout est rassemblé dans une synthèse visuelle, exploitable immédiatement.'}
                 </p>
                 <p className="text-lg font-semibold text-orange-600">
-                  Votre revue interne prête en quelques minutes
+                  {t('uc1.solution.feature2.highlight') || 'Votre revue interne prête en quelques minutes'}
                 </p>
               </div>
               <div className="lg:w-1/2">
@@ -245,16 +245,16 @@ export default function UC1() {
             >
               <div className="lg:w-1/2">
                 <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                  Validez et archivez chaque point<br /><span className="text-green-600">sans effort</span>
+                  {t('uc1.solution.feature3.title') || 'Validez et archivez chaque point'}<br /><span className="text-green-600">{t('uc1.solution.feature3.span') || 'sans effort'}</span>
                 </h3>
                 <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                  Aitenders vous guide pas à pas pour confirmer, ajuster ou rejeter chaque élément identifié par l'IA. Chaque validation est automatiquement tracée et historisée, créant un dossier de preuves complet.
+                  {t('uc1.solution.feature3.text1') || 'Aitenders vous guide pas à pas pour confirmer, ajuster ou rejeter chaque élément identifié par l\'IA. Chaque validation est automatiquement tracée et historisée, créant un dossier de preuves complet.'}
                 </p>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  Le responsable d'offre passe d'une validation manuelle, lente et incertaine à un processus fluide, sécurisé et incontestable.
+                  {t('uc1.solution.feature3.text2') || 'Le responsable d\'offre passe d\'une validation manuelle, lente et incertaine à un processus fluide, sécurisé et incontestable.'}
                 </p>
                 <p className="text-lg font-semibold text-green-600">
-                  Finies les zones grises : tout est validé et tracé.
+                  {t('uc1.solution.feature3.highlight') || 'Finies les zones grises : tout est validé et tracé.'}
                 </p>
               </div>
               <div className="lg:w-1/2">
@@ -295,28 +295,28 @@ export default function UC1() {
               <div className="flex items-center mb-4">
                 <FaCheckCircle className="w-6 h-6 text-blue-600 mr-2" />
                 <h3 className="text-xl font-semibold text-gray-900">
-                  Directeur Commercial vs Chargé des Affaires
+                  {t('uc1.results.testimonial1.title') || 'Directeur Commercial vs Chargé des Affaires'}
                 </h3>
               </div>
               <p className="text-gray-700 mb-6">
-                "Nous avions un chef commercial apte, confirmé... Maintenant nous avons accès à son niveau d'expertise sur chaque petit appel d'offres. Le gain sur une équipe de 4 commerciaux junior devient évident : ils produisent maintenant un niveau d'expertise que seuls les experts expérimentés maîtrisent"
+                {t('uc1.results.testimonial1.text') || '"Nous avions un chef commercial apte, confirmé... Maintenant nous avons accès à son niveau d\'expertise sur chaque petit appel d\'offres. Le gain sur une équipe de 4 commerciaux junior devient évident : ils produisent maintenant un niveau d\'expertise que seuls les experts expérimentés maîtrisent"'}
               </p>
               <div className="space-y-2">
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
-                  Temps économisé: jusqu'à 80% d'expertise
+                  {t('uc1.results.testimonial1.benefit1') || 'Temps économisé: jusqu\'\u00e0 80% d\'expertise'}
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
-                  Précision dans l'analyse: +60%
+                  {t('uc1.results.testimonial1.benefit2') || 'Précision dans l\'analyse: +60%'}
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
-                  Couverture étendue: +3x plus d'analyses
+                  {t('uc1.results.testimonial1.benefit3') || 'Couverture étendue: +3x plus d\'analyses'}
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
-                  Validation Auto: Diagnostic automatique
+                  {t('uc1.results.testimonial1.benefit4') || 'Validation Auto: Diagnostic automatique'}
                 </div>
               </div>
             </Card>
@@ -326,28 +326,28 @@ export default function UC1() {
               <div className="flex items-center mb-4">
                 <FaCheckCircle className="w-6 h-6 text-green-600 mr-2" />
                 <h3 className="text-xl font-semibold text-gray-900">
-                  Responsable offres - Chef du Projet Assistant commercial
+                  {t('uc1.results.testimonial2.title') || 'Responsable offres - Chef du Projet Assistant commercial'}
                 </h3>
               </div>
               <p className="text-gray-700 mb-6">
-                "Une révolution complète sur notre capacité d'être réactif. Avant, je finissais par refuser des offres intéressantes faute de temps d'analyse. Maintenant, je traite en quelques minutes ce qui me demandait des heures, sans perdre en qualité. La validation interne est transparente : chaque contrôle est documenté."
+                {t('uc1.results.testimonial2.text') || '"Une révolution complète sur notre capacité d\'\u00eatre réactif. Avant, je finissais par refuser des offres intéressantes faute de temps d\'analyse. Maintenant, je traite en quelques minutes ce qui me demandait des heures, sans perdre en qualité. La validation interne est transparente : chaque contrôle est documenté."'}
               </p>
               <div className="space-y-2">
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
-                  Temps de traitement des offres réduit
+                  {t('uc1.results.testimonial2.benefit1') || 'Temps de traitement des offres réduit'}
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
-                  Traitement rapide: Tout devient facile
+                  {t('uc1.results.testimonial2.benefit2') || 'Traitement rapide: Tout devient facile'}
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
-                  +150% de fréquence d'offres traitées
+                  {t('uc1.results.testimonial2.benefit3') || '+150% de fréquence d\'offres traitées'}
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
-                  Validation interne: Diagnostic automatisé
+                  {t('uc1.results.testimonial2.benefit4') || 'Validation interne: Diagnostic automatisé'}
                 </div>
               </div>
             </Card>
@@ -365,10 +365,10 @@ export default function UC1() {
                   </svg>
                 </div>
                 <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-600 mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300 leading-tight">
-                  -50% à -70%
+                  {t('uc1.results.kpi1.value') || '-50% à -70%'}
                 </div>
-                <div className="text-lg font-semibold text-gray-900 mb-2">Gain de temps</div>
-                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Réduction du temps d'analyse des documents</p>
+                <div className="text-lg font-semibold text-gray-900 mb-2">{t('uc1.results.kpi1.title') || 'Gain de temps'}</div>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">{t('uc1.results.kpi1.desc') || 'Réduction du temps d\'analyse des documents'}</p>
               </div>
             </div>
 
@@ -381,10 +381,10 @@ export default function UC1() {
                   </svg>
                 </div>
                 <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-600 mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300 leading-tight">
-                  100%
+                  {t('uc1.results.kpi2.value') || '100%'}
                 </div>
-                <div className="text-lg font-semibold text-gray-900 mb-2">Conformité</div>
-                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Critères critiques vérifiés et documentés</p>
+                <div className="text-lg font-semibold text-gray-900 mb-2">{t('uc1.results.kpi2.title') || 'Conformité'}</div>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">{t('uc1.results.kpi2.desc') || 'Critères critiques vérifiés et documentés'}</p>
               </div>
             </div>
 
@@ -397,10 +397,10 @@ export default function UC1() {
                   </svg>
                 </div>
                 <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-purple-600 mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300 leading-tight">
-                  Sérénité maximale
+                  {t('uc1.results.kpi3.value') || 'Sérénité maximale'}
                 </div>
-                <div className="text-lg font-semibold text-gray-900 mb-2">Impact organisationnel</div>
-                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">Confiance renforcée, stress réduit, zéro escalade interne</p>
+                <div className="text-lg font-semibold text-gray-900 mb-2">{t('uc1.results.kpi3.title') || 'Impact organisationnel'}</div>
+                <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">{t('uc1.results.kpi3.desc') || 'Confiance renforcée, stress réduit, zéro escalade interne'}</p>
               </div>
             </div>
           </div>
@@ -419,14 +419,14 @@ export default function UC1() {
           <div className="text-center mb-16">
             <div className="flex justify-center mb-8">
               <Badge className="bg-orange-500 text-white px-6 py-3 text-sm font-medium rounded-full">
-                🌟 Fonctionnalités Wow
+                {t('uc1.advanced.badge') || '🌟 Fonctionnalités Wow'}
               </Badge>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-              Des <span className="text-yellow-400">capacités avancées</span> qui transforment votre approche commerciale
+              {t('uc1.advanced.title') || 'Des'} <span className="text-yellow-400">{t('uc1.advanced.span') || 'capacités avancées'}</span> {t('uc1.advanced.title2') || 'qui transforment votre approche commerciale'}
             </h2>
             <p className="text-xl md:text-2xl text-purple-100 max-w-4xl mx-auto leading-relaxed">
-              Au-delà de la génération rapide, découvrez des fonctionnalités qui ajoutent une dimension stratégique à votre développement commercial.
+              {t('uc1.advanced.subtitle') || 'Au-delà de la génération rapide, découvrez des fonctionnalités qui ajoutent une dimension stratégique à votre développement commercial.'}
             </p>
           </div>
 
@@ -436,13 +436,13 @@ export default function UC1() {
               <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-4">
                 <FaFileAlt className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-lg font-semibold mb-3 text-white">Résumé automatique du projet</h3>
+              <h3 className="text-lg font-semibold mb-3 text-white">{t('uc1.advanced.feature1.title') || 'Résumé automatique du projet'}</h3>
               <p className="text-purple-100 text-sm mb-4 leading-relaxed">
-                Génération instantanée d'un résumé clair des objectifs et du contexte du projet, affiché sur le dashboard.
+{t('uc1.advanced.feature1.desc') || 'Génération instantanée d\'un résumé clair des objectifs et du contexte du projet, affiché sur le dashboard.'}
               </p>
               <div className="flex items-start justify-between gap-2">
                 <Badge className="bg-blue-500/20 text-blue-300 px-2 py-1 text-xs border border-blue-400/30 flex-shrink-0">
-                  Project Summary ✨
+{t('uc1.advanced.feature1.tag') || 'Project Summary ✨'}
                 </Badge>
                 <span className="text-xs text-purple-300 cursor-pointer hover:text-purple-200 text-right flex-shrink-0">Cliquez pour
                 détails</span>
@@ -454,9 +454,9 @@ export default function UC1() {
               <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mb-4">
                 <FaLightbulb className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-lg font-semibold mb-3 text-white">Détection des exigences implicites</h3>
+              <h3 className="text-lg font-semibold mb-3 text-white">{t('uc1.advanced.feature2.title') || 'Détection des exigences implicites'}</h3>
               <p className="text-purple-100 text-sm mb-4 leading-relaxed">
-                L'IA identifie automatiquement les contraintes "cachées" (non explicitement clairements) dans les documents.
+{t('uc1.advanced.feature2.desc') || 'L\'IA identifie automatiquement les contraintes "cachées" (non explicitement clairements) dans les documents.'}
               </p>
               <div className="flex items-start justify-between gap-2">
                 <Badge className="bg-green-500/20 text-green-300 px-2 py-1 text-xs border border-green-400/30 flex-shrink-0">
@@ -472,7 +472,7 @@ export default function UC1() {
               <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4">
                 <FaChartLine className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-lg font-semibold mb-3 text-white">Résumé intelligent de chaque document</h3>
+              <h3 className="text-lg font-semibold mb-3 text-white">{t('uc1.advanced.feature3.title') || 'Résumé intelligent de chaque document'}</h3>
               <p className="text-purple-100 text-sm mb-4 leading-relaxed">
                 Chaque document est résumé en quelques lignes, disponible dans le doc center et réutilisable par l'IA.
               </p>
@@ -490,7 +490,7 @@ export default function UC1() {
               <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mb-4">
                 <FaLayerGroup className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-lg font-semibold mb-3 text-white">Gestion dynamique de la hiérarchie documentaire</h3>
+              <h3 className="text-lg font-semibold mb-3 text-white">{t('uc1.advanced.feature4.title') || 'Gestion dynamique de la hiérarchie documentaire'}</h3>
               <p className="text-purple-100 text-sm mb-4 leading-relaxed">
                 Les documents sont automatiquement classés selon leur importance, définie par l'utilisateur ou l'IA.
               </p>
@@ -508,7 +508,7 @@ détails</span>
               <div className="w-12 h-12 bg-pink-500 rounded-xl flex items-center justify-center mb-4">
                 <FaCog className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-lg font-semibold mb-3 text-white">Catégorisation intelligente & arbre thématique</h3>
+              <h3 className="text-lg font-semibold mb-3 text-white">{t('uc1.advanced.feature5.title') || 'Catégorisation intelligente & arbre thématique'}</h3>
               <p className="text-purple-100 text-sm mb-4 leading-relaxed">
                 Les informations sont automatiquement classées par thème (juridique, technique, planning...) et restituées sous forme d'arbre visuel.
               </p>
@@ -526,7 +526,7 @@ détails</span>
               <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center mb-4">
                 <FaComments className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-lg font-semibold mb-3 text-white">Chat contextuel avec le projet</h3>
+              <h3 className="text-lg font-semibold mb-3 text-white">{t('uc1.advanced.feature6.title') || 'Chat contextuel avec le projet'}</h3>
               <p className="text-purple-100 text-sm mb-4 leading-relaxed">
                 L'utilisateur interroge son projet en langage naturel ("Quelle sont les critères de sélection ?", "Y a-t-il une clause pénale ?") et obtient une réponse directe avec la source.
               </p>
@@ -542,11 +542,11 @@ détails</span>
 
           <div className="text-center">
             <p className="text-purple-100 text-xl mb-8 max-w-2xl mx-auto">
-              Chaque fonctionnalité optimise votre efficacité commerciale
+              {t('uc1.advanced.conclusion') || 'Chaque fonctionnalité optimise votre efficacité commerciale'}
             </p>
             <div className="flex justify-center">
               <Button className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white px-10 py-4 text-lg font-semibold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300">
-                Explorer toutes les fonctionnalités →
+{t('uc1.advanced.button') || 'Explorer toutes les fonctionnalités →'}
               </Button>
             </div>
           </div>
@@ -571,38 +571,38 @@ détails</span>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Nos <span className="text-blue-600">appels d'offres référence</span> sur les petits projets
+              {t('uc1.reference.title') || 'Nos'} <span className="text-blue-600">{t('uc1.reference.span') || 'appels d\'offres référence'}</span> {t('uc1.reference.title2') || 'sur les petits projets'}
             </h2>
             <p className="text-xl text-gray-600">
-              Découvrez comment nos clients optimisent leurs petits projets avec nos solutions.
+{t('uc1.reference.subtitle') || 'Découvrez comment nos clients optimisent leurs petits projets avec nos solutions.'}
             </p>
           </div>
 
           <div className="bg-white rounded-xl p-8 text-center mb-8">
             <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Ils nous font confiance pour leurs offres répétitives
+              {t('uc1.reference.trust.title') || 'Ils nous font confiance pour leurs offres répétitives'}
             </h3>
             <div className="flex justify-center space-x-8 text-gray-500">
-              <span>Evaluer</span>
+              <span>{t('uc1.reference.trust.company1') || 'Evaluer'}</span>
               <span>•</span>
-              <span>Bidé</span>
+              <span>{t('uc1.reference.trust.company2') || 'Bidé'}</span>
               <span>•</span>
-              <span>Analyse</span>
+              <span>{t('uc1.reference.trust.company3') || 'Analyse'}</span>
               <span>•</span>
-              <span>...</span>
+              <span>{t('uc1.reference.trust.more') || '...'}</span>
             </div>
           </div>
 
           {/* ROI Simulator */}
           <div className="bg-blue-50 rounded-xl p-8 text-center">
             <Badge className="bg-blue-600 text-white px-4 py-2 mb-4">
-              Simulateur ROI Aitenders
+              {t('uc1.roi.badge') || 'Simulateur ROI Aitenders'}
             </Badge>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Calculez votre ROI en temps réel
+              {t('uc1.roi.title') || 'Calculez votre ROI en temps réel'}
             </h3>
             <p className="text-gray-600 mb-8">
-              Découvrez l'impact financier d'Aitenders sur votre activité petits projets
+{t('uc1.roi.description') || 'Découvrez l\'impact financier d\'Aitenders sur votre activité petits projets'}
             </p>
 
             <div className="bg-white rounded-lg p-6">
