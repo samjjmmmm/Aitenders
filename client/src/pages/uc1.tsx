@@ -576,19 +576,9 @@ détails</span>
             </p>
           </div>
 
-          <div className="bg-white rounded-xl p-8 text-center mb-8">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              {t('uc1.reference.trust.title') || 'Ils nous font confiance pour leurs offres répétitives'}
-            </h3>
-            <div className="flex justify-center space-x-8 text-gray-500">
-              <span>{t('uc1.reference.trust.company1') || 'Evaluer'}</span>
-              <span>•</span>
-              <span>{t('uc1.reference.trust.company2') || 'Bidé'}</span>
-              <span>•</span>
-              <span>{t('uc1.reference.trust.company3') || 'Analyse'}</span>
-              <span>•</span>
-              <span>{t('uc1.reference.trust.more') || '...'}</span>
-            </div>
+          {/* Client Logos Scrolling Banner */}
+          <div className="mb-8">
+            <ClientLogos language={currentLanguage} />
           </div>
 
           {/* ROI Simulator */}
