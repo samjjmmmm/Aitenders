@@ -237,14 +237,15 @@ export const uc1EnglishTranslations = {
   'uc1.results.testimonial1.benefit3': 'Total transparency on critical points',
   'uc1.results.testimonial1.benefit4': 'Enhanced credibility during committees',
   'uc1.results.testimonial2.title':
-    'Bid Manager – Project Lead Assistant (Sales)',
+    'Bid Manager, Project Leader, Sales Assistants',
+  'uc1.results.testimonial2.subtitle':
+    'Fast analysis, smooth validation, restored peace of mind',
   'uc1.results.testimonial2.text':
-    '"A complete revolution in responsiveness. I used to decline good RFPs for lack of analysis time. Now I handle in minutes what took hours — without quality loss. Internal validation is transparent: every check is documented."',
-  'uc1.results.testimonial2.benefit1': 'Shorter bid processing time',
-  'uc1.results.testimonial2.benefit2': 'Fast handling: everything gets easy',
-  'uc1.results.testimonial2.benefit3': '+150% frequency of bids processed',
-  'uc1.results.testimonial2.benefit4':
-    'Internal validation: automated diagnostics',
+    'Work from day one on an AI-structured and prioritized base, without manual reprocessing. You have a synthetic and actionable view of the points to validate, immediate access to evidence and clear tracking of your validations. Result: less stress, massive time savings and the ability to demonstrate at any time that everything has been controlled and traced.',
+  'uc1.results.testimonial2.benefit1': 'Less proofreading, more strategic decisions',
+  'uc1.results.testimonial2.benefit2': 'Every point covered, every evidence archived',
+  'uc1.results.testimonial2.benefit3': 'Enhanced credibility with internal decision-makers',
+  'uc1.results.testimonial2.benefit4': 'Smooth and fully documented validation',
 
   // KPIs
   'uc1.results.kpi1.value': '-50% to -70%',
@@ -388,17 +389,15 @@ export const uc1SpanishTranslations = {
   'uc1.results.testimonial1.benefit3': 'Transparencia total sobre puntos críticos',
   'uc1.results.testimonial1.benefit4': 'Credibilidad reforzada durante comités',
   'uc1.results.testimonial2.title':
-    'Responsable de Ofertas – Jefe de Proyecto Asistente Comercial',
+    'Responsable de Ofertas, Jefe de Proyecto, Asistentes Comerciales',
+  'uc1.results.testimonial2.subtitle':
+    'Análisis rápido, validación fluida, serenidad recuperada',
   'uc1.results.testimonial2.text':
-    '"Una revolución total en nuestra capacidad de respuesta. Antes rechazaba licitaciones interesantes por falta de tiempo de análisis. Ahora hago en minutos lo que me llevaba horas, sin perder calidad. La validación interna es transparente: cada control queda documentado."',
-  'uc1.results.testimonial2.benefit1':
-    'Menor tiempo de tramitación de ofertas',
-  'uc1.results.testimonial2.benefit2':
-    'Tramitación rápida: todo se vuelve fácil',
-  'uc1.results.testimonial2.benefit3':
-    '+150% de frecuencia de ofertas tratadas',
-  'uc1.results.testimonial2.benefit4':
-    'Validación interna: diagnóstico automatizado',
+    'Trabaje desde el primer día sobre una base de IA ya estructurada y priorizada, sin reprocesamiento manual. Dispone de una vista sintética y accionable de los puntos a validar, acceso inmediato a las pruebas y seguimiento claro de sus validaciones. Resultado: menos estrés, ganancia masiva de tiempo y capacidad de demostrar en cualquier momento que todo ha sido controlado y trazado.',
+  'uc1.results.testimonial2.benefit1': 'Menos relecturas, más decisiones estratégicas',
+  'uc1.results.testimonial2.benefit2': 'Cada punto cubierto, cada prueba archivada',
+  'uc1.results.testimonial2.benefit3': 'Credibilidad reforzada ante decisores internos',
+  'uc1.results.testimonial2.benefit4': 'Validación fluida e integralmente documentada',
 
   // KPIs
   'uc1.results.kpi1.value': '-50% a -70%',
@@ -546,17 +545,15 @@ export const uc1GermanTranslations = {
   'uc1.results.testimonial1.benefit3': 'Vollständige Transparenz bei kritischen Punkten',
   'uc1.results.testimonial1.benefit4': 'Gestärkte Glaubwürdigkeit in Gremien',
   'uc1.results.testimonial2.title':
-    'Angebotsleiter – Projektleiter Assistent (Sales)',
+    'Angebotsverantwortlicher, Projektleiter, Vertriebsassistenten',
+  'uc1.results.testimonial2.subtitle':
+    'Schnelle Analyse, reibungslose Validierung, wiedergewonnene Gelassenheit',
   'uc1.results.testimonial2.text':
-    '"Eine komplette Revolution unserer Reaktionsfähigkeit. Früher lehnte ich interessante RFPs mangels Analysezeit ab. Jetzt erledige ich in Minuten, was Stunden dauerte – ohne Qualitätsverlust. Interne Validierung ist transparent: jeder Check dokumentiert."',
-  'uc1.results.testimonial2.benefit1':
-    'Kürzere Angebotsbearbeitungszeit',
-  'uc1.results.testimonial2.benefit2':
-    'Schnelle Bearbeitung: alles wird leicht',
-  'uc1.results.testimonial2.benefit3':
-    '+150% Häufigkeit bearbeiteter Angebote',
-  'uc1.results.testimonial2.benefit4':
-    'Interne Validierung: automatisierte Diagnose',
+    'Arbeiten Sie vom ersten Tag an auf einer bereits strukturierten und priorisierten KI-Basis, ohne manuelle Nachbearbeitung. Sie haben eine synthetische und umsetzbare Sicht auf die zu validierenden Punkte, sofortigen Zugang zu Beweisen und eine klare Verfolgung Ihrer Validierungen. Ergebnis: weniger Stress, massive Zeitersparnis und die Fähigkeit, jederzeit zu demonstrieren, dass alles kontrolliert und nachverfolgt wurde.',
+  'uc1.results.testimonial2.benefit1': 'Weniger Korrekturlesen, mehr strategische Entscheidungen',
+  'uc1.results.testimonial2.benefit2': 'Jeder Punkt abgedeckt, jeder Beweis archiviert',
+  'uc1.results.testimonial2.benefit3': 'Gestärkte Glaubwürdigkeit gegenüber internen Entscheidern',
+  'uc1.results.testimonial2.benefit4': 'Reibungslose und vollständig dokumentierte Validierung',
 
   // KPIs
   'uc1.results.kpi1.value': '-50% bis -70%',
