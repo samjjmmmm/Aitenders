@@ -44,14 +44,21 @@ export function TranslationProvider({ children }: TranslationProviderProps) {
   const { data: translations = {}, isLoading } = useQuery<Record<string, string>>({
     queryKey: ['/api/translations', currentLanguage],
     queryFn: async () => {
-      const response = await fetch(`/api/translations/${currentLanguage}`);
+      const response = await fetch(`/api/translations/${currentLanguage}?_cache=${Date.now()}`);
       if (!response.ok) {
         throw new Error('Failed to fetch translations');
       }
-      return response.json();
+      const result = await response.json();
+      console.log(`Loaded ${Object.keys(result).length} translations for ${currentLanguage}`);
+      const uc1Count = Object.keys(result).filter(k => k.startsWith('uc1.')).length;
+      console.log(`UC1 translations loaded: ${uc1Count}`);
+      return result;
     },
     enabled: !!currentLanguage,
-    staleTime: 1000 * 60 * 5, // 5 minutes
+    staleTime: 1000 * 60 * 1, // 1 minute to force refresh
+    cacheTime: 1000 * 60 * 1, // 1 minute cache time
+    refetchOnMount: true,
+    refetchOnWindowFocus: false,
   });
 
   // Translation function with fallback

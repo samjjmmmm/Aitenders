@@ -816,6 +816,29 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Debug translations endpoint
+  app.get("/api/translations/debug/:languageCode", async (req, res) => {
+    try {
+      const { languageCode } = req.params;
+      
+      const result = await translationService.getTranslations(languageCode);
+      const uc1Keys = Object.keys(result).filter(key => key.startsWith('uc1.'));
+      
+      res.json({ 
+        totalKeys: Object.keys(result).length,
+        uc1KeyCount: uc1Keys.length,
+        firstFewUc1Keys: uc1Keys.slice(0, 10),
+        sampleTranslations: {
+          'uc1.solution.feature2.title': result['uc1.solution.feature2.title'],
+          'uc1.results.testimonial2.title': result['uc1.results.testimonial2.title']
+        }
+      });
+    } catch (error) {
+      console.error('Debug translations error:', error);
+      res.status(500).json({ message: "Failed to debug translations" });
+    }
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }
