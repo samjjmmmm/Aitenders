@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaCheckCircle, FaLightbulb, FaEye, FaArchive, FaFileAlt, FaChartLine, FaComments, FaCog, FaLayerGroup, FaTags } from 'react-icons/fa';
+import { motion } from "framer-motion";
 import { AitendersSimulatorFinal } from "@/components/aitenders-simulator-final";
 import ClientLogos from "@/components/client-logos";
 import HubSpotBookingModal from "@/components/hubspot-booking-modal";
@@ -16,15 +17,45 @@ import featureImage3 from "@assets/wow 3_1756122537813.png";
 export default function UC1() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Animation variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 60 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  };
+
+  const fadeInLeft = {
+    hidden: { opacity: 0, x: -60 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } }
+  };
+
+  const fadeInRight = {
+    hidden: { opacity: 0, x: 60 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } }
+  };
+
+  const staggerContainer = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-white">
       {/* Header/Navbar */}
       <Header />
 
       {/* Hero Section */}
-      <section className="relative py-12 md:py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-slate-50 via-gray-50 to-white overflow-hidden">
+      <motion.section 
+        className="relative py-12 md:py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-slate-50 via-gray-50 to-white overflow-hidden"
+        initial="hidden"
+        animate="visible"
+        variants={staggerContainer}
+      >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center">
+          <motion.div className="text-center" variants={fadeInUp}>
             
             {/* Badge */}
             <div className="mb-6 md:mb-8">
@@ -57,7 +88,7 @@ export default function UC1() {
                 Téléchargez le cas d'usage →
               </Button>
             </div>
-          </div>
+          </motion.div>
 
           {/* Hero Image - Bottom */}
           <div className="w-full max-w-7xl mx-auto mt-8">
@@ -79,10 +110,16 @@ export default function UC1() {
           </div>
 
         </div>
-      </section>
+      </motion.section>
 
       {/* Go/No-Go Card Section */}
-      <section className="py-16 bg-gray-100">
+      <motion.section 
+        className="py-16 bg-gray-100"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="bg-white rounded-xl shadow-lg p-8 md:p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -111,10 +148,16 @@ export default function UC1() {
             </div>
           </Card>
         </div>
-      </section>
+      </motion.section>
 
       {/* Solution Features Section */}
-      <section className="py-16 bg-white">
+      <motion.section 
+        className="py-16 bg-white"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -127,7 +170,13 @@ export default function UC1() {
 
           <div className="space-y-16">
             {/* Feature 1 */}
-            <div className="flex flex-col lg:flex-row items-center gap-8">
+            <motion.div 
+              className="flex flex-col lg:flex-row items-center gap-8"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               <div className="lg:w-1/2">
                 <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                   Structuration instantanée pour un<br />premier "go / no-go" <span className="text-purple-600">immédiat</span>
@@ -151,10 +200,16 @@ export default function UC1() {
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Feature 2 */}
-            <div className="flex flex-col lg:flex-row-reverse items-center gap-8">
+            <motion.div 
+              className="flex flex-col lg:flex-row-reverse items-center gap-8"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
               <div className="lg:w-1/2">
                 <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                   Accédez à une vision <span className="text-orange-600">claire</span> de<br />votre projet
@@ -178,10 +233,16 @@ export default function UC1() {
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Feature 3 */}
-            <div className="flex flex-col lg:flex-row items-center gap-8">
+            <motion.div 
+              className="flex flex-col lg:flex-row items-center gap-8"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
               <div className="lg:w-1/2">
                 <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                   Validez et archivez chaque point<br /><span className="text-green-600">sans effort</span>
@@ -205,13 +266,19 @@ export default function UC1() {
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Results/Testimonials Section */}
-      <section className="py-16 bg-gray-50">
+      <motion.section 
+        className="py-16 bg-gray-50"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -338,10 +405,16 @@ export default function UC1() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Advanced Capabilities Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-700 via-purple-800 to-purple-900 text-white relative overflow-hidden">
+      <motion.section 
+        className="py-20 bg-gradient-to-br from-purple-700 via-purple-800 to-purple-900 text-white relative overflow-hidden"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <div className="flex justify-center mb-8">
@@ -485,10 +558,16 @@ détails</span>
           <div className="absolute bottom-10 left-10 w-40 h-40 bg-purple-500/10 rounded-full blur-xl"></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-300/5 rounded-full blur-3xl"></div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Reference Projects Section */}
-      <section className="py-16 bg-gray-50">
+      <motion.section 
+        className="py-16 bg-gray-50"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -531,7 +610,7 @@ détails</span>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Client Logos */}
       <ClientLogos />
