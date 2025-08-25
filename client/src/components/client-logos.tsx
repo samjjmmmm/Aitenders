@@ -51,15 +51,6 @@ export default function ClientLogos({ language = 'fr' }: ClientLogosProps) {
   return (
     <section className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-aitenders-black mb-4">
-            {t('client.title', fallbackT[language]?.title)}
-          </h2>
-          <p className="text-lg text-aitenders-dark-blue">
-            {t('client.subtitle', fallbackT[language]?.subtitle)}
-          </p>
-        </div>
-        
         <div className="overflow-hidden">
           <div className="flex logo-scroll space-x-12 items-center">
             {duplicatedLogos.map((logo, index) => (
