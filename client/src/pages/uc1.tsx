@@ -281,21 +281,25 @@ export default function UC1() {
 
         <div className="content-boundary relative z-10">
           <div className="text-center mb-8 md:mb-12 lg:mb-16 xl:mb-20 fade-in-up">
-            <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 leading-[1.1] tracking-tight">{t('uc1.solution_section.mainTitle')}</h1>
+            <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 leading-[1.1] tracking-tight">
+              {t('uc1.solution_section.mainTitle') || 'Votre copilote IA qui accélère l\'analyse de vos petits projets'}
+            </h1>
             <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
-              {t('uc1.solution_section.subtitle')}
+              {t('uc1.solution_section.subtitle') || 'Décidez rapidement et prouvez que tout a été contrôlé, en moins de 48h.'}
             </p>
           </div>
 
           {/* Feature 1: Go/No-Go Immédiat - Text Left, Card Right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 lg:gap-16 xl:gap-20 items-center mb-10 md:mb-16 lg:mb-20 xl:mb-24">
             <div className="order-1 fade-in-left lg:pr-6">
-              <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 leading-[1.1] tracking-tight">{t('uc1.solution_section.feature1_title')}</h3>
+              <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 leading-[1.1] tracking-tight">
+                {t('uc1.solution_section.feature1_title') || 'Structuration instantanée pour "go / no-go"'}
+              </h3>
               <p className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 md:mb-8 font-light">
-                {t('uc1.solution_section.feature1_text')}
+                {t('uc1.solution_section.feature1_text') || 'Grâce aux assistants IA, vos documents sont instantanément analysés, classés et priorisés : intérêt commercial, faisabilité technique, contraintes réglementaires.'}
               </p>
               <p className="text-base md:text-lg font-semibold text-blue-600">
-                {t('uc1.solution_section.feature1_highlight')}
+                {t('uc1.solution_section.feature1_highlight') || 'immédiat'}
               </p>
             </div>
             <div className="order-2 fade-in-right lg:pl-6">
