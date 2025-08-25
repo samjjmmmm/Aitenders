@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaCheckCircle, FaLightbulb, FaEye, FaArchive, FaFileAlt, FaChartLine, FaComments, FaCog, FaLayerGroup, FaTags } from 'react-icons/fa';
 import { motion } from "framer-motion";
+import { useGlobalTranslations } from "@/contexts/TranslationContext";
 import { AitendersSimulatorFinal } from "@/components/aitenders-simulator-final";
 import ClientLogos from "@/components/client-logos";
 import HubSpotBookingModal from "@/components/hubspot-booking-modal";
@@ -16,6 +17,7 @@ import featureImage3 from "@assets/wow 3_1756122537813.png";
 
 export default function UC1() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t, currentLanguage } = useGlobalTranslations();
 
   // Animation variants
   const fadeInUp = {
@@ -60,20 +62,20 @@ export default function UC1() {
             {/* Badge */}
             <div className="mb-6 md:mb-8">
               <Badge className="bg-gradient-to-r from-blue-100 to-blue-200 text-blue-800 border-blue-300 text-sm md:text-base font-semibold px-4 md:px-6 py-2 rounded-full">
-                Accélérez l'Analyse Des Offres Répétitives
+                {t('uc1.hero.badge') || 'Accélérez l\'Analyse Des Offres Répétitives'}
               </Badge>
             </div>
 
             {/* Main Title */}
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-              Une analyse go/no-go <span className="text-purple-600">immédiate</span>,
+              {t('uc1.hero.title') || 'Une analyse go/no-go'} <span className="text-purple-600">{t('uc1.hero.span') || 'immédiate'}</span>,
               <br />
-              alignée avec vos <span className="text-purple-600">processus interne</span>.
+              {t('uc1.painPoints.text1') || 'alignée avec vos'} <span className="text-purple-600">{t('uc1.hero.span2') || 'processus interne'}</span>.
             </h1>
             
             {/* Body Copy */}
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-10 md:mb-12 max-w-4xl mx-auto">
-              La seule plateforme pensée pour les petits projets à cycles courts : Agents IA d'analyse des points clés, automatisation d'une synthèse et validation guidée. Vous transformez des heures de relecture et d'analyse en <span className="font-semibold text-blue-600">minutes</span>, gagnez en sérénité et livrez une offre solide et incontestable — sans surcharge ni faux départs.
+              {t('uc1.hero.description') || 'La seule plateforme pensée pour les petits projets à cycles courts : Agents IA d\'analyse des points clés, automatisation d\'une synthèse et validation guidée. Vous transformez des heures de relecture et d\'analyse en'} <span className="font-semibold text-blue-600">{t('uc1.hero.description_span') || 'minutes'}</span>, {t('uc1.hero.description2') || 'gagnez en sérénité et livrez une offre solide et incontestable — sans surcharge ni faux départs.'}
             </p>
             
             {/* CTA Buttons */}
@@ -82,10 +84,10 @@ export default function UC1() {
                 onClick={() => setIsModalOpen(true)}
                 className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-12 py-6 text-xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
               >
-                Réservez une Démo
+                {t('uc1.hero.demoButton') || 'Réservez une Démo'}
               </Button>
               <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-6 text-lg font-semibold rounded-3xl transition-all duration-300">
-                Téléchargez le cas d'usage →
+                {t('uc1.hero.downloadButton') || 'Téléchargez le cas d\'usage →'}
               </Button>
             </div>
           </motion.div>
@@ -123,18 +125,16 @@ export default function UC1() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="bg-white rounded-xl shadow-lg p-8 md:p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Go / No-Go immédiat, <span className="text-blue-600">process interne garanti</span>
+              {t('uc1.painPoints.headline') || 'Go / No-Go immédiat'}, <span className="text-blue-600">{t('uc1.painPoints.headline_span') || 'process interne garanti'}</span>
             </h2>
 
             <p className="text-lg text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-              Sur les petits projets, la pression est double : analyser vite et prouver que tout a été lu, compris et contrôlé.
+              {t('uc1.painPoints.text1') || 'Sur les petits projets, la pression est double : analyser vite et prouver que tout a été lu, compris et contrôlé.'}
             </p>
 
             <p className="text-lg text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-              Sans support transversal (qualité, juridique), chaque oubli peut coûter cher au marge et décision et en coup de crédibilité interne.
-              Avec Aitenders, vous obtenez en quelques minutes une vision claire et priorisée de vos documents pour un go/no-go
-              <span className="font-semibold"> immédiat</span>. La plateforme guide ensuite la validation et archive chaque contrôle, garantissant que vos obligations
-              internes sont remplies sans surcharge.
+              {t('uc1.painPoints.text2') || 'Sans support transversal (qualité, juridique), chaque oubli peut coûter cher au marge et décision et en coup de crédibilité interne. Avec Aitenders, vous obtenez en quelques minutes une vision claire et priorisée de vos documents pour un go/no-go'}
+              <span className="font-semibold">{t('uc1.painPoints.text2_span') || ' immédiat'}</span>. {t('uc1.painPoints.text3') || 'La plateforme guide ensuite la validation et archive chaque contrôle, garantissant que vos obligations internes sont remplies sans surcharge.'}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -161,10 +161,10 @@ export default function UC1() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Votre <span className="text-blue-600">copilote IA</span> qui accélère l'analyse de vos petits projets
+              {t('uc1.solution_section.mainTitle') || 'Votre'} <span className="text-blue-600">{t('uc1.solution_section.mainTitle_span') || 'copilote IA'}</span> {t('uc1.solution_section.mainTitle2') || 'qui accélère l\'analyse de vos petits projets'}
             </h2>
             <p className="text-xl text-gray-600">
-              Décidez vite et prouvez que tout a été contrôlé, en moins de 48h.
+              {t('uc1.solution_section.subtitle') || 'Décidez vite et prouvez que tout a été contrôlé, en moins de 48h.'}
             </p>
           </div>
 
@@ -179,10 +179,10 @@ export default function UC1() {
             >
               <div className="lg:w-1/2">
                 <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                  Structuration instantanée pour un<br />premier "go / no-go" <span className="text-purple-600">immédiat</span>
+                  {t('uc1.solution_section.feature1_title') || 'Structuration instantanée pour un<br />premier "go / no-go"'} <span className="text-purple-600">{t('uc1.solution_section.feature1_highlight') || 'immédiat'}</span>
                 </h3>
                 <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                  Grâce aux assistants IA, vos documents sont instantanément analysés, classés et priorisés : critères d'intérêt, points critiques et preuves associées sont détectés en quelques minutes.
+                  {t('uc1.solution_section.feature1_text') || 'Grâce aux assistants IA, vos documents sont instantanément analysés, classés et priorisés : critères d\'intérêt, points critiques et preuves associées sont détectés en quelques minutes.'}
                 </p>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                   Le Responsable Offre démarre ainsi avec une base claire et exploitable : vision globale du projet, identification des points bloquants éventuels et possibilité de décider quasi immédiatement d'un "go / no-go".
@@ -282,10 +282,10 @@ export default function UC1() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Ce que nos utilisateurs obtiennent concrètement pour les <span className="text-blue-600">petites offres</span>
+              {t('uc1.results.headline') || 'Ce que nos utilisateurs obtiennent concrètement pour les'} <span className="text-blue-600">{t('uc1.results_section.kpis.serenity') || 'petites offres'}</span>
             </h2>
             <p className="text-xl text-gray-600">
-              Des résultats mesurés sur nos clients les plus actifs
+              {t('uc1.results.subtitle') || 'Des résultats mesurés sur nos clients les plus actifs'}
             </p>
           </div>
 
