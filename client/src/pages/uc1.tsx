@@ -23,19 +23,19 @@ export default function UC1() {
             <Badge className="mb-8 bg-gradient-to-r from-blue-100 to-blue-200 text-blue-800 border-blue-300 text-base font-semibold px-6 py-2 rounded-full">
               Accélérez l'Analyse Des Offres Répétitives
             </Badge>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
               Une analyse go/no-go <span className="text-purple-600">immédiate</span>,
               <br />
               alignée avec vos <span className="text-purple-600">processus interne</span>.
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed max-w-3xl">
               La seule plateforme pensée pour les petits projets à cycles courts : Agents IA d'analyse des points clés, automatisation d'une synthèse et validation guidée. Vous transformez des
               <br />
               Heures de relecture et d'analyse en <span className="font-semibold text-blue-600">minutes</span>, gagnez en sérénité et livrez une offre solide et incontestable — sans surcharge ni faux départs.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button 
                 onClick={() => setIsModalOpen(true)}
@@ -43,7 +43,7 @@ export default function UC1() {
               >
                 Réservez une Démo
               </Button>
-              
+
               <Button 
                 variant="ghost" 
                 className="text-blue-600 hover:text-blue-700 hover:bg-blue-50 px-8 py-4 text-lg font-medium"
@@ -62,23 +62,23 @@ export default function UC1() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Go / No-Go immédiat, <span className="text-blue-600">process interne garanti</span>
             </h2>
-            
+
             <p className="text-lg text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
               Sur les petits projets, la pression est double : analyser vite et prouver que tout a été lu, compris et contrôlé.
             </p>
-            
+
             <p className="text-lg text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
               Sans support transversal (qualité, juridique), chaque oubli peut coûter cher au marge et décision et en coup de crédibilité interne.
               Avec Aitenders, vous obtenez en quelques minutes une vision claire et priorisée de vos documents pour un go/no-go
               <span className="font-semibold"> immédiat</span>. La plateforme guide ensuite la validation et archive chaque contrôle, garantissant que vos obligations
               internes sont remplies sans surcharge.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 font-medium">
                 Boostez Vos Petits Projets!
               </Button>
-              
+
               <Button variant="outline" className="border-blue-300 text-blue-600 hover:bg-blue-50 px-8 py-3 font-medium">
                 → Voir la Démo Rapide
               </Button>
@@ -103,30 +103,18 @@ export default function UC1() {
             {/* Feature 1 */}
             <div className="flex flex-col lg:flex-row items-center gap-8">
               <div className="lg:w-1/2">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                    <FaLightbulb className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <Badge className="bg-blue-100 text-blue-800 px-3 py-1 text-sm">1</Badge>
-                </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                  Structuration instantanée pour un premier "go / no-go" <span className="text-blue-600">immédiat</span>
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  Structuration instantanée pour un<br />premier "go / no-go" <span className="text-purple-600">immédiat</span>
                 </h3>
-                <p className="text-gray-600 mb-6">
-                  Grâce aux assistants IA, vos documents sont instantanément analysés, classés et priorisés : critères d’intérêt, points critiques et preuves associées sont détectés en quelques minutes.
-
-                  Le Responsable Offre démarre ainsi avec une base claire et exploitable : vision globale du projet, identification des points bloquants éventuels et possibilité de décider quasi immédiatement d’un “go / no‑go”
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  Grâce aux assistants IA, vos documents sont instantanément analysés, classés et priorisés : critères d'intérêt, points critiques et preuves associées sont détectés en quelques minutes.
                 </p>
-                <ul className="text-gray-600 space-y-2">
-                  <li className="flex items-start">
-                    
-                  </li>
-                </ul>
-                <div className="mt-6">
-                  <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-                    Gain immédiat estimé: -70% temps d'analyse initiale
-                  </span>
-                </div>
+                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                  Le Responsable Offre démarre ainsi avec une base claire et exploitable : vision globale du projet, identification des points bloquants éventuels et possibilité de décider quasi immédiatement d'un "go / no-go".
+                </p>
+                <p className="text-lg font-semibold text-blue-600">
+                  Votre analyse prête avant même la première réunion
+                </p>
               </div>
               <div className="lg:w-1/2">
                 <div className="bg-gray-100 rounded-xl p-6 h-80 flex items-center justify-center">
@@ -141,28 +129,18 @@ export default function UC1() {
             {/* Feature 2 */}
             <div className="flex flex-col lg:flex-row-reverse items-center gap-8">
               <div className="lg:w-1/2">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
-                    <FaEye className="w-6 h-6 text-red-600" />
-                  </div>
-                  <Badge className="bg-red-100 text-red-800 px-3 py-1 text-sm">2</Badge>
-                </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                  Accédez à une vision <span className="text-red-600">claire</span> de votre projet
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  Accédez à une vision <span className="text-orange-600">claire</span> de<br />votre projet
                 </h3>
-                <p className="text-gray-600 mb-6">
-                  Synthèse intelligente de chaque document avec recommandations contextuelles : exigences techniques, contraintes réglementaires, planning indicatif.
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  Aitenders génère une vue claire et priorisée de l'ensemble des critères détectés, avec leurs valeurs et les liens directs vers les documents sources.
                 </p>
-                <p className="text-gray-600 mb-6">
-                  • Recommandation d'offres vous suggère les bonnes directions, avec un pilotage attentif de validation interne.
-                  • Suivi automatique de l'avancement et de la complétude des études et des risques couverts.
-                  • Un chef automatique projets gère même les oublis.
+                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                  Le Responsable Offre n'a plus besoin de parcourir des centaines de pages ou de jongler entre plusieurs fichiers : tout est rassemblé dans une synthèse visuelle, exploitable immédiatement.
                 </p>
-                <div className="mt-6">
-                  <span className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">
-                    Gain remplissons directe Contact Mettre
-                  </span>
-                </div>
+                <p className="text-lg font-semibold text-orange-600">
+                  Votre revue interne prête en quelques minutes
+                </p>
               </div>
               <div className="lg:w-1/2">
                 <div className="bg-gray-100 rounded-xl p-6 h-80 flex items-center justify-center">
@@ -177,28 +155,18 @@ export default function UC1() {
             {/* Feature 3 */}
             <div className="flex flex-col lg:flex-row items-center gap-8">
               <div className="lg:w-1/2">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
-                    <FaArchive className="w-6 h-6 text-green-600" />
-                  </div>
-                  <Badge className="bg-green-100 text-green-800 px-3 py-1 text-sm">3</Badge>
-                </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                  Validez et archivez chaque point sans effort
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  Validez et archivez chaque point<br /><span className="text-green-600">sans effort</span>
                 </h3>
-                <p className="text-gray-600 mb-6">
-                  Interface de validation étape par étape qui archive automatiquement chaque contrôle et justification pour audit interne.
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  Aitenders vous guide pas à pas pour confirmer, ajuster ou rejeter chaque élément identifié par l'IA. Chaque validation est automatiquement tracée et historisée, créant un dossier de preuves complet.
                 </p>
-                <p className="text-gray-600 mb-6">
-                  • Chaque contrôle est documenté avec horodatage et traçabilité complète
-                  • Format d'export adapté à vos process internes (PDF, Excel, etc.)
-                  • Archive centralisée accessible à tout moment pour justification
+                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                  Le responsable d'offre passe d'une validation manuelle, lente et incertaine à un processus fluide, sécurisé et incontestable.
                 </p>
-                <div className="mt-6">
-                  <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-                    Conformité métier: 100% traçabilité des contrôles
-                  </span>
-                </div>
+                <p className="text-lg font-semibold text-green-600">
+                  Finies les zones grises : tout est validé et tracé.
+                </p>
               </div>
               <div className="lg:w-1/2">
                 <div className="bg-gray-100 rounded-xl p-6 h-80 flex items-center justify-center">
@@ -430,7 +398,7 @@ export default function UC1() {
             <p className="text-gray-600 mb-8">
               Découvrez l'impact financier d'Aitenders sur votre activité petits projets
             </p>
-            
+
             <div className="bg-white rounded-lg p-6">
               <AitendersSimulatorFinal useCase="UC1" />
             </div>
