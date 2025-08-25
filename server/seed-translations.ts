@@ -14,7 +14,15 @@ const uc1TranslationKeys = {
   'uc1.hero.demoButton': 'Réservez une Démo',
   'uc1.hero.downloadButton': 'Téléchargez le cas d\'usage →',
 
-  // Pain Points Section
+  // Pain Points Section (new clean card design)
+  'uc1.painPoints.headline': 'Go/No-Go immédiat,',
+  'uc1.painPoints.headline_span': 'process interne garanti',
+  'uc1.painPoints.text1': 'Sur les petits projets, la pression est double : analyser vite et prouver que tout a été lu, compris et contrôlé.',
+  'uc1.painPoints.text2': 'Sans support transversal (qualité, juridique), chaque outil peut coûter cher en marge en exécution et du coup en crédibilité interne. Avec Aitenders, vous obtenez en quelques minutes une vision claire et priorisée de vos documents pour un go/no-go immédiat. La plateforme guide ensuite la validation et archive chaque contrôle, garantissant que vos obligations internes sont remplies sans surcharge.',
+  'uc1.painPoints.contactButton': 'Boostez Vos Petits Projets!',
+  'uc1.painPoints.demoButton': 'Voir la Démo Rapide',
+
+  // Pain Points Section (legacy)
   'uc1.painPoints.headline': 'Go / No-Go immédiat',
   'uc1.painPoints.headline_span': ', process interne garanti',
   'uc1.painPoints.text1': 'Sur les petits projets, la pression est double : analyser vite et prouver que tout a été lu, compris et contrôlé.',
@@ -651,6 +659,15 @@ const allUCEnglishTranslations = {
   'uc1.hero.demoButton': 'Book a Demo',
   'uc1.hero.downloadButton': 'Download the use case →',
 
+  // Pain Points Section (new clean card design)
+  'uc1.painPoints.headline': 'Immediate Go/No-Go,',
+  'uc1.painPoints.headline_span': 'guaranteed internal process',
+  'uc1.painPoints.text1': 'On small projects, the pressure is double: analyze quickly and prove that everything has been read, understood and controlled.',
+  'uc1.painPoints.text2': 'Without cross-functional support (quality, legal), each tool can be expensive in margin execution and therefore in internal credibility. With Aitenders, you get in a few minutes a clear and prioritized view of your documents for immediate go/no-go. The platform then guides validation and archives each control, ensuring your internal obligations are met without overload.',
+  'uc1.painPoints.contactButton': 'Boost Your Small Projects!',
+  'uc1.painPoints.demoButton': 'See Quick Demo',
+
+  // Legacy pain points section
   'uc1.painPoints.headline': 'Immediate Go / No-Go',
   'uc1.painPoints.headline_span': ', guaranteed internal process',
   'uc1.painPoints.text1': 'On small projects, the pressure is double: analyze quickly and prove everything has been read, understood and controlled.',
