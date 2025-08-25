@@ -430,7 +430,7 @@ export default function UC2Page() {
 
         <div className="content-boundary relative z-10">
           <div className="text-center mb-8 md:mb-12 lg:mb-16 xl:mb-20 fade-in-up">
-            <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 leading-[1.1] tracking-tight">{t('uc2.solution_section.mainTitle')}</h1>
+            <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 md:mb-4 lg:mb-6 leading-[1.1] tracking-tight">{t('uc2.solution_section.title')}</h1>
             <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
               {t('uc2.solution_section.subtitle')}
             </p>

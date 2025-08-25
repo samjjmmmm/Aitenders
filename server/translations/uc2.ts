@@ -58,9 +58,7 @@ export const uc2FrenchTranslations = {
   'uc2.roi_simulator.subtext': 'Découvrez les gains de productivité et de conformité réalisables avec Aitenders',
 
   // Solution Section
-  'uc2.solution_section.mainTitle': 'Votre',
-  'uc2.solution_section.mainTitle_span': 'copilote IA',
-  'uc2.solution_section.mainTitle2': 'qui transforme la complexité en clarté',
+  'uc2.solution_section.title': 'Votre copilote IA qui transforme la complexité en clarté',
   'uc2.solution_section.subtitle': 'Structurez, coordonnez et livrez des offres conformes en un temps record.',
   
   'uc2.solution_section.feature1_title': 'Structuration automatique du périmètre',
@@ -251,9 +249,7 @@ export const uc2EnglishTranslations = {
   'uc2.roi_simulator.subtext': 'Discover achievable productivity and compliance gains with Aitenders',
 
   // Solution Section
-  'uc2.solution_section.mainTitle': 'Your',
-  'uc2.solution_section.mainTitle_span': 'AI copilot',
-  'uc2.solution_section.mainTitle2': 'that transforms complexity into clarity',
+  'uc2.solution_section.title': 'Your AI copilot that transforms complexity into clarity',
   'uc2.solution_section.subtitle': 'Structure, coordinate and deliver compliant bids in record time.',
   
   'uc2.solution_section.feature1_title': 'Automatic scope structuring',
@@ -444,9 +440,7 @@ export const uc2SpanishTranslations = {
   'uc2.roi_simulator.subtext': 'Descubra las ganancias de productividad y conformidad realizables con Aitenders',
 
   // Solution Section
-  'uc2.solution_section.mainTitle': 'Su',
-  'uc2.solution_section.mainTitle_span': 'copiloto IA',
-  'uc2.solution_section.mainTitle2': 'que transforma la complejidad en claridad',
+  'uc2.solution_section.title': 'Su copiloto IA que transforma la complejidad en claridad',
   'uc2.solution_section.subtitle': 'Estructure, coordine y entregue ofertas conformes en tiempo récord.',
   
   'uc2.solution_section.feature1_title': 'Estructuración automática del perímetro',
@@ -637,9 +631,7 @@ export const uc2GermanTranslations = {
   'uc2.roi_simulator.subtext': 'Entdecken Sie erreichbare Produktivitäts- und Konformitätsgewinne mit Aitenders',
 
   // Solution Section
-  'uc2.solution_section.mainTitle': 'Ihr',
-  'uc2.solution_section.mainTitle_span': 'KI-Copilot',
-  'uc2.solution_section.mainTitle2': 'der Komplexität in Klarheit verwandelt',
+  'uc2.solution_section.title': 'Ihr KI-Copilot der Komplexität in Klarheit verwandelt',
   'uc2.solution_section.subtitle': 'Strukturieren, koordinieren und liefern Sie konforme Angebote in Rekordzeit.',
   
   'uc2.solution_section.feature1_title': 'Automatische Bereichsstrukturierung',
