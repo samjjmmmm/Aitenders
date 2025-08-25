@@ -55,10 +55,11 @@ export function TranslationProvider({ children }: TranslationProviderProps) {
       return result as Record<string, string>;
     },
     enabled: !!currentLanguage,
-    staleTime: 1000 * 60 * 1, // 1 minute to force refresh
-    gcTime: 1000 * 60 * 1, // 1 minute garbage collection time (renamed from cacheTime)
+    staleTime: 0, // Always fresh
+    gcTime: 0, // No caching
     refetchOnMount: true,
-    refetchOnWindowFocus: false,
+    refetchOnWindowFocus: true,
+    refetchInterval: false,
   });
 
   // Translation function with fallback
