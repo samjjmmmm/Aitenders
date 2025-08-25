@@ -18,41 +18,55 @@ export default function UC1() {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-16 md:py-20 lg:py-24 relative overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-left max-w-4xl">
-            <Badge className="mb-8 bg-gradient-to-r from-blue-100 to-blue-200 text-blue-800 border-blue-300 text-base font-semibold px-6 py-2 rounded-full">
-              Accélérez l'Analyse Des Offres Répétitives
-            </Badge>
+      <section className="relative py-12 md:py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-slate-50 via-gray-50 to-white overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center">
+            
+            {/* Badge */}
+            <div className="mb-6 md:mb-8">
+              <Badge className="bg-gradient-to-r from-blue-100 to-blue-200 text-blue-800 border-blue-300 text-sm md:text-base font-semibold px-4 md:px-6 py-2 rounded-full">
+                Accélérez l'Analyse Des Offres Répétitives
+              </Badge>
+            </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+            {/* Main Title */}
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
               Une analyse go/no-go <span className="text-purple-600">immédiate</span>,
               <br />
               alignée avec vos <span className="text-purple-600">processus interne</span>.
             </h1>
-
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed max-w-3xl">
-              La seule plateforme pensée pour les petits projets à cycles courts : Agents IA d'analyse des points clés, automatisation d'une synthèse et validation guidée. Vous transformez des
-              <br />
-              Heures de relecture et d'analyse en <span className="font-semibold text-blue-600">minutes</span>, gagnez en sérénité et livrez une offre solide et incontestable — sans surcharge ni faux départs.
+            
+            {/* Body Copy */}
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-10 md:mb-12 max-w-4xl mx-auto">
+              La seule plateforme pensée pour les petits projets à cycles courts : Agents IA d'analyse des points clés, automatisation d'une synthèse et validation guidée. Vous transformez des heures de relecture et d'analyse en <span className="font-semibold text-blue-600">minutes</span>, gagnez en sérénité et livrez une offre solide et incontestable — sans surcharge ni faux départs.
             </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 md:mb-20">
               <Button 
                 onClick={() => setIsModalOpen(true)}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-medium rounded-lg"
+                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-12 py-6 text-xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
               >
                 Réservez une Démo
               </Button>
-
-              <Button 
-                variant="ghost" 
-                className="text-blue-600 hover:text-blue-700 hover:bg-blue-50 px-8 py-4 text-lg font-medium"
-              >
+              <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-6 text-lg font-semibold rounded-3xl transition-all duration-300">
                 Téléchargez le cas d'usage →
               </Button>
             </div>
           </div>
+
+          {/* Hero Image - Bottom */}
+          <div className="w-full flex justify-center px-4">
+            <div className="relative w-full max-w-5xl">
+              {/* Image placeholder - will be added later */}
+              <div className="w-full h-80 bg-gray-100 rounded-xl flex items-center justify-center">
+                <div className="text-gray-500 text-center">
+                  <p>Hero image will be added here</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
