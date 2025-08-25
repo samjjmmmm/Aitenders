@@ -186,9 +186,6 @@ export default function UC1() {
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                   {t('uc1.solution_section.feature1_text2') || 'Le Responsable Offre démarre ainsi avec une base claire et exploitable : vision globale du projet, identification des points bloquants éventuels et possibilité de décider quasi immédiatement d\'un "go / no-go".'}
                 </p>
-                <p className="text-lg font-semibold text-blue-600">
-                  {t('uc1.solution_section.feature1_highlight2') || 'Votre analyse prête avant même la première réunion'}
-                </p>
               </div>
               <div className="lg:w-1/2">
                 <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
