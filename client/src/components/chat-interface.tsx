@@ -786,7 +786,7 @@ export default function ChatInterface({
   return (
     <div className={`fixed ${isExpanded ? 'inset-0' : 'bottom-0 left-0 right-0'} z-50 ${transparent || isExpanded ? 'bg-transparent' : 'bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-2xl'}`}>
       <div className={`${isExpanded ? 'w-[98%] h-[95vh] mt-4' : 'max-w-4xl'} mx-auto p-2 ${isExpanded ? 'flex flex-col' : ''}`}>
-        <div className={`bg-white border border-gray-300 ${isExpanded ? 'rounded-2xl h-full flex flex-col shadow-2xl' : 'rounded-2xl'} shadow-lg p-3 relative`}>
+        <div className={`${isExpanded ? 'bg-white rounded-2xl h-full flex flex-col shadow-2xl border border-gray-300' : ''} p-3 relative`}>
           {/* Expand/Collapse Button */}
           <button
             onClick={() => {
