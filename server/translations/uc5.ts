@@ -1,4 +1,4 @@
-// server/translations/uc5.ts (COMPLETE AND CORRECTED VERSION)
+// server/translations/uc5.ts (FINAL CORRECTED VERSION)
 
 export const uc5FrenchTranslations = {
   // Hero Section
@@ -125,20 +125,18 @@ export const uc5FrenchTranslations = {
   'uc5.chat.action4': 'Contact Expert',
 };
 
+// ... ALL OTHER LANGUAGES ARE NOW INCLUDED BELOW ...
+
 export const uc5EnglishTranslations = {
   // Hero Section
   'uc5.hero.badge': 'Tracking of Semi-Complex Contracts',
   'uc5.hero.title': 'Every commitment tracked, <1>every action traced</1>, every alert anticipated',
   'uc5.hero.description': '<1>The first platform designed to manage medium-complexity projects:</1> centralize your commitments, track your actions, and anticipate contractual deviations. You eliminate manual tracking via emails or Excel, gain reactivity, and secure your projects <2>with complete traceability and no administrative overhead</2>.',
   'uc5.hero.ctaButton': 'Book a Demo',
-
-  // Pain Points Section
   'uc5.painPoints.headline': 'Contract Management: from reactive <1>to proactive</1>',
   'uc5.painPoints.text1': 'On medium-sized projects, tracking via emails or Excel files allows critical deviations to go unnoticed. Result: misaligned commitments, accumulated delays, and increased stress for your teams.',
   'uc5.painPoints.text2': 'With Aitenders, centralize your commitments, detect deviations in real-time, and manage every action with complete traceability. You transform reactive tracking into proactive management, without administrative overhead.',
   'uc5.painPoints.ctaButton': 'Simulate the Impact',
-
-  // Solution Section
   'uc5.solution.mainTitle': 'Your <1>AI co-pilot</1> to anticipate and master your <2>claims</2>',
   'uc5.solution.subtitle': 'Detect deviations before they become disputes, document every commitment, and ensure complete traceability to secure your projects and avoid challenges.',
   'uc5.solution.feature1.title': 'Intelligent organization of documents and criteria <1>from day one</1>',
@@ -150,8 +148,6 @@ export const uc5EnglishTranslations = {
   'uc5.solution.feature3.title': 'Anticipate every deviation <1>before it becomes a claim</1>',
   'uc5.solution.feature3.description': 'The AI and your project teams collaborate to identify and monitor critical areas. Search for a commitment, history, or clause, and instantly find reliable, sourced information. <p><1>The information is actionable, organized, and reliable.</1> The project is under control, decisions are based on evidence, not intuition.</p>',
   'uc5.solution.feature3.highlight': 'You anticipate instead of reacting.',
-
-  // Results Section
   'uc5.results.headline': 'Concrete results for your medium-complexity projects',
   'uc5.results.subtitle': 'Measurable benefits for project managers, contract managers, and field teams',
   'uc5.results.card1.title': 'For Project Managers',
@@ -175,16 +171,12 @@ export const uc5EnglishTranslations = {
   'uc5.results.card3.benefit2': 'Evidence available and contextualized',
   'uc5.results.card3.benefit3': 'Quick and secure decisions when facing the client',
   'uc5.results.card3.impact': 'Impact: a living contract, accessible and useful daily',
-
-  // KPIs
   'uc5.kpis.kpi1.value': '80%',
   'uc5.kpis.kpi1.description': 'Time saved on project framing',
   'uc5.kpis.kpi2.value': '100%',
   'uc5.kpis.kpi2.description': 'Commitments traced and contextualized',
   'uc5.kpis.kpi3.value': '-50%',
   'uc5.kpis.kpi3.description': 'Fewer disputes and challenges',
-
-  // Toppings (Wow Features)
   'uc5.toppings.badge': 'Proactive Features',
   'uc5.toppings.headline': '<1>Toppings</1> to anticipate and secure your projects',
   'uc5.toppings.subtitle': 'Beyond standard tracking, activate advanced features to reduce disputes, streamline your claims, and ensure peace of mind for your teams.',
@@ -209,8 +201,6 @@ export const uc5EnglishTranslations = {
   'uc5.toppings.security.tag2': 'Audit Ready',
   'uc5.toppings.conclusion': 'Each feature makes your contract a proactive and secure tool',
   'uc5.toppings.ctaButton': 'Explore all toppings →',
-
-  // Reference Projects
   'uc5.projects.headline': 'Our <1>reference projects</1> on semi-complex contracts',
   'uc5.projects.subtitle': 'Discover how our clients manage their projects in execution with Aitenders AI',
   'uc5.projects.impactLabel': 'Client impact:',
@@ -238,12 +228,8 @@ export const uc5EnglishTranslations = {
   'uc5.projects.project3.impact2': '<strong>Compliance:</strong> ISO certifications ensured',
   'uc5.projects.project3.impact3': '<strong>Traceability:</strong> Real-time performance',
   'uc5.projects.project3.impact4': '<strong>Collaboration:</strong> 22 industrial lots',
-
-  // ROI Simulator
   'uc5.roi.headline': 'Integrated ROI Simulator',
   'uc5.roi.subtitle': 'Calculate your ROI in real time',
-
-  // Chat Actions
   'uc5.chat.action1': 'Our use cases',
   'uc5.chat.action2': 'UC5 Demo',
   'uc5.chat.action3': 'ROI Calculator',
@@ -251,19 +237,14 @@ export const uc5EnglishTranslations = {
 };
 
 export const uc5SpanishTranslations = {
-  // Hero Section
   'uc5.hero.badge': 'Seguimiento de contratos semi-complejos',
   'uc5.hero.title': 'Cada compromiso seguido, <1>cada acción trazada</1>, cada alerta anticipada',
   'uc5.hero.description': '<1>La primera plataforma diseñada para gestionar proyectos de complejidad media:</1> centralice sus compromisos, siga sus acciones y anticipe las desviaciones contractuales. Elimine el seguimiento artesanal por correo o Excel, gane en reactividad y asegure sus proyectos <2>con una trazabilidad completa y sin sobrecarga administrativa</2>.',
   'uc5.hero.ctaButton': 'Reservar una Demo',
-
-  // Pain Points Section
   'uc5.painPoints.headline': 'Gestión de contratos: de reactiva <1>a proactiva</1>',
   'uc5.painPoints.text1': 'En proyectos medianos, el seguimiento por correos o archivos de Excel permite que desviaciones críticas pasen desapercibidas. Resultado: compromisos no alineados, retrasos acumulados y mayor estrés para sus equipos.',
   'uc5.painPoints.text2': 'Con Aitenders, centralice sus compromisos, detecte desviaciones en tiempo real y gestione cada acción con una trazabilidad completa. Transforme el seguimiento reactivo en gestión proactiva, sin sobrecarga administrativa.',
   'uc5.painPoints.ctaButton': 'Simular el Impacto',
-
-  // Solution Section
   'uc5.solution.mainTitle': 'Su <1>copiloto de IA</1> para anticipar y dominar sus <2>reclamaciones</2>',
   'uc5.solution.subtitle': 'Detecte las desviaciones antes de que se conviertan en litigios, documente cada compromiso y asegure una trazabilidad completa para asegurar sus proyectos y evitar disputas.',
   'uc5.solution.feature1.title': 'Organización inteligente de documentos y criterios <1>desde el primer día</1>',
@@ -275,8 +256,6 @@ export const uc5SpanishTranslations = {
   'uc5.solution.feature3.title': 'Anticipe cada desviación <1>antes de que se convierta en una reclamación</1>',
   'uc5.solution.feature3.description': 'La IA y sus equipos de proyecto colaboran para identificar y seguir las áreas críticas. Busque un compromiso, un historial o una cláusula, y encuentre al instante la información fiable y documentada. <p><1>La información es procesable, organizada y fiable.</1> El proyecto está bajo control, las decisiones se basan en pruebas, no en intuición.</p>',
   'uc5.solution.feature3.highlight': 'Usted anticipa en lugar de reaccionar.',
-
-  // Results Section
   'uc5.results.headline': 'Resultados concretos para sus proyectos de complejidad media',
   'uc5.results.subtitle': 'Beneficios medibles para jefes de proyecto, gestores de contratos y equipos de campo',
   'uc5.results.card1.title': 'Para los jefes de proyecto',
@@ -300,16 +279,12 @@ export const uc5SpanishTranslations = {
   'uc5.results.card3.benefit2': 'Pruebas disponibles y contextualizadas',
   'uc5.results.card3.benefit3': 'Decisiones rápidas y seguras frente al cliente',
   'uc5.results.card3.impact': 'Impacto: un contrato vivo, accesible y útil a diario',
-
-  // KPIs
   'uc5.kpis.kpi1.value': '80 %',
   'uc5.kpis.kpi1.description': 'Ahorro de tiempo en la estructuración del proyecto',
   'uc5.kpis.kpi2.value': '100 %',
   'uc5.kpis.kpi2.description': 'Compromisos trazados y contextualizados',
   'uc5.kpis.kpi3.value': '-50 %',
   'uc5.kpis.kpi3.description': 'Menos litigios y disputas',
-
-  // Toppings (Wow Features)
   'uc5.toppings.badge': 'Funcionalidades Proactivas',
   'uc5.toppings.headline': '<1>Toppings</1> para anticipar y asegurar sus proyectos',
   'uc5.toppings.subtitle': 'Más allá del seguimiento estándar, active funcionalidades avanzadas para reducir litigios, agilizar sus reclamaciones y garantizar la tranquilidad de sus equipos.',
@@ -334,8 +309,6 @@ export const uc5SpanishTranslations = {
   'uc5.toppings.security.tag2': 'Listo para auditoría',
   'uc5.toppings.conclusion': 'Cada funcionalidad convierte su contrato en una herramienta proactiva y segura',
   'uc5.toppings.ctaButton': 'Explorar todos los toppings →',
-
-  // Reference Projects
   'uc5.projects.headline': 'Nuestros <1>proyectos de referencia</1> en contratos semi-complejos',
   'uc5.projects.subtitle': 'Descubra cómo nuestros clientes gestionan sus proyectos en ejecución con la IA de Aitenders',
   'uc5.projects.impactLabel': 'Impacto en el cliente:',
@@ -363,12 +336,8 @@ export const uc5SpanishTranslations = {
   'uc5.projects.project3.impact2': '<strong>Conformidad:</strong> Certificaciones ISO aseguradas',
   'uc5.projects.project3.impact3': '<strong>Trazabilidad:</strong> Rendimiento en tiempo real',
   'uc5.projects.project3.impact4': '<strong>Colaboración:</strong> 22 lotes industriales',
-
-  // ROI Simulator
   'uc5.roi.headline': 'Simulador de ROI Integrado',
   'uc5.roi.subtitle': 'Calcule su ROI en tiempo real',
-
-  // Chat Actions
   'uc5.chat.action1': 'Nuestros casos de uso',
   'uc5.chat.action2': 'Demo UC5',
   'uc5.chat.action3': 'Calculadora de ROI',
@@ -376,19 +345,14 @@ export const uc5SpanishTranslations = {
 };
 
 export const uc5GermanTranslations = {
-  // Hero Section
   'uc5.hero.badge': 'Verfolgung von halbkomplexen Verträgen',
   'uc5.hero.title': 'Jede Verpflichtung verfolgt, <1>jede Aktion nachverfolgt</1>, jede Warnung antizipiert',
   'uc5.hero.description': '<1>Die erste Plattform zur Steuerung von Projekten mittlerer Komplexität:</1> Zentralisieren Sie Ihre Verpflichtungen, verfolgen Sie Ihre Aktionen und antizipieren Sie vertragliche Abweichungen. Sie eliminieren manuelle Nachverfolgungen per E-Mail oder Excel, gewinnen an Reaktionsfähigkeit und sichern Ihre Projekte <2>mit vollständiger Nachvollziehbarkeit und ohne administrativen Mehraufwand</2>.',
   'uc5.hero.ctaButton': 'Demo buchen',
-
-  // Pain Points Section
   'uc5.painPoints.headline': 'Vertragsmanagement: von reaktiv <1>zu proaktiv</1>',
   'uc5.painPoints.text1': 'Bei mittelgroßen Projekten bleiben kritische Abweichungen bei der Nachverfolgung per E-Mail oder Excel unbemerkt. Ergebnis: nicht abgestimmte Verpflichtungen, angehäufte Verzögerungen und erhöhter Stress für Ihre Teams.',
   'uc5.painPoints.text2': 'Mit Aitenders zentralisieren Sie Ihre Verpflichtungen, erkennen Abweichungen in Echtzeit und steuern jede Aktion mit vollständiger Nachvollziehbarkeit. Sie wandeln reaktive Nachverfolgung in proaktives Management um, ohne administrativen Mehraufwand.',
   'uc5.painPoints.ctaButton': 'Auswirkungen simulieren',
-
-  // Solution Section
   'uc5.solution.mainTitle': 'Ihr <1>KI-Copilot</1> zur Antizipation und Beherrschung Ihrer <2>Ansprüche</2>',
   'uc5.solution.subtitle': 'Erkennen Sie Abweichungen, bevor sie zu Streitigkeiten werden, dokumentieren Sie jede Verpflichtung und gewährleisten Sie eine vollständige Nachvollziehbarkeit, um Ihre Projekte zu sichern und Anfechtungen zu vermeiden.',
   'uc5.solution.feature1.title': 'Intelligente Organisation von Dokumenten und Kriterien <1>vom ersten Tag an</1>',
@@ -400,8 +364,6 @@ export const uc5GermanTranslations = {
   'uc5.solution.feature3.title': 'Antizipieren Sie jede Abweichung, <1>bevor sie zu einem Anspruch wird</1>',
   'uc5.solution.feature3.description': 'Die KI und Ihre Projektteams arbeiten zusammen, um kritische Bereiche zu identifizieren und zu überwachen. Suchen Sie nach einer Verpflichtung, einem Verlauf oder einer Klausel und finden Sie sofort zuverlässige, belegte Informationen. <p><1>Die Informationen sind umsetzbar, organisiert und zuverlässig.</1> Das Projekt ist unter Kontrolle, Entscheidungen basieren auf Fakten, nicht auf Intuition.</p>',
   'uc5.solution.feature3.highlight': 'Sie antizipieren, anstatt zu reagieren.',
-
-  // Results Section
   'uc5.results.headline': 'Konkrete Ergebnisse für Ihre Projekte mittlerer Komplexität',
   'uc5.results.subtitle': 'Messbare Vorteile für Projektmanager, Vertragsmanager und Außendienstteams',
   'uc5.results.card1.title': 'Für Projektmanager',
@@ -425,16 +387,12 @@ export const uc5GermanTranslations = {
   'uc5.results.card3.benefit2': 'Nachweise verfügbar und kontextualisiert',
   'uc5.results.card3.benefit3': 'Schnelle und sichere Entscheidungen gegenüber dem Kunden',
   'uc5.results.card3.impact': 'Auswirkung: ein lebendiger Vertrag, zugänglich und täglich nützlich',
-
-  // KPIs
   'uc5.kpis.kpi1.value': '80 %',
   'uc5.kpis.kpi1.description': 'Zeitersparnis bei der Projektstrukturierung',
   'uc5.kpis.kpi2.value': '100 %',
   'uc5.kpis.kpi2.description': 'Verpflichtungen nachverfolgt und kontextualisiert',
   'uc5.kpis.kpi3.value': '-50 %',
   'uc5.kpis.kpi3.description': 'Weniger Streitigkeiten und Anfechtungen',
-
-  // Toppings (Wow Features)
   'uc5.toppings.badge': 'Proaktive Funktionen',
   'uc5.toppings.headline': '<1>Toppings</1> zur Antizipation und Sicherung Ihrer Projekte',
   'uc5.toppings.subtitle': 'Aktivieren Sie über die Standardverfolgung hinaus erweiterte Funktionen, um Streitigkeiten zu reduzieren, Ihre Ansprüche zu optimieren und die Gelassenheit Ihrer Teams zu gewährleisten.',
@@ -459,8 +417,6 @@ export const uc5GermanTranslations = {
   'uc5.toppings.security.tag2': 'Audit-bereit',
   'uc5.toppings.conclusion': 'Jede Funktion macht Ihren Vertrag zu einem proaktiven und sicheren Werkzeug',
   'uc5.toppings.ctaButton': 'Alle Toppings entdecken →',
-
-  // Reference Projects
   'uc5.projects.headline': 'Unsere <1>Referenzprojekte</1> für halbkomplexe Verträge',
   'uc5.projects.subtitle': 'Entdecken Sie, wie unsere Kunden ihre Projekte in der Ausführung mit Aitenders AI steuern',
   'uc5.projects.impactLabel': 'Kundenauswirkungen:',
@@ -488,12 +444,8 @@ export const uc5GermanTranslations = {
   'uc5.projects.project3.impact2': '<strong>Konformität:</strong> ISO-Zertifizierungen sichergestellt',
   'uc5.projects.project3.impact3': '<strong>Nachvollziehbarkeit:</strong> Echtzeit-Leistung',
   'uc5.projects.project3.impact4': '<strong>Zusammenarbeit:</strong> 22 Industrielose',
-
-  // ROI Simulator
   'uc5.roi.headline': 'Integrierter ROI-Simulator',
   'uc5.roi.subtitle': 'Berechnen Sie Ihren ROI in Echtzeit',
-
-  // Chat Actions
   'uc5.chat.action1': 'Unsere Anwendungsfälle',
   'uc5.chat.action2': 'UC5 Demo',
   'uc5.chat.action3': 'ROI-Rechner',
