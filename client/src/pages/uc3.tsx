@@ -36,8 +36,10 @@ import uc3ThirdFeatureImage from "@assets/wow 3_1755698579312.png";
 import uc3HeroImage from "@assets/UC 3 HERO_1756195609097.png";
 import ClientLogos from "@/components/client-logos";
 import { AitendersSimulatorFinal } from "@/components/aitenders-simulator-final";
+import { useTranslation } from 'react-i18next';
 
 export default function UC3Page() {
+  const { t } = useTranslation();
   // State for managing continuous animation loop
   const [animationKey, setAnimationKey] = useState(0);
 
@@ -280,7 +282,7 @@ export default function UC3Page() {
       {/* Header/Navbar */}
       <Header />
       {/* Hero Section - Professional SaaS Design */}
-      <section className="py-16 md:py-24 lg:py-32 xl:py-40 bg-gradient-to-br from-white via-slate-50/30 to-purple-50/20 relative overflow-hidden">
+      <section className="py-16 md:py-24 lg:py-32 xl:py-40 bg-gradient-to-br from-white via-slate-50/20 to-purple-50/20 relative overflow-hidden">
         {/* Subtle Abstract Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Large flowing gradient blob - top left */}
@@ -325,14 +327,11 @@ export default function UC3Page() {
                   visibleElements.has('hero-content') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
               >
-                <Badge className="mb-8 bg-gradient-to-r from-purple-50 to-purple-100/80 text-purple-800 border-purple-200/50 text-lg font-semibold px-6 py-3 rounded-full shadow-sm">Maitrisez Vos Offres Complexes</Badge>
+                <Badge className="mb-8 bg-gradient-to-r from-purple-50 to-purple-100/80 text-purple-800 border-purple-200/50 text-lg font-semibold px-6 py-3 rounded-full shadow-sm">{t('uc3.hero.badge')}</Badge>
 
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                  Chaque exigence traitée, <span className="text-purple-600">chaque risque maîtrisé</span>
-                </h1>
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight" dangerouslySetInnerHTML={{ __html: t('uc3.hero.title') }}></h1>
 
-                <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]"> <span className="text-purple-300">La seule plateforme pensée pour orchestrer les grands appels d’offres complexes :</span> analyse IA de milliers de pages, capture et validation des exigences, cohérence multi‑équipes et pilotage sans faille. 
-                Vous éliminez les angles morts, sécurisez la <span className="text-purple-bold600">conformité </span>et gagnez des jours critiques pour livrer une offre solide et compétitive.</p>
+                <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]" dangerouslySetInnerHTML={{ __html: t('uc3.hero.description') }}></p>
               </div>
 
 
@@ -433,14 +432,12 @@ export default function UC3Page() {
             <div className="relative z-10 text-center">
 
               {/* Main Headline */}
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Zéro angle mort, <span className="text-purple-600">zéro surprise</span>
-              </h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight" dangerouslySetInnerHTML={{ __html: t('uc3.painPoints.headline') }}></h2>
 
               {/* Body Copy */}
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">Dans les grands appels d’offres, les équipes gaspillent un <span className="text-grey-500 font-bold">temps critique</span> à vérifier manuellement la conformité, avec des risques d’oubli, d’incohérence et de rejet.</p>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light" dangerouslySetInnerHTML={{ __html: t('uc3.painPoints.text1') }}></p>
 
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">Avec Aitenders, démarrez sur une donnée intelligente dès le premier jour, collaborez sans friction et pilotez chaque évolution de l’offre pour garantir une réponse conforme et compétitive, sans mauvaise surprise.</p>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light" dangerouslySetInnerHTML={{ __html: t('uc3.painPoints.text2') }}></p>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
@@ -453,7 +450,7 @@ export default function UC3Page() {
                   }}
                   className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
                 >
-                  Simuler l'impact
+                  {t('uc3.painPoints.ctaButton')}
                 </Button>
               </div>
 
@@ -509,8 +506,8 @@ export default function UC3Page() {
               visibleElements.has('solution-header') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Votre <span className="text-purple-600">copilote IA </span> qui simplifie la gestion des appels d’offres complexes</h1>
-            <h3 className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">Structurez, collaborez et maîtrisez vos appels d’offres complexes, sans aucun angle mort.</h3>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight" dangerouslySetInnerHTML={{ __html: t('uc3.solution.mainTitle') }}></h1>
+            <h3 className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">{t('uc3.solution.subtitle')}</h3>
           </div>
 
           {/* Feature 1: Structure Complex Projects - Text Left, Card Right */}
@@ -522,14 +519,11 @@ export default function UC3Page() {
             }`}
           >
             <div className="order-1 pr-4 lg:pr-8">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Démarrez le projet sur une donnée pré-organisée et intelligente <span className="text-purple-600">dès le jour 1</span></h3>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-                Grâce aux assistants IA, les documents sont automatiquement structurés en base de données, les informations classifiés, les exigences identifiées, les points clés résumés, les contradictions et similitudes détectées etc ... 
-        <p>      <span className="text-purple-600">Le responsable d'offre mets à disposition de l’équipe projet</span> une base propre, intelligible, prête à l’analyse, sans aucun traitement manuel initial.</p>  
-              </p>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight" dangerouslySetInnerHTML={{ __html: t('uc3.solution.feature1.title') }}></h3>
+              <div className="text-xl text-gray-600 leading-relaxed mb-8 font-light" dangerouslySetInnerHTML={{ __html: t('uc3.solution.feature1.text') }}></div>
               <div className="flex items-center text-lg font-bold  text-blue-500">
                 <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
-                Base intelligente experte prête dès le premier jour!
+                {t('uc3.solution.feature1.highlight')}
               </div>
             </div>
             <div className="order-2">
@@ -571,15 +565,11 @@ export default function UC3Page() {
               </div>
             </div>
             <div className="order-1 lg:order-2 pl-4 lg:pl-8">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">Collaborez entre experts <span className="text-purple-600">sans friction</span>, assurez la conformité initiale <span className="text-purple-600">sans effort.</span></h3>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">Aitenders permet de générer de manière collaborative et structurée la matrice de conformité, l’allocation des exigences aux experts, et une structuration des livrables à produire. 
-                <p>
-                  <span className="text-purple-600"> Chaque expert </span> 
-                  sait ce qu’il doit faire, les angles morts sont visibles, la stratégie de réponse se construit en équipe, sans perte d’information. </p>
-</p>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight" dangerouslySetInnerHTML={{ __html: t('uc3.solution.feature2.title') }}></h3>
+              <div className="text-xl text-gray-600 leading-relaxed mb-8 font-light" dangerouslySetInnerHTML={{ __html: t('uc3.solution.feature2.text') }}></div>
               <div className="flex items-center text-lg text-gray-500">
                 <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
-                <span className="font-bold text-blue-500">Collaboration structurée et pilotée (exit les fichiers Excel)</span>
+                <span className="font-bold text-blue-500">{t('uc3.solution.feature2.highlight')}</span>
               </div>
             </div>
           </div>
@@ -594,11 +584,11 @@ export default function UC3Page() {
           >
             <div className="order-1 pr-4 lg:pr-8">
 
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">       Pilotez chaque évolution de l’offre,<span className="text-purple-600">sans rien laisser passer</span> </h3>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">Les changements documentaires sont détectés et versionnés automatiquement, avec comparaison instantanée. Le pilotage intégré des Q&A signale chaque écart, permettant à l’équipe d’en mesurer l’impact et d’agir sans délai. <p>               <span className="text-purple-600"> Le responsable de l'offre </span> s'assure ainsi d'identifier en amont les erreurs de version, les oublis et les non‑conformités : plus de “trous dans la raquette”...</p> </p>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight" dangerouslySetInnerHTML={{ __html: t('uc3.solution.feature3.title') }}></h3>
+              <div className="text-xl text-gray-600 leading-relaxed mb-8 font-light" dangerouslySetInnerHTML={{ __html: t('uc3.solution.feature3.text') }}></div>
                <div className="flex items-center text-lg font-bold  text-blue-500">
                 <MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />
-                 Pilotage des évolutions sans faille
+                 {t('uc3.solution.feature3.highlight')}
               </div>
             </div>
             <div className="order-2">
@@ -642,10 +632,8 @@ export default function UC3Page() {
             }`}
           >
             <div className="text-center mb-12 md:mb-16">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Ce que vos équipes obtiennent concrètement avec Aitenders</h3>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Une réponse sans angle mort pour vos appels d’offres complexes : conformité garantie, 
-                traçabilité intégrale et pilotage collaboratif pour maximiser vos chances de succès.
-              </p>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">{t('uc3.results.headline')}</h3>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">{t('uc3.results.subtitle')}</p>
             </div>
 
             {/* Results Grid */}
@@ -987,7 +975,7 @@ export default function UC3Page() {
           </div>
 
           {/* Bottom CTA */}
-          <div className="text-center mt-16 md:mt-20 lg:mt-24">
+          <div className="text-center mt-16 md:mt-24 lg:mt-24">
             <p className="text-gray-200 text-lg mb-8">
               Chaque fonctionnalité ajoute une dimension stratégique à votre processus
             </p>

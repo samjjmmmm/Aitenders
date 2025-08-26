@@ -7,8 +7,10 @@ export * from './privacy';
 export * from './security';
 export * from './uc1';
 export * from './uc2';
+export * from './uc3';
 
 // Import all translation objects
+
 import { 
   commonFrenchTranslations, 
   commonEnglishTranslations, 
@@ -58,6 +60,13 @@ import {
   uc2GermanTranslations 
 } from './uc2';
 
+import { 
+  uc3FrenchTranslations, 
+  uc3EnglishTranslations, 
+  uc3SpanishTranslations, 
+  uc3GermanTranslations 
+} from './uc3';
+
 // Combine all French translations
 export const allFrenchTranslations = {
   ...commonFrenchTranslations,
@@ -67,6 +76,7 @@ export const allFrenchTranslations = {
   ...securityFrenchTranslations,
   ...uc1FrenchTranslations,
   ...uc2FrenchTranslations,
+  ...uc3FrenchTranslations,
 };
 
 // Combine all English translations
@@ -78,6 +88,7 @@ export const allEnglishTranslations = {
   ...securityEnglishTranslations,
   ...uc1EnglishTranslations,
   ...uc2EnglishTranslations,
+  ...uc3EnglishTranslations,
 };
 
 // Combine all Spanish translations
@@ -89,6 +100,7 @@ export const allSpanishTranslations = {
   ...securitySpanishTranslations,
   ...uc1SpanishTranslations,
   ...uc2SpanishTranslations,
+  ...uc3SpanishTranslations,
 };
 
 // Combine all German translations
@@ -100,4 +112,5 @@ export const allGermanTranslations = {
   ...securityGermanTranslations,
   ...uc1GermanTranslations,
   ...uc2GermanTranslations,
+  ...uc3GermanTranslations,
 };
