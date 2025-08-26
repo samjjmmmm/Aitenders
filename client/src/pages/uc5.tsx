@@ -26,7 +26,7 @@ import { useGlobalTranslations } from '@/contexts/TranslationContext';
 // Import the special <Trans> component for handling styled text
 import { Trans } from 'react-i18next';
 
-export default function UC5() { // Renamed component to start with an uppercase letter
+export function UC5() { // Named export for proper import
   const { t } = useGlobalTranslations();
 
   return (
@@ -224,3 +224,6 @@ export default function UC5() { // Renamed component to start with an uppercase 
     </div>
   );
 }
+
+// Default export for backward compatibility
+export default UC5;
