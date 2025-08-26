@@ -84,9 +84,7 @@ export default function UC1() {
               >
                 {t('uc1.hero.demoButton') || 'Réservez une Démo'}
               </Button>
-              <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-6 text-lg font-semibold rounded-3xl transition-all duration-300">
-                {t('uc1.hero.downloadButton') || 'Téléchargez le cas d\'usage →'}
-              </Button>
+
             </div>
           </motion.div>
 
