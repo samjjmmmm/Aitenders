@@ -25,7 +25,7 @@ export const uc1FrenchTranslations = {
     "Avec Aitenders, vous obtenez en quelques minutes une vision claire et priorisée de vos documents pour un go/no-go",
   'uc1.painPoints.text4':
     "La plateforme guide ensuite la validation et archive chaque contrôle, garantissant que vos obligations internes sont remplies sans surcharge.",
-  'uc1.painPoints.optimizeButton': 'Boostez Vos Petits Projets!',
+  'uc1.painPoints.optimizeButton': 'Simuler l\'impact',
   'uc1.painPoints.demoButton': '→ Voir la Démo Rapide',
 
   // Solution section
@@ -188,6 +188,7 @@ export const uc1EnglishTranslations = {
   'uc1.painPoints.text2_span': ' decision',
   'uc1.painPoints.text3':
     'The platform then guides validation and archives every check, ensuring internal obligations are met without overload.',
+  'uc1.painPoints.optimizeButton': 'Simulate Impact',
 
   // Solution section
   'uc1.solution_section.mainTitle': 'Your',
@@ -343,6 +344,7 @@ export const uc1SpanishTranslations = {
   'uc1.painPoints.text2_span': ' inmediato',
   'uc1.painPoints.text3':
     'La plataforma guía la validación y archiva cada control, garantizando el cumplimiento de obligaciones internas sin sobrecarga.',
+  'uc1.painPoints.optimizeButton': 'Simular Impacto',
 
   // Solution section
   'uc1.solution_section.mainTitle': 'Su',
@@ -504,6 +506,7 @@ export const uc1GermanTranslations = {
   'uc1.painPoints.text2_span': ' sofort',
   'uc1.painPoints.text3':
     'Die Plattform führt durch die Validierung und archiviert jeden Check – interne Vorgaben werden ohne Mehraufwand erfüllt.',
+  'uc1.painPoints.optimizeButton': 'Auswirkungen simulieren',
 
   // Solution section
   'uc1.solution_section.mainTitle': 'Ihr',
