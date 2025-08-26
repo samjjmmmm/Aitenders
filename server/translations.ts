@@ -1,11 +1,11 @@
 import { eq, and } from "drizzle-orm";
 import { db } from "./db";
 import { languages, translationKeys, translations, type Language, type TranslationKey, type Translation } from "@shared/schema";
-import { allFrenchTranslations, allEnglishTranslations, allSpanishTranslations, allGermanTranslations } from "./translations/index";
+import { allFrenchTranslations, allEnglishTranslations, allSpanishTranslations, allGermanTranslations, uc5FrenchTranslations, uc5EnglishTranslations, uc5SpanishTranslations, uc5GermanTranslations } from "./translations/index";
 
 // Translation service for managing multilingual content
 export class TranslationService {
-  
+
   // Get all active languages
   async getLanguages(): Promise<Language[]> {
     return await db.select().from(languages).where(eq(languages.isActive, true));
@@ -20,7 +20,7 @@ export class TranslationService {
   // Get translations for a specific language and page
   async getTranslations(languageCode: string, page?: string): Promise<Record<string, string>> {
     const baseCondition = eq(translations.languageCode, languageCode);
-    const whereConditions = page 
+    const whereConditions = page
       ? and(baseCondition, eq(translationKeys.page, page))
       : baseCondition;
 
@@ -32,7 +32,7 @@ export class TranslationService {
       .from(translations)
       .innerJoin(translationKeys, eq(translations.keyId, translationKeys.id))
       .where(whereConditions);
-    
+
     // Convert to key-value object
     const translationsMap: Record<string, string> = {};
     results.forEach(({ key, value }) => {
@@ -79,7 +79,7 @@ export class TranslationService {
           context: `Auto-generated for ${key}`,
         })
         .returning();
-      
+
       translationKey = newKey;
     }
 
@@ -98,8 +98,8 @@ export class TranslationService {
       // Update existing translation
       await db
         .update(translations)
-        .set({ 
-          value, 
+        .set({
+          value,
           updatedAt: new Date(),
           isApproved: languageCode === 'fr' // Auto-approve French as reference
         })
@@ -150,6 +150,15 @@ export class TranslationService {
       { lang: 'es', translations: allSpanishTranslations },
       { lang: 'de', translations: allGermanTranslations },
     ];
+
+    // Add UC5 translations to the translationSets array
+    translationSets.push(
+      { lang: 'fr', translations: uc5FrenchTranslations },
+      { lang: 'en', translations: uc5EnglishTranslations },
+      { lang: 'es', translations: uc5SpanishTranslations },
+      { lang: 'de', translations: uc5GermanTranslations }
+    );
+
 
     for (const { lang, translations } of translationSets) {
       console.log(`Loading ${Object.keys(translations).length} translations for ${lang}`);
