@@ -81,8 +81,16 @@ export default function UC5() {
               </h2>
               <p className="text-xl text-gray-600 mb-8 font-light">{t('uc5.painPoints.text1')}</p>
               <p className="text-xl text-gray-600 mb-8 font-light">{t('uc5.painPoints.text2')}</p>
-              <div className="flex justify-center mb-16">
-                <Button className="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+                <Button 
+                  className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
+                  onClick={() => {
+                    const simulatorSection = document.querySelector('.bg-white.rounded-3xl.shadow-2xl.border.border-purple-100');
+                    if (simulatorSection) {
+                      simulatorSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                  }}
+                >
                   {t('uc5.painPoints.ctaButton')}
                 </Button>
               </div>
@@ -136,7 +144,7 @@ export default function UC5() {
       </motion.section>
 
       {/* Results Section */}
-      <motion.section initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="py-16 md:py-20 lg:py-24 px-4 bg-white">
+      <motion.section initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="py-16 md:py-20 px-4 bg-white">
         <div className="content-boundary">
           <div className="mb-20">
             <div className="text-center mb-12">
