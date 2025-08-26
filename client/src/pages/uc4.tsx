@@ -382,14 +382,14 @@ export default function UC4Page() {
                 <Button 
                   className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
                   onClick={() => {
-                    const simulatorSection = document.querySelector('.max-w-4xl.mx-auto');
+                    const simulatorSection = document.querySelector('.bg-white.rounded-3xl.shadow-2xl.border.border-purple-100');
                     if (simulatorSection) {
                       simulatorSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }
                   }}
                 >
                   Simuler l'impact
-                </Button>
+                </Button></old_str>
               </div>
             </div>
           </div>
