@@ -23,10 +23,10 @@ import uc4HeroImage from "@assets/HERO UC 4_1755793077078.png";
 import uc4FirstFeatureImage from "@assets/wow 1_1755793034506.png";
 import uc4SecondFeatureImage from "@assets/wow 2_1755706536721.png";
 import uc4ThirdFeatureImage from "@assets/43_1755177874563.png";
-import { useTranslation } from "@/contexts/TranslationContext";
+import { useGlobalTranslations } from "@/contexts/TranslationContext";
 
 export default function UC4Page() {
-  const { translations, loading, currentLanguage } = useTranslation();
+  const { translations, isLoading: loading, currentLanguage } = useGlobalTranslations();
   const [projectsData, setProjectsData] = useState([]);
 
   // Helper function to get translation with fallback
