@@ -14,7 +14,7 @@ import {
   MdShare, MdQuestionAnswer, MdSearch
 } from "react-icons/md";
 import Header from "@/components/header";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import ChatInterface from "@/components/chat-interface";
 import ClientLogos from "@/components/client-logos";
@@ -23,14 +23,86 @@ import uc4HeroImage from "@assets/HERO UC 4_1755793077078.png";
 import uc4FirstFeatureImage from "@assets/wow 1_1755793034506.png";
 import uc4SecondFeatureImage from "@assets/wow 2_1755706536721.png";
 import uc4ThirdFeatureImage from "@assets/43_1755177874563.png";
-import { useTranslation, Trans } from 'react-i18next'; // Using your system's translation tools
+import { useTranslation } from "@/contexts/TranslationContext";
 
 export default function UC4Page() {
-  const { t } = useTranslation('uc4'); // Using the 'uc4' namespace for this page
+  const { translations, loading, currentLanguage } = useTranslation();
+  const [projectsData, setProjectsData] = useState([]);
 
-  // NOTE: The hardcoded 'targetAudiences' and other arrays have been removed.
-  // This data should come from your translation files to be multilingual.
-  // The code now uses keys like 'results.card1.title' to fetch this text.
+  // Helper function to get translation with fallback
+  const t = (key: string) => {
+    return translations[key] || key;
+  };
+
+  // Translation helper for components like Trans
+  const Trans = ({ i18nKey, components = {} }: { i18nKey: string; components?: Record<string, any> }) => {
+    const text = t(i18nKey);
+    if (!components[1]) return <span>{text}</span>;
+    
+    const parts = text.split(/<1>(.*?)<\/1>/);
+    if (parts.length === 3) {
+      return (
+        <span>
+          {parts[0]}
+          {React.cloneElement(components[1], {}, parts[1])}
+          {parts[2]}
+        </span>
+      );
+    }
+    return <span>{text}</span>;
+  };
+
+  useEffect(() => {
+    // Load UC4 projects data
+    const loadProjects = () => {
+      const projects = [
+        {
+          id: 1,
+          title: t('uc4.projects.project1.title'),
+          badge: t('uc4.projects.project1.badge'),
+          contract: t('uc4.projects.project1.contract'),
+          description: t('uc4.projects.project1.description'),
+          impacts: [
+            t('uc4.projects.project1.impact1'),
+            t('uc4.projects.project1.impact2'),
+            t('uc4.projects.project1.impact3'),
+            t('uc4.projects.project1.impact4')
+          ]
+        },
+        {
+          id: 2,
+          title: t('uc4.projects.project2.title'),
+          badge: t('uc4.projects.project2.badge'),
+          contract: t('uc4.projects.project2.contract'),
+          description: t('uc4.projects.project2.description'),
+          impacts: [
+            t('uc4.projects.project2.impact1'),
+            t('uc4.projects.project2.impact2'),
+            t('uc4.projects.project2.impact3'),
+            t('uc4.projects.project2.impact4')
+          ]
+        },
+        {
+          id: 3,
+          title: t('uc4.projects.project3.title'),
+          badge: t('uc4.projects.project3.badge'),
+          contract: t('uc4.projects.project3.contract'),
+          description: t('uc4.projects.project3.description'),
+          impacts: [
+            t('uc4.projects.project3.impact1'),
+            t('uc4.projects.project3.impact2'),
+            t('uc4.projects.project3.impact3'),
+            t('uc4.projects.project3.impact4')
+          ]
+        }
+      ];
+      setProjectsData(projects);
+    };
+
+    if (!loading) {
+      loadProjects();
+    }
+  }, [translations, loading]);
 
   useEffect(() => {
     // Scroll animation logic
@@ -43,6 +115,17 @@ export default function UC4Page() {
     animatedElements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading translations...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-white">
@@ -216,7 +299,31 @@ export default function UC4Page() {
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">{t('projects.subtitle')}</p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 mb-16 md:mb-20">
-            {/* Projects mapped here */}
+            {projectsData.map((project) => (
+              <div key={project.id} className="group fade-in-up">
+                <Card className="h-full p-8 bg-gradient-to-br from-white to-gray-50/50 border border-gray-200/50 hover:border-purple-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                  <div className="flex items-start justify-between mb-6">
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h4>
+                      <p className="text-sm text-gray-500 mb-4">{project.contract}</p>
+                    </div>
+                    <Badge className="bg-purple-100 text-purple-700 border-purple-200">{project.badge}</Badge>
+                  </div>
+                  <p className="text-gray-700 text-sm leading-relaxed mb-6">{project.description}</p>
+                  <div className="border-t border-gray-200 pt-6">
+                    <p className="text-sm font-semibold text-gray-900 mb-4">{t('uc4.projects.impactLabel')}</p>
+                    <ul className="space-y-3">
+                      {project.impacts.map((impact, index) => (
+                        <li key={index} className="flex items-start">
+                          <span className="inline-block w-1.5 h-1.5 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                          <span className="text-gray-600 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: impact }}></span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </Card>
+              </div>
+            ))}
           </div>
           <ClientLogos />
           <div className="bg-white rounded-3xl shadow-2xl border border-purple-100 p-8 md:p-12">
@@ -227,11 +334,11 @@ export default function UC4Page() {
       </section>
 
       {/* Chat Interface */}
-      <ChatInterface language="fr" transparent={true} customActions={[
-        { label: t('chat.action1'), icon: <span>+</span>, onClick: () => {} },
-        { label: t('chat.action2'), icon: <MdPlayArrow />, onClick: () => {} },
-        { label: t('chat.action3'), icon: <MdAnalytics />, onClick: () => {} },
-        { label: t('chat.action4'), icon: <MdMail />, onClick: () => {} }
+      <ChatInterface language={currentLanguage} transparent={true} customActions={[
+        { label: t('uc4.chat.action1'), icon: <span>+</span>, onClick: () => {} },
+        { label: t('uc4.chat.action2'), icon: <MdPlayArrow />, onClick: () => {} },
+        { label: t('uc4.chat.action3'), icon: <MdAnalytics />, onClick: () => {} },
+        { label: t('uc4.chat.action4'), icon: <MdMail />, onClick: () => {} }
       ]} />
       <div className="h-32"></div>
     </div>
