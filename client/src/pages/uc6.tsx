@@ -279,22 +279,14 @@ export default function UC6Page() {
                 </p>
               </div>
 
-              {/* CTA Buttons - Side by Side */}
-              <div className="mb-16 flex flex-col sm:flex-row gap-6 justify-center items-center">
+              {/* CTA Button */}
+              <div className="mb-16 flex justify-center">
                 <Button 
                   size="lg" 
                   className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
                   data-testid="button-demo"
                 >
                   Réservez une Démo
-                </Button>
-                
-                <Button 
-                  variant="ghost" 
-                  className="text-purple-600 hover:text-purple-700 hover:bg-purple-50/80 px-6 py-4 text-xl font-medium underline decoration-2 underline-offset-4 rounded-2xl transition-all duration-300"
-                  data-testid="button-download"
-                >
-                  Téléchargez le cas d'usage →
                 </Button>
               </div>
             </div>
@@ -378,16 +370,19 @@ export default function UC6Page() {
                 écart, sans litige, et en totale confiance.
               </p>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-                <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
-                        data-testid="button-contact">
-                  Contactez-nous!
-                </Button>
-                <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white px-12 py-6 text-xl font-semibold rounded-3xl transition-all duration-300"
-                        data-testid="button-demo-video">
-                  <MdPlayArrow className="w-6 h-6 mr-2" />
-                  Voir la démo
+              {/* CTA Button */}
+              <div className="flex justify-center mb-16">
+                <Button 
+                  className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
+                  onClick={() => {
+                    const simulatorSection = document.querySelector('.bg-white.rounded-3xl.shadow-2xl.border.border-purple-100');
+                    if (simulatorSection) {
+                      simulatorSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                  }}
+                  data-testid="button-simulator"
+                >
+                  Simuler l'impact
                 </Button>
               </div>
             </div>
