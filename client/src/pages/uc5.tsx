@@ -21,13 +21,10 @@ import uc5SecondFeatureImage from "@assets/wow 2_1755751777579.png";
 import uc5ThirdFeatureImage from "@assets/WOW 3_1755757958470.png";
 import uc5HeroImage from "@assets/HERO UC 5_1755774540751.png";
 
-// Correct import for your project's translation system
-import { useGlobalTranslations } from '@/contexts/TranslationContext';
-// Import the special <Trans> component for handling styled text
-import { Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
-export function UC5() { // Changed to a named export
-  const { t } = useGlobalTranslations();
+export default function UC5() {
+  const { t } = useTranslation();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-white">
@@ -47,10 +44,10 @@ export function UC5() { // Changed to a named export
                  {t('uc5.hero.badge')}
                 </Badge>
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                  <Trans i18nKey="uc5.hero.title" t={t} components={{ 1: <span className="text-purple-600" /> }} />
+                  {t('uc5.hero.title')}
                 </h1>
                 <p className="text-lg md:text-xl mb-16 font-light">
-                  <Trans i18nKey="uc5.hero.description" t={t} components={{ 1: <span className="text-purple-300" />, 2: <span className="text-purple-600" /> }} />
+                  {t('uc5.hero.description')}
                 </p>
               </div>
               <div className="mb-16 flex justify-center">
@@ -77,7 +74,7 @@ export function UC5() { // Changed to a named export
           <div className="bg-white/95 rounded-3xl p-16 lg:p-20 border border-gray-100/50 mb-20">
             <div className="relative z-10 text-center">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                <Trans i18nKey="uc5.painPoints.headline" t={t} components={{ 1: <span className="text-purple-600" /> }} />
+                {t('uc5.painPoints.headline')}
               </h2>
               <p className="text-xl text-gray-600 mb-8 font-light">{t('uc5.painPoints.text1')}</p>
               <p className="text-xl text-gray-600 mb-8 font-light">{t('uc5.painPoints.text2')}</p>
@@ -112,15 +109,15 @@ export function UC5() { // Changed to a named export
         <div className="content-boundary relative z-10">
           <div className="text-center mb-12 md:mb-16">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              <Trans i18nKey="uc5.solution.mainTitle" t={t} components={{ 1: <span className="text-purple-600" />, 2: <span className="text-purple-600" /> }} />
+              {t('uc5.solution.mainTitle')}
             </h1>
             <h3 className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">{t('uc5.solution.subtitle')}</h3>
           </div>
           {/* Feature 1 */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
-              <h3 className="text-2xl font-bold mb-4"><Trans i18nKey="uc5.solution.feature1.title" t={t} components={{ 1: <span className="text-purple-600" /> }} /></h3>
-              <p className="text-xl text-gray-600 mb-8"><Trans i18nKey="uc5.solution.feature1.description" t={t} components={{ 1: <span className="text-purple-600" /> }} /></p>
+              <h3 className="text-2xl font-bold mb-4">{t('uc5.solution.feature1.title')}</h3>
+              <p className="text-xl text-gray-600 mb-8">{t('uc5.solution.feature1.description')}</p>
               <div className="flex items-center text-lg font-bold text-blue-500"><MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />{t('uc5.solution.feature1.highlight')}</div>
             </div>
             <div className="flex justify-center"><Lottie animationData={wow1Uc5Animation} loop={true} autoplay={true} className="w-full max-w-[400px]" /></div>
@@ -129,7 +126,7 @@ export function UC5() { // Changed to a named export
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="order-2 lg:order-1 flex justify-center"><img src={uc5SecondFeatureImage} alt="Engagement Tracking" className="w-full max-w-[500px]" /></div>
             <div className="order-1 lg:order-2">
-              <h3 className="text-2xl font-bold mb-4"><Trans i18nKey="uc5.solution.feature2.title" t={t} components={{ 1: <span className="text-purple-600" /> }} /></h3>
+              <h3 className="text-2xl font-bold mb-4">{t('uc5.solution.feature2.title')}</h3>
               <p className="text-xl text-gray-600 mb-8">{t('uc5.solution.feature2.description')}</p>
               <div className="flex items-center text-lg"><MdCheckCircle className="w-6 h-6 mr-3 text-green-500" /><span className="font-bold text-blue-500">{t('uc5.solution.feature2.highlight')}</span></div>
             </div>
@@ -137,8 +134,8 @@ export function UC5() { // Changed to a named export
           {/* Feature 3 */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
-              <h3 className="text-2xl font-bold mb-4"><Trans i18nKey="uc5.solution.feature3.title" t={t} components={{ 1: <span className="text-purple-600" /> }} /></h3>
-              <div className="text-xl text-gray-600 mb-8"><Trans i18nKey="uc5.solution.feature3.description" t={t} components={{ p: <p />, 1: <span className="text-purple-600" /> }} /></div>
+              <h3 className="text-2xl font-bold mb-4">{t('uc5.solution.feature3.title')}</h3>
+              <p className="text-xl text-gray-600 mb-8">{t('uc5.solution.feature3.description')}</p>
               <div className="flex items-center text-lg font-bold text-blue-500"><MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />{t('uc5.solution.feature3.highlight')}</div>
             </div>
             <div className="flex justify-center"><img src={uc5ThirdFeatureImage} alt="Intelligent Search" className="w-full max-w-[500px]" /></div>
@@ -251,7 +248,7 @@ export function UC5() { // Changed to a named export
         <div className="content-boundary relative z-10">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-6 py-3 bg-white/10 rounded-full border border-white/20 mb-6"><MdStars className="w-5 h-5 text-yellow-400 mr-2" /><span className="text-white font-semibold">{t('uc5.toppings.badge')}</span></div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6"><Trans i18nKey="uc5.toppings.headline" t={t} components={{ 1: <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-400 to-cyan-400" /> }} /></h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{t('uc5.toppings.headline')}</h2>
             <p className="text-xl text-gray-200 max-w-4xl mx-auto">{t('uc5.toppings.subtitle')}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -324,7 +321,7 @@ export function UC5() { // Changed to a named export
       <motion.section initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="py-16 md:py-20 px-4 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
         <div className="content-boundary">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"><Trans i18nKey="uc5.projects.headline" t={t} components={{ 1: <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600" /> }} /></h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{t('uc5.projects.headline')}</h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">{t('uc5.projects.subtitle')}</p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
