@@ -40,7 +40,7 @@ import { AitendersSimulatorFinal } from "@/components/aitenders-simulator-final"
 export default function UC3Page() {
   // State for managing continuous animation loop
   const [animationKey, setAnimationKey] = useState(0);
-  
+
   // Scroll animation hook
   const useScrollAnimation = () => {
     const [visibleElements, setVisibleElements] = useState(new Set());
@@ -76,7 +76,7 @@ export default function UC3Page() {
   };
 
   const { visibleElements, registerElement } = useScrollAnimation();
-  
+
   // ANIMATION TIMING CONFIGURATION - 7 SECOND LOOP
   // ==============================================
   // 0.0s - 3.0s : Image (opacity 1→1→0.3, duration: 3s)
@@ -92,13 +92,13 @@ export default function UC3Page() {
   // 6.0s - 6.6s : Notification "Analyse terminée" (delay: 6s, duration: 0.6s)
   // 6.2s - 6.8s : Notification "Équipes coordonnées" (delay: 6.2s, duration: 0.6s)
   // 7.0s        : RESTART - animationKey increment
-  
+
   // Continuous loop - restart animation every 7 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setAnimationKey(prev => prev + 1);
     }, 7000); // Restart animation every 7 seconds
-    
+
     return () => clearInterval(interval);
   }, []);
 
@@ -181,7 +181,7 @@ export default function UC3Page() {
     }
   ];
 
-  
+
   const [activeAudience, setActiveAudience] = useState(targetAudiences[0]);
 
   const painPoints = [
@@ -288,26 +288,26 @@ export default function UC3Page() {
                style={{
                  background: 'radial-gradient(circle, #F5F9FE 0%, #EBF2FD 40%, #C3D9F8 70%, transparent 100%)'
                }}></div>
-          
+
           {/* Medium accent blob - center right */}
           <div className="absolute top-1/3 -right-16 w-80 h-80 rounded-full opacity-20 blur-2xl"
                style={{
                  background: 'radial-gradient(circle, #C3D9F8 0%, #3880E8 30%, transparent 70%)'
                }}></div>
-          
+
           {/* Small atmospheric accent - bottom */}
           <div className="absolute -bottom-16 left-1/4 w-64 h-64 rounded-full opacity-25 blur-3xl"
                style={{
                  background: 'linear-gradient(135deg, #FBFCFF 0%, #F5F9FE 50%, #EBF2FD 100%)'
                }}></div>
-          
+
           {/* Flowing wave accent - mobile optimized */}
-          <div className="absolute top-1/2 left-0 w-full h-32 opacity-15 blur-xl lg:opacity-20"
+          <div className="absolute top-1/2 left-0 w-full h-32 opacity-15 lg:opacity-20"
                style={{
                  background: 'linear-gradient(90deg, transparent 0%, #F5F9FE 20%, #C3D9F8 40%, #EBF2FD 60%, transparent 100%)'
                }}></div>
         </div>
-        
+
         <div className="content-boundary relative z-10">
           <div 
             ref={(el) => registerElement('hero-main', el)}
@@ -326,17 +326,17 @@ export default function UC3Page() {
                 }`}
               >
                 <Badge className="mb-8 bg-gradient-to-r from-purple-50 to-purple-100/80 text-purple-800 border-purple-200/50 text-lg font-semibold px-6 py-3 rounded-full shadow-sm">Maitrisez Vos Offres Complexes</Badge>
-                
+
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
                   Chaque exigence traitée, <span className="text-purple-600">chaque risque maîtrisé</span>
                 </h1>
-                
+
                 <p className="text-lg md:text-xl mb-16 leading-relaxed font-light text-[#000000]"> <span className="text-purple-300">La seule plateforme pensée pour orchestrer les grands appels d’offres complexes :</span> analyse IA de milliers de pages, capture et validation des exigences, cohérence multi‑équipes et pilotage sans faille. 
                 Vous éliminez les angles morts, sécurisez la <span className="text-purple-bold600">conformité </span>et gagnez des jours critiques pour livrer une offre solide et compétitive.</p>
               </div>
-              
-              
-              
+
+
+
               {/* CTAs Side by Side */}
               <div className="mb-16 flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <Button 
@@ -345,23 +345,6 @@ export default function UC3Page() {
                 >
                   Réservez une Démo
                 </Button>
-                
-                <Button 
-                  variant="ghost" 
-                  className="text-purple-600 hover:text-purple-700 hover:bg-purple-50/80 px-6 py-4 text-lg font-medium underline decoration-2 underline-offset-4 rounded-xl transition-all duration-300"
-                >
-                  Téléchargez le cas d'usage →
-                </Button>
-              </div>
-              <div className="border-t border-gray-100 pt-8">
-                <p className="text-sm text-gray-500 mb-6">Mentionné parmi les 25 meilleures solutions d’IA et de ML</p>
-                
-                {/* Customer Logos / Trust Indicators */}
-                <div className="flex items-center space-x-8">
-
-                  
-                  
-                </div>
               </div>
             </div>
 
@@ -390,7 +373,7 @@ export default function UC3Page() {
           </div>
         </div>
       </section>
-      
+
       {/* Pain Points Section - Main Feature Card + Supporting Cards */}
       <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-slate-50 via-gray-50 to-purple-50/20 relative overflow-hidden">
         <div 
@@ -407,28 +390,28 @@ export default function UC3Page() {
                style={{
                  background: 'radial-gradient(circle, #F5F9FE 0%, #C3D9F8 50%, #EBF2FD 80%, transparent 100%)'
                }}></div>
-          
+
           {/* Flowing accent - left side */}
           <div className="absolute top-1/3 -left-24 w-72 h-72 rounded-full opacity-20 blur-2xl"
                style={{
                  background: 'linear-gradient(135deg, #EBF2FD 0%, #C3D9F8 60%, transparent 100%)'
                }}></div>
-          
+
           {/* Small directional accent */}
           <div className="absolute bottom-20 right-1/4 w-48 h-48 rounded-full opacity-15 blur-3xl"
                style={{
                  background: 'radial-gradient(circle, #3880E8 0%, #C3D9F8 40%, transparent 80%)'
                }}></div>
-          
+
           {/* Mobile-optimized wave */}
           <div className="absolute bottom-0 left-0 w-full h-24 opacity-10 blur-xl lg:opacity-15"
                style={{
                  background: 'linear-gradient(90deg, #F5F9FE 0%, transparent 30%, #FBFCFF 70%, #EBF2FD 100%)'
                }}></div>
         </div>
-        
+
         <div className="content-boundary relative z-10">
-          
+
           {/* Main Feature Card */}
           <div 
             ref={(el) => registerElement('main-feature-card', el)}
@@ -439,26 +422,26 @@ export default function UC3Page() {
                style={{
                  boxShadow: '0 32px 64px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.05)'
                }}>
-            
+
             {/* Multi-tone Faded Background Pattern */}
             <div className="absolute inset-0 bg-gradient-to-br from-purple-50/30 via-blue-50/20 to-indigo-50/25 rounded-3xl"></div>
             <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-purple-100/25 to-transparent rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-blue-100/20 to-transparent rounded-full blur-3xl"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
-            
+
             {/* Content Container */}
             <div className="relative z-10 text-center">
-              
+
               {/* Main Headline */}
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Zéro angle mort, <span className="text-purple-600">zéro surprise</span>
               </h2>
-              
+
               {/* Body Copy */}
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">Dans les grands appels d’offres, les équipes gaspillent un <span className="text-grey-500 font-bold">temps critique</span> à vérifier manuellement la conformité, avec des risques d’oubli, d’incohérence et de rejet.</p>
-              
+
               <p className="text-xl text-gray-600 leading-relaxed mb-8 font-light">Avec Aitenders, démarrez sur une donnée intelligente dès le premier jour, collaborez sans friction et pilotez chaque évolution de l’offre pour garantir une réponse conforme et compétitive, sans mauvaise surprise.</p>
-              
+
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
                 <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
@@ -466,14 +449,14 @@ export default function UC3Page() {
                 </Button>
               </div>
 
-              
-              
+
+
             </div>
           </div>
         </div>
         </div>
       </section>
-      
+
       {/* Solution Section - Alternating Layout Design */}
       <section className="py-32 bg-gradient-to-br from-white via-slate-50/20 to-white relative overflow-hidden">
         <div 
@@ -490,26 +473,26 @@ export default function UC3Page() {
                style={{
                  background: 'radial-gradient(circle, #FBFCFF 0%, #F5F9FE 30%, #C3D9F8 70%, transparent 100%)'
                }}></div>
-          
+
           {/* Medium directional blob - middle left */}
           <div className="absolute top-1/2 -left-32 w-80 h-80 rounded-full opacity-15 blur-2xl"
                style={{
                  background: 'linear-gradient(45deg, #EBF2FD 0%, #C3D9F8 50%, #3880E8 90%, transparent 100%)'
                }}></div>
-          
+
           {/* Atmospheric accent - bottom right */}
           <div className="absolute -bottom-24 -right-32 w-[400px] h-[400px] rounded-full opacity-25 blur-3xl"
                style={{
                  background: 'radial-gradient(circle, #F5F9FE 0%, #EBF2FD 40%, transparent 100%)'
                }}></div>
-          
+
           {/* Subtle flowing wave - center */}
           <div className="absolute top-1/2 left-0 w-full h-40 opacity-10 blur-xl lg:opacity-15"
                style={{
                  background: 'linear-gradient(90deg, transparent 0%, #C3D9F8 25%, #F5F9FE 50%, #EBF2FD 75%, transparent 100%)'
                }}></div>
         </div>
-        
+
         <div className="content-boundary relative z-10">
           <div 
             ref={(el) => registerElement('solution-header', el)}
@@ -640,8 +623,8 @@ export default function UC3Page() {
           }`}
         >
 
-          
-          
+
+
           {/* User-Focused Results Section - Before KPIs */}
           <div 
             ref={(el) => registerElement('user-results', el)}
@@ -656,7 +639,7 @@ export default function UC3Page() {
                 traçabilité intégrale et pilotage collaboratif pour maximiser vos chances de succès.
               </p>
             </div>
-            
+
             {/* Results Grid */}
             <div 
               ref={(el) => registerElement('results-grid', el)}
@@ -665,7 +648,7 @@ export default function UC3Page() {
                 visibleElements.has('results-grid') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              
+
               {/* Responsable d'offre Results */}
               <div className="group">
                 <Card className="h-full p-8 bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200/50 hover:border-purple-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
@@ -678,11 +661,11 @@ export default function UC3Page() {
                       <p className="text-sm text-gray-600">Réponse techniquement conforme et traçable</p>
                     </div>
                   </div>
-                  
+
                   <p className="text-gray-700 text-base leading-relaxed mb-4">
                     Obtenez une réponse d'offre techniquement conforme, collaborative, traçable, et vérifiable à tout moment. Cette approche garantit la couverture des exigences critiques et sécurise le dépôt d'une offre sans risque d'exclusion.
                   </p>
-                  
+
                   <ul className="text-gray-600 text-sm leading-relaxed space-y-2">
                     <li className="flex items-start">
                       <span className="inline-block w-1.5 h-1.5 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
@@ -703,7 +686,7 @@ export default function UC3Page() {
                   </ul>
                 </Card>
               </div>
-              
+
               {/* Experts métiers Results */}
               <div className="group">
                 <Card className="h-full p-8 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50 hover:border-green-300/50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
@@ -716,11 +699,11 @@ export default function UC3Page() {
                       <p className="text-sm text-gray-600">Extraction et traitement collaboratif des exigences</p>
                     </div>
                   </div>
-                  
+
                   <p className="text-gray-700 text-base leading-relaxed mb-4">
                     Extrayez automatiquement les exigences clés, traitez-les de manière collaborative, puis générez des contenus fiables qui répondent point par point aux exigences sans oublier ou reformuler à côté.
                   </p>
-                  
+
                   <div className="text-gray-600 text-sm leading-relaxed space-y-2">
                     <div className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
@@ -743,7 +726,7 @@ export default function UC3Page() {
               </div>
             </div>
           </div>
-          
+
           {/* KPI Grid */}
           <div 
             ref={(el) => registerElement('kpi-grid', el)}
@@ -752,7 +735,7 @@ export default function UC3Page() {
               visibleElements.has('kpi-grid') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            
+
             {/* KPI 1 */}
             <div className="group">
               <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-6 md:p-8 text-center border border-green-100 hover:border-green-200 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 h-full flex flex-col justify-between min-h-[160px] md:min-h-[200px]">
@@ -788,7 +771,7 @@ export default function UC3Page() {
         </div>
       </section>
 
-      
+
       {/* Toppings Section - Wow Features & Additional Functionalities */}
       <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 relative overflow-hidden">
         <div 
@@ -809,7 +792,7 @@ export default function UC3Page() {
                style={{
                  background: 'linear-gradient(135deg, #EC4899 0%, #8B5CF6 50%, #3B82F6 100%)'
                }}></div>
-          
+
           {/* Subtle grid pattern */}
           <div className="absolute inset-0 opacity-5"
                style={{
@@ -831,11 +814,11 @@ export default function UC3Page() {
               <MdStars className="w-5 h-5 text-yellow-400 mr-2" />
               <span className="text-white font-semibold text-sm md:text-base">Fonctionnalités Wow</span>
             </div>
-            
+
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:mb-8 leading-[1.1] tracking-tight">
               Des <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-400 to-cyan-400">parcours additionnels</span> qui transforment votre expérience
             </h2>
-            
+
             <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed font-light">
               Au-delà du parcours habituel, découvrez des fonctionnalités avancées qui ajoutent une dimension stratégique à votre gestion d'appels d'offres complexes.
             </p>
@@ -849,19 +832,19 @@ export default function UC3Page() {
               visibleElements.has('toppings-grid') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            
+
             {/* Bulk Versioning */}
             <div className="group">
               <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2 h-full">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdCloudSync className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Bulk Versioning</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
                   Gérez simultanément plusieurs versions de vos documents d'offre avec synchronisation automatique et traçabilité complète des modifications multi-équipes.
                 </p>
-                
+
                 <div className="flex items-center text-cyan-400 font-medium">
                   <span className="text-sm">Gestion avancée</span>
                   <MdTrendingUp className="w-4 h-4 ml-2" />
@@ -875,12 +858,12 @@ export default function UC3Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdCreate className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Écriture des réponses</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
                   IA générative contextuelle qui rédige des réponses précises et conformes en s'appuyant sur votre base de connaissances et les exigences spécifiques.
                 </p>
-                
+
                 <div className="flex items-center text-green-400 font-medium">
                   <span className="text-sm">IA contextuelle</span>
                   <MdAutoAwesome className="w-4 h-4 ml-2" />
@@ -894,12 +877,12 @@ export default function UC3Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdSwapHoriz className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Back to Back</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
                   Établissez des liens automatisés entre contrats clients et sous-traitants avec mise en correspondance des clauses et gestion des flux contractuels.
                 </p>
-                
+
                 <div className="flex items-center text-orange-400 font-medium">
                   <span className="text-sm">Automatisation</span>
                   <MdLink className="w-4 h-4 ml-2" />
@@ -913,12 +896,12 @@ export default function UC3Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdAccountTree className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Lien avec les livrables</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
                   Connectez automatiquement chaque exigence aux livrables correspondants avec suivi en temps réel et validation de la complétude du projet.
                 </p>
-                
+
                 <div className="flex items-center text-purple-400 font-medium">
                   <span className="text-sm">Traçabilité</span>
                   <MdTrackChanges className="w-4 h-4 ml-2" />
@@ -932,12 +915,12 @@ export default function UC3Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdCallSplit className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Exigences Filles</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
                   Décomposez intelligemment les exigences complexes en sous-exigences managérables avec hiérarchisation automatique et répartition par expertise.
                 </p>
-                
+
                 <div className="flex items-center text-pink-400 font-medium">
                   <span className="text-sm">Décomposition</span>
                   <MdSchema className="w-4 h-4 ml-2" />
@@ -951,12 +934,12 @@ export default function UC3Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-red-400 to-red-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MdGppBad className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Contrôles de non-conformité</h3>
                 <p className="text-gray-200 leading-relaxed mb-6">
                   Détection proactive des écarts et non-conformités avec alertes intelligentes et suggestions de correction avant soumission.
                 </p>
-                
+
                 <div className="flex items-center text-red-400 font-medium">
                   <span className="text-sm">Prévention</span>
                   <MdWarning className="w-4 h-4 ml-2" />
@@ -971,13 +954,13 @@ export default function UC3Page() {
                   <div className="w-16 h-16 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <MdTimeline className="w-8 h-8 text-white" />
                   </div>
-                  
+
                   <div className="flex-1">
                     <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">haut niveai de sécurité, intégrée dès la conception</h3>
                     <p className="text-gray-200 text-lg leading-relaxed mb-6">
                      blabla
                     </p>
-                    
+
                     <div className="flex flex-wrap gap-4">
                       <div className="flex items-center text-indigo-400 font-medium bg-white/10 px-4 py-2 rounded-lg">
                         <span className="text-sm">Souverain</span>
@@ -1030,14 +1013,14 @@ export default function UC3Page() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:mb-8 leading-[1.1] tracking-tight">
               Nos <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">appels d'offres référence</span> sur les multi-lots complexes
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">
               Découvrez comment nos clients transforment leurs appels d'offres les plus exigeants avec l'IA Aitenders
             </p>
           </div>
 
           {/* 3 Real Projects Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 mb-16 md:mb-20">
-            
+
             {/* Project 1: Ligne 15 du Grand Paris */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -1049,18 +1032,18 @@ export default function UC3Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
                   <MdTimeline className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">Ligne 15 du Grand Paris</h3>
                 <div className="mb-4">
                   <Badge className="bg-purple-100 text-purple-800 font-medium">Métro</Badge>
                 </div>
                 <div className="text-xl font-bold text-purple-600 mb-4">Offre : 10 Milliards €</div>
-                
+
                 <p className="text-gray-600 leading-relaxed mb-6">
                   Extension majeure du réseau de transport francilien avec 33 nouvelles stations. 
                   Coordination de 15 lots techniques interdépendants avec contraintes géotechniques complexes.
                 </p>
-                
+
                 <div className="space-y-3">
                   <h4 className="font-semibold text-gray-900 mb-3">Impact client :</h4>
                   <div className="flex items-center text-sm text-gray-700">
@@ -1094,18 +1077,18 @@ export default function UC3Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
                   <MdGpsFixed className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">Autoroute A63 Modernisation</h3>
                 <div className="mb-4">
                   <Badge className="bg-blue-100 text-blue-800 font-medium">Infrastructure</Badge>
                 </div>
                 <div className="text-xl font-bold text-blue-600 mb-4">Offre : 2.8 Milliards €</div>
-                
+
                 <p className="text-gray-600 leading-relaxed mb-6">
                   Modernisation complète sur 180km avec système de péage électronique intégré. 
                   Gestion simultanée de 8 lots environnementaux et 12 lots techniques spécialisés.
                 </p>
-                
+
                 <div className="space-y-3">
                   <h4 className="font-semibold text-gray-900 mb-3">Impact client :</h4>
                   <div className="flex items-center text-sm text-gray-700">
@@ -1139,18 +1122,18 @@ export default function UC3Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6">
                   <MdBusiness className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">Campus Hospitalo-Universitaire Lyon</h3>
                 <div className="mb-4">
                   <Badge className="bg-green-100 text-green-800 font-medium">Santé</Badge>
                 </div>
                 <div className="text-xl font-bold text-green-600 mb-4">Offre : 1.2 Milliards €</div>
-                
+
                 <p className="text-gray-600 leading-relaxed mb-6">
                   Construction de 3 bâtiments hospitaliers avec équipements médicaux haute technologie. 
                   Intégration de 25 lots spécialisés avec contraintes sanitaires et sécuritaires strictes.
                 </p>
-                
+
                 <div className="space-y-3">
                   <h4 className="font-semibold text-gray-900 mb-3">Impact client :</h4>
                   <div className="flex items-center text-sm text-gray-700">
@@ -1184,7 +1167,7 @@ export default function UC3Page() {
           >
             <ClientLogos language="fr" />
           </div>
-          
+
 
           {/* Integrated Chat Simulator */}
           <div 
@@ -1198,14 +1181,14 @@ export default function UC3Page() {
             <div className="absolute inset-0 bg-gradient-to-r from-purple-100/20 to-blue-100/20 opacity-50"></div>
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-purple-200/30 to-transparent rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-blue-200/30 to-transparent rounded-full blur-2xl"></div>
-            
+
             <div className="relative z-10">
               <div className="text-center mb-8">
                 <div className="inline-flex items-center justify-center px-6 py-3 bg-purple-100 rounded-full border border-purple-200 mb-6">
                   <MdAnalytics className="w-5 h-5 text-purple-600 mr-2" />
                   <span className="text-purple-700 font-semibold text-sm">Simulateur ROI Intégré</span>
                 </div>
-                
+
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                   Calculez votre <span className="text-purple-600">ROI en temps réel</span>
                 </h3>
@@ -1213,7 +1196,7 @@ export default function UC3Page() {
                   Simulateur intelligent intégré à la page pour une analyse immédiate de vos projets
                 </p>
               </div>
-              
+
               {/* Embedded Aitenders ROI Simulator Final */}
               <AitendersSimulatorFinal useCase="UC3" className="w-full" />
             </div>
