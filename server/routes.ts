@@ -824,6 +824,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Seed translations endpoint (alias for initialize)
+  app.post("/api/translations/seed", async (req, res) => {
+    try {
+      await translationService.initializeLanguages();
+      await translationService.initializeAllTranslations();
+      res.json({ success: true, message: "Translations seeded successfully" });
+    } catch (error) {
+      console.error('Seed translations error:', error);
+      res.status(500).json({ message: "Failed to seed translations" });
+    }
+  });
+
   // Debug translations endpoint
   app.get("/api/translations/debug/:languageCode", async (req, res) => {
     try {
