@@ -33,7 +33,7 @@ import wow3Animation from '../assets/wow-3.json';
 import uc3FirstFeatureImage from "@assets/33_1755170264011.png";
 import uc3SecondFeatureImage from "@assets/wow 2_1755694076094.png";
 import uc3ThirdFeatureImage from "@assets/wow 3_1755698579312.png";
-import uc3HeroImage from "@assets/HERO UC 3_1755765733932.png";
+import uc3HeroImage from "@assets/UC 3 HERO_1756195609097.png";
 import ClientLogos from "@/components/client-logos";
 import { AitendersSimulatorFinal } from "@/components/aitenders-simulator-final";
 
