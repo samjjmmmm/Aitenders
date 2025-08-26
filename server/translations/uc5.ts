@@ -1,3 +1,5 @@
+// server/translations/uc5.ts (COMPLETE AND CORRECTED VERSION)
+
 export const uc5FrenchTranslations = {
   // Hero Section
   'uc5.hero.badge': 'Suivi des contrats semi-complexes',
