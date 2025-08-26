@@ -462,11 +462,7 @@ export default function UC3Page() {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
                 <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
-                  Contactez nous!
-                </Button>
-                <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white px-12 py-6 text-xl font-semibold rounded-3xl transition-all duration-300">
-                  <MdPlayArrow className="w-6 h-6 mr-2" />
-                  Watch Quick Demo
+                  Simuler l'impact
                 </Button>
               </div>
 
