@@ -139,9 +139,7 @@ export default function UC1() {
                 {t('uc1.painPoints.optimizeButton') || 'Boostez Vos Petits Projets!'}
               </Button>
 
-              <Button variant="outline" className="border-blue-300 text-blue-600 hover:bg-blue-50 px-8 py-3 font-medium">
-                {t('uc1.painPoints.demoButton') || '→ Voir la Démo Rapide'}
-              </Button>
+
             </div>
           </Card>
         </div>
