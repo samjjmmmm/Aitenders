@@ -19,6 +19,17 @@ export default function UC1() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { t, currentLanguage } = useGlobalTranslations();
 
+  // Function to scroll to simulator section
+  const scrollToSimulator = () => {
+    const simulatorSection = document.getElementById('roi-simulator-section');
+    if (simulatorSection) {
+      simulatorSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   // Animation variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
@@ -135,7 +146,10 @@ export default function UC1() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 font-medium">
+              <Button 
+                onClick={scrollToSimulator}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 font-medium"
+              >
                 {t('uc1.painPoints.optimizeButton') || 'Boostez Vos Petits Projets!'}
               </Button>
 
@@ -583,7 +597,7 @@ détails</span>
           </div>
 
           {/* ROI Simulator */}
-          <div className="bg-blue-50 rounded-xl p-8 text-center">
+          <div id="roi-simulator-section" className="bg-blue-50 rounded-xl p-8 text-center">
             <Badge className="bg-blue-600 text-white px-4 py-2 mb-4">
               {t('uc1.roi.badge') || 'Simulateur ROI Aitenders'}
             </Badge>
