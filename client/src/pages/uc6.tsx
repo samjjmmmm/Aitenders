@@ -45,8 +45,12 @@ export default function UC6Page() { // Using a default export as required
                 <Badge className="mb-8 bg-gradient-to-r from-purple-50 to-purple-100/80 text-purple-800 border-purple-200/50 text-base font-semibold px-4 py-2 rounded-full shadow-sm">
                  {t('uc6.hero.badge')}
                 </Badge>
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4" dangerouslySetInnerHTML={{ __html: t('uc6.hero.title') }} />
-                <p className="text-lg md:text-xl mb-16 font-light" dangerouslySetInnerHTML={{ __html: t('uc6.hero.description') }} />
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                  {t('uc6.hero.title').replace(/<1>/g, '').replace(/<\/1>/g, '')}
+                </h1>
+                <p className="text-lg md:text-xl mb-16 font-light">
+                  {t('uc6.hero.description').replace(/<1>/g, '').replace(/<\/1>/g, '').replace(/<2>/g, '').replace(/<\/2>/g, '')}
+                </p>
               </div>
               <div className="mb-16 flex justify-center">
                 <Button size="lg" className="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl">
@@ -71,8 +75,12 @@ export default function UC6Page() { // Using a default export as required
         <div className="content-boundary relative z-10">
           <div className="bg-white/95 rounded-3xl p-16 lg:p-20 border border-gray-100/50 mb-20">
             <div className="relative z-10 text-center">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4" dangerouslySetInnerHTML={{ __html: t('uc6.painPoints.headline') }} />
-              <p className="text-xl text-gray-600 mb-8 font-light" dangerouslySetInnerHTML={{ __html: t('uc6.painPoints.text1') }} />
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                {t('uc6.painPoints.headline').replace(/<1>/g, '').replace(/<\/1>/g, '')}
+              </h2>
+              <p className="text-xl text-gray-600 mb-8 font-light">
+                {t('uc6.painPoints.text1').replace(/<strong>/g, '').replace(/<\/strong>/g, '')}
+              </p>
               <p className="text-xl text-gray-600 mb-8 font-light">{t('uc6.painPoints.text2')}</p>
               <div className="flex justify-center mb-16">
                 <Button className="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl">
@@ -93,14 +101,20 @@ export default function UC6Page() { // Using a default export as required
         className="py-32 px-8 bg-gradient-to-br from-white via-slate-50/20 to-white relative overflow-hidden">
         <div className="content-boundary relative z-10">
           <div className="text-center mb-12 md:mb-16">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4" dangerouslySetInnerHTML={{ __html: t('uc6.solution.mainTitle') }} />
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              {t('uc6.solution.mainTitle').replace(/<1>/g, '').replace(/<\/1>/g, '')}
+            </h1>
             <h3 className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">{t('uc6.solution.subtitle')}</h3>
           </div>
           {/* Feature 1 */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
-              <h3 className="text-2xl font-bold mb-4" dangerouslySetInnerHTML={{ __html: t('uc6.solution.feature1.title') }} />
-              <p className="text-xl text-gray-600 mb-4" dangerouslySetInnerHTML={{ __html: t('uc6.solution.feature1.text1') }} />
+              <h3 className="text-2xl font-bold mb-4">
+                {t('uc6.solution.feature1.title').replace(/<1>/g, '').replace(/<\/1>/g, '')}
+              </h3>
+              <p className="text-xl text-gray-600 mb-4">
+                {t('uc6.solution.feature1.text1').replace(/<strong>/g, '').replace(/<\/strong>/g, '')}
+              </p>
               <p className="text-xl text-gray-600 mb-8">{t('uc6.solution.feature1.text2')}</p>
               <div className="flex items-center text-lg font-bold text-blue-500"><MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />{t('uc6.solution.feature1.highlight')}</div>
             </div>
@@ -110,18 +124,30 @@ export default function UC6Page() { // Using a default export as required
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="order-2 lg:order-1 flex justify-center"><img src={uc6SecondFeatureImage} alt="Team Collaboration" className="w-full max-w-[500px]" /></div>
             <div className="order-1 lg:order-2">
-              <h3 className="text-2xl font-bold mb-4" dangerouslySetInnerHTML={{ __html: t('uc6.solution.feature2.title') }} />
-              <p className="text-xl text-gray-600 mb-4" dangerouslySetInnerHTML={{ __html: t('uc6.solution.feature2.text1') }} />
-              <p className="text-xl text-gray-600 mb-8" dangerouslySetInnerHTML={{ __html: t('uc6.solution.feature2.text2') }} />
+              <h3 className="text-2xl font-bold mb-4">
+                {t('uc6.solution.feature2.title').replace(/<1>/g, '').replace(/<\/1>/g, '')}
+              </h3>
+              <p className="text-xl text-gray-600 mb-4">
+                {t('uc6.solution.feature2.text1').replace(/<strong>/g, '').replace(/<\/strong>/g, '')}
+              </p>
+              <p className="text-xl text-gray-600 mb-8">
+                {t('uc6.solution.feature2.text2').replace(/<strong>/g, '').replace(/<\/strong>/g, '')}
+              </p>
               <div className="flex items-center text-lg font-bold text-blue-500"><MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />{t('uc6.solution.feature2.highlight')}</div>
             </div>
           </div>
           {/* Feature 3 */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-2xl font-bold mb-4" dangerouslySetInnerHTML={{ __html: t('uc6.solution.feature3.title') }} />
-              <p className="text-xl text-gray-600 mb-4" dangerouslySetInnerHTML={{ __html: t('uc6.solution.feature3.text1') }} />
-              <p className="text-xl text-gray-600 mb-8" dangerouslySetInnerHTML={{ __html: t('uc6.solution.feature3.text2') }} />
+              <h3 className="text-2xl font-bold mb-4">
+                {t('uc6.solution.feature3.title').replace(/<1>/g, '').replace(/<\/1>/g, '')}
+              </h3>
+              <p className="text-xl text-gray-600 mb-4">
+                {t('uc6.solution.feature3.text1').replace(/<strong>/g, '').replace(/<\/strong>/g, '')}
+              </p>
+              <p className="text-xl text-gray-600 mb-8">
+                {t('uc6.solution.feature3.text2').replace(/<strong>/g, '').replace(/<\/strong>/g, '')}
+              </p>
               <div className="flex items-center text-lg font-bold text-blue-500"><MdCheckCircle className="w-6 h-6 mr-3 text-green-500" />{t('uc6.solution.feature3.highlight')}</div>
             </div>
             <div className="flex justify-center"><img src={uc6ThirdFeatureImage} alt="Impact Dashboard" className="w-full max-w-[500px]" /></div>
@@ -163,7 +189,9 @@ export default function UC6Page() { // Using a default export as required
         <div className="content-boundary relative z-10">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-6 py-3 bg-white/10 rounded-full border border-white/20 mb-6"><MdStars className="w-5 h-5 text-yellow-400 mr-2" /><span className="text-white font-semibold">{t('uc6.toppings.badge')}</span></div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6" dangerouslySetInnerHTML={{ __html: t('uc6.toppings.headline') }} />
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              {t('uc6.toppings.headline').replace(/<1>/g, '').replace(/<\/1>/g, '')}
+            </h2>
             <p className="text-xl text-gray-200 max-w-4xl mx-auto">{t('uc6.toppings.subtitle')}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -190,9 +218,26 @@ export default function UC6Page() { // Using a default export as required
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">{t('uc6.caseStudies.subtitle')}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <Card className="bg-white p-8 shadow-lg h-full"><h3 className="text-2xl font-bold mb-3">{t('uc6.caseStudies.project1.title')}</h3><Badge className="bg-purple-100 text-purple-800 mb-4">{t('uc6.caseStudies.project1.badge')}</Badge><div className="text-xl font-bold text-purple-600 mb-4">{t('uc6.caseStudies.project1.details')}</div><p className="mb-6">{t('uc6.caseStudies.project1.description')}</p><h4 className="font-semibold mb-3">{t('uc6.caseStudies.impactLabel')}</h4><div className="space-y-3 text-sm" dangerouslySetInnerHTML={{ __html: [t('uc6.caseStudies.project1.impact1'), t('uc6.caseStudies.project1.impact2'), t('uc6.caseStudies.project1.impact3')].join('<br/>') }} /> </Card>
-            <Card className="bg-white p-8 shadow-lg h-full"><h3 className="text-2xl font-bold mb-3">{t('uc6.caseStudies.project2.title')}</h3><Badge className="bg-blue-100 text-blue-800 mb-4">{t('uc6.caseStudies.project2.badge')}</Badge><div className="text-xl font-bold text-blue-600 mb-4">{t('uc6.caseStudies.project2.details')}</div><p className="mb-6">{t('uc6.caseStudies.project2.description')}</p><h4 className="font-semibold mb-3">{t('uc6.caseStudies.impactLabel')}</h4><div className="space-y-3 text-sm" dangerouslySetInnerHTML={{ __html: [t('uc6.caseStudies.project2.impact1'), t('uc6.caseStudies.project2.impact2'), t('uc6.caseStudies.project2.impact3')].join('<br/>') }} /> </Card>
-            <Card className="bg-white p-8 shadow-lg h-full"><h3 className="text-2xl font-bold mb-3">{t('uc6.caseStudies.project3.title')}</h3><Badge className="bg-green-100 text-green-800 mb-4">{t('uc6.caseStudies.project3.badge')}</Badge><div className="text-xl font-bold text-green-600 mb-4">{t('uc6.caseStudies.project3.details')}</div><p className="mb-6">{t('uc6.caseStudies.project3.description')}</p><h4 className="font-semibold mb-3">{t('uc6.caseStudies.impactLabel')}</h4><div className="space-y-3 text-sm" dangerouslySetInnerHTML={{ __html: [t('uc6.caseStudies.project3.impact1'), t('uc6.caseStudies.project3.impact2'), t('uc6.caseStudies.project3.impact3')].join('<br/>') }} /> </Card>
+            <Card className="bg-white p-8 shadow-lg h-full"><h3 className="text-2xl font-bold mb-3">{t('uc6.caseStudies.project1.title')}</h3><Badge className="bg-purple-100 text-purple-800 mb-4">{t('uc6.caseStudies.project1.badge')}</Badge><div className="text-xl font-bold text-purple-600 mb-4">{t('uc6.caseStudies.project1.details')}</div><p className="mb-6">{t('uc6.caseStudies.project1.description')}</p><h4 className="font-semibold mb-3">{t('uc6.caseStudies.impactLabel')}</h4><div className="space-y-3 text-sm">
+                  <div>{t('uc6.caseStudies.project1.impact1').replace(/<strong>/g, '').replace(/<\/strong>/g, '')}</div>
+                  <div>{t('uc6.caseStudies.project1.impact2').replace(/<strong>/g, '').replace(/<\/strong>/g, '')}</div>
+                  <div>{t('uc6.caseStudies.project1.impact3').replace(/<strong>/g, '').replace(/<\/strong>/g, '')}</div>
+                </div>
+              </Card>
+            <Card className="bg-white p-8 shadow-lg h-full"><h3 className="text-2xl font-bold mb-3">{t('uc6.caseStudies.project2.title')}</h3><Badge className="bg-blue-100 text-blue-800 mb-4">{t('uc6.caseStudies.project2.badge')}</Badge><div className="text-xl font-bold text-blue-600 mb-4">{t('uc6.caseStudies.project2.details')}</div><p className="mb-6">{t('uc6.caseStudies.project2.description')}</p><h4 className="font-semibold mb-3">{t('uc6.caseStudies.impactLabel')}</h4>
+                <div className="space-y-3 text-sm">
+                  <div>{t('uc6.caseStudies.project2.impact1').replace(/<strong>/g, '').replace(/<\/strong>/g, '')}</div>
+                  <div>{t('uc6.caseStudies.project2.impact2').replace(/<strong>/g, '').replace(/<\/strong>/g, '')}</div>
+                  <div>{t('uc6.caseStudies.project2.impact3').replace(/<strong>/g, '').replace(/<\/strong>/g, '')}</div>
+                </div>
+              </Card>
+            <Card className="bg-white p-8 shadow-lg h-full"><h3 className="text-2xl font-bold mb-3">{t('uc6.caseStudies.project3.title')}</h3><Badge className="bg-green-100 text-green-800 mb-4">{t('uc6.caseStudies.project3.badge')}</Badge><div className="text-xl font-bold text-green-600 mb-4">{t('uc6.caseStudies.project3.details')}</div><p className="mb-6">{t('uc6.caseStudies.project3.description')}</p><h4 className="font-semibold mb-3">{t('uc6.caseStudies.impactLabel')}</h4>
+                <div className="space-y-3 text-sm">
+                  <div>{t('uc6.caseStudies.project3.impact1').replace(/<strong>/g, '').replace(/<\/strong>/g, '')}</div>
+                  <div>{t('uc6.caseStudies.project3.impact2').replace(/<strong>/g, '').replace(/<\/strong>/g, '')}</div>
+                  <div>{t('uc6.caseStudies.project3.impact3').replace(/<strong>/g, '').replace(/<\/strong>/g, '')}</div>
+                </div>
+              </Card>
           </div>
           <div className="mb-16"><ClientLogos language="fr" /></div>
           <div className="bg-white rounded-3xl shadow-2xl p-8">
