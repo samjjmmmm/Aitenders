@@ -173,8 +173,7 @@ const ProductPage = () => {
             
             {/* Headline */}
             <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-800 tracking-tight leading-tight">
-              L'intelligence de vos équipes Projets,{" "}
-              <span className="text-blue-600">démultipliée par l'IA</span>
+              <span className="text-blue-600">Votre copilote IA pour maîtriser chaque appel d'offres.</span>
             </h1>
 
             {/* Paragraph */}
