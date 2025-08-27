@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Header from "@/components/header";
+import ClientLogos from "@/components/client-logos";
 import { 
   CheckCircle, 
   ChevronDown, 
@@ -225,7 +226,7 @@ const ProductPage = () => {
         </div>
       </section>
 
-      {/* 2. TRUST INDICATORS */}
+      {/* 2. CLIENT LOGOS SCROLLING BANNER */}
       <section 
         style={{ 
           backgroundColor: "#FBFCFF", 
@@ -233,52 +234,7 @@ const ProductPage = () => {
           borderBottom: "1px solid #EBF2FD"
         }}
       >
-        <div className="grid-container">
-          <div style={{ textAlign: "center", marginBottom: "2rem" }}>
-            <h3 
-              style={{ 
-                fontSize: "1rem", 
-                fontWeight: "600", 
-                color: "#6B7280",
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-                marginBottom: "2rem"
-              }}
-            >
-              Trusted by Industry Leaders
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-              <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "60px" }}>
-                <img 
-                  src="https://7b296e3cdc356653bd8ddc60d0118593.cdn.bubble.io/cdn-cgi/image/w=192,h=77,f=auto,dpr=1,fit=contain/f1678788131510x657691839410021800/logo%20client_vinci.png" 
-                  alt="Vinci" 
-                  className="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity"
-                />
-              </div>
-              <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "60px" }}>
-                <img 
-                  src="https://7b296e3cdc356653bd8ddc60d0118593.cdn.bubble.io/cdn-cgi/image/w=192,h=77,f=auto,dpr=1,fit=contain/f1678788145140x676564290904210200/logo%20client_eiffage.png" 
-                  alt="Eiffage" 
-                  className="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity"
-                />
-              </div>
-              <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "60px" }}>
-                <img 
-                  src="https://7b296e3cdc356653bd8ddc60d0118593.cdn.bubble.io/cdn-cgi/image/w=192,h=77,f=auto,dpr=1,fit=contain/f1678788168917x606403587556325600/logo%20client_equans.png" 
-                  alt="Equans" 
-                  className="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity"
-                />
-              </div>
-              <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "60px" }}>
-                <img 
-                  src="https://7b296e3cdc356653bd8ddc60d0118593.cdn.bubble.io/cdn-cgi/image/w=192,h=77,f=auto,dpr=1,fit=contain/f1678788157547x760109737354937000/logo%20client_nge.png" 
-                  alt="NGE" 
-                  className="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+        <ClientLogos language="fr" />
       </section>
 
       {/* 3. VALUE PROPOSITION SECTION */}
