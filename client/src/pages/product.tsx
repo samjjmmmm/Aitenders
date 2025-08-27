@@ -433,13 +433,23 @@ const ProductPage = () => {
                 </div>
                 <h3 className="text-3xl md:text-4xl font-bold text-slate-900">Analyse</h3>
               </div>
-              <h4 className="text-xl font-semibold text-blue-600 mb-4">Lire plus vite. Identifier l'essentiel.</h4>
+              <h4 className="text-xl font-semibold text-blue-600 mb-4">Analyse intelligente des dossiers d'appel d'offres.</h4>
               <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                Le module Analyse automatise la lecture et la classification des documents d'appel d'offres. Il extrait les exigences clés, détecte les contradictions et classe les contenus par catégorie. Votre équipe sait où agir, dès le départ.
+                Explorez tous vos documents en quelques minutes, identifiez les risques, les exigences clés et les points critiques grâce à nos modèles d'intelligence artificielle.
               </p>
-              <div className="flex items-center text-lg font-semibold text-green-600">
-                <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>
-                Ce que ça change : Qualification plus rapide, réduction des erreurs, meilleure visibilité sur les risques.
+              <div className="space-y-3 mb-8">
+                <div className="flex items-start text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Détection d'exigences et vérification de conformité</span>
+                </div>
+                <div className="flex items-start text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Lecture automatique et génération de matrices</span>
+                </div>
+                <div className="flex items-start text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Collaboration fluide avec les partenaires internes et externes</span>
+                </div>
               </div>
             </div>
             <div className="flex justify-center items-center relative">
@@ -505,13 +515,23 @@ const ProductPage = () => {
                 </div>
                 <h3 className="text-3xl md:text-4xl font-bold text-slate-900"> Write</h3>
               </div>
-              <h4 className="text-xl font-semibold text-green-600 mb-4">Répondre avec méthode. Ne pas repartir de zéro.</h4>
+              <h4 className="text-xl font-semibold text-green-600 mb-4">Créez des réponses solides, alignées et traçables.</h4>
               <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                Write permet de structurer vos réponses à partir de contenus existants. Vous reliez chaque réponse à l'exigence correspondante, vous réutilisez ce qui a déjà fonctionné, et vous réduisez le temps de rédaction.
+                Produisez vos livrables à partir de modèles personnalisés, garantissez la couverture des exigences et capitalisez sur vos précédentes réponses.
               </p>
-              <div className="flex items-center text-lg font-semibold text-green-600">
-                <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>
-                Ce que ça change : Réponses plus cohérentes, délais de production réduits, moins de pression sur les équipes.
+              <div className="space-y-3 mb-8">
+                <div className="flex items-start text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Génération de documents assistée par intelligence artificielle</span>
+                </div>
+                <div className="flex items-start text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Bibliothèques de contenu personnalisables et réutilisables</span>
+                </div>
+                <div className="flex items-start text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Suivi de la couverture des exigences contractuelles</span>
+                </div>
               </div>
             </div>
           </div>
@@ -525,13 +545,23 @@ const ProductPage = () => {
                 </div>
                 <h3 className="text-3xl md:text-4xl font-bold text-slate-900">Pilot</h3>
               </div>
-              <h4 className="text-xl font-semibold text-purple-600 mb-4">Suivre ce qui a été promis. Et livrer.</h4>
+              <h4 className="text-xl font-semibold text-purple-600 mb-4">Gardez le contrôle jusqu'à la fin du projet.</h4>
               <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                Pilot vous aide à suivre l'exécution du contrat : engagements pris, livrables attendus, écarts constatés. Vous pilotez en temps réel l'avancement de chaque projet, sans dépendre de fichiers dispersés.
+                Pilotez les engagements, les changements contractuels et le suivi de la conformité en exécution de manière structurée et centralisée.
               </p>
-              <div className="flex items-center text-lg font-semibold text-green-600">
-                <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>
-                Ce que ça change : Moins de dérives projets, meilleure coordination avec le client, traçabilité complète des actions.
+              <div className="space-y-3 mb-8">
+                <div className="flex items-start text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Gestion des modifications contractuelles et avenants</span>
+                </div>
+                <div className="flex items-start text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Suivi des obligations et des risques liés</span>
+                </div>
+                <div className="flex items-start text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Traçabilité documentaire et gestion des versions en masse</span>
+                </div>
               </div>
             </div>
             <div className="flex justify-center items-center relative">
@@ -582,13 +612,23 @@ const ProductPage = () => {
                 </div>
                 <h3 className="text-3xl md:text-4xl font-bold text-slate-900">Knowledge</h3>
               </div>
-              <h4 className="text-xl font-semibold text-orange-600 mb-4">Capitaliser sur chaque réponse. Valoriser l'expérience.</h4>
+              <h4 className="text-xl font-semibold text-orange-600 mb-4">Votre mémoire projet, centralisée et activable.</h4>
               <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                Avec Knowledge, chaque contenu produit devient un actif réutilisable. Vous centralisez les réponses validées, les retours d'expérience et les éléments clés pour accélérer les réponses futures et éviter la redondance.
+                Organisez votre capital documentaire, comparez les projets passés et alimentez chaque nouvelle réponse avec les meilleures pratiques issues de votre historique.
               </p>
-              <div className="flex items-center text-lg font-semibold text-green-600">
-                <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>
-                Ce que ça change : Moins de travail inutile, montée en compétence accélérée, et qualité constante dans le temps.
+              <div className="space-y-3 mb-8">
+                <div className="flex items-start text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Recherche transversale sur les portefeuilles de projets</span>
+                </div>
+                <div className="flex items-start text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Partage structuré de livrables et référentiels</span>
+                </div>
+                <div className="flex items-start text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  <span>Infrastructure dédiée avec modèles IA personnalisables</span>
+                </div>
               </div>
             </div>
           </div>
