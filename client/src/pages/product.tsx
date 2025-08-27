@@ -667,7 +667,556 @@ const ProductPage = () => {
 
 
 
-      {/* 6. SECURITY & COMPLIANCE SECTION */}
+      {/* 6. INTEGRATION SECTION */}
+      <section 
+        style={{ 
+          backgroundColor: "#F8FAFC", 
+          padding: "8rem 0",
+          position: "relative",
+          overflow: "hidden"
+        }}
+      >
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 -right-32 w-80 h-80 bg-gradient-to-br from-blue-400/5 to-indigo-400/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 -left-32 w-80 h-80 bg-gradient-to-br from-purple-400/5 to-pink-400/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="grid-container relative z-10">
+          {/* Header */}
+          <div style={{ textAlign: "center", marginBottom: "4rem" }}>
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100/80 backdrop-blur-sm border border-blue-200/50 rounded-full mb-6">
+              <div className="w-2 h-2 bg-blue-600 rounded-full mr-3 animate-pulse"></div>
+              <span className="text-sm font-bold text-blue-700 uppercase tracking-wider">Intégration</span>
+            </div>
+            <h2 
+              style={{ 
+                fontSize: "2.5rem", 
+                fontWeight: "700", 
+                color: "#0B1A2E",
+                marginBottom: "1.5rem",
+                lineHeight: "1.2"
+              }}
+            >
+              Connectez Aitenders à votre écosystème logiciel
+            </h2>
+            <p 
+              style={{
+                fontSize: "1.25rem",
+                color: "#6B7280",
+                maxWidth: "800px",
+                margin: "0 auto",
+                lineHeight: "1.6"
+              }}
+            >
+              Notre plateforme s'adapte à votre organisation, vos outils existants et vos processus métiers. Elle s'intègre à votre environnement pour transformer une gestion fragmentée en intelligence connectée.
+            </p>
+          </div>
+
+          {/* Key Value Proposition */}
+          <div 
+            style={{
+              backgroundColor: "#FFFFFF",
+              borderRadius: "24px",
+              padding: "3rem",
+              marginBottom: "4rem",
+              boxShadow: "0 10px 40px rgba(0, 0, 0, 0.08)",
+              border: "1px solid rgba(59, 130, 246, 0.1)"
+            }}
+          >
+            <div className="text-center">
+              <div 
+                style={{
+                  width: "80px",
+                  height: "80px",
+                  borderRadius: "50%",
+                  background: "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  margin: "0 auto 2rem"
+                }}
+              >
+                <Globe size={40} color="#FFFFFF" />
+              </div>
+              <h3 
+                style={{ 
+                  fontSize: "1.75rem", 
+                  fontWeight: "700", 
+                  color: "#0B1A2E",
+                  marginBottom: "1rem"
+                }}
+              >
+                Une plateforme ouverte et interopérable
+              </h3>
+              <p 
+                style={{ 
+                  fontSize: "1.125rem", 
+                  color: "#6B7280",
+                  lineHeight: "1.6",
+                  maxWidth: "600px",
+                  margin: "0 auto"
+                }}
+              >
+                Aitenders devient la colonne vertébrale numérique de vos projets, du sourcing à l'exécution. Elle connecte vos données, sécurise vos flux, et décuple l'impact de vos équipes.
+              </p>
+            </div>
+          </div>
+
+          {/* Integration Categories Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            {/* Connecteurs existants */}
+            <div 
+              style={{
+                backgroundColor: "#FFFFFF",
+                borderRadius: "20px",
+                padding: "2.5rem",
+                boxShadow: "0 4px 20px rgba(0, 0, 0, 0.06)",
+                border: "1px solid #E5E7EB",
+                transition: "all 0.3s ease"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-4px)";
+                e.currentTarget.style.boxShadow = "0 10px 30px rgba(0, 0, 0, 0.12)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.06)";
+              }}
+            >
+              <div 
+                style={{
+                  width: "60px",
+                  height: "60px",
+                  borderRadius: "16px",
+                  background: "linear-gradient(135deg, #10B981 0%, #059669 100%)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: "1.5rem"
+                }}
+              >
+                <Settings size={28} color="#FFFFFF" />
+              </div>
+              <h4 
+                style={{ 
+                  fontSize: "1.25rem", 
+                  fontWeight: "700", 
+                  color: "#0B1A2E",
+                  marginBottom: "1rem"
+                }}
+              >
+                Connecteurs existants
+              </h4>
+              <ul 
+                style={{ 
+                  listStyleType: "none",
+                  padding: 0,
+                  margin: 0,
+                  fontSize: "1rem",
+                  color: "#6B7280",
+                  lineHeight: "1.6"
+                }}
+              >
+                <li style={{ marginBottom: "0.75rem", display: "flex", alignItems: "center" }}>
+                  <div style={{ width: "6px", height: "6px", backgroundColor: "#10B981", borderRadius: "50%", marginRight: "0.75rem" }}></div>
+                  Intégration native avec Microsoft Word, Excel, Teams et SharePoint
+                </li>
+                <li style={{ marginBottom: "0.75rem", display: "flex", alignItems: "center" }}>
+                  <div style={{ width: "6px", height: "6px", backgroundColor: "#10B981", borderRadius: "50%", marginRight: "0.75rem" }}></div>
+                  Plug-in Office 365 pour automatiser la récupération et l'envoi de contenus
+                </li>
+                <li style={{ display: "flex", alignItems: "center" }}>
+                  <div style={{ width: "6px", height: "6px", backgroundColor: "#10B981", borderRadius: "50%", marginRight: "0.75rem" }}></div>
+                  Sécurité et infrastructures compatibles
+                </li>
+              </ul>
+            </div>
+
+            {/* Sécurité et infrastructures */}
+            <div 
+              style={{
+                backgroundColor: "#FFFFFF",
+                borderRadius: "20px",
+                padding: "2.5rem",
+                boxShadow: "0 4px 20px rgba(0, 0, 0, 0.06)",
+                border: "1px solid #E5E7EB",
+                transition: "all 0.3s ease"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-4px)";
+                e.currentTarget.style.boxShadow = "0 10px 30px rgba(0, 0, 0, 0.12)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.06)";
+              }}
+            >
+              <div 
+                style={{
+                  width: "60px",
+                  height: "60px",
+                  borderRadius: "16px",
+                  background: "linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: "1.5rem"
+                }}
+              >
+                <Shield size={28} color="#FFFFFF" />
+              </div>
+              <h4 
+                style={{ 
+                  fontSize: "1.25rem", 
+                  fontWeight: "700", 
+                  color: "#0B1A2E",
+                  marginBottom: "1rem"
+                }}
+              >
+                Sécurité et infrastructures
+              </h4>
+              <ul 
+                style={{ 
+                  listStyleType: "none",
+                  padding: 0,
+                  margin: 0,
+                  fontSize: "1rem",
+                  color: "#6B7280",
+                  lineHeight: "1.6"
+                }}
+              >
+                <li style={{ marginBottom: "0.75rem", display: "flex", alignItems: "center" }}>
+                  <div style={{ width: "6px", height: "6px", backgroundColor: "#8B5CF6", borderRadius: "50%", marginRight: "0.75rem" }}></div>
+                  Disponible en mode SaaS ou en instance dédiée entreprise
+                </li>
+                <li style={{ marginBottom: "0.75rem", display: "flex", alignItems: "center" }}>
+                  <div style={{ width: "6px", height: "6px", backgroundColor: "#8B5CF6", borderRadius: "50%", marginRight: "0.75rem" }}></div>
+                  Authentification unique (SSO)
+                </li>
+                <li style={{ display: "flex", alignItems: "center" }}>
+                  <div style={{ width: "6px", height: "6px", backgroundColor: "#8B5CF6", borderRadius: "50%", marginRight: "0.75rem" }}></div>
+                  Possibilité de déploiement sur site
+                </li>
+              </ul>
+            </div>
+
+            {/* Intégrations par API */}
+            <div 
+              style={{
+                backgroundColor: "#FFFFFF",
+                borderRadius: "20px",
+                padding: "2.5rem",
+                boxShadow: "0 4px 20px rgba(0, 0, 0, 0.06)",
+                border: "1px solid #E5E7EB",
+                transition: "all 0.3s ease"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-4px)";
+                e.currentTarget.style.boxShadow = "0 10px 30px rgba(0, 0, 0, 0.12)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.06)";
+              }}
+            >
+              <div 
+                style={{
+                  width: "60px",
+                  height: "60px",
+                  borderRadius: "16px",
+                  background: "linear-gradient(135deg, #F59E0B 0%, #D97706 100%)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: "1.5rem"
+                }}
+              >
+                <RefreshCw size={28} color="#FFFFFF" />
+              </div>
+              <h4 
+                style={{ 
+                  fontSize: "1.25rem", 
+                  fontWeight: "700", 
+                  color: "#0B1A2E",
+                  marginBottom: "1rem"
+                }}
+              >
+                Intégrations par API partenaires
+              </h4>
+              <ul 
+                style={{ 
+                  listStyleType: "none",
+                  padding: 0,
+                  margin: 0,
+                  fontSize: "1rem",
+                  color: "#6B7280",
+                  lineHeight: "1.6"
+                }}
+              >
+                <li style={{ marginBottom: "0.75rem", display: "flex", alignItems: "center" }}>
+                  <div style={{ width: "6px", height: "6px", backgroundColor: "#F59E0B", borderRadius: "50%", marginRight: "0.75rem" }}></div>
+                  Procore, Salesforce, et autres plateformes métiers
+                </li>
+                <li style={{ display: "flex", alignItems: "center" }}>
+                  <div style={{ width: "6px", height: "6px", backgroundColor: "#F59E0B", borderRadius: "50%", marginRight: "0.75rem" }}></div>
+                  Connexion aux systèmes CRM, ERP, EMS, DMS, outils de gestion de livrables ou de conformité
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Three Levels of Integration */}
+          <div style={{ marginBottom: "4rem" }}>
+            <h3 
+              style={{ 
+                fontSize: "2rem", 
+                fontWeight: "700", 
+                color: "#0B1A2E",
+                textAlign: "center",
+                marginBottom: "3rem"
+              }}
+            >
+              Trois niveaux d'intégration
+            </h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Intégration amont */}
+              <div 
+                style={{
+                  backgroundColor: "#F0F9FF",
+                  borderRadius: "20px",
+                  padding: "2rem",
+                  border: "2px solid #0EA5E9",
+                  position: "relative"
+                }}
+              >
+                <div 
+                  style={{
+                    position: "absolute",
+                    top: "-12px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    backgroundColor: "#0EA5E9",
+                    color: "#FFFFFF",
+                    padding: "0.5rem 1rem",
+                    borderRadius: "12px",
+                    fontSize: "0.875rem",
+                    fontWeight: "600"
+                  }}
+                >
+                  AMONT
+                </div>
+                <h4 
+                  style={{ 
+                    fontSize: "1.25rem", 
+                    fontWeight: "700", 
+                    color: "#0B1A2E",
+                    marginBottom: "1rem",
+                    marginTop: "1rem"
+                  }}
+                >
+                  Intégration amont
+                </h4>
+                <p style={{ fontSize: "1rem", color: "#6B7280", lineHeight: "1.6" }}>
+                  Synchronisation avec vos outils de sourcing, CRM et systèmes d'alerte. Automatisation via connecteurs email ou API.
+                </p>
+              </div>
+
+              {/* Intégration métier */}
+              <div 
+                style={{
+                  backgroundColor: "#F0FDF4",
+                  borderRadius: "20px",
+                  padding: "2rem",
+                  border: "2px solid #10B981",
+                  position: "relative"
+                }}
+              >
+                <div 
+                  style={{
+                    position: "absolute",
+                    top: "-12px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    backgroundColor: "#10B981",
+                    color: "#FFFFFF",
+                    padding: "0.5rem 1rem",
+                    borderRadius: "12px",
+                    fontSize: "0.875rem",
+                    fontWeight: "600"
+                  }}
+                >
+                  MÉTIER
+                </div>
+                <h4 
+                  style={{ 
+                    fontSize: "1.25rem", 
+                    fontWeight: "700", 
+                    color: "#0B1A2E",
+                    marginBottom: "1rem",
+                    marginTop: "1rem"
+                  }}
+                >
+                  Intégration métier
+                </h4>
+                <p style={{ fontSize: "1rem", color: "#6B7280", lineHeight: "1.6" }}>
+                  Connexion directe à vos systèmes de gestion documentaire, outils de pricing, référentiels d'exigences, ou plateformes internes.
+                </p>
+              </div>
+
+              {/* Intégration en exécution */}
+              <div 
+                style={{
+                  backgroundColor: "#FDF4FF",
+                  borderRadius: "20px",
+                  padding: "2rem",
+                  border: "2px solid #8B5CF6",
+                  position: "relative"
+                }}
+              >
+                <div 
+                  style={{
+                    position: "absolute",
+                    top: "-12px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    backgroundColor: "#8B5CF6",
+                    color: "#FFFFFF",
+                    padding: "0.5rem 1rem",
+                    borderRadius: "12px",
+                    fontSize: "0.875rem",
+                    fontWeight: "600"
+                  }}
+                >
+                  EXÉCUTION
+                </div>
+                <h4 
+                  style={{ 
+                    fontSize: "1.25rem", 
+                    fontWeight: "700", 
+                    color: "#0B1A2E",
+                    marginBottom: "1rem",
+                    marginTop: "1rem"
+                  }}
+                >
+                  Intégration en exécution
+                </h4>
+                <p style={{ fontSize: "1rem", color: "#6B7280", lineHeight: "1.6" }}>
+                  Connexion aux outils de gestion de projet, BIM, ERP, et plateformes de suivi d'exécution pour une continuité contractuelle.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Exploitez la puissance */}
+          <div 
+            style={{
+              backgroundColor: "#112646",
+              borderRadius: "24px",
+              padding: "3rem",
+              color: "#FFFFFF",
+              background: "linear-gradient(135deg, #112646 0%, #1E3A8A 100%)"
+            }}
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 
+                  style={{ 
+                    fontSize: "1.75rem", 
+                    fontWeight: "700", 
+                    marginBottom: "2rem"
+                  }}
+                >
+                  Exploitez la puissance de vos données
+                </h3>
+                <div className="space-y-4">
+                  {[
+                    "Rattachez automatiquement les documents Word ou Excel à vos projets",
+                    "Centralisez la collaboration via Microsoft Teams", 
+                    "Sécurisez les accès avec l'authentification unique",
+                    "Activez l'export intelligent vers vos outils internes",
+                    "Automatisez les workflows grâce à nos APIs ouvertes"
+                  ].map((item, idx) => (
+                    <div key={idx} style={{ display: "flex", alignItems: "center", fontSize: "1rem" }}>
+                      <div 
+                        style={{ 
+                          marginRight: "0.75rem",
+                          backgroundColor: "rgba(255, 255, 255, 0.2)",
+                          width: "24px",
+                          height: "24px",
+                          borderRadius: "50%",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center"
+                        }}
+                      >
+                        <CheckCircle size={14} color="#FFFFFF" />
+                      </div>
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div 
+                style={{
+                  backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  borderRadius: "20px",
+                  padding: "2rem",
+                  textAlign: "center",
+                  backdropFilter: "blur(10px)"
+                }}
+              >
+                <div 
+                  style={{ 
+                    width: "80px",
+                    height: "80px",
+                    borderRadius: "50%",
+                    backgroundColor: "rgba(255, 255, 255, 0.2)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    margin: "0 auto 1.5rem"
+                  }}
+                >
+                  <Database size={40} color="#FFFFFF" />
+                </div>
+                <h4 
+                  style={{ 
+                    fontSize: "1.25rem", 
+                    fontWeight: "700", 
+                    marginBottom: "1rem"
+                  }}
+                >
+                  Une seule plateforme pour tout orchestrer
+                </h4>
+                <button 
+                  style={{ 
+                    backgroundColor: "#FFFFFF", 
+                    color: "#112646",
+                    padding: "0.75rem 1.5rem",
+                    borderRadius: "12px",
+                    fontWeight: "600",
+                    border: "none",
+                    cursor: "pointer",
+                    transition: "transform 0.3s ease"
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "scale(1.05)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "scale(1)";
+                  }}
+                >
+                  Découvrir nos intégrations
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. SECURITY & COMPLIANCE SECTION */}
       <section 
         style={{ 
           backgroundColor: "#FBFCFF", 
