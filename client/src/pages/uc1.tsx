@@ -1,10 +1,9 @@
-import { useState } from "react";
 import { FaCheckCircle, FaLightbulb, FaEye, FaArchive, FaFileAlt, FaChartLine, FaComments, FaCog, FaLayerGroup, FaTags } from 'react-icons/fa';
 import { motion } from "framer-motion";
 import { useGlobalTranslations } from "@/contexts/TranslationContext";
 import { AitendersSimulatorFinal } from "@/components/aitenders-simulator-final";
 import ClientLogos from "@/components/client-logos";
-import HubSpotBookingModal from "@/components/hubspot-booking-modal";
+import DemoCTAButton from "@/components/demo-cta-button";
 import ChatInterface from "@/components/chat-interface";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -16,7 +15,6 @@ import featureImage2 from "@assets/wow 2_1756122537819.png";
 import featureImage3 from "@assets/wow 3_1756122537813.png";
 
 export default function UC1() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const { t, currentLanguage } = useGlobalTranslations();
 
   // Function to scroll to simulator section
@@ -89,12 +87,9 @@ export default function UC1() {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 md:mb-20">
-              <Button 
-                onClick={() => setIsModalOpen(true)}
-                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-12 py-6 text-xl font-bold rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
-              >
+              <DemoCTAButton>
                 {t('uc1.hero.demoButton') || 'Réservez une Démo'}
-              </Button>
+              </DemoCTAButton>
 
             </div>
           </motion.div>
@@ -620,12 +615,6 @@ détails</span>
 
       {/* Chat Interface */}
       <ChatInterface />
-
-      {/* HubSpot Modal */}
-      <HubSpotBookingModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-      />
     </div>
   );
 }
