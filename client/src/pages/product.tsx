@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "@/components/header";
 import ClientLogos from "@/components/client-logos";
+import DemoCTAButton from "@/components/demo-cta-button";
 import { 
   CheckCircle, 
   ChevronDown, 
@@ -183,9 +184,9 @@ const ProductPage = () => {
 
             {/* CTA Buttons */}
             <div className="mt-8 flex items-center">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition-transform transform hover:scale-105">
+              <DemoCTAButton size="md" className="text-lg py-3 px-6">
                 Demander une démo
-              </button>
+              </DemoCTAButton>
             </div>
 
             {/* KPIs */}
