@@ -24,7 +24,7 @@ import uc6HeroImage from "@assets/HERO UC 6_1755862567206.png";
 // THIS IS THE CORRECT IMPORT FOR YOUR PROJECT
 import { useGlobalTranslations } from '@/contexts/TranslationContext';
 
-export default function UC6Page() { // Using a default export as required
+function UC6Page() { // Using a default export as required
   // THIS IS THE CORRECT HOOK FOR YOUR PROJECT
   const { t } = useGlobalTranslations();
 
@@ -264,3 +264,5 @@ export default function UC6Page() { // Using a default export as required
     </div>
   );
 }
+
+export default UC6Page;

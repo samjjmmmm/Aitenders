@@ -160,128 +160,68 @@ const ProductPage = () => {
       <Header />
 
       {/* 1. HERO SECTION */}
-      <section 
-        style={{ 
-          background: "linear-gradient(135deg, #112646 0%, #1E3A8A 50%, #1F2937 100%)",
-          paddingTop: "8rem",
-          paddingBottom: "8rem",
-          color: "#FBFCFF",
-          position: "relative",
-          overflow: "hidden"
-        }}
-      >
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 -right-32 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-indigo-400/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 -left-32 w-80 h-80 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-blue-300/10 to-indigo-300/10 rounded-full blur-3xl"></div>
-        </div>
+      <section className="bg-gradient-to-br from-slate-50 to-white py-20 md:py-28 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Left Column - Text Content */}
+          <div className="text-left">
+            {/* Badge */}
+            <span className="bg-blue-100 text-blue-800 text-sm font-semibold mr-2 px-4 py-1 rounded-full">
+              Plateforme IA pour Appels d'Offres
+            </span>
+            
+            {/* Headline */}
+            <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-800 tracking-tight leading-tight">
+              L'intelligence de vos équipes Projets,{" "}
+              <span className="text-blue-600">démultipliée par l'IA</span>
+            </h1>
 
-        <div className="grid-container relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Paragraph */}
+            <p className="mt-6 text-lg text-slate-600 max-w-2xl leading-relaxed">
+              Dès l'appel d'offres jusqu'à la livraison, Aitenders est votre copilote – conçu pour aller plus vite et rester aligné.
+            </p>
 
-            {/* Left Column - Content */}
-            <div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-8 leading-tight">
-                L'intelligence de vos équipes Projets,{" "}
-                <span className="relative">
-                  <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                    démultipliée par l'IA
-                  </span>
-                  <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-400/50 to-cyan-400/50 rounded-full"></div>
-                </span>
-              </h1>
-
-              <p className="text-xl md:text-2xl text-blue-100 mb-12 leading-relaxed font-medium">
-                Dès l'appel d'offres jusqu'à la livraison, Aitenders est votre copilote – conçu pour aller plus vite et rester aligné.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-6">
-                <button 
-                  style={{ 
-                    background: "linear-gradient(135deg, #3880E8 0%, #2563EB 100%)", 
-                    color: "#FFFFFF",
-                    padding: "1.25rem 3rem",
-                    borderRadius: "16px",
-                    fontWeight: "700",
-                    fontSize: "1.125rem",
-                    border: "none",
-                    cursor: "pointer",
-                    boxShadow: "0 16px 40px rgba(56,128,232,0.4), 0 4px 0 rgba(255,255,255,0.2) inset",
-                    transition: "all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
-                    letterSpacing: "0.3px"
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = "translateY(-4px) scale(1.05)";
-                    e.currentTarget.style.boxShadow = "0 24px 50px rgba(56,128,232,0.5), 0 4px 0 rgba(255,255,255,0.25) inset";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = "translateY(0) scale(1)";
-                    e.currentTarget.style.boxShadow = "0 16px 40px rgba(56,128,232,0.4), 0 4px 0 rgba(255,255,255,0.2) inset";
-                  }}
-                >
-                  Demander une démo
-                </button>
-              </div>
-
-              {/* Stats row */}
-              <div className="flex items-center gap-8 mt-12 pt-8 border-t border-white/20">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-300">70%</div>
-                  <div className="text-sm text-blue-200">Time Saved</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-300">3.5x</div>
-                  <div className="text-sm text-blue-200">Win Rate Boost</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-300">500+</div>
-                  <div className="text-sm text-blue-200">Enterprise Clients</div>
-                </div>
-              </div>
+            {/* CTA Buttons */}
+            <div className="mt-8 flex items-center">
+              <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition-transform transform hover:scale-105">
+                Demander une démo
+              </button>
+              <a href="#video" className="text-slate-600 hover:text-slate-800 font-semibold text-lg ml-6">
+                Voir la vidéo →
+              </a>
             </div>
 
-            {/* Right Column - Video Hero */}
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-lg">
-                {/* Video Container */}
-                <div 
-                  className="relative w-full rounded-3xl shadow-2xl overflow-hidden group hover:shadow-3xl transition-all duration-500"
-                  style={{ 
-                    aspectRatio: "16/9",
-                    border: "1px solid rgba(59, 130, 246, 0.1)",
-                    background: "linear-gradient(135deg, #1e293b 0%, #334155 100%)"
-                  }}
-                >
-                  {/* Custom video overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-indigo-900/20 z-10 pointer-events-none"></div>
-                  
-                  <iframe
-                    src="https://www.youtube.com/embed/ma1UFP-PXZ8?rel=0&showinfo=0&modestbranding=1&autoplay=0&controls=1&color=white&iv_load_policy=3&cc_load_policy=0&disablekb=1&fs=1&playsinline=1"
-                    title="Aitenders Platform Demo"
-                    className="absolute inset-0 w-full h-full border-0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  />
-                  
-                  {/* Custom branding overlay */}
-                  <div className="absolute bottom-4 left-4 z-20 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 pointer-events-none">
-                    <div className="text-xs font-semibold text-slate-800">Aitenders Platform Demo</div>
-                  </div>
-                </div>
-
-                {/* Shadow effect */}
-                <div 
-                  className="absolute inset-0 rounded-3xl blur-xl opacity-20 -z-10"
-                  style={{ 
-                    background: "linear-gradient(135deg, #3B82F6 0%, #6366F1 100%)",
-                    transform: "translateY(20px) scale(0.95)"
-                  }}
-                />
+            {/* KPIs */}
+            <div className="mt-12 flex space-x-12">
+              <div>
+                <p className="text-4xl font-bold text-slate-800">70%</p>
+                <p className="text-sm text-slate-500 mt-1">Time Saved</p>
+              </div>
+              <div>
+                <p className="text-4xl font-bold text-slate-800">3.5x</p>
+                <p className="text-sm text-slate-500 mt-1">Win Rate Boost</p>
+              </div>
+              <div>
+                <p className="text-4xl font-bold text-slate-800">500+</p>
+                <p className="text-sm text-slate-500 mt-1">Enterprise Clients</p>
               </div>
             </div>
-
           </div>
+
+          {/* Right Column - Video */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="rounded-xl shadow-2xl overflow-hidden border border-slate-200 w-full max-w-lg">
+              <iframe
+                src="https://www.youtube.com/embed/ma1UFP-PXZ8?rel=0&showinfo=0&modestbranding=1&autoplay=0&controls=1&color=white&iv_load_policy=3&cc_load_policy=0&disablekb=1&fs=1&playsinline=1"
+                title="Aitenders Platform Demo"
+                className="w-full h-full border-0"
+                style={{ aspectRatio: "16/9" }}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+          </div>
+
         </div>
       </section>
 
