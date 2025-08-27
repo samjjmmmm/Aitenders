@@ -186,9 +186,6 @@ const ProductPage = () => {
               <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition-transform transform hover:scale-105">
                 Demander une démo
               </button>
-              <a href="#video" className="text-slate-600 hover:text-slate-800 font-semibold text-lg ml-6">
-                Voir la vidéo →
-              </a>
             </div>
 
             {/* KPIs */}
