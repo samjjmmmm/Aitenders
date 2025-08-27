@@ -10,6 +10,7 @@ export * from './uc2';
 export * from './uc3';
 export * from './uc4';
 export * from './uc5';
+export * from './uc6';
 
 // Import all translation objects
 
@@ -71,6 +72,7 @@ import {
 
 import { uc4FrenchTranslations, uc4EnglishTranslations, uc4SpanishTranslations, uc4GermanTranslations } from './uc4';
 import { uc5FrenchTranslations, uc5EnglishTranslations, uc5SpanishTranslations, uc5GermanTranslations } from './uc5';
+import { uc6FrenchTranslations, uc6EnglishTranslations, uc6SpanishTranslations, uc6GermanTranslations } from './uc6';
 
 // Combine all French translations
 export const allFrenchTranslations = {
@@ -84,6 +86,7 @@ export const allFrenchTranslations = {
   ...uc3FrenchTranslations,
   ...uc4FrenchTranslations,
   ...uc5FrenchTranslations,
+  ...uc6FrenchTranslations,
 };
 
 // Combine all English translations
@@ -98,6 +101,7 @@ export const allEnglishTranslations = {
   ...uc3EnglishTranslations,
   ...uc4EnglishTranslations,
   ...uc5EnglishTranslations,
+  ...uc6EnglishTranslations,
 };
 
 // Combine all Spanish translations
@@ -112,6 +116,7 @@ export const allSpanishTranslations = {
   ...uc3SpanishTranslations,
   ...uc4SpanishTranslations,
   ...uc5SpanishTranslations,
+  ...uc6SpanishTranslations,
 };
 
 // Combine all German translations
@@ -126,4 +131,5 @@ export const allGermanTranslations = {
   ...uc3GermanTranslations,
   ...uc4GermanTranslations,
   ...uc5GermanTranslations,
+  ...uc6GermanTranslations,
 };
