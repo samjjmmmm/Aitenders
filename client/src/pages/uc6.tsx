@@ -1,4 +1,4 @@
-// client/src/pages/uc6.tsx (FINAL VERSION WITH ALL CORRECTIONS)
+// client/src/pages/uc6.tsx (FINAL VERSION - USES dangerouslySetInnerHTML)
 
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -21,10 +21,11 @@ import uc6SecondFeatureImage from "@assets/WOW 2_1755862655676.png";
 import uc6ThirdFeatureImage from "@assets/WOW 3_1755862655677.png";
 import uc6HeroImage from "@assets/HERO UC 6_1755862567206.png";
 
-// Correct import for your project's translation system
+// THIS IS THE CORRECT IMPORT FOR YOUR PROJECT
 import { useGlobalTranslations } from '@/contexts/TranslationContext';
 
-export function UC6() { // Using a named export
+export default function UC6Page() { // Using a default export as required
+  // THIS IS THE CORRECT HOOK FOR YOUR PROJECT
   const { t } = useGlobalTranslations();
 
   return (
@@ -128,7 +129,7 @@ export function UC6() { // Using a named export
         </div>
       </motion.section>
 
-      {/* Results Section */}
+      {/* Results & KPI Section */}
       <motion.section initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="py-16 md:py-20 px-4 bg-white">
         <div className="content-boundary">
           <div className="mb-20">
