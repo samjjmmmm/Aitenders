@@ -83,7 +83,14 @@ export default function UC6Page() { // Using a default export as required
               </p>
               <p className="text-xl text-gray-600 mb-8 font-light">{t('uc6.painPoints.text2')}</p>
               <div className="flex justify-center mb-16">
-                <Button className="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl">
+                <Button 
+                  onClick={() => {
+                    const simulatorSection = document.querySelector('[data-scroll-id="simulator-section"]');
+                    if (simulatorSection) {
+                      simulatorSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}
+                  className="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-16 py-7 text-2xl font-bold rounded-3xl shadow-xl">
                   {t('uc6.painPoints.ctaButton')}
                 </Button>
               </div>
@@ -240,7 +247,7 @@ export default function UC6Page() { // Using a default export as required
               </Card>
           </div>
           <div className="mb-16"><ClientLogos language="fr" /></div>
-          <div className="bg-white rounded-3xl shadow-2xl p-8">
+          <div className="bg-white rounded-3xl shadow-2xl p-8" data-scroll-id="simulator-section">
             <div className="text-center mb-8"><h3 className="text-2xl font-bold mb-4">{t('uc6.roi.headline')}</h3><p className="text-lg text-gray-600">{t('uc6.roi.subtitle')}</p></div>
             <AitendersSimulatorFinal useCase="UC6" />
           </div>
