@@ -1,0 +1,106 @@
+Your task is to perform a high-fidelity redesign of the hero section on my homepage.
+Objective:
+You must refactor the HTML structure and CSS classes of the hero section to match the clean, modern, and professional aesthetic of the hero section on livestorm.com (see the inspiration image).
+Strict Constraints:
+Do NOT change any of the existing text content. This includes the headline, the descriptive paragraph, the button text ("Demander une démo"), and the KPI values (70%, 3.5x, 500+).
+Do NOT change the video. The existing video embed is the correct visual element.
+You MUST use Tailwind CSS classes for all styling. Do not write custom CSS files.
+The final design must be fully responsive and look great on desktop, tablet, and mobile devices.
+File to Edit:
+You will be editing the main file that renders the homepage, likely located at client/src/pages/home.tsx or a similar path.
+Step-by-Step Redesign Instructions:
+Step 1: Overall Structure and Background
+Locate the root <section> element for the hero section.
+Remove the current dark blue gradient background. Replace it with a very light, subtle gradient to create a clean and airy feel.
+Required CSS: bg-gradient-to-br from-slate-50 to-white
+The section must have significant vertical padding.
+Required CSS: py-20 md:py-28 lg:py-32
+The main content within the section must be a two-column layout. Use Flexbox or CSS Grid. The columns should be centered vertically and have a significant gap between them.
+Example Structure:
+code
+Html
+<section class="bg-gradient-to-br from-slate-50 to-white py-20 md:py-28 lg:py-32">
+  <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <!-- Left Column: Text Content -->
+    <div class="text-left">
+      ...
+    </div>
+    <!-- Right Column: Video -->
+    <div>
+      ...
+    </div>
+  </div>
+</section>
+Step 2: Left Column - Text Content Redesign
+You will now structure all the text content within the left column <div>. The vertical order must be: Badge, Headline, Paragraph, CTA Buttons, KPIs.
+Add a Badge: Above the main headline, add a new Badge component.
+Text: "Plateforme IA pour Appels d'Offres"
+Required CSS: bg-blue-100 text-blue-800 font-semibold rounded-full px-4 py-1
+Example Code:
+code
+Html
+<span class="bg-blue-100 text-blue-800 text-sm font-semibold mr-2 px-4 py-1 rounded-full">Plateforme IA pour Appels d'Offres</span>
+Restyle the Headline (h1):
+The font must be large, bold, and dark gray/black.
+Required CSS: text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-800 tracking-tight
+The highlighted text ("démultipliée par l'IA") must be inside a <span> and colored with your primary brand color (e.g., a vibrant blue).
+Example Code:
+code
+Html
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-800 tracking-tight">
+  L'intelligence de vos équipes Projets, 
+  <span class="text-blue-600">démultipliée par l'IA</span>
+</h1>
+Restyle the Paragraph (p):
+The text must be larger than standard body text but smaller than the headline. It should have a lighter color to create hierarchy.
+Required CSS: mt-6 text-lg text-slate-600 max-w-2xl
+Increase the line spacing for readability: leading-relaxed
+Restyle the CTA Button and add a Secondary CTA:
+Create a div with flex to hold two buttons side-by-side.
+Primary Button ("Demander une démo"): This must be a solid-colored button. Use your primary brand blue.
+Required CSS: bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition-transform transform hover:scale-105
+Secondary Action: Add a secondary, less prominent action next to it. A good option is a text link with an arrow.
+Text: "Voir la vidéo →"
+Required CSS: text-slate-600 hover:text-slate-800 font-semibold text-lg ml-6
+Example Code:
+code
+Html
+<div class="mt-8 flex items-center">
+  <Button class="bg-blue-600 hover:bg-blue-700 ...">Demander une démo</Button>
+  <a href="#" class="text-slate-600 hover:text-slate-800 font-semibold text-lg ml-6">Voir la vidéo →</a>
+</div>
+Relocate and Restyle the KPIs:
+The KPIs (70%, 3.5x, 500+) must be placed after the CTA buttons.
+Use a div with flex to lay them out horizontally. There should be a significant margin above them to separate them from the CTAs.
+Each KPI should be in its own div. The number should be large and bold, and the label should be small and lighter.
+Example Code:
+code
+Html
+<div class="mt-12 flex space-x-12">
+  <div>
+    <p class="text-4xl font-bold text-slate-800">70%</p>
+    <p class="text-sm text-slate-500 mt-1">Time Saved</p>
+  </div>
+  <div>
+    <p class="text-4xl font-bold text-slate-800">3.5x</p>
+    <p class="text-sm text-slate-500 mt-1">Win Rate Boost</p>
+  </div>
+  <div>
+    <p class="text-4xl font-bold text-slate-800">500+</p>
+    <p class="text-sm text-slate-500 mt-1">Enterprise Clients</p>
+  </div>
+</div>
+Step 3: Right Column - Video Redesign
+The goal is to make the video look polished and intentional, like the product screenshot in the inspiration image.
+Place the video embed code inside a wrapper div.
+This wrapper div must be styled to look like a clean, floating card.
+Required CSS: rounded-xl shadow-2xl overflow-hidden border border-slate-200
+The shadow-2xl is critical for the "lifting off the page" effect.
+The rounded-xl and overflow-hidden are critical to give the video soft corners.
+Example Code:
+code
+Html
+<div class="rounded-xl shadow-2xl overflow-hidden border border-slate-200">
+  <!-- Your existing video embed code goes here -->
+  <iframe ...></iframe>
+</div>
