@@ -22,6 +22,7 @@ import SecurityPage from "@/pages/security";
 import SimulatorAdmin from "@/pages/simulator-admin";
 import MailingAdmin from "@/pages/mailing-admin";
 import NotFound from "@/pages/not-found";
+import TestUC2Page from "@/pages/test-uc2";
 
 function Router() {
   const [location] = useLocation();
@@ -36,6 +37,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/uc1" component={UC1Page} />
       <Route path="/uc2" component={UC2Page} />
+      <Route path="/test-uc2" component={TestUC2Page} />
       <Route path="/uc3" component={UC3Page} />
       <Route path="/uc4" component={UC4Page} />
       <Route path="/uc5" component={UC5} />

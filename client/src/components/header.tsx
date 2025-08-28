@@ -194,6 +194,11 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
                       <a href="#moyen" className="block text-sm text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors">
                         Moyen
                       </a>
+                      <Link href="/test-uc2">
+                        <div className="block text-sm text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors cursor-pointer" onClick={closeMenu}>
+                          Test UC2
+                        </div>
+                      </Link>
                       <Link href="/uc3">
                         <div className="block text-sm text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors cursor-pointer" onClick={closeMenu}>
                           Complexe
