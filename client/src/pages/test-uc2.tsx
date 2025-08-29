@@ -744,6 +744,408 @@ export default function TestUC2Page() {
         </div>
       </div>
 
+      {/* Block 7 - Team 20 Section avec 6 cartes de fonctionnalités */}
+      <div 
+        className="flex flex-col items-center gap-20 w-full overflow-hidden"
+        style={{
+          padding: '194px 64px 112px 64px',
+          background: '#fff',
+          height: '2410px'
+        }}
+        data-figma-node="9248:29689"
+      >
+        <div 
+          className="flex flex-col items-start gap-20 w-full"
+          style={{ maxWidth: '1280px' }}
+          data-figma-node="9248:29690"
+        >
+          <div 
+            className="flex items-start gap-20 w-full"
+            data-figma-node="9248:29691"
+          >
+            <div 
+              className="flex flex-col items-start gap-8 w-[356px]"
+              data-figma-node="9248:29692"
+            >
+              <div 
+                className="flex flex-col items-start gap-4 w-full"
+                data-figma-node="9248:29693"
+              >
+                <div 
+                  className="flex justify-center items-center gap-2 box-border rounded-full"
+                  style={{
+                    border: '2px solid #000',
+                    background: 'transparent',
+                    padding: '10px 24px'
+                  }}
+                  data-figma-node="9254:155"
+                >
+                  <span 
+                    className="text-black inline-block"
+                    style={{
+                      fontFamily: 'Inter',
+                      fontSize: '16px',
+                      fontWeight: 500,
+                      lineHeight: '150%'
+                    }}
+                    data-figma-node="4179:8893"
+                  >
+                    Impact additionnel
+                  </span>
+                </div>
+                <div 
+                  className="flex flex-col items-center gap-6 w-full"
+                  data-figma-node="9248:29696"
+                >
+                  <span 
+                    className="text-black inline-block"
+                    style={{
+                      fontFamily: 'Roboto',
+                      fontSize: '52px',
+                      letterSpacing: '-0.52px',
+                      fontWeight: 500,
+                      lineHeight: '120%'
+                    }}
+                    data-figma-node="9248:29697"
+                  >
+                    Augmentez encore plus vos équipes
+                  </span>
+                  <span 
+                    className="text-black inline-block"
+                    style={{
+                      fontFamily: 'Roboto',
+                      fontSize: '18px',
+                      fontWeight: 400,
+                      lineHeight: '150%'
+                    }}
+                    data-figma-node="9248:29698"
+                  >
+                    Sur les offres semie-complexe, découvrez des fonctionnalités qui ajoutent une dimension stratégique à votre développement commercial.
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div 
+              className="flex flex-col items-start gap-16 w-full flex-1"
+              data-figma-node="9248:29701"
+            >
+              {/* Row 1 */}
+              <div 
+                className="flex items-start gap-16 w-full"
+                data-figma-node="9248:30265"
+              >
+                <div 
+                  className="w-[382px] h-[610.11px]"
+                  data-figma-node="9254:174"
+                >
+                  <div 
+                    className="bg-[#f2f1f3] flex-shrink-0 w-[382px] h-[477.5px]"
+                    data-figma-node="9254:175"
+                  ></div>
+                  <div 
+                    className="flex-shrink-0 w-6 h-6"
+                    data-figma-node="9254:176"
+                  >
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17.7285 9.40381V15.4038H7.72852V9.40381H17.7285ZM19.7285 3.40381H17.7285V6.40381H19.7285V3.40381ZM7.72852 3.40381H5.72852V6.40381H7.72852V3.40381ZM23.7285 7.40381H20.7285V9.40381H23.7285V7.40381ZM19.7285 7.40381H5.72852V17.4038H19.7285V7.40381ZM4.72852 7.40381H1.72852V9.40381H4.72852V7.40381ZM23.7285 15.4038H20.7285V17.4038H23.7285V15.4038ZM4.72852 15.4038H1.72852V17.4038H4.72852V15.4038ZM19.7285 18.4038H17.7285V21.4038H19.7285V18.4038ZM7.72852 18.4038H5.72852V21.4038H7.72852V18.4038Z" fill="black"/>
+                    </svg>
+                  </div>
+                  <span 
+                    className="text-[#19171c] inline-block flex-col flex-shrink-0 justify-center"
+                    style={{
+                      letterSpacing: '-0.2px',
+                      width: '130.93px',
+                      height: '24px',
+                      fontFamily: 'Inter',
+                      fontSize: '18.906px',
+                      fontWeight: 600,
+                      lineHeight: '24px'
+                    }}
+                    data-figma-node="9254:178"
+                  >
+                    Analyse prédictive
+                  </span>
+                  <span 
+                    className="text-[#6e6e73] inline-block flex-col flex-shrink-0 justify-center"
+                    style={{
+                      letterSpacing: '-0.32px',
+                      width: '349.76px',
+                      height: '68px',
+                      fontFamily: 'Inter',
+                      fontSize: '16px',
+                      fontWeight: 400,
+                      lineHeight: '24px'
+                    }}
+                    data-figma-node="9254:179"
+                  >
+                    Détectez les risques avant qu'ils n'impactent votre projet grâce à l'IA prédictive.
+                  </span>
+                </div>
+                <div 
+                  className="w-[382px] h-[610.11px]"
+                  data-figma-node="9254:181"
+                >
+                  <div 
+                    className="bg-[#f2f1f3] flex-shrink-0 w-[382px] h-[477.5px]"
+                    data-figma-node="9254:182"
+                  ></div>
+                  <div 
+                    className="flex-shrink-0 w-6 h-6"
+                    data-figma-node="9254:183"
+                  >
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17.7285 9.40381V15.4038H7.72852V9.40381H17.7285ZM19.7285 3.40381H17.7285V6.40381H19.7285V3.40381ZM7.72852 3.40381H5.72852V6.40381H7.72852V3.40381ZM23.7285 7.40381H20.7285V9.40381H23.7285V7.40381ZM19.7285 7.40381H5.72852V17.4038H19.7285V7.40381ZM4.72852 7.40381H1.72852V9.40381H4.72852V7.40381ZM23.7285 15.4038H20.7285V17.4038H23.7285V15.4038ZM4.72852 15.4038H1.72852V17.4038H4.72852V15.4038ZM19.7285 18.4038H17.7285V21.4038H19.7285V18.4038ZM7.72852 18.4038H5.72852V21.4038H7.72852V18.4038Z" fill="black"/>
+                    </svg>
+                  </div>
+                  <span 
+                    className="text-[#19171c] inline-block flex-col flex-shrink-0 justify-center"
+                    style={{
+                      letterSpacing: '-0.2px',
+                      width: '130.93px',
+                      height: '24px',
+                      fontFamily: 'Inter',
+                      fontSize: '18.906px',
+                      fontWeight: 600,
+                      lineHeight: '24px'
+                    }}
+                    data-figma-node="9254:185"
+                  >
+                    Suivi temps réel
+                  </span>
+                  <span 
+                    className="text-[#6e6e73] inline-block flex-col flex-shrink-0 justify-center"
+                    style={{
+                      letterSpacing: '-0.32px',
+                      width: '349.76px',
+                      height: '68px',
+                      fontFamily: 'Inter',
+                      fontSize: '16px',
+                      fontWeight: 400,
+                      lineHeight: '24px'
+                    }}
+                    data-figma-node="9254:186"
+                  >
+                    Surveillez l'avancement de vos projets avec des tableaux de bord en temps réel.
+                  </span>
+                </div>
+              </div>
+
+              {/* Row 2 */}
+              <div 
+                className="flex items-start gap-16 w-full"
+                data-figma-node="9254:254"
+              >
+                <div 
+                  className="flex flex-1 items-start gap-16 w-full"
+                  data-figma-node="9254:282"
+                >
+                  <div 
+                    className="w-[382px] h-[610.11px]"
+                    data-figma-node="9254:283"
+                  >
+                    <div 
+                      className="bg-[#f2f1f3] flex-shrink-0 w-[382px] h-[477.5px]"
+                      data-figma-node="9254:284"
+                    ></div>
+                    <div 
+                      className="flex-shrink-0 w-6 h-6"
+                      data-figma-node="9254:285"
+                    >
+                      <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.7285 9.40381V15.4038H7.72852V9.40381H17.7285ZM19.7285 3.40381H17.7285V6.40381H19.7285V3.40381ZM7.72852 3.40381H5.72852V6.40381H7.72852V3.40381ZM23.7285 7.40381H20.7285V9.40381H23.7285V7.40381ZM19.7285 7.40381H5.72852V17.4038H19.7285V7.40381ZM4.72852 7.40381H1.72852V9.40381H4.72852V7.40381ZM23.7285 15.4038H20.7285V17.4038H23.7285V15.4038ZM4.72852 15.4038H1.72852V17.4038H4.72852V15.4038ZM19.7285 18.4038H17.7285V21.4038H19.7285V18.4038ZM7.72852 18.4038H5.72852V21.4038H7.72852V18.4038Z" fill="black"/>
+                      </svg>
+                    </div>
+                    <span 
+                      className="text-[#19171c] inline-block flex-col flex-shrink-0 justify-center"
+                      style={{
+                        letterSpacing: '-0.2px',
+                        width: '130.93px',
+                        height: '24px',
+                        fontFamily: 'Inter',
+                        fontSize: '18.906px',
+                        fontWeight: 600,
+                        lineHeight: '24px'
+                      }}
+                      data-figma-node="9254:287"
+                    >
+                      Collaboration
+                    </span>
+                    <span 
+                      className="text-[#6e6e73] inline-block flex-col flex-shrink-0 justify-center"
+                      style={{
+                        letterSpacing: '-0.32px',
+                        width: '349.76px',
+                        height: '68px',
+                        fontFamily: 'Inter',
+                        fontSize: '16px',
+                        fontWeight: 400,
+                        lineHeight: '24px'
+                      }}
+                      data-figma-node="9254:288"
+                    >
+                      Centralisez les échanges et synchronisez votre équipe autour d'une vision partagée.
+                    </span>
+                  </div>
+                  <div 
+                    className="w-[382px] h-[610.11px]"
+                    data-figma-node="9254:289"
+                  >
+                    <div 
+                      className="bg-[#f2f1f3] flex-shrink-0 w-[382px] h-[477.5px]"
+                      data-figma-node="9254:290"
+                    ></div>
+                    <div 
+                      className="flex-shrink-0 w-6 h-6"
+                      data-figma-node="9254:291"
+                    >
+                      <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.7285 9.40381V15.4038H7.72852V9.40381H17.7285ZM19.7285 3.40381H17.7285V6.40381H19.7285V3.40381ZM7.72852 3.40381H5.72852V6.40381H7.72852V3.40381ZM23.7285 7.40381H20.7285V9.40381H23.7285V7.40381ZM19.7285 7.40381H5.72852V17.4038H19.7285V7.40381ZM4.72852 7.40381H1.72852V9.40381H4.72852V7.40381ZM23.7285 15.4038H20.7285V17.4038H23.7285V15.4038ZM4.72852 15.4038H1.72852V17.4038H4.72852V15.4038ZM19.7285 18.4038H17.7285V21.4038H19.7285V18.4038ZM7.72852 18.4038H5.72852V21.4038H7.72852V18.4038Z" fill="black"/>
+                      </svg>
+                    </div>
+                    <span 
+                      className="text-[#19171c] inline-block flex-col flex-shrink-0 justify-center"
+                      style={{
+                        letterSpacing: '-0.2px',
+                        width: '130.93px',
+                        height: '24px',
+                        fontFamily: 'Inter',
+                        fontSize: '18.906px',
+                        fontWeight: 600,
+                        lineHeight: '24px'
+                      }}
+                      data-figma-node="9254:293"
+                    >
+                      Automatisation
+                    </span>
+                    <span 
+                      className="text-[#6e6e73] inline-block flex-col flex-shrink-0 justify-center"
+                      style={{
+                        letterSpacing: '-0.32px',
+                        width: '349.76px',
+                        height: '68px',
+                        fontFamily: 'Inter',
+                        fontSize: '16px',
+                        fontWeight: 400,
+                        lineHeight: '24px'
+                      }}
+                      data-figma-node="9254:294"
+                    >
+                      Automatisez les tâches répétitives pour libérer du temps pour la stratégie.
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Row 3 */}
+              <div 
+                className="flex items-start gap-16 w-full"
+                data-figma-node="9254:296"
+              >
+                <div 
+                  className="flex flex-1 items-start gap-16 w-full"
+                  data-figma-node="9254:297"
+                >
+                  <div 
+                    className="w-[382px] h-[610.11px]"
+                    data-figma-node="9254:298"
+                  >
+                    <div 
+                      className="bg-[#f2f1f3] flex-shrink-0 w-[382px] h-[477.5px]"
+                      data-figma-node="9254:299"
+                    ></div>
+                    <div 
+                      className="flex-shrink-0 w-6 h-6"
+                      data-figma-node="9254:300"
+                    >
+                      <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.7285 9.40381V15.4038H7.72852V9.40381H17.7285ZM19.7285 3.40381H17.7285V6.40381H19.7285V3.40381ZM7.72852 3.40381H5.72852V6.40381H7.72852V3.40381ZM23.7285 7.40381H20.7285V9.40381H23.7285V7.40381ZM19.7285 7.40381H5.72852V17.4038H19.7285V7.40381ZM4.72852 7.40381H1.72852V9.40381H4.72852V7.40381ZM23.7285 15.4038H20.7285V17.4038H23.7285V15.4038ZM4.72852 15.4038H1.72852V17.4038H4.72852V15.4038ZM19.7285 18.4038H17.7285V21.4038H19.7285V18.4038ZM7.72852 18.4038H5.72852V21.4038H7.72852V18.4038Z" fill="black"/>
+                      </svg>
+                    </div>
+                    <span 
+                      className="text-[#19171c] inline-block flex-col flex-shrink-0 justify-center"
+                      style={{
+                        letterSpacing: '-0.2px',
+                        width: '130.93px',
+                        height: '24px',
+                        fontFamily: 'Inter',
+                        fontSize: '18.906px',
+                        fontWeight: 600,
+                        lineHeight: '24px'
+                      }}
+                      data-figma-node="9254:302"
+                    >
+                      Intégrations
+                    </span>
+                    <span 
+                      className="text-[#6e6e73] inline-block flex-col flex-shrink-0 justify-center"
+                      style={{
+                        letterSpacing: '-0.32px',
+                        width: '349.76px',
+                        height: '68px',
+                        fontFamily: 'Inter',
+                        fontSize: '16px',
+                        fontWeight: 400,
+                        lineHeight: '24px'
+                      }}
+                      data-figma-node="9254:303"
+                    >
+                      Connectez vos outils existants pour un workflow sans interruption.
+                    </span>
+                  </div>
+                  <div 
+                    className="w-[382px] h-[610.11px]"
+                    data-figma-node="9254:304"
+                  >
+                    <div 
+                      className="bg-[#f2f1f3] flex-shrink-0 w-[382px] h-[477.5px]"
+                      data-figma-node="9254:305"
+                    ></div>
+                    <div 
+                      className="flex-shrink-0 w-6 h-6"
+                      data-figma-node="9254:306"
+                    >
+                      <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.7285 9.40381V15.4038H7.72852V9.40381H17.7285ZM19.7285 3.40381H17.7285V6.40381H19.7285V3.40381ZM7.72852 3.40381H5.72852V6.40381H7.72852V3.40381ZM23.7285 7.40381H20.7285V9.40381H23.7285V7.40381ZM19.7285 7.40381H5.72852V17.4038H19.7285V7.40381ZM4.72852 7.40381H1.72852V9.40381H4.72852V7.40381ZM23.7285 15.4038H20.7285V17.4038H23.7285V15.4038ZM4.72852 15.4038H1.72852V17.4038H4.72852V15.4038ZM19.7285 18.4038H17.7285V21.4038H19.7285V18.4038ZM7.72852 18.4038H5.72852V21.4038H7.72852V18.4038Z" fill="black"/>
+                      </svg>
+                    </div>
+                    <span 
+                      className="text-[#19171c] inline-block flex-col flex-shrink-0 justify-center"
+                      style={{
+                        letterSpacing: '-0.2px',
+                        width: '130.93px',
+                        height: '24px',
+                        fontFamily: 'Inter',
+                        fontSize: '18.906px',
+                        fontWeight: 600,
+                        lineHeight: '24px'
+                      }}
+                      data-figma-node="9254:308"
+                    >
+                      Reporting avancé
+                    </span>
+                    <span 
+                      className="text-[#6e6e73] inline-block flex-col flex-shrink-0 justify-center"
+                      style={{
+                        letterSpacing: '-0.32px',
+                        width: '349.76px',
+                        height: '68px',
+                        fontFamily: 'Inter',
+                        fontSize: '16px',
+                        fontWeight: 400,
+                        lineHeight: '24px'
+                      }}
+                      data-figma-node="9254:309"
+                    >
+                      Générez des rapports détaillés pour optimiser vos performances futures.
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
