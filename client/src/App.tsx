@@ -23,6 +23,7 @@ import SimulatorAdmin from "@/pages/simulator-admin";
 import MailingAdmin from "@/pages/mailing-admin";
 import NotFound from "@/pages/not-found";
 import TestUC2Page from "@/pages/test-uc2";
+import "./index.css"; // Force global CSS import
 
 function Router() {
   const [location] = useLocation();
