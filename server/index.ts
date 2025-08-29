@@ -57,17 +57,6 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // Initialize translation system and seed all translations
-  try {
-    await translationService.initializeLanguages();
-    console.log('✅ Languages initialized');
-
-    await translationService.initializeAllTranslations();
-    console.log('✅ All translations seeded successfully');
-  } catch (error) {
-    console.error('Error initializing translations:', error);
-  }
-
   // ALWAYS serve the app on the port specified in the environment variable PORT
   // Other ports are firewalled. Default to 5000 if not specified.
   // this serves both the API and the client.
@@ -79,5 +68,18 @@ app.use((req, res, next) => {
     reusePort: true,
   }, () => {
     log(`serving on port ${port}`);
+    
+    // Initialize translation system after server is running
+    translationService.initializeLanguages()
+      .then(() => {
+        console.log('✅ Languages initialized');
+        return translationService.initializeAllTranslations();
+      })
+      .then(() => {
+        console.log('✅ All translations seeded successfully');
+      })
+      .catch(error => {
+        console.error('Error initializing translations:', error);
+      });
   });
 })();
