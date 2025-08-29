@@ -1,0 +1,200 @@
+Implement the following design in React. Use the following files generated from a Figma design as a specification and guide:
+
+```src/styles/Cta_25.module.css
+@import "https://fonts.googleapis.com/css?family=Raleway:0,500&display=swap";
+@import "https://fonts.googleapis.com/css?family=Inter:0,400&display=swap";
+@import "https://fonts.googleapis.com/css?family=Roboto:0,700&display=swap";
+@import "https://fonts.googleapis.com/css?family=Montserrat:0,400&display=swap";
+@import "https://fonts.googleapis.com/css?family=Raleway:0,500&display=swap";
+@import "https://fonts.googleapis.com/css?family=Inter:0,400&display=swap";
+@import "https://fonts.googleapis.com/css?family=Roboto:0,700&display=swap";
+@import "https://fonts.googleapis.com/css?family=Raleway:0,500&display=swap";
+@import "https://fonts.googleapis.com/css?family=Inter:0,400&display=swap";
+@import "https://fonts.googleapis.com/css?family=Raleway:0,500&display=swap";
+.Cta_25_9253_31318 {
+  padding: var(--Section-Padding-padding-section-large, 112px)
+    var(--Page-Padding-padding-global, 64px);
+  background: #d3d3d3 url(<path-to-image>) 50% / cover no-repeat;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  width: 1432px;
+  height: 491px;
+  display: flex;
+  position: relative;
+  bottom: 339.084px;
+  left: 0.271px;
+  overflow: hidden;
+}
+.Content_9253_31319 {
+  max-width: var(--Max-Width-max-width-large, 768px);
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 574px;
+  display: flex;
+  position: absolute;
+  top: 61px;
+  left: 191px;
+}
+.Content_9253_31320 {
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  display: flex;
+}
+.Heading_9253_31321 {
+  color: var(--Color-Scheme-1-Border, #000);
+  letter-spacing: -0.48px;
+  font-family: Raleway;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  display: inline-block;
+}
+.Text_9253_31322 {
+  color: var(--Color-Scheme-1-Border, #000);
+  font-family: Inter;
+  font-size: var(--Text-Sizes-Text-Medium, 18px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Container_9253_31337 {
+  box-sizing: border-box;
+  background: #fff;
+  border: 0 solid #fff;
+  border-radius: 10px;
+  width: 500px;
+  height: 232px;
+  position: absolute;
+  top: 60px;
+  right: 154px;
+  box-shadow:
+    0 0 2px #171a1f1f,
+    0 0 1px #171a1f12;
+}
+.AiTenderAssistant_9253_31338 {
+  color: #171a1f;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+  display: inline-block;
+}
+.Ellipsis_9253_31339 {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+.Group_9253_31340 {
+  flex-shrink: 0;
+  width: 14.98px;
+  height: 3.32px;
+}
+.Container_9253_31348 {
+  box-sizing: border-box;
+  background: #f3f6fc;
+  border: 0 solid #fff;
+  border-radius: 0 10px 10px;
+  justify-content: center;
+  align-items: center;
+  width: 452px;
+  padding: 13px 16px 11px;
+  display: flex;
+}
+.HiILlHelpYouDiscoverThePerfectAitendersSolutionForYourTeamWhatIndustryAreYouIn_9253_31349 {
+  color: #19191f;
+  flex-shrink: 0;
+  width: 420px;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  display: inline-block;
+}
+.Button_9253_31350 {
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #dee1e6;
+  border-radius: 6px;
+  flex-shrink: 0;
+  width: 452px;
+  height: 46px;
+  overflow: hidden;
+}
+.ClickToStartYourPersonalizedAssessment_9253_31358 {
+  color: #565d6d;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  display: inline-block;
+}
+.ArrowRight_9253_31351 {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+}
+.Group_9253_31352 {
+  flex-shrink: 0;
+  width: 10.72px;
+  height: 10.72px;
+}
+
+```
+
+---
+
+```src/components/assets/Group.tsx
+import React from 'react';
+export default function Group() {
+  return <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.885 4.87695C11.255 4.87695 11.555 5.17691 11.555 5.54695C11.555 5.91699 11.255 6.21695 10.885 6.21695L1.50496 6.21695C1.13493 6.21695 0.834961 5.91699 0.834961 5.54695C0.834961 5.17691 1.13493 4.87695 1.50496 4.87695L10.885 4.87695Z" fill="#565D6D"/>
+<path d="M5.70599 0.383145C5.95128 0.137845 6.33921 0.122709 6.60239 0.337344L6.65344 0.383145L11.3434 5.07316C11.6051 5.3348 11.6051 5.75891 11.3434 6.02055L6.65344 10.7105C6.3918 10.9722 5.96763 10.9722 5.70599 10.7105C5.44436 10.4489 5.44436 10.0248 5.70599 9.76316L9.9223 5.54685L5.70599 1.33056L5.66023 1.27953C5.44556 1.01638 5.4607 0.628445 5.70599 0.383145Z" fill="#565D6D"/>
+</svg>
+;
+}
+```
+
+---
+
+```src/components/Cta_25.tsx
+import React from 'react';
+import styles from '../styles/Cta_25.module.css';
+import Group from './assets/Group';
+
+export default function Cta_25() {
+  return (
+    <div className={styles.Cta_25_9253_31318} data-figma-node="9253:31318">
+      <div className={styles.Content_9253_31319} data-figma-node="9253:31319">
+        <div className={styles.Content_9253_31320} data-figma-node="9253:31320"><span className={styles.Heading_9253_31321} data-figma-node="9253:31321">D&#xE9;couvrez comment Aitenders r&#xE9;pond exactement &#xE0; vos besoins</span><span className={styles.Text_9253_31322} data-figma-node="9253:31322">Pas de d&#xE9;mo g&#xE9;n&#xE9;rique. Pas de spam commercial. Juste trois questions rapides</span></div>
+      </div>
+      <div className={styles.Container_9253_31337} data-figma-node="9253:31337"><span className={styles.AiTenderAssistant_9253_31338} data-figma-node="9253:31338">AI Tender Assistant</span>
+        <div className={styles.Ellipsis_9253_31339} data-figma-node="9253:31339">
+          <div className={styles.Group_9253_31340}>
+            <Group data-figma-node="9253:31340" />
+          </div>
+        </div>
+        <div className={styles.Container_9253_31348} data-figma-node="9253:31348"><span className={styles.HiILlHelpYouDiscoverThePerfectAitendersSolutionForYourTeamWhatIndustryAreYouIn_9253_31349} data-figma-node="9253:31349">Bonjour ! Je vais vous aider &#xE0; trouver la solution Aitenders id&#xE9;ale pour votre &#xE9;quipe. Quel est votre secteur d&#x27;activit&#xE9; ?</span></div>
+        <div className={styles.Button_9253_31350} data-figma-node="9253:31350"><span className={styles.ClickToStartYourPersonalizedAssessment_9253_31358} data-figma-node="9253:31358">Cliquez pour d&#xE9;marrer votre &#xE9;valuation personnalis&#xE9;e...</span>
+          <div className={styles.ArrowRight_9253_31351} data-figma-node="9253:31351">
+            <div className={styles.Group_9253_31352}>
+              <Group data-figma-node="9253:31352" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+

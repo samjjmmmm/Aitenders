@@ -1,0 +1,412 @@
+Implement the following design in React. Use the following files generated from a Figma design as a specification and guide:
+
+```src/styles/Portfolio_11.module.css
+@import "https://fonts.googleapis.com/css?family=Raleway:0,500&display=swap";
+@import "https://fonts.googleapis.com/css?family=Roboto:0,400&display=swap";
+@import "https://fonts.googleapis.com/css?family=Inter:0,400;0,500&display=swap";
+@import "https://fonts.googleapis.com/css?family=Raleway:0,500&display=swap";
+@import "https://fonts.googleapis.com/css?family=Roboto:0,400&display=swap";
+@import "https://fonts.googleapis.com/css?family=Raleway:0,500&display=swap";
+.Portfolio_11_9248_30010 {
+  padding: var(--Section-Padding-padding-section-large, 279px)
+    var(--Page-Padding-padding-global, 64px)
+    var(--Section-Padding-padding-section-large, 112px)
+    var(--Page-Padding-padding-global, 64px);
+  background: var(--Color-Scheme-3-Foreground, #f2f2f2);
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+  height: 1306px;
+  display: flex;
+  overflow: hidden;
+}
+.Container_9248_30011 {
+  max-width: var(--Container-container-large, 1280px);
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+  display: flex;
+}
+.SectionTitle_9248_30012 {
+  max-width: var(--Max-Width-max-width-large, 768px);
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  display: flex;
+}
+.TaglineWrapper_9248_30013 {
+  align-items: center;
+  height: 24px;
+  display: flex;
+}
+.Content_9248_30015 {
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  display: flex;
+}
+.Heading_9248_30016 {
+  color: var(--Color-Scheme-3-Text, #000);
+  text-align: center;
+  font-family: Raleway;
+  font-size: var(--Text-Sizes-Heading-2, 52px);
+  letter-spacing: -0.52px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  display: inline-block;
+}
+.Content_9248_30018,
+.PortfolioList_9248_30019 {
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  width: 100%;
+  display: flex;
+}
+.Row_9248_30769 {
+  align-items: flex-start;
+  gap: 32px;
+  width: 100%;
+  display: flex;
+}
+.Card_9248_30672 {
+  flex-direction: column;
+  flex: 1 0 0;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  display: flex;
+}
+.PlaceholderImage_9248_30673 {
+  aspect-ratio: 16/9;
+  border-radius: var(--Radius-Medium, 32px);
+  background: #d3d3d3 url(<path-to-image>) 50% / cover no-repeat;
+  height: 166.5px;
+}
+.Content_9248_30674 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  display: flex;
+}
+.ContentTop_9254_325 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  display: flex;
+}
+.Text_9254_326 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  display: flex;
+}
+.Heading_9254_327 {
+  color: var(--Color-Scheme-3-Text, #000);
+  font-family: Raleway;
+  font-size: var(--Text-Sizes-Heading-5, 28px);
+  letter-spacing: -0.28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  display: inline-block;
+}
+.ContentTop_9248_30675 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  display: flex;
+}
+.Text_9248_30676 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  display: flex;
+}
+.Text_9248_30678 {
+  color: var(--Color-Scheme-3-Text, #000);
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Text_9254_334 {
+  color: var(--Color-Scheme-3-Text, #000);
+  font-family: Inter;
+  font-size: var(--Text-Sizes-Text-Regular, 16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Card_9248_30691 {
+  flex-direction: column;
+  flex: 1 0 0;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  display: flex;
+}
+.PlaceholderImage_9254_380 {
+  aspect-ratio: 16/9;
+  border-radius: var(--Radius-Medium, 32px);
+  background: #d3d3d3 url(<path-to-image>) 50% / cover no-repeat;
+  height: 166.5px;
+}
+.Content_9254_381 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  display: flex;
+}
+.ContentTop_9254_382 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  display: flex;
+}
+.Text_9254_383 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  display: flex;
+}
+.Heading_9254_384 {
+  color: var(--Color-Scheme-3-Text, #000);
+  font-family: Raleway;
+  font-size: var(--Text-Sizes-Heading-5, 28px);
+  letter-spacing: -0.28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  display: inline-block;
+}
+.ContentTop_9254_385 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  display: flex;
+}
+.Text_9254_386 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  display: flex;
+}
+.Text_9254_387 {
+  color: var(--Color-Scheme-3-Text, #000);
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Text_9254_388 {
+  color: var(--Color-Scheme-3-Text, #000);
+  font-family: Inter;
+  font-size: var(--Text-Sizes-Text-Regular, 16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Card_9248_30710 {
+  flex-direction: column;
+  flex: 1 0 0;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  display: flex;
+}
+.PlaceholderImage_9254_390 {
+  aspect-ratio: 16/9;
+  border-radius: var(--Radius-Medium, 32px);
+  background: #d3d3d3 url(<path-to-image>) 50% / cover no-repeat;
+  height: 166.5px;
+}
+.Content_9254_391 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  display: flex;
+}
+.ContentTop_9254_392 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  display: flex;
+}
+.Text_9254_393 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  display: flex;
+}
+.Heading_9254_394 {
+  color: var(--Color-Scheme-3-Text, #000);
+  font-family: Raleway;
+  font-size: var(--Text-Sizes-Heading-5, 28px);
+  letter-spacing: -0.28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  display: inline-block;
+}
+.ContentTop_9254_395 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  display: flex;
+}
+.Text_9254_396 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  display: flex;
+}
+.Text_9254_397 {
+  color: var(--Color-Scheme-3-Text, #000);
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Text_9254_398 {
+  color: var(--Color-Scheme-3-Text, #000);
+  font-family: Inter;
+  font-size: var(--Text-Sizes-Text-Regular, 16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Card_9254_312 {
+  flex-direction: column;
+  flex: 1 0 0;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  height: 321px;
+  display: flex;
+}
+.Actions_9248_30060 {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  display: flex;
+}
+.Button_9248_30061 {
+  border: 2px solid var(--Color-Neutral-Darkest, #000);
+  background: var(--Opacity-Transparent, #fff0);
+  box-sizing: border-box;
+  border-radius: 100px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  display: flex;
+}
+.Button_4179_8963 {
+  color: var(--Color-Neutral-Darkest, #000);
+  font-family: Inter;
+  font-size: var(--Text-Sizes-Text-Regular, 16px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  display: inline-block;
+}
+
+```
+
+---
+
+```src/components/Portfolio_11.tsx
+import React from 'react';
+import styles from '../styles/Portfolio_11.module.css';
+
+
+export default function Portfolio_11() {
+  return (
+    <div className={styles.Portfolio_11_9248_30010} data-figma-node="9248:30010">
+      <div className={styles.Container_9248_30011} data-figma-node="9248:30011">
+        <div className={styles.SectionTitle_9248_30012} data-figma-node="9248:30012">
+          <div className={styles.TaglineWrapper_9248_30013} data-figma-node="9248:30013"></div>
+          <div className={styles.Content_9248_30015} data-figma-node="9248:30015"><span className={styles.Heading_9248_30016} data-figma-node="9248:30016">D&#xE9;ploy&#xE9; sur de nombreux projets</span></div>
+        </div>
+        <div className={styles.Content_9248_30018} data-figma-node="9248:30018">
+          <div className={styles.PortfolioList_9248_30019} data-figma-node="9248:30019">
+            <div className={styles.Row_9248_30769} data-figma-node="9248:30769">
+              <div className={styles.Card_9248_30672} data-figma-node="9248:30672">
+                <div className={styles.PlaceholderImage_9248_30673} data-figma-node="9248:30673"></div>
+                <div className={styles.Content_9248_30674} data-figma-node="9248:30674">
+                  <div className={styles.ContentTop_9254_325} data-figma-node="9254:325">
+                    <div className={styles.Text_9254_326} data-figma-node="9254:326"><span className={styles.Heading_9254_327} data-figma-node="9254:327">Centre Logistique R&#xE9;gional</span></div>
+                  </div>
+                  <div className={styles.ContentTop_9248_30675} data-figma-node="9248:30675">
+                    <div className={styles.Text_9248_30676} data-figma-node="9248:30676"><span className={styles.Text_9248_30678} data-figma-node="9248:30678">Offre 8.5M&#x20AC;</span><span className={styles.Text_9254_334} data-figma-node="9254:334">Construction d&#x27;un hub logistique moderne de 25,000 m&#xB2; avec syst&#xE8;mes automatis&#xE9;s et aires de man&#x153;uvre. Coordination de 10 lots techniques sp&#xE9;cialis&#xE9;s incluant manutention, s&#xE9;curit&#xE9; et connectivit&#xE9;</span></div>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.Card_9248_30691} data-figma-node="9248:30691">
+                <div className={styles.PlaceholderImage_9254_380} data-figma-node="9254:380"></div>
+                <div className={styles.Content_9254_381} data-figma-node="9254:381">
+                  <div className={styles.ContentTop_9254_382} data-figma-node="9254:382">
+                    <div className={styles.Text_9254_383} data-figma-node="9254:383"><span className={styles.Heading_9254_384} data-figma-node="9254:384">Centre Logistique R&#xE9;gional</span></div>
+                  </div>
+                  <div className={styles.ContentTop_9254_385} data-figma-node="9254:385">
+                    <div className={styles.Text_9254_386} data-figma-node="9254:386"><span className={styles.Text_9254_387} data-figma-node="9254:387">Offre 8.5M&#x20AC;</span><span className={styles.Text_9254_388} data-figma-node="9254:388">Construction d&#x27;un hub logistique moderne de 25,000 m&#xB2; avec syst&#xE8;mes automatis&#xE9;s et aires de man&#x153;uvre. Coordination de 10 lots techniques sp&#xE9;cialis&#xE9;s incluant manutention, s&#xE9;curit&#xE9; et connectivit&#xE9;</span></div>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.Card_9248_30710} data-figma-node="9248:30710">
+                <div className={styles.PlaceholderImage_9254_390} data-figma-node="9254:390"></div>
+                <div className={styles.Content_9254_391} data-figma-node="9254:391">
+                  <div className={styles.ContentTop_9254_392} data-figma-node="9254:392">
+                    <div className={styles.Text_9254_393} data-figma-node="9254:393"><span className={styles.Heading_9254_394} data-figma-node="9254:394">Centre Logistique R&#xE9;gional</span></div>
+                  </div>
+                  <div className={styles.ContentTop_9254_395} data-figma-node="9254:395">
+                    <div className={styles.Text_9254_396} data-figma-node="9254:396"><span className={styles.Text_9254_397} data-figma-node="9254:397">Offre 8.5M&#x20AC;</span><span className={styles.Text_9254_398} data-figma-node="9254:398">Construction d&#x27;un hub logistique moderne de 25,000 m&#xB2; avec syst&#xE8;mes automatis&#xE9;s et aires de man&#x153;uvre. Coordination de 10 lots techniques sp&#xE9;cialis&#xE9;s incluant manutention, s&#xE9;curit&#xE9; et connectivit&#xE9;</span></div>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.Card_9254_312} data-figma-node="9254:312">
+                <div className={styles.Actions_9248_30060} data-figma-node="9248:30060">
+                  <div className={styles.Button_9248_30061} data-figma-node="9248:30061"><span className={styles.Button_4179_8963} data-figma-node="4179:8963">View all</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+

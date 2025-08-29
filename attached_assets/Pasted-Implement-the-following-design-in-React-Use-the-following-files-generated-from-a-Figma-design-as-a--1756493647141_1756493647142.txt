@@ -1,0 +1,514 @@
+Implement the following design in React. Use the following files generated from a Figma design as a specification and guide:
+
+```src/styles/Layout_356.module.css
+@import "https://fonts.googleapis.com/css?family=Inter:0,undefined;0,400;0,500&display=swap";
+@import "https://fonts.googleapis.com/css?family=Roboto:0,400&display=swap";
+@import "https://fonts.googleapis.com/css?family=Raleway:0,500&display=swap";
+@import "https://fonts.googleapis.com/css?family=Inter:0,undefined;0,400;0,500&display=swap";
+@import "https://fonts.googleapis.com/css?family=Roboto:0,400&display=swap";
+@import "https://fonts.googleapis.com/css?family=Inter:0,undefined;0,400;0,500&display=swap";
+.Layout_356_9238_560 {
+  background: var(--Color-Scheme-2-Background, #fff);
+  flex-direction: column;
+  align-items: center;
+  width: 1432px;
+  height: 2440px;
+  padding-bottom: 304px;
+  display: flex;
+  overflow: hidden;
+}
+.FeatureOne_9238_561 {
+  padding: 0 var(--Page-Padding-padding-global, 64px);
+  border-top: var(--Stroke-Divider-Width, 2px) solid
+    var(--Color-Scheme-2-Border, #000);
+  background: var(--Color-Scheme-2-Background, #fff);
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
+  width: 100%;
+  height: 712px;
+  display: flex;
+  overflow: hidden;
+}
+.Container_9238_562 {
+  max-width: var(--Container-container-large, 1280px);
+  padding-bottom: var(--Section-Padding-padding-section-large, 112px);
+  flex-direction: column;
+  flex: 1 0 0;
+  align-items: flex-start;
+  gap: 48px;
+  width: 100%;
+  display: flex;
+}
+.Content_9238_566 {
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+  display: flex;
+}
+.Content_9238_567 {
+  flex-direction: column;
+  flex: 1 0 0;
+  align-items: flex-start;
+  gap: 32px;
+  width: 100%;
+  display: flex;
+}
+.SectionTitle_9238_568 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  display: flex;
+}
+.TaglineWrapper_9238_569 {
+  align-items: center;
+  display: flex;
+}
+.Tagline_9238_570 {
+  color: var(--Color-Scheme-2-Text, #000);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  display: inline-block;
+}
+.Content_9238_571 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  display: flex;
+}
+.Heading_9238_572 {
+  color: var(--Color-Scheme-2-Text, #000);
+  font-family: Roboto;
+  font-size: var(--Text-Sizes-Heading-2, 52px);
+  letter-spacing: -0.52px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  display: inline-block;
+}
+.Text_9238_573 {
+  color: var(--Color-Scheme-2-Text, #000);
+  font-family: Inter;
+  font-size: var(--Text-Sizes-Text-Medium, 18px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Frame_3_9256_126 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  display: flex;
+}
+.Column_9256_130 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  width: 706px;
+  height: 78px;
+  display: flex;
+  overflow: hidden;
+}
+.Content_9256_131 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  display: flex;
+}
+.Row_9256_132 {
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  padding: 8px 0;
+  display: flex;
+}
+.ListItem_9256_133 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 141px;
+  display: flex;
+}
+.Number_9256_134 {
+  aspect-ratio: 141/62;
+  color: #312727;
+  font-family: Raleway;
+  font-size: var(--Text-Sizes-Heading-2, 52px);
+  letter-spacing: -0.52px;
+  height: 62px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  display: inline-block;
+}
+.ListItem_9256_136 {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 456px;
+  height: 62px;
+  display: flex;
+}
+.Text_9256_138 {
+  color: var(--Color-Scheme-2-Text, #000);
+  font-family: Inter;
+  font-size: var(--Text-Sizes-Text-Regular, 16px);
+  width: 381px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Frame_4_9256_154 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  display: flex;
+}
+.Column_9256_155 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  width: 706px;
+  height: 78px;
+  display: flex;
+  overflow: hidden;
+}
+.Content_9256_156 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  display: flex;
+}
+.Row_9256_157 {
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  padding: 8px 0;
+  display: flex;
+}
+.ListItem_9256_160 {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 456px;
+  height: 62px;
+  display: flex;
+}
+.PlaceholderImage_9238_576 {
+  aspect-ratio: 1;
+  border-radius: var(--Radius-Large, 40px);
+  background: #d3d3d3 url(<path-to-image>) 50% / contain no-repeat;
+  flex: 1 0 0;
+  height: 600px;
+}
+.FeatureTwo_9238_577 {
+  padding: 0 var(--Page-Padding-padding-global, 64px);
+  border-top: var(--Stroke-Divider-Width, 2px) solid
+    var(--Color-Scheme-2-Border, #000);
+  background: var(--Color-Scheme-2-Background, #fff);
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
+  width: 100%;
+  height: 712px;
+  display: flex;
+  overflow: hidden;
+}
+.Container_9238_578 {
+  max-width: var(--Container-container-large, 1280px);
+  padding-bottom: var(--Section-Padding-padding-section-large, 112px);
+  flex-direction: column;
+  flex: 1 0 0;
+  align-items: flex-start;
+  gap: 48px;
+  width: 100%;
+  display: flex;
+}
+.Content_9238_582 {
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+  display: flex;
+}
+.PlaceholderImage_9238_583 {
+  aspect-ratio: 1;
+  border-radius: var(--Radius-Large, 40px);
+  background: #d3d3d3 url(<path-to-image>) 50% / contain no-repeat;
+  flex: 1 0 0;
+  height: 600px;
+}
+.Content_9238_584 {
+  flex-direction: column;
+  flex: 1 0 0;
+  align-items: flex-start;
+  gap: 32px;
+  width: 100%;
+  display: flex;
+}
+.SectionTitle_9238_585 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  display: flex;
+}
+.TaglineWrapper_9238_586 {
+  align-items: center;
+  display: flex;
+}
+.Tagline_9238_587 {
+  color: var(--Color-Scheme-2-Text, #000);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  display: inline-block;
+}
+.Content_9238_588 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  display: flex;
+}
+.Heading_9238_589 {
+  color: var(--Color-Scheme-2-Text, #000);
+  font-family: Roboto;
+  font-size: var(--Text-Sizes-Heading-2, 52px);
+  letter-spacing: -0.52px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  display: inline-block;
+}
+.Text_9238_590 {
+  color: var(--Color-Scheme-2-Text, #000);
+  font-family: Inter;
+  font-size: var(--Text-Sizes-Text-Medium, 18px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Button_9251_137 {
+  border: 2px solid var(--Color-Neutral-Darkest, #000);
+  background: var(--Opacity-Transparent, #fff0);
+  box-sizing: border-box;
+  border-radius: 100px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  display: flex;
+}
+.Button_4179_8893 {
+  color: var(--Color-Neutral-Darkest, #000);
+  font-family: Inter;
+  font-size: var(--Text-Sizes-Text-Regular, 16px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  display: inline-block;
+}
+.Actions_9238_591 {
+  align-items: center;
+  gap: 24px;
+  width: 99px;
+  height: 44px;
+  display: flex;
+}
+.FeatureThree_9238_593 {
+  padding: 0 var(--Page-Padding-padding-global, 64px);
+  border-top: var(--Stroke-Divider-Width, 2px) solid
+    var(--Color-Scheme-2-Border, #000);
+  background: var(--Color-Scheme-2-Background, #fff);
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
+  width: 100%;
+  height: 712px;
+  display: flex;
+  overflow: hidden;
+}
+.Container_9238_594 {
+  max-width: var(--Container-container-large, 1280px);
+  padding-bottom: var(--Section-Padding-padding-section-large, 112px);
+  flex-direction: column;
+  flex: 1 0 0;
+  align-items: flex-start;
+  gap: 48px;
+  width: 100%;
+  display: flex;
+}
+.Content_9238_598 {
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+  display: flex;
+}
+.Content_9238_599 {
+  flex-direction: column;
+  flex: 1 0 0;
+  align-items: flex-start;
+  gap: 32px;
+  width: 100%;
+  display: flex;
+}
+.SectionTitle_9238_600 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  display: flex;
+}
+.TaglineWrapper_9238_601 {
+  align-items: center;
+  display: flex;
+}
+.Tagline_9238_602 {
+  color: var(--Color-Scheme-2-Text, #000);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  display: inline-block;
+}
+.Content_9238_603 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  display: flex;
+}
+.Heading_9238_604 {
+  color: var(--Color-Scheme-2-Text, #000);
+  font-family: Raleway;
+  font-size: var(--Text-Sizes-Heading-2, 52px);
+  letter-spacing: -0.52px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  display: inline-block;
+}
+.Text_9238_605 {
+  color: var(--Color-Scheme-2-Text, #000);
+  font-family: Inter;
+  font-size: var(--Text-Sizes-Text-Medium, 18px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Button_9251_147 {
+  border: 2px solid var(--Color-Neutral-Darkest, #000);
+  background: var(--Opacity-Transparent, #fff0);
+  box-sizing: border-box;
+  border-radius: 100px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  display: flex;
+}
+.PlaceholderImage_9238_608 {
+  aspect-ratio: 1;
+  border-radius: var(--Radius-Large, 40px);
+  background: #d3d3d3 url(<path-to-image>) 50% / contain no-repeat;
+  flex: 1 0 0;
+  height: 600px;
+}
+
+```
+
+---
+
+```src/components/Layout_356.tsx
+import React from 'react';
+import styles from '../styles/Layout_356.module.css';
+
+
+export default function Layout_356() {
+  return (
+    <div className={styles.Layout_356_9238_560} data-figma-node="9238:560">
+      <div className={styles.FeatureOne_9238_561} data-figma-node="9238:561">
+        <div className={styles.Container_9238_562} data-figma-node="9238:562">
+          <div className={styles.Content_9238_566} data-figma-node="9238:566">
+            <div className={styles.Content_9238_567} data-figma-node="9238:567">
+              <div className={styles.SectionTitle_9238_568} data-figma-node="9238:568">
+                <div className={styles.TaglineWrapper_9238_569} data-figma-node="9238:569"><span className={styles.Tagline_9238_570} data-figma-node="9238:570">Cockpit op&#xE9;rationnel d&#xE8;s J+1</span></div>
+                <div className={styles.Content_9238_571} data-figma-node="9238:571"><span className={styles.Heading_9238_572} data-figma-node="9238:572">Structuration automatique du projet</span><span className={styles.Text_9238_573} data-figma-node="9238:573">L&#x2019;IA analyse vos AO, mappe chaque exigence et offre une vision claire du p&#xE9;rim&#xE8;tre. +</span></div>
+              </div>
+              <div className={styles.Frame_3_9256_126} data-figma-node="9256:126">
+                <div className={styles.Column_9256_130} data-figma-node="9256:130">
+                  <div className={styles.Content_9256_131} data-figma-node="9256:131">
+                    <div className={styles.Row_9256_132} data-figma-node="9256:132">
+                      <div className={styles.ListItem_9256_133} data-figma-node="9256:133"><span className={styles.Number_9256_134} data-figma-node="9256:134">100%</span></div>
+                      <div className={styles.ListItem_9256_136} data-figma-node="9256:136"><span className={styles.Text_9256_138} data-figma-node="9256:138">des documents structur&#xE9;s, transform&#xE9;s en Jumeaux num&#xE9;rique</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.Frame_4_9256_154} data-figma-node="9256:154">
+                <div className={styles.Column_9256_155} data-figma-node="9256:155">
+                  <div className={styles.Content_9256_156} data-figma-node="9256:156">
+                    <div className={styles.Row_9256_157} data-figma-node="9256:157">
+                      <div className={styles.ListItem_9256_160} data-figma-node="9256:160"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={styles.PlaceholderImage_9238_576} data-figma-node="9238:576"></div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.FeatureTwo_9238_577} data-figma-node="9238:577">
+        <div className={styles.Container_9238_578} data-figma-node="9238:578">
+          <div className={styles.Content_9238_582} data-figma-node="9238:582">
+            <div className={styles.PlaceholderImage_9238_583} data-figma-node="9238:583"></div>
+            <div className={styles.Content_9238_584} data-figma-node="9238:584">
+              <div className={styles.SectionTitle_9238_585} data-figma-node="9238:585">
+                <div className={styles.TaglineWrapper_9238_586} data-figma-node="9238:586"><span className={styles.Tagline_9238_587} data-figma-node="9238:587">Z&#xE9;ro clause oubli&#xE9;e</span></div>
+                <div className={styles.Content_9238_588} data-figma-node="9238:588"><span className={styles.Heading_9238_589} data-figma-node="9238:589">Contr&#xF4;lez chaque clause critique</span><span className={styles.Text_9238_590} data-figma-node="9238:590">Suivi continu des p&#xE9;nalit&#xE9;s, responsabilit&#xE9;s et d&#xE9;lais. Chaque modification est signal&#xE9;e avec impact mesur&#xE9;.</span></div>
+              </div>
+              <div className={styles.Button_9251_137} data-figma-node="9251:137"><span className={styles.Button_4179_8893} data-figma-node="4179:8893">+</span></div>
+              <div className={styles.Actions_9238_591} data-figma-node="9238:591"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.FeatureThree_9238_593} data-figma-node="9238:593">
+        <div className={styles.Container_9238_594} data-figma-node="9238:594">
+          <div className={styles.Content_9238_598} data-figma-node="9238:598">
+            <div className={styles.Content_9238_599} data-figma-node="9238:599">
+              <div className={styles.SectionTitle_9238_600} data-figma-node="9238:600">
+                <div className={styles.TaglineWrapper_9238_601} data-figma-node="9238:601"><span className={styles.Tagline_9238_602} data-figma-node="9238:602">Historique contractuel ma&#xEE;tris&#xE9;</span></div>
+                <div className={styles.Content_9238_603} data-figma-node="9238:603"><span className={styles.Heading_9238_604} data-figma-node="9238:604">Ma&#xEE;trisez chaque &#xE9;volution contractuelle</span><span className={styles.Text_9238_605} data-figma-node="9238:605">Q&#x26;A, versions et amendements centralis&#xE9;s, avec tra&#xE7;abilit&#xE9; compl&#xE8;te des &#xE9;volutions.</span></div>
+              </div>
+              <div className={styles.Button_9251_147} data-figma-node="9251:147"><span className={styles.Button_4179_8893} data-figma-node="4179:8893">+</span></div>
+            </div>
+            <div className={styles.PlaceholderImage_9238_608} data-figma-node="9238:608"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+

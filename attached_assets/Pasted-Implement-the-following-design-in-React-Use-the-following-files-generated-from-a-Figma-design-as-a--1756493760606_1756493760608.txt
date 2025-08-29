@@ -1,0 +1,504 @@
+Implement the following design in React. Use the following files generated from a Figma design as a specification and guide:
+
+```src/styles/Team_20.module.css
+@import "https://fonts.googleapis.com/css?family=Inter:0,500;0,undefined;0,400&display=swap";
+@import "https://fonts.googleapis.com/css?family=Roboto:0,500;0,400&display=swap";
+@import "https://fonts.googleapis.com/css?family=Inter:0,500;0,undefined;0,400&display=swap";
+.Team_20_9248_29689 {
+  padding: var(--Section-Padding-padding-section-large, 194px)
+    var(--Page-Padding-padding-global, 64px)
+    var(--Section-Padding-padding-section-large, 112px)
+    var(--Page-Padding-padding-global, 64px);
+  background: var(--Color-Scheme-2-Background, #fff);
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+  height: 2410px;
+  display: flex;
+  overflow: hidden;
+}
+.Container_9248_29690 {
+  max-width: var(--Container-container-large, 1280px);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 80px;
+  width: 100%;
+  display: flex;
+}
+.Component_9248_29691 {
+  align-items: flex-start;
+  gap: 80px;
+  width: 100%;
+  display: flex;
+}
+.SectionTitle_9248_29692 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  width: 356px;
+  display: flex;
+}
+.Content_9248_29693 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  display: flex;
+}
+.Button_9254_155 {
+  border: 2px solid var(--Color-Neutral-Darkest, #000);
+  background: var(--Opacity-Transparent, #fff0);
+  box-sizing: border-box;
+  border-radius: 100px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  display: flex;
+}
+.Button_4179_8893 {
+  color: var(--Color-Neutral-Darkest, #000);
+  font-family: Inter;
+  font-size: var(--Text-Sizes-Text-Regular, 16px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  display: inline-block;
+}
+.Content_9248_29696 {
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  display: flex;
+}
+.FonctionalitésComplémentairePourAugmenterVosÉquipes_9248_29697 {
+  color: var(--Color-Scheme-2-Text, #000);
+  font-family: Roboto;
+  font-size: var(--Text-Sizes-Heading-2, 52px);
+  letter-spacing: -0.52px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  display: inline-block;
+}
+.Text_9248_29698 {
+  color: var(--Color-Scheme-2-Text, #000);
+  font-family: Roboto;
+  font-size: var(--Text-Sizes-Text-Medium, 18px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Content_9248_29701 {
+  flex-direction: column;
+  flex: 1 0 0;
+  align-items: flex-start;
+  gap: 64px;
+  width: 100%;
+  display: flex;
+}
+.Row_9248_30265 {
+  align-items: flex-start;
+  gap: 64px;
+  width: 100%;
+  display: flex;
+}
+.Item_9254_174 {
+  width: 382px;
+  height: 610.11px;
+}
+.Background_9254_175 {
+  background: #f2f1f3;
+  flex-shrink: 0;
+  width: 382px;
+  height: 477.5px;
+}
+.Frame_9254_176 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+.Heading_3InfiniteCanvas_9254_178 {
+  color: #19171c;
+  letter-spacing: -0.2px;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 130.93px;
+  height: 24px;
+  font-family: Inter;
+  font-size: 18.906px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  display: inline-block;
+}
+.ManageMultipleVersionsSizesAndFormatsOnAnInfiniteCanvasToScaleYourContentAndIterateEffortlessly_9254_179 {
+  color: #6e6e73;
+  letter-spacing: -0.32px;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 349.76px;
+  height: 68px;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  display: inline-block;
+}
+.Item_9254_181 {
+  width: 382px;
+  height: 610.11px;
+}
+.Background_9254_182 {
+  background: #f2f1f3;
+  flex-shrink: 0;
+  width: 382px;
+  height: 477.5px;
+}
+.Frame_9254_183 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+.Heading_3InfiniteCanvas_9254_185 {
+  color: #19171c;
+  letter-spacing: -0.2px;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 130.93px;
+  height: 24px;
+  font-family: Inter;
+  font-size: 18.906px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  display: inline-block;
+}
+.ManageMultipleVersionsSizesAndFormatsOnAnInfiniteCanvasToScaleYourContentAndIterateEffortlessly_9254_186 {
+  color: #6e6e73;
+  letter-spacing: -0.32px;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 349.76px;
+  height: 68px;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  display: inline-block;
+}
+.Row_9254_254 {
+  align-items: flex-start;
+  gap: 64px;
+  width: 100%;
+  display: flex;
+}
+.Row_9254_282 {
+  flex: 1 0 0;
+  align-items: flex-start;
+  gap: 64px;
+  width: 100%;
+  display: flex;
+}
+.Item_9254_283 {
+  width: 382px;
+  height: 610.11px;
+}
+.Background_9254_284 {
+  background: #f2f1f3;
+  flex-shrink: 0;
+  width: 382px;
+  height: 477.5px;
+}
+.Frame_9254_285 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+.Heading_3InfiniteCanvas_9254_287 {
+  color: #19171c;
+  letter-spacing: -0.2px;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 130.93px;
+  height: 24px;
+  font-family: Inter;
+  font-size: 18.906px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  display: inline-block;
+}
+.ManageMultipleVersionsSizesAndFormatsOnAnInfiniteCanvasToScaleYourContentAndIterateEffortlessly_9254_288 {
+  color: #6e6e73;
+  letter-spacing: -0.32px;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 349.76px;
+  height: 68px;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  display: inline-block;
+}
+.Item_9254_289 {
+  width: 382px;
+  height: 610.11px;
+}
+.Background_9254_290 {
+  background: #f2f1f3;
+  flex-shrink: 0;
+  width: 382px;
+  height: 477.5px;
+}
+.Frame_9254_291 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+.Heading_3InfiniteCanvas_9254_293 {
+  color: #19171c;
+  letter-spacing: -0.2px;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 130.93px;
+  height: 24px;
+  font-family: Inter;
+  font-size: 18.906px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  display: inline-block;
+}
+.ManageMultipleVersionsSizesAndFormatsOnAnInfiniteCanvasToScaleYourContentAndIterateEffortlessly_9254_294 {
+  color: #6e6e73;
+  letter-spacing: -0.32px;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 349.76px;
+  height: 68px;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  display: inline-block;
+}
+.Row_9254_296 {
+  align-items: flex-start;
+  gap: 64px;
+  width: 100%;
+  display: flex;
+}
+.Row_9254_297 {
+  flex: 1 0 0;
+  align-items: flex-start;
+  gap: 64px;
+  width: 100%;
+  display: flex;
+}
+.Item_9254_298 {
+  width: 382px;
+  height: 610.11px;
+}
+.Background_9254_299 {
+  background: #f2f1f3;
+  flex-shrink: 0;
+  width: 382px;
+  height: 477.5px;
+}
+.Frame_9254_300 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+.Heading_3InfiniteCanvas_9254_302 {
+  color: #19171c;
+  letter-spacing: -0.2px;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 130.93px;
+  height: 24px;
+  font-family: Inter;
+  font-size: 18.906px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  display: inline-block;
+}
+.ManageMultipleVersionsSizesAndFormatsOnAnInfiniteCanvasToScaleYourContentAndIterateEffortlessly_9254_303 {
+  color: #6e6e73;
+  letter-spacing: -0.32px;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 349.76px;
+  height: 68px;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  display: inline-block;
+}
+.Item_9254_304 {
+  width: 382px;
+  height: 610.11px;
+}
+.Background_9254_305 {
+  background: #f2f1f3;
+  flex-shrink: 0;
+  width: 382px;
+  height: 477.5px;
+}
+.Frame_9254_306 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+.Heading_3InfiniteCanvas_9254_308 {
+  color: #19171c;
+  letter-spacing: -0.2px;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 130.93px;
+  height: 24px;
+  font-family: Inter;
+  font-size: 18.906px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  display: inline-block;
+}
+.ManageMultipleVersionsSizesAndFormatsOnAnInfiniteCanvasToScaleYourContentAndIterateEffortlessly_9254_309 {
+  color: #6e6e73;
+  letter-spacing: -0.32px;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 349.76px;
+  height: 68px;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  display: inline-block;
+}
+
+```
+
+---
+
+```src/components/assets/Frame.tsx
+import React from 'react';
+export default function Frame() {
+  return <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.7285 9.40381V15.4038H7.72852V9.40381H17.7285ZM19.7285 3.40381H17.7285V6.40381H19.7285V3.40381ZM7.72852 3.40381H5.72852V6.40381H7.72852V3.40381ZM23.7285 7.40381H20.7285V9.40381H23.7285V7.40381ZM19.7285 7.40381H5.72852V17.4038H19.7285V7.40381ZM4.72852 7.40381H1.72852V9.40381H4.72852V7.40381ZM23.7285 15.4038H20.7285V17.4038H23.7285V15.4038ZM4.72852 15.4038H1.72852V17.4038H4.72852V15.4038ZM19.7285 18.4038H17.7285V21.4038H19.7285V18.4038ZM7.72852 18.4038H5.72852V21.4038H7.72852V18.4038Z" fill="#19171C"/>
+</svg>
+;
+}
+```
+
+---
+
+```src/components/Team_20.tsx
+import React from 'react';
+import styles from '../styles/Team_20.module.css';
+import Frame from './assets/Frame';
+
+export default function Team_20() {
+  return (
+    <div className={styles.Team_20_9248_29689} data-figma-node="9248:29689">
+      <div className={styles.Container_9248_29690} data-figma-node="9248:29690">
+        <div className={styles.Component_9248_29691} data-figma-node="9248:29691">
+          <div className={styles.SectionTitle_9248_29692} data-figma-node="9248:29692">
+            <div className={styles.Content_9248_29693} data-figma-node="9248:29693">
+              <div className={styles.Button_9254_155} data-figma-node="9254:155"><span className={styles.Button_4179_8893} data-figma-node="4179:8893"> Impact additionnel</span></div>
+              <div className={styles.Content_9248_29696} data-figma-node="9248:29696"><span className={styles.FonctionalitésComplémentairePourAugmenterVosÉquipes_9248_29697} data-figma-node="9248:29697">Augmentez encore plus vos &#xE9;quipes</span><span className={styles.Text_9248_29698} data-figma-node="9248:29698">Sur les offres semie-complexe, d&#xE9;couvrez des fonctionnalit&#xE9;s qui ajoutent une dimension strat&#xE9;gique &#xE0; votre d&#xE9;veloppement commercial.</span></div>
+            </div>
+          </div>
+          <div className={styles.Content_9248_29701} data-figma-node="9248:29701">
+            <div className={styles.Row_9248_30265} data-figma-node="9248:30265">
+              <div className={styles.Item_9254_174} data-figma-node="9254:174">
+                <div className={styles.Background_9254_175} data-figma-node="9254:175"></div>
+                <div className={styles.Frame_9254_176}>
+                  <Frame data-figma-node="9254:176" />
+                </div><span className={styles.Heading_3InfiniteCanvas_9254_178} data-figma-node="9254:178">Infinite canvas</span><span className={styles.ManageMultipleVersionsSizesAndFormatsOnAnInfiniteCanvasToScaleYourContentAndIterateEffortlessly_9254_179} data-figma-node="9254:179">Manage multiple versions, sizes, and formats on
+                  an infinite canvas to scale your content and
+                  iterate effortlessly.</span>
+              </div>
+              <div className={styles.Item_9254_181} data-figma-node="9254:181">
+                <div className={styles.Background_9254_182} data-figma-node="9254:182"></div>
+                <div className={styles.Frame_9254_183}>
+                  <Frame data-figma-node="9254:183" />
+                </div><span className={styles.Heading_3InfiniteCanvas_9254_185} data-figma-node="9254:185">Infinite canvas</span><span className={styles.ManageMultipleVersionsSizesAndFormatsOnAnInfiniteCanvasToScaleYourContentAndIterateEffortlessly_9254_186} data-figma-node="9254:186">Manage multiple versions, sizes, and formats on
+                  an infinite canvas to scale your content and
+                  iterate effortlessly.</span>
+              </div>
+            </div>
+            <div className={styles.Row_9254_254} data-figma-node="9254:254">
+              <div className={styles.Row_9254_282} data-figma-node="9254:282">
+                <div className={styles.Item_9254_283} data-figma-node="9254:283">
+                  <div className={styles.Background_9254_284} data-figma-node="9254:284"></div>
+                  <div className={styles.Frame_9254_285}>
+                    <Frame data-figma-node="9254:285" />
+                  </div><span className={styles.Heading_3InfiniteCanvas_9254_287} data-figma-node="9254:287">Infinite canvas</span><span className={styles.ManageMultipleVersionsSizesAndFormatsOnAnInfiniteCanvasToScaleYourContentAndIterateEffortlessly_9254_288} data-figma-node="9254:288">Manage multiple versions, sizes, and formats on
+                    an infinite canvas to scale your content and
+                    iterate effortlessly.</span>
+                </div>
+                <div className={styles.Item_9254_289} data-figma-node="9254:289">
+                  <div className={styles.Background_9254_290} data-figma-node="9254:290"></div>
+                  <div className={styles.Frame_9254_291}>
+                    <Frame data-figma-node="9254:291" />
+                  </div><span className={styles.Heading_3InfiniteCanvas_9254_293} data-figma-node="9254:293">Infinite canvas</span><span className={styles.ManageMultipleVersionsSizesAndFormatsOnAnInfiniteCanvasToScaleYourContentAndIterateEffortlessly_9254_294} data-figma-node="9254:294">Manage multiple versions, sizes, and formats on
+                    an infinite canvas to scale your content and
+                    iterate effortlessly.</span>
+                </div>
+              </div>
+            </div>
+            <div className={styles.Row_9254_296} data-figma-node="9254:296">
+              <div className={styles.Row_9254_297} data-figma-node="9254:297">
+                <div className={styles.Item_9254_298} data-figma-node="9254:298">
+                  <div className={styles.Background_9254_299} data-figma-node="9254:299"></div>
+                  <div className={styles.Frame_9254_300}>
+                    <Frame data-figma-node="9254:300" />
+                  </div><span className={styles.Heading_3InfiniteCanvas_9254_302} data-figma-node="9254:302">Infinite canvas</span><span className={styles.ManageMultipleVersionsSizesAndFormatsOnAnInfiniteCanvasToScaleYourContentAndIterateEffortlessly_9254_303} data-figma-node="9254:303">Manage multiple versions, sizes, and formats on
+                    an infinite canvas to scale your content and
+                    iterate effortlessly.</span>
+                </div>
+                <div className={styles.Item_9254_304} data-figma-node="9254:304">
+                  <div className={styles.Background_9254_305} data-figma-node="9254:305"></div>
+                  <div className={styles.Frame_9254_306}>
+                    <Frame data-figma-node="9254:306" />
+                  </div><span className={styles.Heading_3InfiniteCanvas_9254_308} data-figma-node="9254:308">Infinite canvas</span><span className={styles.ManageMultipleVersionsSizesAndFormatsOnAnInfiniteCanvasToScaleYourContentAndIterateEffortlessly_9254_309} data-figma-node="9254:309">Manage multiple versions, sizes, and formats on
+                    an infinite canvas to scale your content and
+                    iterate effortlessly.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+
