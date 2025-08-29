@@ -1146,6 +1146,486 @@ export default function TestUC2Page() {
         </div>
       </div>
 
+      {/* Block 8 - Portfolio 11 Section avec projets déployés */}
+      <div 
+        className="flex flex-col items-center gap-20 w-full overflow-hidden"
+        style={{
+          padding: '279px 64px 112px 64px',
+          background: '#f2f2f2',
+          height: '1306px'
+        }}
+        data-figma-node="9248:30010"
+      >
+        <div 
+          className="flex flex-col items-center gap-20 w-full"
+          style={{ maxWidth: '1280px' }}
+          data-figma-node="9248:30011"
+        >
+          <div 
+            className="flex flex-col items-center gap-4 w-full"
+            style={{ maxWidth: '768px' }}
+            data-figma-node="9248:30012"
+          >
+            <div 
+              className="flex items-center h-6"
+              data-figma-node="9248:30013"
+            ></div>
+            <div 
+              className="flex flex-col items-center gap-6 w-full"
+              data-figma-node="9248:30015"
+            >
+              <span 
+                className="text-black text-center inline-block"
+                style={{
+                  fontFamily: 'Raleway',
+                  fontSize: '52px',
+                  letterSpacing: '-0.52px',
+                  fontWeight: 500,
+                  lineHeight: '120%'
+                }}
+                data-figma-node="9248:30016"
+              >
+                Déployé sur de nombreux projets
+              </span>
+            </div>
+          </div>
+          <div 
+            className="flex flex-col items-center gap-16 w-full"
+            data-figma-node="9248:30018"
+          >
+            <div 
+              className="flex flex-col items-center gap-16 w-full"
+              data-figma-node="9248:30019"
+            >
+              <div 
+                className="flex items-start gap-8 w-full"
+                data-figma-node="9248:30769"
+              >
+                <div 
+                  className="flex flex-col items-start gap-6 w-full flex-1"
+                  data-figma-node="9248:30672"
+                >
+                  <div 
+                    className="bg-gray-300 rounded-[32px] w-full"
+                    style={{
+                      aspectRatio: '16/9',
+                      height: '166.5px'
+                    }}
+                    data-figma-node="9248:30673"
+                  ></div>
+                  <div 
+                    className="flex flex-col items-start gap-6 w-full"
+                    data-figma-node="9248:30674"
+                  >
+                    <div 
+                      className="flex flex-col items-start gap-4 w-full"
+                      data-figma-node="9254:325"
+                    >
+                      <div 
+                        className="flex flex-col items-start gap-2 w-full"
+                        data-figma-node="9254:326"
+                      >
+                        <span 
+                          className="text-black inline-block"
+                          style={{
+                            fontFamily: 'Raleway',
+                            fontSize: '28px',
+                            letterSpacing: '-0.28px',
+                            fontWeight: 500,
+                            lineHeight: '140%'
+                          }}
+                          data-figma-node="9254:327"
+                        >
+                          Centre Logistique Régional
+                        </span>
+                      </div>
+                    </div>
+                    <div 
+                      className="flex flex-col items-start gap-4 w-full"
+                      data-figma-node="9248:30675"
+                    >
+                      <div 
+                        className="flex flex-col items-start gap-2 w-full"
+                        data-figma-node="9248:30676"
+                      >
+                        <span 
+                          className="text-black inline-block"
+                          style={{
+                            fontFamily: 'Roboto',
+                            fontSize: '20px',
+                            fontWeight: 400,
+                            lineHeight: '150%'
+                          }}
+                          data-figma-node="9248:30678"
+                        >
+                          Offre 8.5M€
+                        </span>
+                        <span 
+                          className="text-black inline-block"
+                          style={{
+                            fontFamily: 'Inter',
+                            fontSize: '16px',
+                            fontWeight: 400,
+                            lineHeight: '150%'
+                          }}
+                          data-figma-node="9254:334"
+                        >
+                          Construction d'un hub logistique moderne de 25,000 m² avec systèmes automatisés et aires de manœuvre. Coordination de 10 lots techniques spécialisés incluant manutention, sécurité et connectivité.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div 
+                  className="flex flex-col items-start gap-6 w-full flex-1"
+                  data-figma-node="9248:30691"
+                >
+                  <div 
+                    className="bg-gray-300 rounded-[32px] w-full"
+                    style={{
+                      aspectRatio: '16/9',
+                      height: '166.5px'
+                    }}
+                    data-figma-node="9254:380"
+                  ></div>
+                  <div 
+                    className="flex flex-col items-start gap-6 w-full"
+                    data-figma-node="9254:381"
+                  >
+                    <div 
+                      className="flex flex-col items-start gap-4 w-full"
+                      data-figma-node="9254:382"
+                    >
+                      <div 
+                        className="flex flex-col items-start gap-2 w-full"
+                        data-figma-node="9254:383"
+                      >
+                        <span 
+                          className="text-black inline-block"
+                          style={{
+                            fontFamily: 'Raleway',
+                            fontSize: '28px',
+                            letterSpacing: '-0.28px',
+                            fontWeight: 500,
+                            lineHeight: '140%'
+                          }}
+                          data-figma-node="9254:384"
+                        >
+                          Infrastructure Hospitalière
+                        </span>
+                      </div>
+                    </div>
+                    <div 
+                      className="flex flex-col items-start gap-4 w-full"
+                      data-figma-node="9254:385"
+                    >
+                      <div 
+                        className="flex flex-col items-start gap-2 w-full"
+                        data-figma-node="9254:386"
+                      >
+                        <span 
+                          className="text-black inline-block"
+                          style={{
+                            fontFamily: 'Roboto',
+                            fontSize: '20px',
+                            fontWeight: 400,
+                            lineHeight: '150%'
+                          }}
+                          data-figma-node="9254:387"
+                        >
+                          Offre 12.2M€
+                        </span>
+                        <span 
+                          className="text-black inline-block"
+                          style={{
+                            fontFamily: 'Inter',
+                            fontSize: '16px',
+                            fontWeight: 400,
+                            lineHeight: '150%'
+                          }}
+                          data-figma-node="9254:388"
+                        >
+                          Rénovation complète d'un complexe hospitalier avec mise aux normes techniques et environnementales. Gestion simultanée de 15 corps de métiers en milieu contraint.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div 
+                  className="flex flex-col items-start gap-6 w-full flex-1"
+                  data-figma-node="9248:30710"
+                >
+                  <div 
+                    className="bg-gray-300 rounded-[32px] w-full"
+                    style={{
+                      aspectRatio: '16/9',
+                      height: '166.5px'
+                    }}
+                    data-figma-node="9254:390"
+                  ></div>
+                  <div 
+                    className="flex flex-col items-start gap-6 w-full"
+                    data-figma-node="9254:391"
+                  >
+                    <div 
+                      className="flex flex-col items-start gap-4 w-full"
+                      data-figma-node="9254:392"
+                    >
+                      <div 
+                        className="flex flex-col items-start gap-2 w-full"
+                        data-figma-node="9254:393"
+                      >
+                        <span 
+                          className="text-black inline-block"
+                          style={{
+                            fontFamily: 'Raleway',
+                            fontSize: '28px',
+                            letterSpacing: '-0.28px',
+                            fontWeight: 500,
+                            lineHeight: '140%'
+                          }}
+                          data-figma-node="9254:394"
+                        >
+                          Campus Universitaire
+                        </span>
+                      </div>
+                    </div>
+                    <div 
+                      className="flex flex-col items-start gap-4 w-full"
+                      data-figma-node="9254:395"
+                    >
+                      <div 
+                        className="flex flex-col items-start gap-2 w-full"
+                        data-figma-node="9254:396"
+                      >
+                        <span 
+                          className="text-black inline-block"
+                          style={{
+                            fontFamily: 'Roboto',
+                            fontSize: '20px',
+                            fontWeight: 400,
+                            lineHeight: '150%'
+                          }}
+                          data-figma-node="9254:397"
+                        >
+                          Offre 6.8M€
+                        </span>
+                        <span 
+                          className="text-black inline-block"
+                          style={{
+                            fontFamily: 'Inter',
+                            fontSize: '16px',
+                            fontWeight: 400,
+                            lineHeight: '150%'
+                          }}
+                          data-figma-node="9254:398"
+                        >
+                          Extension d'un campus avec nouvelles salles de cours, laboratoires de recherche et espaces collaboratifs. Intégration des technologies numériques avancées.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div 
+                className="flex flex-col justify-center items-center gap-6 w-full"
+                style={{ height: '321px' }}
+                data-figma-node="9254:312"
+              >
+                <div 
+                  className="flex flex-col justify-center items-center gap-4"
+                  data-figma-node="9248:30060"
+                >
+                  <div 
+                    className="flex justify-center items-center gap-2 box-border rounded-full"
+                    style={{
+                      border: '2px solid #000',
+                      background: 'transparent',
+                      padding: '10px 24px'
+                    }}
+                    data-figma-node="9248:30061"
+                  >
+                    <span 
+                      className="text-black inline-block"
+                      style={{
+                        fontFamily: 'Inter',
+                        fontSize: '16px',
+                        fontWeight: 500,
+                        lineHeight: '150%'
+                      }}
+                      data-figma-node="4179:8963"
+                    >
+                      Voir tous nos projets
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Block 9 - CTA 25 Section avec simulateur de chat */}
+      <div 
+        className="flex flex-col items-center gap-20 w-full overflow-hidden relative"
+        style={{
+          padding: '112px 64px',
+          background: '#d3d3d3',
+          width: '1432px',
+          height: '491px',
+          bottom: '339.084px',
+          left: '0.271px'
+        }}
+        data-figma-node="9253:31318"
+      >
+        <div 
+          className="flex flex-col items-center gap-8 absolute"
+          style={{
+            maxWidth: '768px',
+            width: '574px',
+            top: '61px',
+            left: '191px'
+          }}
+          data-figma-node="9253:31319"
+        >
+          <div 
+            className="flex flex-col items-center gap-6 w-full"
+            data-figma-node="9253:31320"
+          >
+            <span 
+              className="text-black inline-block"
+              style={{
+                letterSpacing: '-0.48px',
+                fontFamily: 'Raleway',
+                fontSize: '48px',
+                fontWeight: 500,
+                lineHeight: '120%'
+              }}
+              data-figma-node="9253:31321"
+            >
+              Découvrez comment Aitenders répond exactement à vos besoins
+            </span>
+            <span 
+              className="text-black inline-block"
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '18px',
+                fontWeight: 400,
+                lineHeight: '150%'
+              }}
+              data-figma-node="9253:31322"
+            >
+              Pas de démo générique. Pas de spam commercial. Juste trois questions rapides
+            </span>
+          </div>
+        </div>
+        
+        <div 
+          className="bg-white border border-white rounded-[10px] box-border absolute"
+          style={{
+            width: '500px',
+            height: '232px',
+            top: '60px',
+            right: '154px',
+            boxShadow: '0 0 2px #171a1f1f, 0 0 1px #171a1f12'
+          }}
+          data-figma-node="9253:31337"
+        >
+          <span 
+            className="inline-block"
+            style={{
+              color: '#171a1f',
+              fontFamily: 'Roboto',
+              fontSize: '20px',
+              fontWeight: 700,
+              lineHeight: '28px'
+            }}
+            data-figma-node="9253:31338"
+          >
+            AI Tender Assistant
+          </span>
+          
+          <div 
+            className="flex-shrink-0 w-5 h-5 overflow-hidden"
+            data-figma-node="9253:31339"
+          >
+            <div 
+              className="flex-shrink-0"
+              style={{ width: '14.98px', height: '3.32px' }}
+              data-figma-node="9253:31340"
+            >
+              <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.885 4.87695C11.255 4.87695 11.555 5.17691 11.555 5.54695C11.555 5.91699 11.255 6.21695 10.885 6.21695L1.50496 6.21695C1.13493 6.21695 0.834961 5.91699 0.834961 5.54695C0.834961 5.17691 1.13493 4.87695 1.50496 4.87695L10.885 4.87695Z" fill="#565D6D"/>
+                <path d="M5.70599 0.383145C5.95128 0.137845 6.33921 0.122709 6.60239 0.337344L6.65344 0.383145L11.3434 5.07316C11.6051 5.3348 11.6051 5.75891 11.3434 6.02055L6.65344 10.7105C6.3918 10.9722 5.96763 10.9722 5.70599 10.7105C5.44436 10.4489 5.44436 10.0248 5.70599 9.76316L9.9223 5.54685L5.70599 1.33056L5.66023 1.27953C5.44556 1.01638 5.4607 0.628445 5.70599 0.383145Z" fill="#565D6D"/>
+              </svg>
+            </div>
+          </div>
+          
+          <div 
+            className="bg-[#f3f6fc] border border-white rounded-br-[10px] rounded-bl-[10px] flex justify-center items-center box-border"
+            style={{
+              width: '452px',
+              padding: '13px 16px 11px'
+            }}
+            data-figma-node="9253:31348"
+          >
+            <span 
+              className="flex-shrink-0 inline-block"
+              style={{
+                color: '#19191f',
+                width: '420px',
+                fontFamily: 'Montserrat',
+                fontSize: '14px',
+                fontWeight: 400,
+                lineHeight: '23px'
+              }}
+              data-figma-node="9253:31349"
+            >
+              Bonjour ! Je vais vous aider à trouver la solution Aitenders idéale pour votre équipe. Quel est votre secteur d'activité ?
+            </span>
+          </div>
+          
+          <div 
+            className="bg-white border border-[#dee1e6] rounded-md flex-shrink-0 box-border overflow-hidden"
+            style={{
+              width: '452px',
+              height: '46px'
+            }}
+            data-figma-node="9253:31350"
+          >
+            <span 
+              className="inline-block"
+              style={{
+                color: '#565d6d',
+                fontFamily: 'Montserrat',
+                fontSize: '16px',
+                fontWeight: 400,
+                lineHeight: '26px'
+              }}
+              data-figma-node="9253:31358"
+            >
+              Cliquez pour démarrer votre évaluation personnalisée...
+            </span>
+            
+            <div 
+              className="flex-shrink-0 w-4 h-4 overflow-hidden"
+              data-figma-node="9253:31351"
+            >
+              <div 
+                className="flex-shrink-0"
+                style={{ width: '10.72px', height: '10.72px' }}
+                data-figma-node="9253:31352"
+              >
+                <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.885 4.87695C11.255 4.87695 11.555 5.17691 11.555 5.54695C11.555 5.91699 11.255 6.21695 10.885 6.21695L1.50496 6.21695C1.13493 6.21695 0.834961 5.91699 0.834961 5.54695C0.834961 5.17691 1.13493 4.87695 1.50496 4.87695L10.885 4.87695Z" fill="#565D6D"/>
+                  <path d="M5.70599 0.383145C5.95128 0.137845 6.33921 0.122709 6.60239 0.337344L6.65344 0.383145L11.3434 5.07316C11.6051 5.3348 11.6051 5.75891 11.3434 6.02055L6.65344 10.7105C6.3918 10.9722 5.96763 10.9722 5.70599 10.7105C5.44436 10.4489 5.44436 10.0248 5.70599 9.76316L9.9223 5.54685L5.70599 1.33056L5.66023 1.27953C5.44556 1.01638 5.4607 0.628445 5.70599 0.383145Z" fill="#565D6D"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
