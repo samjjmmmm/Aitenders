@@ -1,0 +1,141 @@
+Implement the following design in React. Use the following files generated from a Figma design as a specification and guide:
+
+```src/styles/Header_26.module.css
+@import "https://fonts.googleapis.com/css?family=Roboto:0,500;0,400&display=swap";
+@import "https://fonts.googleapis.com/css?family=Inter:0,500&display=swap";
+@import "https://fonts.googleapis.com/css?family=Roboto:0,500;0,400&display=swap";
+.Header_26_9248_28760 {
+  padding: var(--Section-Padding-padding-section-large, 112px)
+    var(--Page-Padding-padding-global, 64px);
+  background: var(--Color-Scheme-2-Background, #fff);
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+  height: 523px;
+  display: flex;
+  overflow: hidden;
+}
+.Container_9248_28761 {
+  max-width: var(--Container-container-large, 1280px);
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+  display: flex;
+}
+.Column_9248_28762 {
+  max-width: var(--Max-Width-max-width-large, 768px);
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  display: flex;
+}
+.Content_9248_28763 {
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #000;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  display: flex;
+}
+.MediumLengthHeroHeadlineGoesHere_9248_28764 {
+  color: var(--Color-Scheme-2-Text, #000);
+  text-align: center;
+  font-family: Roboto;
+  font-size: var(--Text-Sizes-Heading-1, 72px);
+  letter-spacing: -0.72px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  display: inline-block;
+}
+.LoremIpsumDolorSitAmetConsecteturAdipiscingElitSuspendisseVariusEnimInErosElementumTristiqueDuisCursusMiQuisViverraOrnareErosDolorInterdumNullaUtCommodoDiamLiberoVitaeErat_9248_28765 {
+  color: var(--Color-Scheme-2-Text, #000);
+  text-align: center;
+  font-family: Roboto;
+  font-size: var(--Text-Sizes-Text-Medium, 18px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Actions_9248_28766 {
+  align-items: flex-start;
+  gap: 16px;
+  display: flex;
+}
+.Button_9248_28767 {
+  background: var(--Color-Brand-Blue, #112646);
+  box-shadow:
+    0 32px 24px 0 #ffffff0d inset,
+    0 2px 1px 0 #ffffff40 inset,
+    0 0 0 1px var(--Opacity-Neutral-Darkest-15, #00000026) inset,
+    0 -2px 1px 0 #0003 inset,
+    0 1px 2px 0 var(--Opacity-Neutral-Darkest-5, #0000000d);
+  border-radius: 100px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  display: flex;
+}
+.Button_4179_8873 {
+  color: var(--Color-White, #fff);
+  font-family: Inter;
+  font-size: var(--Text-Sizes-Text-Regular, 16px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  display: inline-block;
+}
+.Button_9248_28768 {
+  border: 2px solid var(--Color-Neutral-Darkest, #000);
+  background: var(--Opacity-Transparent, #fff0);
+  box-sizing: border-box;
+  border-radius: 100px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  display: flex;
+}
+.Button_4179_8893 {
+  color: var(--Color-Neutral-Darkest, #000);
+  font-family: Inter;
+  font-size: var(--Text-Sizes-Text-Regular, 16px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  display: inline-block;
+}
+
+```
+
+---
+
+```src/components/Header_26.tsx
+import React from 'react';
+import styles from '../styles/Header_26.module.css';
+
+
+export default function Header_26() {
+  return (
+    <div className={styles.Header_26_9248_28760} data-figma-node="9248:28760">
+      <div className={styles.Container_9248_28761} data-figma-node="9248:28761">
+        <div className={styles.Column_9248_28762} data-figma-node="9248:28762">
+          <div className={styles.Content_9248_28763} data-figma-node="9248:28763"><span className={styles.MediumLengthHeroHeadlineGoesHere_9248_28764} data-figma-node="9248:28764">Votre offre, 100% claire, 0% surprises</span><span className={styles.LoremIpsumDolorSitAmetConsecteturAdipiscingElitSuspendisseVariusEnimInErosElementumTristiqueDuisCursusMiQuisViverraOrnareErosDolorInterdumNullaUtCommodoDiamLiberoVitaeErat_9248_28765} data-figma-node="9248:28765">D&#xE9;couvrez, pilotez et s&#xE9;curisez chaque clause&#xA0;d&#xE8;s le premier jour.</span></div>
+          <div className={styles.Actions_9248_28766} data-figma-node="9248:28766">
+            <div className={styles.Button_9248_28767} data-figma-node="9248:28767"><span className={styles.Button_4179_8873} data-figma-node="4179:8873">Get Started</span></div>
+            <div className={styles.Button_9248_28768} data-figma-node="9248:28768"><span className={styles.Button_4179_8893} data-figma-node="4179:8893">Learn More</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+
