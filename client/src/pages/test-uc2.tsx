@@ -107,6 +107,69 @@ export default function TestUC2Page() {
         </div>
       </div>
 
+      {/* Block 2 - Logo Carousel Section */}
+      <div 
+        className="flex flex-col items-center gap-12 w-full overflow-hidden"
+        style={{
+          padding: '80px 0',
+          background: '#e7e9ec',
+          height: '287px'
+        }}
+        data-figma-node="9248:28858"
+      >
+        <span 
+          className="text-black text-center font-normal inline-block"
+          style={{ 
+            fontFamily: 'Roboto',
+            fontSize: '18px',
+            lineHeight: '150%',
+            width: '549px',
+            height: '23px'
+          }}
+          data-figma-node="9248:30942"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
+        </span>
+        <div 
+          className="flex flex-col items-center w-full"
+          data-figma-node="9248:28861"
+        >
+          <div 
+            className="flex justify-center items-center gap-6"
+            data-figma-node="9248:28862"
+          >
+            <div 
+              className="w-[200px] h-14 bg-gray-300"
+              data-figma-node="9248:28863"
+            ></div>
+            <div 
+              className="w-[200px] h-14 bg-gray-300"
+              data-figma-node="9248:28864"
+            ></div>
+            <div 
+              className="w-[200px] h-14 bg-gray-300"
+              data-figma-node="9248:28865"
+            ></div>
+            <div 
+              className="w-[200px] h-14 bg-gray-300"
+              data-figma-node="9248:28866"
+            ></div>
+            <div 
+              className="w-[200px] h-14 bg-gray-300"
+              data-figma-node="9248:28867"
+            ></div>
+            <div 
+              className="w-[200px] h-14 bg-gray-300"
+              data-figma-node="9248:28868"
+            ></div>
+            <div 
+              className="w-[200px] h-14 bg-gray-300"
+              data-figma-node="9248:28869"
+            ></div>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
