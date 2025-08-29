@@ -1,5 +1,6 @@
 import { translationService } from "./translations";
 import { uc1FrenchTranslations, uc1EnglishTranslations, uc1SpanishTranslations, uc1GermanTranslations } from "./translations/uc1";
+import { uc2FrenchTranslations } from "./translations/uc2";
 
 // Seed UC1 translations
 export async function seedUC1Translations() {
@@ -30,6 +31,20 @@ export async function seedUC1Translations() {
   }
 }
 
+// Seed UC2 translations
+export async function seedUC2Translations() {
+  try {
+    // Seed French translations for UC2
+    for (const [key, value] of Object.entries(uc2FrenchTranslations)) {
+      await translationService.setTranslation('fr', key, value);
+    }
+    
+    console.log('UC2 translations seeded successfully');
+  } catch (error) {
+    console.error('Error seeding UC2 translations:', error);
+  }
+}
+
 // UC1 Translation Keys with French reference content
 const uc1TranslationKeys = {
   // Hero Section
@@ -52,14 +67,7 @@ const uc1TranslationKeys = {
   'uc1.painPoints.contactButton': 'Boostez Vos Petits Projets!',
   'uc1.painPoints.demoButton': 'Voir la Démo Rapide',
 
-  // Pain Points Section (legacy)
-  'uc1.painPoints.headline': 'Go / No-Go immédiat',
-  'uc1.painPoints.headline_span': ', process interne garanti',
-  'uc1.painPoints.text1': 'Sur les petits projets, la pression est double : analyser vite et prouver que tout a été lu, compris et contrôlé.',
-  'uc1.painPoints.text2': 'Sans support transversal (qualité, juridique), chaque oubli peut coûter cher en marge en exécution et du coup en crédibilité interne.',
-  'uc1.painPoints.text3': 'Avec Aitenders, vous obtenez en quelques minutes une vision claire et priorisée de vos documents pour un go/no‑go immédiat. La plateforme guide ensuite la validation et archive chaque contrôle, garantissant que vos obligations internes sont remplies sans surcharge.',
-  'uc1.painPoints.contactButton': 'Contact Commercial',
-  'uc1.painPoints.demoButton': 'Voir la Démo Rapide',
+
 
   // Solution Section
   'uc1.solution_section.mainTitle': 'Votre',
@@ -192,30 +200,7 @@ const uc1TranslationKeys = {
   // Features
   'uc1.features.hidden_requirements': 'L\'IA identifie automatiquement les "exigences cachées" (non exprimées clairement) dans les documents.',
 
-  // UC1 Additional sections to match UC2 structure
-  // Pain Points Section (detailed)
-  'uc1.pain_points.title1': 'Délais serrés compromettent la qualité',
-  'uc1.pain_points.description1': 'Réponses bâclées sur les petits projets créent une image dégradée et réduisent les chances de succès',
-  'uc1.pain_points.title2': 'Processus inefficaces et répétitifs',
-  'uc1.pain_points.description2': 'Temps perdu sur des tâches manuelles récurrentes au détriment de la personnalisation et de la valeur ajoutée',
-  'uc1.pain_points.title3': 'Manque de standardisation',
-  'uc1.pain_points.description3': 'Incohérences entre les offres et absence de capitalisation sur les réussites précédentes',
 
-  // Solutions Section (detailed)
-  'uc1.solutions.title1': 'Génération rapide d\'offres structurées',
-  'uc1.solutions.description1': 'IA spécialisée qui produit des réponses complètes et conformes en quelques heures seulement',
-  'uc1.solutions.title2': 'Templates et contenus pré-validés',
-  'uc1.solutions.description2': 'Bibliothèque d\'argumentaires éprouvés et de réponses standardisées pour une qualité constante',
-  'uc1.solutions.title3': 'Validation automatique des exigences',
-  'uc1.solutions.description3': 'Vérification systématique du cahier des charges pour éviter les oublis critiques',
-
-  // Journey Section (detailed)
-  'uc1.journey.title1': 'Analysez le cahier des charges',
-  'uc1.journey.description1': 'Importez votre appel d\'offres et laissez l\'IA extraire automatiquement toutes les exigences clés',
-  'uc1.journey.title2': 'Générez votre réponse structurée',
-  'uc1.journey.description2': 'Créez instantanément une proposition complète avec argumentaires adaptés et conformité assurée',
-  'uc1.journey.title3': 'Personnalisez et finalisez',
-  'uc1.journey.description3': 'Affinez votre offre avec des éléments différenciants tout en gardant la structure gagnante',
 
   // Audiences Section
   'uc1.audiences.bidManagers': 'Responsables d\'Offres',
@@ -223,23 +208,13 @@ const uc1TranslationKeys = {
   'uc1.audiences.salesDirectors': 'Directeurs Commerciaux',
   'uc1.audiences.salesDirectorsDesc': 'Vision stratégique et décision go/no-go immédiate',
 
-  // KPIs Section (detailed values)
-  'uc1.kpis.description1': 'Réduction du temps d\'analyse',
-  'uc1.kpis.description2': 'Couverture automatique des exigences',
-  'uc1.kpis.description3': 'Amélioration de la qualité des offres',
-  'uc1.kpis.description4': 'Conformité des livrables',
+
   'uc1.results_section.kpis.time_value': '75% de temps d\'analyse économisé',
   'uc1.results_section.kpis.clauses_value': '100% des critères critiques identifiés',
   'uc1.results_section.kpis.surprise_value': '0 oubli critique, maîtrise totale',
   'uc1.results_section.kpis.extra_value': 'Go/No-Go immédiat et documenté',
 
-  // Differentiators Section (detailed)
-  'uc1.differentiators.title1': 'Solution Dédiée aux Petits Projets',
-  'uc1.differentiators.description1': 'Optimisée spécifiquement pour les cycles courts et les budgets contraints',
-  'uc1.differentiators.title2': 'Intelligence Commerciale Intégrée',
-  'uc1.differentiators.description2': 'IA spécialisée dans l\'analyse rapide et la prise de décision commerciale',
-  'uc1.differentiators.title3': 'Workflows Automatisés',
-  'uc1.differentiators.description3': 'Processus streamlinés pour maximiser la productivité des équipes commerciales',
+
 
   // Toppings Advanced Features (detailed)
   'uc1.toppings.features.summary.title': 'Résumé automatique avancé',
@@ -697,14 +672,7 @@ const allUCEnglishTranslations = {
   'uc1.painPoints.contactButton': 'Boost Your Small Projects!',
   'uc1.painPoints.demoButton': 'See Quick Demo',
 
-  // Legacy pain points section
-  'uc1.painPoints.headline': 'Immediate Go / No-Go',
-  'uc1.painPoints.headline_span': ', guaranteed internal process',
-  'uc1.painPoints.text1': 'On small projects, the pressure is double: analyze quickly and prove everything has been read, understood and controlled.',
-  'uc1.painPoints.text2': 'Without cross-functional support (quality, legal), every oversight can cost dearly in execution margin and thus internal credibility.',
-  'uc1.painPoints.text3': 'With Aitenders, get a clear and prioritized view of your documents in minutes for immediate go/no-go. The platform then guides validation and archives every control, ensuring your internal obligations are met without overload.',
-  'uc1.painPoints.contactButton': 'Commercial Contact',
-  'uc1.painPoints.demoButton': 'See Quick Demo',
+
 
   'uc1.solution_section.mainTitle': 'Your',
   'uc1.solution_section.mainTitle_span': 'AI copilot',

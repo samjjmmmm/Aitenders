@@ -71,6 +71,12 @@ export const uc2FrenchTranslations = {
   'uc2.reference_projects.subtitle': 'Découvrez comment nos clients optimisent leurs grands projets avec nos solutions.',
   'uc2.reference_projects.impact_label': 'Impact mesuré :',
 
+  // Impact Reveal Section (Bloc 4)
+  'uc2.impact_reveal.team_title': 'L\'équipe Projet',
+  'uc2.impact_reveal.benefit1': 'réduisez de moitié votre temps d\'analyse',
+  'uc2.impact_reveal.benefit2': 'rassurez votre direction',
+  'uc2.impact_reveal.benefit3': 'livrez une réponse compétitive, sans risque de dernière minute',
+
   // ROI Simulator
   'uc2.roi_simulator.badge': 'Simulateur ROI Aitenders',
   'uc2.roi_simulator.headline': 'Calculez votre ROI en temps réel',
