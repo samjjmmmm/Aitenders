@@ -329,6 +329,421 @@ export default function TestUC2Page() {
         </div>
       </div>
 
+      {/* Block 6 - Layout 356 Section avec 3 features */}
+      <div 
+        className="flex flex-col items-center w-full overflow-hidden"
+        style={{
+          background: '#fff',
+          width: '1432px',
+          height: '2440px',
+          paddingBottom: '304px'
+        }}
+        data-figma-node="9238:560"
+      >
+        {/* Feature One */}
+        <div 
+          className="flex justify-center items-start gap-20 w-full overflow-hidden box-border"
+          style={{
+            padding: '0 64px',
+            borderTop: '2px solid #000',
+            background: '#fff',
+            height: '712px'
+          }}
+          data-figma-node="9238:561"
+        >
+          <div 
+            className="flex flex-col items-start gap-12 w-full"
+            style={{
+              maxWidth: '1280px',
+              paddingBottom: '112px',
+              flex: '1 0 0'
+            }}
+            data-figma-node="9238:562"
+          >
+            <div 
+              className="flex items-center gap-20 w-full"
+              data-figma-node="9238:566"
+            >
+              <div 
+                className="flex flex-col items-start gap-8 w-full"
+                style={{ flex: '1 0 0' }}
+                data-figma-node="9238:567"
+              >
+                <div 
+                  className="flex flex-col items-start gap-4 w-full"
+                  data-figma-node="9238:568"
+                >
+                  <div 
+                    className="flex items-center"
+                    data-figma-node="9238:569"
+                  >
+                    <span 
+                      className="text-black inline-block"
+                      style={{
+                        fontFamily: 'Inter',
+                        fontSize: '16px',
+                        fontWeight: 600,
+                        lineHeight: '150%'
+                      }}
+                      data-figma-node="9238:570"
+                    >
+                      Cockpit opérationnel dès J+1
+                    </span>
+                  </div>
+                  <div 
+                    className="flex flex-col items-start gap-6 w-full"
+                    data-figma-node="9238:571"
+                  >
+                    <span 
+                      className="text-black inline-block"
+                      style={{
+                        fontFamily: 'Roboto',
+                        fontSize: '52px',
+                        letterSpacing: '-0.52px',
+                        fontWeight: 400,
+                        lineHeight: '120%'
+                      }}
+                      data-figma-node="9238:572"
+                    >
+                      Structuration automatique du projet
+                    </span>
+                    <span 
+                      className="text-black inline-block"
+                      style={{
+                        fontFamily: 'Inter',
+                        fontSize: '18px',
+                        fontWeight: 400,
+                        lineHeight: '150%'
+                      }}
+                      data-figma-node="9238:573"
+                    >
+                      L'IA analyse vos AO, mappe chaque exigence et offre une vision claire du périmètre. +
+                    </span>
+                  </div>
+                </div>
+                <div 
+                  className="flex flex-col items-start gap-3"
+                  data-figma-node="9256:126"
+                >
+                  <div 
+                    className="flex flex-col items-start gap-8 overflow-hidden"
+                    style={{
+                      width: '706px',
+                      height: '78px'
+                    }}
+                    data-figma-node="9256:130"
+                  >
+                    <div 
+                      className="flex flex-col items-start gap-4 w-full"
+                      data-figma-node="9256:131"
+                    >
+                      <div 
+                        className="flex items-start gap-6 w-full"
+                        style={{ padding: '8px 0' }}
+                        data-figma-node="9256:132"
+                      >
+                        <div 
+                          className="flex flex-col items-start gap-2"
+                          style={{ width: '141px' }}
+                          data-figma-node="9256:133"
+                        >
+                          <span 
+                            className="inline-block"
+                            style={{
+                              aspectRatio: '141/62',
+                              color: '#312727',
+                              fontFamily: 'Raleway',
+                              fontSize: '52px',
+                              letterSpacing: '-0.52px',
+                              height: '62px',
+                              fontWeight: 500,
+                              lineHeight: '120%'
+                            }}
+                            data-figma-node="9256:134"
+                          >
+                            100%
+                          </span>
+                        </div>
+                        <div 
+                          className="flex flex-col justify-center items-center gap-3"
+                          style={{
+                            width: '456px',
+                            height: '62px'
+                          }}
+                          data-figma-node="9256:136"
+                        >
+                          <span 
+                            className="text-black inline-block"
+                            style={{
+                              fontFamily: 'Inter',
+                              fontSize: '16px',
+                              width: '381px',
+                              fontWeight: 400,
+                              lineHeight: '150%'
+                            }}
+                            data-figma-node="9256:138"
+                          >
+                            des documents structurés, transformés en Jumeaux numérique
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div 
+                className="bg-gray-300 rounded-[40px] flex-1"
+                style={{
+                  aspectRatio: '1',
+                  height: '600px'
+                }}
+                data-figma-node="9238:576"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Feature Two */}
+        <div 
+          className="flex justify-center items-start gap-20 w-full overflow-hidden box-border"
+          style={{
+            padding: '0 64px',
+            borderTop: '2px solid #000',
+            background: '#fff',
+            height: '712px'
+          }}
+          data-figma-node="9238:577"
+        >
+          <div 
+            className="flex flex-col items-start gap-12 w-full"
+            style={{
+              maxWidth: '1280px',
+              paddingBottom: '112px',
+              flex: '1 0 0'
+            }}
+            data-figma-node="9238:578"
+          >
+            <div 
+              className="flex items-center gap-20 w-full"
+              data-figma-node="9238:582"
+            >
+              <div 
+                className="bg-gray-300 rounded-[40px] flex-1"
+                style={{
+                  aspectRatio: '1',
+                  height: '600px'
+                }}
+                data-figma-node="9238:583"
+              ></div>
+              <div 
+                className="flex flex-col items-start gap-8 w-full"
+                style={{ flex: '1 0 0' }}
+                data-figma-node="9238:584"
+              >
+                <div 
+                  className="flex flex-col items-start gap-4 w-full"
+                  data-figma-node="9238:585"
+                >
+                  <div 
+                    className="flex items-center"
+                    data-figma-node="9238:586"
+                  >
+                    <span 
+                      className="text-black inline-block"
+                      style={{
+                        fontFamily: 'Inter',
+                        fontSize: '16px',
+                        fontWeight: 600,
+                        lineHeight: '150%'
+                      }}
+                      data-figma-node="9238:587"
+                    >
+                      Analyse prédictive
+                    </span>
+                  </div>
+                  <div 
+                    className="flex flex-col items-start gap-6 w-full"
+                    data-figma-node="9238:588"
+                  >
+                    <span 
+                      className="text-black inline-block"
+                      style={{
+                        fontFamily: 'Roboto',
+                        fontSize: '52px',
+                        letterSpacing: '-0.52px',
+                        fontWeight: 400,
+                        lineHeight: '120%'
+                      }}
+                      data-figma-node="9238:589"
+                    >
+                      Détection précoce des risques
+                    </span>
+                    <span 
+                      className="text-black inline-block"
+                      style={{
+                        fontFamily: 'Inter',
+                        fontSize: '18px',
+                        fontWeight: 400,
+                        lineHeight: '150%'
+                      }}
+                      data-figma-node="9238:590"
+                    >
+                      Anticipez les problèmes avant qu'ils n'impactent votre projet.
+                    </span>
+                  </div>
+                </div>
+                <div 
+                  className="flex items-center gap-6"
+                  style={{
+                    width: '99px',
+                    height: '44px'
+                  }}
+                  data-figma-node="9238:591"
+                >
+                  <div 
+                    className="flex justify-center items-center gap-2 box-border rounded-full"
+                    style={{
+                      border: '2px solid #000',
+                      background: 'transparent',
+                      padding: '10px 24px'
+                    }}
+                    data-figma-node="9251:137"
+                  >
+                    <span 
+                      className="text-black inline-block"
+                      style={{
+                        fontFamily: 'Inter',
+                        fontSize: '16px',
+                        fontWeight: 500,
+                        lineHeight: '150%'
+                      }}
+                      data-figma-node="4179:8893"
+                    >
+                      Découvrir
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Feature Three */}
+        <div 
+          className="flex justify-center items-start gap-20 w-full overflow-hidden box-border"
+          style={{
+            padding: '0 64px',
+            borderTop: '2px solid #000',
+            background: '#fff',
+            height: '712px'
+          }}
+          data-figma-node="9238:593"
+        >
+          <div 
+            className="flex flex-col items-start gap-12 w-full"
+            style={{
+              maxWidth: '1280px',
+              paddingBottom: '112px',
+              flex: '1 0 0'
+            }}
+            data-figma-node="9238:594"
+          >
+            <div 
+              className="flex items-center gap-20 w-full"
+              data-figma-node="9238:598"
+            >
+              <div 
+                className="flex flex-col items-start gap-8 w-full"
+                style={{ flex: '1 0 0' }}
+                data-figma-node="9238:599"
+              >
+                <div 
+                  className="flex flex-col items-start gap-4 w-full"
+                  data-figma-node="9238:600"
+                >
+                  <div 
+                    className="flex items-center"
+                    data-figma-node="9238:601"
+                  >
+                    <span 
+                      className="text-black inline-block"
+                      style={{
+                        fontFamily: 'Inter',
+                        fontSize: '16px',
+                        fontWeight: 600,
+                        lineHeight: '150%'
+                      }}
+                      data-figma-node="9238:602"
+                    >
+                      Collaboration optimisée
+                    </span>
+                  </div>
+                  <div 
+                    className="flex flex-col items-start gap-6 w-full"
+                    data-figma-node="9238:603"
+                  >
+                    <span 
+                      className="text-black inline-block"
+                      style={{
+                        fontFamily: 'Raleway',
+                        fontSize: '52px',
+                        letterSpacing: '-0.52px',
+                        fontWeight: 500,
+                        lineHeight: '120%'
+                      }}
+                      data-figma-node="9238:604"
+                    >
+                      Équipe alignée en temps réel
+                    </span>
+                    <span 
+                      className="text-black inline-block"
+                      style={{
+                        fontFamily: 'Inter',
+                        fontSize: '18px',
+                        fontWeight: 400,
+                        lineHeight: '150%'
+                      }}
+                      data-figma-node="9238:605"
+                    >
+                      Synchronisez votre équipe avec une vision partagée du projet.
+                    </span>
+                  </div>
+                </div>
+                <div 
+                  className="flex justify-center items-center gap-2 box-border rounded-full"
+                  style={{
+                    border: '2px solid #000',
+                    background: 'transparent',
+                    padding: '10px 24px'
+                  }}
+                  data-figma-node="9251:147"
+                >
+                  <span 
+                    className="text-black inline-block"
+                    style={{
+                      fontFamily: 'Inter',
+                      fontSize: '16px',
+                      fontWeight: 500,
+                      lineHeight: '150%'
+                    }}
+                  >
+                    En savoir plus
+                  </span>
+                </div>
+              </div>
+              <div 
+                className="bg-gray-300 rounded-[40px] flex-1"
+                style={{
+                  aspectRatio: '1',
+                  height: '600px'
+                }}
+                data-figma-node="9238:608"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
