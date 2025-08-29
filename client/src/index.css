@@ -6,58 +6,58 @@
   /* Set a single source of truth for width (scoped var is fine) */
   --sidebar-width: 280px;
   
-  /* Brand Colors - #112646, #FBFCFF, #3880E8, #F5F9FE, #EBF2FD, #C3D9F8, #0B1A2E */
-  --background: hsl(217, 100%, 99%); /* #FBFCFF */
-  --foreground: hsl(220, 62%, 9%); /* #0B1A2E */
-  --muted: hsl(218, 100%, 97%); /* #F5F9FE */
-  --muted-foreground: hsl(219, 52%, 24%); /* #112646 */
-  --popover: hsl(217, 100%, 99%); /* #FBFCFF */
-  --popover-foreground: hsl(220, 62%, 9%); /* #0B1A2E */
-  --card: hsl(217, 100%, 99%); /* #FBFCFF */
-  --card-foreground: hsl(220, 62%, 9%); /* #0B1A2E */
-  --border: hsl(218, 72%, 88%); /* #C3D9F8 */
-  --input: hsl(218, 72%, 88%); /* #C3D9F8 */
-  --primary: hsl(219, 79%, 70%); /* #3880E8 */
-  --primary-foreground: hsl(217, 100%, 99%); /* #FBFCFF */
-  --secondary: hsl(219, 52%, 24%); /* #112646 */
-  --secondary-foreground: hsl(217, 100%, 99%); /* #FBFCFF */
-  --accent: hsl(218, 100%, 97%); /* #F5F9FE */
-  --accent-foreground: hsl(220, 62%, 9%); /* #0B1A2E */
-  --destructive: hsl(0, 84%, 60%);
-  --destructive-foreground: hsl(217, 100%, 99%); /* #FBFCFF */
-  --ring: hsl(219, 79%, 70%); /* #3880E8 */
+  /* Monochromatic Black Design */
+  --background: #ffffff; /* White background */
+  --foreground: #000000; /* Black text */
+  --muted: #f5f5f5; /* Light gray for muted elements */
+  --muted-foreground: #000000; /* Black for muted text */
+  --popover: #ffffff; /* White */
+  --popover-foreground: #000000; /* Black */
+  --card: #ffffff; /* White */
+  --card-foreground: #000000; /* Black */
+  --border: #e5e5e5; /* Light gray borders */
+  --input: #e5e5e5; /* Light gray input borders */
+  --primary: #000000; /* Black for primary elements */
+  --primary-foreground: #ffffff; /* White text on black backgrounds */
+  --secondary: #f5f5f5; /* Light gray for secondary elements */
+  --secondary-foreground: #000000; /* Black text on light backgrounds */
+  --accent: #f5f5f5; /* Light gray for accents */
+  --accent-foreground: #000000; /* Black text */
+  --destructive: #000000; /* Black for destructive actions */
+  --destructive-foreground: #ffffff; /* White text on black */
+  --ring: #000000; /* Black focus rings */
   --radius: 0.75rem;
   
-  /* Custom Aitenders Brand Colors */
-  --aitenders-dark-blue: hsl(219, 52%, 24%); /* #112646 */
-  --aitenders-white-blue: hsl(217, 100%, 99%); /* #FBFCFF */
-  --aitenders-primary-blue: hsl(219, 79%, 70%); /* #3880E8 */
-  --aitenders-pale-blue: hsl(218, 100%, 97%); /* #F5F9FE */
-  --aitenders-pastel-blue: hsl(218, 85%, 94%); /* #EBF2FD */
-  --aitenders-light-blue: hsl(218, 72%, 88%); /* #C3D9F8 */
-  --aitenders-black: hsl(220, 62%, 9%); /* #0B1A2E */
+  /* Monochromatic Brand Colors */
+  --aitenders-dark-blue: #000000; /* Black */
+  --aitenders-white-blue: #ffffff; /* White */
+  --aitenders-primary-blue: #000000; /* Black */
+  --aitenders-pale-blue: #f5f5f5; /* Light gray */
+  --aitenders-pastel-blue: #f0f0f0; /* Slightly darker gray */
+  --aitenders-light-blue: #e5e5e5; /* Medium gray */
+  --aitenders-black: #000000; /* Black */
 }
 
 .dark {
-  --background: hsl(220, 62%, 9%); /* #0B1A2E */
-  --foreground: hsl(217, 100%, 99%); /* #FBFCFF */
-  --muted: hsl(219, 52%, 24%); /* #112646 */
-  --muted-foreground: hsl(218, 72%, 88%); /* #C3D9F8 */
-  --popover: hsl(219, 52%, 24%); /* #112646 */
-  --popover-foreground: hsl(217, 100%, 99%); /* #FBFCFF */
-  --card: hsl(219, 52%, 24%); /* #112646 */
-  --card-foreground: hsl(217, 100%, 99%); /* #FBFCFF */
-  --border: hsl(218, 85%, 94%); /* #EBF2FD darker for dark mode */
-  --input: hsl(218, 85%, 94%); /* #EBF2FD darker for dark mode */
-  --primary: hsl(219, 79%, 70%); /* #3880E8 */
-  --primary-foreground: hsl(217, 100%, 99%); /* #FBFCFF */
-  --secondary: hsl(218, 72%, 88%); /* #C3D9F8 */
-  --secondary-foreground: hsl(220, 62%, 9%); /* #0B1A2E */
-  --accent: hsl(219, 52%, 24%); /* #112646 */
-  --accent-foreground: hsl(217, 100%, 99%); /* #FBFCFF */
-  --destructive: hsl(0, 62%, 30%);
-  --destructive-foreground: hsl(217, 100%, 99%); /* #FBFCFF */
-  --ring: hsl(219, 79%, 70%); /* #3880E8 */
+  --background: #000000; /* Black background */
+  --foreground: #ffffff; /* White text */
+  --muted: #1a1a1a; /* Dark gray for muted elements */
+  --muted-foreground: #ffffff; /* White for muted text */
+  --popover: #1a1a1a; /* Dark gray */
+  --popover-foreground: #ffffff; /* White */
+  --card: #1a1a1a; /* Dark gray */
+  --card-foreground: #ffffff; /* White */
+  --border: #333333; /* Medium gray borders */
+  --input: #333333; /* Medium gray input borders */
+  --primary: #ffffff; /* White for primary elements */
+  --primary-foreground: #000000; /* Black text on white backgrounds */
+  --secondary: #333333; /* Medium gray for secondary elements */
+  --secondary-foreground: #ffffff; /* White text on dark backgrounds */
+  --accent: #1a1a1a; /* Dark gray for accents */
+  --accent-foreground: #ffffff; /* White text */
+  --destructive: #ffffff; /* White for destructive actions */
+  --destructive-foreground: #000000; /* Black text on white */
+  --ring: #ffffff; /* White focus rings */
 }
 
 @layer base {
