@@ -48,25 +48,36 @@ export default function TestUC2Page() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="bg-white px-16 py-28 flex flex-col items-center gap-20">
-        <div className="max-w-7xl flex flex-col items-start gap-20">
-          <div className="flex items-start gap-20 w-full">
-            <div className="flex-1 flex flex-col items-start gap-4">
-              <h2 className="text-black text-5xl font-bold leading-tight tracking-tight">
+      {/* Header Section 26 - Bloc 1 */}
+      <section className="bg-white px-16 py-28 flex flex-col items-center gap-20 w-full min-h-[523px]">
+        <div className="max-w-[1280px] flex flex-col items-center gap-20 w-full">
+          <div className="max-w-[768px] flex flex-col items-center gap-8 w-full">
+            <div className="bg-white border border-black flex flex-col items-center gap-6 w-full p-8">
+              <h2 className="text-black text-center font-roboto text-7xl font-medium leading-[120%] tracking-[-0.72px]">
                 Votre offre, 100% claire, 0% surprises
               </h2>
-            </div>
-            
-            <div className="flex-1 flex flex-col items-start gap-6">
-              <p className="text-black text-lg font-normal leading-relaxed">
-                Sur les projets moyens, vos équipes jonglent avec délais serrés, clauses cachées et versions dispersées. 
-                Avec Aitenders, structurez vos dossiers dès J+1.
+              
+              <p className="text-black text-center font-roboto text-lg font-normal leading-[150%]">
+                Découvrez, pilotez et sécurisez chaque clause dès le premier jour. Sur les projets moyens, vos équipes jonglent avec délais serrés, clauses cachées et versions dispersées.
               </p>
+              
+              <div className="flex items-start gap-4">
+                <button className="bg-[#112646] text-white rounded-full px-6 py-3 shadow-lg font-inter text-base font-medium leading-[150%]">
+                  Get Started
+                </button>
+                
+                <button className="border-2 border-black bg-transparent rounded-full px-6 py-3 text-black font-inter text-base font-medium leading-[150%]">
+                  Learn More
+                </button>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Feature Cards */}
+      {/* Bloc 2 - Feature Cards Section */}
+      <section className="bg-white px-16 py-28 flex flex-col items-center gap-20">
+        <div className="max-w-7xl flex flex-col items-start gap-20">
           <div className="flex justify-center items-start gap-12 w-full">
             {/* Feature Card 1 */}
             <div className="flex-1 flex flex-col items-start gap-8 p-8">
@@ -131,17 +142,29 @@ export default function TestUC2Page() {
         </div>
       </section>
 
-      {/* Dark Hero Section */}
-      <section className="bg-[#112646] px-16 py-28 flex flex-col items-center gap-20">
-        <div className="max-w-7xl flex flex-col items-center gap-20 w-full">
-          <div className="max-w-4xl flex flex-col items-center gap-6 w-full">
-            <h2 className="text-white text-center text-6xl font-bold leading-tight tracking-tight">
-              Votre copilote IA qui sécurise vos projets moyens
-            </h2>
-            
-            <p className="text-white text-center text-lg font-normal leading-relaxed">
-              Découvrez, gérez et sécurisez chaque clause dès le premier jour.
-            </p>
+      {/* Bloc 3 - Dark Hero Section */}
+      <section className="bg-[#112646] px-16 py-28 flex flex-col items-center gap-20 w-full min-h-[523px]">
+        <div className="max-w-[1280px] flex flex-col items-center gap-20 w-full">
+          <div className="max-w-[768px] flex flex-col items-center gap-8 w-full">
+            <div className="bg-[#112646] border border-white flex flex-col items-center gap-6 w-full p-8">
+              <h2 className="text-white text-center font-roboto text-7xl font-medium leading-[120%] tracking-[-0.72px]">
+                Votre copilote IA qui sécurise vos projets moyens
+              </h2>
+              
+              <p className="text-white text-center font-roboto text-lg font-normal leading-[150%]">
+                Découvrez, gérez et sécurisez chaque clause dès le premier jour. Une approche intelligente pour maîtriser vos appels d'offres complexes.
+              </p>
+              
+              <div className="flex items-start gap-4">
+                <button className="bg-white text-[#112646] rounded-full px-6 py-3 shadow-lg font-inter text-base font-medium leading-[150%]">
+                  Démarrer maintenant
+                </button>
+                
+                <button className="border-2 border-white bg-transparent rounded-full px-6 py-3 text-white font-inter text-base font-medium leading-[150%]">
+                  En savoir plus
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
