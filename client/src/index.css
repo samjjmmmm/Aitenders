@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -60,134 +61,178 @@
   --ring: #ffffff; /* White focus rings */
 }
 
+/* FORCE GLOBAL STYLES ON ALL ELEMENTS */
 @layer base {
   * {
     @apply border-border;
   }
 
-  *,
-  *::before,
-  *::after,
-  html,
-  body,
-  div,
-  span,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  a,
-  button,
-  input,
-  textarea,
-  select,
-  label,
-  li,
-  ul,
-  ol,
-  nav,
-  header,
-  footer,
-  section,
-  article,
-  aside,
-  main {
+  /* FORCE INTER FONT ON EVERYTHING */
+  *, *::before, *::after,
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, center,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed, 
+  figure, figcaption, footer, header, hgroup, 
+  menu, nav, output, ruby, section, summary,
+  time, mark, audio, video,
+  button, input, textarea, select, option {
     font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+  }
+
+  /* FORCE BLACK TEXT COLOR ON ALL TEXT ELEMENTS */
+  *, *::before, *::after,
+  p, span, div, h1, h2, h3, h4, h5, h6, 
+  a, button, input, textarea, select, label,
+  li, td, th, caption, figcaption {
+    color: #000000 !important;
+  }
+
+  /* FORCE WHITE BACKGROUND ON MAIN CONTAINERS */
+  body, html, #root, main, section, article, div {
+    background-color: #ffffff !important;
   }
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
     font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+    color: #000000 !important;
+    background-color: #ffffff !important;
   }
 }
 
 @layer utilities {
   .gradient-bg {
-    background: linear-gradient(135deg, var(--aitenders-pale-blue), var(--aitenders-pastel-blue));
+    background: linear-gradient(135deg, var(--aitenders-pale-blue), var(--aitenders-pastel-blue)) !important;
   }
   
   .brand-gradient {
-    background: linear-gradient(135deg, var(--aitenders-pale-blue) 0%, var(--aitenders-pastel-blue) 50%, var(--aitenders-light-blue) 100%);
+    background: linear-gradient(135deg, var(--aitenders-pale-blue) 0%, var(--aitenders-pastel-blue) 50%, var(--aitenders-light-blue) 100%) !important;
   }
   
   .card-hover {
     @apply transition-all duration-300 hover:shadow-lg hover:scale-[1.02];
   }
 
-  /* Slack-style CSS Grid Layouts */
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
+  /* FORCE SLACK-STYLE CSS GRID LAYOUTS ON ALL PAGES */
+  .hero-grid, .hero-section {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2rem !important;
+    align-items: center !important;
   }
 
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+  .features-grid, .features-section {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 2rem !important;
   }
 
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+  .stats-grid, .stats-section {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+    gap: 2rem !important;
   }
 
-  .complex-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto;
-    gap: 2rem;
+  .complex-grid, .complex-section {
+    display: grid !important;
+    grid-template-columns: 2fr 1fr !important;
+    grid-template-rows: auto !important;
+    gap: 2rem !important;
   }
 
-  /* Slack-style Typography */
-  .slack-hero-title {
-    font-weight: 700;
-    font-size: 56px;
-    line-height: 56px;
-    letter-spacing: -0.025em;
+  /* FORCE SLACK-STYLE TYPOGRAPHY ON ALL HEADINGS */
+  .slack-hero-title, h1 {
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 56px !important;
+    line-height: 56px !important;
+    letter-spacing: -0.025em !important;
+    color: #000000 !important;
   }
 
-  /* Responsive Grid Breakpoints */
+  h2 {
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 42px !important;
+    line-height: 48px !important;
+    color: #000000 !important;
+  }
+
+  h3 {
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 32px !important;
+    line-height: 40px !important;
+    color: #000000 !important;
+  }
+
+  h4, h5, h6 {
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif !important;
+    font-weight: 500 !important;
+    color: #000000 !important;
+  }
+
+  /* FORCE BODY TEXT STYLES */
+  p, span, div, li, td, th {
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif !important;
+    color: #000000 !important;
+  }
+
+  /* FORCE BUTTON STYLES */
+  button, .btn, [role="button"] {
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif !important;
+    font-weight: 500 !important;
+  }
+
+  /* FORCE INPUT STYLES */
+  input, textarea, select {
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif !important;
+    color: #000000 !important;
+  }
+
+  /* Responsive Grid Breakpoints - FORCED */
   @media (max-width: 768px) {
-    .hero-grid {
-      grid-template-columns: 1fr;
+    .hero-grid, .hero-section {
+      grid-template-columns: 1fr !important;
     }
     
-    .features-grid {
-      grid-template-columns: 1fr;
+    .features-grid, .features-section {
+      grid-template-columns: 1fr !important;
     }
     
-    .stats-grid {
-      grid-template-columns: 1fr;
+    .stats-grid, .stats-section {
+      grid-template-columns: 1fr !important;
     }
     
-    .complex-grid {
-      grid-template-columns: 1fr;
+    .complex-grid, .complex-section {
+      grid-template-columns: 1fr !important;
     }
 
-    .slack-hero-title {
-      font-size: clamp(32px, 8vw, 48px);
-      line-height: 1.1;
+    .slack-hero-title, h1 {
+      font-size: clamp(32px, 8vw, 48px) !important;
+      line-height: 1.1 !important;
     }
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    .features-grid {
-      grid-template-columns: repeat(2, 1fr);
+    .features-grid, .features-section {
+      grid-template-columns: repeat(2, 1fr) !important;
     }
     
-    .stats-grid {
-      grid-template-columns: repeat(2, 1fr);
+    .stats-grid, .stats-section {
+      grid-template-columns: repeat(2, 1fr) !important;
     }
 
-    .slack-hero-title {
-      font-size: clamp(42px, 6vw, 56px);
-      line-height: 1.1;
+    .slack-hero-title, h1 {
+      font-size: clamp(42px, 6vw, 56px) !important;
+      line-height: 1.1 !important;
     }
   }
   
@@ -281,33 +326,35 @@
   }
 }
 
-/* Append to the end of the global stylesheet */
-.content-boundary {
-  max-width: 1200px;                       /* professional line-length on large screens */
-  margin-inline: auto;                     /* center horizontally */
-  padding-inline: clamp(16px, 4vw, 48px);  /* guaranteed side padding on small/medium */
-  box-sizing: border-box;                  /* include padding in total width */
+/* FORCE CONTENT BOUNDARY ON ALL PAGES */
+.content-boundary, main, section, article {
+  max-width: 1200px !important;                       /* professional line-length on large screens */
+  margin-inline: auto !important;                     /* center horizontally */
+  padding-inline: clamp(16px, 4vw, 48px) !important;  /* guaranteed side padding on small/medium */
+  box-sizing: border-box !important;                  /* include padding in total width */
 }
 
 /* Optional: a slightly narrower variant for long-form text sections */
 .content-boundary--narrow {
-  max-width: 960px;
+  max-width: 960px !important;
 }
 
 /* Escape hatch for specific elements that must span full width inside a section */
 .full-bleed {
-  margin-inline: calc(50% - 50vw);
-  max-width: 100vw;
-  padding-inline: 0;
+  margin-inline: calc(50% - 50vw) !important;
+  max-width: 100vw !important;
+  padding-inline: 0 !important;
 }
 
 /* Safety: media should not overflow the boundary */
 .content-boundary img,
 .content-boundary video,
 .content-boundary canvas,
-.content-boundary svg {
-  max-width: 100%;
-  height: auto;
+.content-boundary svg,
+main img, section img, article img,
+main video, section video, article video {
+  max-width: 100% !important;
+  height: auto !important;
 }
 
 /* Subtle Scroll Animations */
@@ -363,5 +410,3 @@
   opacity: 1;
   transform: scale(1);
 }
-
-
