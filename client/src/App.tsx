@@ -23,6 +23,7 @@ import SimulatorAdmin from "@/pages/simulator-admin";
 import MailingAdmin from "@/pages/mailing-admin";
 import NotFound from "@/pages/not-found";
 import TestUC2Page from "@/pages/test-uc2";
+import UC1SlackPage from "@/pages/uc1-slack";
 
 function Router() {
   const [location] = useLocation();
@@ -36,6 +37,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/uc1" component={UC1Page} />
+      <Route path="/uc1-slack" component={UC1SlackPage} />
       <Route path="/uc2" component={UC2Page} />
       <Route path="/test-uc2" component={TestUC2Page} />
       <Route path="/uc3" component={UC3Page} />
