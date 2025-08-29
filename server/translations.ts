@@ -1,7 +1,7 @@
 import { eq, and } from "drizzle-orm";
 import { db } from "./db";
 import { languages, translationKeys, translations, type Language, type TranslationKey, type Translation } from "@shared/schema";
-import { allFrenchTranslations, allEnglishTranslations, allSpanishTranslations, allGermanTranslations } from "./translations/index";
+import { allFrenchTranslations, allEnglishTranslations, allSpanishTranslations, allGermanTranslations, uc5FrenchTranslations, uc5EnglishTranslations, uc5SpanishTranslations, uc5GermanTranslations } from "./translations/index";
 
 // Translation service for managing multilingual content
 export class TranslationService {
@@ -151,19 +151,20 @@ export class TranslationService {
       { lang: 'de', translations: allGermanTranslations },
     ];
 
+    // Add UC5 translations to the translationSets array
+    translationSets.push(
+      { lang: 'fr', translations: uc5FrenchTranslations },
+      { lang: 'en', translations: uc5EnglishTranslations },
+      { lang: 'es', translations: uc5SpanishTranslations },
+      { lang: 'de', translations: uc5GermanTranslations }
+    );
 
 
     for (const { lang, translations } of translationSets) {
       console.log(`Loading ${Object.keys(translations).length} translations for ${lang}`);
-      let count = 0;
       for (const [key, value] of Object.entries(translations)) {
         await this.setTranslation(key, lang, value);
-        count++;
-        if (count % 100 === 0) {
-          console.log(`  Loaded ${count} translations for ${lang}`);
-        }
       }
-      console.log(`✅ Completed ${count} translations for ${lang}`);
     }
     console.log('All translations initialized successfully');
   }
