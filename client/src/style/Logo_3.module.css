@@ -1,0 +1,263 @@
+/* src/styles/Logo_3.module.css */
+
+.Logo_3_9248_28858 {
+  padding: var(--Section-Padding-padding-section-medium, 80px) 0;
+  background: var(--Color-Scheme-1-Background, #e7e9ec);
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  width: 100%;
+  min-height: 287px; /* Changed to min-height for responsiveness */
+  display: flex;
+  overflow: hidden;
+}
+.LoremIpsumDolorSitAmetConsecteturAdipiscingElitSuspendisseVariusEnimInErosElementumTristiqueDuisCursusMiQuisViverraOrnareErosDolorInterdumNullaUtCommodoDiamLiberoVitaeErat_9248_30942 {
+  color: var(--Color-Scheme-2-Text, #000);
+  text-align: center;
+  font-family: Roboto;
+  font-size: var(--Text-Sizes-Text-Medium, 18px);
+  max-width: 549px; /* Added max-width for responsiveness */
+  /* height: 23px; Removed fixed height for responsiveness */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Content_9248_28861 {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+.Content_9248_28862 {
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  display: flex;
+  flex-wrap: wrap; /* Added for responsiveness of logos */
+}
+.PlaceholderLogo_9248_28863,
+.PlaceholderLogo_9248_28864,
+.PlaceholderLogo_9248_28865,
+.PlaceholderLogo_9248_28866,
+.PlaceholderLogo_9248_28867,
+.PlaceholderLogo_9248_28868,
+.PlaceholderLogo_9248_28869 {
+  width: 200px; /* Adjust for responsiveness if logos should scale down */
+  height: 56px; /* Adjust for responsiveness */
+  /* Make SVG paths use currentColor from parent */
+  & svg path {
+    fill: currentColor;
+  }
+  color: var(--Color-Brand-Blue, #112646); /* Default color for the SVG */
+}```
+
+---
+
+### **4. `src/styles/Layout_401.module.css`**
+
+**Important Note:** You provided two snippets of `Layout_401.module.css` that define different styles for the same class names (e.g., `Layout_401_9248_28988` and `Layout_401_9254_443`). This indicates that Figma might have generated generic class names for different *sections* of your page, even if they're conceptually separate in your design.
+
+To make this work:
+*   I will consolidate them into **one `Layout_401.module.css` file**.
+*   It's best practice to give these different sections **unique class names** in your React components to prevent styles from unintentionally overriding each other. I'll provide the combined CSS here, and in the React components, I'll recommend using more specific class names if possible. If the Figma export truly uses `Layout_401_9248_28988` and `Layout_401_9254_443` as distinct root classes, then they are effectively different styles for different sections.
+
+```css
+/* src/styles/Layout_401.module.css */
+
+/* First instance of Layout_401 (e.g., AI Copilot Section) */
+.Layout_401_9248_28988 {
+  padding: 237px var(--Page-Padding-padding-global, 64px) 116px
+    var(--Page-Padding-padding-global, 64px);
+  background: var(--Color-Scheme-2-Background, #fff);
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+  min-height: 812px; /* Changed to min-height for responsiveness */
+  display: flex;
+  overflow: hidden;
+}
+.Container_9253_31226 {
+  width: var(--Container-container-large, 1280px);
+  max-width: var(--Container-container-large, 1280px);
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 80px;
+  min-height: 459px; /* Changed to min-height for responsiveness */
+  display: flex;
+}
+.SectionTitle_9253_31227 {
+  max-width: var(--Max-Width-max-width-large, 768px);
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  display: flex;
+}
+.TaglineWrapper_9253_31228 {
+  align-items: center;
+  display: flex;
+}
+.Tagline_9253_31229 {
+  color: var(--Color-Scheme-2-Text, #000);
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  display: inline-block;
+}
+.Content_9253_31230 {
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  display: flex;
+}
+.Heading_9253_31231 {
+  color: var(--Color-Scheme-2-Text, #000);
+  text-align: center;
+  font-family: Raleway;
+  font-size: var(--Text-Sizes-Heading-2, 52px);
+  letter-spacing: -0.52px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  display: inline-block;
+}
+.Text_9253_31232 {
+  color: var(--Color-Scheme-2-Text, #000);
+  text-align: center;
+  font-family: Inter;
+  font-size: var(--Text-Sizes-Text-Medium, 18px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Content_9253_31233 {
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: 64px;
+  width: 100%;
+  min-height: 95px; /* Changed to min-height for responsiveness */
+  display: flex;
+}
+.Row_9253_31234 {
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: 48px;
+  width: 100%;
+  min-height: 96px; /* Changed to min-height for responsiveness */
+  display: flex;
+  flex-wrap: wrap; /* Added for responsiveness */
+  justify-content: center; /* Center items if they wrap */
+}
+.Column_9253_31235 {
+  flex-direction: column;
+  flex: 1 0 0;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  min-height: 95px; /* Changed to min-height for responsiveness */
+  display: flex;
+}
+.Group_4_9253_31236 {
+  flex-shrink: 0;
+  /* Removed fixed width and height that were problematic */
+  width: 100%; /* Make it fluid within its parent */
+  max-width: 1280px; /* Constrain max width */
+  height: auto; /* Let height adjust automatically */
+  min-height: 95px; /* Ensure a minimum height */
+  /* SVG fill color if it contains dynamic elements */
+  & svg path {
+    fill: currentColor;
+  }
+  color: var(--Color-Brand-Blue, #112646); /* Default color for the SVG */
+}
+
+
+/* Second instance of Layout_401 (e.g., Offer Steps Section) */
+.Layout_401_9254_443 {
+  padding: 186px var(--Page-Padding-padding-global, 64px) 160px
+    var(--Page-Padding-padding-global, 64px);
+  background: var(--Color-Scheme-2-Background, #fff);
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+  min-height: 573px; /* Changed to min-height for responsiveness */
+  display: flex;
+  overflow: hidden;
+}
+.SectionTitle_9253_31701 {
+  max-width: var(--Max-Width-max-width-large, 768px);
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%; /* Changed to 100% for responsiveness */
+  display: flex;
+  position: relative;
+}
+.Content_9253_31704 {
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  width: 100%; /* Changed to 100% for responsiveness */
+  display: flex;
+  /* Removed absolute positioning for responsiveness. Parent flexbox will position */
+  /* top: -0.084px; */
+  /* left: 0.271px; */
+  flex-wrap: wrap; /* Added for responsiveness of text */
+  text-align: center; /* Center content */
+}
+.Heading_9253_31705 {
+  color: var(--Color-Scheme-3-Text, #000);
+  text-align: center;
+  font-family: Raleway;
+  font-size: var(--Text-Sizes-Heading-2, 52px);
+  letter-spacing: -0.52px;
+  /* flex: 1 0 0; Removed this flex property if it causes layout issues with animations */
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  display: inline-block;
+  white-space: pre-wrap; /* Allows text to wrap but preserves spaces/line breaks */
+}
+
+/* For the Layout_401 with position absolute (this is likely the "Adapte a vos equipes" section) */
+.Layout_401_9254_400 {
+  padding: 186px var(--Page-Padding-padding-global, 64px) 328px
+    var(--Page-Padding-padding-global, 64px);
+  background: var(--Color-Scheme-2-Background, #fff);
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+  min-height: 950px; /* Changed to min-height for responsiveness */
+  display: flex;
+  position: relative; /* Keep relative for inner absolutely positioned elements */
+  overflow: hidden;
+}
+.Group_3_9254_429 {
+  /* Removed fixed width and height that were problematic */
+  width: 100%; /* Make it fluid within its parent */
+  max-width: 773px; /* Constrain max width to original design intent */
+  height: auto; /* Let height adjust automatically */
+  min-height: 113px; /* Ensure a minimum height */
+  position: absolute;
+  /* Adjust absolute positioning for responsiveness, or consider flexbox. */
+  /* These values are highly specific and may not be responsive */
+  bottom: 401.084px;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for center */
+  /* SVG fill color if it contains dynamic elements */
+  & svg path {
+    fill: currentColor;
+  }
+  color: var(--Color-Brand-Blue, #112646); /* Default color for the SVG */
+}

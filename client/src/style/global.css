@@ -1,0 +1,74 @@
+/* src/global.css */
+
+/* Google Font Imports - Consolidated and cleaned */
+@import url("https://fonts.googleapis.com/css?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:wght@400&display=swap");
+
+/* CSS Variables - Defined based on your Figma exports and brand colors */
+:root {
+  /* Page Padding */
+  --Page-Padding-padding-global: 64px; /* Standard global padding */
+
+  /* Section Padding */
+  --Section-Padding-padding-section-large: 112px;
+  --Section-Padding-padding-section-medium: 80px;
+
+  /* Container Widths */
+  --Container-container-large: 1280px;
+  --Max-Width-max-width-large: 768px;
+
+  /* Text Sizes */
+  --Text-Sizes-Heading-1: 72px;
+  --Text-Sizes-Heading-2: 52px;
+  --Text-Sizes-Heading-5: 28px;
+  --Text-Sizes-Text-Medium: 18px;
+  --Text-Sizes-Text-Regular: 16px;
+
+  /* Colors - Based on your palette */
+  --Color-Brand-Blue: #112646; /* Your primary brand blue */
+  --Color-CTA-Blue: #3880E8;   /* Your primary accent/CTA blue */
+  --Color-White: #fff;
+  --Color-Neutral-Darkest: #000; /* Used for dark text/borders */
+
+  /* Figma exported color schemes - adjust these to your actual brand palette if different */
+  --Color-Scheme-1-Background: #e7e9ec; /* A light background used by some sections */
+  --Color-Scheme-1-Foreground: #e7e9ec; /* Another light background */
+  --Color-Scheme-1-Border: #000; /* Used for borders/text in some sections */
+  --Color-Scheme-2-Background: #fff; /* White background */
+  --Color-Scheme-2-Text: #000; /* Black text */
+  --Color-Scheme-2-Border: #000; /* Black border */
+  --Color-Scheme-3-Background: #f2f2f2; /* Light gray background */
+  --Color-Scheme-3-Text: #000; /* Black text */
+  --Color-Scheme-3-Foreground: #f2f2f2; /* Light gray background */
+
+  /* Opacity */
+  --Opacity-Transparent: rgba(255, 255, 255, 0); /* Explicit transparent white */
+  --Opacity-Neutral-Darkest-15: rgba(0, 0, 0, 0.15); /* rgba(0,0,0,0.15) */
+  --Opacity-Neutral-Darkest-5: rgba(0, 0, 0, 0.05); /* rgba(0,0,0,0.05) */
+
+  /* Radius */
+  --Radius-Large: 40px;
+  --Radius-Medium: 32px;
+
+  /* Stroke */
+  --Stroke-Divider-Width: 2px;
+}
+
+/* Basic body styles to ensure full page height and consistent font rendering */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif; /* Default font */
+  line-height: 1.5;
+  color: var(--Color-Neutral-Darkest);
+}
+
+/* Apply box-sizing globally for easier layout */
+*, *::before, *::after {
+  box-sizing: inherit;
+}

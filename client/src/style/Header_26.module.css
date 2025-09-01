@@ -1,0 +1,140 @@
+/* src/styles/Header_26.module.css */
+
+.Header_26_9248_28760 {
+  padding: var(--Section-Padding-padding-section-large, 112px)
+    var(--Page-Padding-padding-global, 64px);
+  background: var(--Color-Scheme-2-Background, #fff);
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+  min-height: 523px; /* Changed to min-height for responsiveness */
+  display: flex;
+  overflow: hidden;
+}
+.Container_9248_28761 {
+  max-width: var(--Container-container-large, 1280px);
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+  display: flex;
+}
+.Column_9248_28762 {
+  max-width: var(--Max-Width-max-width-large, 768px);
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  display: flex;
+}
+.Content_9248_28763 {
+  box-sizing: border-box;
+  background: #fff;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  display: flex;
+}
+
+/* For the combined headline with animation */
+.MediumLengthHeroHeadlineGoesHere_9248_28764 {
+  color: var(--Color-Scheme-2-Text, #000);
+  text-align: center;
+  font-family: Roboto;
+  font-size: var(--Text-Sizes-Heading-1, 72px);
+  letter-spacing: -0.72px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  display: flex; /* Use flex to ensure static and dynamic parts align */
+  justify-content: center;
+  align-items: center; /* Vertically align the two spans */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  white-space: normal; /* Allow normal text wrapping */
+  gap: 0.5em; /* Small gap between static and dynamic parts */
+}
+
+/* New class for the dynamic part of the headline, specific for typing animation */
+.dynamicText {
+  display: inline-block;
+  min-width: 300px; /* Adjust this based on your longest changing phrase */
+  height: 1.2em; /* Ensure consistent height for the changing text */
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: middle; /* Align with static part */
+  text-align: left; /* Align changing text to the left */
+  /* Optional: Blinking cursor styling */
+  border-right: 2px solid transparent;
+}
+
+/* Optional: Typing cursor blink animation */
+@keyframes blink-caret {
+  from, to { border-right-color: transparent }
+  50% { border-right-color: var(--Color-Scheme-2-Text, #000) }
+}
+
+.LoremIpsumDolorSitAmetConsecteturAdipiscingElitSuspendisseVariusEnimInErosElementumTristiqueDuisCursusMiQuisViverraOrnareErosDolorInterdumNullaUtCommodoDiamLiberoVitaeErat_9248_28765 {
+  color: var(--Color-Scheme-2-Text, #000);
+  text-align: center;
+  font-family: Roboto;
+  font-size: var(--Text-Sizes-Text-Medium, 18px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Actions_9248_28766 {
+  align-items: flex-start;
+  gap: 16px;
+  display: flex;
+  flex-wrap: wrap; /* Added for responsiveness */
+  justify-content: center; /* Center buttons on small screens */
+}
+.Button_9248_28767 {
+  background: var(--Color-Brand-Blue, #112646);
+  box-shadow:
+    0 32px 24px 0 #ffffff0d inset,
+    0 2px 1px 0 #ffffff40 inset,
+    0 0 0 1px var(--Opacity-Neutral-Darkest-15, #00000026) inset,
+    0 -2px 1px 0 #0003 inset,
+    0 1px 2px 0 var(--Opacity-Neutral-Darkest-5, #0000000d);
+  border-radius: 100px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  display: flex;
+  cursor: pointer;
+}
+.Button_4179_8873 {
+  color: var(--Color-White, #fff);
+  font-family: Inter;
+  font-size: var(--Text-Sizes-Text-Regular, 16px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  display: inline-block;
+}
+.Button_9248_28768 {
+  border: 2px solid var(--Color-Neutral-Darkest, #000);
+  background: var(--Opacity-Transparent, #fff0);
+  box-sizing: border-box;
+  border-radius: 100px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  display: flex;
+  cursor: pointer;
+}
+.Button_4179_8893 {
+  color: var(--Color-Neutral-Darkest, #000);
+  font-family: Inter;
+  font-size: var(--Text-Sizes-Text-Regular, 16px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  display: inline-block;
+}

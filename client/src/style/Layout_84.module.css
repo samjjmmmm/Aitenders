@@ -1,0 +1,157 @@
+/* src/styles/Layout_84.module.css */
+
+.Layout_84_9248_29192 {
+  padding: 375px var(--Page-Padding-padding-global, 64px) 85px
+    var(--Page-Padding-padding-global, 64px);
+  background: var(--Color-Scheme-1-Foreground, #e7e9ec);
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+  min-height: 867px; /* Changed to min-height for responsiveness */
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+.Container_9248_29193 {
+  max-width: var(--Container-container-large, 1280px);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 80px;
+  width: 100%;
+  display: flex;
+}
+.Component_9248_29194 {
+  align-items: flex-start;
+  gap: 80px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; /* Added for responsiveness */
+  justify-content: center; /* Center items if they wrap */
+}
+.Column_9248_29195 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  /* width: 494px; Removed fixed width */
+  flex: 1; /* Allow it to grow/shrink */
+  min-width: 300px; /* Minimum width for responsiveness */
+  min-height: 186px; /* Changed to min-height for responsiveness */
+  display: flex;
+  overflow: hidden;
+}
+.Heading_9248_29196 {
+  color: var(--Color-Scheme-2-Text, #000);
+  font-family: Roboto;
+  font-size: var(--Text-Sizes-Heading-2, 52px);
+  letter-spacing: -0.52px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  display: inline-block;
+}
+.Column_9248_29197 {
+  flex-direction: column;
+  flex: 1 0 0;
+  align-items: flex-start;
+  gap: 32px;
+  width: 100%;
+  min-height: 134px; /* Changed to min-height for responsiveness */
+  display: flex;
+  overflow: hidden;
+}
+.Content_9248_29906 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  display: flex;
+}
+.Row_9248_29905 {
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  padding: 8px 0;
+  display: flex;
+  flex-wrap: wrap; /* Added for responsiveness */
+  justify-content: center; /* Center items if they wrap */
+}
+.ListItem_9248_29892,
+.ListItem_9248_29895 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  /* Removed fixed width */
+  flex: 1; /* Allow to grow/shrink */
+  min-width: 200px; /* Minimum width for responsiveness */
+  display: flex;
+}
+.Number_9248_29893,
+.Number_9248_29896,
+.Number_9248_30965 {
+  color: #312727; /* Consider using a CSS variable here for easier branding */
+  font-family: Raleway;
+  font-size: var(--Text-Sizes-Heading-2, 52px);
+  letter-spacing: -0.52px;
+  /* width: 135px; Removed fixed width */
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  display: inline-block;
+  white-space: nowrap; /* Prevent wrapping for numbers/short phrases */
+}
+.Text_9248_29894,
+.Text_9248_29897,
+.Text_9248_30966 {
+  color: var(--Color-Scheme-2-Text, #000);
+  font-family: Inter;
+  font-size: var(--Text-Sizes-Text-Regular, 16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.ListItem_9248_30964 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 170px; /* Consider adjusting or making fluid */
+  min-height: 126px; /* Changed to min-height */
+  display: flex;
+  position: absolute; /* Keep absolute for specific placement */
+  bottom: 359.084px; /* These absolute values will need media queries for responsiveness */
+  right: 112.729px;
+  /* Consider using left/right: 50% and transform: translateX(-50%) for centering on smaller screens */
+}
+.Actions_9254_457 {
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  /* width: 482px; Removed fixed width */
+  min-height: 44px; /* Changed to min-height */
+  display: flex;
+  flex-wrap: wrap; /* Added for responsiveness */
+}
+.Button_9254_458 {
+  border: 2px solid var(--Color-Neutral-Darkest, #000);
+  background: var(--Opacity-Transparent, #fff0);
+  box-sizing: border-box;
+  border-radius: 100px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  display: flex;
+  cursor: pointer;
+}
+.Button_4179_8963 {
+  color: var(--Color-Neutral-Darkest, #000);
+  font-family: Inter;
+  font-size: var(--Text-Sizes-Text-Regular, 16px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  display: inline-block;
+  text-align: center; /* Ensure text centers if it wraps */
+}
