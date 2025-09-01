@@ -57,13 +57,14 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // Initialize translation system and seed all translations
+  // Initialize translation system (skip seeding for faster startup)
   try {
     await translationService.initializeLanguages();
     console.log('✅ Languages initialized');
 
-    await translationService.initializeAllTranslations();
-    console.log('✅ All translations seeded successfully');
+    // Skip translation seeding on startup to improve performance
+    // Run: npm run seed-translations to seed translations if needed
+    console.log('ℹ️ Skipping translation seeding for faster startup');
   } catch (error) {
     console.error('Error initializing translations:', error);
   }

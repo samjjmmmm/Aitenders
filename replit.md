@@ -43,4 +43,7 @@ The platform adopts an enterprise B2B SaaS aesthetic, emphasizing professional t
 - **Validation**: Zod
 - **Styling**: Tailwind CSS
 - **Development Environment**: Replit (for development optimizations)
+
+## Recent Changes
+- **September 1, 2025**: Fixed critical startup issue where translation seeding process was causing server hang during initialization. Temporarily disabled translation seeding on startup for improved performance - translations can be seeded separately using `npm run seed-translations` command.
 ```
