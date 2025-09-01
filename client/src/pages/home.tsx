@@ -36,7 +36,7 @@ import Cta_25 from '../components/Cta_25'; // Call to Action section (this was t
 
 
 // Import your global CSS for variables and base styles
-import '../styles/global.css'; 
+import '../style/global.css'; 
 
 // --- START: Your Existing Interface and Logic from home.tsx (RETAINED) ---
 interface SelectionCard {
