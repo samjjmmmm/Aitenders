@@ -1,6 +1,6 @@
 // src/components/Cta_25.tsx
 import React from 'react';
-import styles from '../styles/Cta_25.module.css';
+import styles from '../style/Cta_25.module.css';
 
 
 export default function Cta_25() {

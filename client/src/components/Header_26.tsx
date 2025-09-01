@@ -1,6 +1,5 @@
 // src/components/Header_26.tsx
 import React, { useState, useEffect } from 'react';
-import styles from '../styles/Header_26.module.css';
 
 // Dynamic texts for the headline animation
 const dynamicPhrases = [
@@ -38,43 +37,33 @@ export default function Header_26() {
     };
 
     let timer: NodeJS.Timeout;
-    if (isDeleting && displayedText !== '') { // Only delete if there's text to delete
+    if (isDeleting && displayedText !== '') {
       timer = setTimeout(handleTyping, deletingSpeed);
-    } else if (displayedText === dynamicPhrases[currentPhraseIndex] && !isDeleting) { // Pause after full phrase is typed
+    } else if (displayedText === dynamicPhrases[currentPhraseIndex] && !isDeleting) {
       timer = setTimeout(handleTyping, pauseBeforeDelete);
-    } else { // Typing
+    } else {
       timer = setTimeout(handleTyping, typingSpeed);
     }
 
     return () => clearTimeout(timer);
-  }, [displayedText, isDeleting, currentPhraseIndex, dynamicPhrases, pauseBeforeDelete, pauseBeforeType, typingSpeed, deletingSpeed]);
-
+  }, [displayedText, isDeleting, currentPhraseIndex]);
 
   return (
-    <div className={styles.Header_26_9248_28760}>
-      <div className={styles.Container_9248_28761}>
-        <div className={styles.Column_9248_28762}>
-          <div className={styles.Content_9248_28763}>
-            {/* Main headline with animation */}
-            <span className={styles.MediumLengthHeroHeadlineGoesHere_9248_28764}>
-              <span>Votre offre,&nbsp;</span> {/* Static part */}
-              <span className={styles.dynamicText}>
-                {displayedText}
-                {/* Add a blinking cursor for typing effect */}
-                <span style={{ borderRight: `2px solid ${isDeleting || displayedText === dynamicPhrases[currentPhraseIndex] ? 'transparent' : 'currentColor'}`, animation: `blink-caret .75s step-end infinite` }}></span>
-              </span>
-            </span>
-            {/* Sub-headline */}
-            <span className={styles.LoremIpsumDolorSitAmetConsecteturAdipiscingElitSuspendisseVariusEnimInErosElementumTristiqueDuisCursusMiQuisViverraOrnareErosDolorInterdumNullaUtCommodoDiamLiberoVitaeErat_9248_28765}>
-              Découvrez, pilotez et sécurisez chaque clause&nbsp;dès le premier jour.
-            </span>
-          </div>
-          <div className={styles.Actions_9248_28766}>
-            <div className={styles.Button_9248_28767}><span className={styles.Button_4179_8873}>Get Started</span></div>
-            <div className={styles.Button_9248_28768}><span className={styles.Button_4179_8893}>Learn More</span></div>
-          </div>
-        </div>
+    <header className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+      <div className="max-w-6xl mx-auto px-6 text-center">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          Une vision contractuelle{' '}
+          <span className="text-blue-200 border-r-2 border-blue-200 animate-pulse min-h-[1em] inline-block min-w-[200px] text-left">
+            {displayedText}
+          </span>
+        </h1>
+        <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
+          Transformez vos appels d'offres complexes en projets maîtrisés grâce à l'intelligence artificielle
+        </p>
+        <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+          Découvrir la solution
+        </button>
       </div>
-    </div>
+    </header>
   );
 }

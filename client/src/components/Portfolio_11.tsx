@@ -1,6 +1,6 @@
 // src/components/Portfolio_11.tsx
 import React from 'react';
-import styles from '../styles/Portfolio_11.module.css';
+import styles from '../style/Portfolio_11.module.css';
 
 
 export default function Portfolio_11() {

@@ -559,8 +559,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
             success: true, 
             message: result.message,
             reportSent: true,
-            hubspotContactId: result.reportData.hubspotContactId,
-            hubspotDealId: result.reportData.hubspotDealId
+            hubspotContactId: (result.reportData as any)?.hubspotContactId,
+            hubspotDealId: (result.reportData as any)?.hubspotDealId
           });
         } catch (emailError) {
           console.error('Failed to send ROI report:', emailError);
@@ -569,8 +569,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
             message: result.message,
             reportSent: false,
             warning: "Rapport généré mais l'envoi email a échoué",
-            hubspotContactId: result.reportData.hubspotContactId,
-            hubspotDealId: result.reportData.hubspotDealId
+            hubspotContactId: (result.reportData as any)?.hubspotContactId,
+            hubspotDealId: (result.reportData as any)?.hubspotDealId
           });
         }
       } else {

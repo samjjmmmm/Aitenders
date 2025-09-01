@@ -1,6 +1,6 @@
 // src/components/Logo_3.tsx
 import React from 'react';
-import styles from '../styles/Logo_3.module.css';
+import styles from '../style/Logo_3.module.css';
 
 export default function Logo_3() {
   return (

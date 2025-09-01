@@ -1,6 +1,6 @@
 // src/components/Layout_84.tsx
 import React from 'react';
-import styles from '../styles/Layout_84.module.css';
+import styles from '../style/Layout_84.module.css';
 
 
 export default function Layout_84() {

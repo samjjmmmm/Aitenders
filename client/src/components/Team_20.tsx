@@ -1,6 +1,6 @@
 // src/components/Team_20.tsx
 import React from 'react';
-import styles from '../styles/Team_20.module.css';
+import styles from '../style/Team_20.module.css';
 
 export default function Team_20() {
   return (
