@@ -1,0 +1,151 @@
+/* This file contains styles for both the "AI Copilot" and "Offer Steps" sections */
+
+/* Styles for the "Votre copilote IA" section */
+.Layout_401_9248_28988 {
+  padding: 120px var(--Page-Padding-padding-global, 64px); /* Adjusted padding for better spacing */
+  background: var(--Color-Scheme-2-Background, #fff);
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+.Container_9253_31226 {
+  max-width: var(--Container-container-large, 1280px);
+  flex-direction: column;
+  align-items: center;
+  gap: 60px; /* Adjusted gap */
+  width: 100%;
+  display: flex;
+}
+.SectionTitle_9253_31227 {
+  max-width: var(--Max-Width-max-width-large, 768px);
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  display: flex;
+}
+.TaglineWrapper_9253_31228 {
+  align-items: center;
+  display: flex;
+}
+.Tagline_9253_31229 {
+  color: var(--Color-Scheme-2-Text, #000);
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  display: inline-block;
+}
+.Content_9253_31230 {
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  display: flex;
+}
+.Heading_9253_31231 {
+  color: var(--Color-Scheme-2-Text, #000);
+  text-align: center;
+  font-family: Raleway, sans-serif;
+  font-size: var(--Text-Sizes-Heading-2, 52px);
+  letter-spacing: -0.52px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  display: inline-block;
+}
+.Text_9253_31232 {
+  color: var(--Color-Scheme-2-Text, #000);
+  text-align: center;
+  font-family: Inter, sans-serif;
+  font-size: var(--Text-Sizes-Text-Medium, 18px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Row_9253_31234 {
+  align-items: flex-start;
+  gap: 48px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  justify-content: center; /* Center items when they wrap */
+}
+.Column_9253_31235 {
+  flex-direction: column;
+  flex: 1 1 30%; /* Allow items to grow/shrink with a base width */
+  align-items: center;
+  gap: 16px;
+  min-width: 280px; /* Minimum width for responsiveness */
+  padding: 16px;
+  display: flex;
+  text-align: center; /* Center content within the column */
+}
+.IconContainer { /* A new class for the icon wrapper */
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--aitenders-primary-blue, #3880E8);
+}
+.FeatureTitle { /* A new class for the feature titles */
+    color: var(--Color-Scheme-2-Text, #000);
+    font-family: Raleway, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 130%;
+}
+.FeatureDescription { /* A new class for the feature descriptions */
+    color: var(--Color-Scheme-2-Text, #000);
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+
+/* Styles for the "Nous accompagnons les équipes" section */
+.Layout_401_9254_443 {
+  padding: 112px var(--Page-Padding-padding-global, 64px); /* Adjusted padding */
+  background: var(--Color-Scheme-2-Background, #fff);
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+.SectionTitle_9253_31701 {
+  max-width: var(--Max-Width-max-width-large, 768px);
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  display: flex;
+}
+.Content_9253_31704 {
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  display: flex;
+}
+.Heading_9253_31705 {
+  color: var(--Color-Scheme-3-Text, #000);
+  text-align: center;
+  font-family: Raleway, sans-serif;
+  font-size: var(--Text-Sizes-Heading-2, 52px);
+  letter-spacing: -0.52px;
+  flex: 1 0 0;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  display: inline-block;
+}

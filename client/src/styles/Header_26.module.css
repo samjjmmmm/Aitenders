@@ -1,4 +1,4 @@
-/* src/styles/Header_26.module.css */
+/* client/src/styles/Header_26.module.css */
 
 .Header_26_9248_28760 {
   padding: var(--Section-Padding-padding-section-large, 112px)
@@ -37,8 +37,6 @@
   width: 100%;
   display: flex;
 }
-
-/* For the combined headline with animation */
 .MediumLengthHeroHeadlineGoesHere_9248_28764 {
   color: var(--Color-Scheme-2-Text, #000);
   text-align: center;
@@ -48,33 +46,8 @@
   font-style: normal;
   font-weight: 500;
   line-height: 120%;
-  display: flex; /* Use flex to ensure static and dynamic parts align */
-  justify-content: center;
-  align-items: center; /* Vertically align the two spans */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  white-space: normal; /* Allow normal text wrapping */
-  gap: 0.5em; /* Small gap between static and dynamic parts */
-}
-
-/* New class for the dynamic part of the headline, specific for typing animation */
-.dynamicText {
   display: inline-block;
-  min-width: 300px; /* Adjust this based on your longest changing phrase */
-  height: 1.2em; /* Ensure consistent height for the changing text */
-  overflow: hidden;
-  white-space: nowrap;
-  vertical-align: middle; /* Align with static part */
-  text-align: left; /* Align changing text to the left */
-  /* Optional: Blinking cursor styling */
-  border-right: 2px solid transparent;
 }
-
-/* Optional: Typing cursor blink animation */
-@keyframes blink-caret {
-  from, to { border-right-color: transparent }
-  50% { border-right-color: var(--Color-Scheme-2-Text, #000) }
-}
-
 .LoremIpsumDolorSitAmetConsecteturAdipiscingElitSuspendisseVariusEnimInErosElementumTristiqueDuisCursusMiQuisViverraOrnareErosDolorInterdumNullaUtCommodoDiamLiberoVitaeErat_9248_28765 {
   color: var(--Color-Scheme-2-Text, #000);
   text-align: center;
@@ -89,8 +62,6 @@
   align-items: flex-start;
   gap: 16px;
   display: flex;
-  flex-wrap: wrap; /* Added for responsiveness */
-  justify-content: center; /* Center buttons on small screens */
 }
 .Button_9248_28767 {
   background: var(--Color-Brand-Blue, #112646);
@@ -106,7 +77,6 @@
   gap: 8px;
   padding: 10px 24px;
   display: flex;
-  cursor: pointer;
 }
 .Button_4179_8873 {
   color: var(--Color-White, #fff);
@@ -127,7 +97,6 @@
   gap: 8px;
   padding: 10px 24px;
   display: flex;
-  cursor: pointer;
 }
 .Button_4179_8893 {
   color: var(--Color-Neutral-Darkest, #000);

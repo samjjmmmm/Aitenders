@@ -1,412 +1,449 @@
+          /* client/src/index.css */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+          /*
+             *** IMPORTANT: ALL @import RULES (like Google Fonts) MUST BE AT THE VERY TOP ***
+             *** before any other CSS rules, including @tailwind directives.             ***
+          */
 
-:root {
-  /* Set a single source of truth for width (scoped var is fine) */
-  --sidebar-width: 280px;
-  
-  /* Monochromatic Black Design */
-  --background: #ffffff; /* White background */
-  --foreground: #000000; /* Black text */
-  --muted: #f5f5f5; /* Light gray for muted elements */
-  --muted-foreground: #000000; /* Black for muted text */
-  --popover: #ffffff; /* White */
-  --popover-foreground: #000000; /* Black */
-  --card: #ffffff; /* White */
-  --card-foreground: #000000; /* Black */
-  --border: #e5e5e5; /* Light gray borders */
-  --input: #e5e5e5; /* Light gray input borders */
-  --primary: #000000; /* Black for primary elements */
-  --primary-foreground: #ffffff; /* White text on black backgrounds */
-  --secondary: #f5f5f5; /* Light gray for secondary elements */
-  --secondary-foreground: #000000; /* Black text on light backgrounds */
-  --accent: #f5f5f5; /* Light gray for accents */
-  --accent-foreground: #000000; /* Black text */
-  --destructive: #000000; /* Black for destructive actions */
-  --destructive-foreground: #ffffff; /* White text on black */
-  --ring: #000000; /* Black focus rings */
-  --radius: 0.75rem;
-  
-  /* Monochromatic Brand Colors */
-  --aitenders-dark-blue: #000000; /* Black */
-  --aitenders-white-blue: #ffffff; /* White */
-  --aitenders-primary-blue: #000000; /* Black */
-  --aitenders-pale-blue: #f5f5f5; /* Light gray */
-  --aitenders-pastel-blue: #f0f0f0; /* Slightly darker gray */
-  --aitenders-light-blue: #e5e5e5; /* Medium gray */
-  --aitenders-black: #000000; /* Black */
-}
+          /* Google Font Imports - Consolidated and Cleaned (no duplicates) */
+          @import url("https://fonts.googleapis.com/css?family=Inter:wght@400;500;600;700&display=swap");
+          @import url("https://fonts.googleapis.com/css?family=Raleway:wght@500&display=swap");
+          @import url("https://fonts.googleapis.com/css?family=Roboto:wght@400;500;700&display=swap");
+          @import url("https://fonts.googleapis.com/css?family=Montserrat:wght@400&display=swap");
 
-.dark {
-  --background: #000000; /* Black background */
-  --foreground: #ffffff; /* White text */
-  --muted: #1a1a1a; /* Dark gray for muted elements */
-  --muted-foreground: #ffffff; /* White for muted text */
-  --popover: #1a1a1a; /* Dark gray */
-  --popover-foreground: #ffffff; /* White */
-  --card: #1a1a1a; /* Dark gray */
-  --card-foreground: #ffffff; /* White */
-  --border: #333333; /* Medium gray borders */
-  --input: #333333; /* Medium gray input borders */
-  --primary: #ffffff; /* White for primary elements */
-  --primary-foreground: #000000; /* Black text on white backgrounds */
-  --secondary: #333333; /* Medium gray for secondary elements */
-  --secondary-foreground: #ffffff; /* White text on dark backgrounds */
-  --accent: #1a1a1a; /* Dark gray for accents */
-  --accent-foreground: #ffffff; /* White text */
-  --destructive: #ffffff; /* White for destructive actions */
-  --destructive-foreground: #000000; /* Black text on white */
-  --ring: #ffffff; /* White focus rings */
-}
+          /* Tailwind CSS Directives - These must come AFTER @import rules */
+          @tailwind base;
+          @tailwind components;
+          @tailwind utilities;
 
-/* FORCE GLOBAL STYLES ON ALL ELEMENTS */
-@layer base {
-  * {
-    @apply border-border;
-  }
+          /* CSS Variables - Consolidated and Cleaned */
+          :root {
+            /* Set a single source of truth for width (scoped var is fine) */
+            --sidebar-width: 280px;
 
-  /* FORCE INTER FONT ON EVERYTHING */
-  *, *::before, *::after,
-  html, body, div, span, applet, object, iframe,
-  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-  a, abbr, acronym, address, big, cite, code,
-  del, dfn, em, img, ins, kbd, q, s, samp,
-  small, strike, strong, sub, sup, tt, var,
-  b, u, i, center,
-  dl, dt, dd, ol, ul, li,
-  fieldset, form, label, legend,
-  table, caption, tbody, tfoot, thead, tr, th, td,
-  article, aside, canvas, details, embed, 
-  figure, figcaption, footer, header, hgroup, 
-  menu, nav, output, ruby, section, summary,
-  time, mark, audio, video,
-  button, input, textarea, select, option {
-    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
-  }
+            /* Monochromatic Design (Base for UI Kit elements if applicable) */
+            --background: #ffffff; /* White background */
+            --foreground: #000000; /* Black text */
+            --muted: #f5f5f5; /* Light gray for muted elements */
+            --muted-foreground: #000000; /* Black for muted text */
+            --popover: #ffffff; /* White */
+            --popover-foreground: #000000; /* Black */
+            --card: #ffffff; /* White */
+            --card-foreground: #000000; /* Black */
+            --border: #e5e5e5; /* Light gray borders */
+            --input: #e5e5e5; /* Light gray input borders */
+            --primary: #000000; /* Black for primary elements */
+            --primary-foreground: #ffffff; /* White text on black backgrounds */
+            --secondary: #f5f5f5; /* Light gray for secondary elements */
+            --secondary-foreground: #000000; /* Black text on light backgrounds */
+            --accent: #f5f5f5; /* Light gray for accents */
+            --accent-foreground: #000000; /* Black text */
+            --destructive: #000000; /* Black for destructive actions */
+            --destructive-foreground: #ffffff; /* White text on black */
+            --ring: #000000; /* Black focus rings */
+            --radius: 0.75rem;
 
-  /* FORCE BLACK TEXT COLOR ON ALL TEXT ELEMENTS */
-  *, *::before, *::after,
-  p, span, div, h1, h2, h3, h4, h5, h6, 
-  a, button, input, textarea, select, label,
-  li, td, th, caption, figcaption {
-    color: #000000 !important;
-  }
+            /* YOUR BRAND COLORS (Crucial for Figma exports and consistent branding) */
+            --aitenders-dark-blue: #112646;     /* Your actual dark blue */
+            --aitenders-white-blue: #FBFCFF;    /* Your actual off-white blue */
+            --aitenders-primary-blue: #3880E8;  /* Your actual accent blue */
+            --aitenders-pale-blue: #F5F9FE;     /* Your actual very light blue */
+            --aitenders-pastel-blue: #EBF2FD;   /* Your actual slightly darker light blue */
+            --aitenders-light-blue: #C3D9F8;    /* Your actual medium gray-blue */
+            --aitenders-black: #000;            /* Your actual black */
 
-  /* FORCE WHITE BACKGROUND ON MAIN CONTAINERS */
-  body, html, #root, main, section, article, div {
-    background-color: #ffffff !important;
-  }
+            /* Figma Exported Generic Color Scheme Vars (mapped to your brand colors where possible) */
+            --Color-Brand-Blue: var(--aitenders-dark-blue);
+            --Color-CTA-Blue: var(--aitenders-primary-blue);
+            --Color-White: var(--aitenders-white-blue);
+            --Color-Neutral-Darkest: var(--aitenders-black); /* Figma's #000 */
 
-  body {
-    @apply font-sans antialiased bg-background text-foreground;
-    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
-    color: #000000 !important;
-    background-color: #ffffff !important;
-  }
-}
+            --Color-Scheme-1-Background: var(--aitenders-pale-blue); /* Assuming this maps to a light background */
+            --Color-Scheme-1-Foreground: var(--aitenders-pale-blue); /* Same as above */
+            --Color-Scheme-1-Border: var(--aitenders-black); 
 
-@layer utilities {
-  .gradient-bg {
-    background: linear-gradient(135deg, var(--aitenders-pale-blue), var(--aitenders-pastel-blue)) !important;
-  }
-  
-  .brand-gradient {
-    background: linear-gradient(135deg, var(--aitenders-pale-blue) 0%, var(--aitenders-pastel-blue) 50%, var(--aitenders-light-blue) 100%) !important;
-  }
-  
-  .card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:scale-[1.02];
-  }
+            --Color-Scheme-2-Background: var(--aitenders-white-blue); /* Assuming white background */
+            --Color-Scheme-2-Text: var(--aitenders-black); /* Assuming black text */
+            --Color-Scheme-2-Border: var(--aitenders-black); 
 
-  /* FORCE SLACK-STYLE CSS GRID LAYOUTS ON ALL PAGES */
-  .hero-grid, .hero-section {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 2rem !important;
-    align-items: center !important;
-  }
+            --Color-Scheme-3-Background: var(--aitenders-pale-blue); /* Assuming a light gray background */
+            --Color-Scheme-3-Text: var(--aitenders-black); 
+            --Color-Scheme-3-Foreground: var(--aitenders-pale-blue); /* Same as above */
 
-  .features-grid, .features-section {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-    gap: 2rem !important;
-  }
+            /* Figma Exported Layout/Spacing/Radius Vars */
+            --Page-Padding-padding-global: 64px;
+            --Section-Padding-padding-section-large: 112px;
+            --Section-Padding-padding-section-medium: 80px;
+            --Container-container-large: 1280px;
+            --Max-Width-max-width-large: 768px;
+            --Text-Sizes-Heading-1: 72px;
+            --Text-Sizes-Heading-2: 52px;
+            --Text-Sizes-Heading-5: 28px;
+            --Text-Sizes-Text-Medium: 18px;
+            --Text-Sizes-Text-Regular: 16px;
+            --Opacity-Transparent: rgba(255, 255, 255, 0);
+            --Opacity-Neutral-Darkest-15: rgba(0, 0, 0, 0.15);
+            --Opacity-Neutral-Darkest-5: rgba(0, 0, 0, 0.05);
+            --Radius-Large: 40px;
+            --Radius-Medium: 32px;
+            --Stroke-Divider-Width: 2px;
+          }
 
-  .stats-grid, .stats-section {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
-    gap: 2rem !important;
-  }
+          .dark {
+            /* You can adapt these dark mode vars if you have a dark mode toggle */
+            --background: #000000;
+            --foreground: #ffffff;
+            --muted: #1a1a1a;
+            --muted-foreground: #ffffff;
+            --popover: #1a1a1a;
+            --popover-foreground: #ffffff;
+            --card: #1a1a1a;
+            --card-foreground: #ffffff;
+            --border: #333333;
+            --input: #333333;
+            --primary: #ffffff;
+            --primary-foreground: #000000;
+            --secondary: #333333;
+            --secondary-foreground: #ffffff;
+            --accent: #1a1a1a;
+            --accent-foreground: #ffffff;
+            --destructive: #ffffff;
+            --destructive-foreground: #000000;
+            --ring: #ffffff;
+          }
 
-  .complex-grid, .complex-section {
-    display: grid !important;
-    grid-template-columns: 2fr 1fr !important;
-    grid-template-rows: auto !important;
-    gap: 2rem !important;
-  }
+          /* Base layer styles (less aggressive, remove !important) */
+          @layer base {
+            /* Apply border-border globally, but don't force it with !important */
+            * {
+              border-color: var(--border); /* Changed to use var */
+            }
 
-  /* FORCE SLACK-STYLE TYPOGRAPHY ON ALL HEADINGS */
-  .slack-hero-title, h1 {
-    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif !important;
-    font-weight: 700 !important;
-    font-size: 56px !important;
-    line-height: 56px !important;
-    letter-spacing: -0.025em !important;
-    color: #000000 !important;
-  }
+            /* Set default font on body, then let components override */
+            body {
+              font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+              color: var(--foreground); /* Use foreground var */
+              background-color: var(--background); /* Use background var */
+              -webkit-font-smoothing: antialiased; /* Better font rendering */
+              -moz-osx-font-smoothing: grayscale; /* Better font rendering */
+            }
 
-  h2 {
-    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif !important;
-    font-weight: 600 !important;
-    font-size: 42px !important;
-    line-height: 48px !important;
-    color: #000000 !important;
-  }
+            /* Reset some default browser styles */
+            h1, h2, h3, h4, h5, h6 {
+              font-size: inherit; /* Inherit font size by default */
+              font-weight: inherit; /* Inherit font weight by default */
+            }
 
-  h3 {
-    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif !important;
-    font-weight: 600 !important;
-    font-size: 32px !important;
-    line-height: 40px !important;
-    color: #000000 !important;
-  }
+            /* Basic Link styling if not handled by components */
+            a {
+              color: inherit;
+              text-decoration: none;
+            }
+          }
 
-  h4, h5, h6 {
-    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif !important;
-    font-weight: 500 !important;
-    color: #000000 !important;
-  }
+          /* Utilities layer (remove !important from common properties to avoid conflicts) */
+          @layer utilities {
+            .gradient-bg {
+              background: linear-gradient(135deg, var(--aitenders-pale-blue), var(--aitenders-pastel-blue));
+            }
 
-  /* FORCE BODY TEXT STYLES */
-  p, span, div, li, td, th {
-    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif !important;
-    color: #000000 !important;
-  }
+            .brand-gradient {
+              background: linear-gradient(135deg, var(--aitenders-pale-blue) 0%, var(--aitenders-pastel-blue) 50%, var(--aitenders-light-blue) 100%);
+            }
 
-  /* FORCE BUTTON STYLES */
-  button, .btn, [role="button"] {
-    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif !important;
-    font-weight: 500 !important;
-  }
+            .card-hover {
+              @apply transition-all duration-300 hover:shadow-lg hover:scale-[1.02];
+            }
 
-  /* FORCE INPUT STYLES */
-  input, textarea, select {
-    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif !important;
-    color: #000000 !important;
-  }
+            /* Generic grid layouts - remove !important to avoid overriding specific flexbox/grid */
+            .hero-grid, .hero-section {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 2rem;
+              align-items: center;
+            }
 
-  /* Responsive Grid Breakpoints - FORCED */
-  @media (max-width: 768px) {
-    .hero-grid, .hero-section {
-      grid-template-columns: 1fr !important;
-    }
-    
-    .features-grid, .features-section {
-      grid-template-columns: 1fr !important;
-    }
-    
-    .stats-grid, .stats-section {
-      grid-template-columns: 1fr !important;
-    }
-    
-    .complex-grid, .complex-section {
-      grid-template-columns: 1fr !important;
-    }
+            .features-grid, .features-section {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+              gap: 2rem;
+            }
 
-    .slack-hero-title, h1 {
-      font-size: clamp(32px, 8vw, 48px) !important;
-      line-height: 1.1 !important;
-    }
-  }
+            .stats-grid, .stats-section {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+              gap: 2rem;
+            }
 
-  @media (min-width: 769px) and (max-width: 1024px) {
-    .features-grid, .features-section {
-      grid-template-columns: repeat(2, 1fr) !important;
-    }
-    
-    .stats-grid, .stats-section {
-      grid-template-columns: repeat(2, 1fr) !important;
-    }
+            .complex-grid, .complex-section {
+              display: grid;
+              grid-template-columns: 2fr 1fr;
+              grid-template-rows: auto;
+              gap: 2rem;
+            }
 
-    .slack-hero-title, h1 {
-      font-size: clamp(42px, 6vw, 56px) !important;
-      line-height: 1.1 !important;
-    }
-  }
-  
-  .logo-scroll {
-    animation: scroll 20s linear infinite;
-    width: calc(100% * 3); /* Triple width for seamless loop */
-  }
-  
-  .logo-scroll:hover {
-    animation-play-state: paused;
-  }
-  
-  @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-33.333%); }
-  }
-  
-  /* Custom scrollbar for expanded chat */
-  .scrollbar-visible {
-    scrollbar-width: auto;
-    scrollbar-color: #a855f7 #e5e7eb;
-    overflow-y: scroll !important;
-  }
-  
-  .scrollbar-visible::-webkit-scrollbar {
-    width: 12px;
-    display: block;
-  }
-  
-  .scrollbar-visible::-webkit-scrollbar-track {
-    background: #e5e7eb;
-    border-radius: 6px;
-    margin: 4px 0;
-  }
-  
-  .scrollbar-visible::-webkit-scrollbar-thumb {
-    background: #a855f7;
-    border-radius: 6px;
-    border: 2px solid #e5e7eb;
-  }
-  
-  .scrollbar-visible::-webkit-scrollbar-thumb:hover {
-    background: #9333ea;
-  }
-  
-  .scrollbar-visible::-webkit-scrollbar-corner {
-    background: #e5e7eb;
-  }
-  
-  /* Make the existing sidebar fixed, opaque, and above content */
-  .right-sidebar {
-    position: fixed;       /* pin it */
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: var(--sidebar-width);
-    background: white;     /* white background */
-    opacity: 1 !important;             /* kill any previous transparency */
-    backdrop-filter: none !important;  /* kill blur/translucency */
-    mix-blend-mode: normal !important; /* prevent blending with alerts/toasts */
-    z-index: 1000;         /* above content but below modals if any */
-    border-left: 1px solid rgba(0,0,0,0.08);
-    box-shadow: -8px 0 24px rgba(0,0,0,0.18);
-    overflow-y: auto;      /* sidebar scrolls independently if long */
-    transform: translateX(100%); /* hidden by default */
-    transition: transform 0.3s ease-in-out;
-  }
+            /* Typography styles - These should ideally be component-specific if you want Figma exactness.
+               Removing !important allows Figma module CSS to take precedence.
+               You can keep these as fallbacks or for elements not covered by Figma's export. */
+            .slack-hero-title, h1 {
+              font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+              font-weight: 700;
+              font-size: 56px;
+              line-height: 56px;
+              letter-spacing: -0.025em;
+              color: var(--foreground);
+            }
 
-  .right-sidebar.open {
-    transform: translateX(0); /* shown when open */
-  }
+            h2 {
+              font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+              font-weight: 600;
+              font-size: 42px;
+              line-height: 48px;
+              color: var(--foreground);
+            }
 
-  /* Remove main content margin since sidebar is now hidden by default */
-  .main-content {
-    margin-left: 0;
-  }
+            h3 {
+              font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+              font-weight: 600;
+              font-size: 32px;
+              line-height: 40px;
+              color: var(--foreground);
+            }
 
-  /* Add top padding for fixed header and ensure scroll position starts at top */
-  .page-content {
-    padding-top: 4rem; /* 64px to match header height */
-  }
+            h4, h5, h6 {
+              font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+              font-weight: 500;
+              color: var(--foreground);
+            }
 
-  /* Ensure pages load scrolled to top */
-  html {
-    scroll-behavior: auto;
-  }
+            /* Body text styles - similar approach */
+            p, span, div, li, td, th {
+              font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+              color: var(--foreground);
+            }
 
-  /* Reset scroll position on route changes */
-  body {
-    overflow-x: hidden;
-  }
-}
+            /* Button styles */
+            button, .btn, [role="button"] {
+              font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+              font-weight: 500;
+            }
 
-/* FORCE CONTENT BOUNDARY ON ALL PAGES */
-.content-boundary, main, section, article {
-  max-width: 1200px !important;                       /* professional line-length on large screens */
-  margin-inline: auto !important;                     /* center horizontally */
-  padding-inline: clamp(16px, 4vw, 48px) !important;  /* guaranteed side padding on small/medium */
-  box-sizing: border-box !important;                  /* include padding in total width */
-}
+            /* Input styles */
+            input, textarea, select {
+              font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+              color: var(--foreground);
+            }
 
-/* Optional: a slightly narrower variant for long-form text sections */
-.content-boundary--narrow {
-  max-width: 960px !important;
-}
+            /* Responsive Grid Breakpoints - FORCED (Keep these for responsiveness) */
+            @media (max-width: 768px) {
+              .hero-grid, .hero-section {
+                grid-template-columns: 1fr;
+              }
 
-/* Escape hatch for specific elements that must span full width inside a section */
-.full-bleed {
-  margin-inline: calc(50% - 50vw) !important;
-  max-width: 100vw !important;
-  padding-inline: 0 !important;
-}
+              .features-grid, .features-section {
+                grid-template-columns: 1fr;
+              }
 
-/* Safety: media should not overflow the boundary */
-.content-boundary img,
-.content-boundary video,
-.content-boundary canvas,
-.content-boundary svg,
-main img, section img, article img,
-main video, section video, article video {
-  max-width: 100% !important;
-  height: auto !important;
-}
+              .stats-grid, .stats-section {
+                grid-template-columns: 1fr;
+              }
 
-/* Subtle Scroll Animations */
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
+              .complex-grid, .complex-section {
+                grid-template-columns: 1fr;
+              }
 
-.fade-in-up.animate {
-  opacity: 1;
-  transform: translateY(0);
-}
+              .slack-hero-title, h1 {
+                font-size: clamp(32px, 8vw, 48px);
+                line-height: 1.1;
+              }
+            }
 
-.fade-in-left {
-  opacity: 0;
-  transform: translateX(-30px);
-  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-}
+            @media (min-width: 769px) and (max-width: 1024px) {
+              .features-grid, .features-section {
+                grid-template-columns: repeat(2, 1fr);
+              }
 
-.fade-in-left.animate {
-  opacity: 1;
-  transform: translateX(0);
-}
+              .stats-grid, .stats-section {
+                grid-template-columns: repeat(2, 1fr);
+              }
 
-.fade-in-right {
-  opacity: 0;
-  transform: translateX(30px);
-  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-}
+              .slack-hero-title, h1 {
+                font-size: clamp(42px, 6vw, 56px);
+                line-height: 1.1;
+              }
+            }
 
-.fade-in-right.animate {
-  opacity: 1;
-  transform: translateX(0);
-}
+            .logo-scroll {
+              animation: scroll 20s linear infinite;
+              width: calc(100% * 3); /* Triple width for seamless loop */
+            }
 
-.fade-in {
-  opacity: 0;
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
+            .logo-scroll:hover {
+              animation-play-state: paused;
+            }
 
-.fade-in.animate {
-  opacity: 1;
-}
+            @keyframes scroll {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-33.333%); }
+            }
 
-.scale-in {
-  opacity: 0;
-  transform: scale(0.95);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
+            /* Custom scrollbar for expanded chat */
+            .scrollbar-visible {
+              scrollbar-width: auto;
+              scrollbar-color: #a855f7 #e5e7eb;
+              overflow-y: scroll;
+            }
 
-.scale-in.animate {
-  opacity: 1;
-  transform: scale(1);
-}
+            .scrollbar-visible::-webkit-scrollbar {
+              width: 12px;
+              display: block;
+            }
+
+            .scrollbar-visible::-webkit-scrollbar-track {
+              background: #e5e7eb;
+              border-radius: 6px;
+              margin: 4px 0;
+            }
+
+            .scrollbar-visible::-webkit-scrollbar-thumb {
+              background: #a855f7;
+              border-radius: 6px;
+              border: 2px solid #e5e7eb;
+            }
+
+            .scrollbar-visible::-webkit-scrollbar-thumb:hover {
+              background: #9333ea;
+            }
+
+            .scrollbar-visible::-webkit-scrollbar-corner {
+              background: #e5e7eb;
+            }
+
+            /* Make the existing sidebar fixed, opaque, and above content */
+            .right-sidebar {
+              position: fixed;
+              top: 0;
+              right: 0;
+              height: 100vh;
+              width: var(--sidebar-width);
+              background: white;
+              opacity: 1;
+              backdrop-filter: none;
+              mix-blend-mode: normal;
+              z-index: 1000;
+              border-left: 1px solid rgba(0,0,0,0.08);
+              box-shadow: -8px 0 24px rgba(0,0,0,0.18);
+              overflow-y: auto;
+              transform: translateX(100%);
+              transition: transform 0.3s ease-in-out;
+            }
+
+            .right-sidebar.open {
+              transform: translateX(0);
+            }
+
+            /* Remove main content margin since sidebar is now hidden by default */
+            .main-content {
+              margin-left: 0;
+            }
+
+            /* Add top padding for fixed header and ensure scroll position starts at top */
+            .page-content {
+              padding-top: 4rem; /* 64px to match header height */
+            }
+
+            /* Ensure pages load scrolled to top */
+            html {
+              scroll-behavior: auto;
+            }
+
+            /* Reset scroll position on route changes */
+            body {
+              overflow-x: hidden;
+            }
+          }
+
+          /* FORCE CONTENT BOUNDARY ON ALL PAGES - Removed !important for flexibility */
+          .content-boundary, main, section, article {
+            max-width: 1200px;
+            margin-inline: auto;
+            padding-inline: clamp(16px, 4vw, 48px);
+            box-sizing: border-box;
+          }
+
+          /* Optional: a slightly narrower variant for long-form text sections */
+          .content-boundary--narrow {
+            max-width: 960px;
+          }
+
+          /* Escape hatch for specific elements that must span full width inside a section */
+          .full-bleed {
+            margin-inline: calc(50% - 50vw);
+            max-width: 100vw;
+            padding-inline: 0;
+          }
+
+          /* Safety: media should not overflow the boundary */
+          .content-boundary img,
+          .content-boundary video,
+          .content-boundary canvas,
+          .content-boundary svg,
+          main img, section img, article img,
+          main video, section video, article video {
+            max-width: 100%;
+            height: auto;
+          }
+
+          /* Subtle Scroll Animations */
+          .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+
+          .fade-in-up.animate {
+            opacity: 1;
+            transform: translateY(0);
+          }
+
+          .fade-in-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+
+          .fade-in-left.animate {
+            opacity: 1;
+            transform: translateX(0);
+          }
+
+          .fade-in-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+
+          .fade-in-right.animate {
+            opacity: 1;
+            transform: translateX(0);
+          }
+
+          .fade-in {
+            opacity: 0;
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+
+          .fade-in.animate {
+            opacity: 1;
+          }
+
+          .scale-in {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+
+          .scale-in.animate {
+            opacity: 1;
+            transform: scale(1);
+          }

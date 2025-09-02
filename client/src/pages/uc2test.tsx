@@ -34,7 +34,7 @@ import Portfolio_11 from '../components/Portfolio_11';
 import Cta_25 from '../components/Cta_25';
 
 // Import global CSS for variables and base styles
-import '../styles/global.css'; 
+import '../index.css'; // This is the correct relative path // <--- Corrected path for global CSS from pages folder
 
 // --- START: Translations if this page needs them. Keep if the Figma content uses t[language]. ---
 // For this Figma-exported page, the text is largely static.
@@ -53,7 +53,7 @@ const t = {
 // --- END: Translations ---
 
 
-export default function TestUC2() { // Changed function name to match filename
+  export default function UC2Test() { // Changed function name to match filename
   const [language, setLanguage] = useState<'fr' | 'en'>('fr'); // Keep language state for Header
 
   return (

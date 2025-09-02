@@ -1,28 +1,40 @@
-// src/components/Layout_84.tsx
+// client/src/components/Layout_84.tsx
 import React from 'react';
-import styles from '../style/Layout_84.module.css';
+import { useInView } from 'react-intersection-observer';
+import styles from '../styles/Layout_84.module.css';
 
+export default function Layout_84(): JSX.Element {
 
-export default function Layout_84() {
+  // This hook detects when the component is visible on the screen
+  const { ref, inView } = useInView({
+    triggerOnce: true,    // Ensures the animation only runs once
+    threshold: 0.3,       // Triggers when 30% of the component is visible
+  });
+
   return (
-    <div className={styles.Layout_84_9248_29192}>
-      <div className={styles.Container_9248_29193}>
-        <div className={styles.Component_9248_29194}>
-          <div className={styles.Column_9248_29195}><span className={styles.Heading_9248_29196}>Des résultats concrets pour vos équipes</span></div>
-          <div className={styles.Column_9248_29197}>
-            <div className={styles.Content_9248_29906}>
-              <div className={styles.Row_9248_29905}>
-                <div className={styles.ListItem_9248_29892}><span className={styles.Number_9248_29893}>-50%</span><span className={styles.Text_9248_29894}>du temps d’analyse initiale.</span></div>
-                <div className={styles.ListItem_9248_29895}><span className={styles.Number_9248_29896}>100%</span><span className={styles.Text_9248_29897}>des clauses critiques identifiées et priorisées.</span></div>
-              </div>
-            </div>
+    // The 'ref' is attached here to observe this whole section
+    <section ref={ref} className={styles.sectionContainer}>
+      <div className={styles.contentWrapper}>
+        <div className={styles.youColumn}>
+          <h2 className={styles.heading}>Vous</h2>
+        </div>
+
+        {/* The 'animated' class is added here only when 'inView' is true */}
+        <div className={`${styles.statsColumn} ${inView ? styles.animated : ''}`}>
+          <div className={styles.statItem}>
+            <span className={styles.number}>-50%</span>
+            <p className={styles.text}>du temps d&apos;analyse initiale.</p>
+          </div>
+          <div className={styles.statItem}>
+            <span className={styles.number}>100%</span>
+            <p className={styles.text}>des clauses critiques identifiées et priorisées.</p>
+          </div>
+          <div className={styles.statItem}>
+            <span className={styles.number}>0</span>
+            <p className={styles.text}>surprise de dernière minute.</p>
           </div>
         </div>
       </div>
-      <div className={styles.ListItem_9248_30964}><span className={styles.Number_9248_30965}>0</span><span className={styles.Text_9248_30966}>Surprise de dernière minute</span></div>
-      <div className={styles.Actions_9254_457}>
-        <div className={styles.Button_9254_458}><span className={styles.Button_4179_8963}>Lancez la simulation de l’impact pour vos propres projets</span></div>
-      </div>
-    </div>
+    </section>
   );
 }

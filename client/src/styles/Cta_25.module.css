@@ -1,4 +1,4 @@
-/* src/styles/Cta_25.module.css */
+/* client/src/styles/Cta_25.module.css */
 
 .Cta_25_9253_31318 {
   padding: var(--Section-Padding-padding-section-large, 112px)
@@ -11,9 +11,6 @@
   min-height: 491px; /* Changed to min-height for responsiveness */
   display: flex;
   position: relative;
-  /* Removed bottom and left for responsiveness, relying on parent flow */
-  /* bottom: 339.084px; */
-  /* left: 0.271px; */
   overflow: hidden;
 }
 .Content_9253_31319 {
@@ -24,9 +21,6 @@
   width: 100%; /* Changed from fixed 574px to 100% */
   display: flex;
   position: relative; /* Changed to relative so it flows with content */
-  /* Removed top and left for responsiveness */
-  /* top: 61px; */
-  /* left: 191px; */
   text-align: center; /* Center text within this content block */
 }
 .Content_9253_31320 {
@@ -66,11 +60,8 @@
   max-width: 500px; /* Max width to maintain design intent */
   min-height: 232px; /* Changed to min-height */
   position: relative; /* Keep relative to flow, adjust if absolute is critical */
-  /* Removed top and right for responsiveness */
-  /* top: 60px; */
-  /* right: 154px; */
   box-shadow:
-    0 0 2px var(--Opacity-Neutral-Darkest-15), /* Using defined CSS variables */
+    0 0 2px var(--Opacity-Neutral-Darkest-15),
     0 0 1px var(--Opacity-Neutral-Darkest-5);
   display: flex; /* Added flex to control inner elements */
   flex-direction: column;
@@ -100,7 +91,6 @@
   flex-shrink: 0;
   width: 14.98px; /* Fixed width, consider using fluid */
   height: 3.32px; /* Fixed height, consider using fluid */
-  /* Make SVG paths use currentColor from parent */
   & svg path {
     fill: currentColor;
   }
@@ -165,7 +155,6 @@
   flex-shrink: 0;
   width: 10.72px; /* Fixed width, consider using fluid */
   height: 10.72px; /* Fixed height, consider using fluid */
-  /* Make SVG paths use currentColor from parent */
   & svg path {
     fill: currentColor;
   }

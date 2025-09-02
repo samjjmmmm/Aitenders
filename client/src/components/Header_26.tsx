@@ -1,69 +1,30 @@
-// src/components/Header_26.tsx
-import React, { useState, useEffect } from 'react';
-
-// Dynamic texts for the headline animation
-const dynamicPhrases = [
-  "100% claire",
-  "sans surprise",
-  "rapidement livrée",
-  "entièrement conforme"
-];
+// client/src/components/Header_26.tsx
+import React from 'react';
+import styles from '../styles/Header_26.module.css'; // This path must point to the correct CSS file.
 
 export default function Header_26() {
-  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
-  const [displayedText, setDisplayedText] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
-  const typingSpeed = 100; // milliseconds per character
-  const deletingSpeed = 50; // milliseconds per character
-  const pauseBeforeDelete = 1500; // milliseconds
-  const pauseBeforeType = 500; // milliseconds
-
-  useEffect(() => {
-    const handleTyping = () => {
-      const currentFullPhrase = dynamicPhrases[currentPhraseIndex];
-      if (isDeleting) {
-        setDisplayedText(prev => currentFullPhrase.substring(0, prev.length - 1));
-        if (displayedText === '') {
-          setIsDeleting(false);
-          // Wait a bit before typing the next phrase
-          setTimeout(() => setCurrentPhraseIndex(prev => (prev + 1) % dynamicPhrases.length), pauseBeforeType);
-        }
-      } else {
-        setDisplayedText(prev => currentFullPhrase.substring(0, prev.length + 1));
-        if (displayedText === currentFullPhrase) {
-          setIsDeleting(true);
-        }
-      }
-    };
-
-    let timer: NodeJS.Timeout;
-    if (isDeleting && displayedText !== '') {
-      timer = setTimeout(handleTyping, deletingSpeed);
-    } else if (displayedText === dynamicPhrases[currentPhraseIndex] && !isDeleting) {
-      timer = setTimeout(handleTyping, pauseBeforeDelete);
-    } else {
-      timer = setTimeout(handleTyping, typingSpeed);
-    }
-
-    return () => clearTimeout(timer);
-  }, [displayedText, isDeleting, currentPhraseIndex]);
-
   return (
-    <header className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          Une vision contractuelle{' '}
-          <span className="text-blue-200 border-r-2 border-blue-200 animate-pulse min-h-[1em] inline-block min-w-[200px] text-left">
-            {displayedText}
-          </span>
-        </h1>
-        <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
-          Transformez vos appels d'offres complexes en projets maîtrisés grâce à l'intelligence artificielle
-        </p>
-        <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-          Découvrir la solution
-        </button>
+    <div className={styles.Header_26_9248_28760}>
+      <div className={styles.Container_9248_28761}>
+        <div className={styles.Column_9248_28762}>
+          <div className={styles.Content_9248_28763}>
+            <span className={styles.MediumLengthHeroHeadlineGoesHere_9248_28764}>
+              Votre offre, 100% claire, 0% surprises
+            </span>
+            <span className={styles.LoremIpsumDolorSitAmetConsecteturAdipiscingElitSuspendisseVariusEnimInErosElementumTristiqueDuisCursusMiQuisViverraOrnareErosDolorInterdumNullaUtCommodoDiamLiberoVitaeErat_9248_28765}>
+              Découvrez, pilotez et sécurisez chaque clause&nbsp;dès le premier jour.
+            </span>
+          </div>
+          <div className={styles.Actions_9248_28766}>
+            <div className={styles.Button_9248_28767}>
+              <span className={styles.Button_4179_8873}>Get Started</span>
+            </div>
+            <div className={styles.Button_9248_28768}>
+              <span className={styles.Button_4179_8893}>Learn More</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </header>
+    </div>
   );
 }

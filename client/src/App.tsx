@@ -1,17 +1,20 @@
+// client/src/App.tsx
+import React, { useEffect, useState } from "react"; // Ensure React and useState are imported
 import { Switch, Route, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { TranslationProvider } from "@/contexts/TranslationContext";
-import { sessionManager } from "@/lib/session-manager";
-import { useEffect } from "react";
+import { sessionManager } from "@/lib/session-manager"; // Assuming sessionManager is correctly defined/used elsewhere
+
+// Import your page components
 import Home from "@/pages/home";
 import UC1Page from "@/pages/uc1";
 import UC2Page from "@/pages/uc2";
 import UC3Page from "@/pages/uc3";
 import UC4Page from "@/pages/uc4";
-import { UC5 } from "@/pages/uc5";
+import { UC5 } from "@/pages/uc5"; // Assuming UC5 is a named export
 import UC6Page from "@/pages/uc6";
 import UC7Page from "@/pages/uc7";
 import UC8Page from "@/pages/uc8";
@@ -22,10 +25,13 @@ import SecurityPage from "@/pages/security";
 import SimulatorAdmin from "@/pages/simulator-admin";
 import MailingAdmin from "@/pages/mailing-admin";
 import NotFound from "@/pages/not-found";
-import TestUC2Page from "@/pages/test-uc2";
-import "./index.css"; // Force global CSS import
+// Corrected import for your Figma design page (assuming uc2test.tsx is the final name)
+import UC2TestPage from "@/pages/uc2test"; 
 
-function Router() {
+// Force global CSS import (content should be in this index.css)
+import "./index.css"; 
+
+function RouterContent() { // Renamed from Router to avoid confusion with wouter's Router
   const [location] = useLocation();
 
   // Scroll to top on route change
@@ -34,11 +40,13 @@ function Router() {
   }, [location]);
 
   return (
+    // The <Switch> component is crucial here to ensure only one route renders at a time
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/uc1" component={UC1Page} />
       <Route path="/uc2" component={UC2Page} />
-      <Route path="/test-uc2" component={TestUC2Page} />
+      {/* THIS IS THE CRUCIAL LINE - ENSURE IT'S DIRECTLY WITHIN <Switch> */}
+      <Route path="/uc2test" component={UC2TestPage} /> 
       <Route path="/uc3" component={UC3Page} />
       <Route path="/uc4" component={UC4Page} />
       <Route path="/uc5" component={UC5} />
@@ -51,6 +59,7 @@ function Router() {
       <Route path="/security" component={SecurityPage} />
       <Route path="/admin/simulator" component={SimulatorAdmin} />
       <Route path="/admin/mailing" component={MailingAdmin} />
+      {/* This is the catch-all route for any undefined paths */}
       <Route component={NotFound} />
     </Switch>
   );
@@ -62,7 +71,8 @@ function App() {
       <TranslationProvider>
         <TooltipProvider>
           <Toaster />
-          <Router />
+          {/* Render your RouterContent here */}
+          <RouterContent /> 
         </TooltipProvider>
       </TranslationProvider>
     </QueryClientProvider>

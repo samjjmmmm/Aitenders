@@ -1,6 +1,6 @@
-// src/components/Cta_25.tsx
+// client/src/components/Cta_25.tsx
 import React from 'react';
-import styles from '../style/Cta_25.module.css';
+import styles from '../styles/Cta_25.module.css'; // This is the correct line 3
 
 
 export default function Cta_25() {
@@ -18,8 +18,8 @@ export default function Cta_25() {
             </svg>
           </div>
         </div>
-        <div className={styles.Container_9253_31348}><span className={styles.HiILlHelpYouDiscoverThePerfectAitendersSolutionForYourTeamWhatIndustryAreYouIn_9253_31349}>Bonjour ! Je vais vous aider &#xE0; trouver la solution Aitenders id&#xE9;ale pour votre &#xE9;quipe. Quel est votre secteur d&#x27;activit&#xE9; ?</span></div>
-        <div className={styles.Button_9253_31350}><span className={styles.ClickToStartYourPersonalizedAssessment_9253_31358}>Cliquez pour d&#xE9;marrer votre &#xE9;valuation personnalis&#xE9;e...</span>
+        <div className={styles.Container_9253_31348}><span className={styles.HiILlHelpYouDiscoverThePerfectAitendersSolutionForYourTeamWhatIndustryAreYouIn_9253_31349}>Bonjour ! Je vais vous aider à trouver la solution Aitenders idéale pour votre équipe. Quel est votre secteur d'activité ?</span></div>
+        <div className={styles.Button_9253_31350}><span className={styles.ClickToStartYourPersonalizedAssessment_9253_31358}>Cliquez pour démarrer votre évaluation personnalisée...</span>
           <div className={styles.ArrowRight_9253_31351}>
             <div className={styles.Group_9253_31352}><svg width="12" height="11" viewBox="0 0 12 11" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10.885 4.87695C11.255 4.87695 11.555 5.17691 11.555 5.54695C11.555 5.91699 11.255 6.21695 10.885 6.21695L1.50496 6.21695C1.13493 6.21695 0.834961 5.91699 0.834961 5.54695C0.834961 5.17691 1.13493 4.87695 1.50496 4.87695L10.885 4.87695Z" />

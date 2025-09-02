@@ -1,6 +1,6 @@
 // src/components/Layout_356.tsx
 import React from 'react';
-import styles from '../style/Layout_356.module.css';
+import styles from '../styles/Layout_356.module.css';
 
 export default function Layout_356() {
   return (
