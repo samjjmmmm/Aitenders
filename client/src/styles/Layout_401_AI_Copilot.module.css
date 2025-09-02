@@ -1,0 +1,106 @@
+/* src/styles/Layout_401_AI_Copilot.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+.layoutContainer {
+  padding: 100px 64px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 950px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+.frame {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  right: 32px;
+  bottom: 32px;
+  pointer-events: none;
+}
+
+.line {
+  position: absolute;
+  background-color: #058EFF;
+}
+
+.topLeftHorz { top: 0; left: 0; width: 40px; height: 2px; }
+.topLeftVert { top: 0; left: 0; width: 2px; height: 40px; }
+.topRightHorz { top: 0; right: 0; width: 40px; height: 2px; }
+.topRightVert { top: 0; right: 0; width: 2px; height: 40px; }
+.bottomLeftHorz { bottom: 0; left: 0; width: 40px; height: 2px; }
+.bottomLeftVert { bottom: 0; left: 0; width: 2px; height: 40px; }
+.bottomRightHorz { bottom: 0; right: 0; width: 40px; height: 2px; }
+.bottomRightVert { bottom: 0; right: 0; width: 2px; height: 40px; }
+.topCenter { top: 0; left: 50%; transform: translateX(-50%); width: 40px; height: 2px; }
+.bottomCenter { bottom: 0; left: 50%; transform: translateX(-50%); width: 40px; height: 2px; }
+.leftCenter { left: 0; top: 50%; transform: translateY(-50%); width: 2px; height: 40px; }
+.rightCenter { right: 0; top: 50%; transform: translateY(-50%); width: 2px; height: 40px; }
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+  max-width: 800px;
+  z-index: 10;
+}
+
+.tag {
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.heading {
+  color: #111827;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.subheading {
+  color: #4B5563;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 580px;
+  margin: 0;
+}
+
+.flowContainer {
+  margin-top: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.flowStep {
+  background-color: #F3F4F6;
+  padding: 16px 24px;
+  border-radius: 8px;
+  color: #1F2937;
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.arrow {
+  color: #6B7280;
+  font-size: 24px;
+}
+
+.flowStepHighlighted {
+  background-color: #E5E7EB;
+}

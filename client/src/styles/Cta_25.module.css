@@ -1,162 +1,135 @@
-/* client/src/styles/Cta_25.module.css */
+/* src/styles/Cta_25.module.css */
 
-.Cta_25_9253_31318 {
-  padding: var(--Section-Padding-padding-section-large, 112px)
-    var(--Page-Padding-padding-global, 64px);
-  background: #d3d3d3 url("https://via.placeholder.com/1432x491") 50% / cover no-repeat; /* Added placeholder URL */
-  flex-direction: column;
-  align-items: center;
-  gap: 80px;
-  width: 100%; /* Changed from fixed 1432px to 100% */
-  min-height: 491px; /* Changed to min-height for responsiveness */
+/* Consolidate all font imports */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Raleway:wght@500&family=Roboto:wght@700&family=Montserrat:wght@400&display=swap');
+
+.ctaSection {
+  /* You can add a background image here if you have one */
+  /* background: url('/path/to/your/image.jpg') 50% / cover no-repeat; */
+  background-color: #d3d3d3; /* Fallback color from Figma */
+  width: 100%;
+  padding: 112px 64px;
+  box-sizing: border-box;
   display: flex;
-  position: relative;
-  overflow: hidden;
-}
-.Content_9253_31319 {
-  max-width: var(--Max-Width-max-width-large, 768px);
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 32px;
-  width: 100%; /* Changed from fixed 574px to 100% */
-  display: flex;
-  position: relative; /* Changed to relative so it flows with content */
-  text-align: center; /* Center text within this content block */
 }
-.Content_9253_31320 {
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
+
+.container {
+  max-width: 1280px;
   width: 100%;
   display: flex;
-}
-.Heading_9253_31321 {
-  color: var(--Color-Scheme-1-Border, #000); /* Consider changing to a contrasting color for text on an image */
-  letter-spacing: -0.48px;
-  font-family: Raleway;
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 120%;
-  display: inline-block;
-  text-align: center;
-}
-.Text_9253_31322 {
-  color: var(--Color-Scheme-1-Border, #000); /* Consider changing to a contrasting color for text on an image */
-  font-family: Inter;
-  font-size: var(--Text-Sizes-Text-Medium, 18px);
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%;
-  display: inline-block;
-  text-align: center;
-}
-.Container_9253_31337 {
-  box-sizing: border-box;
-  background: #fff;
-  border: 0 solid #fff;
-  border-radius: 10px;
-  width: 100%; /* Changed from fixed 500px to 100% for responsiveness */
-  max-width: 500px; /* Max width to maintain design intent */
-  min-height: 232px; /* Changed to min-height */
-  position: relative; /* Keep relative to flow, adjust if absolute is critical */
-  box-shadow:
-    0 0 2px var(--Opacity-Neutral-Darkest-15),
-    0 0 1px var(--Opacity-Neutral-Darkest-5);
-  display: flex; /* Added flex to control inner elements */
-  flex-direction: column;
   align-items: center;
-  gap: 16px; /* Added gap between elements */
-  padding: 16px; /* Added internal padding */
+  gap: 80px;
 }
-.AiTenderAssistant_9253_31338 {
-  color: #171a1f; /* Consider using a CSS variable */
-  font-family: Roboto;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 28px;
-  display: inline-block;
-}
-.Ellipsis_9253_31339 {
-  flex-shrink: 0;
-  width: 20px;
-  height: 20px;
-  overflow: hidden;
-  display: flex; /* Added flex for inner SVG centering */
-  justify-content: center;
-  align-items: center;
-}
-.Group_9253_31340 {
-  flex-shrink: 0;
-  width: 14.98px; /* Fixed width, consider using fluid */
-  height: 3.32px; /* Fixed height, consider using fluid */
-  & svg path {
-    fill: currentColor;
-  }
-  color: #565d6d; /* Default color for the SVG */
-}
-.Container_9253_31348 {
-  box-sizing: border-box;
-  background: #f3f6fc; /* Consider using a CSS variable */
-  border: 0 solid #fff;
-  border-radius: 0 10px 10px 10px; /* Adjusted radius for bottom left */
-  justify-content: center;
-  align-items: center;
-  width: 100%; /* Changed from fixed 452px to 100% */
-  padding: 13px 16px 11px;
+
+/* Left column with the heading and text */
+.textColumn {
+  flex: 1;
   display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
-.HiILlHelpYouDiscoverThePerfectAitendersSolutionForYourTeamWhatIndustryAreYouIn_9253_31349 {
-  color: #19191f; /* Consider using a CSS variable */
-  flex-shrink: 0;
-  width: 100%; /* Changed from fixed 420px to 100% */
-  font-family: Montserrat;
-  font-size: 14px;
-  font-style: normal;
+
+.heading {
+  color: #000;
+  font-family: 'Raleway', sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  margin: 0;
+}
+
+.subheading {
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 23px;
-  display: inline-block;
+  line-height: 1.5;
 }
-.Button_9253_31350 {
-  box-sizing: border-box;
-  background: #fff;
-  border: 1px solid #dee1e6; /* Consider using a CSS variable */
-  border-radius: 6px;
-  flex-shrink: 0;
-  width: 100%; /* Changed from fixed 452px to 100% */
-  height: 46px;
-  overflow: hidden;
-  display: flex; /* Added flex to position inner text and arrow */
-  justify-content: space-between; /* Space between text and arrow */
-  align-items: center;
-  padding: 0 16px; /* Added padding */
-  cursor: pointer;
-}
-.ClickToStartYourPersonalizedAssessment_9253_31358 {
-  color: #565d6d; /* Consider using a CSS variable */
-  font-family: Montserrat;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 26px;
-  display: inline-block;
-}
-.ArrowRight_9253_31351 {
-  flex-shrink: 0;
-  width: 16px;
-  height: 16px;
-  overflow: hidden;
-  display: flex; /* Added flex for inner SVG centering */
+
+/* Right column with the chat card */
+.chatCardColumn {
+  flex: 1;
+  display: flex;
   justify-content: center;
+}
+
+.chatCard {
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 0 2px rgba(23, 26, 31, 0.12), 0 0 1px rgba(23, 26, 31, 0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
-.Group_9253_31352 {
-  flex-shrink: 0;
-  width: 10.72px; /* Fixed width, consider using fluid */
-  height: 10.72px; /* Fixed height, consider using fluid */
-  & svg path {
-    fill: currentColor;
+
+.cardTitle {
+  color: #171a1f;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.messageBubble {
+  background: #f3f6fc;
+  border-radius: 0 10px 10px 10px;
+  padding: 16px;
+  color: #19191f;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.assessmentButton {
+  background: #fff;
+  border: 1px solid #dee1e6;
+  border-radius: 6px;
+  padding: 12px 16px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.assessmentButton:hover {
+  background-color: #f8f9fa;
+}
+
+.buttonText {
+  color: #565d6d;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    gap: 48px;
   }
-  color: #565d6d; /* Default color for the SVG */
+  .textColumn {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .ctaSection {
+    padding: 80px 32px;
+  }
+  .heading {
+    font-size: 36px;
+  }
 }

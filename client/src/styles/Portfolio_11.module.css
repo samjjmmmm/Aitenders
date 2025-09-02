@@ -1,190 +1,134 @@
 /* src/styles/Portfolio_11.module.css */
 
-.Portfolio_11_9248_30010 {
-  padding: var(--Section-Padding-padding-section-large, 279px)
-    var(--Page-Padding-padding-global, 64px)
-    var(--Section-Padding-padding-section-large, 112px)
-    var(--Page-Padding-padding-global, 64px);
-  background: var(--Color-Scheme-3-Foreground, #f2f2f2);
-  flex-direction: column;
-  align-items: center;
-  gap: 80px;
-  width: 100%; /* Changed from fixed 1432px to 100% */
-  min-height: 1306px; /* Changed to min-height for responsiveness */
-  display: flex;
-  overflow: hidden;
-}
-.Container_9248_30011 {
-  max-width: var(--Container-container-large, 1280px);
-  flex-direction: column;
-  align-items: center;
-  gap: 80px;
+/* Consolidate font imports for efficiency and readability */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Raleway:wght@500&family=Roboto:wght@400&display=swap');
+
+.portfolioSection {
+  background: #f2f2f2; /* From Figma design */
   width: 100%;
-  display: flex;
-}
-.SectionTitle_9248_30012 {
-  max-width: var(--Max-Width-max-width-large, 768px);
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  width: 100%;
-  display: flex;
-}
-.TaglineWrapper_9248_30013 {
-  align-items: center;
-  height: 24px; /* Consider min-height or dynamic height */
-  display: flex;
-}
-.Content_9248_30015,
-.PortfolioList_9248_30019 {
-  flex-direction: column;
-  align-items: center;
-  gap: 64px;
-  width: 100%;
-  display: flex;
-}
-.Heading_9248_30016 {
-  color: var(--Color-Scheme-3-Text, #000);
-  text-align: center;
-  font-family: Raleway;
-  font-size: var(--Text-Sizes-Heading-2, 52px);
-  letter-spacing: -0.52px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 120%;
-  display: inline-block;
-}
-.Row_9248_30769 {
-  align-items: flex-start;
-  gap: 32px;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap; /* Added for responsiveness */
-  justify-content: center; /* Center items if they wrap */
-}
-.Card_9248_30672,
-.Card_9248_30691,
-.Card_9248_30710,
-.Card_9254_312 { /* Grouping all cards */
-  flex-direction: column;
-  flex: 1 1 280px; /* Allow cards to grow/shrink, with a base width of ~280px */
-  align-items: flex-start;
-  gap: 24px;
-  width: 100%;
-  min-height: 321px; /* Changed to min-height for cards */
-  display: flex;
-  background-color: var(--Color-Scheme-2-Background, #fff); /* Added background for clarity */
-  border-radius: var(--Radius-Medium, 32px); /* Added consistent border radius */
-  padding: 24px; /* Added padding to card content */
-  box-sizing: border-box; /* Ensure padding is included */
-}
-.PlaceholderImage_9248_30673,
-.PlaceholderImage_9254_380,
-.PlaceholderImage_9254_390 {
-  aspect-ratio: 16/9;
-  border-radius: var(--Radius-Medium, 32px);
-  background: #d3d3d3 url("https://via.placeholder.com/600x337") 50% / cover no-repeat; /* Added placeholder URL */
-  height: auto; /* Let height adjust based on aspect-ratio */
-  width: 100%; /* Fill card width */
-}
-.Content_9248_30674,
-.Content_9254_381,
-.Content_9254_391 {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
-  width: 100%;
-  display: flex;
-}
-.ContentTop_9254_325,
-.ContentTop_9248_30675,
-.ContentTop_9254_382,
-.ContentTop_9254_385,
-.ContentTop_9254_392,
-.ContentTop_9254_395 {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-  width: 100%;
-  display: flex;
-}
-.Text_9254_326,
-.Text_9248_30676,
-.Text_9254_383,
-.Text_9254_386,
-.Text_9254_393,
-.Text_9254_396 {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-  width: 100%;
-  display: flex;
-}
-.Heading_9254_327,
-.Heading_9254_384,
-.Heading_9254_394 {
-  color: var(--Color-Scheme-3-Text, #000);
-  font-family: Raleway;
-  font-size: var(--Text-Sizes-Heading-5, 28px);
-  letter-spacing: -0.28px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 140%;
-  display: inline-block;
-  text-align: left;
-}
-.Text_9248_30678,
-.Text_9254_387,
-.Text_9254_397 {
-  color: var(--Color-Scheme-3-Text, #000);
-  font-family: Roboto;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%;
-  display: inline-block;
-  text-align: left;
-}
-.Text_9254_334,
-.Text_9254_388,
-.Text_9254_398 {
-  color: var(--Color-Scheme-3-Text, #000);
-  font-family: Inter;
-  font-size: var(--Text-Sizes-Text-Regular, 16px);
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%;
-  display: inline-block;
-  text-align: left;
-}
-.Actions_9248_30060 {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  display: flex;
-  width: 100%; /* Fill card width */
-}
-.Button_9248_30061 {
-  border: 2px solid var(--Color-Neutral-Darkest, #000);
-  background: var(--Opacity-Transparent, #fff0);
+  padding: 112px 64px;
   box-sizing: border-box;
-  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+}
+
+.sectionTitle {
+  max-width: 768px;
+  text-align: center;
+}
+
+.heading {
+  color: #000;
+  font-family: 'Raleway', sans-serif;
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.52px;
+  margin: 0;
+}
+
+/* A responsive grid is the best way to handle these cards */
+.portfolioGrid {
+  width: 100%;
+  display: grid;
+  /* Creates responsive columns: on large screens they are ~350px wide, up to 3 columns. */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 32px;
+}
+
+/* Styling for a single project card */
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cardImagePlaceholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #d3d3d3; /* Placeholder color */
+  border-radius: 32px;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cardTitle {
+  color: #000;
+  font-family: 'Raleway', sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.28px;
+  margin: 0;
+}
+
+.cardValue {
+  color: #000;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.cardDescription {
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Special card for the "View all" button to center it */
+.ctaCard {
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-  padding: 10px 24px;
-  display: flex;
-  cursor: pointer;
-  width: fit-content; /* Ensure button only takes content width */
+  min-height: 320px; /* Ensures it has a similar height to other cards */
 }
-.Button_4179_8963 { /* This class is used in multiple components, ensure its definition is consistent */
-  color: var(--Color-Neutral-Darkest, #000);
-  font-family: Inter;
-  font-size: var(--Text-Sizes-Text-Regular, 16px);
-  font-style: normal;
+
+.viewAllButton {
+  border: 2px solid #000;
+  background: transparent;
+  border-radius: 100px;
+  padding: 10px 24px;
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
   font-weight: 500;
-  line-height: 150%;
-  display: inline-block;
-  text-align: center; /* Ensure text centers if it wraps */
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.viewAllButton:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .portfolioSection {
+    padding: 80px 32px;
+  }
+  .portfolioGrid {
+     /* Switch to a single column layout on mobile */
+    grid-template-columns: 1fr;
+  }
+  .heading {
+    font-size: 36px;
+  }
 }

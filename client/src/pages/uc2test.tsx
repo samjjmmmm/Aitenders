@@ -1,92 +1,63 @@
-// client/src/pages/test-uc2.tsx
+// client/src/pages/uc2test.tsx
 import React, { useState } from "react";
-// Remove useLocation from here as it's likely not used in this specific landing page
-// import { useLocation } from "wouter"; 
 
-// Import your existing Header component for site navigation (if this Figma page has one)
+// --- CORE COMPONENTS ---
 import Header from "@/components/header"; 
+import ChatInterface from "@/components/chat-interface"; 
 
-// Import any existing components that you want to keep visible on this specific Figma-exported page,
-// or remove if they are not part of the Figma design's intent.
-import ContactSection from "@/components/contact-section"; // You can decide if this should be here
-import ChatInterface from "@/components/chat-interface"; // You can decide if this should be here
-
-// This page does not use the interactive card selection logic, so remove its specific imports
-// import { Card } from "@/components/ui/card"; 
-// import { Button } from "@/components/ui/button"; 
-// import { MdBarChart, MdSearch, MdDescription, MdLightbulb, MdTrendingUp, MdSecurity, MdPeople, 
-//   MdInsertDriveFile, MdSettings, MdEmojiEvents, MdGpsFixed, 
-//   MdSchedule, MdCheckCircle, MdEdit, MdAnalytics, MdVerifiedUser, MdGroups, MdAccountCircle, 
-//   MdMail,
-//   MdStarOutline
-// } from "react-icons/md";
-// import { FaChartLine, FaShieldAlt, FaUsers } from "react-icons/fa";
-
-// Import all the Figma-exported components that make up this new landing page
+// --- FIGMA-EXPORTED & CORRECTED COMPONENTS ---
 import Header_26 from '../components/Header_26';
 import Logo_3 from '../components/Logo_3';
 import Layout_401_AI_Copilot from '../components/Layout_401_AI_Copilot';
 import Layout_401_OfferSteps from '../components/Layout_401_OfferSteps';
 import Layout_356 from '../components/Layout_356';
-import Layout_84 from '../components/Layout_84';
 import Team_20 from '../components/Team_20';
 import Portfolio_11 from '../components/Portfolio_11';
 import Cta_25 from '../components/Cta_25';
 
-// Import global CSS for variables and base styles
-import '../index.css'; // This is the correct relative path // <--- Corrected path for global CSS from pages folder
+// --- RENAMED/NEW COMPONENTS ---
+import Layout_84 from '../components/Layout_84';
+import ConcreteResultsSection from '../components/ConcreteResultsSection';
 
-// --- START: Translations if this page needs them. Keep if the Figma content uses t[language]. ---
-// For this Figma-exported page, the text is largely static.
-// You might decide to simplify and remove this if the Figma content replaces it entirely,
-// but for maximum safety, we'll keep it for the Header.
-const t = {
-  fr: {
-    // Keep only what Header or other shared components might need
-    // Or if any of your Figma-exported component text is dynamic based on translation
-    // For the Figma exports themselves, the text is already French in the JSX.
-  },
-  en: {
-    // Keep only what Header or other shared components might need
-  }
-};
-// --- END: Translations ---
+// --- NEW FOOTER IMPORT ---
+import Footer_4 from '../components/Footer_4'; // <-- Import your new Footer component
 
+// --- GLOBAL STYLES ---
+import '../index.css';
 
-  export default function UC2Test() { // Changed function name to match filename
-  const [language, setLanguage] = useState<'fr' | 'en'>('fr'); // Keep language state for Header
+export default function UC2Test() {
+  const [language, setLanguage] = useState<'fr' | 'en'>('fr');
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-      {/* Existing Header Component (Your site navigation) */}
+    // The main page wrapper now has a flex-col layout to correctly position the footer
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white flex flex-col">
       <Header language={language} onLanguageChange={setLanguage} />
 
-      <div className="page-content">
-
-        {/* All your NEW Figma-exported components */}
+      {/* The 'flex-grow' class makes this main section take up all available space */}
+      <main className="page-content flex-grow">
+        {/* Components will render in this order */}
         <Header_26 />
         <Logo_3 />
         <Layout_401_AI_Copilot />
         <Layout_401_OfferSteps />
         <Layout_356 />
+        <ConcreteResultsSection />
         <Layout_84 />
         <Team_20 />
         <Portfolio_11 />
         <Cta_25 />
 
-        {/* You can decide if your ContactSection or ChatInterface should be on *this* landing page.
-            If they are part of the Figma design, keep them. Otherwise, remove them from here.
-            For now, let's keep ChatInterface as it's common on many pages.
-        */}
-        {/* <ContactSection /> */}
+        {/* Chat interface can remain here, as it's often a floating element */}
         <ChatInterface 
           language={language}
-          customActions={[
-            // ... your custom actions if needed on this page ...
-          ]}
+          customActions={[]}
         />
         <div className="h-4"></div>
-      </div>
+      </main>
+
+      {/* --- ADDED FOOTER --- */}
+      {/* The Footer is placed at the end, outside the main content, for proper structure */}
+      <Footer_4 />
     </div>
   );
 }

@@ -1,15 +1,15 @@
-// client/src/components/Layout_401_OfferSteps.tsx
+// src/components/Layout_401_OfferSteps.tsx
 import React from 'react';
-import styles from '../styles/Layout_401.module.css';
+// Correctly import the regular CSS file. Note there is no "styles from" part.
+import '../styles/Layout_401_OfferSteps.css';
 
-export default function Layout_401_OfferSteps() {
+export default function Layout_401_OfferSteps(): JSX.Element {
   return (
-    <section className={styles.Layout_401_9254_443}>
-      <div className={styles.SectionTitle_9253_31701}>
-        <div className={styles.Content_9253_31704}>
-          <h2 className={styles.Heading_9253_31705}>Nous accompagnons les équipes à chaque étape de l'offre</h2>
-        </div>
-      </div>
+    // We use a regular string for the className now
+    <section className="offer-steps-section-container">
+      <h2 className="offer-steps-headline">
+        Nous accompagnons les équipes à chaque étape de l&apos;offre
+      </h2>
     </section>
   );
 }

@@ -2,73 +2,96 @@
 import React from 'react';
 import styles from '../styles/Layout_356.module.css';
 
-export default function Layout_356() {
+// Define the properties (props) for our reusable FeatureSection component using TypeScript
+interface FeatureSectionProps {
+  tagline: string;
+  heading: string;
+  description: string;
+  imagePosition: 'left' | 'right';
+  stats?: { number: string; text: string }[]; // 'stats' is optional
+  ctaText?: string; // 'ctaText' is optional
+  useRalewayFont?: boolean; // Optional flag for the third heading's font
+}
+
+/**
+ * A reusable component for displaying a feature with text and an image.
+ */
+const FeatureSection = ({
+  tagline,
+  heading,
+  description,
+  imagePosition,
+  stats,
+  ctaText,
+  useRalewayFont,
+}: FeatureSectionProps): JSX.Element => {
+  // Conditionally apply a class to reverse the layout
+  const sectionClasses = `${styles.featureSection} ${imagePosition === 'left' ? styles.imageOnLeft : ''}`;
+
+  // Conditionally apply an inline style for the one heading that uses a different font
+  const headingStyle = useRalewayFont ? { fontFamily: "'Raleway', sans-serif", fontWeight: 500 } : {};
+
   return (
-    <div className={styles.Layout_356_9238_560}>
-      <div className={styles.FeatureOne_9238_561}>
-        <div className={styles.Container_9238_562}>
-          <div className={styles.Content_9238_566}>
-            <div className={styles.Content_9238_567}>
-              <div className={styles.SectionTitle_9238_568}>
-                <div className={styles.TaglineWrapper_9238_569}><span className={styles.Tagline_9238_570}>Cockpit opérationnel dès J+1</span></div>
-                <div className={styles.Content_9238_571}><span className={styles.Heading_9238_572}>Structuration automatique du projet</span><span className={styles.Text_9238_573}>L’IA analyse vos AO, mappe chaque exigence et offre une vision claire du périmètre. +</span></div>
+    <section className={sectionClasses}>
+      <div className={styles.textContainer}>
+        <span className={styles.tagline}>{tagline}</span>
+        <h2 className={styles.heading} style={headingStyle}>{heading}</h2>
+        <p className={styles.description}>{description}</p>
+
+        {/* Only render the stats container if stats are provided */}
+        {stats && (
+          <div className={styles.statsContainer}>
+            {stats.map((stat, index) => (
+              <div key={index} className={styles.statItem}>
+                <span className={styles.statNumber}>{stat.number}</span>
+                <span className={styles.statText}>{stat.text}</span>
               </div>
-              <div className={styles.Frame_3_9256_126}>
-                <div className={styles.Column_9256_130}>
-                  <div className={styles.Content_9256_131}>
-                    <div className={styles.Row_9256_132}>
-                      <div className={styles.ListItem_9256_133}><span className={styles.Number_9256_134}>100%</span></div>
-                      <div className={styles.ListItem_9256_136}><span className={styles.Text_9256_138}>des documents structurés, transformés en Jumeaux numérique</span></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.Frame_4_9256_154}>
-                <div className={styles.Column_9256_155}>
-                  <div className={styles.Content_9256_156}>
-                    <div className={styles.Row_9256_157}>
-                      <div className={styles.ListItem_9256_160}></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Placeholder Image for Feature One - REPLACE with your actual image URL */}
-            <div className={styles.PlaceholderImage_9238_576}></div> 
+            ))}
           </div>
-        </div>
+        )}
+
+        {/* Only render the button if ctaText is provided */}
+        {ctaText && <button className={styles.ctaButton}>{ctaText}</button>}
       </div>
-      <div className={styles.FeatureTwo_9238_577}>
-        <div className={styles.Container_9238_578}>
-          <div className={styles.Content_9238_582}>
-            {/* Placeholder Image for Feature Two - REPLACE with your actual image URL */}
-            <div className={styles.PlaceholderImage_9238_583}></div> 
-            <div className={styles.Content_9238_584}>
-              <div className={styles.SectionTitle_9238_585}>
-                <div className={styles.TaglineWrapper_9238_586}><span className={styles.Tagline_9238_587}>Zéro clause oubliée</span></div>
-                <div className={styles.Content_9238_588}><span className={styles.Heading_9238_589}>Contrôlez chaque clause critique</span><span className={styles.Text_9238_590}>Suivi continu des pénalités, responsabilités et délais. Chaque modification est signalée avec impact mesuré.</span></div>
-              </div>
-              <div className={styles.Button_9251_137}><span className={styles.Button_4179_8893}>+</span></div>
-              <div className={styles.Actions_9238_591}></div>
-            </div>
-          </div>
-        </div>
+      <div className={styles.imageContainer}>
+        {/* This is where your image would go, e.g., <img src="..." alt="..." /> */}
       </div>
-      <div className={styles.FeatureThree_9238_593}>
-        <div className={styles.Container_9238_594}>
-          <div className={styles.Content_9238_598}>
-            <div className={styles.Content_9238_599}>
-              <div className={styles.SectionTitle_9238_600}>
-                <div className={styles.TaglineWrapper_9238_601}><span className={styles.Tagline_9238_602}>Historique contractuel maîtrisé</span></div>
-                <div className={styles.Content_9238_603}><span className={styles.Heading_9238_604}>Maîtrisez chaque évolution contractuelle</span><span className={styles.Text_9238_605}>Q&A, versions et amendements centralisés, avec traçabilité complète des évolutions.</span></div>
-              </div>
-              <div className={styles.Button_9251_147}><span className={styles.Button_4179_8893}>+</span></div>
-            </div>
-            {/* Placeholder Image for Feature Three - REPLACE with your actual image URL */}
-            <div className={styles.PlaceholderImage_9238_608}></div> 
-          </div>
-        </div>
-      </div>
-    </div>
+    </section>
+  );
+};
+
+/**
+ * The main component that assembles the three feature sections.
+ */
+export default function Layout_356(): JSX.Element {
+  return (
+    // Use a React Fragment to group the sections without adding an extra div
+    <>
+      <FeatureSection
+        tagline="Cockpit opérationnel dès J+1"
+        heading="Structuration automatique du projet"
+        description="L’IA analyse vos AO, mappe chaque exigence et offre une vision claire du périmètre."
+        imagePosition="right"
+        stats={[
+          { number: "100%", text: "des documents structurés, transformés en Jumeaux numérique" }
+        ]}
+        ctaText="+"
+      />
+      <FeatureSection
+        tagline="Zéro clause oubliée"
+        heading="Contrôlez chaque clause critique"
+        description="Suivi continu des pénalités, responsabilités et délais. Chaque modification est signalée avec impact mesuré."
+        imagePosition="left"
+        ctaText="+"
+      />
+      <FeatureSection
+        tagline="Historique contractuel maîtrisé"
+        heading="Maîtrisez chaque évolution contractuelle"
+        description="Q&A, versions et amendements centralisés, avec traçabilité complète des évolutions."
+        imagePosition="right"
+        useRalewayFont={true} // Use the special font for this heading
+        ctaText="+"
+      />
+    </>
   );
 }

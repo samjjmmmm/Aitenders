@@ -1,0 +1,114 @@
+/* src/styles/Footer_4.module.css */
+
+/* Import the Inter font used throughout the footer */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+.footer {
+  background: #112646; /* Dark blue background from Figma */
+  color: #fff; /* Default text color */
+  width: 100%;
+  padding: 80px 64px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px; /* Space between top and bottom rows */
+}
+
+/* Top row: Logo and social links */
+.topRow {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  gap: 32px;
+}
+
+.logo svg {
+  width: 170px;
+  height: auto;
+}
+
+.socialLinks {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.socialIcon {
+  color: #fff;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.socialIcon:hover {
+  opacity: 0.75;
+}
+
+/* Bottom row: Divider and credit links */
+.bottomRow {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.divider {
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  opacity: 0.2; /* A subtle divider is often visually better */
+}
+
+.credits {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.copyright {
+  flex-shrink: 0; /* Prevents the copyright text from wrapping unnecessarily */
+}
+
+.links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap; /* Allows links to wrap on small screens */
+  justify-content: center;
+}
+
+.creditLink {
+  color: #fff;
+  text-decoration: underline;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.creditLink:hover {
+  opacity: 0.75;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+  .footer {
+    padding: 64px 32px;
+  }
+  .topRow, .credits {
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center;
+    text-align: center;
+  }
+}

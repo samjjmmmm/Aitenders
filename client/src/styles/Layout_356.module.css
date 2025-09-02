@@ -1,235 +1,137 @@
 /* src/styles/Layout_356.module.css */
 
-.Layout_356_9238_560 {
-  background: var(--Color-Scheme-2-Background, #fff);
-  flex-direction: column;
-  align-items: center;
-  width: 100%; /* Changed from fixed 1432px to 100% for responsiveness */
-  min-height: 2440px; /* Changed to min-height for responsiveness */
-  padding-bottom: 304px;
-  display: flex;
-  overflow: hidden;
-}
-.FeatureOne_9238_561,
-.FeatureTwo_9238_577,
-.FeatureThree_9238_593 {
-  padding: 0 var(--Page-Padding-padding-global, 64px);
-  border-top: var(--Stroke-Divider-Width, 2px) solid
-    var(--Color-Scheme-2-Border, #000);
-  background: var(--Color-Scheme-2-Background, #fff);
+/* Import all necessary fonts just once */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Raleway:wght@500&family=Roboto:wght@400&display=swap');
+
+/* Main container for a single feature section */
+.featureSection {
+  width: 100%;
   box-sizing: border-box;
+  padding: 112px 64px;
+  border-top: 2px solid #000;
+
+  /* Main layout: text and image side-by-side */
+  display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
   gap: 80px;
-  width: 100%;
-  min-height: 712px; /* Changed to min-height for responsiveness */
-  display: flex;
-  overflow: hidden;
-  flex-wrap: wrap; /* Added for responsiveness on smaller screens */
 }
-.Container_9238_562,
-.Container_9238_578,
-.Container_9238_594 {
-  max-width: var(--Container-container-large, 1280px);
-  padding-bottom: var(--Section-Padding-padding-section-large, 112px);
+
+/* Modifier class to reverse the order for the alternating layout */
+.imageOnLeft {
+  flex-direction: row-reverse;
+}
+
+/* Wrapper for all the text content */
+.textContainer {
+  flex: 1;
+  display: flex;
   flex-direction: column;
-  flex: 1 0 0;
-  align-items: flex-start;
-  gap: 48px;
-  width: 100%;
-  display: flex;
-}
-.Content_9238_566,
-.Content_9238_582,
-.Content_9238_598 {
-  align-items: center;
-  gap: 80px;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap; /* Added for responsiveness on smaller screens */
-  justify-content: center; /* Center items if they wrap */
-}
-.Content_9238_567,
-.Content_9238_584,
-.Content_9238_599 {
-  flex-direction: column;
-  flex: 1 0 0;
-  align-items: flex-start;
   gap: 32px;
-  width: 100%;
-  display: flex;
+  max-width: 600px;
 }
-.SectionTitle_9238_568,
-.SectionTitle_9238_585,
-.SectionTitle_9238_600 {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-  width: 100%;
-  display: flex;
-}
-.TaglineWrapper_9238_569,
-.TaglineWrapper_9238_586,
-.TaglineWrapper_9238_601 {
-  align-items: center;
-  display: flex;
-}
-.Tagline_9238_570,
-.Tagline_9238_587,
-.Tagline_9238_602 {
-  color: var(--Color-Scheme-2-Text, #000);
-  font-family: Inter;
+
+.tagline {
+  color: #000;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
-  font-style: normal;
   font-weight: 600;
-  line-height: 150%;
-  display: inline-block;
+  line-height: 1.5;
 }
-.Content_9238_571,
-.Content_9238_588,
-.Content_9238_603 {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
-  width: 100%;
-  display: flex;
-}
-.Heading_9238_572,
-.Heading_9238_589,
-.Heading_9238_604 {
-  color: var(--Color-Scheme-2-Text, #000);
-  font-family: Roboto;
-  font-size: var(--Text-Sizes-Heading-2, 52px);
+
+.heading {
+  color: #000;
+  font-family: 'Roboto', sans-serif;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 1.2;
   letter-spacing: -0.52px;
-  font-style: normal;
+  margin: 0;
+}
+
+.description {
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 120%;
-  display: inline-block;
+  line-height: 1.5;
 }
-.Text_9238_573,
-.Text_9238_590,
-.Text_9238_605 {
-  color: var(--Color-Scheme-2-Text, #000);
-  font-family: Inter;
-  font-size: var(--Text-Sizes-Text-Medium, 18px);
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%;
-  display: inline-block;
-}
-.Frame_3_9256_126 {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
+
+/* Container for the stats in the first feature section */
+.statsContainer {
   display: flex;
-}
-.Column_9256_130,
-.Column_9256_155 {
   flex-direction: column;
-  align-items: flex-start;
-  gap: 32px;
-  width: 100%; /* Changed from fixed 706px for responsiveness */
-  min-height: 78px; /* Changed to min-height for responsiveness */
-  display: flex;
-  overflow: hidden;
-}
-.Content_9256_131,
-.Content_9256_156 {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-  width: 100%;
-  display: flex;
-}
-.Row_9256_132,
-.Row_9256_157 {
-  align-items: flex-start;
   gap: 24px;
-  width: 100%;
-  padding: 8px 0;
-  display: flex;
-  flex-wrap: wrap; /* Added for responsiveness */
 }
-.ListItem_9256_133 {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-  /* width: 141px; Removed fixed width for responsiveness */
-  flex: 1; /* Allow it to grow/shrink */
-  min-width: 120px; /* Minimum width for smaller screens */
+
+.statItem {
   display: flex;
+  align-items: center;
+  gap: 24px;
 }
-.Number_9256_134 {
-  /* aspect-ratio: 141/62; - Removed as it might cause issues */
+
+.statNumber {
   color: #312727;
-  font-family: Raleway;
-  font-size: var(--Text-Sizes-Heading-2, 52px);
-  letter-spacing: -0.52px;
-  /* height: 62px; Removed fixed height for responsiveness */
-  font-style: normal;
+  font-family: 'Raleway', sans-serif;
+  font-size: 52px;
   font-weight: 500;
-  line-height: 120%;
-  display: inline-block;
-  white-space: nowrap; /* Prevent wrapping for numbers */
+  line-height: 1.2;
+  min-width: 120px;
 }
-.ListItem_9256_136,
-.ListItem_9256_160 {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  /* width: 456px; Removed fixed width for responsiveness */
-  flex: 2; /* Allow it to grow/shrink more than the number */
-  min-width: 250px; /* Minimum width for smaller screens */
-  min-height: 62px; /* Changed to min-height for responsiveness */
-  display: flex;
-  text-align: left; /* Default text alignment */
+
+.statText {
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
 }
-.Text_9256_138 {
-  color: var(--Color-Scheme-2-Text, #000);
-  font-family: Inter;
-  font-size: var(--Text-Sizes-Text-Regular, 16px);
-  /* width: 381px; Removed fixed width for responsiveness */
-  width: 100%; /* Make it fluid within its parent */
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%;
-  display: inline-block;
-}
-.Frame_4_9256_154 {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  display: flex;
-}
-.PlaceholderImage_9238_576,
-.PlaceholderImage_9238_583,
-.PlaceholderImage_9238_608 {
-  aspect-ratio: 1;
-  border-radius: var(--Radius-Large, 40px);
-  background: #d3d3d3 url("https://via.placeholder.com/600") 50% / cover no-repeat; /* Added placeholder URL */
-  flex: 1 0 0;
-  height: 600px; /* Fixed height for now, consider making it fluid based on viewport */
-  min-width: 300px; /* Ensure minimum width on smaller screens */
-}
-.Button_9251_137,
-.Button_9251_147 {
-  border: 2px solid var(--Color-Neutral-Darkest, #000);
-  background: var(--Opacity-Transparent, #fff0);
-  box-sizing: border-box;
+
+/* Simple, clean button style */
+.ctaButton {
+  border: 2px solid #000;
+  background: transparent;
   border-radius: 100px;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
   padding: 10px 24px;
-  display: flex;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
+  width: fit-content;
+  transition: background-color 0.2s, color 0.2s;
 }
-.Actions_9238_591 {
-  align-items: center;
-  gap: 24px;
-  /* width: 99px; height: 44px; Removed fixed width/height for responsiveness */
-  display: flex;
-  flex-wrap: wrap; /* Added for responsiveness */
-  justify-content: center; /* Center items if they wrap */
+
+.ctaButton:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Placeholder for the image */
+.imageContainer {
+  flex: 1;
+  max-width: 600px;
+  height: 600px;
+  border-radius: 40px;
+  background-color: #e9e9e9; /* Placeholder color */
+}
+
+/* Responsive styles for tablets and mobile devices */
+@media (max-width: 992px) {
+  .featureSection {
+    /* Stack text and image vertically on smaller screens */
+    flex-direction: column !important;
+    padding: 80px 32px;
+    gap: 48px;
+  }
+
+  .textContainer, .imageContainer {
+    max-width: 100%;
+  }
+
+  .imageContainer {
+    height: 400px; /* Adjust image height for better mobile layout */
+  }
+
+  .heading {
+    font-size: 36px;
+  }
 }

@@ -1,202 +1,143 @@
 /* src/styles/Team_20.module.css */
 
-.Team_20_9248_29689 {
-  padding: var(--Section-Padding-padding-section-large, 194px)
-    var(--Page-Padding-padding-global, 64px)
-    var(--Section-Padding-padding-section-large, 112px)
-    var(--Page-Padding-padding-global, 64px);
-  background: var(--Color-Scheme-2-Background, #fff);
-  flex-direction: column;
-  align-items: center;
-  gap: 80px;
-  width: 100%; /* Changed from fixed 1432px to 100% */
-  min-height: 2410px; /* Changed to min-height for responsiveness */
-  display: flex;
-  overflow: hidden;
-}
-.Container_9248_29690 {
-  max-width: var(--Container-container-large, 1280px);
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 80px;
+/* Consolidate all font imports into one clean block */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@400;500&display=swap');
+
+.sectionContainer {
+  background: #fff;
   width: 100%;
-  display: flex;
-}
-.Component_9248_29691 {
-  align-items: flex-start;
-  gap: 80px;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap; /* Added for responsiveness */
-  justify-content: center; /* Center items if they wrap */
-}
-.SectionTitle_9248_29692 {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 32px;
-  /* width: 356px; Removed fixed width */
-  flex: 1; /* Allow it to grow/shrink */
-  min-width: 300px; /* Minimum width for responsiveness */
-  display: flex;
-}
-.Content_9248_29693 {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-  width: 100%;
-  display: flex;
-}
-.Button_9254_155 {
-  border: 2px solid var(--Color-Neutral-Darkest, #000);
-  background: var(--Opacity-Transparent, #fff0);
+  padding: 112px 64px;
   box-sizing: border-box;
-  border-radius: 100px;
+  display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 8px;
+}
+
+.mainContent {
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 80px;
+}
+
+/* Left column with the title and description */
+.introColumn {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: sticky; /* Makes the title stick as you scroll past the cards */
+  top: 120px;
+}
+
+.tag {
+  border: 2px solid #000;
+  background: transparent;
+  border-radius: 100px;
   padding: 10px 24px;
-  display: flex;
-  cursor: pointer;
-}
-.Button_4179_8893 { /* This class is used in multiple components, ensure its definition is consistent */
-  color: var(--Color-Neutral-Darkest, #000);
-  font-family: Inter;
-  font-size: var(--Text-Sizes-Text-Regular, 16px);
-  font-style: normal;
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
   font-weight: 500;
-  line-height: 150%;
-  display: inline-block;
-  text-align: center; /* Ensure text centers if it wraps */
+  width: fit-content;
 }
-.Content_9248_29696 {
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  width: 100%;
-  display: flex;
-}
-.FonctionalitésComplémentairePourAugmenterVosÉquipes_9248_29697 {
-  color: var(--Color-Scheme-2-Text, #000);
-  font-family: Roboto;
-  font-size: var(--Text-Sizes-Heading-2, 52px);
+
+.heading {
+  color: #000;
+  font-family: 'Roboto', sans-serif;
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 1.2;
   letter-spacing: -0.52px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 120%;
-  display: inline-block;
-  text-align: left; /* Aligns text to left if parent is flex-start */
+  margin: 0;
 }
-.Text_9248_29698 {
-  color: var(--Color-Scheme-2-Text, #000);
-  font-family: Roboto;
-  font-size: var(--Text-Sizes-Text-Medium, 18px);
-  font-style: normal;
+
+.description {
+  color: #000;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 150%;
-  display: inline-block;
-  text-align: left; /* Aligns text to left if parent is flex-start */
+  line-height: 1.5;
 }
-.Content_9248_29701 {
-  flex-direction: column;
-  flex: 1 0 0;
-  align-items: flex-start;
+
+/* Right column with the grid of feature cards */
+.gridColumn {
+  flex: 2;
+  display: grid;
+  /* Creates two equal columns, with a gap */
+  grid-template-columns: repeat(2, 1fr);
   gap: 64px;
-  width: 100%;
-  display: flex;
 }
-.Row_9248_30265,
-.Row_9254_254,
-.Row_9254_296 { /* Applied to all rows of items for consistency */
-  align-items: flex-start;
-  gap: 64px;
-  width: 100%;
+
+/* Styling for a single feature card */
+.featureCard {
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap */
-  justify-content: center; /* Center items if they wrap */
-}
-.Item_9254_174,
-.Item_9254_181,
-.Item_9254_283,
-.Item_9254_289,
-.Item_9254_298,
-.Item_9254_304 { /* Grouping all item cards */
-  width: 382px; /* Set a base width, but make it flexible */
-  min-width: 300px; /* Minimum width for responsiveness */
-  height: auto; /* Let height adjust, no fixed height */
-  flex: 1 1 auto; /* Allow items to grow, shrink, and wrap */
-  display: flex; /* Ensure inner content is also flex-controlled */
   flex-direction: column;
-  gap: 16px; /* Gap between background/icon/text */
-  align-items: flex-start;
+  gap: 24px;
 }
-.Background_9254_175,
-.Background_9254_182,
-.Background_9254_284,
-.Background_9254_290,
-.Background_9254_299,
-.Background_9254_305 { /* Background for the items */
-  background: #f2f1f3;
-  flex-shrink: 0;
-  width: 100%; /* Fill parent width */
-  height: 477.5px; /* Adjust as needed or make dynamic */
-  border-radius: var(--Radius-Medium, 32px); /* Add consistent border radius */
+
+.cardImagePlaceholder {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* A nice aspect ratio for the image area */
+  background-color: #f2f1f3;
+  border-radius: 16px; /* Soften the corners */
 }
-.Frame_9254_176,
-.Frame_9254_183,
-.Frame_9254_285,
-.Frame_9254_291,
-.Frame_9254_300,
-.Frame_9254_306 { /* Icon container */
-  flex-shrink: 0;
+
+.cardTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cardIcon {
   width: 24px;
   height: 24px;
-  /* Make SVG paths use currentColor from parent */
-  & svg path {
-    fill: currentColor;
-  }
-  color: var(--Color-CTA-Blue, #3880E8); /* Default color for the SVG icons */
+  color: #19171c;
 }
-.Heading_3InfiniteCanvas_9254_178,
-.Heading_3InfiniteCanvas_9254_185,
-.Heading_3InfiniteCanvas_9254_287,
-.Heading_3InfiniteCanvas_9254_293,
-.Heading_3InfiniteCanvas_9254_302,
-.Heading_3InfiniteCanvas_9254_308 { /* Heading for items */
-  color: #19171c; /* Consider using a CSS variable */
-  letter-spacing: -0.2px;
-  /* Removed fixed width and height */
-  width: 100%; /* Fluid width */
-  font-family: Inter;
-  font-size: 18.906px; /* Figma specific size, consider mapping to var */
-  font-style: normal;
+
+.cardTitle {
+  color: #19171c;
+  font-family: 'Inter', sans-serif;
+  font-size: 19px;
   font-weight: 600;
   line-height: 24px;
-  display: inline-block;
 }
-.ManageMultipleVersionsSizesAndFormatsOnAnInfiniteCanvasToScaleYourContentAndIterateEffortlessly_9254_179,
-.ManageMultipleVersionsSizesAndFormatsOnAnInfiniteCanvasToScaleYourContentAndIterateEffortlessly_9254_186,
-.ManageMultipleVersionsSizesAndFormatsOnAnInfiniteCanvasToScaleYourContentAndIterateEffortlessly_9254_288,
-.ManageMultipleVersionsSizesAndFormatsOnAnInfiniteCanvasToScaleYourContentAndIterateEffortlessly_9254_294,
-.ManageMultipleVersionsSizesAndFormatsOnAnInfiniteCanvasToScaleYourContentAndIterateEffortlessly_9254_303,
-.ManageMultipleVersionsSizesAndFormatsOnAnInfiniteCanvasToScaleYourContentAndIterateEffortlessly_9254_309 { /* Description text for items */
-  color: #6e6e73; /* Consider using a CSS variable */
-  letter-spacing: -0.32px;
-  /* Removed fixed width and height */
-  width: 100%; /* Fluid width */
-  font-family: Inter;
+
+.cardDescription {
+  color: #6e6e73;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
-  font-style: normal;
   font-weight: 400;
-  line-height: 24px;
-  display: inline-block;
+  line-height: 1.5; /* Increased for better readability */
 }
-.Row_9254_282, /* Duplicate class names, will apply to all if used generically */
-.Row_9254_297 {
-  flex: 1 0 0;
-  align-items: flex-start;
-  gap: 64px;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap; /* Ensure responsiveness */
-  justify-content: center; /* Center items if they wrap */
+
+/* Responsive styles for tablets and mobile */
+@media (max-width: 1024px) {
+  .mainContent {
+    flex-direction: column; /* Stack the intro on top of the grid */
+    gap: 48px;
+  }
+  .introColumn {
+    position: static; /* Unstick the title on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionContainer {
+    padding: 80px 32px;
+  }
+  .gridColumn {
+    grid-template-columns: 1fr; /* Stack cards into a single column */
+    gap: 48px;
+  }
+  .heading {
+    font-size: 36px;
+  }
 }
