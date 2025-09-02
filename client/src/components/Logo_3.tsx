@@ -1,13 +1,12 @@
 // client/src/components/Logo_3.tsx
 import React from 'react';
 import styles from '../styles/Logo_3.module.css'; // <--- THIS PATH MUST BE CORRECT
+import ClientLogos from './client-logos';
 
 export default function Logo_3() {
   return (
     <div className={styles.Logo_3_9248_28858}>
-      <span className={styles.LoremIpsumDolorSitAmetConsecteturAdipiscingElitSuspendisseVariusEnimInErosElementumTristiqueDuisCursusMiQuisViverraOrnareErosDolorInterdumNullaUtCommodoDiamLiberoVitaeErat_9248_30942}>
-            Over 5 000 Users Trust Aitenders&nbsp;to power their projects
-          </span>
+      <ClientLogos />
       <div className={styles.Content_9248_28861}>
         <div className={styles.Content_9248_28862}>
           {/* Logo 1 SVG - CORRECTED PATH DATA AND TEMPORARILY REPLACED WITH GENERIC PLACEHOLDER */}
