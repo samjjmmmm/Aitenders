@@ -97,77 +97,12 @@ export default function Header() {
                   </div>
                 )}
               </div>
-
-              <Button 
-                variant="outline" 
-                size="icon" 
-                onClick={toggleMenu}
-                className="rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
-              >
-                <Menu className="w-5 h-5" />
-              </Button>
             </div>
           </div>
         </div>
       </header>
 
-      <div
-        onClick={closeMenu}
-        className={`fixed inset-0 bg-black/40 z-[55] transition-opacity duration-300 ease-in-out
-          ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`
-        }
-      />
-
-      <div
-        className={`fixed top-0 right-0 h-full w-full max-w-sm bg-white z-[60] shadow-2xl
-          transform transition-transform duration-300 ease-in-out
-          ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`
-        }
-      >
-        <div className="flex flex-col h-full">
-          <div className="flex items-center justify-between p-4 border-b">
-            <h2 className="text-lg font-semibold">Menu</h2>
-            <Button variant="ghost" size="icon" onClick={closeMenu}>
-              <X className="w-5 h-5" />
-            </Button>
-          </div>
-
-          <nav className="flex-grow p-4 overflow-y-auto">
-            <ul className="space-y-1">
-              {navItems.map((item, index) => (
-                <li key={index} className="border-b last:border-b-0">
-                  {item.children ? (
-                    <>
-                      <button
-                        onClick={() => setIsUseCaseMenuOpen(!isUseCaseMenuOpen)}
-                        className="w-full flex justify-between items-center py-3 text-left font-medium text-gray-700 hover:text-black"
-                      >
-                        <span>{item.title}</span>
-                        <ChevronDown className={`w-5 h-5 transition-transform ${isUseCaseMenuOpen ? 'rotate-180' : ''}`} />
-                      </button>
-                      {isUseCaseMenuOpen && (
-                        <ul className="pl-4 pt-1 pb-2">
-                          {item.children.map((child, childIndex) => (
-                            <li key={childIndex}>
-                              <Link href={child.href} onClick={closeMenu} className="block py-2 text-sm text-gray-600 hover:text-black">
-                                {child.title}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </>
-                  ) : (
-                    <Link href={item.href || '#'} onClick={closeMenu} className="block py-3 font-medium text-gray-700 hover:text-black">
-                      {item.title}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      </div>
+      
     </>
   );
 }
