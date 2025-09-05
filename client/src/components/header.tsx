@@ -66,26 +66,6 @@ export default function Header() {
 
   return (
     <>
-      {/* =================================================================== */}
-      {/* ======================= THE SCREAM TEST ======================= */}
-      <h1 style={{ 
-        backgroundColor: 'red', 
-        color: 'white', 
-        padding: '20px', 
-        fontSize: '24px', 
-        fontWeight: 'bold',
-        textAlign: 'center',
-        position: 'fixed', 
-        top: '80px', 
-        left: '10px',
-        right: '10px',
-        zIndex: 99999 
-      }}>
-        HELLO! I AM THE `header.tsx` FILE AND I AM DEFINITELY RENDERING!
-      </h1>
-      {/* =================================================================== */}
-      {/* =================================================================== */}
-
       <header className="fixed top-0 left-0 right-0 z-50 bg-aitenders-white-blue border-b border-aitenders-light-blue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
