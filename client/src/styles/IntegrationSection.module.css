@@ -1,0 +1,157 @@
+/* src/styles/IntegrationSection.module.css */
+
+.integrationSection {
+  width: 100%;
+  padding: 0 64px; /* Remove vertical padding, keep horizontal */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  /* Add some internal padding that won't conflict with the global gap */
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+/* Left column with text content */
+.textColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.tagline {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #000;
+}
+
+.heading {
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.52px;
+  margin: 0;
+  color: #000;
+}
+
+.description {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000;
+}
+
+/* Container for the two sub-feature columns */
+.subfeatures {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  padding-top: 16px;
+}
+
+.subfeatureItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.subheading {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.22px;
+  color: #000;
+}
+
+.subfeatureText {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000;
+}
+
+.ctaButton {
+  border: 2px solid #000;
+  background: transparent;
+  border-radius: 100px;
+  padding: 10px 24px;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  width: fit-content;
+  transition: background-color 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ctaButton:hover {
+  background-color: #000;
+  color: #fff;
+}
+.arrowIcon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Right column with the image/video placeholder */
+.mediaColumn {
+  flex: 1;
+  aspect-ratio: 15 / 16;
+  border-radius: 40px;
+  background-color: #d3d3d3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.mediaColumn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay from Figma */
+}
+.playButton {
+  width: 64px;
+  height: 64px;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.2s;
+}
+.playButton:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column-reverse; /* Stack image on top of text */
+  }
+}
+@media (max-width: 768px) {
+  .integrationSection {
+    padding: 32px;
+  }
+  .subfeatures {
+    flex-direction: column;
+  }
+  .heading {
+    font-size: 36px;
+  }
+}

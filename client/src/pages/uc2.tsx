@@ -15,7 +15,7 @@ import { FaUsers, FaShieldAlt, FaChartBar, FaFileAlt, FaCogs } from "react-icons
 import ContactSection from "@/components/contact-section";
 import Header from "@/components/header";
 import UC3AnalysisCard from "@/components/UC3AnalysisCard";
-import ClientLogos from "@/components/client-logos";
+import ClientLogos from '@/components/ClientLogos';
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useGlobalTranslations } from "@/contexts/TranslationContext";

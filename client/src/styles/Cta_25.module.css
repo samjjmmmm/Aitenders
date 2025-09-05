@@ -1,14 +1,10 @@
 /* src/styles/Cta_25.module.css */
 
-/* Consolidate all font imports */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Raleway:wght@500&family=Roboto:wght@700&family=Montserrat:wght@400&display=swap');
-
 .ctaSection {
-  /* You can add a background image here if you have one */
-  /* background: url('/path/to/your/image.jpg') 50% / cover no-repeat; */
-  background-color: #d3d3d3; /* Fallback color from Figma */
+  /* This container is now transparent */
+  background: transparent;
   width: 100%;
-  padding: 112px 64px;
+  padding: 64px; /* Standard internal padding */
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -20,7 +16,9 @@
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 80px;
+  flex-wrap: wrap;
 }
 
 /* Left column with the heading and text */
@@ -29,21 +27,22 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  max-width: 574px;
 }
 
 .heading {
-  color: #000;
-  font-family: 'Raleway', sans-serif;
-  font-size: 48px;
+  /* Text color is now dark to be visible on a light background */
+  color: #111827;
   font-weight: 500;
+  font-size: 48px;
   line-height: 1.2;
   letter-spacing: -0.48px;
   margin: 0;
 }
 
 .subheading {
-  color: #000;
-  font-family: 'Inter', sans-serif;
+  /* Text color is now a medium gray */
+  color: #4b5563;
   font-size: 18px;
   font-weight: 400;
   line-height: 1.5;
@@ -62,35 +61,29 @@
   padding: 24px;
   width: 100%;
   max-width: 500px;
-  box-shadow: 0 0 2px rgba(23, 26, 31, 0.12), 0 0 1px rgba(23, 26, 31, 0.07);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-
 .cardHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 .cardTitle {
   color: #171a1f;
-  font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-weight: 700;
 }
-
 .messageBubble {
   background: #f3f6fc;
   border-radius: 0 10px 10px 10px;
   padding: 16px;
   color: #19191f;
-  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   line-height: 1.6;
 }
-
 .assessmentButton {
   background: #fff;
   border: 1px solid #dee1e6;
@@ -107,10 +100,8 @@
 .assessmentButton:hover {
   background-color: #f8f9fa;
 }
-
 .buttonText {
   color: #565d6d;
-  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
 }
 

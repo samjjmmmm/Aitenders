@@ -1,15 +1,18 @@
 /* src/styles/Layout_84.module.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Inter:wght@400&display=swap');
-
-/* --- Your Original Styles --- */
 .sectionContainer {
   width: 100%;
   background: #FBFCFF;
   display: flex;
   justify-content: center;
-  padding: 120px 64px;
+
+  /* UPDATED: Removed vertical padding. Kept horizontal padding. */
+  padding: 0 64px;
+
   box-sizing: border-box;
+  /* Added some internal padding that won't conflict with the global gap */
+  padding-top: 64px;
+  padding-bottom: 64px;
 }
 
 .contentWrapper {
@@ -17,7 +20,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 100px;
+  gap: 48px;
   max-width: 1280px;
   width: 100%;
 }
@@ -28,99 +31,84 @@
   text-align: right;
 }
 
-.statsColumn {
-  flex-direction: column;
-  display: flex;
-  gap: 32px;
-  flex: 2;
-  min-width: 300px;
-  text-align: left;
-}
-
 .heading {
-  font-family: 'Raleway', sans-serif;
   font-weight: 500;
   font-size: 96px;
   line-height: 1;
   color: #3880E8;
 }
 
+.statsColumn {
+  flex: 2;
+  min-width: 300px;
+  height: 100px; 
+  position: relative;
+  overflow: hidden;
+}
+
 .statItem {
   display: flex;
   align-items: baseline;
   gap: 24px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  opacity: 0;
 }
 
 .number {
-  font-family: 'Raleway', sans-serif;
   font-weight: 500;
   font-size: 52px;
   line-height: 1.2;
   letter-spacing: -0.52px;
   color: #000;
-  min-width: 140px;
   text-align: right;
+  flex-shrink: 0;
 }
 
 .text {
-  font-family: 'Inter', sans-serif;
   font-size: 20px;
   line-height: 1.5;
   color: #000;
-}
-
-/* --- NEW Animation Styles to Add --- */
-
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.statsColumn .statItem {
-  opacity: 0; /* Hidden by default */
+  text-align: left;
+  white-space: normal;
 }
 
 .statsColumn.animated .statItem {
-  animation-name: slideInUp;
-  animation-duration: 0.7s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
+  animation-name: textFlip;
+  animation-duration: 9s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
 
-.statsColumn.animated .statItem:nth-child(1) {
-  animation-delay: 0.2s;
-}
-.statsColumn.animated .statItem:nth-child(2) {
-  animation-delay: 0.4s;
-}
-.statsColumn.animated .statItem:nth-child(3) {
-  animation-delay: 0.6s;
+@keyframes textFlip {
+  0% { opacity: 0; transform: translateY(100%); }
+  5% { opacity: 1; transform: translateY(0); }
+  33% { opacity: 1; transform: translateY(0); }
+  38% { opacity: 0; transform: translateY(-100%); }
+  100% { opacity: 0; }
 }
 
-/* --- Your Original Media Query --- */
+.statsColumn.animated .statItem:nth-child(1) { animation-delay: 0s; }
+.statsColumn.animated .statItem:nth-child(2) { animation-delay: 3s; }
+.statsColumn.animated .statItem:nth-child(3) { animation-delay: 6s; }
+
 @media (max-width: 768px) {
+  .sectionContainer {
+    padding: 32px; /* Simplified padding for mobile */
+  }
   .contentWrapper {
     flex-direction: column;
     gap: 40px;
-    align-items: center;
   }
-  .youColumn, .statsColumn {
+  .youColumn {
     text-align: center;
-    flex: 1 1 100%;
+  }
+  .statsColumn {
+    width: 100%;
+    text-align: center;
   }
   .statItem {
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-  .number {
-    text-align: center;
-    min-width: auto;
+    justify-content: center;
   }
 }

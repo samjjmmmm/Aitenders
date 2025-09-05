@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Header from "@/components/header";
-import ClientLogos from "@/components/client-logos";
+import ClientLogos from '@/components/ClientLogos';
 import DemoCTAButton from "@/components/demo-cta-button";
 import { 
   CheckCircle, 

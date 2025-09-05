@@ -1,296 +1,193 @@
-import { useState, useEffect } from "react";
+// src/components/header.tsx
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, ChevronRight, Home, Globe } from "lucide-react";
-import { Link, useLocation } from "wouter";
-import { useGlobalTranslations } from "@/contexts/TranslationContext";
+import { Menu, X, Globe, ChevronDown } from "lucide-react";
+import { Link } from "wouter";
+import { useTranslation } from 'react-i18next';
 
-// Import Aitenders logo
+// Import your logo
 import aitendersLogo from "@assets/Untitled(4)_1753712731718.png";
 
-interface HeaderProps {
-  language?: string;
-  onLanguageChange?: (lang: string) => void;
-}
+// Type definitions for our navigation data structure
+type NavLink = {
+  title: string;
+  href: string;
+};
 
-export default function Header({ language, onLanguageChange }: HeaderProps) {
+type NavItem = {
+  title: string;
+  href?: string;
+  children?: NavLink[];
+};
+
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isUseCasesOpen, setIsUseCasesOpen] = useState(false);
-  const [showLanguageMenu, setShowLanguageMenu] = useState(false);
-  const [location] = useLocation();
-  
-  // Get global translation system
-  const { currentLanguage, changeLanguage } = useGlobalTranslations();
-  
-  // Close menu when location changes
+  const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
+  const [isUseCaseMenuOpen, setIsUseCaseMenuOpen] = useState(false);
+  const languageMenuRef = useRef<HTMLDivElement>(null);
+
+  const { t, i18n } = useTranslation();
+
+  const potentialNavItems = t('header.navigation', { returnObjects: true });
+  const navItems: NavItem[] = Array.isArray(potentialNavItems) ? potentialNavItems : [];
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   const closeMenu = () => {
     setIsMenuOpen(false);
-    setIsUseCasesOpen(false);
-    setShowLanguageMenu(false);
+    setIsUseCaseMenuOpen(false);
   };
 
+  const handleLanguageChange = (lang: string) => {
+    i18n.changeLanguage(lang);
+    setIsLanguageMenuOpen(false);
+  };
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (languageMenuRef.current && !languageMenuRef.current.contains(event.target as Node)) {
+        setIsLanguageMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isMenuOpen]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-aitenders-white-blue border-b border-aitenders-light-blue">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link href="/">
-            <div className="flex items-center cursor-pointer">
-              <img 
-                src={aitendersLogo} 
-                alt="Aitenders" 
-                className="h-8 w-auto"
-              />
-            </div>
-          </Link>
-          
-          {/* Right Section */}
-          <div className="flex items-center space-x-3">
+    <>
+      {/* =================================================================== */}
+      {/* ======================= THE SCREAM TEST ======================= */}
+      <h1 style={{ 
+        backgroundColor: 'red', 
+        color: 'white', 
+        padding: '20px', 
+        fontSize: '24px', 
+        fontWeight: 'bold',
+        textAlign: 'center',
+        position: 'fixed', 
+        top: '80px', 
+        left: '10px',
+        right: '10px',
+        zIndex: 99999 
+      }}>
+        HELLO! I AM THE `header.tsx` FILE AND I AM DEFINITELY RENDERING!
+      </h1>
+      {/* =================================================================== */}
+      {/* =================================================================== */}
 
-            
-            {/* Language Selector */}
-            <div className="relative">
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => setShowLanguageMenu(!showLanguageMenu)}
-                className="rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue px-3 py-1 h-8 text-xs font-medium"
+      <header className="fixed top-0 left-0 right-0 z-50 bg-aitenders-white-blue border-b border-aitenders-light-blue">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <Link href="/" onClick={closeMenu}>
+              <div className="flex items-center cursor-pointer">
+                <img src={aitendersLogo} alt="Aitenders" className="h-8 w-auto" />
+              </div>
+            </Link>
+
+            <div className="flex items-center space-x-3">
+              <div className="relative" ref={languageMenuRef}>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setIsLanguageMenuOpen(!isLanguageMenuOpen)}
+                  className="rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue px-3 py-1 h-8 text-xs font-medium"
+                >
+                  <Globe className="w-3 h-3 mr-1" />
+                  {i18n.language.toUpperCase()}
+                </Button>
+                {isLanguageMenuOpen && (
+                  <div className="absolute right-0 top-full mt-1 bg-white border border-aitenders-light-blue rounded-lg shadow-lg py-1 z-50 min-w-[160px]">
+                    <button onClick={() => handleLanguageChange('fr')} className={`block w-full text-left px-3 py-2 text-sm hover:bg-aitenders-pale-blue transition-colors ${i18n.language === 'fr' ? 'bg-aitenders-pale-blue font-medium' : ''}`}>
+                      🇫🇷 Français
+                    </button>
+                    <button onClick={() => handleLanguageChange('en')} className={`block w-full text-left px-3 py-2 text-sm hover:bg-aitenders-pale-blue transition-colors ${i18n.language === 'en' ? 'bg-aitenders-pale-blue font-medium' : ''}`}>
+                      🇬🇧 English
+                    </button>
+                  </div>
+                )}
+              </div>
+
+              <Button 
+                variant="outline" 
+                size="icon" 
+                onClick={toggleMenu}
+                className="rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
               >
-                <Globe className="w-3 h-3 mr-1" />
-                {currentLanguage?.toUpperCase()}
+                <Menu className="w-5 h-5" />
               </Button>
-              
-              {showLanguageMenu && (
-                <div className="absolute right-0 top-full mt-1 bg-white border border-aitenders-light-blue rounded-lg shadow-lg py-1 z-[1000] min-w-[160px]">
-                  <button
-                    onClick={() => {
-                      changeLanguage('fr');
-                      setShowLanguageMenu(false);
-                    }}
-                    className={`block w-full text-left px-3 py-2 text-sm hover:bg-aitenders-pale-blue transition-colors ${currentLanguage === 'fr' ? 'bg-aitenders-pale-blue font-medium' : ''}`}
-                  >
-                    🇫🇷 Français
-                  </button>
-                  <button
-                    onClick={() => {
-                      changeLanguage('en');
-                      setShowLanguageMenu(false);
-                    }}
-                    className={`block w-full text-left px-3 py-2 text-sm hover:bg-aitenders-pale-blue transition-colors ${currentLanguage === 'en' ? 'bg-aitenders-pale-blue font-medium' : ''}`}
-                  >
-                    🇬🇧 English
-                  </button>
-                  <button
-                    onClick={() => {
-                      changeLanguage('es');
-                      setShowLanguageMenu(false);
-                    }}
-                    className={`block w-full text-left px-3 py-2 text-sm hover:bg-aitenders-pale-blue transition-colors ${currentLanguage === 'es' ? 'bg-aitenders-pale-blue font-medium' : ''}`}
-                  >
-                    🇪🇸 Español
-                  </button>
-                  <button
-                    onClick={() => {
-                      changeLanguage('de');
-                      setShowLanguageMenu(false);
-                    }}
-                    className={`block w-full text-left px-3 py-2 text-sm hover:bg-aitenders-pale-blue transition-colors ${currentLanguage === 'de' ? 'bg-aitenders-pale-blue font-medium' : ''}`}
-                  >
-                    🇩🇪 Deutsch
-                  </button>
-                </div>
-              )}
             </div>
-
-            {/* Menu Button */}
-            <Button 
-              variant="outline" 
-              size="icon" 
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="rounded-full border-aitenders-light-blue hover:bg-aitenders-pale-blue"
-            >
-              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </Button>
           </div>
         </div>
-      </div>
+      </header>
 
-      {/* Right Slide-out Menu */}
-      <div className={`right-sidebar ${isMenuOpen ? 'open' : ''}`}>
-        <div className="p-6">
-          <div className="flex justify-between items-center mb-8">
-            <span className="text-xl font-bold text-aitenders-black">Menu</span>
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              onClick={closeMenu}
-            >
+      <div
+        onClick={closeMenu}
+        className={`fixed inset-0 bg-black/40 z-[55] transition-opacity duration-300 ease-in-out
+          ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`
+        }
+      />
+
+      <div
+        className={`fixed top-0 right-0 h-full w-full max-w-sm bg-white z-[60] shadow-2xl
+          transform transition-transform duration-300 ease-in-out
+          ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`
+        }
+      >
+        <div className="flex flex-col h-full">
+          <div className="flex items-center justify-between p-4 border-b">
+            <h2 className="text-lg font-semibold">Menu</h2>
+            <Button variant="ghost" size="icon" onClick={closeMenu}>
               <X className="w-5 h-5" />
             </Button>
           </div>
-          
-          <nav className="space-y-4">
-            {/* Home Button */}
-            <Link href="/">
-              <div 
-                className="flex items-center py-2 text-lg text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors cursor-pointer"
-                onClick={closeMenu}
-              >
-                <Home className="w-5 h-5 mr-3" />
-                Home
-              </div>
-            </Link>
-            
-            <div className="py-2">
-              <Link href="/product">
-                <div 
-                  className="block text-lg text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors cursor-pointer"
-                  onClick={closeMenu}
-                >
-                  Product
-                </div>
-              </Link>
-            </div>
-            
-            {/* Use Cases with Dropdown */}
-            <div className="py-2">
-              <div 
-                className="flex items-center justify-between text-lg text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors cursor-pointer"
-                onClick={() => setIsUseCasesOpen(!isUseCasesOpen)}
-              >
-                <span>Use Cases</span>
-                {isUseCasesOpen ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
-              </div>
-              
-              {/* Dropdown Content */}
-              {isUseCasesOpen && (
-                <div className="ml-6 space-y-4 py-2">
-                  {/* Par phase */}
-                  <div>
-                    <div className="text-sm font-semibold text-aitenders-dark-blue mb-2">→ Par phase :</div>
-                    <div className="ml-4 space-y-2">
-                      <a href="#offre" className="block text-sm text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors">
-                        Offre
-                      </a>
-                      <a href="#execution" className="block text-sm text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors">
-                        Exécution
-                      </a>
-                      <a href="#redaction" className="block text-sm text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors">
-                        Rédaction
-                      </a>
-                    </div>
-                  </div>
-                  
-                  {/* Par niveau */}
-                  <div>
-                    <div className="text-sm font-semibold text-aitenders-dark-blue mb-2">→ Par niveau :</div>
-                    <div className="ml-4 space-y-2">
-                      <Link href="/uc1">
-                        <div className="block text-sm text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors cursor-pointer" onClick={closeMenu}>
-                          Petit
-                        </div>
-                      </Link>
-                      <a href="#moyen" className="block text-sm text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors">
-                        Moyen
-                      </a>
-                      <Link href="/test-uc2">
-                        <div className="block text-sm text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors cursor-pointer" onClick={closeMenu}>
-                          Test UC2
-                        </div>
-                      </Link>
-                      <Link href="/uc3">
-                        <div className="block text-sm text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors cursor-pointer" onClick={closeMenu}>
-                          Complexe
-                        </div>
-                      </Link>
-                    </div>
-                  </div>
-                  
-                  {/* Voir tous les cas d'usage */}
-                  <div className="pt-2 border-t border-gray-100">
-                    <a 
-                      href="#all-use-cases" 
-                      className="block text-sm text-aitenders-primary-blue hover:text-aitenders-dark-blue font-medium transition-colors"
-                    >
-                      → Voir tous les cas d'usage
-                    </a>
-                    <span className="text-xs text-aitenders-dark-blue/60 ml-2">(grid avec filtres)</span>
-                  </div>
-                </div>
-              )}
-            </div>
-            
-            <div className="py-2">
-              <Link href="/word-addon">
-                <div 
-                  className="block text-lg text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors cursor-pointer"
-                  onClick={closeMenu}
-                >
-                  Word Add-in
-                </div>
-              </Link>
-            </div>
-            
-            <div className="py-2">
-              <Link href="/privacy">
-                <div 
-                  className="block text-lg text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors cursor-pointer"
-                  onClick={closeMenu}
-                >
-                  Privacy
-                </div>
-              </Link>
-            </div>
-            
-            <div className="py-2">
-              <a 
-                href="#about" 
-                className="block text-lg text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors"
-                onClick={closeMenu}
-              >
-                About Us
-              </a>
-            </div>
-            
-            <div className="py-2">
-              <Link href="/security">
-                <div 
-                  className="block text-lg text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors cursor-pointer"
-                  onClick={closeMenu}
-                >
-                  Security
-                </div>
-              </Link>
-            </div>
-            
-            <div className="py-2">
-              <a 
-                href="https://aitenders.welcomekit.co/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-lg text-aitenders-dark-blue hover:text-aitenders-primary-blue transition-colors"
-                onClick={closeMenu}
-              >
-                Career
-              </a>
-            </div>
-            
-            <div className="pt-6 border-t border-aitenders-light-blue">
-              <div className="space-y-4 text-sm text-aitenders-dark-blue">
-                <div>
-                  <span className="font-medium">Email:</span><br />
-                  <span>contact@aitenders.com</span>
-                </div>
-                <div>
-                  <span className="font-medium">Location:</span><br />
-                  <span>Saint-Etienne | 42100</span>
-                </div>
-              </div>
-            </div>
+
+          <nav className="flex-grow p-4 overflow-y-auto">
+            <ul className="space-y-1">
+              {navItems.map((item, index) => (
+                <li key={index} className="border-b last:border-b-0">
+                  {item.children ? (
+                    <>
+                      <button
+                        onClick={() => setIsUseCaseMenuOpen(!isUseCaseMenuOpen)}
+                        className="w-full flex justify-between items-center py-3 text-left font-medium text-gray-700 hover:text-black"
+                      >
+                        <span>{item.title}</span>
+                        <ChevronDown className={`w-5 h-5 transition-transform ${isUseCaseMenuOpen ? 'rotate-180' : ''}`} />
+                      </button>
+                      {isUseCaseMenuOpen && (
+                        <ul className="pl-4 pt-1 pb-2">
+                          {item.children.map((child, childIndex) => (
+                            <li key={childIndex}>
+                              <Link href={child.href} onClick={closeMenu} className="block py-2 text-sm text-gray-600 hover:text-black">
+                                {child.title}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </>
+                  ) : (
+                    <Link href={item.href || '#'} onClick={closeMenu} className="block py-3 font-medium text-gray-700 hover:text-black">
+                      {item.title}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
           </nav>
         </div>
       </div>
-    </header>
+    </>
   );
 }

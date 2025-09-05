@@ -1,11 +1,15 @@
-import { useGlobalTranslations } from '@/contexts/TranslationContext';
+// src/components/ClientLogos.tsx
+import React from 'react';
+// Note: We don't need to import a CSS module file here because it uses global Tailwind classes
 
-interface ClientLogosProps {
-  language?: 'en' | 'fr';
-}
+// You can keep these if you plan to use them, but they aren't used in this component's JSX
+// import { useGlobalTranslations } from '@/contexts/TranslationContext';
+// interface ClientLogosProps {
+//   language?: 'en' | 'fr';
+// }
 
-export default function ClientLogos({ language = 'fr' }: ClientLogosProps) {
-  const { t } = useGlobalTranslations();
+export default function ClientLogos() { // Simplified the component signature
+  // const { t } = useGlobalTranslations();
   const logos = [
     {
       name: "Vinci",
@@ -33,32 +37,23 @@ export default function ClientLogos({ language = 'fr' }: ClientLogosProps) {
     },
   ];
 
-  // Duplicate logos for seamless scroll
+  // Duplicate logos for the seamless scroll effect
   const duplicatedLogos = [...logos, ...logos];
 
-  // Legacy fallback translations
-  const fallbackT = {
-    fr: {
-      title: "Approuvé par les Leaders de l'Industrie",
-      subtitle: "Rejoignez les entreprises de premier plan qui font confiance à Aitenders pour leur gestion d'appels d'offres"
-    },
-    en: {
-      title: "Trusted by Industry Leaders",
-      subtitle: "Join leading companies who trust Aitenders for their tender management"
-    }
-  };
-
   return (
-    <section className="py-16">
+    <section className="py-16 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="overflow-hidden">
-          <div className="flex logo-scroll space-x-12 items-center">
+        <h2 className="text-center text-xl text-gray-600 mb-8">
+          Over 5 000 Users Trust Aitenders to power their projects
+        </h2>
+        <div className="overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+          <div className="flex logo-scroll space-x-16 items-center">
             {duplicatedLogos.map((logo, index) => (
               <img
                 key={index}
                 src={logo.src}
                 alt={logo.name}
-                className="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity flex-shrink-0"
+                className="h-10 w-auto opacity-60 hover:opacity-100 transition-opacity flex-shrink-0"
                 loading="lazy"
               />
             ))}

@@ -1,38 +1,50 @@
 // client/src/components/Layout_84.tsx
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { useInView } from 'react-intersection-observer';
 import styles from '../styles/Layout_84.module.css';
 
-export default function Layout_84(): JSX.Element {
+export default function Layout_84({ t_prefix }: { t_prefix: string }): JSX.Element {
+  const { t } = useTranslation();
 
-  // This hook detects when the component is visible on the screen
+  const statsData = [
+    {
+      number: t(`${t_prefix}.stat1_number`),
+      text: t(`${t_prefix}.stat1_text`)
+    },
+    {
+      number: t(`${t_prefix}.stat2_number`),
+      text: t(`${t_prefix}.stat2_text`)
+    },
+    {
+      number: t(`${t_prefix}.stat3_number`),
+      text: t(`${t_prefix}.stat3_text`)
+    }
+  ];
+
   const { ref, inView } = useInView({
-    triggerOnce: true,    // Ensures the animation only runs once
-    threshold: 0.3,       // Triggers when 30% of the component is visible
+    triggerOnce: true,
+    threshold: 0.5,
   });
 
   return (
-    // The 'ref' is attached here to observe this whole section
     <section ref={ref} className={styles.sectionContainer}>
       <div className={styles.contentWrapper}>
         <div className={styles.youColumn}>
-          <h2 className={styles.heading}>Vous</h2>
+          <h2 className={styles.heading}>{t(`${t_prefix}.you`)}</h2>
         </div>
-
-        {/* The 'animated' class is added here only when 'inView' is true */}
         <div className={`${styles.statsColumn} ${inView ? styles.animated : ''}`}>
-          <div className={styles.statItem}>
-            <span className={styles.number}>-50%</span>
-            <p className={styles.text}>du temps d&apos;analyse initiale.</p>
-          </div>
-          <div className={styles.statItem}>
-            <span className={styles.number}>100%</span>
-            <p className={styles.text}>des clauses critiques identifiées et priorisées.</p>
-          </div>
-          <div className={styles.statItem}>
-            <span className={styles.number}>0</span>
-            <p className={styles.text}>surprise de dernière minute.</p>
-          </div>
+          {statsData.map((stat, index) => (
+            <div className={styles.statItem} key={index}>
+
+              {/* CRITICAL CHANGE: Only render the number if it's not an empty string */}
+              {stat.number && (
+                <span className={styles.number}>{stat.number}</span>
+              )}
+
+              <p className={styles.text}>{stat.text}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

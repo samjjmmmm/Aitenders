@@ -7,16 +7,17 @@
   align-items: center;
   gap: 48px;
   width: 100%;
-  min-height: 287px; /* Changed to min-height for responsiveness */
+  min-height: 287px;
   display: flex;
   overflow: hidden;
 }
 .LoremIpsumDolorSitAmetConsecteturAdipiscingElitSuspendisseVariusEnimInErosElementumTristiqueDuisCursusMiQuisViverraOrnareErosDolorInterdumNullaUtCommodoDiamLiberoVitaeErat_9248_30942 {
   color: var(--Color-Scheme-2-Text, #000);
   text-align: center;
-  font-family: Roboto;
+  /* FIX: REMOVED font-family: Roboto; */
+  /* This will now correctly inherit Roboto from the global body style. */
   font-size: var(--Text-Sizes-Text-Medium, 18px);
-  max-width: 549px; /* Added max-width for responsiveness */
+  max-width: 549px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
@@ -33,7 +34,7 @@
   align-items: center;
   gap: 24px;
   display: flex;
-  flex-wrap: wrap; /* Added for responsiveness of logos */
+  flex-wrap: wrap;
 }
 .PlaceholderLogo_9248_28863,
 .PlaceholderLogo_9248_28864,
@@ -42,10 +43,16 @@
 .PlaceholderLogo_9248_28867,
 .PlaceholderLogo_9248_28868,
 .PlaceholderLogo_9248_28869 {
-  width: 200px; /* Adjust for responsiveness if logos should scale down */
-  height: 56px; /* Adjust for responsiveness */
-  & svg path {
-    fill: currentColor; /* Use currentColor to inherit color from parent */
-  }
-  color: var(--Color-Brand-Blue, #112646); /* Default color for the SVG icons */
+  width: 200px;
+  height: 56px;
+  color: var(--Color-Brand-Blue, #112646);
+}
+.PlaceholderLogo_9248_28863 svg path,
+.PlaceholderLogo_9248_28864 svg path,
+.PlaceholderLogo_9248_28865 svg path,
+.PlaceholderLogo_9248_28866 svg path,
+.PlaceholderLogo_9248_28867 svg path,
+.PlaceholderLogo_9248_28868 svg path,
+.PlaceholderLogo_9248_28869 svg path {
+    fill: currentColor;
 }

@@ -17,7 +17,7 @@ import Header from "@/components/header";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import ChatInterface from "@/components/chat-interface";
-import ClientLogos from "@/components/client-logos";
+import ClientLogos from '@/components/ClientLogos';
 import { AitendersSimulatorFinal } from "@/components/aitenders-simulator-final";
 import uc4HeroImage from "@assets/HERO UC 4_1755793077078.png";
 import uc4FirstFeatureImage from "@assets/wow 1_1755793034506.png";

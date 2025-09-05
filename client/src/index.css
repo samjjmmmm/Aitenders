@@ -1,449 +1,392 @@
-          /* client/src/index.css */
-
-          /*
-             *** IMPORTANT: ALL @import RULES (like Google Fonts) MUST BE AT THE VERY TOP ***
-             *** before any other CSS rules, including @tailwind directives.             ***
-          */
-
-          /* Google Font Imports - Consolidated and Cleaned (no duplicates) */
-          @import url("https://fonts.googleapis.com/css?family=Inter:wght@400;500;600;700&display=swap");
-          @import url("https://fonts.googleapis.com/css?family=Raleway:wght@500&display=swap");
-          @import url("https://fonts.googleapis.com/css?family=Roboto:wght@400;500;700&display=swap");
-          @import url("https://fonts.googleapis.com/css?family=Montserrat:wght@400&display=swap");
-
-          /* Tailwind CSS Directives - These must come AFTER @import rules */
-          @tailwind base;
-          @tailwind components;
-          @tailwind utilities;
-
-          /* CSS Variables - Consolidated and Cleaned */
-          :root {
-            /* Set a single source of truth for width (scoped var is fine) */
-            --sidebar-width: 280px;
-
-            /* Monochromatic Design (Base for UI Kit elements if applicable) */
-            --background: #ffffff; /* White background */
-            --foreground: #000000; /* Black text */
-            --muted: #f5f5f5; /* Light gray for muted elements */
-            --muted-foreground: #000000; /* Black for muted text */
-            --popover: #ffffff; /* White */
-            --popover-foreground: #000000; /* Black */
-            --card: #ffffff; /* White */
-            --card-foreground: #000000; /* Black */
-            --border: #e5e5e5; /* Light gray borders */
-            --input: #e5e5e5; /* Light gray input borders */
-            --primary: #000000; /* Black for primary elements */
-            --primary-foreground: #ffffff; /* White text on black backgrounds */
-            --secondary: #f5f5f5; /* Light gray for secondary elements */
-            --secondary-foreground: #000000; /* Black text on light backgrounds */
-            --accent: #f5f5f5; /* Light gray for accents */
-            --accent-foreground: #000000; /* Black text */
-            --destructive: #000000; /* Black for destructive actions */
-            --destructive-foreground: #ffffff; /* White text on black */
-            --ring: #000000; /* Black focus rings */
-            --radius: 0.75rem;
-
-            /* YOUR BRAND COLORS (Crucial for Figma exports and consistent branding) */
-            --aitenders-dark-blue: #112646;     /* Your actual dark blue */
-            --aitenders-white-blue: #FBFCFF;    /* Your actual off-white blue */
-            --aitenders-primary-blue: #3880E8;  /* Your actual accent blue */
-            --aitenders-pale-blue: #F5F9FE;     /* Your actual very light blue */
-            --aitenders-pastel-blue: #EBF2FD;   /* Your actual slightly darker light blue */
-            --aitenders-light-blue: #C3D9F8;    /* Your actual medium gray-blue */
-            --aitenders-black: #000;            /* Your actual black */
-
-            /* Figma Exported Generic Color Scheme Vars (mapped to your brand colors where possible) */
-            --Color-Brand-Blue: var(--aitenders-dark-blue);
-            --Color-CTA-Blue: var(--aitenders-primary-blue);
-            --Color-White: var(--aitenders-white-blue);
-            --Color-Neutral-Darkest: var(--aitenders-black); /* Figma's #000 */
-
-            --Color-Scheme-1-Background: var(--aitenders-pale-blue); /* Assuming this maps to a light background */
-            --Color-Scheme-1-Foreground: var(--aitenders-pale-blue); /* Same as above */
-            --Color-Scheme-1-Border: var(--aitenders-black); 
-
-            --Color-Scheme-2-Background: var(--aitenders-white-blue); /* Assuming white background */
-            --Color-Scheme-2-Text: var(--aitenders-black); /* Assuming black text */
-            --Color-Scheme-2-Border: var(--aitenders-black); 
-
-            --Color-Scheme-3-Background: var(--aitenders-pale-blue); /* Assuming a light gray background */
-            --Color-Scheme-3-Text: var(--aitenders-black); 
-            --Color-Scheme-3-Foreground: var(--aitenders-pale-blue); /* Same as above */
-
-            /* Figma Exported Layout/Spacing/Radius Vars */
-            --Page-Padding-padding-global: 64px;
-            --Section-Padding-padding-section-large: 112px;
-            --Section-Padding-padding-section-medium: 80px;
-            --Container-container-large: 1280px;
-            --Max-Width-max-width-large: 768px;
-            --Text-Sizes-Heading-1: 72px;
-            --Text-Sizes-Heading-2: 52px;
-            --Text-Sizes-Heading-5: 28px;
-            --Text-Sizes-Text-Medium: 18px;
-            --Text-Sizes-Text-Regular: 16px;
-            --Opacity-Transparent: rgba(255, 255, 255, 0);
-            --Opacity-Neutral-Darkest-15: rgba(0, 0, 0, 0.15);
-            --Opacity-Neutral-Darkest-5: rgba(0, 0, 0, 0.05);
-            --Radius-Large: 40px;
-            --Radius-Medium: 32px;
-            --Stroke-Divider-Width: 2px;
-          }
-
-          .dark {
-            /* You can adapt these dark mode vars if you have a dark mode toggle */
-            --background: #000000;
-            --foreground: #ffffff;
-            --muted: #1a1a1a;
-            --muted-foreground: #ffffff;
-            --popover: #1a1a1a;
-            --popover-foreground: #ffffff;
-            --card: #1a1a1a;
-            --card-foreground: #ffffff;
-            --border: #333333;
-            --input: #333333;
-            --primary: #ffffff;
-            --primary-foreground: #000000;
-            --secondary: #333333;
-            --secondary-foreground: #ffffff;
-            --accent: #1a1a1a;
-            --accent-foreground: #ffffff;
-            --destructive: #ffffff;
-            --destructive-foreground: #000000;
-            --ring: #ffffff;
-          }
-
-          /* Base layer styles (less aggressive, remove !important) */
-          @layer base {
-            /* Apply border-border globally, but don't force it with !important */
-            * {
-              border-color: var(--border); /* Changed to use var */
-            }
-
-            /* Set default font on body, then let components override */
-            body {
-              font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-              color: var(--foreground); /* Use foreground var */
-              background-color: var(--background); /* Use background var */
-              -webkit-font-smoothing: antialiased; /* Better font rendering */
-              -moz-osx-font-smoothing: grayscale; /* Better font rendering */
-            }
-
-            /* Reset some default browser styles */
-            h1, h2, h3, h4, h5, h6 {
-              font-size: inherit; /* Inherit font size by default */
-              font-weight: inherit; /* Inherit font weight by default */
-            }
-
-            /* Basic Link styling if not handled by components */
-            a {
-              color: inherit;
-              text-decoration: none;
-            }
-          }
-
-          /* Utilities layer (remove !important from common properties to avoid conflicts) */
-          @layer utilities {
-            .gradient-bg {
-              background: linear-gradient(135deg, var(--aitenders-pale-blue), var(--aitenders-pastel-blue));
-            }
-
-            .brand-gradient {
-              background: linear-gradient(135deg, var(--aitenders-pale-blue) 0%, var(--aitenders-pastel-blue) 50%, var(--aitenders-light-blue) 100%);
-            }
-
-            .card-hover {
-              @apply transition-all duration-300 hover:shadow-lg hover:scale-[1.02];
-            }
-
-            /* Generic grid layouts - remove !important to avoid overriding specific flexbox/grid */
-            .hero-grid, .hero-section {
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-              gap: 2rem;
-              align-items: center;
-            }
-
-            .features-grid, .features-section {
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-              gap: 2rem;
-            }
-
-            .stats-grid, .stats-section {
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-              gap: 2rem;
-            }
-
-            .complex-grid, .complex-section {
-              display: grid;
-              grid-template-columns: 2fr 1fr;
-              grid-template-rows: auto;
-              gap: 2rem;
-            }
-
-            /* Typography styles - These should ideally be component-specific if you want Figma exactness.
-               Removing !important allows Figma module CSS to take precedence.
-               You can keep these as fallbacks or for elements not covered by Figma's export. */
-            .slack-hero-title, h1 {
-              font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-              font-weight: 700;
-              font-size: 56px;
-              line-height: 56px;
-              letter-spacing: -0.025em;
-              color: var(--foreground);
-            }
-
-            h2 {
-              font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-              font-weight: 600;
-              font-size: 42px;
-              line-height: 48px;
-              color: var(--foreground);
-            }
-
-            h3 {
-              font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-              font-weight: 600;
-              font-size: 32px;
-              line-height: 40px;
-              color: var(--foreground);
-            }
-
-            h4, h5, h6 {
-              font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-              font-weight: 500;
-              color: var(--foreground);
-            }
-
-            /* Body text styles - similar approach */
-            p, span, div, li, td, th {
-              font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-              color: var(--foreground);
-            }
-
-            /* Button styles */
-            button, .btn, [role="button"] {
-              font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-              font-weight: 500;
-            }
-
-            /* Input styles */
-            input, textarea, select {
-              font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-              color: var(--foreground);
-            }
-
-            /* Responsive Grid Breakpoints - FORCED (Keep these for responsiveness) */
-            @media (max-width: 768px) {
-              .hero-grid, .hero-section {
-                grid-template-columns: 1fr;
-              }
-
-              .features-grid, .features-section {
-                grid-template-columns: 1fr;
-              }
-
-              .stats-grid, .stats-section {
-                grid-template-columns: 1fr;
-              }
-
-              .complex-grid, .complex-section {
-                grid-template-columns: 1fr;
-              }
-
-              .slack-hero-title, h1 {
-                font-size: clamp(32px, 8vw, 48px);
-                line-height: 1.1;
-              }
-            }
-
-            @media (min-width: 769px) and (max-width: 1024px) {
-              .features-grid, .features-section {
-                grid-template-columns: repeat(2, 1fr);
-              }
-
-              .stats-grid, .stats-section {
-                grid-template-columns: repeat(2, 1fr);
-              }
-
-              .slack-hero-title, h1 {
-                font-size: clamp(42px, 6vw, 56px);
-                line-height: 1.1;
-              }
-            }
-
-            .logo-scroll {
-              animation: scroll 20s linear infinite;
-              width: calc(100% * 3); /* Triple width for seamless loop */
-            }
-
-            .logo-scroll:hover {
-              animation-play-state: paused;
-            }
-
-            @keyframes scroll {
-              0% { transform: translateX(0); }
-              100% { transform: translateX(-33.333%); }
-            }
-
-            /* Custom scrollbar for expanded chat */
-            .scrollbar-visible {
-              scrollbar-width: auto;
-              scrollbar-color: #a855f7 #e5e7eb;
-              overflow-y: scroll;
-            }
-
-            .scrollbar-visible::-webkit-scrollbar {
-              width: 12px;
-              display: block;
-            }
-
-            .scrollbar-visible::-webkit-scrollbar-track {
-              background: #e5e7eb;
-              border-radius: 6px;
-              margin: 4px 0;
-            }
-
-            .scrollbar-visible::-webkit-scrollbar-thumb {
-              background: #a855f7;
-              border-radius: 6px;
-              border: 2px solid #e5e7eb;
-            }
-
-            .scrollbar-visible::-webkit-scrollbar-thumb:hover {
-              background: #9333ea;
-            }
-
-            .scrollbar-visible::-webkit-scrollbar-corner {
-              background: #e5e7eb;
-            }
-
-            /* Make the existing sidebar fixed, opaque, and above content */
-            .right-sidebar {
-              position: fixed;
-              top: 0;
-              right: 0;
-              height: 100vh;
-              width: var(--sidebar-width);
-              background: white;
-              opacity: 1;
-              backdrop-filter: none;
-              mix-blend-mode: normal;
-              z-index: 1000;
-              border-left: 1px solid rgba(0,0,0,0.08);
-              box-shadow: -8px 0 24px rgba(0,0,0,0.18);
-              overflow-y: auto;
-              transform: translateX(100%);
-              transition: transform 0.3s ease-in-out;
-            }
-
-            .right-sidebar.open {
-              transform: translateX(0);
-            }
-
-            /* Remove main content margin since sidebar is now hidden by default */
-            .main-content {
-              margin-left: 0;
-            }
-
-            /* Add top padding for fixed header and ensure scroll position starts at top */
-            .page-content {
-              padding-top: 4rem; /* 64px to match header height */
-            }
-
-            /* Ensure pages load scrolled to top */
-            html {
-              scroll-behavior: auto;
-            }
-
-            /* Reset scroll position on route changes */
-            body {
-              overflow-x: hidden;
-            }
-          }
-
-          /* FORCE CONTENT BOUNDARY ON ALL PAGES - Removed !important for flexibility */
-          .content-boundary, main, section, article {
-            max-width: 1200px;
-            margin-inline: auto;
-            padding-inline: clamp(16px, 4vw, 48px);
-            box-sizing: border-box;
-          }
-
-          /* Optional: a slightly narrower variant for long-form text sections */
-          .content-boundary--narrow {
-            max-width: 960px;
-          }
-
-          /* Escape hatch for specific elements that must span full width inside a section */
-          .full-bleed {
-            margin-inline: calc(50% - 50vw);
-            max-width: 100vw;
-            padding-inline: 0;
-          }
-
-          /* Safety: media should not overflow the boundary */
-          .content-boundary img,
-          .content-boundary video,
-          .content-boundary canvas,
-          .content-boundary svg,
-          main img, section img, article img,
-          main video, section video, article video {
-            max-width: 100%;
-            height: auto;
-          }
-
-          /* Subtle Scroll Animations */
-          .fade-in-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-          }
-
-          .fade-in-up.animate {
-            opacity: 1;
-            transform: translateY(0);
-          }
-
-          .fade-in-left {
-            opacity: 0;
-            transform: translateX(-30px);
-            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-          }
-
-          .fade-in-left.animate {
-            opacity: 1;
-            transform: translateX(0);
-          }
-
-          .fade-in-right {
-            opacity: 0;
-            transform: translateX(30px);
-            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-          }
-
-          .fade-in-right.animate {
-            opacity: 1;
-            transform: translateX(0);
-          }
-
-          .fade-in {
-            opacity: 0;
-            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-          }
-
-          .fade-in.animate {
-            opacity: 1;
-          }
-
-          .scale-in {
-            opacity: 0;
-            transform: scale(0.95);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-          }
-
-          .scale-in.animate {
-            opacity: 1;
-            transform: scale(1);
-          }
+/* client/src/index.css */
+
+/*
+   *** IMPORTANT: ALL @import RULES (like Google Fonts) MUST BE AT THE VERY TOP ***
+   *** before any other CSS rules, including @tailwind directives.             ***
+*/
+
+/* Google Font Imports - Consolidated and Cleaned (no duplicates) */
+@import url("https://fonts.googleapis.com/css?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:wght@400&display=swap");
+
+/* Tailwind CSS Directives - These must come AFTER @import rules */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Variables - Consolidated and Cleaned */
+:root {
+  /* Set a single source of truth for width (scoped var is fine) */
+  --sidebar-width: 280px;
+
+  /* Monochromatic Design (Base for UI Kit elements if applicable) */
+  --background: #ffffff; /* White background */
+  --foreground: #000000; /* Black text */
+  --muted: #f5f5f5; /* Light gray for muted elements */
+  --muted-foreground: #000000; /* Black for muted text */
+  --popover: #ffffff; /* White */
+  --popover-foreground: #000000; /* Black */
+  --card: #ffffff; /* White */
+  --card-foreground: #000000; /* Black */
+  --border: #e5e5e5; /* Light gray borders */
+  --input: #e5e5e5; /* Light gray input borders */
+  --primary: #000000; /* Black for primary elements */
+  --primary-foreground: #ffffff; /* White text on black backgrounds */
+  --secondary: #f5f5f5; /* Light gray for secondary elements */
+  --secondary-foreground: #000000; /* Black text on light backgrounds */
+  --accent: #f5f5f5; /* Light gray for accents */
+  --accent-foreground: #000000; /* Black text */
+  --destructive: #000000; /* Black for destructive actions */
+  --destructive-foreground: #ffffff; /* White text on black */
+  --ring: #000000; /* Black focus rings */
+  --radius: 0.75rem;
+
+  /* YOUR BRAND COLORS (Crucial for Figma exports and consistent branding) */
+  --aitenders-dark-blue: #112646;     /* Your actual dark blue */
+  --aitenders-white-blue: #FBFCFF;    /* Your actual off-white blue */
+  --aitenders-primary-blue: #3880E8;  /* Your actual accent blue */
+  --aitenders-pale-blue: #F5F9FE;     /* Your actual very light blue */
+  --aitenders-pastel-blue: #EBF2FD;   /* Your actual slightly darker light blue */
+  --aitenders-light-blue: #C3D9F8;    /* Your actual medium gray-blue */
+  --aitenders-black: #000;            /* Your actual black */
+
+  /* Figma Exported Generic Color Scheme Vars (mapped to your brand colors where possible) */
+  --Color-Brand-Blue: var(--aitenders-dark-blue);
+  --Color-CTA-Blue: var(--aitenders-primary-blue);
+  --Color-White: var(--aitenders-white-blue);
+  --Color-Neutral-Darkest: var(--aitenders-black); /* Figma's #000 */
+
+  --Color-Scheme-1-Background: var(--aitenders-pale-blue); /* Assuming this maps to a light background */
+  --Color-Scheme-1-Foreground: var(--aitenders-pale-blue); /* Same as above */
+  --Color-Scheme-1-Border: var(--aitenders-black); 
+
+  --Color-Scheme-2-Background: var(--aitenders-white-blue); /* Assuming white background */
+  --Color-Scheme-2-Text: var(--aitenders-black); /* Assuming black text */
+  --Color-Scheme-2-Border: var(--aitenders-black); 
+
+  --Color-Scheme-3-Background: var(--aitenders-pale-blue); /* Assuming a light gray background */
+  --Color-Scheme-3-Text: var(--aitenders-black); 
+  --Color-Scheme-3-Foreground: var(--aitenders-pale-blue); /* Same as above */
+
+  /* Figma Exported Layout/Spacing/Radius Vars */
+  --Page-Padding-padding-global: 64px;
+  --Section-Padding-padding-section-large: 112px;
+  --Section-Padding-padding-section-medium: 80px;
+  --Container-container-large: 1280px;
+  --Max-Width-max-width-large: 768px;
+  --Text-Sizes-Heading-1: 72px;
+  --Text-Sizes-Heading-2: 52px;
+  --Text-Sizes-Heading-5: 28px;
+  --Text-Sizes-Text-Medium: 18px;
+  --Text-Sizes-Text-Regular: 16px;
+  --Opacity-Transparent: rgba(255, 255, 255, 0);
+  --Opacity-Neutral-Darkest-15: rgba(0, 0, 0, 0.15);
+  --Opacity-Neutral-Darkest-5: rgba(0, 0, 0, 0.05);
+  --Radius-Large: 40px;
+  --Radius-Medium: 32px;
+  --Stroke-Divider-Width: 2px;
+}
+
+.dark {
+  /* You can adapt these dark mode vars if you have a dark mode toggle */
+  --background: #000000;
+  --foreground: #ffffff;
+  --muted: #1a1a1a;
+  --muted-foreground: #ffffff;
+  --popover: #1a1a1a;
+  --popover-foreground: #ffffff;
+  --card: #1a1a1a;
+  --card-foreground: #ffffff;
+  --border: #333333;
+  --input: #333333;
+  --primary: #ffffff;
+  --primary-foreground: #000000;
+  --secondary: #333333;
+  --secondary-foreground: #ffffff;
+  --accent: #1a1a1a;
+  --accent-foreground: #ffffff;
+  --destructive: #ffffff;
+  --destructive-foreground: #000000;
+  --ring: #ffffff;
+}
+
+/* Base layer styles */
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  body {
+    font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    color: var(--foreground);
+    background-color: var(--background);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+/* Utilities layer */
+@layer utilities {
+  .gradient-bg {
+    background: linear-gradient(135deg, var(--aitenders-pale-blue), var(--aitenders-pastel-blue));
+  }
+
+  .brand-gradient {
+    background: linear-gradient(135deg, var(--aitenders-pale-blue) 0%, var(--aitenders-pastel-blue) 50%, var(--aitenders-light-blue) 100%);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:scale-[1.02];
+  }
+
+  .hero-grid, .hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .features-grid, .features-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .stats-grid, .stats-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .complex-grid, .complex-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    gap: 2rem;
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 56px;
+    letter-spacing: -0.025em;
+  }
+  h2 {
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 48px;
+  }
+  h3 {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+  }
+  h4, h5, h6 {
+    font-weight: 500;
+  }
+  button, .btn, [role="button"] {
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .hero-grid, .hero-section,
+    .features-grid, .features-section,
+    .stats-grid, .stats-section,
+    .complex-grid, .complex-section {
+      grid-template-columns: 1fr;
+    }
+    h1 {
+      font-size: clamp(32px, 8vw, 48px);
+      line-height: 1.1;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .features-grid, .features-section,
+    .stats-grid, .stats-section {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    h1 {
+      font-size: clamp(42px, 6vw, 56px);
+      line-height: 1.1;
+    }
+  }
+
+  .logo-scroll {
+    animation: scroll 20s linear infinite;
+    width: calc(100% * 3);
+  }
+  .logo-scroll:hover {
+    animation-play-state: paused;
+  }
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-33.333%); }
+  }
+
+  .scrollbar-visible {
+    scrollbar-width: auto;
+    scrollbar-color: #a855f7 #e5e7eb;
+    overflow-y: scroll;
+  }
+  .scrollbar-visible::-webkit-scrollbar {
+    width: 12px;
+    display: block;
+  }
+  .scrollbar-visible::-webkit-scrollbar-track {
+    background: #e5e7eb;
+    border-radius: 6px;
+    margin: 4px 0;
+  }
+  .scrollbar-visible::-webkit-scrollbar-thumb {
+    background: #a855f7;
+    border-radius: 6px;
+    border: 2px solid #e5e7eb;
+  }
+  .scrollbar-visible::-webkit-scrollbar-thumb:hover {
+    background: #9333ea;
+  }
+  .scrollbar-visible::-webkit-scrollbar-corner {
+    background: #e5e7eb;
+  }
+
+  .right-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: var(--sidebar-width);
+    background: white;
+    opacity: 1;
+    z-index: 1000;
+    border-left: 1px solid rgba(0,0,0,0.08);
+    box-shadow: -8px 0 24px rgba(0,0,0,0.18);
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  .right-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  /* --- THIS IS THE ONLY SECTION THAT HAS BEEN CHANGED --- */
+  .page-content {
+    padding-top: 4rem; /* 64px to account for the fixed header */
+
+    /* These three lines create the vertical "hallways" between your components */
+    display: flex;
+    flex-direction: column;
+    gap: 112px; /* You can adjust this value (e.g., 80px, 120px) to control the spacing */
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+  body {
+    overflow-x: hidden;
+  }
+}
+
+.content-boundary, main, section, article {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 48px);
+  box-sizing: border-box;
+}
+
+.content-boundary--narrow {
+  max-width: 960px;
+}
+
+.full-bleed {
+  margin-inline: calc(50% - 50vw);
+  max-width: 100vw;
+  padding-inline: 0;
+}
+
+.content-boundary img,
+.content-boundary video,
+.content-boundary canvas,
+.content-boundary svg,
+main img, section img, article img,
+main video, section video, article video {
+  max-width: 100%;
+  height: auto;
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.fade-in-up.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.fade-in-left.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.fade-in-right.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.fade-in.animate {
+  opacity: 1;
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.scale-in.animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.logo-scroll {
+  animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

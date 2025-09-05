@@ -1,38 +1,17 @@
 // src/components/Portfolio_11.tsx
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from '../styles/Portfolio_11.module.css';
 
-// --- DATA ---
-// We store the project data in an array. This makes the component clean and easy to update.
-// Note: I've used the same project 3 times to match the Figma design, but you can easily make them unique.
-const projectData = [
-  {
-    title: 'Centre Logistique Régional',
-    value: 'Offre 8.5M€',
-    description: 'Construction d\'un hub logistique moderne de 25,000 m² avec systèmes automatisés et aires de manœuvre. Coordination de 10 lots techniques spécialisés incluant manutention, sécurité et connectivité.',
-  },
-  {
-    title: 'Centre Logistique Régional',
-    value: 'Offre 8.5M€',
-    description: 'Construction d\'un hub logistique moderne de 25,000 m² avec systèmes automatisés et aires de manœuvre. Coordination de 10 lots techniques spécialisés incluant manutention, sécurité et connectivité.',
-  },
-  {
-    title: 'Centre Logistique Régional',
-    value: 'Offre 8.5M€',
-    description: 'Construction d\'un hub logistique moderne de 25,000 m² avec systèmes automatisés et aires de manœuvre. Coordination de 10 lots techniques spécialisés incluant manutention, sécurité et connectivité.',
-  },
-];
-
-// --- REUSABLE SUB-COMPONENT ---
-
-// A reusable card for a single portfolio project. This prevents code repetition.
-interface ProjectCardProps {
+// Define a TypeScript type for a single project object
+type Project = {
   title: string;
   value: string;
   description: string;
 }
 
-const ProjectCard = ({ title, value, description }: ProjectCardProps): JSX.Element => (
+// Reusable card sub-component
+const ProjectCard = ({ title, value, description }: Project) => (
   <div className={styles.projectCard}>
     <div className={styles.cardImagePlaceholder} />
     <div className={styles.cardContent}>
@@ -43,19 +22,27 @@ const ProjectCard = ({ title, value, description }: ProjectCardProps): JSX.Eleme
   </div>
 );
 
+// The main, "smart" component
+export default function Portfolio_11({ t_prefix }: { t_prefix: string }): JSX.Element {
+  const { t } = useTranslation();
 
-// --- MAIN COMPONENT ---
+  // Get the array of projects from the JSON file using the prefix
+  const projects: Project[] = t(`${t_prefix}.projects`, { returnObjects: true }) || [];
 
-export default function Portfolio_11(): JSX.Element {
+  // Safety check to prevent crashing if translations are missing or incorrect
+  if (!Array.isArray(projects) || projects.length === 0) {
+    console.error(`Translation for '${t_prefix}.projects' did not return a valid array.`);
+    return null; 
+  }
+
   return (
     <section className={styles.portfolioSection}>
       <div className={styles.container}>
         <div className={styles.sectionTitle}>
-          <h2 className={styles.heading}>Déployé sur de nombreux projets</h2>
+          <h2 className={styles.heading}>{t(`${t_prefix}.title`)}</h2>
         </div>
         <div className={styles.portfolioGrid}>
-          {/* We map over our data array to render the project cards dynamically */}
-          {projectData.map((project, index) => (
+          {projects.map((project, index) => (
             <ProjectCard
               key={index}
               title={project.title}
@@ -63,9 +50,8 @@ export default function Portfolio_11(): JSX.Element {
               description={project.description}
             />
           ))}
-          {/* The "View All" card is added separately after the mapped projects */}
           <div className={styles.ctaCard}>
-            <button className={styles.viewAllButton}>View all</button>
+            <button className={styles.viewAllButton}>{t(`${t_prefix}.cta_button`)}</button>
           </div>
         </div>
       </div>

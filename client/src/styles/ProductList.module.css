@@ -1,0 +1,132 @@
+/* src/styles/ProductList.module.css */
+
+.productListSection {
+  width: 100%;
+  padding: 112px 64px;
+  background-color: #f8f9fa; /* A light, neutral background */
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  gap: 80px;
+}
+
+/* The left column that contains all the scrolling text features */
+.textColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 256px; /* Creates a large space between text blocks to ensure scrolling */
+}
+
+/* A single feature text block */
+.featureBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 400px; /* Ensures each block has enough height to trigger the scroll effect */
+}
+
+.heading {
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.44px;
+  margin: 0;
+  color: #111827;
+}
+
+.description {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #4b5563;
+}
+
+.featurePoints {
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.featurePoint {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  color: #374151;
+}
+
+.checkIcon {
+  color: #3880E8; /* Your brand's primary blue */
+  flex-shrink: 0;
+}
+
+
+/* The right column that holds the "sticky" image */
+.imageColumn {
+  flex: 1;
+  position: relative; /* Needed for positioning the images inside */
+}
+
+.stickyImageWrapper {
+  position: sticky;
+  top: 120px; /* The distance from the top of the screen where it will "stick" */
+  width: 100%;
+  aspect-ratio: 15 / 16; /* From Figma spec */
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.featureImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease-in-out;
+  opacity: 0; /* Hidden by default */
+}
+
+/* The class that makes the currently active image visible */
+.featureImage.active {
+  opacity: 1;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+  }
+  .imageColumn {
+    /* On smaller screens, the image is no longer sticky */
+    order: -1; /* Move the image to the top */
+  }
+  .stickyImageWrapper {
+    position: static;
+  }
+  .textColumn {
+    gap: 80px;
+  }
+  .featureBlock {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .productListSection {
+    padding: 80px 32px;
+  }
+  .heading {
+    font-size: 36px;
+  }
+}

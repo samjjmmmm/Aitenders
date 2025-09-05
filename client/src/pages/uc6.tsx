@@ -14,7 +14,7 @@ import {
 import { motion } from 'framer-motion';
 import Header from '@/components/header';
 import ChatInterface from '@/components/chat-interface';
-import ClientLogos from '@/components/client-logos';
+import ClientLogos from '@/components/ClientLogos';
 import { AitendersSimulatorFinal } from '@/components/aitenders-simulator-final';
 import uc6FirstFeatureImage from "@assets/WOW 1_1755862655675.png";
 import uc6SecondFeatureImage from "@assets/WOW 2_1755862655676.png";

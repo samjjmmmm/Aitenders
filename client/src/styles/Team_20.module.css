@@ -1,15 +1,19 @@
 /* src/styles/Team_20.module.css */
 
-/* Consolidate all font imports into one clean block */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@400;500&display=swap');
-
 .sectionContainer {
   background: #fff;
   width: 100%;
-  padding: 112px 64px;
+
+  /* UPDATED: Removed vertical padding. Kept horizontal padding. */
+  padding: 0 64px;
+
   box-sizing: border-box;
   display: flex;
   justify-content: center;
+
+  /* Added some internal padding that won't conflict with the global gap */
+  padding-top: 64px;
+  padding-bottom: 64px;
 }
 
 .mainContent {
@@ -20,14 +24,13 @@
   gap: 80px;
 }
 
-/* Left column with the title and description */
 .introColumn {
   flex: 1;
   min-width: 300px;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  position: sticky; /* Makes the title stick as you scroll past the cards */
+  position: sticky;
   top: 120px;
 }
 
@@ -37,7 +40,6 @@
   border-radius: 100px;
   padding: 10px 24px;
   color: #000;
-  font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 500;
   width: fit-content;
@@ -45,7 +47,6 @@
 
 .heading {
   color: #000;
-  font-family: 'Roboto', sans-serif;
   font-size: 52px;
   font-weight: 500;
   line-height: 1.2;
@@ -55,22 +56,18 @@
 
 .description {
   color: #000;
-  font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 1.5;
 }
 
-/* Right column with the grid of feature cards */
 .gridColumn {
   flex: 2;
   display: grid;
-  /* Creates two equal columns, with a gap */
   grid-template-columns: repeat(2, 1fr);
   gap: 64px;
 }
 
-/* Styling for a single feature card */
 .featureCard {
   display: flex;
   flex-direction: column;
@@ -79,9 +76,9 @@
 
 .cardImagePlaceholder {
   width: 100%;
-  aspect-ratio: 4 / 3; /* A nice aspect ratio for the image area */
+  aspect-ratio: 4 / 3;
   background-color: #f2f1f3;
-  border-radius: 16px; /* Soften the corners */
+  border-radius: 16px;
 }
 
 .cardTextContainer {
@@ -104,7 +101,6 @@
 
 .cardTitle {
   color: #19171c;
-  font-family: 'Inter', sans-serif;
   font-size: 19px;
   font-weight: 600;
   line-height: 24px;
@@ -112,29 +108,27 @@
 
 .cardDescription {
   color: #6e6e73;
-  font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.5; /* Increased for better readability */
+  line-height: 1.5;
 }
 
-/* Responsive styles for tablets and mobile */
 @media (max-width: 1024px) {
   .mainContent {
-    flex-direction: column; /* Stack the intro on top of the grid */
+    flex-direction: column;
     gap: 48px;
   }
   .introColumn {
-    position: static; /* Unstick the title on smaller screens */
+    position: static;
   }
 }
 
 @media (max-width: 768px) {
   .sectionContainer {
-    padding: 80px 32px;
+    padding: 32px; /* Simplified padding for mobile */
   }
   .gridColumn {
-    grid-template-columns: 1fr; /* Stack cards into a single column */
+    grid-template-columns: 1fr;
     gap: 48px;
   }
   .heading {

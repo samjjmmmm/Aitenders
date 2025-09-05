@@ -1,23 +1,25 @@
 /* src/styles/Layout_401_OfferSteps.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
-
-/* The class name now matches the one in the TSX file */
-.offer-steps-section-container {
+.offer-steps-container {
   background: #fff;
   width: 100%;
-  padding: 120px 64px;
+
+  /* UPDATED: Removed vertical padding. Kept horizontal padding. */
+  padding: 0 64px;
+
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  /* Added some internal padding that won't conflict with the global gap */
+  padding-top: 64px;
+  padding-bottom: 64px;
 }
 
-/* The class name for the headline is also updated */
 .offer-steps-headline {
   color: #000;
   text-align: center;
-  font-family: 'Raleway', sans-serif;
   font-size: 52px;
   font-style: normal;
   font-weight: 500;
@@ -27,10 +29,10 @@
   margin: 0;
 }
 
-/* The media query is updated with the new class names */
+/* Responsive styles */
 @media (max-width: 768px) {
-  .offer-steps-section-container {
-    padding: 80px 32px;
+  .offer-steps-container {
+    padding: 32px; /* Simplified padding for mobile */
   }
 
   .offer-steps-headline {

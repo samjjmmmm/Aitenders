@@ -13,7 +13,7 @@ import {
 import { motion } from 'framer-motion';
 import Header from '@/components/header';
 import ChatInterface from '@/components/chat-interface';
-import ClientLogos from '@/components/client-logos';
+import ClientLogos from '@/components/ClientLogos';
 import { AitendersSimulatorFinal } from '@/components/aitenders-simulator-final';
 import Lottie from 'lottie-react';
 import wow1Uc5Animation from '../assets/wow-1-uc5.json';

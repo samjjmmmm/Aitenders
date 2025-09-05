@@ -1,14 +1,15 @@
 /* client/src/styles/Header_26.module.css */
 
 .Header_26_9248_28760 {
-  padding: var(--Section-Padding-padding-section-large, 112px)
-    var(--Page-Padding-padding-global, 64px);
+  /* UPDATED: Removed vertical padding. Kept horizontal padding. */
+  padding: 0 var(--Page-Padding-padding-global, 64px);
   background: var(--Color-Scheme-2-Background, #fff);
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* Added for better vertical centering */
   gap: 80px;
   width: 100%;
-  min-height: 523px; /* Changed to min-height for responsiveness */
+  min-height: 523px;
   display: flex;
   overflow: hidden;
 }
@@ -40,7 +41,6 @@
 .MediumLengthHeroHeadlineGoesHere_9248_28764 {
   color: var(--Color-Scheme-2-Text, #000);
   text-align: center;
-  font-family: Roboto;
   font-size: var(--Text-Sizes-Heading-1, 72px);
   letter-spacing: -0.72px;
   font-style: normal;
@@ -51,7 +51,6 @@
 .LoremIpsumDolorSitAmetConsecteturAdipiscingElitSuspendisseVariusEnimInErosElementumTristiqueDuisCursusMiQuisViverraOrnareErosDolorInterdumNullaUtCommodoDiamLiberoVitaeErat_9248_28765 {
   color: var(--Color-Scheme-2-Text, #000);
   text-align: center;
-  font-family: Roboto;
   font-size: var(--Text-Sizes-Text-Medium, 18px);
   font-style: normal;
   font-weight: 400;
@@ -80,7 +79,6 @@
 }
 .Button_4179_8873 {
   color: var(--Color-White, #fff);
-  font-family: Inter;
   font-size: var(--Text-Sizes-Text-Regular, 16px);
   font-style: normal;
   font-weight: 500;
@@ -100,10 +98,20 @@
 }
 .Button_4179_8893 {
   color: var(--Color-Neutral-Darkest, #000);
-  font-family: Inter;
   font-size: var(--Text-Sizes-Text-Regular, 16px);
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
   display: inline-block;
+}
+
+/* Added responsive rule for smaller screens */
+@media (max-width: 768px) {
+  .Header_26_9248_28760 {
+    padding: 0 32px;
+    min-height: 400px;
+  }
+  .MediumLengthHeroHeadlineGoesHere_9248_28764 {
+    font-size: 48px;
+  }
 }

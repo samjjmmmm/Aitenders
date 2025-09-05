@@ -1,0 +1,117 @@
+/* src/styles/FaqSection.module.css */
+
+.faqSection {
+  width: 100%;
+  padding: 0 64px; /* Remove vertical padding, keep horizontal */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  /* Add some internal padding that won't conflict with the global gap */
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.container {
+  max-width: 768px; /* Constrain width as per design */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+}
+
+.sectionTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+}
+
+.heading {
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.52px;
+  margin: 0;
+  color: #000;
+}
+
+.subheading {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000;
+}
+
+.accordionList {
+  width: 100%;
+  border-bottom: 2px solid #000;
+}
+
+.accordionItem {
+  border-top: 2px solid #000;
+}
+
+.questionButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: 24px;
+}
+
+.questionText {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #000;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Rotate icon when the item is open */
+.icon.open {
+  transform: rotate(180deg);
+}
+
+.answerWrapper {
+  display: grid;
+  /* This creates a smooth animation effect */
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease-in-out;
+}
+
+.answerWrapper.open {
+  grid-template-rows: 1fr;
+}
+
+.answerContent {
+  overflow: hidden;
+}
+
+.answerText {
+  padding-bottom: 24px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .faqSection {
+    padding: 32px;
+  }
+  .heading {
+    font-size: 36px;
+  }
+}

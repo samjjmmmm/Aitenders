@@ -1,34 +1,41 @@
 // src/components/Layout_356.tsx
-import React from 'react';
+import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next'; // 1. Import the hook
 import styles from '../styles/Layout_356.module.css';
 
-// Define the properties (props) for our reusable FeatureSection component using TypeScript
+// --- SUB-COMPONENTS (No changes needed here) ---
+const ToggleIcon = () => (
+  <svg className={styles.toggleIcon} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5V19" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M5 12H19" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
 interface FeatureSectionProps {
   tagline: string;
   heading: string;
   description: string;
+  extendedDescription: string;
   imagePosition: 'left' | 'right';
-  stats?: { number: string; text: string }[]; // 'stats' is optional
-  ctaText?: string; // 'ctaText' is optional
-  useRalewayFont?: boolean; // Optional flag for the third heading's font
+  imageUrl: string;
+  stats?: { number: string; text: string }[];
+  useRalewayFont?: boolean;
 }
 
-/**
- * A reusable component for displaying a feature with text and an image.
- */
 const FeatureSection = ({
   tagline,
   heading,
   description,
+  extendedDescription,
   imagePosition,
+  imageUrl,
   stats,
-  ctaText,
   useRalewayFont,
 }: FeatureSectionProps): JSX.Element => {
-  // Conditionally apply a class to reverse the layout
-  const sectionClasses = `${styles.featureSection} ${imagePosition === 'left' ? styles.imageOnLeft : ''}`;
+  const [isOpen, setIsOpen] = useState(false);
+  const handleToggle = () => setIsOpen(!isOpen);
 
-  // Conditionally apply an inline style for the one heading that uses a different font
+  const sectionClasses = `${styles.featureSection} ${imagePosition === 'left' ? styles.imageOnLeft : ''}`;
   const headingStyle = useRalewayFont ? { fontFamily: "'Raleway', sans-serif", fontWeight: 500 } : {};
 
   return (
@@ -38,7 +45,6 @@ const FeatureSection = ({
         <h2 className={styles.heading} style={headingStyle}>{heading}</h2>
         <p className={styles.description}>{description}</p>
 
-        {/* Only render the stats container if stats are provided */}
         {stats && (
           <div className={styles.statsContainer}>
             {stats.map((stat, index) => (
@@ -50,47 +56,61 @@ const FeatureSection = ({
           </div>
         )}
 
-        {/* Only render the button if ctaText is provided */}
-        {ctaText && <button className={styles.ctaButton}>{ctaText}</button>}
+        <button 
+          className={`${styles.toggleButton} ${isOpen ? styles.open : ''}`} 
+          onClick={handleToggle}
+          aria-expanded={isOpen}
+          aria-label={isOpen ? 'Close details' : 'Open details'}
+        >
+          <ToggleIcon />
+        </button>
+
+        <div className={`${styles.collapsibleContent} ${isOpen ? styles.open : ''}`}>
+          <p>{extendedDescription}</p>
+        </div>
       </div>
       <div className={styles.imageContainer}>
-        {/* This is where your image would go, e.g., <img src="..." alt="..." /> */}
+        <img src={imageUrl} alt={heading} />
       </div>
     </section>
   );
 };
 
-/**
- * The main component that assembles the three feature sections.
- */
-export default function Layout_356(): JSX.Element {
+
+// --- MAIN COMPONENT (NOW "SMART") ---
+
+// 2. Update the function to accept the 't_prefix' prop
+export default function Layout_356({ t_prefix }: { t_prefix: string }): JSX.Element {
+  const { t } = useTranslation(); // 3. Use the hook
+
   return (
-    // Use a React Fragment to group the sections without adding an extra div
     <>
+      {/* 4. Use the t_prefix to build all translation keys dynamically */}
       <FeatureSection
-        tagline="Cockpit opérationnel dès J+1"
-        heading="Structuration automatique du projet"
-        description="L’IA analyse vos AO, mappe chaque exigence et offre une vision claire du périmètre."
+        tagline={t(`${t_prefix}.feature1_tag`)}
+        heading={t(`${t_prefix}.feature1_title`)}
+        description={t(`${t_prefix}.feature1_desc`)}
+        extendedDescription={t(`${t_prefix}.feature1_popup`)}
         imagePosition="right"
-        stats={[
-          { number: "100%", text: "des documents structurés, transformés en Jumeaux numérique" }
-        ]}
-        ctaText="+"
+        imageUrl="/images/UI1.svg" 
+        stats={[{ number: "100%", text: t(`${t_prefix}.feature1_stat`) }]}
       />
       <FeatureSection
-        tagline="Zéro clause oubliée"
-        heading="Contrôlez chaque clause critique"
-        description="Suivi continu des pénalités, responsabilités et délais. Chaque modification est signalée avec impact mesuré."
+        tagline={t(`${t_prefix}.feature2_tag`)}
+        heading={t(`${t_prefix}.feature2_title`)}
+        description={t(`${t_prefix}.feature2_desc`)}
+        extendedDescription={t(`${t_prefix}.feature2_popup`)}
         imagePosition="left"
-        ctaText="+"
+        imageUrl="/images/UI 2.svg" 
       />
       <FeatureSection
-        tagline="Historique contractuel maîtrisé"
-        heading="Maîtrisez chaque évolution contractuelle"
-        description="Q&A, versions et amendements centralisés, avec traçabilité complète des évolutions."
+        tagline={t(`${t_prefix}.feature3_tag`)}
+        heading={t(`${t_prefix}.feature3_title`)}
+        description={t(`${t_prefix}.feature3_desc`)}
+        extendedDescription={t(`${t_prefix}.feature3_popup`)}
         imagePosition="right"
-        useRalewayFont={true} // Use the special font for this heading
-        ctaText="+"
+        imageUrl="/images/UI 3.svg" 
+        useRalewayFont={true}
       />
     </>
   );

@@ -2,7 +2,7 @@ import { FaCheckCircle, FaLightbulb, FaEye, FaArchive, FaFileAlt, FaChartLine, F
 import { motion } from "framer-motion";
 import { useGlobalTranslations } from "@/contexts/TranslationContext";
 import { AitendersSimulatorFinal } from "@/components/aitenders-simulator-final";
-import ClientLogos from "@/components/client-logos";
+import ClientLogos from '@/components/ClientLogos';
 import DemoCTAButton from "@/components/demo-cta-button";
 import ChatInterface from "@/components/chat-interface";
 import { Button } from "@/components/ui/button";
