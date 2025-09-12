@@ -1,4 +1,78 @@
 {
+  "homepage": {
+    "mainTitle": "Your team's project intelligence,",
+    "mainSubtitle": "multiplied by AI",
+    "description": "Aitenders, your digital teammate to win tenders, manage contracts and structure the knowledge and expertise of your projects.",
+    "domainSelection": "How can I help you?",
+    "projectSize": "What is the size of your projects?",
+    "chooseUseCase": "Choose your use case",
+    "discoverUseCase": "Discover this use case",
+    "tenderManagementTitle": "I respond to tenders",
+    "tenderManagementDescription": "Optimize your tender responses. Analyze requirements, collaborate effectively and maximize your chances of success.",
+    "contractExecutionTitle": "I manage projects in execution",
+    "contractExecutionDescription": "Manage your projects with confidence. Deliverable tracking, compliance and proactive change management.",
+    "knowledgeManagementTitle": "I structure my experts' knowledge",
+    "knowledgeManagementDescription": "Capitalize on your past knowledge and experiences. Quick access to references, templates and comparables for each new project.",
+    "smallProjectTitle": "Small projects (< €1M)",
+    "mediumProjectTitle": "Medium projects (€1-10M)",
+    "largeProjectTitle": "Large projects (> €10M)",
+    "ucMetadata": {
+      "UC1": {
+        "title": "Smart tender analysis",
+        "description": "Automatically analyze tender documents to identify key requirements and optimize your responses."
+      },
+      "uc2test": {
+        "title": "Collaborative bid management",
+        "description": "Efficiently coordinate your teams during medium tender response preparation."
+      },
+      "uc3": {
+        "title": "Large project bid strategy",
+        "description": "Develop winning strategies for large-scale tender opportunities."
+      },
+      "uc4": {
+        "title": "Small contract tracking",
+        "description": "Efficiently manage the execution of your small contracts with adapted tools."
+      },
+      "uc5": {
+        "title": "Medium contract management",
+        "description": "Master medium-sized contract execution with optimized processes."
+      },
+      "uc6": {
+        "title": "Large contract governance",
+        "description": "Manage the complexity of large contracts with advanced governance tools."
+      },
+      "UC7": {
+        "title": "Project knowledge base",
+        "description": "Structure and capitalize on your project teams' knowledge."
+      },
+      "UC8": {
+        "title": "Collective intelligence",
+        "description": "Leverage your organization's collective expertise to optimize projects."
+      }
+    }
+  },
+  "header": {
+    "navigation": [
+      {
+        "title": "Solutions",
+        "children": [
+          { "title": "Tender Management", "href": "/solutions/tender-management" },
+          { "title": "Contract Execution", "href": "/solutions/contract-execution" },
+          { "title": "Knowledge Management", "href": "/solutions/knowledge-management" }
+        ]
+      },
+      {
+        "title": "Resources",
+        "children": [
+          { "title": "Blog", "href": "/blog" },
+          { "title": "Documentation", "href": "/docs" },
+          { "title": "Support", "href": "/support" }
+        ]
+      }
+    ],
+    "requestDemo": "Request Demo",
+    "menu": "Menu"
+  },
   "uc2test": {
     "header_26": {
       "title": "Your offer, 100% clear, 0% surprises",

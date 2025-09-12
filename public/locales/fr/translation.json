@@ -1,4 +1,78 @@
 {
+  "homepage": {
+    "mainTitle": "L'intelligence de vos équipes projets,",
+    "mainSubtitle": "démultipliée par l'IA", 
+    "description": "Aitenders, votre coéquipier digital pour gagner les appels d'offres, piloter les contrats et structurer la connaissance et l'expertise de vos projets.",
+    "domainSelection": "Comment puis-je vous aider?",
+    "projectSize": "Quelle est la taille de vos projets ?",
+    "chooseUseCase": "Choisissez votre cas d'usage",
+    "discoverUseCase": "Découvrir ce cas d'usage",
+    "tenderManagementTitle": "Je réponds à des appels d'offres",
+    "tenderManagementDescription": "Optimisez vos réponses aux appels d'offres. Analysez les exigences, collaborez efficacement et maximisez vos chances de succès.",
+    "contractExecutionTitle": "Je pilote des projets en exécution",
+    "contractExecutionDescription": "Pilotez vos projets en toute confiance. Suivi des livrables, conformité et gestion proactive des changements.",
+    "knowledgeManagementTitle": "Je structure la connaissance de mes experts",
+    "knowledgeManagementDescription": "Capitalisez sur vos savoirs et expériences passées. Accès rapide aux références, modèles et comparables pour chaque nouveau projet.",
+    "smallProjectTitle": "Petits projets (< 1M€)",
+    "mediumProjectTitle": "Projets moyens (1-10M€)",
+    "largeProjectTitle": "Grands projets (> 10M€)",
+    "ucMetadata": {
+      "UC1": {
+        "title": "Analyse intelligente d'appels d'offres",
+        "description": "Analysez automatiquement les documents d'appel d'offres pour identifier les exigences clés et optimiser vos réponses."
+      },
+      "uc2test": {
+        "title": "Gestion collaborative des offres",
+        "description": "Coordonnez efficacement vos équipes lors de la préparation des réponses aux appels d'offres moyens."
+      },
+      "uc3": {
+        "title": "Stratégie d'offres grands projets",
+        "description": "Développez des stratégies gagnantes pour les appels d'offres de grande envergure."
+      },
+      "uc4": {
+        "title": "Suivi de petits contrats",
+        "description": "Pilotez efficacement l'exécution de vos petits contrats avec des outils adaptés."
+      },
+      "uc5": {
+        "title": "Gestion de contrats moyens",
+        "description": "Maîtrisez l'exécution de contrats de taille moyenne avec des processus optimisés."
+      },
+      "uc6": {
+        "title": "Pilotage grands contrats",
+        "description": "Gérez la complexité des grands contrats avec des outils de pilotage avancés."
+      },
+      "UC7": {
+        "title": "Base de connaissances projets",
+        "description": "Structurez et capitalisez sur les connaissances de vos équipes projet."
+      },
+      "UC8": {
+        "title": "Intelligence collective",
+        "description": "Exploitez l'expertise collective de votre organisation pour optimiser vos projets."
+      }
+    }
+  },
+  "header": {
+    "navigation": [
+      {
+        "title": "Solutions",
+        "children": [
+          { "title": "Gestion d'appels d'offres", "href": "/solutions/tender-management" },
+          { "title": "Exécution de contrats", "href": "/solutions/contract-execution" },
+          { "title": "Gestion de connaissances", "href": "/solutions/knowledge-management" }
+        ]
+      },
+      {
+        "title": "Ressources",
+        "children": [
+          { "title": "Blog", "href": "/blog" },
+          { "title": "Documentation", "href": "/docs" },
+          { "title": "Support", "href": "/support" }
+        ]
+      }
+    ],
+    "requestDemo": "Demander une démo",
+    "menu": "Menu"
+  },
   "uc2test": {
     "header_26": {
       "title": "Votre offre, 100% claire, 0% surprises",

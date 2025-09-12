@@ -23,8 +23,8 @@ i18n
 
     // --- Backend Settings ---
     backend: {
-      // Load translations from the API endpoint
-      loadPath: '/api/translations/{{lng}}',
+      // This path is correct for your file structure: public/locales/{{lng}}/translation.json
+      loadPath: '/locales/{{lng}}/translation.json',
     },
 
     // --- React Settings ---
