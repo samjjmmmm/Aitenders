@@ -40,6 +40,11 @@
   margin: 0;
 }
 
+/* --- THIS IS THE ADDED RULE TO FIX THE ITALICS --- */
+.heading * {
+  font-style: normal !important;
+}
+
 .subheading {
   /* Text color is now a medium gray */
   color: #4b5563;

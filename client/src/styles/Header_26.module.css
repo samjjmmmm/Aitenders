@@ -1,117 +1,92 @@
-/* client/src/styles/Header_26.module.css */
+/* src/styles/Header_26.module.css */
 
-.Header_26_9248_28760 {
-  /* UPDATED: Removed vertical padding. Kept horizontal padding. */
-  padding: 0 var(--Page-Padding-padding-global, 64px);
-  background: var(--Color-Scheme-2-Background, #fff);
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; /* Added for better vertical centering */
-  gap: 80px;
-  width: 100%;
-  min-height: 523px;
-  display: flex;
-  overflow: hidden;
-}
-.Container_9248_28761 {
-  max-width: var(--Container-container-large, 1280px);
-  flex-direction: column;
-  align-items: center;
-  gap: 80px;
+.heroSection {
+  /* --- CRITICAL FIX HERE --- */
+  background: transparent; /* Changed from 'white' */
+
   width: 100%;
   display: flex;
-}
-.Column_9248_28762 {
-  max-width: var(--Max-Width-max-width-large, 768px);
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 32px;
-  width: 100%;
-  display: flex;
-}
-.Content_9248_28763 {
-  box-sizing: border-box;
-  background: #fff;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  width: 100%;
-  display: flex;
-}
-.MediumLengthHeroHeadlineGoesHere_9248_28764 {
-  color: var(--Color-Scheme-2-Text, #000);
   text-align: center;
-  font-size: var(--Text-Sizes-Heading-1, 72px);
+  padding: 64px 2rem;
+  box-sizing: border-box;
+  min-height: 400px;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 768px;
+}
+
+.heading {
+  color: #000;
+  font-size: 72px;
+  font-weight: 500;
+  line-height: 1.1;
   letter-spacing: -0.72px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 120%;
-  display: inline-block;
-}
-.LoremIpsumDolorSitAmetConsecteturAdipiscingElitSuspendisseVariusEnimInErosElementumTristiqueDuisCursusMiQuisViverraOrnareErosDolorInterdumNullaUtCommodoDiamLiberoVitaeErat_9248_28765 {
-  color: var(--Color-Scheme-2-Text, #000);
-  text-align: center;
-  font-size: var(--Text-Sizes-Text-Medium, 18px);
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%;
-  display: inline-block;
-}
-.Actions_9248_28766 {
-  align-items: flex-start;
-  gap: 16px;
-  display: flex;
-}
-.Button_9248_28767 {
-  background: var(--Color-Brand-Blue, #112646);
-  box-shadow:
-    0 32px 24px 0 #ffffff0d inset,
-    0 2px 1px 0 #ffffff40 inset,
-    0 0 0 1px var(--Opacity-Neutral-Darkest-15, #00000026) inset,
-    0 -2px 1px 0 #0003 inset,
-    0 1px 2px 0 var(--Opacity-Neutral-Darkest-5, #0000000d);
-  border-radius: 100px;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 24px;
-  display: flex;
-}
-.Button_4179_8873 {
-  color: var(--Color-White, #fff);
-  font-size: var(--Text-Sizes-Text-Regular, 16px);
-  font-style: normal;
-  font-weight: 500;
-  line-height: 150%;
-  display: inline-block;
-}
-.Button_9248_28768 {
-  border: 2px solid var(--Color-Neutral-Darkest, #000);
-  background: var(--Opacity-Transparent, #fff0);
-  box-sizing: border-box;
-  border-radius: 100px;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 24px;
-  display: flex;
-}
-.Button_4179_8893 {
-  color: var(--Color-Neutral-Darkest, #000);
-  font-size: var(--Text-Sizes-Text-Regular, 16px);
-  font-style: normal;
-  font-weight: 500;
-  line-height: 150%;
-  display: inline-block;
 }
 
-/* Added responsive rule for smaller screens */
-@media (max-width: 768px) {
-  .Header_26_9248_28760 {
-    padding: 0 32px;
-    min-height: 400px;
+.subheading {
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 500px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.ctaButton {
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.ctaButton:hover {
+  background-color: #333;
+}
+
+.scrollIndicator {
+  margin-top: 2.5rem;
+}
+
+.scrollArrow {
+  width: 24px;
+  height: 24px;
+  color: #a1a1aa;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 1;
   }
-  .MediumLengthHeroHeadlineGoesHere_9248_28764 {
+  50% {
+    transform: translateY(8px);
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
     font-size: 48px;
+  }
+  .heroSection {
+    padding: 48px 1.5rem;
   }
 }

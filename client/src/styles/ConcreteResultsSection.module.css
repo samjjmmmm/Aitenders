@@ -1,112 +1,156 @@
 /* src/styles/ConcreteResultsSection.module.css */
 
-.statsSection {
-  background: #e7e9ec;
-  width: 100%;
+.fullBleedSection {
+  /* Explicitly override global section styles to achieve full viewport width */
+  width: 100vw;
+  max-width: none; /* CRITICAL FIX: Overrides global max-width from index.css */
+  margin-inline: calc(50% - 50vw); /* CRITICAL FIX: Overrides global margin-inline: auto */
 
-  /* UPDATED: Removed vertical padding. Kept horizontal padding. */
-  padding: 0 64px; 
-
+  background-color: transparent; /* Makes the background transparent to blend with page, assuming page is white */
+  padding-top: 6rem; /* Vertical spacing from previous section */
+  padding-bottom: 6rem; /* Vertical spacing to next section */
   box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  /* Added some internal padding for when content stacks on mobile */
-  padding-top: 64px;
-  padding-bottom: 64px;
+  font-family: inherit;
+
+  /* Ensure no residual horizontal padding from global section rules */
+  padding-inline: 0; 
 }
 
 .container {
-  max-width: 1280px;
-  width: 100%;
+  /* This container now correctly wraps the content, applies max-width, and centers it */
+  max-width: 1200px; /* Max width of your content block */
+  margin: 0 auto; /* Centers the content block horizontally within the full-bleed section */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 80px;
+  align-items: center; /* This centers the mainLayoutGrid within the container */
+
+  /* Apply global horizontal padding for responsiveness, ensuring content never touches screen edges */
+  padding-inline: clamp(16px, 4vw, 48px);
 }
 
-.topRow {
+.mainLayoutGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns for desktop layout */
+  gap: 6rem; /* Generous horizontal space between the left text column and the right stats grid */
+  width: 100%; /* Ensures the grid takes full width of its parent (.container) */
+  align-items: start; /* Aligns content at the top of each grid column */
+}
+
+.leftColumn {
   display: flex;
-  align-items: flex-start;
-  gap: 80px;
-  width: 100%;
+  flex-direction: column;
+  gap: 1.5rem; /* Space between badge, heading, and description */
+  text-align: left; /* Ensure text within this column is left-aligned */
+}
+
+.badge {
+  font-size: 0.875rem; /* Smaller font size for the badge */
+  font-weight: 600;
+  color: #38A169; /* Green color for the badge */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0; /* Remove any default margins */
 }
 
 .heading {
-  flex: 1;
-  min-width: 300px;
-  color: #000;
-  font-size: 52px;
-  font-weight: 500;
+  font-size: clamp(2.5rem, 5vw, 3.5rem); /* Larger, bolder heading */
+  font-weight: 700;
   line-height: 1.2;
-  letter-spacing: -0.52px;
-  margin: 0;
+  color: #112646; /* Dark blue for heading */
+  max-width: 25ch; /* Control heading line length for readability */
+  margin: 0; /* Remove default margin */
+}
+
+.description {
+  font-size: 1rem; /* Standard paragraph text size */
+  line-height: 1.6;
+  color: #4A5568; /* Slightly muted text color */
+  margin: 0; /* Remove default margin */
 }
 
 .statsGrid {
-  flex: 2;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  grid-template-columns: repeat(2, 1fr); /* 2x2 layout for stats within their own grid */
+  grid-template-rows: auto auto; /* Two rows for stats content */
+  gap: 3rem 4rem; /* Vertical gap: 3rem, Horizontal gap: 4rem between stat items */
+  width: 100%; /* Take full width of its parent column */
 }
 
 .statItem {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.5rem; /* Space between number and its descriptive text */
+  padding: 0; 
+  text-align: left; /* Align text within stat item */
+}
+
+/* Specific style for the third stat item to span two columns */
+.statsGrid .statItem:nth-child(3) {
+  grid-column: 1 / -1; /* Spans across all available columns */
 }
 
 .statNumber {
-  color: #000;
-  font-size: 52px;
-  font-weight: 500;
-  line-height: 1.2;
+  font-size: clamp(2.5rem, 6vw, 3.75rem); /* Large, prominent numbers, carefully sized */
+  font-weight: 700;
+  line-height: 1; /* Tightly controls vertical space above/below numbers */
+  color: #112646; /* Dark blue for numbers */
+  letter-spacing: -0.025em;
+  white-space: nowrap; /* Ensures numbers like "4000+" and "10+" stay on one line */
+  display: inline-block; /* Helps with consistent spacing and line-height */
+  margin: 0; /* Remove default margin */
 }
 
 .statText {
-  color: #000;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.5; /* Slightly tighter line height for description below numbers */
+  color: #4A5568; /* Muted text color for descriptions */
+  max-width: 25ch; /* Limit text width for better readability below numbers */
+  margin: 0; /* Remove default margin */
 }
 
-.ctaButton {
-  border: 2px solid #000;
-  background: transparent;
-  border-radius: 100px;
-  padding: 10px 24px;
-  color: #000;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.ctaButton:hover {
-  background-color: #000;
-  color: #fff;
-}
-
-@media (max-width: 1024px) {
-  .topRow {
-    flex-direction: column;
-    gap: 48px;
+/* --- Mobile Styles --- */
+@media (max-width: 767px) {
+  .fullBleedSection {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    margin-inline: 0; /* Reset margin-inline for full bleed */
+    width: 100%; /* Ensure full width on mobile */
+  }
+  .container {
+    /* Padding is already defined by clamp above, ensuring it handles mobile responsiveness */
+  }
+  .mainLayoutGrid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 2.5rem; /* Adjusted vertical gap for mobile sections */
+  }
+  .leftColumn {
+    gap: 1rem; /* Tighter spacing for text on mobile */
+    text-align: center; /* Center align text in left column on mobile */
+  }
+  .badge {
+    text-align: center; /* Center align badge on mobile */
+  }
+  .heading {
+    font-size: clamp(2rem, 8vw, 2.5rem); /* Adjusted heading size for mobile */
+    max-width: 100%; /* Allow heading to take full width */
+  }
+  .description {
+    text-align: center; /* Center align description on mobile */
   }
   .statsGrid {
-    width: 100%;
+    grid-template-columns: 1fr; /* Stats stack vertically on mobile */
+    gap: 2rem; /* Vertical gap between stacked stats */
   }
-}
-
-@media (max-width: 768px) {
-  .statsSection {
-    padding: 32px; /* Simplified padding for mobile */
+  .statsGrid .statItem:nth-child(3) {
+    grid-column: auto; /* Remove span for mobile */
   }
-  .statsGrid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .statItem {
+    text-align: center; /* Center align stat items on mobile */
   }
-  .ctaButton {
-    white-space: normal;
+  .statNumber {
+    font-size: clamp(2rem, 10vw, 3rem); /* Adjust stat number size for mobile */
+  }
+  .statText {
+    max-width: 100%; /* Allow text to fill width on mobile */
   }
 }

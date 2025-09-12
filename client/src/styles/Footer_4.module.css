@@ -1,93 +1,145 @@
 /* src/styles/Footer_4.module.css */
 
 .footer {
-  background: #112646;
-  color: #fff;
-  width: 100%;
-  padding: 80px 64px;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
+  background-color: #1a2a44; /* Dark navy blue */
+  color: #ffffff;
+  padding: 4rem 2rem;
+  /* FONT CHANGE: Apply Roboto to the entire footer */
+  font-family: 'Roboto', sans-serif;
 }
+
 .container {
-  max-width: 1280px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 64px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
+/* --- Top Row: Logo and Social Icons --- */
 .topRow {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 32px;
+  margin-bottom: 2rem;
 }
-.logo svg {
-  width: 170px;
-  height: auto;
+
+.logo {
+  opacity: 0.9;
+  transition: opacity 0.2s ease-in-out;
 }
+
+.logo:hover {
+  opacity: 1;
+}
+
 .socialLinks {
   display: flex;
-  align-items: center;
-  gap: 16px;
+  gap: 1.5rem;
 }
+
 .socialIcon {
-  color: #fff;
-  transition: opacity 0.2s ease-in-out;
+  color: #ffffff;
+  opacity: 0.7;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
+
 .socialIcon:hover {
-  opacity: 0.75;
+  opacity: 1;
+  transform: translateY(-2px);
 }
-.bottomRow {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-}
+
+/* --- Divider --- */
 .divider {
-  width: 100%;
-  height: 2px;
-  background-color: #fff;
-  opacity: 0.2;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  margin: 0 0 2rem 0;
 }
-.credits {
-  width: 100%;
+
+/* --- Bottom Row: Copyright, Contact, Links --- */
+/* LAYOUT CHANGE: Use flex to control positioning */
+.bottomRow {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 3rem; /* Adjust gap between contact and privacy link */
   flex-wrap: wrap;
-  gap: 24px;
-  font-size: 14px;
-  font-weight: 400;
 }
+
+/* LAYOUT CHANGE: Make copyright take up available space to push others to the right */
 .copyright {
+  flex-grow: 1;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  text-align: left;
+}
+
+/* LAYOUT CHANGE: Group contact and links on the right */
+.contactDetails {
+  flex-shrink: 0; /* Prevent from shrinking */
+  text-align: left;
+}
+
+.contactHeading {
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.contactText {
+  font-size: 0.875rem;
+  color: #ffffff;
+  line-height: 1.6;
+  margin: 0.25rem 0;
+}
+
+.contactText a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contactText a:hover {
+  text-decoration: underline;
+}
+
+.links {
   flex-shrink: 0;
 }
-.links {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+
 .creditLink {
-  color: #fff;
-  text-decoration: underline;
-  transition: opacity 0.2s ease-in-out;
+  color: #ffffff;
+  font-size: 0.875rem;
+  text-decoration: none;
 }
+
 .creditLink:hover {
-  opacity: 0.75;
+  text-decoration: underline;
 }
+
+/* --- Responsive Styles for Mobile --- */
 @media (max-width: 768px) {
-  .footer {
-    padding: 64px 32px;
-  }
-  .topRow, .credits {
+  .topRow {
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
   }
+
+  .bottomRow {
+    flex-direction: column;
+    align-items: center; /* Center everything on mobile */
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .copyright,
+  .contactDetails,
+  .links {
+    text-align: center;
+    flex-grow: 0; /* Reset grow for stacking */
+  }
+
+  .copyright { order: 3; }
+  .contactDetails { order: 1; }
+  .links { order: 2; }
 }

@@ -1,142 +1,151 @@
 /* src/styles/Layout_356.module.css */
 
 .featureSection {
-  width: 100%;
-  box-sizing: border-box;
-
-  /* UPDATED: Removed vertical padding. Kept horizontal padding. */
-  padding: 0 64px;
-
-  border-top: 2px solid #000;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 80px;
+  flex-direction: column-reverse; /* Stack text above image on mobile */
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* MODIFIED: Reduced vertical padding for a more compact layout on mobile */
+  padding: 2.5rem 1.5rem; 
+  /* The 'border-top' property that created the lines has been REMOVED from this class. */
+}
 
-  /* Added some internal padding that won't conflict with the global gap */
-  padding-top: 64px;
-  padding-bottom: 64px;
+/* MODIFIED: Reduced vertical spacing between sections */
+.featureSection + .featureSection {
+  margin-top: 1.5rem; /* Reduced from 2rem */
 }
+
 .imageOnLeft {
-  flex-direction: row-reverse;
+  flex-direction: column-reverse;
 }
+
 .textContainer {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  max-width: 600px;
+  justify-content: center;
 }
+
 .tagline {
-  color: #000;
-  font-size: 16px;
+  font-size: 0.875rem;
   font-weight: 600;
-  line-height: 1.5;
+  color: #4b5563; /* Softer gray */
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
+
 .heading {
-  color: #000;
-  font-size: 52px;
-  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 600;
+  color: #111827;
   line-height: 1.2;
-  letter-spacing: -0.52px;
-  margin: 0;
+  margin-bottom: 1.5rem;
 }
+
 .description {
-  color: #000;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.5;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #374151;
+  max-width: 60ch;
 }
+
 .statsContainer {
   display: flex;
-  flex-direction: column;
-  gap: 24px;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
 }
+
 .statItem {
   display: flex;
-  align-items: center;
-  gap: 24px;
+  flex-direction: column;
+  gap: 0.25rem;
 }
+
 .statNumber {
-  color: #312727;
-  font-size: 52px;
-  font-weight: 500;
-  line-height: 1.2;
-  min-width: 120px;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1;
 }
+
 .statText {
-  color: #000;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 0.875rem;
+  color: #6b7280;
 }
 
 .toggleButton {
-  background: transparent;
-  border: 2px solid #000;
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  cursor: pointer;
   display: flex;
-  justify-content: center;
   align-items: center;
-  transition: transform 0.3s ease-in-out;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #d1d5db;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: transform 0.3s ease;
 }
-.toggleButton:hover {
-  transform: scale(1.1);
+
+.toggleButton.open {
+  transform: rotate(45deg);
 }
 
 .toggleIcon {
-  width: 20px;
-  height: 20px;
-  stroke: #000;
+  width: 24px;
+  height: 24px;
+  stroke: #374151;
   stroke-width: 2;
-  transition: transform 0.3s ease-in-out;
-}
-.toggleButton.open .toggleIcon {
-  transform: rotate(45deg);
 }
 
 .collapsibleContent {
   max-height: 0;
-  opacity: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease-out, opacity 0.4s ease-out, margin-top 0.4s ease-out;
-  font-size: 16px;
-  line-height: 1.6;
-  color: #333;
+  transition: max-height 0.5s ease-in-out;
+  color: #4b5563;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 1.5rem;
 }
+
 .collapsibleContent.open {
-  max-height: 300px;
-  opacity: 1;
-  margin-top: -8px;
+  max-height: 500px; /* Adjust if your content is longer */
 }
+
 .imageContainer {
   flex: 1;
-  max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .imageContainer img {
   width: 100%;
   height: auto;
-  object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-@media (max-width: 992px) {
-  .featureSection {
-    flex-direction: column !important;
-    padding: 32px; /* Simplified padding for mobile */
-    gap: 48px;
+/* --- Desktop Styles --- */
+@media (min-width: 768px) {
+  .featureSection,
+  .imageOnLeft {
+    flex-direction: row; /* Side-by-side on desktop */
+    gap: 4rem;
+    /* MODIFIED: Reduced vertical padding for desktop */
+    padding: 4rem 1.5rem; /* Reduced from 6rem */
   }
-  .textContainer, .imageContainer {
-    max-width: 100%;
+
+  .imageOnLeft {
+    flex-direction: row-reverse; /* Correctly reverse for the imageOnLeft variant */
   }
-  .imageContainer {
-    height: auto;
-  }
-  .heading {
-    font-size: 36px;
+
+  .textContainer {
+    align-items: flex-start; /* Align text to the left */
   }
 }

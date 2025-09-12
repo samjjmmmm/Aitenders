@@ -1,0 +1,59 @@
+/* src/styles/ClientLogos.module.css */
+
+.clientLogosSection {
+  background-color: #f8fafc; /* Use a Tailwind color like slate-50 for consistency */
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* This is the container for the scrolling logos */
+.logosWrapper {
+  overflow: hidden;
+  /* This mask creates the fade-out effect on the left and right edges */
+  ma: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+/* This is the div that will be animated */
+.logoScroll {
+  display: flex;
+  width: fit-content; /* Let the width be determined by its content */
+  /* Animation properties */
+  animation: scrollLogos 40s linear infinite;
+  gap: 4rem; /* Replaces space-x-16 for more consistent spacing */
+  align-items: center;
+}
+
+/* Pause the animation on hover */
+.logosWrapper:hover .logoScroll {
+  animation-play-state: paused;
+}
+
+/* The keyframes that define the scrolling animation */
+@keyframes scrollLogos {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    /* We scroll by half the width because we duplicated the logos once */
+    transform: translateX(-50%);
+  }
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 767px) {
+  .clientLogosSection {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+  .logoScroll {
+    gap: 2.5rem; /* Reduce spacing on mobile */
+    animation-duration: 30s; /* Make it a bit faster on smaller screens if desired */
+  }
+}
+
+/* Legacy styles from your original file, kept for reference but are now mostly handled by Tailwind classes in the TSX */
+.container {}
+.title {}

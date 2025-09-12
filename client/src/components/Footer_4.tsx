@@ -37,7 +37,6 @@ const YouTubeIcon = () => (
   </svg>
 );
 
-// A generic icon for social links
 const SocialIcon = ({ href, children }: { href: string; children: React.ReactNode }) => (
   <a href={href} target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
     {children}
@@ -53,29 +52,38 @@ export default function Footer_4(): JSX.Element {
             <AitendersLogoWhite />
           </a>
           <div className={styles.socialLinks}>
-            {/* The first icon was missing in Figma, this is a placeholder for Twitter/X */}
-            <SocialIcon href="https://twitter.com">
+            <SocialIcon href="https://twitter.com/aitenders">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231L18.244 2.25zM17.5 19.5h1.57l-6.72-8.9-1.66-2.22H7.66l7.35 9.78 1.49 1.98z"/>
               </svg>
             </SocialIcon>
-            <SocialIcon href="https://linkedin.com">
+            <SocialIcon href="https://www.linkedin.com/company/aitenders/">
               <LinkedInIcon />
             </SocialIcon>
-            <SocialIcon href="https://youtube.com">
+            <SocialIcon href="https://www.youtube.com/@aitenders">
               <YouTubeIcon />
             </SocialIcon>
           </div>
         </div>
+
+        <div className={styles.divider} />
+
         <div className={styles.bottomRow}>
-          <div className={styles.divider} />
-          <div className={styles.credits}>
-            <p className={styles.copyright}>© 2025 AItenders All rights reserved.</p>
-            <div className={styles.links}>
-              <a href="/privacy" className={styles.creditLink}>Privacy Policy</a>
-              <a href="/terms" className={styles.creditLink}>Terms of Service</a>
-              <a href="#cookies" className={styles.creditLink}>Cookies Settings</a>
-            </div>
+          <p className={styles.copyright}>© 2025 AItenders All rights reserved.</p>
+
+          <div className={styles.contactDetails}>
+            <h4 className={styles.contactHeading}>Contacts</h4>
+            <a href="mailto:contact@aitenders.com" className={styles.contactText}>contact@aitenders.com</a>
+            <p className={styles.contactText}>
+              Saint-Etienne | 42100
+            </p>
+            <p className={styles.contactText}>
+              STATION F, 5 Parv. Alan Turing, 75013 Paris
+            </p>
+          </div>
+
+          <div className={styles.links}>
+            <a href="/privacy" className={styles.creditLink}>Privacy Policy</a>
           </div>
         </div>
       </div>

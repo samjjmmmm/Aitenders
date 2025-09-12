@@ -28,7 +28,7 @@ export default function Layout_84({ t_prefix }: { t_prefix: string }): JSX.Eleme
   });
 
   return (
-    <section ref={ref} className={styles.sectionContainer}>
+    <section ref={ref} className={`${styles.sectionContainer} full-bleed-section`}>
       <div className={styles.contentWrapper}>
         <div className={styles.youColumn}>
           <h2 className={styles.heading}>{t(`${t_prefix}.you`)}</h2>
@@ -36,12 +36,9 @@ export default function Layout_84({ t_prefix }: { t_prefix: string }): JSX.Eleme
         <div className={`${styles.statsColumn} ${inView ? styles.animated : ''}`}>
           {statsData.map((stat, index) => (
             <div className={styles.statItem} key={index}>
-
-              {/* CRITICAL CHANGE: Only render the number if it's not an empty string */}
               {stat.number && (
                 <span className={styles.number}>{stat.number}</span>
               )}
-
               <p className={styles.text}>{stat.text}</p>
             </div>
           ))}

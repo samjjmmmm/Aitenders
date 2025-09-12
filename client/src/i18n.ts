@@ -9,24 +9,27 @@ i18n
   .use(initReactI18next)
   .init({
     // --- Important Settings ---
-    supportedLngs: ['en', 'fr'], // The languages you support
-    fallbackLng: 'fr', // The default language to use
+    supportedLngs: ['en', 'fr'],
+    fallbackLng: 'fr',
+
+    // --- NEW: Explicit Namespace Configuration ---
+    // This tells i18next EXACTLY what namespaces to use.
+    ns: ['translation'],
+    defaultNS: 'translation',
 
     // --- Backend Settings ---
-    // This tells i18next where to find your files.
-    // {{lng}} will be replaced with 'en' or 'fr'
-    // {{ns}} will be replaced with 'translation' by default
     backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json',
+      // UPDATED: We removed {{ns}} to be explicit about the filename.
+      loadPath: '/locales/{{lng}}/translation.json',
     },
 
     // --- React Settings ---
     react: {
-      useSuspense: true, // This is crucial for making Suspense work correctly
+      useSuspense: true,
     },
 
     // --- Debugging ---
-    debug: true, // Keep this on during development
+    debug: true,
   });
 
 export default i18n;

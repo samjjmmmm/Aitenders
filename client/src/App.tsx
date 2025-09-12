@@ -1,11 +1,10 @@
 // client/src/App.tsx
-import React, { useEffect } from "react";
+import React, { useEffect, Suspense } from "react";
 import { Switch, Route, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { TranslationProvider } from "@/contexts/TranslationContext";
 
 // Import your page components
 import Home from "@/pages/home";
@@ -25,11 +24,15 @@ import UC4Page from "@/pages/UC-4";
 import UC5Page from "@/pages/UC-5";
 import UC6Page from "@/pages/UC-6";
 import ProductPage from "@/pages/Product-page";
+import AdminTestPage from "@/pages/admin-test";
+
+// --- THE CORRECT IMPORT ---
+// We are importing the file you created: AdminPage.tsx
+import AdminPage from "./pages/AdminPage"; 
 
 import "./index.css"; 
 
 function RouterContent() {
-  // --- THIS IS THE CORRECTED LINE ---
   const [location] = useLocation();
 
   useEffect(() => {
@@ -38,6 +41,13 @@ function RouterContent() {
 
   return (
     <Switch>
+      {/* --- ADMIN ROUTES --- */}
+      {/* This route now correctly points to /admin and uses the correct component */}
+      <Route path="/admin" component={AdminPage} /> 
+      <Route path="/admin/simulator" component={SimulatorAdmin} />
+      <Route path="/admin/mailing" component={MailingAdmin} />
+
+      {/* --- PUBLIC ROUTES --- */}
       <Route path="/" component={Home} />
       <Route path="/uc-1" component={UC1Page} />
       <Route path="/uc2" component={UC2Page} />
@@ -52,8 +62,9 @@ function RouterContent() {
       <Route path="/word-addon" component={WordAddonPage} />
       <Route path="/privacy" component={PrivacyPage} />
       <Route path="/security" component={SecurityPage} />
-      <Route path="/admin/simulator" component={SimulatorAdmin} />
-      <Route path="/admin/mailing" component={MailingAdmin} />
+      <Route path="/admin-test" component={AdminTestPage} /> 
+
+      {/* Fallback for any other path */}
       <Route component={NotFound} />
     </Switch>
   );
@@ -62,12 +73,12 @@ function RouterContent() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <TranslationProvider>
-        <TooltipProvider>
-          <Toaster />
+      <TooltipProvider>
+        <Toaster />
+        <Suspense fallback={<div />}>
           <RouterContent /> 
-        </TooltipProvider>
-      </TranslationProvider>
+        </Suspense>
+      </TooltipProvider>
     </QueryClientProvider>
   );
 }

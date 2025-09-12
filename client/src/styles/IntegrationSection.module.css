@@ -2,13 +2,10 @@
 
 .integrationSection {
   width: 100%;
-  padding: 0 64px; /* Remove vertical padding, keep horizontal */
+  padding: 64px; /* Simplified padding for consistency */
   box-sizing: border-box;
   display: flex;
   justify-content: center;
-  /* Add some internal padding that won't conflict with the global gap */
-  padding-top: 64px;
-  padding-bottom: 64px;
 }
 
 .container {
@@ -104,44 +101,28 @@
   height: 16px;
 }
 
-/* Right column with the image/video placeholder */
+/* Right column with the Lottie animation */
 .mediaColumn {
-  flex: 1;
-  aspect-ratio: 15 / 16;
-  border-radius: 40px;
-  background-color: #d3d3d3;
+  flex: 1.1; /* Give a bit more space to the media column to make it appear bigger */
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  overflow: hidden;
+  /* REMOVED background-color, overlay, and fixed aspect-ratio */
 }
-.mediaColumn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
+
+/* This is the new style you added */
+.lottieAnimation {
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Dark overlay from Figma */
+  height: auto; /* Let the animation's aspect ratio determine the height */
+  max-width: 500px; /* Optional: set a max-width to prevent it from getting too large */
 }
-.playButton {
-  width: 64px;
-  height: 64px;
-  color: white;
-  cursor: pointer;
-  position: relative;
-  z-index: 1;
-  transition: transform 0.2s;
-}
-.playButton:hover {
-  transform: scale(1.1);
-}
+
+/* REMOVED .playButton and .mediaColumn::before styles as they are no longer needed */
 
 /* Responsive styles */
 @media (max-width: 992px) {
   .container {
-    flex-direction: column-reverse; /* Stack image on top of text */
+    flex-direction: column-reverse; /* Stack media on top of text */
   }
 }
 @media (max-width: 768px) {

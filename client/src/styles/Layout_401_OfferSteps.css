@@ -1,20 +1,18 @@
 /* src/styles/Layout_401_OfferSteps.css */
 
 .offer-steps-container {
-  background: #fff;
+  /* CRITICAL FIX: Changed background to transparent */
+  background: transparent; 
   width: 100%;
 
-  /* UPDATED: Removed vertical padding. Kept horizontal padding. */
-  padding: 0 64px;
+  /* MODIFIED: This single line correctly sets vertical padding to 0 and horizontal to 64px. */
+  /* REMOVED: The conflicting padding-top and padding-bottom lines that followed */
+  padding: 0 64px; 
 
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* Added some internal padding that won't conflict with the global gap */
-  padding-top: 64px;
-  padding-bottom: 64px;
 }
 
 .offer-steps-headline {
@@ -26,13 +24,14 @@
   line-height: 1.2;
   letter-spacing: -0.52px;
   max-width: 768px;
-  margin: 0;
+  margin: 0; /* Ensures no default margin from the headline itself */
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
   .offer-steps-container {
-    padding: 32px; /* Simplified padding for mobile */
+    /* MODIFIED: Corrected padding for mobile, setting vertical to 0. */
+    padding: 0 32px;
   }
 
   .offer-steps-headline {

@@ -3,135 +3,185 @@
 .sectionContainer {
   background: #fff;
   width: 100%;
-
-  /* UPDATED: Removed vertical padding. Kept horizontal padding. */
-  padding: 0 64px;
-
   box-sizing: border-box;
   display: flex;
   justify-content: center;
-
-  /* Added some internal padding that won't conflict with the global gap */
-  padding-top: 64px;
-  padding-bottom: 64px;
+  padding: 8rem 1.5rem; 
 }
 
 .mainContent {
-  max-width: 1280px;
+  max-width: 1200px;
   width: 100%;
-  display: flex;
-  align-items: flex-start;
-  gap: 80px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem; 
 }
 
 .introColumn {
-  flex: 1;
-  min-width: 300px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  position: sticky;
-  top: 120px;
+  gap: 1.5rem;
 }
 
 .tag {
-  border: 2px solid #000;
-  background: transparent;
-  border-radius: 100px;
-  padding: 10px 24px;
-  color: #000;
-  font-size: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 9999px;
+  padding: 0.5rem 1.25rem;
+  color: #374151;
+  font-size: 0.875rem;
   font-weight: 500;
   width: fit-content;
 }
 
 .heading {
-  color: #000;
-  font-size: 52px;
-  font-weight: 500;
+  color: #111827;
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-weight: 600;
   line-height: 1.2;
-  letter-spacing: -0.52px;
+  letter-spacing: -0.025em;
   margin: 0;
 }
 
 .description {
-  color: #000;
-  font-size: 18px;
+  color: #4b5563;
+  font-size: 1.125rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.7;
+  max-width: 45ch;
 }
 
+/* --- THE DEFINITIVE SPACIOUS GRID FIX --- */
 .gridColumn {
-  flex: 2;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 64px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem; 
 }
+/* --- END OF FIX --- */
 
 .featureCard {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  padding: 2.5rem; 
+  border-radius: 1.5rem;
+  background: linear-gradient(145deg, #ffffff, #f9fafb);
+  border: 1px solid transparent;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease-out, border-color 0.3s ease-out, background 0.3s ease-out;
 }
 
-.cardImagePlaceholder {
+.mainContent.inView .featureCard { opacity: 1; transform: translateY(0); }
+.mainContent.inView .featureCard:nth-child(2) { transition-delay: 0.1s; }
+.mainContent.inView .featureCard:nth-child(3) { transition-delay: 0.2s; }
+.mainContent.inView .featureCard:nth-child(4) { transition-delay: 0.3s; }
+.mainContent.inView .featureCard:nth-child(5) { transition-delay: 0.4s; }
+.mainContent.inView .featureCard:nth-child(6) { transition-delay: 0.5s; }
+
+/* Enhanced .featureCard:hover for a cleaner look (kept as previously approved) */
+.featureCard:hover {
+  transform: translateY(-12px); 
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.03); 
+  border-color: #e0e0e0; 
+  background: linear-gradient(135deg, #ffffff, #f7f7f7); 
+}
+
+.cardImageContainer {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  background-color: #f2f1f3;
-  border-radius: 16px;
-}
-
-.cardTextContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.cardHeader {
+  aspect-ratio: 16 / 9;
+  border-radius: 1rem;
+  background-color: rgba(0, 51, 161, 0.05); 
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  transition: background-color 0.3s ease-out, transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  position: relative; 
+  overflow: hidden; 
 }
 
-.cardIcon {
-  width: 24px;
-  height: 24px;
-  color: #19171c;
+/* Enhanced .cardImageContainer on hover (kept as previously approved) */
+.featureCard:hover .cardImageContainer {
+  background-color: var(--aitenders-primary-blue, #0033a1); 
+  transform: translateY(-4px); 
+  box-shadow: 0 6px 12px -3px rgba(0, 51, 161, 0.3); 
 }
 
-.cardTitle {
-  color: #19171c;
-  font-size: 19px;
-  font-weight: 600;
-  line-height: 24px;
+.cardImage {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  color: var(--aitenders-primary-blue, #0033a1); 
+  transition: filter 0.4s ease-out; /* Keep filter transition */
+  position: relative; 
+  z-index: 1;
 }
 
-.cardDescription {
-  color: #6e6e73;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
+/* NEW KEYFRAME ANIMATION: 'iconSpeechBubbleChat' for a more engaging chat icon animation */
+@keyframes iconSpeechBubbleChat {
+  0% {
+    transform: scale(1.15) rotate(-5deg); /* Start at a slightly scaled/rotated state */
+  }
+  25% {
+    transform: scale(1.18) rotate(-7deg) translateY(-3px) translateX(2px); /* Pop out, slight rotation, move up-right */
+  }
+  50% {
+    transform: scale(1.14) rotate(-4deg) translateY(1px) translateX(-2px); /* Settle back, slight rotation, move down-left */
+  }
+  75% {
+    transform: scale(1.17) rotate(-6deg) translateY(-2px) translateX(1px); /* Another pop, slight rotation, move up-right */
+  }
+  100% {
+    transform: scale(1.15) rotate(-5deg); /* Return to original hover state */
+  }
 }
 
-@media (max-width: 1024px) {
+/* Modified: Apply the new continuous animation and filter on hover */
+.featureCard:hover .cardImage {
+  animation: iconSpeechBubbleChat 2s ease-in-out infinite alternate; /* Continuous, smooth, "chatty" movement */
+  filter: brightness(0) invert(1); /* Keep the crisp white color */
+}
+
+.cardTextContainer { display: flex; flex-direction: column; gap: 0.5rem; }
+.cardHeader { display: flex; align-items: center; gap: 0.75rem; }
+.cardIcon { font-family: monospace; font-size: 1.25rem; color: #374151; font-weight: 600; }
+.cardTitle { color: #111827; font-size: 1.25rem; font-weight: 600; line-height: 1.4; }
+.cardDescription { color: #6b7280; font-size: 1rem; font-weight: 400; line-height: 1.6; }
+
+/* Staggered animation for the intro text (kept as is, it's effective) */
+.introColumn > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.mainContent.inView .introColumn > .tag {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+.mainContent.inView .introColumn > .heading {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.15s;
+}
+.mainContent.inView .introColumn > .description {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+@media (min-width: 1024px) {
+  .sectionContainer {
+    padding: 8rem 4rem;
+  }
   .mainContent {
-    flex-direction: column;
-    gap: 48px;
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 6rem;
+    align-items: start;
   }
   .introColumn {
-    position: static;
-  }
-}
-
-@media (max-width: 768px) {
-  .sectionContainer {
-    padding: 32px; /* Simplified padding for mobile */
-  }
-  .gridColumn {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-  .heading {
-    font-size: 36px;
+    position: sticky;
+    top: 6rem;
   }
 }

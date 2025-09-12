@@ -1,36 +1,54 @@
 // src/components/Header_26.tsx
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
+import { ChevronsDown } from 'lucide-react';
+import HubspotMeetingModal from './HubspotMeetingModal';
 import styles from '../styles/Header_26.module.css';
 
-export default function Header_26({ t_prefix }: { t_prefix: string }): JSX.Element {
+export default function Header_26({ t_prefix }: { t_prefix: string }) {
   const { t } = useTranslation();
 
+  const [isDemoOpen, setIsDemoOpen] = useState(false);
+  const HUBSPOT_PORTAL_ID = "8751172";
+  const HUBSPOT_FORM_ID = "9721c1af-c7ab-4d10-b519-28c04d171007";
+  const HUBSPOT_REGION = "na1";
+
+  const openDemo = useCallback(() => setIsDemoOpen(true), []);
+  const closeDemo = useCallback(() => setIsDemoOpen(false), []);
+
   return (
-    <div className={styles.Header_26_9248_28760}>
-      <div className={styles.Container_9248_28761}>
-        <div className={styles.Column_9248_28762}>
-          <div className={styles.Content_9248_28763}>
-            <span className={styles.MediumLengthHeroHeadlineGoesHere_9248_28764}>
-              {t(`${t_prefix}.title`)}
-            </span>
-            <span className={styles.LoremIpsumDolorSitAmetConsecteturAdipiscingElitSuspendisseVariusEnimInErosElementumTristiqueDuisCursusMiQuisViverraOrnareErosDolorInterdumNullaUtCommodoDiamLiberoVitaeErat_9248_28765}>
-              {t(`${t_prefix}.subtitle`)}
-            </span>
+    <>
+      <section className={styles.heroSection}>
+        <div className={styles.contentWrapper}>
+          <h1 className={styles.heading}>
+            {t(`${t_prefix}.title`)}
+          </h1>
+          <p className={styles.subheading}>
+            {t(`${t_prefix}.subtitle`)}
+          </p>
+
+          <div className={styles.actions}>
+            {/* The single, correctly styled button */}
+            <button onClick={openDemo} className={styles.ctaButton}>
+              {t(`${t_prefix}.cta1`)}
+            </button>
           </div>
 
-          {/* UPDATED: Buttons are now translated */}
-          <div className={styles.Actions_9248_28766}>
-            <div className={styles.Button_9248_28767}>
-              <span className={styles.Button_4179_8873}>{t(`${t_prefix}.cta1`)}</span>
-            </div>
-            <div className={styles.Button_9248_28768}>
-              <span className={styles.Button_4179_8893}>{t(`${t_prefix}.cta2`)}</span>
-            </div>
+          <div className={styles.scrollIndicator}>
+            <ChevronsDown className={styles.scrollArrow} />
           </div>
-
         </div>
-      </div>
-    </div>
+      </section>
+
+      <HubspotMeetingModal
+        id="header-26-hubspot-modal"
+        isOpen={isDemoOpen}
+        onClose={closeDemo}
+        portalId={HUBSPOT_PORTAL_ID}
+        formId={HUBSPOT_FORM_ID}
+        region={HUBSPOT_REGION}
+      />
+    </>
   );
 }
+

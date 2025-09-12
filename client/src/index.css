@@ -1,392 +1,430 @@
-/* client/src/index.css */
+                 /* client/src/index.css */
 
-/*
-   *** IMPORTANT: ALL @import RULES (like Google Fonts) MUST BE AT THE VERY TOP ***
-   *** before any other CSS rules, including @tailwind directives.             ***
-*/
+                 /*
+                    *** IMPORTANT: ALL @import RULES (like Google Fonts) MUST BE AT THE VERY TOP ***
+                    *** before any other CSS rules, including @tailwind directives.             ***
+                 */
 
-/* Google Font Imports - Consolidated and Cleaned (no duplicates) */
-@import url("https://fonts.googleapis.com/css?family=Inter:wght@400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Raleway:wght@500&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Roboto:wght@400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Montserrat:wght@400&display=swap");
+                 @import url("https://fonts.googleapis.com/css?family=Inter:wght@400;500;600;700&display=swap");
+                 @import url("https://fonts.googleapis.com/css?family=Raleway:wght@500&display=swap");
+                 @import url("https://fonts.googleapis.com/css?family=Roboto:wght@400;500;700&display=swap"); /* <-- CRITICAL FIX HERE */
+                 @import url("https://fonts.googleapis.com/css?family=Montserrat:wght@400&display=swap");
 
-/* Tailwind CSS Directives - These must come AFTER @import rules */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+                 /* Tailwind CSS Directives - These must come AFTER @import rules */
+                 @tailwind base;
+                 @tailwind components;
+                 @tailwind utilities;
 
-/* CSS Variables - Consolidated and Cleaned */
-:root {
-  /* Set a single source of truth for width (scoped var is fine) */
-  --sidebar-width: 280px;
+                 /* CSS Variables - Consolidated and Cleaned */
+                 :root {
+                   --sidebar-width: 280px;
+                   --background: #ffffff;
+                   --foreground: #000000;
+                   --muted: #f5f5f5;
+                   --muted-foreground: #000000;
+                   --popover: #ffffff;
+                   --popover-foreground: #000000;
+                   --card: #ffffff;
+                   --card-foreground: #000000;
+                   --border: #e5e5e5;
+                   --input: #e5e5e5;
+                   --primary: #000000;
+                   --primary-foreground: #ffffff;
+                   --secondary: #f5f5f5;
+                   --secondary-foreground: #000000;
+                   --accent: #f5f5f5;
+                   --accent-foreground: #000000;
+                   --destructive: #000000;
+                   --destructive-foreground: #ffffff;
+                   --ring: #000000;
+                   --radius: 0.75rem;
+                   --aitenders-dark-blue: #112646;
+                   --aitenders-white-blue: #FBFCFF;
+                   --aitenders-primary-blue: #3880E8;
+                   --aitenders-pale-blue: #F5F9FE;
+                   --aitenders-pastel-blue: #EBF2FD;
+                   --aitenders-light-blue: #C3D9F8;
+                   --aitenders-black: #000;
+                   --Color-Brand-Blue: var(--aitenders-dark-blue);
+                   --Color-CTA-Blue: var(--aitenders-primary-blue);
+                   --Color-White: var(--aitenders-white-blue);
+                   --Color-Neutral-Darkest: var(--aitenders-black);
+                   --Color-Scheme-1-Background: var(--aitenders-pale-blue);
+                   --Color-Scheme-1-Foreground: var(--aitenders-pale-blue);
+                   --Color-Scheme-1-Border: var(--aitenders-black);
+                   --Color-Scheme-2-Background: var(--aitenders-white-blue);
+                   --Color-Scheme-2-Text: var(--aitenders-black);
+                   --Color-Scheme-2-Border: var(--aitenders-black);
+                   --Color-Scheme-3-Background: var(--aitenders-pale-blue);
+                   --Color-Scheme-3-Text: var(--aitenders-black);
+                   --Color-Scheme-3-Foreground: var(--aitenders-pale-blue);
+                   --Page-Padding-padding-global: 64px;
+                   --Section-Padding-padding-section-large: 112px;
+                   --Section-Padding-padding-section-medium: 80px;
+                   --Container-container-large: 1280px;
+                   --Max-Width-max-width-large: 768px;
+                   --Text-Sizes-Heading-1: 72px;
+                   --Text-Sizes-Heading-2: 52px;
+                   --Text-Sizes-Heading-5: 28px;
+                   --Text-Sizes-Text-Medium: 18px;
+                   --Text-Sizes-Text-Regular: 16px;
+                   --Opacity-Transparent: rgba(255, 255, 255, 0);
+                   --Opacity-Neutral-Darkest-15: rgba(0, 0, 0, 0.15);
+                   --Opacity-Neutral-Darkest-5: rgba(0, 0, 0, 0.05);
+                   --Radius-Large: 40px;
+                   --Radius-Medium: 32px;
+                   --Stroke-Divider-Width: 2px;
+                 }
 
-  /* Monochromatic Design (Base for UI Kit elements if applicable) */
-  --background: #ffffff; /* White background */
-  --foreground: #000000; /* Black text */
-  --muted: #f5f5f5; /* Light gray for muted elements */
-  --muted-foreground: #000000; /* Black for muted text */
-  --popover: #ffffff; /* White */
-  --popover-foreground: #000000; /* Black */
-  --card: #ffffff; /* White */
-  --card-foreground: #000000; /* Black */
-  --border: #e5e5e5; /* Light gray borders */
-  --input: #e5e5e5; /* Light gray input borders */
-  --primary: #000000; /* Black for primary elements */
-  --primary-foreground: #ffffff; /* White text on black backgrounds */
-  --secondary: #f5f5f5; /* Light gray for secondary elements */
-  --secondary-foreground: #000000; /* Black text on light backgrounds */
-  --accent: #f5f5f5; /* Light gray for accents */
-  --accent-foreground: #000000; /* Black text */
-  --destructive: #000000; /* Black for destructive actions */
-  --destructive-foreground: #ffffff; /* White text on black */
-  --ring: #000000; /* Black focus rings */
-  --radius: 0.75rem;
+                 .dark {
+                   --background: #000000;
+                   --foreground: #ffffff;
+                   --muted: #1a1a1a;
+                   --muted-foreground: #ffffff;
+                   --popover: #1a1a1a;
+                   --popover-foreground: #ffffff;
+                   --card: #1a1a1a;
+                   --card-foreground: #ffffff;
+                   --border: #333333;
+                   --input: #333333;
+                   --primary: #ffffff;
+                   --primary-foreground: #000000;
+                   --secondary: #333333;
+                   --secondary-foreground: #ffffff;
+                   --accent: #1a1a1a;
+                   --accent-foreground: #ffffff;
+                   --destructive: #ffffff;
+                   --destructive-foreground: #000000;
+                   --ring: #ffffff;
+                 }
 
-  /* YOUR BRAND COLORS (Crucial for Figma exports and consistent branding) */
-  --aitenders-dark-blue: #112646;     /* Your actual dark blue */
-  --aitenders-white-blue: #FBFCFF;    /* Your actual off-white blue */
-  --aitenders-primary-blue: #3880E8;  /* Your actual accent blue */
-  --aitenders-pale-blue: #F5F9FE;     /* Your actual very light blue */
-  --aitenders-pastel-blue: #EBF2FD;   /* Your actual slightly darker light blue */
-  --aitenders-light-blue: #C3D9F8;    /* Your actual medium gray-blue */
-  --aitenders-black: #000;            /* Your actual black */
+                 /* Base layer styles */
+                 @layer base {
+                   * {
+                     border-color: var(--border);
+                   }
 
-  /* Figma Exported Generic Color Scheme Vars (mapped to your brand colors where possible) */
-  --Color-Brand-Blue: var(--aitenders-dark-blue);
-  --Color-CTA-Blue: var(--aitenders-primary-blue);
-  --Color-White: var(--aitenders-white-blue);
-  --Color-Neutral-Darkest: var(--aitenders-black); /* Figma's #000 */
+                   body {
+                     font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+                     color: var(--foreground);
+                     background-color: var(--background);
+                     -webkit-font-smoothing: antialiased;
+                     -moz-osx-font-smoothing: grayscale;
+                   }
 
-  --Color-Scheme-1-Background: var(--aitenders-pale-blue); /* Assuming this maps to a light background */
-  --Color-Scheme-1-Foreground: var(--aitenders-pale-blue); /* Same as above */
-  --Color-Scheme-1-Border: var(--aitenders-black); 
+                   h1,
+                   h2,
+                   h3,
+                   h4,
+                   h5,
+                   h6 {
+                     font-size: inherit;
+                     font-weight: inherit;
+                   }
 
-  --Color-Scheme-2-Background: var(--aitenders-white-blue); /* Assuming white background */
-  --Color-Scheme-2-Text: var(--aitenders-black); /* Assuming black text */
-  --Color-Scheme-2-Border: var(--aitenders-black); 
+                   a {
+                     color: inherit;
+                     text-decoration: none;
+                   }
+                 }
 
-  --Color-Scheme-3-Background: var(--aitenders-pale-blue); /* Assuming a light gray background */
-  --Color-Scheme-3-Text: var(--aitenders-black); 
-  --Color-Scheme-3-Foreground: var(--aitenders-pale-blue); /* Same as above */
+                 /* Utilities layer */
+                 @layer utilities {
+                   .gradient-bg {
+                     background: linear-gradient(135deg, var(--aitenders-pale-blue), var(--aitenders-pastel-blue));
+                   }
 
-  /* Figma Exported Layout/Spacing/Radius Vars */
-  --Page-Padding-padding-global: 64px;
-  --Section-Padding-padding-section-large: 112px;
-  --Section-Padding-padding-section-medium: 80px;
-  --Container-container-large: 1280px;
-  --Max-Width-max-width-large: 768px;
-  --Text-Sizes-Heading-1: 72px;
-  --Text-Sizes-Heading-2: 52px;
-  --Text-Sizes-Heading-5: 28px;
-  --Text-Sizes-Text-Medium: 18px;
-  --Text-Sizes-Text-Regular: 16px;
-  --Opacity-Transparent: rgba(255, 255, 255, 0);
-  --Opacity-Neutral-Darkest-15: rgba(0, 0, 0, 0.15);
-  --Opacity-Neutral-Darkest-5: rgba(0, 0, 0, 0.05);
-  --Radius-Large: 40px;
-  --Radius-Medium: 32px;
-  --Stroke-Divider-Width: 2px;
-}
+                   .brand-gradient {
+                     background: linear-gradient(135deg, var(--aitenders-pale-blue) 0%, var(--aitenders-pastel-blue) 50%, var(--aitenders-light-blue) 100%);
+                   }
 
-.dark {
-  /* You can adapt these dark mode vars if you have a dark mode toggle */
-  --background: #000000;
-  --foreground: #ffffff;
-  --muted: #1a1a1a;
-  --muted-foreground: #ffffff;
-  --popover: #1a1a1a;
-  --popover-foreground: #ffffff;
-  --card: #1a1a1a;
-  --card-foreground: #ffffff;
-  --border: #333333;
-  --input: #333333;
-  --primary: #ffffff;
-  --primary-foreground: #000000;
-  --secondary: #333333;
-  --secondary-foreground: #ffffff;
-  --accent: #1a1a1a;
-  --accent-foreground: #ffffff;
-  --destructive: #ffffff;
-  --destructive-foreground: #000000;
-  --ring: #ffffff;
-}
+                   .card-hover {
+                     @apply transition-all duration-300 hover:shadow-lg hover:scale-[1.02];
+                   }
 
-/* Base layer styles */
-@layer base {
-  * {
-    border-color: var(--border);
-  }
+                   .hero-grid,
+                   .hero-section {
+                     display: grid;
+                     grid-template-columns: 1fr 1fr;
+                     gap: 2rem;
+                     align-items: center;
+                   }
 
-  body {
-    font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-    color: var(--foreground);
-    background-color: var(--background);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+                   .features-grid,
+                   .features-section {
+                     display: grid;
+                     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                     gap: 2rem;
+                   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-size: inherit;
-    font-weight: inherit;
-  }
+                   .stats-grid,
+                   .stats-section {
+                     display: grid;
+                     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                     gap: 2rem;
+                   }
 
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-}
+                   .complex-grid,
+                   .complex-section {
+                     display: grid;
+                     grid-template-columns: 2fr 1fr;
+                     grid-template-rows: auto;
+                     gap: 2rem;
+                   }
 
-/* Utilities layer */
-@layer utilities {
-  .gradient-bg {
-    background: linear-gradient(135deg, var(--aitenders-pale-blue), var(--aitenders-pastel-blue));
-  }
+                   h1 {
+                     font-weight: 700;
+                     font-size: 56px;
+                     line-height: 56px;
+                     letter-spacing: -0.025em;
+                   }
 
-  .brand-gradient {
-    background: linear-gradient(135deg, var(--aitenders-pale-blue) 0%, var(--aitenders-pastel-blue) 50%, var(--aitenders-light-blue) 100%);
-  }
+                   h2 {
+                     font-weight: 600;
+                     font-size: 42px;
+                     line-height: 48px;
+                   }
 
-  .card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:scale-[1.02];
-  }
+                   h3 {
+                     font-weight: 600;
+                     font-size: 32px;
+                     line-height: 40px;
+                   }
 
-  .hero-grid, .hero-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
-  }
+                   h4,
+                   h5,
+                   h6 {
+                     font-weight: 500;
+                   }
 
-  .features-grid, .features-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  }
+                   button,
+                   .btn,
+                   [role="button"] {
+                     font-weight: 500;
+                   }
 
-  .stats-grid, .stats-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
+                   @media (max-width: 768px) {
 
-  .complex-grid, .complex-section {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto;
-    gap: 2rem;
-  }
+                     .hero-grid,
+                     .hero-section,
+                     .features-grid,
+                     .features-section,
+                     .stats-grid,
+                     .stats-section,
+                     .complex-grid,
+                     .complex-section {
+                       grid-template-columns: 1fr;
+                     }
 
-  h1 {
-    font-weight: 700;
-    font-size: 56px;
-    line-height: 56px;
-    letter-spacing: -0.025em;
-  }
-  h2 {
-    font-weight: 600;
-    font-size: 42px;
-    line-height: 48px;
-  }
-  h3 {
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 40px;
-  }
-  h4, h5, h6 {
-    font-weight: 500;
-  }
-  button, .btn, [role="button"] {
-    font-weight: 500;
-  }
+                     h1 {
+                       font-size: clamp(32px, 8vw, 48px);
+                       line-height: 1.1;
+                     }
+                   }
 
-  @media (max-width: 768px) {
-    .hero-grid, .hero-section,
-    .features-grid, .features-section,
-    .stats-grid, .stats-section,
-    .complex-grid, .complex-section {
-      grid-template-columns: 1fr;
-    }
-    h1 {
-      font-size: clamp(32px, 8vw, 48px);
-      line-height: 1.1;
-    }
-  }
+                   @media (min-width: 769px) and (max-width: 1024px) {
 
-  @media (min-width: 769px) and (max-width: 1024px) {
-    .features-grid, .features-section,
-    .stats-grid, .stats-section {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    h1 {
-      font-size: clamp(42px, 6vw, 56px);
-      line-height: 1.1;
-    }
-  }
+                     .features-grid,
+                     .features-section,
+                     .stats-grid,
+                     .stats-section {
+                       grid-template-columns: repeat(2, 1fr);
+                     }
 
-  .logo-scroll {
-    animation: scroll 20s linear infinite;
-    width: calc(100% * 3);
-  }
-  .logo-scroll:hover {
-    animation-play-state: paused;
-  }
-  @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-33.333%); }
-  }
+                     h1 {
+                       font-size: clamp(42px, 6vw, 56px);
+                       line-height: 1.1;
+                     }
+                   }
 
-  .scrollbar-visible {
-    scrollbar-width: auto;
-    scrollbar-color: #a855f7 #e5e7eb;
-    overflow-y: scroll;
-  }
-  .scrollbar-visible::-webkit-scrollbar {
-    width: 12px;
-    display: block;
-  }
-  .scrollbar-visible::-webkit-scrollbar-track {
-    background: #e5e7eb;
-    border-radius: 6px;
-    margin: 4px 0;
-  }
-  .scrollbar-visible::-webkit-scrollbar-thumb {
-    background: #a855f7;
-    border-radius: 6px;
-    border: 2px solid #e5e7eb;
-  }
-  .scrollbar-visible::-webkit-scrollbar-thumb:hover {
-    background: #9333ea;
-  }
-  .scrollbar-visible::-webkit-scrollbar-corner {
-    background: #e5e7eb;
-  }
+                   /* --- LOGO SCROLL CSS --- */
+                   .logo-scroll {
+                     display: flex;
+                     width: max-content;
+                     animation: scroll 20s linear infinite;
+                   }
 
-  .right-sidebar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: var(--sidebar-width);
-    background: white;
-    opacity: 1;
-    z-index: 1000;
-    border-left: 1px solid rgba(0,0,0,0.08);
-    box-shadow: -8px 0 24px rgba(0,0,0,0.18);
-    overflow-y: auto;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-  }
-  .right-sidebar.open {
-    transform: translateX(0);
-  }
+                   .logo-scroll:hover {
+                     animation-play-state: paused;
+                   }
 
-  .main-content {
-    margin-left: 0;
-  }
+                   @keyframes scroll {
+                     0% {
+                       transform: translateX(0);
+                     }
 
-  /* --- THIS IS THE ONLY SECTION THAT HAS BEEN CHANGED --- */
-  .page-content {
-    padding-top: 4rem; /* 64px to account for the fixed header */
+                     100% {
+                       transform: translateX(-33.333%);
+                     }
+                   }
 
-    /* These three lines create the vertical "hallways" between your components */
-    display: flex;
-    flex-direction: column;
-    gap: 112px; /* You can adjust this value (e.g., 80px, 120px) to control the spacing */
-  }
+                   .scrollbar-visible {
+                     scrollbar-width: auto;
+                     scrollbar-color: #a855f7 #e5e7eb;
+                     overflow-y: scroll;
+                   }
 
-  html {
-    scroll-behavior: auto;
-  }
-  body {
-    overflow-x: hidden;
-  }
-}
+                   .scrollbar-visible::-webkit-scrollbar {
+                     width: 12px;
+                     display: block;
+                   }
 
-.content-boundary, main, section, article {
-  max-width: 1200px;
-  margin-inline: auto;
-  padding-inline: clamp(16px, 4vw, 48px);
-  box-sizing: border-box;
-}
+                   .scrollbar-visible::-webkit-scrollbar-track {
+                     background: #e5e7eb;
+                     border-radius: 6px;
+                     margin: 4px 0;
+                   }
 
-.content-boundary--narrow {
-  max-width: 960px;
-}
+                   .scrollbar-visible::-webkit-scrollbar-thumb {
+                     background: #a855f7;
+                     border-radius: 6px;
+                     border: 2px solid #e5e7eb;
+                   }
 
-.full-bleed {
-  margin-inline: calc(50% - 50vw);
-  max-width: 100vw;
-  padding-inline: 0;
-}
+                   .scrollbar-visible::-webkit-scrollbar-thumb:hover {
+                     background: #9333ea;
+                   }
 
-.content-boundary img,
-.content-boundary video,
-.content-boundary canvas,
-.content-boundary svg,
-main img, section img, article img,
-main video, section video, article video {
-  max-width: 100%;
-  height: auto;
-}
+                   .scrollbar-visible::-webkit-scrollbar-corner {
+                     background: #e5e7eb;
+                   }
 
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.fade-in-up.animate {
-  opacity: 1;
-  transform: translateY(0);
-}
+                   .right-sidebar {
+                     position: fixed;
+                     top: 0;
+                     right: 0;
+                     height: 100vh;
+                     width: var(--sidebar-width);
+                     background: white;
+                     opacity: 1;
+                     z-index: 1000;
+                     border-left: 1px solid rgba(0, 0, 0, 0.08);
+                     box-shadow: -8px 0 24px rgba(0, 0, 0, 0.18);
+                     overflow-y: auto;
+                     transform: translateX(100%);
+                     transition: transform 0.3s ease-in-out;
+                   }
 
-.fade-in-left {
-  opacity: 0;
-  transform: translateX(-30px);
-  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.fade-in-left.animate {
-  opacity: 1;
-  transform: translateX(0);
-}
+                   .right-sidebar.open {
+                     transform: translateX(0);
+                   }
 
-.fade-in-right {
-  opacity: 0;
-  transform: translateX(30px);
-  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.fade-in-right.animate {
-  opacity: 1;
-  transform: translateX(0);
-}
+                   .main-content {
+                     margin-left: 0;
+                   }
 
-.fade-in {
-  opacity: 0;
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.fade-in.animate {
-  opacity: 1;
-}
+                   .page-content {
+                     padding-top: 4rem;
+                     /* 64px to account for the fixed header */
+                     display: flex;
+                     flex-direction: column;
+                     /* THIS IS THE CRUCIAL CHANGE FOR INTER-SECTION SPACING */
+                     gap: 10rem; /* Increased from 7rem (112px) to 10rem (160px) for more space between sections */
+                   }
 
-.scale-in {
-  opacity: 0;
-  transform: scale(0.95);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.scale-in.animate {
-  opacity: 1;
-  transform: scale(1);
-}
+                   html {
+                     scroll-behavior: auto;
+                   }
 
-.logo-scroll {
-  animation: scroll 40s linear infinite;
-}
+                   body {
+                     overflow-x: hidden;
+                   }
+                 }
 
-@keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
+                 .content-boundary,
+                 main,
+                 section,
+                 article {
+                   max-width: 1200px;
+                   margin-inline: auto;
+                   padding-inline: clamp(16px, 4vw, 48px);
+                   box-sizing: border-box;
+                 }
+
+                 .content-boundary--narrow {
+                   max-width: 960px;
+                 }
+
+                 /* DEPRECATED full-bleed class. Use .full-bleed-section instead for better specificity. */
+                 .full-bleed {
+                   margin-inline: calc(50% - 50vw);
+                   max-width: 100vw;
+                   padding-inline: 0;
+                 }
+
+                 .content-boundary img,
+                 .content-boundary video,
+                 .content-boundary canvas,
+                 .content-boundary svg,
+                 main img,
+                 section img,
+                 article img,
+                 main video,
+                 section video,
+                 article video {
+                   max-width: 100%;
+                   height: auto;
+                 }
+
+                 .fade-in-up {
+                   opacity: 0;
+                   transform: translateY(30px);
+                   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+                 }
+
+                 .fade-in-up.animate {
+                   opacity: 1;
+                   transform: translateY(0);
+                 }
+
+                 .fade-in-left {
+                   opacity: 0;
+                   transform: translateX(-30px);
+                   transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+                 }
+
+                 .fade-in-left.animate {
+                   opacity: 1;
+                   transform: translateX(0);
+                 }
+
+                 .fade-in-right {
+                   opacity: 0;
+                   transform: translateX(30px);
+                   transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+                 }
+
+                 .fade-in-right.animate {
+                   opacity: 1;
+                   transform: translateX(0);
+                 }
+
+                 .fade-in {
+                   opacity: 0;
+                   transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+                 }
+
+                 .fade-in.animate {
+                   opacity: 1;
+                 }
+
+                 .scale-in {
+                   opacity: 0;
+                   transform: scale(0.95);
+                   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+                 }
+
+                 .scale-in.animate {
+                   opacity: 1;
+                   transform: scale(1);
+                 }
+
+                 /* --- NEW GLOBAL UTILITY CLASS FOR FULL-WIDTH SECTIONS --- */
+                 .full-bleed-section {
+                   width: 100vw;
+                   max-width: none;
+                   margin-left: 50%;
+                   transform: translateX(-50%);
+                   padding-left: 0;
+                   padding-right: 0;
+                 }

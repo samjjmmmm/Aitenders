@@ -1,34 +1,27 @@
 /* src/styles/Layout_84.module.css */
 
+/* This global class from index.css makes the section full-width */
 .sectionContainer {
-  width: 100%;
   background: #FBFCFF;
   display: flex;
-  justify-content: center;
-
-  /* UPDATED: Removed vertical padding. Kept horizontal padding. */
-  padding: 0 64px;
-
+  justify-content: center; /* Horizontally center the contentWrapper */
+  align-items: center;    /* Vertically center the contentWrapper */
+  padding: 4rem 2rem;
   box-sizing: border-box;
-  /* Added some internal padding that won't conflict with the global gap */
-  padding-top: 64px;
-  padding-bottom: 64px;
+  min-height: 250px;
 }
 
+/* This is the container for "You" and the animated text */
 .contentWrapper {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;  /* Vertically aligns the middle of "You" and the text container */
   justify-content: center;
-  align-items: center;
-  gap: 48px;
-  max-width: 1280px;
-  width: 100%;
+  gap: 1rem;            /* The space between "You" and the animated text */
+  max-width: max-content; /* Shrinks the wrapper to fit its content, allowing true centering */
 }
 
 .youColumn {
-  flex: 1;
-  min-width: 200px;
-  text-align: right;
+  flex-shrink: 0;
 }
 
 .heading {
@@ -36,44 +29,48 @@
   font-size: 96px;
   line-height: 1;
   color: #3880E8;
+  margin: 0;
 }
 
+/* This is the container for the animated text */
 .statsColumn {
-  flex: 2;
-  min-width: 300px;
-  height: 100px; 
   position: relative;
+  height: 96px; /* A fixed height is necessary for the animation's vertical positioning */
   overflow: hidden;
+  /* CRITICAL FIX: We must give the container an explicit width for the text to be visible. */
+  /* This value should be wide enough for your longest text string. */
+  width: 380px; 
 }
 
+/* An individual piece of animated text */
 .statItem {
+  position: absolute;
+  /* CRITICAL FIX: Position the text at the start (left) of its container */
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%); /* This vertically centers it */
+
   display: flex;
   align-items: baseline;
-  gap: 24px;
-  width: 100%;
-  position: absolute;
-  left: 0;
+  gap: 1.5rem;
   opacity: 0;
+  white-space: nowrap;
 }
 
 .number {
   font-weight: 500;
   font-size: 52px;
-  line-height: 1.2;
-  letter-spacing: -0.52px;
+  line-height: 1;
   color: #000;
-  text-align: right;
-  flex-shrink: 0;
 }
 
 .text {
   font-size: 20px;
   line-height: 1.5;
   color: #000;
-  text-align: left;
-  white-space: normal;
 }
 
+/* --- ANIMATION --- */
 .statsColumn.animated .statItem {
   animation-name: textFlip;
   animation-duration: 9s;
@@ -81,28 +78,26 @@
   animation-iteration-count: infinite;
 }
 
+/* Keyframes now only control vertical movement and opacity */
 @keyframes textFlip {
-  0% { opacity: 0; transform: translateY(100%); }
-  5% { opacity: 1; transform: translateY(0); }
-  33% { opacity: 1; transform: translateY(0); }
-  38% { opacity: 0; transform: translateY(-100%); }
-  100% { opacity: 0; }
+  0%   { opacity: 0; transform: translateY(50%); }
+  5%   { opacity: 1; transform: translateY(-50%); }
+  28%  { opacity: 1; transform: translateY(-50%); }
+  33%  { opacity: 0; transform: translateY(-150%); }
+  34%  { opacity: 0; transform: translateY(50%); }
+  100% { opacity: 0; transform: translateY(50%); }
 }
 
 .statsColumn.animated .statItem:nth-child(1) { animation-delay: 0s; }
 .statsColumn.animated .statItem:nth-child(2) { animation-delay: 3s; }
 .statsColumn.animated .statItem:nth-child(3) { animation-delay: 6s; }
 
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-  .sectionContainer {
-    padding: 32px; /* Simplified padding for mobile */
-  }
   .contentWrapper {
     flex-direction: column;
-    gap: 40px;
-  }
-  .youColumn {
-    text-align: center;
+    align-items: center;
+    gap: 1rem;
   }
   .statsColumn {
     width: 100%;
@@ -110,5 +105,7 @@
   }
   .statItem {
     justify-content: center;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Re-center the text on mobile */
   }
 }
