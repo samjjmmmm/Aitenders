@@ -1,0 +1,4 @@
+{
+  "en": { "test_section": { "title": "This is a Test Title", "subtitle": "This is a test subtitle." } },
+  "fr": { "test_section": { "title": "Ceci est un titre de test", "subtitle": "Ceci est un sous-titre de test." } }
+}

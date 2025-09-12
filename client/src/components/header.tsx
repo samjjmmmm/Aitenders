@@ -34,8 +34,10 @@ export default function Header() {
   const closeDemo = useCallback(() => setIsDemoOpen(false), []);
 
   // --- Dynamically load navigation from i18n JSON ---
-  const allNavigationLinks = (t("header.navigation", { returnObjects: true }) || []) as NavItem[];
+  const i18nNavigation = t("header.navigation", { returnObjects: true });
+  const allNavigationLinks: NavItem[] = Array.isArray(i18nNavigation) ? i18nNavigation : [];
   const navigationLinks = allNavigationLinks.slice(0, 2);
+
 
   // --- Event Handlers ---
   const toggleDropdown = (title: string) => {

@@ -178,7 +178,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-      <Header language={currentLanguage as 'en' | 'fr'} onLanguageChange={handleLanguageChange} />
+      <Header />
       <main className="relative">
         <div className="max-w-5xl mx-auto px-4 pt-24 pb-6">
           <div className="text-center mb-8">

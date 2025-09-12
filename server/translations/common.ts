@@ -7,6 +7,28 @@ export const commonFrenchTranslations = {
   'nav.contact': 'Contact',
   'nav.demo': 'Démo',
 
+  // Header
+  'header.navigation': [
+    {
+      title: 'Solutions',
+      children: [
+        { title: 'Gestion d\'appels d\'offres', href: '/solutions/tender-management' },
+        { title: 'Exécution de contrats', href: '/solutions/contract-execution' },
+        { title: 'Gestion de connaissances', href: '/solutions/knowledge-management' }
+      ]
+    },
+    {
+      title: 'Ressources',
+      children: [
+        { title: 'Blog', href: '/blog' },
+        { title: 'Documentation', href: '/docs' },
+        { title: 'Support', href: '/support' }
+      ]
+    }
+  ],
+  'header.requestDemo': 'Demander une démo',
+  'header.menu': 'Menu',
+
   // Common buttons
   'common.learn_more': 'En savoir plus',
   'common.get_started': 'Commencer',
@@ -22,6 +44,28 @@ export const commonEnglishTranslations = {
   'nav.pricing': 'Pricing',
   'nav.contact': 'Contact',
   'nav.demo': 'Demo',
+
+  // Header
+  'header.navigation': [
+    {
+      title: 'Solutions',
+      children: [
+        { title: 'Tender Management', href: '/solutions/tender-management' },
+        { title: 'Contract Execution', href: '/solutions/contract-execution' },
+        { title: 'Knowledge Management', href: '/solutions/knowledge-management' }
+      ]
+    },
+    {
+      title: 'Resources',
+      children: [
+        { title: 'Blog', href: '/blog' },
+        { title: 'Documentation', href: '/docs' },
+        { title: 'Support', href: '/support' }
+      ]
+    }
+  ],
+  'header.requestDemo': 'Request Demo',
+  'header.menu': 'Menu',
 
   // Common buttons
   'common.learn_more': 'Learn more',

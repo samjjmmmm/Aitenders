@@ -1,1165 +1,1165 @@
-  {
-    "uc2test": {
-      "header_26": {
-        "title": "Your offer, 100% clear, 0% surprises",
-        "subtitle": "Discover, manage, and secure every clause from day one.",
-        "cta1": "Get Started",
-        "cta2": "Learn More"
-      },
-      "scrolling_logos": {
-        "title": "Approved by Industry Leaders"
-      },
-      "ai_copilot": {
-        "tag": "AI Agents",
-        "title": "Your AI copilot that secures the management of your medium projects",
-        "subtitle": "The only platform designed to transform medium-sized projects (€1M to €10M) into a clear contractual vision from day one.",
-        "step1": "Project structuring with AI",
-        "step2": "Immediate detection of critical clauses",
-        "step3": "Dynamic management of Q&A and versions."
-      },
-      "user_benefits": {
-        "you": "You",
-        "stat1_number": "",
-        "stat1_text": "secure every critical clause",
-        "stat2_number": "",
-        "stat2_text": "start with a structured scope",
-        "stat3_number": "",
-        "stat3_text": "master Q&A and versions"
-      },
-      "offer_steps_headline": {
-        "title": "We support teams at every stage of the offer"
-      },
-      "features": {
-        "feature1_tag": "Operational cockpit from Day 1",
-        "feature1_title": "Automatic project structuring",
-        "feature1_desc": "AI analyzes your RFQs, maps every requirement, and provides a clear vision of the scope.",
-        "feature1_stat": "of structured documents, transformed into Digital Twins",
-        "feature1_popup": "Aitenders' AI instantly analyzes your tender documents and automatically structures the scope, identifies lots, detects critical interfaces, and maps every requirement. Your teams start with a clear and complete vision of the project.",
-        "feature2_tag": "Zero forgotten clauses",
-        "feature2_title": "Control every critical clause",
-        "feature2_desc": "Continuous monitoring of penalties, responsibilities, and deadlines. Every modification is flagged with measured impact.",
-        "feature2_popup": "Aitenders continuously monitors and analyzes every sensitive clause: penalties, responsibilities, critical deadlines, and special conditions. Every modification is tracked, every impact automatically evaluated.",
-        "feature3_tag": "Contractual history mastered",
-        "feature3_title": "Master every contractual evolution",
-        "feature3_desc": "Q&A, versions, and amendments centralized, with full traceability of evolutions.",
-        "feature3_popup": "Dynamically manage your Q&A, successive versions, and addendums in a centralized environment. Aitenders maintains overall consistency and alerts on the impacts of each modification."
-      },
-      "concrete_results": {
-        "title": "Concrete results for your teams",
-        "stat1_number": "-50%",
-        "stat1_text": "of initial analysis time.",
-        "stat2_number": "100%",
-        "stat2_text": "of critical clauses identified and prioritized.",
-        "stat3_number": "0",
-        "stat3_text": "last-minute surprises.",
-        "cta_button": "Launch the impact simulation for your own projects"
-      },
-      "portfolio": {
-        "title": "Deployed on numerous projects",
-        "projects": [
-          {
-            "title": "Systematize the discovery and launch of over 400 offers per year.",
-            "value": "400 offers / year",
-            "description": "CONTEXT: Team of 5 engineers having to analyze over 400 tenders per year in the field of consulting engineering. Tender documents mainly in English, French, and Spanish. Average of 200 to 300 pages per tender. CLIENT OBJECTIVES: Save time in identifying risks and anticipating bottlenecks. Quickly identify if we need to mobilize partners/subcontractors. Mobilization of the support team. Immediately identify Bid / No Bid criteria. Identify key risks (technical, financial, and legal). IMPLEMENTED SOLUTION: Automatic classification of clauses by category. Capture of key risks and opportunities. Export and integration into the existing process. Additional note: Setup: 2 hours. Team training limited to 2 x 1h. RESULTS: 20/30% LESS TIME. -10/15H PER PROJECT. €300–500K/YEAR",
-            "category": "Case Study",
-            "cta_text": "Read more",
-            "imageSrc": "/images/Portfolio/Systematize%20the%20discovery%20and%20launch%20of%20over%20400%20tenders%20per%20year..jpg"
-          },
-          {
-            "title": "Extract and produce the requirement compliance matrix for a €40M tender.",
-            "value": "€40M Offer",
-            "description": "CONTEXT: The project was a partial project for the supply of an integrated metro traction system for a new metro line in France. The client had to identify over 2,000 requirements across approximately 50 different technical documents. The team consisted of 10 people, involving 3 different Business Units. CLIENT OBJECTIVES: Immediately and correctly identify and store all client-identified requirements. Identify other requirements impacting the scope and costing of the offer. Enable the team to have a standardized and simplified common review around all requirements. Quickly deliver a fully reviewed and accurate compliance matrix to their clients. IMPLEMENTED SOLUTION: Requirement detection. PBS, WBS classification. Import responses – Question association. Version difference analysis (V1 > V2). Requirement coverage. Additional note: One session for Project Directors (1h) to launch project organization. 1h of training for the rest of the team (9 members). RESULTS: COMPLIANCE MATRIX DELIVERED WITHOUT GAPS. APPROXIMATELY 30% LESS TIME OVER THE ENTIRE PROCESS",
-            "category": "Case Study",
-            "cta_text": "Read more",
-            "imageSrc": "/images/Portfolio/Extract%20and%20produce%20the%20requirement%20compliance%20matrix%20for%20a%20€40M%20tender..jpg"
-          },
-          {
-            "title": "Automate your Bid / No Bid: Go from 7,000 opportunities to 700 well-qualified offers!",
-            "value": "7000 opportunities / year",
-            "description": "CONTEXT: Our client receives over 7,000 opportunities per year via email from a sourcing software. The existing filtering system is inefficient as it is based on a few generic keywords. Tender managers must open each tender and read the first pages to see if there is potential to be a prime contractor or subcontractor on the project. CLIENT OBJECTIVES: Drastically reduce the average time spent on the selection process (currently 1 hour per tender). Immediately identify the usual 40 suspects that provide a high level of certainty for deciding Bid / No Bid. IMPLEMENTED SOLUTION: Detection of over 40 key points in 5 minutes instead of several hours. Risk analysis on topics such as finance, contract, legal… Additional note: No effort thanks to the use of the Aitenders standard for Bid / No Bid risk detection (+400 criteria). Customization: a few hours. Specific detection models: 3 weeks. RESULTS: 95% TIME SAVED ON IDENTIFYING KEY POINTS. MORE CAPACITY FOR BETTER SELECTION. +1,000 HOURS SAVINGS PER YEAR",
-            "category": "Case Study",
-            "cta_text": "Read more",
-            "imageSrc": "/images/Portfolio/Automate%20your%20Bid%20No%20Bid%20Go%20from%207,000%20opportunities%20to%20700%20well-qualified%20tenders!.jpg"
-          },
-          {
-            "title": "Requirement management for a €10Bn Design & Build tender – Consortium of 15 companies.",
-            "value": "€10Bn Offer",
-            "description": "CONTEXT: Metro line 15 in Paris is a 2-year Design & Build tender, estimated at approximately €10Bn. Our client is the Consortium, including NGE, Webuilt, Equans, and all their partners (architects, design offices, subcontractors, etc.). CLIENT OBJECTIVES: Ensure efficiency in the distribution of the work scope among the 15 different entities of the consortium. Produce a flawless requirement compliance matrix. Collectively monitor and identify the impacts of changes related to questions/answers. Identify version changes and collectively analyze their impacts. IMPLEMENTED SOLUTION: Automatic detection and extraction of requirements. Automatic classification. Collaborative scope and baseline. Automatic detection of version changes. Import Q&A and impact analysis. Additional note: 2-hour training session for the 150 team members. 2 hours of training for 10 managers. RESULTS: THOUSANDS OF MAN-DAYS SAVED. FEWER RISKS. ENSURE A HIGH LEVEL OF COMPLIANCE",
-            "category": "Case Study",
-            "cta_text": "Read more",
-            "imageSrc": "/images/Portfolio/Requirement%20management%20for%20a%20€10Bn%20Design%20&%20Build%20tender%20–%20Consortium%20of%2015%20companies..jpg"
-          }
-        ]
-      },
-      "team_20": {
-        "tag": "Additional Impact",
-        "title": "Boost your teams even further",
-        "description": "For semi-complex offers, discover features that add a strategic dimension to your business development.",
-        "cards": [
-          {
-            "title": "Semantic Analysis",
-            "description": "Understand the nuances and hidden intentions in documents with advanced AI.",
-            "iconSrc": "/images/Semantic Analysis.svg"
-          },
-          {
-            "title": "Risk Scoring",
-            "description": "Automatically assess the risk level of each clause to prioritize your efforts.",
-            "iconSrc": "/images/Risk Scoring.svg"
-          },
-          {
-            "title": "Summary Generation",
-            "description": "Get clear and concise summaries of key project points in seconds.",
-            "iconSrc": "/images/Summary Generation.svg"
-          },
-          {
-            "title": "Automated Compliance",
-            "description": "Verify the compliance of your documents against current standards and regulations.",
-            "iconSrc": "/images/Automated Compliance.svg"
-          },
-          {
-            "title": "Strategic Recommendations",
-            "description": "Receive proactive suggestions to optimize your responses and strengthen your position.",
-            "iconSrc": "/images/Strategic Recommendations.svg"
-          },
-          {
-            "title": "Knowledge-Linked Writing",
-            "description": "Reuse and adapt your validated content from the knowledge base and past projects for more consistency and speed.",
-            "iconSrc": "/images/Knowledge-Linked Writing.svg"
-          }
-        ]
-      },
-      "cta": {
-        "title": "Discover how Aitenders exactly meets your needs",
-        "subtitle": "No generic demo. No commercial spam. Just three quick questions.",
-        "card_title": "AI Tender Assistant",
-        "card_message": "Hello! I will help you find the ideal Aitenders solution for your team. What is your industry?",
-        "card_button": "Click to start your personalized evaluation..."
-      }
+{
+  "uc2test": {
+    "header_26": {
+      "title": "Your offer, 100% clear, 0% surprises",
+      "subtitle": "Discover, manage, and secure every clause from day one.",
+      "cta1": "Get Started",
+      "cta2": "Learn More"
     },
-    "uc3": {
-      "header_26": {
-        "title": "Every requirement mastered, every risk under control",
-        "subtitle": "Analyze, validate, and secure your complex tenders from day one.",
-        "cta1": "Get Started",
-        "cta2": "Learn More"
-      },
-      "scrolling_logos": {
-        "title": "Used by engineering and construction leaders"
-      },
-      "ai_copilot": {
-        "tag": "Zero blind spots",
-        "title": "The AI that eliminates omissions, inconsistencies, and delays in your large tenders",
-        "subtitle": "The only platform designed to secure compliance and accelerate your responses from day one.",
-        "step1": "Intelligent analysis of thousands of pages and requirement capture",
-        "step2": "Immediate detection of omissions, inconsistencies, and rejection risks",
-        "step3": "Collaborative management of every evolution for a solid and competitive offer"
-      },
-      "user_benefits": {
-        "you": "You",
-        "stat1_number": "",
-        "stat1_text": "start with structured intelligence",
-        "stat2_number": "",
-        "stat2_text": "collaborate seamlessly across experts",
-        "stat3_number": "",
-        "stat3_text": "control every evolution with confidence"
-      },
-      "offer_steps_headline": {
-        "title": "We guide your teams through every stage of complex tenders"
-      },
-      "features": {
-        "feature1_tag": "Smart database ready from Day 1",
-        "feature1_title": "Start with structured and intelligent data",
-        "feature1_desc": "Thanks to AI assistants, your documents are automatically organized into a database: requirements identified, key points summarized, similarities and contradictions detected. The project team starts on a clear, analysis-ready basis, without initial manual processing.",
-        "feature1_stat": "100% of requirements detected and organized from the start",
-        "feature1_popup": "Aitenders' AI automatically structures your files, classifies information, identifies requirements, and summarizes critical points. The bid manager thus provides an intelligible and usable database, saving days of manual processing.",
-        "feature2_tag": "Structured collaboration",
-        "feature2_title": "Ensure initial compliance without friction",
-        "feature2_desc": "Aitenders automatically generates the compliance matrix, assigns requirements to experts, and structures expected deliverables. Each expert knows their scope, risk areas appear clearly, and the response strategy is built as a team.",
-        "feature2_stat": "0 information loss in collaboration",
-        "feature2_popup": "The platform allows fluid collaboration between experts through a dynamic compliance matrix. Tasks are automatically distributed, blind spots are visible, and the response is collectively consolidated, without relying on fragmented Excel files.",
-        "feature3_tag": "Controlled evolutions",
-        "feature3_title": "Manage every change, without missing anything",
-        "feature3_desc": "Modifications are automatically detected and versioned. Discrepancies are flagged instantly, allowing their impact to be measured and action taken without delay. Q&A, versions, and amendments are centralized to ensure a consistent and compliant offer.",
-        "feature3_stat": "100% of changes detected and tracked",
-        "feature3_popup": "Document evolutions are automatically compared, discrepancies flagged, and impacts assessed in real-time. The bid manager can thus correct issues upfront, avoid omissions and inconsistencies, and ensure flawless version management."
-      },
-      "concrete_results": {
-        "title": "Concrete results for your complex tenders",
-        "stat1_number": "90%",
-        "stat1_text": "of structuring and organization work completed from day one",
-        "stat2_number": "100%",
-        "stat2_text": "of critical requirements covered and tracked in the dynamic matrix",
-        "stat3_number": "0",
-        "stat3_text": "risk of rejection due to formal non-compliance",
-        "cta_button": "Launch the impact simulation for your own projects"
-      },
-      "portfolio": {
-        "title": "Examples of complex projects managed",
-        "projects": [
-          {
-            "title": "Systematize the discovery and launch of over 400 offers per year.",
-            "value": "400 offers / year",
-            "description": "CONTEXT: Team of 5 engineers having to analyze over 400 tenders per year in the field of consulting engineering. Tender documents mainly in English, French, and Spanish. Average of 200 to 300 pages per tender. CLIENT OBJECTIVES: Save time in identifying risks and anticipating bottlenecks. Quickly identify if we need to mobilize partners/subcontractors. Mobilization of the support team. Immediately identify Bid / No Bid criteria. Identify key risks (technical, financial, and legal). IMPLEMENTED SOLUTION: Automatic classification of clauses by category. Capture of key risks and opportunities. Export and integration into the existing process. Additional note: Setup: 2 hours. Team training limited to 2 x 1h. RESULTS: 20/30% LESS TIME. -10/15H PER PROJECT. €300–500K/YEAR",
-            "category": "Case Study",
-            "cta_text": "Read more",
-            "imageSrc": "/images/Portfolio/Systematize%20the%20discovery%20and%20launch%20of%20over%20400%20tenders%20per%20year..jpg"
-          },
-          {
-            "title": "Extract and produce the requirement compliance matrix for a €40M tender.",
-            "value": "€40M Offer",
-            "description": "CONTEXT: The project was a partial project for the supply of an integrated metro traction system for a new metro line in France. The client had to identify over 2,000 requirements across approximately 50 different technical documents. The team consisted of 10 people, involving 3 different Business Units. CLIENT OBJECTIVES: Immediately and correctly identify and store all client-identified requirements. Identify other requirements impacting the scope and costing of the offer. Enable the team to have a standardized and simplified common review around all requirements. Quickly deliver a fully reviewed and accurate compliance matrix to their clients. IMPLEMENTED SOLUTION: Requirement detection. PBS, WBS classification. Import responses – Question association. Version difference analysis (V1 > V2). Requirement coverage. Additional note: One session for Project Directors (1h) to launch project organization. 1h of training for the rest of the team (9 members). RESULTS: COMPLIANCE MATRIX DELIVERED WITHOUT GAPS. APPROXIMATELY 30% LESS TIME OVER THE ENTIRE PROCESS",
-            "category": "Case Study",
-            "cta_text": "Read more",
-            "imageSrc": "/images/Portfolio/Extract%20and%20produce%20the%20requirement%20compliance%20matrix%20for%20a%20€40M%20tender..jpg"
-          },
-          {
-            "title": "Automate your Bid / No Bid: Go from 7,000 opportunities to 700 well-qualified offers!",
-            "value": "7000 opportunities / year",
-            "description": "CONTEXT: Our client receives over 7,000 opportunities per year via email from a sourcing software. The existing filtering system is inefficient as it is based on a few generic keywords. Tender managers must open each tender and read the first pages to see if there is potential to be a prime contractor or subcontractor on the project. CLIENT OBJECTIVES: Drastically reduce the average time spent on the selection process (currently 1 hour per tender). Immediately identify the usual 40 suspects that provide a high level of certainty for deciding Bid / No Bid. IMPLEMENTED SOLUTION: Detection of over 40 key points in 5 minutes instead of several hours. Risk analysis on topics such as finance, contract, legal… Additional note: No effort thanks to the use of the Aitenders standard for Bid / No Bid risk detection (+400 criteria). Customization: a few hours. Specific detection models: 3 weeks. RESULTS: 95% TIME SAVED ON IDENTIFYING KEY POINTS. MORE CAPACITY FOR BETTER SELECTION. +1,000 HOURS SAVINGS PER YEAR",
-            "category": "Case Study",
-            "cta_text": "Read more",
-            "imageSrc": "/images/Portfolio/Automate%20your%20Bid%20No%20Bid%20Go%20from%207,000%20opportunities%20to%20700%20well-qualified%20tenders!.jpg"
-          },
-          {
-            "title": "Requirement management for a €10Bn Design & Build tender – Consortium of 15 companies.",
-            "value": "€10Bn Offer",
-            "description": "CONTEXT: Metro line 15 in Paris is a 2-year Design & Build tender, estimated at approximately €10Bn. Our client is the Consortium, including NGE, Webuilt, Equans, and all their partners (architects, design offices, subcontractors, etc.). CLIENT OBJECTIVES: Ensure efficiency in the distribution of the work scope among the 15 different entities of the consortium. Produce a flawless requirement compliance matrix. Collectively monitor and identify the impacts of changes related to questions/answers. Identify version changes and collectively analyze their impacts. IMPLEMENTED SOLUTION: Automatic detection and extraction of requirements. Automatic classification. Collaborative scope and baseline. Automatic detection of version changes. Import Q&A and impact analysis. Additional note: 2-hour training session for the 150 team members. 2 hours of training for 10 managers. RESULTS: THOUSANDS OF MAN-DAYS SAVED. FEWER RISKS. ENSURE A HIGH LEVEL OF COMPLIANCE",
-            "category": "Case Study",
-            "cta_text": "Read more",
-            "imageSrc": "/images/Portfolio/Requirement%20management%20for%20a%20€10Bn%20Design%20&%20Build%20tender%20–%20Consortium%20of%2015%20companies..jpg"
-          }
-        ]
-      },
-      "team_20": {
-        "tag": "Strategic Impact",
-        "title": "Advanced features for your complex tenders",
-        "description": "Discover tools that add a strategic dimension and strengthen control over your complex offers.",
-        "cards": [
-          {
-            "title": "Bulk Versioning",
-            "description": "Manage multiple versions of your documents simultaneously with automatic synchronization and full multi-team modification traceability.",
-            "iconSrc": "/images/Bulk Versioning3.svg"
-          },
-          {
-            "title": "Response Writing",
-            "description": "Write precise and compliant responses using contextual generative AI, connected to your knowledge bases.",
-            "iconSrc": "/images/Response Writing3.svg"
-          },
-          {
-            "title": "Back to Back",
-            "description": "Automate the link between client and subcontractor contracts with intelligent clause mapping and contractual flows.",
-            "iconSrc": "/images/Back to Back3.svg"
-          },
-          {
-            "title": "Link with Deliverables",
-            "description": "Connect each requirement to its associated deliverables to ensure real-time tracking and completeness validation.",
-            "iconSrc": "/images/Link with Deliverables.svg"
-          },
-          {
-            "title": "Sub-Requirements",
-            "description": "Automatically decompose complex requirements into manageable sub-requirements and distribute them to appropriate experts.",
-            "iconSrc": "/images/Sub-Requirements3.svg"
-          },
-          {
-            "title": "Non-compliance Controls",
-            "description": "Proactively detect and correct compliance deviations with intelligent alerts before final submission.",
-            "iconSrc": "/images/Non-compliance Controls3.svg"
-          }
-        ]
-      }
+    "scrolling_logos": {
+      "title": "Trusted by Industry Leaders"
     },
-    "uc4": {
-      "header_26": {
-        "title": "Manage medium-sized offers, zero surprises",
-        "subtitle": "Discover, secure, and manage every clause from day one for a faster, safer, and more competitive response.",
-        "cta1": "Get Started",
-        "cta2": "Learn More"
-      },
-      "scrolling_logos": {
-        "title": "Approved by Industry Leaders"
-      },
-      "ai_copilot": {
-        "tag": "Smart Contracts",
-        "title": "Your contract becomes a source of answers",
-        "subtitle": "Aitenders transforms static PDFs into actionable knowledge with instant summaries, AI search, and direct access to obligations from day one.",
-        "step1": "Immediate access to key clauses",
-        "step2": "Intelligent natural language search",
-        "step3": "Fast decisions and assured compliance"
-      },
-      "user_benefits": {
-        "you": "You",
-        "stat1_number": "",
-        "stat1_text": "instantly access key clauses",
-        "stat2_number": "",
-        "stat2_text": "decide confidently in the field",
-        "stat3_number": "",
-        "stat3_text": "reduce your reliance on legal support"
-      },
-      "offer_steps_headline": {
-        "title": "We guide your teams at every stage of the contract"
-      },
-      "features": {
-        "feature1_tag": "Immediate contractual summary",
-        "feature1_title": "A readable and usable contract from Day 1",
-        "feature1_desc": "A clear summary sheet is automatically generated. It groups the essential elements of the contract and makes the information immediately usable.",
-        "feature1_stat": "100% of contracts summarized into usable sheets",
-        "feature1_popup": "Upon importing a contract, Aitenders creates a complete and structured contractual sheet. It gathers durations, renewals, notice periods, SLAs, penalties, and commitments. Teams thus have a reliable, readable, and usable basis from day one, without browsing the original PDF.",
-        "feature2_tag": "Targeted access to clauses",
-        "feature2_title": "Find every critical clause in one click",
-        "feature2_desc": "Contracts are organized by themes. Each user directly accesses the desired clause without rereading the entire document.",
-        "feature2_stat": "80% of time saved on manual search",
-        "feature2_popup": "Aitenders automatically classifies the contract into thematic sections. Users navigate by categories to immediately identify the relevant clause. This structuring reduces tedious rereading, limits errors, and offers targeted and reliable access to critical information.",
-        "feature3_tag": "Smart contractual Q&A",
-        "feature3_title": "Ask your questions, AI answers you",
-        "feature3_desc": "The Q&A engine answers in natural language and provides the exact clause with its source, immediately available.",
-        "feature3_stat": "80% of questions handled without legal service",
-        "feature3_popup": "Teams directly ask their questions in the interface. AI identifies the clause, cites its source, and provides an immediately usable answer. Responses can be archived and shared, avoiding legal solicitations and accelerating request processing."
-      },
-      "concrete_results": {
-        "title": "Concrete results for your projects in execution",
-        "stat1_number": "–60 %",
-        "stat1_text": "of time spent accessing key clauses",
-        "stat2_number": "+80 %",
-        "stat2_text": "of questions handled without legal department involvement",
-        "stat3_number": "100 %",
-        "stat3_text": "of decisions aligned with contractual commitments",
-        "cta_button": "Launch the impact simulation for your projects"
-      },
-      "portfolio": {
-        "title": "Deployed on numerous projects",
-        "projects": [
-          {
-            "title": "Systematize the discovery and launch of over 400 offers per year.",
-            "value": "400 offers / year",
-            "description": "CONTEXT: Team of 5 engineers having to analyze over 400 tenders per year in the field of consulting engineering. Tender documents mainly in English, French, and Spanish. Average of 200 to 300 pages per tender. CLIENT OBJECTIVES: Save time in identifying risks and anticipating bottlenecks. Quickly identify if we need to mobilize partners/subcontractors. Mobilization of the support team. Immediately identify Bid / No Bid criteria. Identify key risks (technical, financial, and legal). IMPLEMENTED SOLUTION: Automatic classification of clauses by category. Capture of key risks and opportunities. Export and integration into the existing process. Additional note: Setup: 2 hours. Team training limited to 2 x 1h. RESULTS: 20/30% LESS TIME. -10/15H PER PROJECT. €300–500K/YEAR",
-            "category": "Case Study",
-            "cta_text": "Read more",
-            "imageSrc": "/images/Portfolio/Systematize%20the%20discovery%20and%20launch%20of%20over%20400%20tenders%20per%20year..jpg"
-          },
-          {
-            "title": "Extract and produce the requirement compliance matrix for a €40M tender.",
-            "value": "€40M Offer",
-            "description": "CONTEXT: The project was a partial project for the supply of an integrated metro traction system for a new metro line in France. The client had to identify over 2,000 requirements across approximately 50 different technical documents. The team consisted of 10 people, involving 3 different Business Units. CLIENT OBJECTIVES: Immediately and correctly identify and store all client-identified requirements. Identify other requirements impacting the scope and costing of the offer. Enable the team to have a standardized and simplified common review around all requirements. Quickly deliver a fully reviewed and accurate compliance matrix to their clients. IMPLEMENTED SOLUTION: Requirement detection. PBS, WBS classification. Import responses – Question association. Version difference analysis (V1 > V2). Requirement coverage. Additional note: One session for Project Directors (1h) to launch project organization. 1h of training for the rest of the team (9 members). RESULTS: COMPLIANCE MATRIX DELIVERED WITHOUT GAPS. APPROXIMATELY 30% LESS TIME OVER THE ENTIRE PROCESS",
-            "category": "Case Study",
-            "cta_text": "Read more",
-            "imageSrc": "/images/Portfolio/Extract%20and%20produce%20the%20requirement%20compliance%20matrix%20for%20a%20€40M%20tender..jpg"
-          },
-          {
-            "title": "Automate your Bid / No Bid: Go from 7,000 opportunities to 700 well-qualified offers!",
-            "value": "7000 opportunities / year",
-            "description": "CONTEXT: Our client receives over 7,000 opportunities per year via email from a sourcing software. The existing filtering system is inefficient as it is based on a few generic keywords. Tender managers must open each tender and read the first pages to see if there is potential to be a prime contractor or subcontractor on the project. CLIENT OBJECTIVES: Drastically reduce the average time spent on the selection process (currently 1 hour per tender). Immediately identify the usual 40 suspects that provide a high level of certainty for deciding Bid / No Bid. IMPLEMENTED SOLUTION: Detection of over 40 key points in 5 minutes instead of several hours. Risk analysis on topics such as finance, contract, legal… Additional note: No effort thanks to the use of the Aitenders standard for Bid / No Bid risk detection (+400 criteria). Customization: a few hours. Specific detection models: 3 weeks. RESULTS: 95% TIME SAVED ON IDENTIFYING KEY POINTS. MORE CAPACITY FOR BETTER SELECTION. +1,000 HOURS SAVINGS PER YEAR",
-            "category": "Case Study",
-            "cta_text": "Read more",
-            "imageSrc": "/images/Portfolio/Automate%20your%20Bid%20No%20Bid%20Go%20from%207,000%20opportunities%20to%20700%20well-qualified%20tenders!.jpg"
-          },
-          {
-            "title": "Requirement management for a €10Bn Design & Build tender – Consortium of 15 companies.",
-            "value": "€10Bn Offer",
-            "description": "CONTEXT: Metro line 15 in Paris is a 2-year Design & Build tender, estimated at approximately €10Bn. Our client is the Consortium, including NGE, Webuilt, Equans, and all their partners (architects, design offices, subcontractors, etc.). CLIENT OBJECTIVES: Ensure efficiency in the distribution of the work scope among the 15 different entities of the consortium. Produce a flawless requirement compliance matrix. Collectively monitor and identify the impacts of changes related to questions/answers. Identify version changes and collectively analyze their impacts. IMPLEMENTED SOLUTION: Automatic detection and extraction of requirements. Automatic classification. Collaborative scope and baseline. Automatic detection of version changes. Import Q&A and impact analysis. Additional note: 2-hour training session for the 150 team members. 2 hours of training for 10 managers. RESULTS: THOUSANDS OF MAN-DAYS SAVED. FEWER RISKS. ENSURE A HIGH LEVEL OF COMPLIANCE",
-            "category": "Case Study",
-            "cta_text": "Read more",
-            "imageSrc": "/images/Portfolio/Requirement%20management%20for%20a%20€10Bn%20Design%20&%20Build%20tender%20–%20Consortium%20of%2015%20companies..jpg"
-          }
-        ]
-      },
-      "team_20": {
-        "tag": "Additional Impact",
-        "title": "Smart options for your contracts",
-        "description": "Transform your PDFs into intelligent assistants, usable at any time by every project stakeholder.",
-        "cards": [
-          {
-            "title": "Thematic Search",
-            "description": "Directly access critical clauses (duration, SLA, penalties, termination) organized by theme without rereading the entire contract.",
-            "iconSrc": "/images/Thematic Search4.svg"
-          },
-          {
-            "title": "Traceability Sharing",
-            "description": "Share explicit fact sheets with the complete history of consultations and decisions to ensure collaboration and accountability.",
-            "iconSrc": "/images/Traceability Sharing4.svg"
-          },
-          {
-            "title": "Clause Annotation",
-            "description": "Add operational notes or clarifications directly within clauses to facilitate use by field teams.",
-            "iconSrc": "/images/Clause Annotation4.svg"
-          },
-          {
-            "title": "Obligation Reminders",
-            "description": "Receive automatic alerts on deadlines, penalties, and renewals to avoid oversight and disputes.",
-            "iconSrc": "/images/Obligation Reminders4.svg"
-          },
-          {
-            "title": "Multi-device Access",
-            "description": "Consult your contracts securely on mobile or tablet for fast and reliable decisions in the field.",
-            "iconSrc": "/images/Multi-device Access4.svg"
-          },
-          {
-            "title": "Compliance View",
-            "description": "Generate a consolidated view of all obligations and penalties, showing coverage and discrepancies in real-time.",
-            "iconSrc": "/images/Compliance View4.svg"
-          }
-        ]
-      },
-      "cta": {
-        "title": "Discover how Aitenders exactly meets your needs",
-        "subtitle": "No generic demo. No commercial spam. Just three quick questions.",
-        "card_title": "AI Tender Assistant",
-        "card_message": "Hello! I will help you find the ideal Aitenders solution for your team. What is your industry?",
-        "card_button": "Click to start your personalized evaluation..."
-      }
+    "ai_copilot": {
+      "tag": "AI Agents",
+      "title": "Your AI copilot that secures the management of your medium-sized projects",
+      "subtitle": "The only platform designed to transform medium-sized files (€1M to €10M) into a clear contractual vision from day one.",
+      "step1": "Project structuring with AI",
+      "step2": "Immediate detection of critical clauses",
+      "step3": "Dynamic management of Q&A and versions."
     },
-    "uc5": {
-      "header_26": {
-        "title": "Every commitment tracked, every action traced",
-        "subtitle": "Centralize your commitments, track your actions, and anticipate contractual deviations for responsive projects without administrative overload.",
-        "cta1": "Get Started",
-        "cta2": "Learn More"
-      },
-      "ai_copilot": {
-        "tag": "Proactive Management",
-        "title": "Move from reactive monitoring to proactive steering",
-        "subtitle": "Aitenders centralizes your commitments, detects deviations in real time, and tracks every action to secure your medium-sized projects.",
-        "step1": "Centralization of key commitments",
-        "step2": "Real-time detection of deviations",
-        "step3": "Full traceability of every action"
-      },
-      "user_benefits": {
-        "you": "You",
-        "stat1_number": "",
-        "stat1_text": "begin with a unified project base",
-        "stat2_number": "",
-        "stat2_text": "trace every action to commitments",
-        "stat3_number": "",
-        "stat3_text": "anticipate risks before they escalate"
-      },
-      "offer_steps_headline": {
-        "title": "We support your teams at every stage of the project"
-      },
-      "features": {
-        "feature1_tag": "Immediate project base",
-        "feature1_title": "Structure your documents and criteria from Day 1",
-        "feature1_desc": "Aitenders automatically organizes contracts, schedules, and annexes. You start with a clear and usable project base, without manual intervention.",
-        "feature1_stat": "100% of projects structured from day one",
-        "feature1_popup": "Upon importing initial documents, Aitenders generates an intelligible and usable project base. Contracts, schedules, and annexes are organized around the actual commitments to be followed. This immediate structuring avoids blank starts, eliminates weeks of preparation, and provides the team with a reliable and readable base from day one.",
-        "feature2_tag": "Commitment tracking",
-        "feature2_title": "Trace every obligation with confidence",
-        "feature2_desc": "Every clause becomes a tracked and documented action. You know who does what, when, and why, without relying on Excel or scattered emails.",
-        "feature2_stat": "100% of actions linked to their commitments",
-        "feature2_popup": "Aitenders transforms each clause into a traceable action. Responsibilities are assigned, dated, and justified. The project remains readable and documented without relying on scattered files or informal exchanges. The bid manager and teams have total and shared visibility on the progress of obligations.",
-        "feature3_tag": "Proactive anticipation",
-        "feature3_title": "Identify and control critical deviations",
-        "feature3_desc": "AI and your teams detect sensitive areas before they become disputes. You instantly access reliable and sourced information.",
-        "feature3_stat": "80% of deviations detected before they become claims",
-        "feature3_popup": "Thanks to intelligent detection and contractual search, Aitenders identifies critical points before they escalate. Every commitment, history, or clause is immediately accessible with its source. Decisions are based on concrete evidence, not intuition, ensuring a controlled and anticipated rather than reactive project."
-      },
-      "concrete_results": {
-        "title": "Concrete results for your medium-sized projects",
-        "stat1_number": "80 %",
-        "stat1_text": "time saved on project scoping",
-        "stat2_number": "100 %",
-        "stat2_text": "of commitments tracked and contextualized",
-        "stat3_number": "–50 %",
-        "stat3_text": "fewer disputes and challenges",
-        "cta_button": "Launch the impact simulation for your projects"
-      },
-      "portfolio": {
-        "title": "Deployed on complex medium-sized projects",
-        "projects": [
-          {
-            "title": "Systematize the discovery and launch of over 400 offers per year.",
-            "value": "400 offers / year",
-            "description": "CONTEXT: Team of 5 engineers having to analyze over 400 tenders per year in the field of consulting engineering. Tender documents mainly in English, French, and Spanish. Average of 200 to 300 pages per tender. CLIENT OBJECTIVES: Save time in identifying risks and anticipating bottlenecks. Quickly identify if we need to mobilize partners/subcontractors. Mobilization of the support team. Immediately identify Bid / No Bid criteria. Identify key risks (technical, financial, and legal). IMPLEMENTED SOLUTION: Automatic classification of clauses by category. Capture of key risks and opportunities. Export and integration into the existing process. Additional note: Setup: 2 hours. Team training limited to 2 x 1h. RESULTS: 20/30% LESS TIME. -10/15H PER PROJECT. €300–500K/YEAR",
-            "category": "Case Study",
-            "cta_text": "Read more",
-            "imageSrc": "/images/Portfolio/Systematize%20the%20discovery%20and%20launch%20of%20over%20400%20tenders%20per%20year..jpg"
-          },
-          {
-            "title": "Extract and produce the requirement compliance matrix for a €40M tender.",
-            "value": "€40M Offer",
-            "description": "CONTEXT: The project was a partial project for the supply of an integrated metro traction system for a new metro line in France. The client had to identify over 2,000 requirements across approximately 50 different technical documents. The team consisted of 10 people, involving 3 different Business Units. CLIENT OBJECTIVES: Immediately and correctly identify and store all client-identified requirements. Identify other requirements impacting the scope and costing of the offer. Enable the team to have a standardized and simplified common review around all requirements. Quickly deliver a fully reviewed and accurate compliance matrix to their clients. IMPLEMENTED SOLUTION: Requirement detection. PBS, WBS classification. Import responses – Question association. Version difference analysis (V1 > V2). Requirement coverage. Additional note: One session for Project Directors (1h) to launch project organization. 1h of training for the rest of the team (9 members). RESULTS: COMPLIANCE MATRIX DELIVERED WITHOUT GAPS. APPROXIMATELY 30% LESS TIME OVER THE ENTIRE PROCESS",
-            "category": "Case Study",
-            "cta_text": "Read more",
-            "imageSrc": "/images/Portfolio/Extract%20and%20produce%20the%20requirement%20compliance%20matrix%20for%20a%20€40M%20tender..jpg"
-          },
-          {
-            "title": "Automate your Bid / No Bid: Go from 7,000 opportunities to 700 well-qualified offers!",
-            "value": "7000 opportunities / year",
-            "description": "CONTEXT: Our client receives over 7,000 opportunities per year via email from a sourcing software. The existing filtering system is inefficient as it is based on a few generic keywords. Tender managers must open each tender and read the first pages to see if there is potential to be a prime contractor or subcontractor on the project. CLIENT OBJECTIVES: Drastically reduce the average time spent on the selection process (currently 1 hour per tender). Immediately identify the usual 40 suspects that provide a high level of certainty for deciding Bid / No Bid. IMPLEMENTED SOLUTION: Detection of over 40 key points in 5 minutes instead of several hours. Risk analysis on topics such as finance, contract, legal… Additional note: No effort thanks to the use of the Aitenders standard for Bid / No Bid risk detection (+400 criteria). Customization: a few hours. Specific detection models: 3 weeks. RESULTS: 95% TIME SAVED ON IDENTIFYING KEY POINTS. MORE CAPACITY FOR BETTER SELECTION. +1,000 HOURS SAVINGS PER YEAR",
-            "category": "Case Study",
-            "cta_text": "Read more",
-            "imageSrc": "/images/Portfolio/Automate%20your%20Bid%20No%20Bid%20Go%20from%207,000%20opportunities%20to%20700%20well-qualified%20tenders!.jpg"
-          },
-          {
-            "title": "Requirement management for a €10Bn Design & Build tender – Consortium of 15 companies.",
-            "value": "€10Bn Offer",
-            "description": "CONTEXT: Metro line 15 in Paris is a 2-year Design & Build tender, estimated at approximately €10Bn. Our client is the Consortium, including NGE, Webuilt, Equans, and all their partners (architects, design offices, subcontractors, etc.). CLIENT OBJECTIVES: Ensure efficiency in the distribution of the work scope among the 15 different entities of the consortium. Produce a flawless requirement compliance matrix. Collectively monitor and identify the impacts of changes related to questions/answers. Identify version changes and collectively analyze their impacts. IMPLEMENTED SOLUTION: Automatic detection and extraction of requirements. Automatic classification. Collaborative scope and baseline. Automatic detection of version changes. Import Q&A and impact analysis. Additional note: 2-hour training session for the 150 team members. 2 hours of training for 10 managers. RESULTS: THOUSANDS OF MAN-DAYS SAVED. FEWER RISKS. ENSURE A HIGH LEVEL OF COMPLIANCE",
-            "category": "Case Study",
-            "cta_text": "Read more",
-            "imageSrc": "/images/Portfolio/Requirement%20management%20for%20a%20€10Bn%20Design%20&%20Build%20tender%20–%20Consortium%20of%2015%20companies..jpg"
-          }
-        ]
-      },
-      "team_20": {
-        "tag": "Additional Impact",
-        "title": "Advanced options to secure your projects",
-        "description": "Activate features that reduce disputes, streamline claims, and enhance team serenity.",
-        "cards": [
-          {
-            "title": "Action Q&A",
-            "description": "Simplify problem resolution with contextual Q&A directly linked to actions and commitments.",
-            "iconSrc": "/images/Action Q&A5.svg"
-          },
-          {
-            "title": "Action-Commitment Link",
-            "description": "Connect each action to a contractual commitment for full traceability and continuous compliance proof.",
-            "iconSrc": "/images/Action-Commitment Link5.svg"
-          },
-          {
-            "title": "Advanced Security",
-            "description": "Benefit from role-based access control, GDPR compliance, and integrated auditability to secure every decision.",
-            "iconSrc": "/images/Advanced Security5.svg"
-          },
-          {
-            "title": "Change Log",
-            "description": "Maintain a timestamped history of all contractual decisions and modifications to guarantee undeniable traceability.",
-            "iconSrc": "/images/Change Log5.svg"
-          },
-          {
-            "title": "Claim Alerts",
-            "description": "Detect deviations, sensitive deadlines, and penalty risks in real time. Receive alerts before problems arise.",
-            "iconSrc": "/images/Claim Alerts5.svg"
-          },
-          {
-            "title": "Claims Dashboard",
-            "description": "Visualize the evolution of claims, risks, and sensitive project points in a single clear dashboard.",
-            "iconSrc": "/images/Claims Dashboard5.svg"
-          }
-        ]
-      }
+    "user_benefits": {
+      "you": "You",
+      "stat1_number": "",
+      "stat1_text": "start with a clear scope",
+      "stat2_number": "",
+      "stat2_text": "secure every critical clause",
+      "stat3_number": "",
+      "stat3_text": "master Q&A and versions"
     },
-    "uc6": {
-      "header_26": {
-        "title": "From requirement to deliverable, zero deviation, zero surprises",
-        "subtitle": "Link every requirement to its deliverables, ensure compliance, and reduce risks with total traceability and collaboration.",
-        "cta1": "Get Started",
-        "cta2": "Learn More"
-      },
-      "ai_copilot": {
-        "tag": "Requirement Mastery",
-        "title": "From requirement to deliverable, every commitment kept",
-        "subtitle": "Aitenders links every requirement to its deliverables, integrates evidence into your final documents, and ensures full traceability during execution.",
-        "step1": "Requirement capture and structuring",
-        "step2": "Direct link with deliverables",
-        "step3": "Continuous traceability and compliance"
-      },
-      "user_benefits": {
-        "you": "You",
-        "stat1_number": "",
-        "stat1_text": "start execution with total visibility",
-        "stat2_number": "",
-        "stat2_text": "align all disciplines around requirements",
-        "stat3_number": "",
-        "stat3_text": "prove compliance without gaps or delays"
-      },
-      "offer_steps_headline": {
-        "title": "We support your teams in the execution of complex projects"
-      },
-      "features": {
-        "feature1_tag": "Immediate vision",
-        "feature1_title": "Start with a clear and total vision",
-        "feature1_desc": "Every modification automatically impacts linked requirements and questions. You move from a fragmented puzzle to a usable and coherent vision.",
-        "feature1_stat": "80% of time saved on initial scoping",
-        "feature1_popup": "From the first documents, Aitenders links every explicit and implicit requirement to its source. The impacts of changes are tracked, contradictions identified, and links automatically created. This immediate structuring avoids any manual interpretation and eliminates information loss. Your teams have a clear, usable, and shared vision from Day 1 to manage the project.",
-        "feature2_tag": "Collective management",
-        "feature2_title": "Transform management into continuous performance",
-        "feature2_desc": "Analyze budgets, costs, and deadlines with guided indicators. Decisions are made collectively in real-time for greater efficiency.",
-        "feature2_stat": "30% of time saved on review cycles",
-        "feature2_popup": "Thanks to guided analyses based on your indicators, Aitenders sheds light on budgets, costs, deadlines, and risks. The impacts of each action are measured immediately to explore the best solutions. The collective works in Living Management mode, able to integrate changes, adapt strategy, and maintain team alignment throughout the project.",
-        "feature3_tag": "Full coverage",
-        "feature3_title": "Master your requirements down to the last line",
-        "feature3_desc": "All requirements are integrated and linked to the final documents. Compliance becomes a continuous thread throughout execution.",
-        "feature3_stat": "100% of requirements covered and tracked",
-        "feature3_popup": "Aitenders organizes every explicit, implicit, or scattered requirement in a centralized database. Thanks to cross-references, compliance becomes a Living Thread, integrated at every stage of execution. Your final documents are justified and traceable, offering total mastery and generalized transparency over the entire project."
-      },
-      "concrete_results": {
-        "title": "Concrete results for your complex projects",
-        "stat1_number": "80 %",
-        "stat1_text": "of initial work done from day one",
-        "stat2_number": "–50 %",
-        "stat2_text": "of time on review and decision cycles",
-        "stat3_number": "100 %",
-        "stat3_text": "of requirement coverage and traceability",
-        "cta_button": "Launch the impact simulation on your projects"
-      },
-      "portfolio": {
-        "title": "Successful transformations",
-        "projects": [
-          {
-            "title": "Systematize the discovery and launch of over 400 offers per year.",
-            "value": "400 offers / year",
-            "description": "CONTEXT: Team of 5 engineers having to analyze over 400 tenders per year in the field of consulting engineering. Tender documents mainly in English, French, and Spanish. Average of 200 to 300 pages per tender. CLIENT OBJECTIVES: Save time in identifying risks and anticipating bottlenecks. Quickly identify if we need to mobilize partners/subcontractors. Mobilization of the support team. Immediately identify Bid / No Bid criteria. Identify key risks (technical, financial, and legal). IMPLEMENTED SOLUTION: Automatic classification of clauses by category. Capture of key risks and opportunities. Export and integration into the existing process. Additional note: Setup: 2 hours. Team training limited to 2 x 1h. RESULTS: 20/30% LESS TIME. -10/15H PER PROJECT. €300–500K/YEAR",
-            "category": "Case Study",
-            "cta_text": "Read more",
-            "imageSrc": "/images/Portfolio/Systematize%20the%20discovery%20and%20launch%20of%20over%20400%20tenders%20per%20year..jpg"
-          },
-          {
-            "title": "Extract and produce the requirement compliance matrix for a €40M tender.",
-            "value": "€40M Offer",
-            "description": "CONTEXT: The project was a partial project for the supply of an integrated metro traction system for a new metro line in France. The client had to identify over 2,000 requirements across approximately 50 different technical documents. The team consisted of 10 people, involving 3 different Business Units. CLIENT OBJECTIVES: Immediately and correctly identify and store all client-identified requirements. Identify other requirements impacting the scope and costing of the offer. Enable the team to have a standardized and simplified common review around all requirements. Quickly deliver a fully reviewed and accurate compliance matrix to their clients. IMPLEMENTED SOLUTION: Requirement detection. PBS, WBS classification. Import responses – Question association. Version difference analysis (V1 > V2). Requirement coverage. Additional note: One session for Project Directors (1h) to launch project organization. 1h of training for the rest of the team (9 members). RESULTS: COMPLIANCE MATRIX DELIVERED WITHOUT GAPS. APPROXIMATELY 30% LESS TIME OVER THE ENTIRE PROCESS",
-            "category": "Case Study",
-            "cta_text": "Read more",
-            "imageSrc": "/images/Portfolio/Extract%20and%20produce%20the%20requirement%20compliance%20matrix%20for%20a%20€40M%20tender..jpg"
-          },
-          {
-            "title": "Automate your Bid / No Bid: Go from 7,000 opportunities to 700 well-qualified offers!",
-            "value": "7000 opportunities / year",
-            "description": "CONTEXT: Our client receives over 7,000 opportunities per year via email from a sourcing software. The existing filtering system is inefficient as it is based on a few generic keywords. Tender managers must open each tender and read the first pages to see if there is potential to be a prime contractor or subcontractor on the project. CLIENT OBJECTIVES: Drastically reduce the average time spent on the selection process (currently 1 hour per tender). Immediately identify the usual 40 suspects that provide a high level of certainty for deciding Bid / No Bid. IMPLEMENTED SOLUTION: Detection of over 40 key points in 5 minutes instead of several hours. Risk analysis on topics such as finance, contract, legal… Additional note: No effort thanks to the use of the Aitenders standard for Bid / No Bid risk detection (+400 criteria). Customization: a few hours. Specific detection models: 3 weeks. RESULTS: 95% TIME SAVED ON IDENTIFYING KEY POINTS. MORE CAPACITY FOR BETTER SELECTION. +1,000 HOURS SAVINGS PER YEAR",
-            "category": "Case Study",
-            "cta_text": "Read more",
-            "imageSrc": "/images/Portfolio/Automate%20your%20Bid%20No%20Bid%20Go%20from%207,000%20opportunities%20to%20700%20well-qualified%20tenders!.jpg"
-          },
-          {
-            "title": "Requirement management for a €10Bn Design & Build tender – Consortium of 15 companies.",
-            "value": "€10Bn Offer",
-            "description": "CONTEXT: Metro line 15 in Paris is a 2-year Design & Build tender, estimated at approximately €10Bn. Our client is the Consortium, including NGE, Webuilt, Equans, and all their partners (architects, design offices, subcontractors, etc.). CLIENT OBJECTIVES: Ensure efficiency in the distribution of the work scope among the 15 different entities of the consortium. Produce a flawless requirement compliance matrix. Collectively monitor and identify the impacts of changes related to questions/answers. Identify version changes and collectively analyze their impacts. IMPLEMENTED SOLUTION: Automatic detection and extraction of requirements. Automatic classification. Collaborative scope and baseline. Automatic detection of version changes. Import Q&A and impact analysis. Additional note: 2-hour training session for the 150 team members. 2 hours of training for 10 managers. RESULTS: THOUSANDS OF MAN-DAYS SAVED. FEWER RISKS. ENSURE A HIGH LEVEL OF COMPLIANCE",
-            "category": "Case Study",
-            "cta_text": "Read more",
-            "imageSrc": "/images/Portfolio/Requirement%20management%20for%20a%20€10Bn%20Design%20&%20Build%20tender%20–%20Consortium%20of%2015%20companies..jpg"
-          }
-        ]
-      },
-      "team_20": {
-        "tag": "Strategic Impact",
-        "title": "Premium features for flawless execution",
-        "description": "Activate advanced options for total control, consistent governance, and consolidated traceability at every stage.",
-        "cards": [
-          {
-            "title": "Native Requirements",
-            "description": "Each deliverable automatically inherits business and technical requirements, with precise traceability from its design.",
-            "iconSrc": "/images/Native Requirements6.svg"
-          },
-          {
-            "title": "Client Requirement Management",
-            "description": "Automatically deploy evolutions of reference requirements with validation and measured impact on project performance.",
-            "iconSrc": "/images/Client Requirement Management6.svg"
-          },
-          {
-            "title": "Compliance Coverage",
-            "description": "Continuously monitor business, technical, and quality compliance to detect and immediately correct any deviation.",
-            "iconSrc": "/images/Compliance Coverage6.svg"
-          },
-          {
-            "title": "Tracked Audits",
-            "description": "Every decision is documented with automatic auditability based on traceable and verifiable evidence.",
-            "iconSrc": "/images/Tracked Audits6.svg"
-          },
-          {
-            "title": "Multi-team Collaboration",
-            "description": "A collective space automatically synchronizes every discipline and stakeholder involved in project execution.",
-            "iconSrc": "/images/Multi-team Collaboration6.svg"
-          }
-        ]
-      }
+    "offer_steps_headline": {
+      "title": "We support teams at every stage of the offer"
     },
-    "uc1": {
-      "header_26": {
-        "title": "Clear and immediate go / no go analysis",
-        "subtitle": "Analyze, validate, and secure your quick projects from day one with AI to save time and avoid false starts.",
-        "cta1": "Get Started",
-        "cta2": "Learn More"
-      },
-      "ai_copilot": {
-        "tag": "Fast Validation",
-        "title": "Decide go / no-go with confidence",
-        "subtitle": "Aitenders analyzes your files in minutes, prioritizes critical points, and guides validation to guarantee your internal processes.",
-        "step1": "Immediate document analysis",
-        "step2": "Clear and prioritized view of risks",
-        "step3": "Guided validation and automatic archiving"
-      },
-      "user_benefits": {
-        "you": "You",
-        "stat1_number": "",
-        "stat1_text": "save several days of manual review",
-        "stat2_number": "",
-        "stat2_text": "get Go / no-go decision in less than 48 hours",
-        "stat3_number": "",
-        "stat3_text": "gain immediate credibility in committee"
-      },
-      "offer_steps_headline": {
-        "title": "We support your teams at every analysis stage"
-      },
-      "features": {
-        "feature1_tag": "Immediate structuring",
-        "feature1_title": "Analyze and prioritize your documents from Day 1",
-        "feature1_desc": "AI assistants detect criteria of interest, critical points, and evidence in minutes. The Bid Manager starts with a clear and usable base.",
-        "feature1_stat": "Go / no-go decision possible in minutes",
-        "feature1_popup": "Thanks to automatic analysis, your documents are instantly classified and prioritized. Key criteria, blocking points, and evidence are detected and organized. The Bid Manager gets an overall vision of the project and can immediately identify potential risks to quickly decide on a go / no-go.",
-        "feature2_tag": "Centralized view",
-        "feature2_title": "Get a clear and prioritized view",
-        "feature2_desc": "Aitenders generates a centralized visual summary with criteria, values, and sources. No more hundreds of scattered pages or files.",
-        "feature2_stat": "Internal review ready in minutes",
-        "feature2_popup": "The platform automatically produces a clear and prioritized summary of all detected criteria. Each element is linked to its source document. Teams no longer need to browse hundreds of pages or juggle multiple files: everything is centralized in an immediately usable visual table.",
-        "feature3_tag": "Guided validation",
-        "feature3_title": "Validate and archive every element easily",
-        "feature3_desc": "Confirm, adjust, or reject each point identified by AI. Each validation is historized and integrated into a complete file.",
-        "feature3_stat": "100% of validations automatically tracked",
-        "feature3_popup": "Aitenders guides teams in step-by-step validation. Each identified element is confirmed, adjusted, or rejected, then archived with evidence. This fluid process replaces manual and uncertain checks. Result: a probative, complete, and traceable file, without gray areas or administrative overload."
-      },
-      "concrete_results": {
-        "title": "Concrete results for your small tenders",
-        "stat1_number": "50-70 %",
-        "stat1_text": "time saved on analysis",
-        "stat2_number": "100 %",
-        "stat2_text": "of critical criteria verified and tracked",
-        "stat3_number": "0",
-        "stat3_text": "internal escalation, reinforced credibility in committee",
-        "cta_button": "Launch the impact simulation on your projects"
-      },
-      "portfolio": {
-        "title": "Deployed on numerous projects",
-        "projects": [
-          {
-            "title": "Systematize the discovery and launch of over 400 offers per year.",
-            "value": "400 offers / year",
-            "description": "CONTEXT: Team of 5 engineers having to analyze over 400 tenders per year in the field of consulting engineering. Tender documents mainly in English, French, and Spanish. Average of 200 to 300 pages per tender. CLIENT OBJECTIVES: Save time in identifying risks and anticipating bottlenecks. Quickly identify if we need to mobilize partners/subcontractors. Mobilization of the support team. Immediately identify Bid / No Bid criteria. Identify key risks (technical, financial, and legal). IMPLEMENTED SOLUTION: Automatic classification of clauses by category. Capture of key risks and opportunities. Export and integration into the existing process. Additional note: Setup: 2 hours. Team training limited to 2 x 1h. RESULTS: 20/30% LESS TIME. -10/15H PER PROJECT. €300–500K/YEAR",
-            "category": "Case Study",
-            "cta_text": "Read more",
-            "imageSrc": "/images/Portfolio/Systematize%20the%20discovery%20and%20launch%20of%20over%20400%20tenders%20per%20year..jpg"
-          },
-          {
-            "title": "Extract and produce the requirement compliance matrix for a €40M tender.",
-            "value": "€40M Offer",
-            "description": "CONTEXT: The project was a partial project for the supply of an integrated metro traction system for a new metro line in France. The client had to identify over 2,000 requirements across approximately 50 different technical documents. The team consisted of 10 people, involving 3 different Business Units. CLIENT OBJECTIVES: Immediately and correctly identify and store all client-identified requirements. Identify other requirements impacting the scope and costing of the offer. Enable the team to have a standardized and simplified common review around all requirements. Quickly deliver a fully reviewed and accurate compliance matrix to their clients. IMPLEMENTED SOLUTION: Requirement detection. PBS, WBS classification. Import responses – Question association. Version difference analysis (V1 > V2). Requirement coverage. Additional note: One session for Project Directors (1h) to launch project organization. 1h of training for the rest of the team (9 members). RESULTS: COMPLIANCE MATRIX DELIVERED WITHOUT GAPS. APPROXIMATELY 30% LESS TIME OVER THE ENTIRE PROCESS",
-            "category": "Case Study",
-            "cta_text": "Read more",
-            "imageSrc": "/images/Portfolio/Extract%20and%20produce%20the%20requirement%20compliance%20matrix%20for%20a%20€40M%20tender..jpg"
-          },
-          {
-            "title": "Automate your Bid / No Bid: Go from 7,000 opportunities to 700 well-qualified offers!",
-            "value": "7000 opportunities / year",
-            "description": "CONTEXT: Our client receives over 7,000 opportunities per year via email from a sourcing software. The existing filtering system is inefficient as it is based on a few generic keywords. Tender managers must open each tender and read the first pages to see if there is potential to be a prime contractor or subcontractor on the project. CLIENT OBJECTIVES: Drastically reduce the average time spent on the selection process (currently 1 hour per tender). Immediately identify the usual 40 suspects that provide a high level of certainty for deciding Bid / No Bid. IMPLEMENTED SOLUTION: Detection of over 40 key points in 5 minutes instead of several hours. Risk analysis on topics such as finance, contract, legal… Additional note: No effort thanks to the use of the Aitenders standard for Bid / No Bid risk detection (+400 criteria). Customization: a few hours. Specific detection models: 3 weeks. RESULTS: 95% TIME SAVED ON IDENTIFYING KEY POINTS. MORE CAPACITY FOR BETTER SELECTION. +1,000 HOURS SAVINGS PER YEAR",
-            "category": "Case Study",
-            "cta_text": "Read more",
-            "imageSrc": "/images/Portfolio/Automate%20your%20Bid%20No%20Bid%20Go%20from%207,000%20opportunities%20to%20700%20well-qualified%20tenders!.jpg"
-          },
-          {
-            "title": "Requirement management for a €10Bn Design & Build tender – Consortium of 15 companies.",
-            "value": "€10Bn Offer",
-            "description": "CONTEXT: Metro line 15 in Paris is a 2-year Design & Build tender, estimated at approximately €10Bn. Our client is the Consortium, including NGE, Webuilt, Equans, and all their partners (architects, design offices, subcontractors, etc.). CLIENT OBJECTIVES: Ensure efficiency in the distribution of the work scope among the 15 different entities of the consortium. Produce a flawless requirement compliance matrix. Collectively monitor and identify the impacts of changes related to questions/answers. Identify version changes and collectively analyze their impacts. IMPLEMENTED SOLUTION: Automatic detection and extraction of requirements. Automatic classification. Collaborative scope and baseline. Automatic detection of version changes. Import Q&A and impact analysis. Additional note: 2-hour training session for the 150 team members. 2 hours of training for 10 managers. RESULTS: THOUSANDS OF MAN-DAYS SAVED. FEWER RISKS. ENSURE A HIGH LEVEL OF COMPLIANCE",
-            "category": "Case Study",
-            "cta_text": "Read more",
-            "imageSrc": "/images/Portfolio/Requirement%20management%20for%20a%20€10Bn%20Design%20&%20Build%20tender%20–%20Consortium%20of%2015%20companies..jpg"
-          }
-        ]
-      },
-      "team_20": {
-        "tag": "Additional Confidence",
-        "title": "Complementary options to secure your small offers",
-        "description": "Beyond main analysis, discover integrated features that simplify reviews, strengthen compliance, and reliable validations.",
-        "cards": [
-          {
-            "title": "Evidence Pack",
-            "description": "Utilize a complete validation file with sources and history, ready for committees or audits.",
-            "iconSrc": "/images/Auto evidence pack.svg"
-          },
-          {
-            "title": "Change Detection",
-            "description": "Instantly identify modifications between document versions, with tracked impacts on criteria.",
-            "iconSrc": "/images/Change Detection.svg"
-          },
-          {
-            "title": "Compliance Alerts",
-            "description": "Receive a notification if a criterion remains unvalidated to avoid any oversight before submission.",
-            "iconSrc": "/images/Compliance Alerts.svg"
-          },
-          {
-            "title": "Secure Access",
-            "description": "Define role-based rights for managers, assistants, or reviewers to maintain control over validations.",
-            "iconSrc": "/images/Secure Access.svg"
-          },
-          {
-            "title": "Exportable Reports",
-            "description": "Generate clear and formatted reports of all your checks and validations, ready for sharing.",
-            "iconSrc": "/images/Report Export.svg"
-          },
-          {
-            "title": "Shared Comments",
-            "description": "Add annotations on criteria or documents to facilitate collaboration during reviews.",
-            "iconSrc": "/images/Shared Comments.svg"
-          }
-        ]
-      }
+    "features": {
+      "feature1_tag": "Operational Cockpit from Day 1",
+      "feature1_title": "Automatic project structuring",
+      "feature1_desc": "The AI analyzes your RFPs, maps every requirement, and provides a clear vision of the scope.",
+      "feature1_stat": "of documents structured, transformed into a Digital Twin",
+      "feature1_popup": "Aitenders' AI instantly analyzes your tender documents and automatically structures the scope, identifies lots, detects critical interfaces, and maps every requirement. Your teams start with a clear and complete vision of the project.",
+      "feature2_tag": "Zero forgotten clauses",
+      "feature2_title": "Control every critical clause",
+      "feature2_desc": "Continuous monitoring of penalties, liabilities, and deadlines. Every modification is flagged with a measured impact.",
+      "feature2_popup": "Aitenders continuously monitors and analyzes every sensitive clause: penalties, liabilities, critical deadlines, and special conditions. Every modification is tracked, every impact automatically assessed.",
+      "feature3_tag": "Controlled contractual history",
+      "feature3_title": "Master every contractual evolution",
+      "feature3_desc": "Centralized Q&A, versions, and amendments, with full traceability of changes.",
+      "feature3_popup": "Dynamically manage your Q&A, successive versions, and addendums in a centralized environment. Aitenders maintains overall consistency and alerts on the impacts of each modification."
     },
-    "product": {
-      "hero": {
-        "badge": "AI Platform for Tenders",
-        "title": "Your AI copilot to master every tender.",
-        "subtitle": "From tender to delivery, Aitenders is your copilot – designed to go faster and stay aligned.",
-        "cta_button": "Request a Demo"
-      },
-      "features": [
+    "concrete_results": {
+      "title": "Concrete results for your teams",
+      "stat1_number": "-50%",
+      "stat1_text": "of initial analysis time.",
+      "stat2_number": "100%",
+      "stat2_text": "of critical clauses identified and prioritized.",
+      "stat3_number": "0",
+      "stat3_text": "last-minute surprises.",
+      "cta_button": "Launch the impact simulation for your own projects"
+    },
+    "portfolio": {
+      "title": "Deployed on numerous projects",
+      "projects": [
         {
-          "title": "Analyze",
-          "description": "Intelligent analysis of tender documents.",
-          "points": [
-            "Requirement detection and compliance verification",
-            "Automatic reading and matrix generation",
-            "Fluid collaboration with internal and external partners"
-          ],
-          "iconSrc": "/images/UI1.svg"
+          "title": "Systematize the discovery and launch of over 400 tenders per year.",
+          "value": "400 tenders / year",
+          "description": "CONTEXT: A team of 5 engineers needing to analyze over 400 tenders per year in the consulting engineering field. Tender documents are mainly in English, French, and Spanish. Average of 200 to 300 pages per tender. CLIENT'S OBJECTIVES: Save time in identifying risks and anticipating bottlenecks. Quickly identify if we need to involve partners/subcontractors. Mobilize the support team. Immediately identify Bid / No Bid criteria. Identify the main risks (technical, financial, and legal). IMPLEMENTED SOLUTION: Automatic classification of clauses by categories. Capture of key risks and opportunities. Export and integration into the existing process. Additional note: Setup: 2 hours. Team training limited to 2 x 1h. RESULTS: 20/30% LESS TIME. -10/15H PER PROJECT. €300–500K/YEAR",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Systematize%20the%20discovery%20and%20launch%20of%20over%20400%20tenders%20per%20year..jpg"
         },
         {
-          "title": "Write",
-          "description": "Create solid, aligned, and traceable responses.",
-          "points": [
-            "AI-assisted document generation",
-            "Customizable and reusable content libraries",
-            "Tracking of contractual requirement coverage"
-          ],
-          "iconSrc": "/images/UI 2.svg"
+          "title": "Extract and produce the requirement compliance matrix for a €40M tender.",
+          "value": "€40M Tender",
+          "description": "CONTEXT: The project was a partial project for the supply of an integrated metro traction system for a new metro line in France. The client had to identify over 2,000 requirements in about 50 different technical documents. The team consisted of 10 people, involving 3 different Business Units. CLIENT'S OBJECTIVES: Immediately and correctly identify and store all requirements identified by the client. Identify other requirements impacting the scope and costing of the offer. Allow the team to have a standardized and simplified common review around all requirements. Quickly deliver a fully reviewed and accurate compliance matrix to their clients. IMPLEMENTED SOLUTION: Requirement detection. PBS, WBS classification. Import of answers – Association of questions. Version gap analysis (V1 > V2). Requirement coverage. Additional note: One session for Project Directors (1h) to launch the project organization. 1h of training for the rest of the team (9 members). RESULTS: COMPLIANCE MATRIX DELIVERED WITHOUT GAPS. ABOUT 30% LESS TIME ON THE ENTIRE PROCESS",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Extract%20and%20produce%20the%20requirement%20compliance%20matrix%20for%20a%20€40M%20tender..jpg"
         },
         {
-          "title": "Pilot",
-          "description": "Stay in control until the end of the project.",
-          "points": [
-            "Management of contractual changes and addendums",
-            "Tracking of obligations and associated risks",
-            "Document traceability and bulk version management"
-          ],
-          "iconSrc": "/images/UI 3.svg"
+          "title": "Automate your Bid / No Bid: Go from 7,000 opportunities to 700 well-qualified tenders!",
+          "value": "7000 opportunities / year",
+          "description": "CONTEXT: Our client receives over 7,000 opportunities per year by email from a sourcing software. The existing filtering system is ineffective as it is based on a few generic keywords. The tender managers have to open each tender and read the first few pages to see if there is potential to be a main contractor or subcontractor on the project. CLIENT'S OBJECTIVES: Drastically reduce the average time spent on the selection process (currently 1 hour per tender). Immediately identify the 40 usual suspects that give a high level of certainty to decide on Bid / No Bid. IMPLEMENTED SOLUTION: Detection of over 40 key points in 5 minutes instead of several hours. Risk analysis on topics like finance, contract, legal... Additional note: No effort thanks to the use of the Aitenders standard for Bid / No Bid risk detection (+400 criteria). Customization: a few hours. Specific detection models: 3 weeks. RESULTS: 95% TIME SAVED ON IDENTIFYING KEY POINTS. MORE CAPACITY FOR BETTER SELECTION. +1,000 HOURS SAVED PER YEAR",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Automate%20your%20Bid%20No%20Bid%20Go%20from%207,000%20opportunities%20to%20700%20well-qualified%20tenders!.jpg"
         },
         {
-          "title": "Knowledge",
-          "description": "Your project memory, centralized and actionable.",
-          "points": [
-            "Cross-portfolio search for projects",
-            "Structured sharing of deliverables and repositories",
-            "Dedicated infrastructure with customizable AI models"
-          ],
-          "iconSrc": "/images/product-feature-4.svg"
-        }
-      ],
-      "integrations": {
-        "tagline": "Smart Integrations",
-        "heading": "Connect Aitenders to your business tools",
-        "description": "Our platform integrates naturally into your software ecosystem. Connected to your existing tools and processes, it transforms fragmented management into a connected intelligence flow, to secure your data and multiply the impact of your teams.",
-        "subheading1": "Ready-to-use connectors",
-        "subfeature1_text": "Native integration with Microsoft Word, Excel, Teams, and SharePoint\n\nOffice 365 plug-in to automate content management",
-        "subheading2": "Open and interoperable",
-        "subfeature2_text": "Partner APIs (Salesforce, Procore, CRM, ERP, DMS…)\n\nAdvanced security: SaaS, dedicated instance, or on-premise deployment",
-        "cta_button": "Request a Demo"
-      },
-      "kpis": {
-        "tagline": "Performance",
-        "heading": "Simplify your tenders and gain efficiency",
-        "description": "Aitenders automates analysis, monitoring, and compliance. Your teams respond faster, reduce errors, and increase their chances of success.",
-        "stat1_number": "70%",
-        "stat1_text": "Faster preparation",
-        "stat2_number": "3.5x",
-        "stat2_text": "Success rate",
-        "stat3_number": "100%",
-        "stat3_text": "Guaranteed compliance",
-        "cta_button": "Request a Demo",
-        "cta_button2": "Discover the Platform"
-      },
-      "faq": {
-        "title": "Your questions about Aitenders",
-        "subtitle": "Get answers to common questions about Aitenders implementation and features.",
-        "faq_list": [
-          {
-            "question": "How does Aitenders integrate with our existing processes?",
-            "answer": "The platform adapts to your current working methods, without disrupting your tools or your teams."
-          },
-          {
-            "question": "What types of tenders can be managed with Aitenders?",
-            "answer": "All types: public, private, multi-lot, international — regardless of the sector."
-          },
-          {
-            "question": "Is our data secure with Aitenders?",
-            "answer": "Yes. The infrastructure complies with strict standards (dedicated hosting, encryption, SSO, etc.)."
-          },
-          {
-            "question": "Can Aitenders be adapted to our sector or specific needs?",
-            "answer": "Yes. The tool is modular and configurable according to your business challenges and organization."
-          },
-          {
-            "question": "What support do you offer during implementation?",
-            "answer": "We ensure complete onboarding: scoping, parameterization, training, technical support."
-          },
-          {
-            "question": "How do we measure Aitenders' ROI?",
-            "answer": "By time saved, reduction in errors, increase in submitted responses, and success rate."
-          }
-        ]
-      }
-    },
-                    "header": {
-                      "requestDemo": "Request a Demo",
-                      "menu": "Menu",
-                      "navigation": [
-                        {
-                          "title": "Our Product",
-                          "href": "/product"
-                        },
-                        {
-                          "title": "Use Cases",
-                          "children": [
-                            {
-                              "title": "Small Projects – Tender",
-                              "href": "/uc-1"
-                            },
-                            {
-                              "title": "Medium Projects – Tender",
-                              "href": "/uc2test"
-                            },
-                            {
-                              "title": "Complex Projects – Tender",
-                              "href": "/uc-3"
-                            },
-                            {
-                              "title": "Small Projects – Execution",
-                              "href": "/uc-4"
-                            },
-                            {
-                              "title": "Medium Projects – Execution",
-                              "href": "/uc-5"
-                            },
-                            {
-                              "title": "Complex Projects – Execution",
-                              "href": "/uc-6"
-                            }
-          ]
-        },
-        {
-          "title": "Our Product",
-          "href": "/product"
-        },
-        {
-          "title": "Word Addon",
-          "href": "/word-addon"
-        },
-        {
-          "title": "Privacy Policy",
-          "href": "/privacy"
+          "title": "Requirement management for a €10Bn Design & Build tender – Consortium of 15 companies.",
+          "value": "€10Bn Tender",
+          "description": "CONTEXT: The Paris Metro Line 15 is a 2-year Design & Build tender, with an estimated value of about €10Bn. Our client is the Consortium, including NGE, Webuilt, Equans, and all their partners (architects, engineering firms, subcontractors, etc.). CLIENT'S OBJECTIVES: Ensure efficiency in the distribution of the work scope among the 15 different entities of the consortium. Produce a flawless requirement compliance matrix. Collectively track and identify the impacts of changes related to questions/answers. Identify version changes and collectively analyze their impacts. IMPLEMENTED SOLUTION: Automatic detection and extraction of requirements. Automatic classification. Collaborative scope and baseline. Automatic detection of version changes. Import of Q&A and impact analysis. Additional note: 2-hour training session for the 150 team members. 2 hours of training for 10 managers. RESULTS: THOUSANDS OF MAN-DAYS SAVED. FEWER RISKS. ENSURING A HIGH LEVEL OF COMPLIANCE",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Requirement%20management%20for%20a%20€10Bn%20Design%20&%20Build%20tender%20–%20Consortium%20of%2015%20companies..jpg"
         }
       ]
     },
-    "homepage": {
-      "mainTitle": "The intelligence of your project teams,",
-      "mainSubtitle": "multiplied by AI",
-      "description": "Aitenders, your digital teammate to win tenders, manage contracts, and structure project knowledge and expertise.",
-      "domainSelection": "How can I help you?",
-      "projectSize": "What is the size of your projects?",
-      "chooseUseCase": "Choose your use case",
-      "yourSelection": "Your selection :",
-      "availableUseCases": "Available use cases :",
-      "back": "← Back",
-      "tenderManagementTitle": "I respond to tenders",
-      "tenderManagementDescription": "Optimize your tender responses. Analyze requirements, collaborate effectively, and maximize your chances of success.",
-      "contractExecutionTitle": "I manage projects in execution",
-      "contractExecutionDescription": "Manage your projects with confidence. Deliverable tracking, compliance, and proactive change management.",
-      "knowledgeManagementTitle": "I structure the knowledge of my experts",
-      "knowledgeManagementDescription": "Capitalize on your past knowledge and experience. Quick access to references, models, and comparables for each new project.",
-      "smallProjectTitle": "Small, regular projects",
-      "smallProjectDescription": "Ideal for small teams and targeted needs. Quick setup, essential features.",
-      "mediumProjectTitle": "Moderately complex projects",
-      "mediumProjectDescription": "A balance between flexibility and power. Comprehensive tools for structured and collaborative projects.",
-      "largeProjectTitle": "Large complex projects",
-      "largeProjectDescription": "Designed for complex and large-scale organizations. Advanced solutions, personalized AI, and enhanced security.",
-      "learnMore": "I want to know more about Aitenders",
-      "exploreSolutions": "Explore our solutions",
-      "discoverUseCase": "Discover this use case",
-      "chatPlaceholder": "Interact with the Chat Questions / Launch the simulator / Information ?",
-      "chatTitle": "Chat with the AI Assistant",
-      "ourUseCases": "Our Use Cases",
-      "simulationROI": "Simulation / ROI",
-      "aiAgents": "AI Agents",
-      "dataSecurity": "Data Security",
-      "contactUs": "Contact us",
-      "tenderProcess": "Tender Process",
-      "scheduleDemo": "Schedule a Demo",
-      "ucMetadata": {
-        "UC1": {
-          "title": "Accelerate small tenders",
-          "description": "Small project tenders"
+    "team_20": {
+      "tag": "Additional Impact",
+      "title": "Further empower your teams",
+      "description": "For semi-complex offers, discover features that add a strategic dimension to your business development.",
+      "cards": [
+        {
+          "title": "Semantic Analysis",
+          "description": "Understand the nuances and hidden intentions in documents thanks to advanced AI.",
+          "iconSrc": "/images/Semantic Analysis.svg"
         },
-        "uc2test": {
-          "title": "Medium tender management",
-          "description": "Management of medium-sized tenders"
+        {
+          "title": "Risk Scoring",
+          "description": "Automatically assess the risk level of each clause to prioritize your efforts.",
+          "iconSrc": "/images/Risk Scoring.svg"
         },
-        "uc3": {
-          "title": "Complex multi-lot tenders",
-          "description": "Complex multi-lot tenders"
+        {
+          "title": "Summary Generation",
+          "description": "Get clear and concise summaries of your projects' key points in seconds.",
+          "iconSrc": "/images/Summary Generation.svg"
         },
-        "uc4": {
-          "title": "Small project execution",
-          "description": "Execution of small projects"
+        {
+          "title": "Automated Compliance",
+          "description": "Check the compliance of your documents against current standards and regulations.",
+          "iconSrc": "/images/Automated Compliance.svg"
         },
-        "uc5": {
-          "title": "Medium project execution",
-          "description": "Execution of medium projects"
+        {
+          "title": "Strategic Recommendations",
+          "description": "Receive proactive suggestions to optimize your responses and strengthen your position.",
+          "iconSrc": "/images/Strategic Recommendations.svg"
         },
-        "uc6": {
-          "title": "Large project execution",
-          "description": "Execution of large projects"
-        },
-        "UC7": {
-          "title": "Knowledge management for small structures",
-          "description": "Knowledge management for small structures"
-        },
-        "UC8": {
-          "title": "Knowledge management for large organizations",
-          "description": "Knowledge management for large organizations"
+        {
+          "title": "Knowledge-Linked Writing",
+          "description": "Reuse and adapt your validated content from the knowledge base and past projects for greater consistency and speed.",
+          "iconSrc": "/images/Knowledge-Linked Writing.svg"
         }
+      ]
+    },
+    "cta": {
+      "title": "Discover how Aitenders meets your exact needs",
+      "subtitle": "No generic demo. No sales spam. Just three quick questions.",
+      "card_title": "AI Tender Assistant",
+      "card_message": "Hello! I'm going to help you find the ideal Aitenders solution for your team. What is your industry?",
+      "card_button": "Click to start your personalized assessment..."
+    }
+  },
+  "uc3": {
+    "header_26": {
+      "title": "Every requirement mastered, every risk under control",
+      "subtitle": "Analyze, validate, and secure your complex tenders from day one.",
+      "cta1": "Get Started",
+      "cta2": "Learn More"
+    },
+    "scrolling_logos": {
+      "title": "Used by leaders in engineering and construction"
+    },
+    "ai_copilot": {
+      "tag": "Zero blind spots",
+      "title": "The AI that eliminates omissions, inconsistencies, and delays in your major tenders",
+      "subtitle": "The only platform designed to ensure compliance and accelerate your responses from day one.",
+      "step1": "Intelligent analysis of thousands of pages and capture of requirements",
+      "step2": "Immediate detection of omissions, inconsistencies, and rejection risks",
+      "step3": "Collaborative management of every evolution for a solid and competitive offer"
+    },
+    "user_benefits": {
+      "you": "You",
+      "stat1_number": "",
+      "stat1_text": "start with clear data",
+      "stat2_number": "",
+      "stat2_text": "collaborate frictionlessly between experts",
+      "stat3_number": "",
+      "stat3_text": "master every evolution with confidence"
+    },
+    "offer_steps_headline": {
+      "title": "We guide your teams through every step of complex tenders"
+    },
+    "features": {
+      "feature1_tag": "Intelligent base ready from Day 1",
+      "feature1_title": "Start with structured and intelligent data",
+      "feature1_desc": "Thanks to AI assistants, your documents are automatically organized into a database: requirements identified, key points summarized, similarities and contradictions detected. The project team starts on a clear basis, ready for analysis, without initial manual processing.",
+      "feature1_stat": "100% of requirements detected and organized from the start",
+      "feature1_popup": "Aitenders' AI automatically structures your files, classifies information, identifies requirements, and summarizes critical points. The bid manager thus provides an intelligible and usable base, avoiding days of manual processing.",
+      "feature2_tag": "Structured collaboration",
+      "feature2_title": "Ensure initial compliance without friction",
+      "feature2_desc": "Aitenders automatically generates the compliance matrix, assigns requirements to experts, and structures the expected deliverables. Each expert knows their scope, risk areas are clearly visible, and the response strategy is built as a team.",
+      "feature2_stat": "0 information loss in collaboration",
+      "feature2_popup": "The platform allows for fluid collaboration between experts thanks to a dynamic compliance matrix. Tasks are distributed automatically, blind spots are visible, and the response is consolidated collectively, without depending on fragmented Excel files.",
+      "feature3_tag": "Controlled evolutions",
+      "feature3_title": "Manage every change, without missing anything",
+      "feature3_desc": "Modifications are detected and versioned automatically. Discrepancies are flagged instantly, allowing their impact to be measured and acted upon without delay. Q&A, versions, and amendments are centralized to ensure a coherent and compliant offer.",
+      "feature3_stat": "100% of changes detected and tracked",
+      "feature3_popup": "Document evolutions are automatically compared, discrepancies flagged, and impacts assessed in real-time. The bid manager can thus correct issues upfront, avoid omissions and inconsistencies, and ensure flawless version management."
+    },
+    "concrete_results": {
+      "title": "Concrete results for your complex tenders",
+      "stat1_number": "90%",
+      "stat1_text": "of structuring and organization work done from day one",
+      "stat2_number": "100%",
+      "stat2_text": "of critical requirements covered and traced in the dynamic matrix",
+      "stat3_number": "0",
+      "stat3_text": "risk of rejection due to formal non-compliance",
+      "cta_button": "Launch the impact simulation for your own projects"
+    },
+    "portfolio": {
+      "title": "Examples of managed complex projects",
+      "projects": [
+        {
+          "title": "Systematize the discovery and launch of over 400 tenders per year.",
+          "value": "400 tenders / year",
+          "description": "CONTEXT: A team of 5 engineers needing to analyze over 400 tenders per year in the consulting engineering field. Tender documents are mainly in English, French, and Spanish. Average of 200 to 300 pages per tender. CLIENT'S OBJECTIVES: Save time in identifying risks and anticipating bottlenecks. Quickly identify if we need to involve partners/subcontractors. Mobilize the support team. Immediately identify Bid / No Bid criteria. Identify the main risks (technical, financial, and legal). IMPLEMENTED SOLUTION: Automatic classification of clauses by categories. Capture of key risks and opportunities. Export and integration into the existing process. Additional note: Setup: 2 hours. Team training limited to 2 x 1h. RESULTS: 20/30% LESS TIME. -10/15H PER PROJECT. €300–500K/YEAR",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Systematize%20the%20discovery%20and%20launch%20of%20over%20400%20tenders%20per%20year..jpg"
+        },
+        {
+          "title": "Extract and produce the requirement compliance matrix for a €40M tender.",
+          "value": "€40M Tender",
+          "description": "CONTEXT: The project was a partial project for the supply of an integrated metro traction system for a new metro line in France. The client had to identify over 2,000 requirements in about 50 different technical documents. The team consisted of 10 people, involving 3 different Business Units. CLIENT'S OBJECTIVES: Immediately and correctly identify and store all requirements identified by the client. Identify other requirements impacting the scope and costing of the offer. Allow the team to have a standardized and simplified common review around all requirements. Quickly deliver a fully reviewed and accurate compliance matrix to their clients. IMPLEMENTED SOLUTION: Requirement detection. PBS, WBS classification. Import of answers – Association of questions. Version gap analysis (V1 > V2). Requirement coverage. Additional note: One session for Project Directors (1h) to launch the project organization. 1h of training for the rest of the team (9 members). RESULTS: COMPLIANCE MATRIX DELIVERED WITHOUT GAPS. ABOUT 30% LESS TIME ON THE ENTIRE PROCESS",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Extract%20and%20produce%20the%20requirement%20compliance%20matrix%20for%20a%20€40M%20tender..jpg"
+        },
+        {
+          "title": "Automate your Bid / No Bid: Go from 7,000 opportunities to 700 well-qualified tenders!",
+          "value": "7000 opportunities / year",
+          "description": "CONTEXT: Our client receives over 7,000 opportunities per year by email from a sourcing software. The existing filtering system is ineffective as it is based on a few generic keywords. The tender managers have to open each tender and read the first few pages to see if there is potential to be a main contractor or subcontractor on the project. CLIENT'S OBJECTIVES: Drastically reduce the average time spent on the selection process (currently 1 hour per tender). Immediately identify the 40 usual suspects that give a high level of certainty to decide on Bid / No Bid. IMPLEMENTED SOLUTION: Detection of over 40 key points in 5 minutes instead of several hours. Risk analysis on topics like finance, contract, legal... Additional note: No effort thanks to the use of the Aitenders standard for Bid / No Bid risk detection (+400 criteria). Customization: a few hours. Specific detection models: 3 weeks. RESULTS: 95% TIME SAVED ON IDENTIFYING KEY POINTS. MORE CAPACITY FOR BETTER SELECTION. +1,000 HOURS SAVED PER YEAR",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Automate%20your%20Bid%20No%20Bid%20Go%20from%207,000%20opportunities%20to%20700%20well-qualified%20tenders!.jpg"
+        },
+        {
+          "title": "Requirement management for a €10Bn Design & Build tender – Consortium of 15 companies.",
+          "value": "€10Bn Tender",
+          "description": "CONTEXT: The Paris Metro Line 15 is a 2-year Design & Build tender, with an estimated value of about €10Bn. Our client is the Consortium, including NGE, Webuilt, Equans, and all their partners (architects, engineering firms, subcontractors, etc.). CLIENT'S OBJECTIVES: Ensure efficiency in the distribution of the work scope among the 15 different entities of the consortium. Produce a flawless requirement compliance matrix. Collectively track and identify the impacts of changes related to questions/answers. Identify version changes and collectively analyze their impacts. IMPLEMENTED SOLUTION: Automatic detection and extraction of requirements. Automatic classification. Collaborative scope and baseline. Automatic detection of version changes. Import of Q&A and impact analysis. Additional note: 2-hour training session for the 150 team members. 2 hours of training for 10 managers. RESULTS: THOUSANDS OF MAN-DAYS SAVED. FEWER RISKS. ENSURING A HIGH LEVEL OF COMPLIANCE",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Requirement%20management%20for%20a%20€10Bn%20Design%20&%20Build%20tender%20–%20Consortium%20of%2015%20companies..jpg"
+        }
+      ]
+    },
+    "team_20": {
+      "tag": "Strategic Impact",
+      "title": "Advanced features for your complex RFPs",
+      "description": "Discover tools that add a strategic dimension and enhance control of your complex offers.",
+      "cards": [
+        {
+          "title": "Bulk Versioning",
+          "description": "Manage multiple versions of your documents simultaneously with automatic synchronization and full traceability of multi-team modifications.",
+          "iconSrc": "/images/Bulk Versioning3.svg"
+        },
+        {
+          "title": "Response Writing",
+          "description": "Write precise and compliant responses thanks to contextual generative AI, connected to your knowledge bases.",
+          "iconSrc": "/images/Response Writing3.svg"
+        },
+        {
+          "title": "Back to Back",
+          "description": "Automate the link between client and subcontractor contracts with intelligent mapping of clauses and contractual flows.",
+          "iconSrc": "/images/Back to Back3.svg"
+        },
+        {
+          "title": "Link with Deliverables",
+          "description": "Connect each requirement to its associated deliverables to ensure real-time tracking and completeness validation.",
+          "iconSrc": "/images/Link with Deliverables3.svg"
+        },
+        {
+          "title": "Sub-Requirements",
+          "description": "Automatically break down complex requirements into manageable sub-requirements and distribute them to the appropriate experts.",
+          "iconSrc": "/images/Sub-Requirements3.svg"
+        },
+        {
+          "title": "Non-compliance Controls",
+          "description": "Proactively detect and correct compliance gaps with intelligent alerts before final submission.",
+          "iconSrc": "/images/Non-compliance Controls3.svg"
+        }
+      ]
+    }
+  },
+  "uc4": {
+    "header_26": {
+      "title": "Manage medium-sized offers, zero surprises",
+      "subtitle": "Discover, secure, and manage every clause from day one for a faster, safer, and more competitive response.",
+      "cta1": "Get Started",
+      "cta2": "Learn More"
+    },
+    "scrolling_logos": {
+      "title": "Trusted by Industry Leaders"
+    },
+    "ai_copilot": {
+      "tag": "Intelligent contracts",
+      "title": "Your contract becomes a source of answers",
+      "subtitle": "Aitenders transforms static PDFs into actionable knowledge with instant summaries, AI search, and direct access to obligations from day one.",
+      "step1": "Immediate access to key clauses",
+      "step2": "Intelligent search in natural language",
+      "step3": "Quick decisions and assured compliance"
+    },
+    "user_benefits": {
+      "you": "You",
+      "stat1_number": "",
+      "stat1_text": "instantly access key clauses",
+      "stat2_number": "",
+      "stat2_text": "decide with confidence in the field",
+      "stat3_number": "",
+      "stat3_text": "reduce your dependency on legal support"
+    },
+    "offer_steps_headline": {
+      "title": "We guide your teams at every stage of the contract"
+    },
+    "features": {
+      "feature1_tag": "Immediate contractual summary",
+      "feature1_title": "A readable and actionable contract from Day 1",
+      "feature1_desc": "A clear summary sheet is automatically generated. It groups the essential elements of the contract and makes the information immediately usable.",
+      "feature1_stat": "100% of contracts summarized in an actionable sheet",
+      "feature1_popup": "Upon importing a contract, Aitenders creates a complete and structured contract sheet. It gathers durations, renewals, notice periods, SLAs, penalties, and commitments. Teams thus have a reliable, readable, and actionable basis from day one, without having to browse the original PDF.",
+      "feature2_tag": "Targeted access to clauses",
+      "feature2_title": "Find every critical clause in one click",
+      "feature2_desc": "Contracts are organized by themes. Each user directly accesses the sought-after clause without rereading the entire document.",
+      "feature2_stat": "80% of time saved on manual search",
+      "feature2_popup": "Aitenders automatically classifies the contract into thematic sections. Users navigate by categories to immediately identify the relevant clause. This structuring reduces tedious rereading, limits errors, and provides targeted and reliable access to critical information.",
+      "feature3_tag": "Intelligent contractual Q&A",
+      "feature3_title": "Ask your questions, the AI answers",
+      "feature3_desc": "The Q&A engine responds in natural language and provides the exact clause with its source, immediately available.",
+      "feature3_stat": "80% of questions handled without legal services",
+      "feature3_popup": "Teams ask their questions directly in the interface. The AI identifies the clause, cites its source, and provides an immediately usable answer. The answers can be archived and shared, avoiding legal solicitations and speeding up the processing of requests."
+    },
+    "concrete_results": {
+      "title": "Concrete results for your projects in execution",
+      "stat1_number": "–60%",
+      "stat1_text": "of time to access key clauses",
+      "stat2_number": "+80%",
+      "stat2_text": "of questions handled without soliciting legal",
+      "stat3_number": "100%",
+      "stat3_text": "of decisions aligned with contractual commitments",
+      "cta_button": "Launch the impact simulation for your projects"
+    },
+    "portfolio": {
+      "title": "Deployed on numerous projects",
+      "projects": [
+        {
+          "title": "Systematize the discovery and launch of over 400 tenders per year.",
+          "value": "400 tenders / year",
+          "description": "CONTEXT: A team of 5 engineers needing to analyze over 400 tenders per year in the consulting engineering field. Tender documents are mainly in English, French, and Spanish. Average of 200 to 300 pages per tender. CLIENT'S OBJECTIVES: Save time in identifying risks and anticipating bottlenecks. Quickly identify if we need to involve partners/subcontractors. Mobilize the support team. Immediately identify Bid / No Bid criteria. Identify the main risks (technical, financial, and legal). IMPLEMENTED SOLUTION: Automatic classification of clauses by categories. Capture of key risks and opportunities. Export and integration into the existing process. Additional note: Setup: 2 hours. Team training limited to 2 x 1h. RESULTS: 20/30% LESS TIME. -10/15H PER PROJECT. €300–500K/YEAR",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Systematize%20the%20discovery%20and%20launch%20of%20over%20400%20tenders%20per%20year..jpg"
+        },
+        {
+          "title": "Extract and produce the requirement compliance matrix for a €40M tender.",
+          "value": "€40M Tender",
+          "description": "CONTEXT: The project was a partial project for the supply of an integrated metro traction system for a new metro line in France. The client had to identify over 2,000 requirements in about 50 different technical documents. The team consisted of 10 people, involving 3 different Business Units. CLIENT'S OBJECTIVES: Immediately and correctly identify and store all requirements identified by the client. Identify other requirements impacting the scope and costing of the offer. Allow the team to have a standardized and simplified common review around all requirements. Quickly deliver a fully reviewed and accurate compliance matrix to their clients. IMPLEMENTED SOLUTION: Requirement detection. PBS, WBS classification. Import of answers – Association of questions. Version gap analysis (V1 > V2). Requirement coverage. Additional note: One session for Project Directors (1h) to launch the project organization. 1h of training for the rest of the team (9 members). RESULTS: COMPLIANCE MATRIX DELIVERED WITHOUT GAPS. ABOUT 30% LESS TIME ON THE ENTIRE PROCESS",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Extract%20and%20produce%20the%20requirement%20compliance%20matrix%20for%20a%20€40M%20tender..jpg"
+        },
+        {
+          "title": "Automate your Bid / No Bid: Go from 7,000 opportunities to 700 well-qualified tenders!",
+          "value": "7000 opportunities / year",
+          "description": "CONTEXT: Our client receives over 7,000 opportunities per year by email from a sourcing software. The existing filtering system is ineffective as it is based on a few generic keywords. The tender managers have to open each tender and read the first few pages to see if there is potential to be a main contractor or subcontractor on the project. CLIENT'S OBJECTIVES: Drastically reduce the average time spent on the selection process (currently 1 hour per tender). Immediately identify the 40 usual suspects that give a high level of certainty to decide on Bid / No Bid. IMPLEMENTED SOLUTION: Detection of over 40 key points in 5 minutes instead of several hours. Risk analysis on topics like finance, contract, legal... Additional note: No effort thanks to the use of the Aitenders standard for Bid / No Bid risk detection (+400 criteria). Customization: a few hours. Specific detection models: 3 weeks. RESULTS: 95% TIME SAVED ON IDENTIFYING KEY POINTS. MORE CAPACITY FOR BETTER SELECTION. +1,000 HOURS SAVED PER YEAR",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Automate%20your%20Bid%20No%20Bid%20Go%20from%207,000%20opportunities%20to%20700%20well-qualified%20tenders!.jpg"
+        },
+        {
+          "title": "Requirement management for a €10Bn Design & Build tender – Consortium of 15 companies.",
+          "value": "€10Bn Tender",
+          "description": "CONTEXT: The Paris Metro Line 15 is a 2-year Design & Build tender, with an estimated value of about €10Bn. Our client is the Consortium, including NGE, Webuilt, Equans, and all their partners (architects, engineering firms, subcontractors, etc.). CLIENT'S OBJECTIVES: Ensure efficiency in the distribution of the work scope among the 15 different entities of the consortium. Produce a flawless requirement compliance matrix. Collectively track and identify the impacts of changes related to questions/answers. Identify version changes and collectively analyze their impacts. IMPLEMENTED SOLUTION: Automatic detection and extraction of requirements. Automatic classification. Collaborative scope and baseline. Automatic detection of version changes. Import of Q&A and impact analysis. Additional note: 2-hour training session for the 150 team members. 2 hours of training for 10 managers. RESULTS: THOUSANDS OF MAN-DAYS SAVED. FEWER RISKS. ENSURING A HIGH LEVEL OF COMPLIANCE",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Requirement%20management%20for%20a%20€10Bn%20Design%20&%20Build%20tender%20–%20Consortium%20of%2015%20companies..jpg"
+        }
+      ]
+    },
+    "team_20": {
+      "tag": "Additional Impact",
+      "title": "Smart options for your contracts",
+      "description": "Transform your PDFs into intelligent assistants, usable at any time by every project stakeholder.",
+      "cards": [
+        {
+          "title": "Thematic Search",
+          "description": "Directly access critical clauses (duration, SLA, penalties, termination) organized by themes without rereading the entire contract.",
+          "iconSrc": "/images/Thematic Search4.svg"
+        },
+        {
+          "title": "Traceability Sharing",
+          "description": "Share explicit sheets with the complete history of consultations and decisions to ensure collaboration and accountability.",
+          "iconSrc": "/images/Traceability Sharing4.svg"
+        },
+        {
+          "title": "Clause Annotation",
+          "description": "Add notes or operational clarifications directly to clauses to facilitate use by field teams.",
+          "iconSrc": "/images/Clause Annotation4.svg"
+        },
+        {
+          "title": "Obligation Reminders",
+          "description": "Receive automatic alerts on deadlines, penalties, and renewals to avoid oversights and disputes.",
+          "iconSrc": "/images/Obligation Reminders4.svg"
+        },
+        {
+          "title": "Multi-device Access",
+          "description": "Consult your contracts securely on mobile or tablet for quick and reliable decisions in the field.",
+          "iconSrc": "/images/Multi-device Access4.svg"
+        },
+        {
+          "title": "Compliance View",
+          "description": "Generate a consolidated view of all obligations and penalties, showing coverage and discrepancies in real time.",
+          "iconSrc": "/images/Compliance View4.svg"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Discover how Aitenders meets your exact needs",
+      "subtitle": "No generic demo. No sales spam. Just three quick questions.",
+      "card_title": "AI Tender Assistant",
+      "card_message": "Hello! I'm going to help you find the ideal Aitenders solution for your team. What is your industry?",
+      "card_button": "Click to start your personalized assessment..."
+    }
+  },
+  "uc5": {
+    "header_26": {
+      "title": "Every commitment tracked, every action traced",
+      "subtitle": "Centralize your commitments, track your actions, and anticipate contractual deviations for responsive projects without administrative overload.",
+      "cta1": "Get Started",
+      "cta2": "Learn More"
+    },
+    "ai_copilot": {
+      "tag": "Proactive management",
+      "title": "Switch from reactive tracking to proactive management",
+      "subtitle": "Aitenders centralizes your commitments, detects deviations in real time, and traces every action to secure your medium-sized projects.",
+      "step1": "Centralization of key commitments",
+      "step2": "Real-time detection of deviations",
+      "step3": "Complete traceability of every action"
+    },
+    "user_benefits": {
+      "you": "You",
+      "stat1_number": "",
+      "stat1_text": "start on a unified basis",
+      "stat2_number": "",
+      "stat2_text": "link every action to the commitment",
+      "stat3_number": "",
+      "stat3_text": "anticipate risks before they escalate"
+    },
+    "offer_steps_headline": {
+      "title": "We support your teams at every stage of the project"
+    },
+    "features": {
+      "feature1_tag": "Immediate project base",
+      "feature1_title": "Structure your documents and criteria from Day 1",
+      "feature1_desc": "Aitenders automatically organizes contracts, schedules, and annexes. You start with a clear and actionable project base, without manual intervention.",
+      "feature1_stat": "100% of projects structured from day one",
+      "feature1_popup": "Upon importing the initial documents, Aitenders generates an intelligible and actionable project base. Contracts, schedules, and annexes are organized around the actual commitments to be monitored. This structuring avoids starting from scratch, eliminates weeks of preparation, and provides the team with a reliable and readable basis from day one.",
+      "feature2_tag": "Commitment tracking",
+      "feature2_title": "Trace every obligation with confidence",
+      "feature2_desc": "Each clause becomes a tracked and documented action. You know who does what, when, and why, without relying on Excel or scattered emails.",
+      "feature2_stat": "100% of actions linked to their commitments",
+      "feature2_popup": "Aitenders transforms each clause into a traceable action. Responsibilities are assigned, dated, and justified. The project remains readable and documented without depending on scattered files or informal exchanges. The bid manager and the teams have total and shared visibility on the progress of obligations.",
+      "feature3_tag": "Proactive anticipation",
+      "feature3_title": "Identify and control critical deviations",
+      "feature3_desc": "AI and your teams detect sensitive areas before they become disputes. You instantly access reliable and sourced information.",
+      "feature3_stat": "80% of deviations detected before they become claims",
+      "feature3_popup": "Thanks to intelligent detection and contractual search, Aitenders identifies critical points before they escalate. Every commitment, history, or clause is immediately accessible with its source. Decisions are made on concrete evidence, not intuition, ensuring a project that is under control and anticipated rather than reactive."
+    },
+    "concrete_results": {
+      "title": "Concrete results for your medium-sized projects",
+      "stat1_number": "80%",
+      "stat1_text": "of time saved on project scoping",
+      "stat2_number": "100%",
+      "stat2_text": "of commitments tracked and contextualized",
+      "stat3_number": "–50%",
+      "stat3_text": "of disputes and contests",
+      "cta_button": "Launch the impact simulation for your projects"
+    },
+    "portfolio": {
+      "title": "Deployed on medium-complex projects",
+      "projects": [
+        {
+          "title": "Systematize the discovery and launch of over 400 tenders per year.",
+          "value": "400 tenders / year",
+          "description": "CONTEXT: A team of 5 engineers needing to analyze over 400 tenders per year in the consulting engineering field. Tender documents are mainly in English, French, and Spanish. Average of 200 to 300 pages per tender. CLIENT'S OBJECTIVES: Save time in identifying risks and anticipating bottlenecks. Quickly identify if we need to involve partners/subcontractors. Mobilize the support team. Immediately identify Bid / No Bid criteria. Identify the main risks (technical, financial, and legal). IMPLEMENTED SOLUTION: Automatic classification of clauses by categories. Capture of key risks and opportunities. Export and integration into the existing process. Additional note: Setup: 2 hours. Team training limited to 2 x 1h. RESULTS: 20/30% LESS TIME. -10/15H PER PROJECT. €300–500K/YEAR",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Systematize%20the%20discovery%20and%20launch%20of%20over%20400%20tenders%20per%20year..jpg"
+        },
+        {
+          "title": "Extract and produce the requirement compliance matrix for a €40M tender.",
+          "value": "€40M Tender",
+          "description": "CONTEXT: The project was a partial project for the supply of an integrated metro traction system for a new metro line in France. The client had to identify over 2,000 requirements in about 50 different technical documents. The team consisted of 10 people, involving 3 different Business Units. CLIENT'S OBJECTIVES: Immediately and correctly identify and store all requirements identified by the client. Identify other requirements impacting the scope and costing of the offer. Allow the team to have a standardized and simplified common review around all requirements. Quickly deliver a fully reviewed and accurate compliance matrix to their clients. IMPLEMENTED SOLUTION: Requirement detection. PBS, WBS classification. Import of answers – Association of questions. Version gap analysis (V1 > V2). Requirement coverage. Additional note: One session for Project Directors (1h) to launch the project organization. 1h of training for the rest of the team (9 members). RESULTS: COMPLIANCE MATRIX DELIVERED WITHOUT GAPS. ABOUT 30% LESS TIME ON THE ENTIRE PROCESS",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Extract%20and%20produce%20the%20requirement%20compliance%20matrix%20for%20a%20€40M%20tender..jpg"
+        },
+        {
+          "title": "Automate your Bid / No Bid: Go from 7,000 opportunities to 700 well-qualified tenders!",
+          "value": "7000 opportunities / year",
+          "description": "CONTEXT: Our client receives over 7,000 opportunities per year by email from a sourcing software. The existing filtering system is ineffective as it is based on a few generic keywords. The tender managers have to open each tender and read the first few pages to see if there is potential to be a main contractor or subcontractor on the project. CLIENT'S OBJECTIVES: Drastically reduce the average time spent on the selection process (currently 1 hour per tender). Immediately identify the 40 usual suspects that give a high level of certainty to decide on Bid / No Bid. IMPLEMENTED SOLUTION: Detection of over 40 key points in 5 minutes instead of several hours. Risk analysis on topics like finance, contract, legal... Additional note: No effort thanks to the use of the Aitenders standard for Bid / No Bid risk detection (+400 criteria). Customization: a few hours. Specific detection models: 3 weeks. RESULTS: 95% TIME SAVED ON IDENTIFYING KEY POINTS. MORE CAPACITY FOR BETTER SELECTION. +1,000 HOURS SAVED PER YEAR",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Automate%20your%20Bid%20No%20Bid%20Go%20from%207,000%20opportunities%20to%20700%20well-qualified%20tenders!.jpg"
+        },
+        {
+          "title": "Requirement management for a €10Bn Design & Build tender – Consortium of 15 companies.",
+          "value": "€10Bn Tender",
+          "description": "CONTEXT: The Paris Metro Line 15 is a 2-year Design & Build tender, with an estimated value of about €10Bn. Our client is the Consortium, including NGE, Webuilt, Equans, and all their partners (architects, engineering firms, subcontractors, etc.). CLIENT'S OBJECTIVES: Ensure efficiency in the distribution of the work scope among the 15 different entities of the consortium. Produce a flawless requirement compliance matrix. Collectively track and identify the impacts of changes related to questions/answers. Identify version changes and collectively analyze their impacts. IMPLEMENTED SOLUTION: Automatic detection and extraction of requirements. Automatic classification. Collaborative scope and baseline. Automatic detection of version changes. Import of Q&A and impact analysis. Additional note: 2-hour training session for the 150 team members. 2 hours of training for 10 managers. RESULTS: THOUSANDS OF MAN-DAYS SAVED. FEWER RISKS. ENSURING A HIGH LEVEL OF COMPLIANCE",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Requirement%20management%20for%20a%20€10Bn%20Design%20&%20Build%20tender%20–%20Consortium%20of%2015%20companies..jpg"
+        }
+      ]
+    },
+    "team_20": {
+      "tag": "Additional Impact",
+      "title": "Advanced options to secure your projects",
+      "description": "Activate features that reduce disputes, streamline claims, and enhance team peace of mind.",
+      "cards": [
+        {
+          "title": "Action Q&A",
+          "description": "Simplify problem-solving with contextual Q&As directly linked to actions and commitments.",
+          "iconSrc": "/images/Action Q&A5.svg"
+        },
+        {
+          "title": "Action-Commitment Link",
+          "description": "Connect every action to a contractual commitment for complete traceability and continuous proof of compliance.",
+          "iconSrc": "/images/Action-Commitment Link5.svg"
+        },
+        {
+          "title": "Advanced Security",
+          "description": "Benefit from role-based access control, GDPR compliance, and integrated auditability to secure every decision.",
+          "iconSrc": "/images/Advanced Security5.svg"
+        },
+        {
+          "title": "Change Log",
+          "description": "Maintain a timestamped history of all decisions and contractual modifications to ensure undeniable traceability.",
+          "iconSrc": "/images/Change Log5.svg"
+        },
+        {
+          "title": "Claim Alerts",
+          "description": "Detect deviations, sensitive deadlines, and penalty risks in real time. Receive alerts before the problem arises.",
+          "iconSrc": "/images/Claim Alerts5.svg"
+        },
+        {
+          "title": "Claims Dashboard",
+          "description": "Visualize the evolution of claims, risks, and sensitive project points in a single clear dashboard.",
+          "iconSrc": "/images/Claims Dashboard5.svg"
+        }
+      ]
+    }
+  },
+  "uc6": {
+    "header_26": {
+      "title": "From requirement to deliverable, zero deviation, zero surprises",
+      "subtitle": "Link every requirement to its deliverables, ensure compliance, and reduce risks with total traceability and collaboration.",
+      "cta1": "Get Started",
+      "cta2": "Learn More"
+    },
+    "ai_copilot": {
+      "tag": "Requirement Mastery",
+      "title": "From requirement to deliverable, every commitment met",
+      "subtitle": "Aitenders links every requirement to its deliverables, integrates evidence into your final documents, and ensures complete traceability in execution.",
+      "step1": "Capture and structuring of requirements",
+      "step2": "Direct link with deliverables",
+      "step3": "Continuous traceability and compliance"
+    },
+    "user_benefits": {
+      "you": "You",
+      "stat1_number": "",
+      "stat1_text": "start execution with a total vision",
+      "stat2_number": "",
+      "stat2_text": "align all disciplines on the requirements",
+      "stat3_number": "",
+      "stat3_text": "prove compliance without gaps or delays"
+    },
+    "offer_steps_headline": {
+      "title": "We support your teams in the execution of complex projects"
+    },
+    "features": {
+      "feature1_tag": "Immediate Vision",
+      "feature1_title": "Start with a clear and total vision",
+      "feature1_desc": "Every modification automatically impacts related requirements and questions. You go from a fragmented puzzle to an actionable and coherent vision.",
+      "feature1_stat": "80% of time saved on initial scoping",
+      "feature1_popup": "From the very first documents, Aitenders links every explicit and implicit requirement to its source. The impacts of changes are tracked, contradictions identified, and links created automatically. This immediate structuring avoids any manual interpretation and eliminates information loss. From Day 1, your teams have a clear, actionable, and shared vision to manage the project.",
+      "feature2_tag": "Collective Management",
+      "feature2_title": "Transform management into continuous performance",
+      "feature2_desc": "Analyze budgets, costs, and deadlines with guided indicators. Decisions are made collectively in real time for greater efficiency.",
+      "feature2_stat": "30% of time saved on review cycles",
+      "feature2_popup": "Thanks to analyses guided by your indicators, Aitenders clarifies budgets, costs, deadlines, and risks. The impacts of each action are measured immediately to explore the best solutions. The team works in Living Management mode, able to integrate changes, adapt the strategy, and maintain team alignment throughout the project.",
+      "feature3_tag": "Full Coverage",
+      "feature3_title": "Master your requirements down to the last line",
+      "feature3_desc": "All requirements are integrated and linked to the final documents. Compliance becomes a continuous thread throughout execution.",
+      "feature3_stat": "100% of requirements covered and traced",
+      "feature3_popup": "Aitenders organizes every explicit, implicit, or scattered requirement into a centralized base. Thanks to cross-references, compliance becomes a Living Thread, integrated at every stage of execution. Your final documents are justified and traceable, offering total control and generalized transparency across the entire project."
+    },
+    "concrete_results": {
+      "title": "Concrete results for your complex projects",
+      "stat1_number": "80%",
+      "stat1_text": "of the initial work done from day one",
+      "stat2_number": "–50%",
+      "stat2_text": "of time on review and decision cycles",
+      "stat3_number": "100%",
+      "stat3_text": "of requirement coverage and traceability",
+      "cta_button": "Launch the impact simulation on your projects"
+    },
+    "portfolio": {
+      "title": "Transformations successfully led",
+      "projects": [
+        {
+          "title": "Systematize the discovery and launch of over 400 tenders per year.",
+          "value": "400 tenders / year",
+          "description": "CONTEXT: A team of 5 engineers needing to analyze over 400 tenders per year in the consulting engineering field. Tender documents are mainly in English, French, and Spanish. Average of 200 to 300 pages per tender. CLIENT'S OBJECTIVES: Save time in identifying risks and anticipating bottlenecks. Quickly identify if we need to involve partners/subcontractors. Mobilize the support team. Immediately identify Bid / No Bid criteria. Identify the main risks (technical, financial, and legal). IMPLEMENTED SOLUTION: Automatic classification of clauses by categories. Capture of key risks and opportunities. Export and integration into the existing process. Additional note: Setup: 2 hours. Team training limited to 2 x 1h. RESULTS: 20/30% LESS TIME. -10/15H PER PROJECT. €300–500K/YEAR",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Systematize%20the%20discovery%20and%20launch%20of%20over%20400%20tenders%20per%20year..jpg"
+        },
+        {
+          "title": "Extract and produce the requirement compliance matrix for a €40M tender.",
+          "value": "€40M Tender",
+          "description": "CONTEXT: The project was a partial project for the supply of an integrated metro traction system for a new metro line in France. The client had to identify over 2,000 requirements in about 50 different technical documents. The team consisted of 10 people, involving 3 different Business Units. CLIENT'S OBJECTIVES: Immediately and correctly identify and store all requirements identified by the client. Identify other requirements impacting the scope and costing of the offer. Allow the team to have a standardized and simplified common review around all requirements. Quickly deliver a fully reviewed and accurate compliance matrix to their clients. IMPLEMENTED SOLUTION: Requirement detection. PBS, WBS classification. Import of answers – Association of questions. Version gap analysis (V1 > V2). Requirement coverage. Additional note: One session for Project Directors (1h) to launch the project organization. 1h of training for the rest of the team (9 members). RESULTS: COMPLIANCE MATRIX DELIVERED WITHOUT GAPS. ABOUT 30% LESS TIME ON THE ENTIRE PROCESS",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Extract%20and%20produce%20the%20requirement%20compliance%20matrix%20for%20a%20€40M%20tender..jpg"
+        },
+        {
+          "title": "Automate your Bid / No Bid: Go from 7,000 opportunities to 700 well-qualified tenders!",
+          "value": "7000 opportunities / year",
+          "description": "CONTEXT: Our client receives over 7,000 opportunities per year by email from a sourcing software. The existing filtering system is ineffective as it is based on a few generic keywords. The tender managers have to open each tender and read the first few pages to see if there is potential to be a main contractor or subcontractor on the project. CLIENT'S OBJECTIVES: Drastically reduce the average time spent on the selection process (currently 1 hour per tender). Immediately identify the 40 usual suspects that give a high level of certainty to decide on Bid / No Bid. IMPLEMENTED SOLUTION: Detection of over 40 key points in 5 minutes instead of several hours. Risk analysis on topics like finance, contract, legal... Additional note: No effort thanks to the use of the Aitenders standard for Bid / No Bid risk detection (+400 criteria). Customization: a few hours. Specific detection models: 3 weeks. RESULTS: 95% TIME SAVED ON IDENTIFYING KEY POINTS. MORE CAPACITY FOR BETTER SELECTION. +1,000 HOURS SAVED PER YEAR",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Automate%20your%20Bid%20No%20Bid%20Go%20from%207,000%20opportunities%20to%20700%20well-qualified%20tenders!.jpg"
+        },
+        {
+          "title": "Requirement management for a €10Bn Design & Build tender – Consortium of 15 companies.",
+          "value": "€10Bn Tender",
+          "description": "CONTEXT: The Paris Metro Line 15 is a 2-year Design & Build tender, with an estimated value of about €10Bn. Our client is the Consortium, including NGE, Webuilt, Equans, and all their partners (architects, engineering firms, subcontractors, etc.). CLIENT'S OBJECTIVES: Ensure efficiency in the distribution of the work scope among the 15 different entities of the consortium. Produce a flawless requirement compliance matrix. Collectively track and identify the impacts of changes related to questions/answers. Identify version changes and collectively analyze their impacts. IMPLEMENTED SOLUTION: Automatic detection and extraction of requirements. Automatic classification. Collaborative scope and baseline. Automatic detection of version changes. Import of Q&A and impact analysis. Additional note: 2-hour training session for the 150 team members. 2 hours of training for 10 managers. RESULTS: THOUSANDS OF MAN-DAYS SAVED. FEWER RISKS. ENSURING A HIGH LEVEL OF COMPLIANCE",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Requirement%20management%20for%20a%20€10Bn%20Design%20&%20Build%20tender%20–%20Consortium%20of%2015%20companies..jpg"
+        }
+      ]
+    },
+    "team_20": {
+      "tag": "Strategic Impact",
+      "title": "Premium features for flawless execution",
+      "description": "Activate advanced options for total control, consistent governance, and consolidated traceability at every stage.",
+      "cards": [
+        {
+          "title": "Native Requirements",
+          "description": "Each deliverable automatically inherits business and technical requirements, with precise traceability from its conception.",
+          "iconSrc": "/images/Native Requirements6.svg"
+        },
+        {
+          "title": "Client Requirement Management",
+          "description": "Automatically deploy changes to baseline requirements with validation and measured impact on project performance.",
+          "iconSrc": "/images/Client Requirement Management6.svg"
+        },
+        {
+          "title": "Compliance Coverage",
+          "description": "Continuously monitor business, technical, and quality compliance to immediately detect and correct any deviation.",
+          "iconSrc": "/images/Compliance Coverage6.svg"
+        },
+        {
+          "title": "Tracked Audits",
+          "description": "Every decision is documented with automatic auditability based on traceable and verifiable evidence.",
+          "iconSrc": "/images/Tracked Audits6.svg"
+        },
+        {
+          "title": "Multi-team Collaboration",
+          "description": "A collective space automatically synchronizes every discipline and stakeholder involved in the project's execution.",
+          "iconSrc": "/images/Multi-team Collaboration6.svg"
+        }
+      ]
+    }
+  },
+  "uc1": {
+    "header_26": {
+      "title": "A clear and immediate go / no-go analysis",
+      "subtitle": "Analyze, validate, and secure your fast-track projects from day one with AI to save time and avoid false starts.",
+      "cta1": "Get Started",
+      "cta2": "Learn More"
+    },
+    "ai_copilot": {
+      "tag": "Quick Validation",
+      "title": "Decide go / no-go with full confidence",
+      "subtitle": "Aitenders analyzes your files in minutes, prioritizes critical points, and guides validation to guarantee your internal processes.",
+      "step1": "Immediate document analysis",
+      "step2": "Clear and prioritized view of risks",
+      "step3": "Guided validation and automatic archiving"
+    },
+    "user_benefits": {
+      "you": "You",
+      "stat1_number": "",
+      "stat1_text": "save several days of manual review",
+      "stat2_number": "",
+      "stat2_text": "get a go / no-go decision in under 48h",
+      "stat3_number": "",
+      "stat3_text": "gain immediate credibility in committee"
+    },
+    "offer_steps_headline": {
+      "title": "We support your teams at every stage of analysis"
+    },
+    "features": {
+      "feature1_tag": "Immediate Structuring",
+      "feature1_title": "Analyze and prioritize your documents from Day 1",
+      "feature1_desc": "AI assistants detect criteria of interest, critical points, and evidence in minutes. The Bid Manager starts with a clear and actionable base.",
+      "feature1_stat": "Go / no-go decision possible in a few minutes",
+      "feature1_popup": "Thanks to automatic analysis, your documents are instantly classified and prioritized. Key criteria, blocking points, and evidence are detected and organized. The Bid Manager gets a global vision of the project and can immediately identify potential risks to quickly decide on a go / no-go.",
+      "feature2_tag": "Centralized Vision",
+      "feature2_title": "Get a clear and prioritized view",
+      "feature2_desc": "Aitenders generates a centralized visual summary with criteria, values, and sources. No more hundreds of pages or scattered files.",
+      "feature2_stat": "Internal review ready in a few minutes",
+      "feature2_popup": "The platform automatically produces a clear and prioritized summary of all detected criteria. Each element is linked to its source document. Teams no longer need to browse hundreds of pages or juggle multiple files: everything is centralized in a visual and immediately usable table.",
+      "feature3_tag": "Guided Validation",
+      "feature3_title": "Validate and archive each element easily",
+      "feature3_desc": "Confirm, adjust, or reject each point identified by the AI. Each validation is logged and integrated into a complete file.",
+      "feature3_stat": "100% of validations automatically tracked",
+      "feature3_popup": "Aitenders guides teams through step-by-step validation. Each identified element is confirmed, adjusted, or rejected, then archived with proof. This fluid process replaces manual and uncertain checks. The result: a probative, complete, and traceable file, with no gray areas or administrative overload."
+    },
+    "concrete_results": {
+      "title": "Concrete results for your small bids",
+      "stat1_number": "50-70%",
+      "stat1_text": "of time saved on analysis",
+      "stat2_number": "100%",
+      "stat2_text": "of critical criteria checked and traced",
+      "stat3_number": "0",
+      "stat3_text": "internal escalations, enhanced credibility in committee",
+      "cta_button": "Launch the impact simulation on your projects"
+    },
+    "portfolio": {
+      "title": "Deployed on numerous projects",
+      "projects": [
+        {
+          "title": "Systematize the discovery and launch of over 400 tenders per year.",
+          "value": "400 tenders / year",
+          "description": "CONTEXT: A team of 5 engineers needing to analyze over 400 tenders per year in the consulting engineering field. Tender documents are mainly in English, French, and Spanish. Average of 200 to 300 pages per tender. CLIENT'S OBJECTIVES: Save time in identifying risks and anticipating bottlenecks. Quickly identify if we need to involve partners/subcontractors. Mobilize the support team. Immediately identify Bid / No Bid criteria. Identify the main risks (technical, financial, and legal). IMPLEMENTED SOLUTION: Automatic classification of clauses by categories. Capture of key risks and opportunities. Export and integration into the existing process. Additional note: Setup: 2 hours. Team training limited to 2 x 1h. RESULTS: 20/30% LESS TIME. -10/15H PER PROJECT. €300–500K/YEAR",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Systematize%20the%20discovery%20and%20launch%20of%20over%20400%20tenders%20per%20year..jpg"
+        },
+        {
+          "title": "Extract and produce the requirement compliance matrix for a €40M tender.",
+          "value": "€40M Tender",
+          "description": "CONTEXT: The project was a partial project for the supply of an integrated metro traction system for a new metro line in France. The client had to identify over 2,000 requirements in about 50 different technical documents. The team consisted of 10 people, involving 3 different Business Units. CLIENT'S OBJECTIVES: Immediately and correctly identify and store all requirements identified by the client. Identify other requirements impacting the scope and costing of the offer. Allow the team to have a standardized and simplified common review around all requirements. Quickly deliver a fully reviewed and accurate compliance matrix to their clients. IMPLEMENTED SOLUTION: Requirement detection. PBS, WBS classification. Import of answers – Association of questions. Version gap analysis (V1 > V2). Requirement coverage. Additional note: One session for Project Directors (1h) to launch the project organization. 1h of training for the rest of the team (9 members). RESULTS: COMPLIANCE MATRIX DELIVERED WITHOUT GAPS. ABOUT 30% LESS TIME ON THE ENTIRE PROCESS",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Extract%20and%20produce%20the%20requirement%20compliance%20matrix%20for%20a%20€40M%20tender..jpg"
+        },
+        {
+          "title": "Automate your Bid / No Bid: Go from 7,000 opportunities to 700 well-qualified tenders!",
+          "value": "7000 opportunities / year",
+          "description": "CONTEXT: Our client receives over 7,000 opportunities per year by email from a sourcing software. The existing filtering system is ineffective as it is based on a few generic keywords. The tender managers have to open each tender and read the first few pages to see if there is potential to be a main contractor or subcontractor on the project. CLIENT'S OBJECTIVES: Drastically reduce the average time spent on the selection process (currently 1 hour per tender). Immediately identify the 40 usual suspects that give a high level of certainty to decide on Bid / No Bid. IMPLEMENTED SOLUTION: Detection of over 40 key points in 5 minutes instead of several hours. Risk analysis on topics like finance, contract, legal... Additional note: No effort thanks to the use of the Aitenders standard for Bid / No Bid risk detection (+400 criteria). Customization: a few hours. Specific detection models: 3 weeks. RESULTS: 95% TIME SAVED ON IDENTIFYING KEY POINTS. MORE CAPACITY FOR BETTER SELECTION. +1,000 HOURS SAVED PER YEAR",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Automate%20your%20Bid%20No%20Bid%20Go%20from%207,000%20opportunities%20to%20700%20well-qualified%20tenders!.jpg"
+        },
+        {
+          "title": "Requirement management for a €10Bn Design & Build tender – Consortium of 15 companies.",
+          "value": "€10Bn Tender",
+          "description": "CONTEXT: The Paris Metro Line 15 is a 2-year Design & Build tender, with an estimated value of about €10Bn. Our client is the Consortium, including NGE, Webuilt, Equans, and all their partners (architects, engineering firms, subcontractors, etc.). CLIENT'S OBJECTIVES: Ensure efficiency in the distribution of the work scope among the 15 different entities of the consortium. Produce a flawless requirement compliance matrix. Collectively track and identify the impacts of changes related to questions/answers. Identify version changes and collectively analyze their impacts. IMPLEMENTED SOLUTION: Automatic detection and extraction of requirements. Automatic classification. Collaborative scope and baseline. Automatic detection of version changes. Import of Q&A and impact analysis. Additional note: 2-hour training session for the 150 team members. 2 hours of training for 10 managers. RESULTS: THOUSANDS OF MAN-DAYS SAVED. FEWER RISKS. ENSURING A HIGH LEVEL OF COMPLIANCE",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Requirement%20management%20for%20a%20€10Bn%20Design%20&%20Build%20tender%20–%20Consortium%20of%2015%20companies..jpg"
+        }
+      ]
+    },
+    "team_20": {
+      "tag": "Extra Confidence",
+      "title": "Complementary options to secure your small bids",
+      "description": "Beyond the main analysis, discover integrated functions that simplify reviews, reinforce compliance, and make your validations more reliable.",
+      "cards": [
+        {
+          "title": "Evidence Pack",
+          "description": "Use a complete validation file with sources and history, ready for committees or audits.",
+          "iconSrc": "/images/Auto evidence pack.svg"
+        },
+        {
+          "title": "Change Detection",
+          "description": "Instantly identify modifications between document versions, with impacts tracked on the criteria.",
+          "iconSrc": "/images/Change Detection.svg"
+        },
+        {
+          "title": "Compliance Alerts",
+          "description": "Receive a notification if a criterion remains unvalidated to avoid any oversight before submission.",
+          "iconSrc": "/images/Compliance Alerts.svg"
+        },
+        {
+          "title": "Secure Access",
+          "description": "Define rights by role for managers, assistants, or reviewers to maintain control of validations.",
+          "iconSrc": "/images/Secure Access.svg"
+        },
+        {
+          "title": "Exportable Reports",
+          "description": "Generate clear and formatted reports of all your verifications and validations, ready to be shared.",
+          "iconSrc": "/images/Report Export.svg"
+        },
+        {
+          "title": "Shared Comments",
+          "description": "Add annotations on criteria or documents to facilitate collaboration during reviews.",
+          "iconSrc": "/images/Shared Comments.svg"
+        }
+      ]
+    }
+  },
+  "product": {
+    "hero": {
+      "badge": "AI Platform for Tenders",
+      "title": "Your AI copilot to master every tender.",
+      "subtitle": "From the call for tenders to delivery, Aitenders is your copilot – designed to go faster and stay aligned.",
+      "cta_button": "Request a demo"
+    },
+    "features": [
+      {
+        "title": "Analyze",
+        "description": "Intelligent analysis of tender documents.",
+        "points": [
+          "Requirement detection and compliance verification",
+          "Automatic reading and matrix generation",
+          "Fluid collaboration with internal and external partners"
+        ],
+        "iconSrc": "/images/UI1.svg"
+      },
+      {
+        "title": "Write",
+        "description": "Create solid, aligned, and traceable responses.",
+        "points": [
+          "AI-assisted document generation",
+          "Customizable and reusable content libraries",
+          "Tracking of contractual requirement coverage"
+        ],
+        "iconSrc": "/images/UI 2.svg"
+      },
+      {
+        "title": "Pilot",
+        "description": "Stay in control until the end of the project.",
+        "points": [
+          "Management of contractual changes and amendments",
+          "Tracking of obligations and related risks",
+          "Document traceability and bulk version management"
+        ],
+        "iconSrc": "/images/UI 3.svg"
+      },
+      {
+        "title": "Knowledge",
+        "description": "Your project memory, centralized and activatable.",
+        "points": [
+          "Cross-functional search on project portfolios",
+          "Structured sharing of deliverables and repositories",
+          "Dedicated infrastructure with customizable AI models"
+        ],
+        "iconSrc": "/images/product-feature-4.svg"
       }
+    ],
+    "integrations": {
+      "tagline": "Intelligent Integrations",
+      "heading": "Connect Aitenders to your business tools",
+      "description": "Our platform naturally integrates with your software ecosystem. Connected to your existing tools and processes, it transforms fragmented management into a flow of connected intelligence, to secure your data and multiply the impact of your teams.",
+      "subheading1": "Ready-to-use connectors",
+      "subfeature1_text": "Native integration with Microsoft Word, Excel, Teams, and SharePoint\n\nOffice 365 plug-in to automate content management",
+      "subheading2": "Open and interoperable",
+      "subfeature2_text": "Partner APIs (Salesforce, Procore, CRM, ERP, DMS…)\n\nAdvanced security: SaaS, dedicated instance, or on-premise deployment",
+      "cta_button": "Request a demo"
     },
-    "word_addon": {
-      "title": "Smart Draft Word Add-in",
-      "subtitle": "Get started with just a few clicks",
-      "step1_title": "Go on the Microsoft store",
-      "step1_link": "just here",
-      "step1_desc": "Click on 'Get it now' and download the add-in.",
-      "step2_title": "Open Microsoft Word",
-      "step2_desc1": "Navigate to the top menu bar and click on the <strong>Insert</strong> tab. Find the Add-ins group and click on 'Get Add-ins' or Store (the wording may differ slightly depending on your version of Word).",
-      "step2_desc2": "A window will pop up with the Office Store. Use the search bar to find the specific add-in you want to install.",
-      "step2_desc3": "Once you locate the plugin, click on it. Then, click the <strong>Add</strong> or <strong>Install</strong> button (depending on the add-in) and confirm the installation.",
-      "step2_note": "<strong>Note:</strong> Some add-ins might require you to sign in with a Microsoft account.",
-      "step3_title": "Installation Complete",
-      "step3_desc": "The add-in will install, and you'll see a confirmation once it's ready to use. The plugin's commands may now be available in Word's ribbon or a separate panel.",
-      "support_title": "Need Additional Support?",
-      "support_desc": "If you encounter any issues during installation or have questions about using the Smart Draft Word Add-in, our support team is here to help.",
-      "support_contact": "Contact: support@aitenders.com"
+    "kpis": {
+      "tagline": "Performance",
+      "heading": "Simplify your tenders and gain in efficiency",
+      "description": "Aitenders automates analysis, tracking, and compliance. Your teams respond faster, reduce errors, and increase their chances of success.",
+      "stat1_number": "70%",
+      "stat1_text": "Faster preparation",
+      "stat2_number": "3.5x",
+      "stat2_text": "Success rate",
+      "stat3_number": "100%",
+      "stat3_text": "Compliance guaranteed",
+      "cta_button": "Request a demo",
+      "cta_button2": "Discover the platform"
     },
-    "privacy_policy": {
-      "title": "Aitenders Privacy Notice",
-      "general_info": {
-        "title": "1. General Information",
-        "scope": {
-          "title": "1.1 Scope",
-          "p1": "This Aitenders Privacy Notice (\"Privacy Notice\") describes how we collect, process, and disclose information related to you as a natural person (\"Personal Data\"), and what rights you have with respect to the processing of your Personal Data. Under the prerequisite that we act as Controller, this Privacy Notice applies when you:",
-          "list_items": [
-            "visit any of our websites or social media pages,",
-            "access or use any of our applications or platforms, such as Aitenders.com and related instances, Aitenders Academy, Aitenders Community and the Aitenders Client Portal,",
-            "access our cloud application",
-            "register and/or attend to any events hosted or attended by Aitenders,",
-            "contact our customer support,",
-            "do business with us or,",
-            "otherwise interact or communicate with us."
-          ],
-          "p2": "These services are hereinafter collectively referred to as the \"Services\". If you decline to provide your Personal Data or ask us to delete it, you may not be able to access or use the Services."
+    "faq": {
+      "title": "Your questions about Aitenders",
+      "subtitle": "Get answers to common questions about the implementation and features of Aitenders.",
+      "faq_list": [
+        {
+          "question": "How does Aitenders integrate with our existing processes?",
+          "answer": "The platform adapts to your current work methods, without disrupting your tools or your teams."
         },
-        "controller": {
-          "title": "1.2 Name of Controller and Data Protection Officer",
-          "p1": "When we refer to \"Aitenders\" in this Privacy Notice, we mean the Aitenders entity that is responsible for the means and purposes of the processing and therefore acts as the Controller of your Personal Data, as follows:",
-          "box_line1": "<strong>Aitenders SAS</strong> if you are located outside North America and for all website activities",
-          "box_address": "<strong>Address:</strong> 20 rue professeur Benoit Lauras 42000 Saint Etienne",
-          "box_contact": "<strong>Contact details of Data Protection Officer:</strong> privacy@Aitenders.com",
-          "p2": "Any requests or questions related to data protection may be addressed to privacy@Aitenders.com."
+        {
+          "question": "What types of tenders can be managed with Aitenders?",
+          "answer": "All types: public, private, multi-lot, international — regardless of the sector."
         },
-        "update": {
-          "title": "1.3 Update of the Privacy Policy",
-          "p1": "We may change or substitute this Privacy Notice at any time in our sole discretion. You should check back regularly for the most up-to-date version of this Privacy Notice and whenever you access one of our Services."
+        {
+          "question": "Is our data secure with Aitenders?",
+          "answer": "Yes. The infrastructure complies with strict standards (dedicated hosting, encryption, SSO, etc.)."
+        },
+        {
+          "question": "Can Aitenders be adapted to our sector or specific needs?",
+          "answer": "Yes. The tool is modular and configurable according to your business challenges and your organization."
+        },
+        {
+          "question": "What support do you offer during implementation?",
+          "answer": "We provide complete onboarding: scoping, setup, training, technical support."
+        },
+        {
+          "question": "How can we measure the ROI of Aitenders?",
+          "answer": "Through time saved, a decrease in errors, an increase in submitted responses, and a higher success rate."
         }
+      ]
+    }
+  },
+  "header": {
+    "requestDemo": "Request a demo",
+    "menu": "Menu",
+    "navigation": [
+      {
+        "title": "Our Product",
+        "href": "/product"
       },
-      "data_categories": {
-        "title": "2. Data Categories",
-        "p1": "The categories of data we process depend on your interactions with us and may include one or more of the following data categories.",
-        "contact_business": {
-          "title": "2.1 Contact and Business Data",
-          "p1": "For the use of certain Services, contact data may be processed. Contact Data consists of last name, first name, email address, physical address, phone number, country of origin and similar contact information, including in some circumstances usernames and passwords. These may be supplemented by business data such as position, company name and other similar information."
-        },
-        "communication_transaction": {
-          "title": "2.2 Communication and Transaction Data",
-          "p1": "Communication data refers to the data resulting from your interaction with us, e.g., emails, chat messages, webinars visited, files downloaded, and product interest information. We may also collect registration information related to your attendance at one of our events, including travel information, scheduling information, food preferences or allergies, and accessibility requests."
-        },
-        "application_usage": {
-          "title": "2.3 Application-Related Usage Data",
-          "p1": "As is true of most hosted services providers, we automatically gather and analyze information on how and whether specific features of our Services are used, such as details about which of our applications and versions are being used, user interactions with the Services (including searches and other actions taken by users), the pages and files viewed, which online trainings are attended, the types of data sources queried, and the types of visualizations created."
-        },
-        "device_browser": {
-          "title": "2.4 Device and Browser Data",
-          "p1": "When you visit one of our websites or applications, online and technical information from your computer or mobile device may be collected, such as: device type, location, information about the browser type and version, the operating system and version, the ISP or mobile carrier, the IP Address (or proxy server) and geographic areas derived from your IP address, time and date of access, duration of access, referring URL (if any), and identifiers that help us uniquely identify your browser or device."
-        }
-      },
-      "origin": {
-        "title": "3. Origin of the data",
-        "p1": "In most cases, you provide the Personal Data directly to us by accessing one of our websites or by registering and/or using one of the Services. We may also obtain Personal Data from your employer in the context of providing the Services or from third party suppliers, social networks, or partners. To enable collection of data we might use cookies, web beacons or similar technologies (see additional information provided in our Cookie Notice)."
-      },
-      "purposes": {
-        "title": "4. Purposes for processing",
-        "p1": "We use the Personal Data collected as described in this Privacy Notice, as specified in any agreement that incorporates this Privacy Notice, or as disclosed to you in connection with the Services. We do not carry out any statistical evaluation of a data subject's behavior (profiling); in particular, there is no automated decision-making (see Art. 22 Para. 1 and Para. 4 GDPR and Art. 6 Para. 1(b) GDPR).",
-        "providing_service": {
-          "title": "4.1 Providing the Requested Service",
-          "p1": "We process your Personal Data to fulfill our contractual obligations to you, including to:",
-          "list_items": [
-            "Provide and deliver products and services (including updates thereto);",
-            "Operate and improve our operations, systems, products and services;",
-            "Understand your preferences to enhance your experience; and",
-            "Provide service and support, such as sending confirmations, invoices, technical notices, updates, security alerts and administrative messages and providing customer support and troubleshooting."
-          ]
-        },
-        "comments_questions": {
-          "title": "4.2 Comments and Questions",
-          "p1": "If you contact us via our website, via email or in any other way, we process your Personal Data to understand and respond to your request and to provide customer service. In such circumstances, your request might be internally forwarded to the responsible department at Aitenders."
-        },
-        "sales_marketing": {
-          "title": "4.3 Sales & Marketing Activities",
-          "p1": "We may use your email address for direct advertising, to communicate news about upcoming events, products, and services, and for surveys. We also use your email address, which we receive in connection with the sale of a product or service, for direct advertising of products or services similar to the ones you ordered. Our marketing emails permit you to opt-out of receiving further communications by selecting the \"unsubscribe\" link."
-        },
-        "statistics": {
-          "title": "4.4 Statistics",
-          "p1": "To improve performance of the Services, to assess and improve the customer and user experience, to identify future opportunities for development of the Services, and to assess capacity requirements, we may analyze aggregated, anonymized or statistical information based on Personal Data."
-        },
-        "security_compliance": {
-          "title": "4.5 Security & Compliance",
-          "p1": "We may analyze your Personal Data to maintain the security of the Services and facilities, to enforce our terms and conditions; to protect against, investigate and deter fraudulent, unauthorized, or illegal activity; and to avoid and detect attacks on our website or applications or misuse of our Services."
-        }
-      },
-      "lawfulness": {
-        "title": "5. Lawfulness of Processing",
-        "p1": "When we collect and use your Personal Data, we will only do so where at least one of the following applies:",
-        "list_items": [
-          "We need to process your Personal Data to perform our responsibilities under our contract with you and to provide you with tools and services. [see Art.6 Para 1(b) GDPR]",
-          "We have a legitimate interest to process your personal information. [see Art.6 Para 1(f) GDPR]",
-          "You have given consent to process Personal Data. [see Art.6 Para. 1(a) GDPR]",
-          "It is necessary for us to process your Personal Data to comply with a legal obligation. [see Art.6 Para. 1(c) GDPR]"
+      {
+        "title": "Use Cases",
+        "children": [
+          {
+            "title": "Small Projects – Tender",
+            "href": "/uc-1"
+          },
+          {
+            "title": "Medium Projects – Tender",
+            "href": "/uc2test"
+          },
+          {
+            "title": "Complex Projects – Tender",
+            "href": "/uc-3"
+          },
+          {
+            "title": "Small Projects – Execution",
+            "href": "/uc-4"
+          },
+          {
+            "title": "Medium Projects – Execution",
+            "href": "/uc-5"
+          },
+          {
+            "title": "Complex Projects – Execution",
+            "href": "/uc-6"
+          }
         ]
       },
-      "cookies": {
-        "title": "6. Cookies and other Tracking Technologies",
-        "p1": "We use session-based and persistent \"cookies\" and similar technologies such as web beacons to increase user-friendliness and compile information about the usage of our websites and applications. Cookies are created either by us (first-party cookies) or by third-party providers determined by us (third-party cookies). The following describes the types of further cookies we utilize:",
+      {
+        "title": "Our Product",
+        "href": "/product"
+      },
+      {
+        "title": "Word Addon",
+        "href": "/word-addon"
+      },
+      {
+        "title": "Privacy Policy",
+        "href": "/privacy"
+      }
+    ]
+  },
+  "homepage": {
+    "mainTitle": "The intelligence of your project teams,",
+    "mainSubtitle": "multiplied by AI",
+    "description": "Aitenders, your digital teammate to win tenders, manage contracts, and structure the knowledge and expertise of your projects.",
+    "domainSelection": "How can I help you?",
+    "projectSize": "What is the size of your projects?",
+    "chooseUseCase": "Choose your use case",
+    "yourSelection": "Your selection:",
+    "availableUseCases": "Available use cases:",
+    "back": "← Back",
+    "tenderManagementTitle": "I respond to calls for tenders",
+    "tenderManagementDescription": "Optimize your responses to calls for tenders. Analyze requirements, collaborate effectively, and maximize your chances of success.",
+    "contractExecutionTitle": "I manage projects in execution",
+    "contractExecutionDescription": "Manage your projects with confidence. Track deliverables, ensure compliance, and proactively manage changes.",
+    "knowledgeManagementTitle": "I structure my experts' knowledge",
+    "knowledgeManagementDescription": "Capitalize on your past knowledge and experiences. Quick access to references, templates, and comparables for each new project.",
+    "smallProjectTitle": "Small, regular Projects",
+    "smallProjectDescription": "Ideal for small teams and targeted needs. Quick setup, essential features.",
+    "mediumProjectTitle": "Moderately complex projects",
+    "mediumProjectDescription": "A balance between flexibility and power. Complete tools for structured and collaborative projects.",
+    "largeProjectTitle": "Large complex Projects",
+    "largeProjectDescription": "Designed for complex and large-scale organizations. Advanced solutions, personalized AI, and enhanced security.",
+    "learnMore": "I want to learn more about Aitenders",
+    "exploreSolutions": "Explore our solutions",
+    "discoverUseCase": "Discover this use case",
+    "chatPlaceholder": "Interact with the Chat Questions / Launch the simulator / Information?",
+    "chatTitle": "Chat with the AI Assistant",
+    "ourUseCases": "Our Use Cases",
+    "simulationROI": "Simulation / ROI",
+    "aiAgents": "AI Agents",
+    "dataSecurity": "Data Security",
+    "contactUs": "Contact us",
+    "tenderProcess": "Tender Process",
+    "scheduleDemo": "Schedule a Demo",
+    "ucMetadata": {
+      "UC1": {
+        "title": "Accelerate small tenders",
+        "description": "Tenders for small projects"
+      },
+      "uc2test": {
+        "title": "Medium tender management",
+        "description": "Management of medium-sized tenders"
+      },
+      "uc3": {
+        "title": "Complex multi-lot tenders",
+        "description": "Complex multi-lot tenders"
+      },
+      "uc4": {
+        "title": "Execution of small projects",
+        "description": "Execution of small projects"
+      },
+      "uc5": {
+        "title": "Execution of medium projects",
+        "description": "Execution of medium projects"
+      },
+      "uc6": {
+        "title": "Execution of large projects",
+        "description": "Execution of large projects"
+      },
+      "UC7": {
+        "title": "Knowledge management for small structures",
+        "description": "Knowledge management for small structures"
+      },
+      "UC8": {
+        "title": "Knowledge management for large organizations",
+        "description": "Knowledge management for large organizations"
+      }
+    }
+  },
+  "word_addon": {
+    "title": "Smart Draft Word Add-in",
+    "subtitle": "Get started in a few clicks",
+    "step1_title": "Go to the Microsoft Store",
+    "step1_link": "right here",
+    "step1_desc": "Click 'Get it now' and download the add-in.",
+    "step2_title": "Open Microsoft Word",
+    "step2_desc1": "Go to the top menu bar and click the <strong>Insert</strong> tab. Find the Add-ins group and click 'Get Add-ins' or Store (the label may vary slightly depending on your version of Word).",
+    "step2_desc2": "A window will appear with the Office Store. Use the search bar to find the specific add-in you want to install.",
+    "step2_desc3": "Once you have located the plugin, click on it. Then, click the <strong>Add</strong> or <strong>Install</strong> button (depending on the add-in) and confirm the installation.",
+    "step2_note": "<strong>Note:</strong> Some add-ins may require you to sign in with a Microsoft account.",
+    "step3_title": "Installation complete",
+    "step3_desc": "The add-in will install and you will see a confirmation once it is ready to use. The plugin's commands may now be available in the Word ribbon or in a separate panel.",
+    "support_title": "Need more help?",
+    "support_desc": "If you encounter any issues during the installation or have questions about using the Smart Draft Word Add-in, our support team is here to help you.",
+    "support_contact": "Contact: support@aitenders.com"
+  },
+  "privacy_policy": {
+    "title": "Aitenders Privacy Notice",
+    "general_info": {
+      "title": "1. General Information",
+      "scope": {
+        "title": "1.1 Scope",
+        "p1": "This Aitenders Privacy Notice (\"Privacy Notice\") describes how we collect, process, and disclose information about you as a natural person (\"Personal Data\"), and what your rights are with respect to the processing of your Personal Data. Subject to us acting as a Controller, this Privacy Notice applies when you:",
         "list_items": [
-          "<strong>Necessary Cookies.</strong> Necessary Cookies are for basic website functionality, e.g., session cookies to transmit the website, authentication cookies, and security cookies. These cookies are strictly necessary for the operation of the website.",
-          "<strong>Functional Cookies.</strong> Functional Cookies enhance functions, performance, and services on the website, e.g., cookies used to analyze site traffic, cookies for market research, and cookies to display advertising that is not directed to a particular individual.",
-          "<strong>Marketing Cookies.</strong> Marketing Cookies track activity across websites in order to understand your interests, to direct targeted advertising to you, and to track the performance of our advertisements."
+          "visit one of our websites or social media pages,",
+          "access or use one of our applications or platforms, such as Aitenders.com and its associated instances, the Aitenders Academy, the Aitenders Community and the Aitenders Customer Portal,",
+          "access our cloud application,",
+          "register for and/or participate in events organized by or in which Aitenders participates,",
+          "contact our customer service,",
+          "do business with us, or",
+          "otherwise interact or communicate with us."
         ],
-        "p2": "Please find detailed information on cookies in our Cookie Notice."
+        "p2": "These services are hereinafter collectively referred to as the \"Services\". If you refuse to provide your Personal Data or ask us to delete it, you may not be able to access or use the Services."
       },
-      "recipients": {
-        "title": "7. Recipients",
-        "p1": "Your Personal Data may be transferred to affiliates and partners of Aitenders as well as to a limited number of service providers (Processors) that perform processing operations such as database monitoring, hosting services, ticketing or provisioning of software tools. These service providers process Personal Data on our instructions only and have implemented state-of-the-art technical and organizational measures to safeguard the processed data.",
-        "p2": "When we ask third parties to host or present at certain events like webinars or training, we may forward your Personal Data to the respective third party who may use this data to provide access to the event or may contact you for related marketing purposes.",
-        "p3": "If Personal Data is transferred to subsidiaries, partners service providers or third parties located outside the European Economic Area (EEA) which are not subject to an adequacy decision by the European Commission we will ensure that such recipient offers an adequate level of data protection, for instance by entering into EU Standard Contractual Clauses (SCCs) and implementing additional safeguards in accordance with legal requirements.",
-        "p4": "We may disclose your Personal Data to comply with legal requirements, such as in response to a court order or a subpoena. In such an event, we will use all reasonable and lawfully available measures to object to overbroad, unclear or otherwise inappropriate requests for information."
+      "controller": {
+        "title": "1.2 Name of the Controller and the Data Protection Officer",
+        "p1": "When we refer to \"Aitenders\" in this Privacy Notice, we mean the Aitenders entity that is responsible for the means and purposes of processing and thus acts as the Controller of your Personal Data, as follows:",
+        "box_line1": "<strong>Aitenders SAS</strong> if you are located outside of North America and for all website activities",
+        "box_address": "<strong>Address:</strong> 20 rue professeur Benoit Lauras 42000 Saint Etienne",
+        "box_contact": "<strong>Data Protection Officer Contact:</strong> privacy@Aitenders.com",
+        "p2": "Any data protection requests or questions can be directed to privacy@Aitenders.com."
       },
-      "duration": {
-        "title": "8. Duration of Data Storage",
-        "p1": "Your Personal Data will be deleted upon your request or as soon as it is no longer required to achieve the purpose for which the Personal Data has been collected, namely, to provide the requested Services. If legal regulations (e.g., by fiscal, commercial, or contractual law) apply that require longer storage of your Personal Data, or if we need your Personal Data to assert legal claims or defend against legal claims, we will store your Personal Data until the expiration of the corresponding retention periods.",
-        "p2": "Any user account and its related data in applications where we act as Controller will be deleted upon your request or after three years of inactivity."
+      "update": {
+        "title": "1.3 Update to the Privacy Policy",
+        "p1": "We may change or replace this Privacy Notice at any time and in our sole discretion. You should regularly review the most current version of this Privacy Notice and whenever you access any of our Services."
+      }
+    },
+    "data_categories": {
+      "title": "2. Data Categories",
+      "p1": "The categories of data we process depend on your interactions with us and may include one or more of the following data categories.",
+      "contact_business": {
+        "title": "2.1 Contact and Business Data",
+        "p1": "For the use of certain Services, contact data may be processed. Contact Data includes first name, last name, email address, physical address, phone number, country of origin, and similar contact information, including in some circumstances usernames and passwords. This may be supplemented with business data such as job title, company name, and other similar information."
       },
-      "your_rights": {
-        "title": "9. Your Rights",
-        "gdpr": {
-          "title": "9.1 GDPR",
-          "p1": "Upon request, we will inform you whether and which data we have stored about you. Insofar as the legal requirements are met, you have the right to have this data corrected, blocked or deleted. You also have the right to receive Personal Data which you have provided to us, in a structured, commonly used, and machine-readable format and have the right to transmit those data to another Controller under conditions and in accordance with the Regulation.",
-          "p2": "Insofar as we process your data on the basis of the balancing of interests, you have a right of objection if the legal requirements are met.",
-          "p3": "Where we are relying on consent to process your Personal Data you may withdraw your consent at any time for the future. However, this will not affect the lawfulness of any processing carried out before you withdraw your consent.",
-          "box_p1": "You may exercise your rights by contacting us in writing, with a proof of your identity, at <strong>privacy@Aitenders.com</strong>.",
-          "p4": "If you are resident of the EU, you also have the right to direct questions or complaints to the lead supervisory authority."
-        },
-        "california": {
-          "title": "9.2 California Privacy Rights",
-          "p1": "This section provides additional details about the Personal Data we collect about California residents and the rights afforded to them under the California Consumer Privacy Act or \"CCPA.\" We are extending the same rights to all residents of the U.S. For purposes of the CCPA, the defined term \"Personal Data\" is the same as the term \"Personal Information\" as such term is defined in the CCPA."
-        }
+      "communication_transaction": {
+        "title": "2.2 Communication and Transaction Data",
+        "p1": "Communication data refers to data resulting from your interaction with us, e.g., emails, chat messages, webinars visited, files downloaded, and product interest information. We may also collect registration information related to your participation in one of our events, including travel information, scheduling information, dietary preferences or allergies, and accessibility requests."
+      },
+      "application_usage": {
+        "title": "2.3 Application-Related Usage Data",
+        "p1": "As is the case with most hosted service providers, we automatically collect and analyze information about how and how often specific features of our Services are used, such as details about the applications and versions used, user interactions with the Services (including searches and other actions taken by users), pages and files viewed, online training attended, types of data sources queried, and types of visualizations created."
+      },
+      "device_browser": {
+        "title": "2.4 Device and Browser Data",
+        "p1": "When you visit one of our websites or applications, online and technical information from your computer or mobile device may be collected, such as: device type, location, information about browser type and version, operating system and version, ISP or mobile carrier, IP address (or proxy server), and geographic areas derived from your IP address, time and date of access, duration of access, referring URL (if any), and identifiers that help us uniquely identify your browser or device."
+      }
+    },
+    "origin": {
+      "title": "3. Origin of data",
+      "p1": "In most cases, you provide us with Personal Data directly by accessing one of our websites or by registering for and/or using one of the Services. We may also obtain Personal Data from your employer in connection with the provision of the Services or from third-party providers, social networks, or partners. To enable data collection, we may use cookies, web beacons, or similar technologies (see additional information provided in our Cookie Notice)."
+    },
+    "purposes": {
+      "title": "4. Purposes of processing",
+      "p1": "We use the Personal Data collected as described in this Privacy Notice, as specified in any agreement incorporating this Privacy Notice, or as communicated to you in connection with the Services. We do not perform any statistical evaluation of the behavior of a data subject (profiling); in particular, there is no automated decision-making (see Art. 22 Par. 1 and Par. 4 GDPR and Art. 6 Par. 1(b) GDPR).",
+      "providing_service": {
+        "title": "4.1 Provision of the Requested Service",
+        "p1": "We process your Personal Data to fulfill our contractual obligations to you, including to:",
+        "list_items": [
+          "Provide and deliver products and services (including their updates);",
+          "Operate and improve our operations, systems, products, and services;",
+          "Understand your preferences to enhance your experience; and",
+          "Provide service and support, such as sending confirmations, invoices, technical notices, updates, security alerts, and administrative messages, and providing customer support and troubleshooting."
+        ]
+      },
+      "comments_questions": {
+        "title": "4.2 Comments and Questions",
+        "p1": "If you contact us via our website, by email, or in any other way, we process your Personal Data to understand and respond to your request and to provide customer service. In such circumstances, your request may be forwarded internally to the competent department at Aitenders."
+      },
+      "sales_marketing": {
+        "title": "4.3 Sales and Marketing Activities",
+        "p1": "We may use your email address for direct advertising, to communicate news about upcoming events, products, and services, and for surveys. We also use your email address, which we receive in connection with the sale of a product or service, for direct advertising of products or services similar to those you have ordered. Our marketing emails allow you to unsubscribe from receiving further communications by selecting the \"unsubscribe\" link."
+      },
+      "statistics": {
+        "title": "4.4 Statistics",
+        "p1": "To improve the performance of the Services, to evaluate and improve the customer and user experience, to identify future opportunities for the development of the Services, and to assess capacity needs, we may analyze aggregated, anonymized, or statistical information based on Personal Data."
+      },
+      "security_compliance": {
+        "title": "4.5 Security and Compliance",
+        "p1": "We may analyze your Personal Data to maintain the security of the Services and facilities, to enforce our terms and conditions; to protect, investigate, and deter fraudulent, unauthorized, or illegal activities; and to prevent and detect attacks on our website or applications or the misuse of our Services."
+      }
+    },
+    "lawfulness": {
+      "title": "5. Lawfulness of Processing",
+      "p1": "When we collect and use your Personal Data, we will only do so if at least one of the following conditions applies:",
+      "list_items": [
+        "We need to process your Personal Data to perform our responsibilities under our contract with you and to provide you with tools and services. [see Art. 6 Par. 1(b) GDPR]",
+        "We have a legitimate interest in processing your personal information. [see Art. 6 Par. 1(f) GDPR]",
+        "You have given your consent to the processing of Personal Data. [see Art. 6 Par. 1(a) GDPR]",
+        "It is necessary for us to process your Personal Data to comply with a legal obligation. [see Art. 6 Par. 1(c) GDPR]"
+      ]
+    },
+    "cookies": {
+      "title": "6. Cookies and other Tracking Technologies",
+      "p1": "We use session and persistent \"cookies\" and similar technologies such as web beacons to enhance usability and compile information about the use of our websites and applications. Cookies are created either by us (first-party cookies) or by third-party providers we have designated (third-party cookies). Here are the types of cookies we use:",
+      "list_items": [
+        "<strong>Necessary Cookies.</strong> Necessary Cookies are intended for the basic functionality of the website, e.g., session cookies to transmit the website, authentication cookies, and security cookies. These cookies are strictly necessary for the operation of the website.",
+        "<strong>Functional Cookies.</strong> Functional Cookies enhance the functions, performance, and services on the website, e.g., cookies used to analyze site traffic, cookies for market research, and cookies to display advertising not directed to a particular individual.",
+        "<strong>Marketing Cookies.</strong> Marketing Cookies track activity on websites to understand your interests, to target you with advertising, and to track the performance of our advertisements."
+      ],
+      "p2": "Please find detailed information about cookies in our Cookie Notice."
+    },
+    "recipients": {
+      "title": "7. Recipients",
+      "p1": "Your Personal Data may be transferred to Aitenders affiliates and partners as well as to a limited number of service providers (Sub-processors) who perform processing operations such as database monitoring, hosting services, ticketing, or providing software tools. These service providers process Personal Data only on our instructions and have implemented state-of-the-art technical and organizational measures to protect the processed data.",
+      "p2": "When we ask third parties to host or present certain events like webinars or trainings, we may pass on your Personal Data to the respective third party who may use this data to provide access to the event or may contact you for related marketing purposes.",
+      "p3": "If Personal Data is transferred to subsidiaries, partners, service providers, or third parties located outside the European Economic Area (EEA) that are not subject to an adequacy decision by the European Commission, we will ensure that this recipient offers an adequate level of data protection, for example by concluding EU Standard Contractual Clauses (SCCs) and implementing additional safeguards in accordance with legal requirements.",
+      "p4": "We may disclose your Personal Data to comply with legal requirements, such as in response to a court order or subpoena. In such a case, we will use all reasonable and legally available measures to object to overly broad, unclear, or otherwise inappropriate requests for information."
+    },
+    "duration": {
+      "title": "8. Duration of Data Retention",
+      "p1": "Your Personal Data will be deleted at your request or as soon as it is no longer needed to achieve the purpose for which it was collected, namely to provide the requested Services. If legal regulations (e.g., in tax, commercial, or contract law) apply and require a longer retention of your Personal Data, or if we need your Personal Data to assert legal claims or defend against legal actions, we will retain your Personal Data until the expiration of the corresponding retention periods.",
+      "p2": "Any user account and its associated data in applications where we act as a Controller will be deleted at your request or after three years of inactivity."
+    },
+    "your_rights": {
+      "title": "9. Your Rights",
+      "gdpr": {
+        "title": "9.1 GDPR",
+        "p1": "Upon request, we will inform you if we have stored any data about you and which data. To the extent that legal requirements are met, you have the right to have this data corrected, blocked, or deleted. You also have the right to receive the Personal Data you have provided to us, in a structured, commonly used, and machine-readable format, and you have the right to transmit this data to another Controller under the conditions and in accordance with the Regulation.",
+        "p2": "To the extent that we process your data on the basis of a balancing of interests, you have a right of objection if the legal conditions are met.",
+        "p3": "Where we rely on consent to process your Personal Data, you may withdraw your consent at any time for the future. However, this will not affect the lawfulness of any processing carried out before you withdraw your consent.",
+        "box_p1": "You can exercise your rights by contacting us in writing, with proof of your identity, at <strong>privacy@Aitenders.com</strong>.",
+        "p4": "If you reside in the EU, you also have the right to address questions or complaints to the lead supervisory authority."
+      },
+      "california": {
+        "title": "9.2 California Privacy Rights",
+        "p1": "This section provides additional details about the Personal Data we collect about California residents and the rights afforded to them under the California Consumer Privacy Act or \"CCPA\". We extend the same rights to all U.S. residents. For purposes of the CCPA, the defined term \"Personal Data\" is the same as the term \"Personal Information\" as that term is defined in the CCPA."
       }
     }
   }
+}
