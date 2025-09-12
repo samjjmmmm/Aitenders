@@ -112,9 +112,9 @@ export default function Header() {
                     </div>
                   ) : (
                     <Link key={navItem.title} href={navItem.href || "#"}>
-                      <a className="inline-flex items-center gap-1 px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-50">
+                      <span className="inline-flex items-center gap-1 px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-50">
                         {navItem.title}
-                      </a>
+                      </span>
                     </Link>
                   )
                 )}
