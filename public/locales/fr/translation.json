@@ -1,95 +1,266 @@
 {
+  "header": {
+    "requestDemo": "Demander une démo",
+    "menu": "Menu",
+    "navigation": [
+      {
+        "title": "Notre Produit",
+        "href": "/product"
+      },
+      {
+        "title": "Cas d'Usage",
+        "children": [
+          {
+            "title": "Petits Projets – Appel d'offres",
+            "href": "/uc-1"
+          },
+          {
+            "title": "Projets Moyens – Appel d'offres",
+            "href": "/uc2test"
+          },
+          {
+            "title": "Projets Complexes – Appel d'offres",
+            "href": "/uc-3"
+          },
+          {
+            "title": "Petits Projets – Exécution",
+            "href": "/uc-4"
+          },
+          {
+            "title": "Projets Moyens – Exécution",
+            "href": "/uc-5"
+          },
+          {
+            "title": "Projets Complexes – Exécution",
+            "href": "/uc-6"
+          }
+        ]
+      },
+      {
+        "title": "Add-in Word",
+        "href": "/word-addon"
+      },
+      {
+        "title": "Politique de Confidentialité",
+        "href": "/privacy"
+      }
+    ]
+  },
   "homepage": {
-    "mainTitle": "L'intelligence de vos équipes projets,",
-    "mainSubtitle": "démultipliée par l'IA", 
-    "description": "Aitenders, votre coéquipier digital pour gagner les appels d'offres, piloter les contrats et structurer la connaissance et l'expertise de vos projets.",
-    "domainSelection": "Comment puis-je vous aider?",
+    "mainTitle": "L'intelligence de vos équipes projet,",
+    "mainSubtitle": "multipliée par l'IA",
+    "description": "Aitenders, votre coéquipier digital pour remporter des appels d'offres, piloter les contrats et structurer la connaissance et l'expertise de vos projets.",
+    "domainSelection": "Comment puis-je vous aider ?",
     "projectSize": "Quelle est la taille de vos projets ?",
     "chooseUseCase": "Choisissez votre cas d'usage",
-    "discoverUseCase": "Découvrir ce cas d'usage",
+    "yourSelection": "Votre sélection :",
+    "availableUseCases": "Cas d'usage disponibles :",
+    "back": "← Retour",
     "tenderManagementTitle": "Je réponds à des appels d'offres",
     "tenderManagementDescription": "Optimisez vos réponses aux appels d'offres. Analysez les exigences, collaborez efficacement et maximisez vos chances de succès.",
     "contractExecutionTitle": "Je pilote des projets en exécution",
-    "contractExecutionDescription": "Pilotez vos projets en toute confiance. Suivi des livrables, conformité et gestion proactive des changements.",
-    "knowledgeManagementTitle": "Je structure la connaissance de mes experts",
-    "knowledgeManagementDescription": "Capitalisez sur vos savoirs et expériences passées. Accès rapide aux références, modèles et comparables pour chaque nouveau projet.",
-    "smallProjectTitle": "Petits projets (< 1M€)",
-    "mediumProjectTitle": "Projets moyens (1-10M€)",
-    "largeProjectTitle": "Grands projets (> 10M€)",
+    "contractExecutionDescription": "Gérez vos projets en toute confiance. Suivez les livrables, assurez la conformité et gérez les changements de manière proactive.",
+    "knowledgeManagementTitle": "Je structure le savoir de mes experts",
+    "knowledgeManagementDescription": "Capitalisez sur vos connaissances et expériences passées. Accès rapide aux références, modèles et comparables pour chaque nouveau projet.",
+    "smallProjectTitle": "Petits projets réguliers",
+    "smallProjectDescription": "Idéal pour les petites équipes et les besoins ciblés. Mise en place rapide, fonctionnalités essentielles.",
+    "mediumProjectTitle": "Projets moyennement complexes",
+    "mediumProjectDescription": "Un équilibre entre flexibilité et puissance. Outils complets pour des projets structurés et collaboratifs.",
+    "largeProjectTitle": "Grands projets complexes",
+    "largeProjectDescription": "Conçu pour les organisations complexes et à grande échelle. Solutions avancées, IA personnalisée et sécurité renforcée.",
+    "learnMore": "Je veux en savoir plus sur Aitenders",
+    "exploreSolutions": "Explorer nos solutions",
+    "discoverUseCase": "Découvrir ce cas d'usage",
+    "chatPlaceholder": "Interagissez avec le Chat Questions / Lancer le simulateur / Informations ?",
+    "chatTitle": "Discuter avec l'Assistant IA",
+    "ourUseCases": "Nos cas d'usage",
+    "simulationROI": "Simulation / ROI",
+    "aiAgents": "Agents IA",
+    "dataSecurity": "Sécurité des données",
+    "contactUs": "Contactez-nous",
+    "tenderProcess": "Processus d'appel d'offres",
+    "scheduleDemo": "Planifier une démo",
     "ucMetadata": {
       "UC1": {
-        "title": "Analyse intelligente d'appels d'offres",
-        "description": "Analysez automatiquement les documents d'appel d'offres pour identifier les exigences clés et optimiser vos réponses."
+        "title": "Accélérer les petits appels d'offres",
+        "description": "Appels d'offres pour petits projets"
       },
       "uc2test": {
-        "title": "Gestion collaborative des offres",
-        "description": "Coordonnez efficacement vos équipes lors de la préparation des réponses aux appels d'offres moyens."
+        "title": "Gestion des appels d'offres moyens",
+        "description": "Gestion des appels d'offres de taille moyenne"
       },
       "uc3": {
-        "title": "Stratégie d'offres grands projets",
-        "description": "Développez des stratégies gagnantes pour les appels d'offres de grande envergure."
+        "title": "Appels d'offres complexes multi-lots",
+        "description": "Appels d'offres complexes multi-lots"
       },
       "uc4": {
-        "title": "Suivi de petits contrats",
-        "description": "Pilotez efficacement l'exécution de vos petits contrats avec des outils adaptés."
+        "title": "Exécution de petits projets",
+        "description": "Exécution de petits projets"
       },
       "uc5": {
-        "title": "Gestion de contrats moyens",
-        "description": "Maîtrisez l'exécution de contrats de taille moyenne avec des processus optimisés."
+        "title": "Exécution de projets moyens",
+        "description": "Exécution de projets de taille moyenne"
       },
       "uc6": {
-        "title": "Pilotage grands contrats",
-        "description": "Gérez la complexité des grands contrats avec des outils de pilotage avancés."
+        "title": "Exécution de grands projets",
+        "description": "Exécution de grands projets"
       },
       "UC7": {
-        "title": "Base de connaissances projets",
-        "description": "Structurez et capitalisez sur les connaissances de vos équipes projet."
+        "title": "Gestion des connaissances pour petites structures",
+        "description": "Gestion des connaissances pour petites structures"
       },
       "UC8": {
-        "title": "Intelligence collective",
-        "description": "Exploitez l'expertise collective de votre organisation pour optimiser vos projets."
+        "title": "Gestion des connaissances pour grandes organisations",
+        "description": "Gestion des connaissances pour grandes organisations"
       }
     }
   },
-  "header": {
-    "navigation": [
-      {
-        "title": "Solutions",
-        "children": [
-          { "title": "Gestion d'appels d'offres", "href": "/solutions/tender-management" },
-          { "title": "Exécution de contrats", "href": "/solutions/contract-execution" },
-          { "title": "Gestion de connaissances", "href": "/solutions/knowledge-management" }
-        ]
-      },
-      {
-        "title": "Ressources",
-        "children": [
-          { "title": "Blog", "href": "/blog" },
-          { "title": "Documentation", "href": "/docs" },
-          { "title": "Support", "href": "/support" }
-        ]
-      }
-    ],
-    "requestDemo": "Demander une démo",
-    "menu": "Menu"
+  "uc1": {
+    "header_26": {
+      "title": "Une analyse go / no-go claire et immédiate",
+      "subtitle": "Analysez, validez et sécurisez vos projets rapides dès le premier jour avec l'IA pour gagner du temps et éviter les faux départs.",
+      "cta1": "Commencer",
+      "cta2": "En savoir plus"
+    },
+    "ai_copilot": {
+      "tag": "Validation Rapide",
+      "title": "Décidez du go / no-go en pleine confiance",
+      "subtitle": "Aitenders analyse vos dossiers en quelques minutes, priorise les points critiques et guide la validation pour garantir vos processus internes.",
+      "step1": "Analyse immédiate des documents",
+      "step2": "Vue claire et priorisée des risques",
+      "step3": "Validation guidée et archivage automatique"
+    },
+    "user_benefits": {
+      "you": "Vous",
+      "stat1_number": "",
+      "stat1_text": "économisez plusieurs jours de revue manuelle",
+      "stat2_number": "",
+      "stat2_text": "obtenez une décision go / no-go en moins de 48h",
+      "stat3_number": "",
+      "stat3_text": "gagnez une crédibilité immédiate en comité"
+    },
+    "offer_steps_headline": {
+      "title": "Nous accompagnons vos équipes à chaque étape de l'analyse"
+    },
+    "features": {
+      "feature1_tag": "Structuration Immédiate",
+      "feature1_title": "Analysez et priorisez vos documents dès le Jour 1",
+      "feature1_desc": "Les assistants IA détectent les critères d'intérêt, les points critiques et les preuves en quelques minutes. Le Bid Manager démarre sur une base claire et exploitable.",
+      "feature1_stat": "Décision go / no-go possible en quelques minutes",
+      "feature1_popup": "Grâce à l'analyse automatique, vos documents sont instantanément classifiés et priorisés. Les critères clés, points bloquants et preuves sont détectés et organisés. Le Bid Manager obtient une vision globale du projet et peut immédiatement identifier les risques potentiels pour décider rapidement d'un go / no-go.",
+      "feature2_tag": "Vision Centralisée",
+      "feature2_title": "Obtenez une vue claire et priorisée",
+      "feature2_desc": "Aitenders génère une synthèse visuelle centralisée avec les critères, les valeurs et les sources. Fini les centaines de pages ou les fichiers dispersés.",
+      "feature2_stat": "Revue interne prête en quelques minutes",
+      "feature2_popup": "La plateforme produit automatiquement une synthèse claire et hiérarchisée de tous les critères détectés. Chaque élément est lié à son document source. Les équipes n'ont plus besoin de parcourir des centaines de pages ou de jongler avec de multiples fichiers : tout est centralisé dans un tableau visuel et immédiatement exploitable.",
+      "feature3_tag": "Validation Guidée",
+      "feature3_title": "Validez et archivez chaque élément facilement",
+      "feature3_desc": "Confirmez, ajustez ou rejetez chaque point identifié par l'IA. Chaque validation est consignée et intégrée dans un dossier complet.",
+      "feature3_stat": "100% des validations tracées automatiquement",
+      "feature3_popup": "Aitenders guide les équipes dans une validation étape par étape. Chaque élément identifié est confirmé, ajusté ou rejeté, puis archivé avec preuve. Ce processus fluide remplace les vérifications manuelles et incertaines. Le résultat : un dossier probant, complet et traçable, sans zones d'ombre ni surcharge administrative."
+    },
+    "concrete_results": {
+      "title": "Des résultats concrets pour vos petites offres",
+      "stat1_number": "50-70%",
+      "stat1_text": "de temps gagné sur l'analyse",
+      "stat2_number": "100%",
+      "stat2_text": "des critères critiques vérifiés et tracés",
+      "stat3_number": "0",
+      "stat3_text": "escalades internes, crédibilité renforcée en comité",
+      "cta_button": "Lancer la simulation d'impact sur vos projets"
+    },
+    "portfolio": {
+      "title": "Déployé sur de nombreux projets",
+      "projects": [
+        {
+          "title": "Systématiser la découverte et le lancement de plus de 400 appels d'offres par an.",
+          "value": "400 AO / an",
+          "description": "CONTEXTE : Une équipe de 5 ingénieurs devant analyser plus de 400 appels d'offres par an dans le domaine de l'ingénierie conseil. Documents d'appel d'offres principalement en anglais, français et espagnol. Moyenne de 200 à 300 pages par appel d'offres. OBJECTIFS DU CLIENT : Gagner du temps dans l'identification des risques et anticiper les goulots d'étranglement. Identifier rapidement si nous devons faire appel à des partenaires/sous-traitants. Mobiliser l'équipe support. Identifier immédiatement les critères de Bid / No Bid. Identifier les principaux risques (techniques, financiers et juridiques). SOLUTION MISE EN ŒUVRE : Classification automatique des clauses par catégories. Capture des risques et opportunités clés. Exportation et intégration dans le processus existant. Note additionnelle : Mise en place : 2 heures. Formation de l'équipe limitée à 2 x 1h. RÉSULTATS : 20/30% DE TEMPS EN MOINS. -10/15H PAR PROJET. 300–500K€/AN",
+          "category": "Étude de cas",
+          "cta_text": "Lire la suite",
+          "imageSrc": "/images/Portfolio/Systematize%20the%20discovery%20and%20launch%20of%20over%20400%20tenders%20per%20year..jpg"
+        },
+        {
+          "title": "Extraire et produire la matrice de conformité des exigences pour un appel d'offres de 40M€.",
+          "value": "Appel d'offres de 40M€",
+          "description": "CONTEXTE : Le projet était un projet partiel pour la fourniture d'un système de traction de métro intégré pour une nouvelle ligne de métro en France. Le client devait identifier plus de 2 000 exigences dans environ 50 documents techniques différents. L'équipe était composée de 10 personnes, impliquant 3 Business Units différentes. OBJECTIFS DU CLIENT : Identifier et stocker immédiatement et correctement toutes les exigences identifiées par le client. Identifier d'autres exigences ayant un impact sur le périmètre et le chiffrage de l'offre. Permettre à l'équipe d'avoir une revue commune standardisée et simplifiée autour de toutes les exigences. Livrer rapidement une matrice de conformité entièrement revue et précise à leurs clients. SOLUTION MISE EN ŒUVRE : Détection des exigences. Classification PBS, WBS. Importation des réponses – Association des questions. Analyse d'écart de version (V1 > V2). Couverture des exigences. Note additionnelle : Une session pour les Directeurs de Projet (1h) pour lancer l'organisation du projet. 1h de formation pour le reste de l'équipe (9 membres). RÉSULTATS : MATRICE DE CONFORMITÉ LIVRÉE SANS LACUNES. ENVIRON 30% DE TEMPS EN MOINS SUR L'ENSEMBLE DU PROCESSUS",
+          "category": "Étude de cas",
+          "cta_text": "Lire la suite",
+          "imageSrc": "/images/Portfolio/Extract%20and%20produce%20the%20requirement%20compliance%20matrix%20for%20a%20€40M%20tender..jpg"
+        },
+        {
+          "title": "Automatisez votre Bid / No Bid : Passez de 7 000 opportunités à 700 appels d'offres bien qualifiés !",
+          "value": "7000 opportunités / an",
+          "description": "CONTEXTE : Notre client reçoit plus de 7 000 opportunités par an par email d'un logiciel de sourcing. Le système de filtrage existant est inefficace car il est basé sur quelques mots-clés génériques. Les responsables d'appels d'offres doivent ouvrir chaque appel d'offres et lire les premières pages pour voir s'il y a un potentiel pour être un contractant principal ou un sous-traitant sur le projet. OBJECTIFS DU CLIENT : Réduire considérablement le temps moyen passé sur le processus de sélection (actuellement 1 heure par appel d'offres). Identifier immédiatement les 40 suspects habituels qui donnent un haut niveau de certitude pour décider du Bid / No Bid. SOLUTION MISE EN ŒUVRE : Détection de plus de 40 points clés en 5 minutes au lieu de plusieurs heures. Analyse des risques sur des sujets comme la finance, le contrat, le juridique... Note additionnelle : Aucun effort grâce à l'utilisation du standard Aitenders pour la détection des risques Bid / No Bid (+400 critères). Personnalisation : quelques heures. Modèles de détection spécifiques : 3 semaines. RÉSULTATS : 95% DE TEMPS GAGNÉ SUR L'IDENTIFICATION DES POINTS CLÉS. PLUS DE CAPACITÉ POUR UNE MEILLEURE SÉLECTION. +1 000 HEURES GAGNÉES PAR AN",
+          "category": "Étude de cas",
+          "cta_text": "Lire la suite",
+          "imageSrc": "/images/Portfolio/Automate%20your%20Bid%20No%20Bid%20Go%20from%207,000%20opportunities%20to%20700%20well-qualified%20tenders!.jpg"
+        },
+        {
+          "title": "Gestion des exigences pour un appel d'offres Design & Build de 10Mds€ – Consortium de 15 entreprises.",
+          "value": "Appel d'offres de 10Mds€",
+          "description": "CONTEXTE : La ligne 15 du métro de Paris est un appel d'offres Design & Build de 2 ans, d'une valeur estimée à environ 10Mds€. Notre client est le Consortium, comprenant NGE, Webuilt, Equans, et tous leurs partenaires (architectes, bureaux d'études, sous-traitants, etc.). OBJECTIFS DU CLIENT : Assurer l'efficacité dans la répartition du périmètre de travail entre les 15 entités différentes du consortium. Produire une matrice de conformité des exigences sans faille. Suivre et identifier collectivement les impacts des changements liés aux questions/réponses. Identifier les changements de version et analyser collectivement leurs impacts. SOLUTION MISE EN ŒUVRE : Détection et extraction automatiques des exigences. Classification automatique. Périmètre et baseline collaboratifs. Détection automatique des changements de version. Importation des Q&R et analyse d'impact. Note additionnelle : Session de formation de 2 heures pour les 150 membres de l'équipe. 2 heures de formation pour 10 managers. RÉSULTATS : MILLIERS DE JOURS-HOMMES GAGNÉS. MOINS DE RISQUES. ASSURER UN HAUT NIVEAU DE CONFORMITÉ",
+          "category": "Étude de cas",
+          "cta_text": "Lire la suite",
+          "imageSrc": "/images/Portfolio/Requirement%20management%20for%20a%20€10Bn%20Design%20&%20Build%20tender%20–%20Consortium%20of%2015%20companies..jpg"
+        }
+      ]
+    },
+    "team_20": {
+      "tag": "Confiance Supplémentaire",
+      "title": "Options complémentaires pour sécuriser vos petites offres",
+      "description": "Au-delà de l'analyse principale, découvrez des fonctions intégrées qui simplifient les revues, renforcent la conformité et fiabilisent vos validations.",
+      "cards": [
+        {
+          "title": "Dossier de Preuves",
+          "description": "Utilisez un dossier de validation complet avec sources et historique, prêt pour les comités ou les audits.",
+          "iconSrc": "/images/Auto evidence pack.svg"
+        },
+        {
+          "title": "Détection des Changements",
+          "description": "Identifiez instantanément les modifications entre les versions de documents, avec les impacts tracés sur les critères.",
+          "iconSrc": "/images/Change Detection.svg"
+        },
+        {
+          "title": "Alertes de Conformité",
+          "description": "Recevez une notification si un critère reste non validé pour éviter tout oubli avant la soumission.",
+          "iconSrc": "/images/Compliance Alerts.svg"
+        },
+        {
+          "title": "Accès Sécurisé",
+          "description": "Définissez les droits par rôle pour les managers, assistants ou relecteurs afin de garder le contrôle des validations.",
+          "iconSrc": "/images/Secure Access.svg"
+        },
+        {
+          "title": "Rapports Exportables",
+          "description": "Générez des rapports clairs et formatés de toutes vos vérifications et validations, prêts à être partagés.",
+          "iconSrc": "/images/Report Export.svg"
+        },
+        {
+          "title": "Commentaires Partagés",
+          "description": "Ajoutez des annotations sur les critères ou les documents pour faciliter la collaboration lors des revues.",
+          "iconSrc": "/images/Shared Comments.svg"
+        }
+      ]
+    }
   },
   "uc2test": {
     "header_26": {
-      "title": "Votre offre, 100% claire, 0% surprises",
-      "subtitle": "Découvrez, pilotez et sécurisez chaque clause dès le premier jour.",
-      "cta1": "Démarrer",
+      "title": "Votre offre, 100% claire, 0% de surprises",
+      "subtitle": "Découvrez, gérez et sécurisez chaque clause dès le premier jour.",
+      "cta1": "Commencer",
       "cta2": "En savoir plus"
     },
     "scrolling_logos": {
-      "title": "Approuvé par les Leaders de l'Industrie"
+      "title": "Approuvé par les leaders de l'industrie"
     },
     "ai_copilot": {
       "tag": "Agents IA",
-      "title": "Votre copilote IA qui sécurise la gestion de vos projets moyens",
-      "subtitle": "La seule plateforme conçue pour transformer des dossiers moyens (1 à 10 M€) en une vision contractuelle claire dès le premier jour.",
+      "title": "Votre copilote IA qui sécurise la gestion de vos projets de taille moyenne",
+      "subtitle": "La seule plateforme conçue pour transformer les dossiers de taille moyenne (1M€ à 10M€) en une vision contractuelle claire dès le premier jour.",
       "step1": "Structuration du projet avec l'IA",
       "step2": "Détection immédiate des clauses critiques",
-      "step3": "Pilotage dynamique des Q&A et versions."
+      "step3": "Gestion dynamique des Q&R et des versions."
     },
     "user_benefits": {
       "you": "Vous",
@@ -98,77 +269,77 @@
       "stat2_number": "",
       "stat2_text": "sécurisez chaque clause critique",
       "stat3_number": "",
-      "stat3_text": "maîtrisez Q&A et versions"
+      "stat3_text": "maîtrisez les Q&R et les versions"
     },
     "offer_steps_headline": {
       "title": "Nous accompagnons les équipes à chaque étape de l'offre"
     },
     "features": {
-      "feature1_tag": "Cockpit opérationnel dès J+1",
+      "feature1_tag": "Cockpit Opérationnel dès le Jour 1",
       "feature1_title": "Structuration automatique du projet",
-      "feature1_desc": "L’IA analyse vos AO, mappe chaque exigence et offre une vision claire du périmètre.",
-      "feature1_stat": "des documents structurés, transformés en Jumeaux numérique",
-      "feature1_popup": "L'IA d'Aitenders analyse instantanément vos documents d'appel d'offres et structure automatiquement le périmètre, identifie les lots, détecte les interfaces critiques et mappe chaque exigence. Vos équipes commencent avec une vision claire et complète du project.",
+      "feature1_desc": "L'IA analyse vos AO, cartographie chaque exigence et fournit une vision claire du périmètre.",
+      "feature1_stat": "des documents structurés, transformés en Jumeau Numérique",
+      "feature1_popup": "L'IA d'Aitenders analyse instantanément vos documents d'appel d'offres et structure automatiquement le périmètre, identifie les lots, détecte les interfaces critiques et cartographie chaque exigence. Vos équipes démarrent avec une vision claire et complète du projet.",
       "feature2_tag": "Zéro clause oubliée",
       "feature2_title": "Contrôlez chaque clause critique",
-      "feature2_desc": "Suivi continu des pénalités, responsabilités et délais. Chaque modification est signalée avec impact mesuré.",
-      "feature2_popup": "Aitenders supervise et analyse en continu chaque clause sensible : pénalités, responsabilités, délais critiques et conditions particulières. Chaque modification est tracée, chaque impact évalué automatiquement.",
+      "feature2_desc": "Surveillance continue des pénalités, responsabilités et délais. Chaque modification est signalée avec un impact mesuré.",
+      "feature2_popup": "Aitenders surveille et analyse en continu chaque clause sensible : pénalités, responsabilités, délais critiques et conditions particulières. Chaque modification est suivie, chaque impact automatiquement évalué.",
       "feature3_tag": "Historique contractuel maîtrisé",
       "feature3_title": "Maîtrisez chaque évolution contractuelle",
-      "feature3_desc": "Q&A, versions et amendements centralisés, avec traçabilité complète des évolutions.",
-      "feature3_popup": "Gérez dynamiquement vos Q&A, versions successives et avenants dans un environnement centralisé. Aitenders maintient la cohérence globale et alerte sur les impacts de chaque modification."
+      "feature3_desc": "Q&R, versions et avenants centralisés, avec une traçabilité complète des changements.",
+      "feature3_popup": "Gérez dynamiquement vos Q&R, versions successives et avenants dans un environnement centralisé. Aitenders maintient une cohérence globale et alerte sur les impacts de chaque modification."
     },
     "concrete_results": {
       "title": "Des résultats concrets pour vos équipes",
       "stat1_number": "-50%",
-      "stat1_text": "du temps d'analyse initiale.",
+      "stat1_text": "du temps d'analyse initial.",
       "stat2_number": "100%",
       "stat2_text": "des clauses critiques identifiées et priorisées.",
       "stat3_number": "0",
-      "stat3_text": "surprise de dernière minute.",
-      "cta_button": "Lancez la simulation de l’impact pour vos propres projets"
+      "stat3_text": "surprises de dernière minute.",
+      "cta_button": "Lancer la simulation d'impact pour vos propres projets"
     },
     "portfolio": {
       "title": "Déployé sur de nombreux projets",
       "projects": [
         {
-          "title": "Systématiser la découverte et le lancement de plus de 400 offres par an.",
-          "value": "400 offres / an",
-          "description": "CONTEXTE : Équipe de 5 ingénieurs devant analyser plus de 400 appels d’offres par an dans le domaine de l’ingénierie de conseil. Documents d’appel d’offres principalement en anglais, français et espagnol. Moyenne de 200 à 300 pages par appel d’offres. OBJECTIFS DU CLIENT : Gagner du temps dans l’identification des risques et anticiper les goulots d’étranglement. Identifier rapidement si nous devons mobiliser des partenaires/sous-traitants. Mobilisation de l’équipe de support. Identifier immédiatement les critères Bid / No Bid. Identifier les principaux risques (techniques, financiers et juridiques). SOLUTION MISE EN ŒUVRE : Classification automatique des clauses par catégories. Capture des risques et opportunités clés. Exportation et intégration dans le processus existant. Note additionnelle : Mise en place : 2 heures. Formation de l’équipe limitée à 2 × 1h. RÉSULTATS : 20/30 % DE TEMPS EN MOINS. -10/15H PAR PROJET. 300–500 K€/AN",
-          "category": "Étude de Cas",
+          "title": "Systématiser la découverte et le lancement de plus de 400 appels d'offres par an.",
+          "value": "400 AO / an",
+          "description": "CONTEXTE : Une équipe de 5 ingénieurs devant analyser plus de 400 appels d'offres par an dans le domaine de l'ingénierie conseil. Documents d'appel d'offres principalement en anglais, français et espagnol. Moyenne de 200 à 300 pages par appel d'offres. OBJECTIFS DU CLIENT : Gagner du temps dans l'identification des risques et anticiper les goulots d'étranglement. Identifier rapidement si nous devons faire appel à des partenaires/sous-traitants. Mobiliser l'équipe support. Identifier immédiatement les critères de Bid / No Bid. Identifier les principaux risques (techniques, financiers et juridiques). SOLUTION MISE EN ŒUVRE : Classification automatique des clauses par catégories. Capture des risques et opportunités clés. Exportation et intégration dans le processus existant. Note additionnelle : Mise en place : 2 heures. Formation de l'équipe limitée à 2 x 1h. RÉSULTATS : 20/30% DE TEMPS EN MOINS. -10/15H PAR PROJET. 300–500K€/AN",
+          "category": "Étude de cas",
           "cta_text": "Lire la suite",
           "imageSrc": "/images/Portfolio/Systematize%20the%20discovery%20and%20launch%20of%20over%20400%20tenders%20per%20year..jpg"
         },
         {
-          "title": "Extraire et produire la matrice de conformité des exigences sur un appel d’offres de 40 M€.",
-          "value": "Offre 40M€",
-          "description": "CONTEXTE : Le projet était un projet partiel pour la fourniture d’un système de traction métro intégré pour une nouvelle ligne de métro en France. Le client devait identifier plus de 2 000 exigences dans environ 50 documents techniques différents. L’équipe comptait 10 personnes, impliquant 3 Business Units différentes. OBJECTIFS DU CLIENT : Identifier et stocker immédiatement et correctement toutes les exigences identifiées par le client. Identifier les autres exigences impactant le périmètre et le chiffrage de l’offre. Permettre à l’équipe d’avoir une revue commune standardisée et simplifiée autour de toutes les exigences. Livrer rapidement une matrice de conformité totalement revue et précise à leurs clients. SOLUTION MISE EN ŒUVRE : Détection des exigences. Classification PBS, WBS. Importation des réponses – Association des questions. Analyse des écarts de version (V1 > V2). Couverture des exigences. Note additionnelle : Une session pour les Directeurs de Projet (1h) afin de lancer l’organisation du projet. 1h de formation pour le reste de l’équipe (9 membres). RÉSULTATS : MATRICE DE CONFORMITÉ LIVRÉE SANS LACUNES. ENVIRON 30 % DE TEMPS EN MOINS SUR L’ENSEMBLE DU PROCESSUS",
-          "category": "Étude de Cas",
+          "title": "Extraire et produire la matrice de conformité des exigences pour un appel d'offres de 40M€.",
+          "value": "Appel d'offres de 40M€",
+          "description": "CONTEXTE : Le projet était un projet partiel pour la fourniture d'un système de traction de métro intégré pour une nouvelle ligne de métro en France. Le client devait identifier plus de 2 000 exigences dans environ 50 documents techniques différents. L'équipe était composée de 10 personnes, impliquant 3 Business Units différentes. OBJECTIFS DU CLIENT : Identifier et stocker immédiatement et correctement toutes les exigences identifiées par le client. Identifier d'autres exigences ayant un impact sur le périmètre et le chiffrage de l'offre. Permettre à l'équipe d'avoir une revue commune standardisée et simplifiée autour de toutes les exigences. Livrer rapidement une matrice de conformité entièrement revue et précise à leurs clients. SOLUTION MISE EN ŒUVRE : Détection des exigences. Classification PBS, WBS. Importation des réponses – Association des questions. Analyse d'écart de version (V1 > V2). Couverture des exigences. Note additionnelle : Une session pour les Directeurs de Projet (1h) pour lancer l'organisation du projet. 1h de formation pour le reste de l'équipe (9 membres). RÉSULTATS : MATRICE DE CONFORMITÉ LIVRÉE SANS LACUNES. ENVIRON 30% DE TEMPS EN MOINS SUR L'ENSEMBLE DU PROCESSUS",
+          "category": "Étude de cas",
           "cta_text": "Lire la suite",
           "imageSrc": "/images/Portfolio/Extract%20and%20produce%20the%20requirement%20compliance%20matrix%20for%20a%20€40M%20tender..jpg"
         },
         {
-          "title": "Automatisez votre Bid / No Bid : Passez de 7 000 opportunités à 700 offres bien qualifiées !",
+          "title": "Automatisez votre Bid / No Bid : Passez de 7 000 opportunités à 700 appels d'offres bien qualifiés !",
           "value": "7000 opportunités / an",
-          "description": "CONTEXTE : Notre client reçoit par mail plus de 7 000 opportunités par an depuis un logiciel de sourcing. Le système de filtrage en place est inefficace car basé sur quelques mots-clés génériques. Les responsables des appels d’offres doivent ouvrir chaque appel d’offres et lire les premières pages pour voir s’il existe un potentiel d’être contractant principal ou sous-traitant sur le projet. OBJECTIFS DU CLIENT : Réduire drastiquement le temps moyen passé sur le processus de sélection (actuellement 1 heure par appel d’offres). Identifier immédiatement les 40 suspects habituels qui donnent un haut niveau de certitude pour décider du Bid / No Bid. SOLUTION MISE EN ŒUVRE : Détection de plus de 40 points clés en 5 minutes au lieu de plusieurs heures. Analyse des risques sur des sujets comme la finance, le contrat, le juridique… Note additionnelle : Aucun effort grâce à l’utilisation du standard Atenders pour la détection des risques Bid / No Bid (+400 critères). Personnalisation : quelques heures. Modèles spécifiques de détection : 3 semaines. RÉSULTATS : 95 % DE TEMPS GAGNÉ SUR L’IDENTIFICATION DES POINTS CLÉS. PLUS DE CAPACITÉ POUR UNE MEILLEURE SÉLECTION. +1 000 HEURES D’ÉCONOMIES PAR AN",
-          "category": "Étude de Cas",
+          "description": "CONTEXTE : Notre client reçoit plus de 7 000 opportunités par an par email d'un logiciel de sourcing. Le système de filtrage existant est inefficace car il est basé sur quelques mots-clés génériques. Les responsables d'appels d'offres doivent ouvrir chaque appel d'offres et lire les premières pages pour voir s'il y a un potentiel pour être un contractant principal ou un sous-traitant sur le projet. OBJECTIFS DU CLIENT : Réduire considérablement le temps moyen passé sur le processus de sélection (actuellement 1 heure par appel d'offres). Identifier immédiatement les 40 suspects habituels qui donnent un haut niveau de certitude pour décider du Bid / No Bid. SOLUTION MISE EN ŒUVRE : Détection de plus de 40 points clés en 5 minutes au lieu de plusieurs heures. Analyse des risques sur des sujets comme la finance, le contrat, le juridique... Note additionnelle : Aucun effort grâce à l'utilisation du standard Aitenders pour la détection des risques Bid / No Bid (+400 critères). Personnalisation : quelques heures. Modèles de détection spécifiques : 3 semaines. RÉSULTATS : 95% DE TEMPS GAGNÉ SUR L'IDENTIFICATION DES POINTS CLÉS. PLUS DE CAPACITÉ POUR UNE MEILLEURE SÉLECTION. +1 000 HEURES GAGNÉES PAR AN",
+          "category": "Étude de cas",
           "cta_text": "Lire la suite",
-          "imageSrc": "/images/Portfolio/Automate%20your%20Bid%20No%20Bid%20Go%20from%207,000%20opportunities%20to%20700%20well-qualified%20tenders!..jpg"
+          "imageSrc": "/images/Portfolio/Automate%20your%20Bid%20No%20Bid%20Go%20from%207,000%20opportunities%20to%20700%20well-qualified%20tenders!.jpg"
         },
         {
-          "title": "Gestion des exigences pour un appel d’offres Design & Build de 10 Md€ – Consortium de 15 entreprises.",
-          "value": "Offre 10 Md€",
-          "description": "CONTEXTE : La ligne 15 du métro parisien est un appel d’offres Design & Build sur 2 ans, d’une valeur estimée à environ 10 Md€. Notre client est le Consortium, comprenant NGE, Webuilt, Equans et tous leurs partenaires (architectes, bureaux d’études, sous-traitants, etc.). OBJECTIFS DU CLIENT : Assurer l’efficacité dans la répartition du périmètre de travail entre les 15 entités différentes du consortium. Produire une matrice de conformité des exigences sans failles. Suivre et identifier collectivement les impacts des changements liés aux questions/réponses. Identifier les changements de versions et en analyser collectivement les impacts. SOLUTION MISE EN ŒUVRE : Détection et extraction automatique des exigences. Classification automatique. Périmètre et base de référence collaboratifs. Détection automatique des changements de version. Importation des Q&A et analyse des impacts. Note additionnelle : Session de formation de 2 heures pour les 150 membres de l’équipe. 2 heures de formation pour 10 managers. RÉSULTATS : MILLIERS DE JOURS/HOMMES ÉCONISÉS. MOINS DE RISQUES. ASSURER UN HAUT NIVEAU DE CONFORMITÉ",
-          "category": "Étude de Cas",
+          "title": "Gestion des exigences pour un appel d'offres Design & Build de 10Mds€ – Consortium de 15 entreprises.",
+          "value": "Appel d'offres de 10Mds€",
+          "description": "CONTEXTE : La ligne 15 du métro de Paris est un appel d'offres Design & Build de 2 ans, d'une valeur estimée à environ 10Mds€. Notre client est le Consortium, comprenant NGE, Webuilt, Equans, et tous leurs partenaires (architectes, bureaux d'études, sous-traitants, etc.). OBJECTIFS DU CLIENT : Assurer l'efficacité dans la répartition du périmètre de travail entre les 15 entités différentes du consortium. Produire une matrice de conformité des exigences sans faille. Suivre et identifier collectivement les impacts des changements liés aux questions/réponses. Identifier les changements de version et analyser collectivement leurs impacts. SOLUTION MISE EN ŒUVRE : Détection et extraction automatiques des exigences. Classification automatique. Périmètre et baseline collaboratifs. Détection automatique des changements de version. Importation des Q&R et analyse d'impact. Note additionnelle : Session de formation de 2 heures pour les 150 membres de l'équipe. 2 heures de formation pour 10 managers. RÉSULTATS : MILLIERS DE JOURS-HOMMES GAGNÉS. MOINS DE RISQUES. ASSURER UN HAUT NIVEAU DE CONFORMITÉ",
+          "category": "Étude de cas",
           "cta_text": "Lire la suite",
           "imageSrc": "/images/Portfolio/Requirement%20management%20for%20a%20€10Bn%20Design%20&%20Build%20tender%20–%20Consortium%20of%2015%20companies..jpg"
         }
       ]
     },
     "team_20": {
-      "tag": "Impact additionnel",
-      "title": "Augmentez encore plus vos équipes",
-      "description": "Sur les offres semie-complexe, découvrez des fonctionnalités qui ajoutent une dimension stratégique à votre développement commercial.",
+      "tag": "Impact Additionnel",
+      "title": "Donnez plus de pouvoir à vos équipes",
+      "description": "Pour les offres semi-complexes, découvrez des fonctionnalités qui ajoutent une dimension stratégique à votre développement commercial.",
       "cards": [
         {
           "title": "Analyse Sémantique",
@@ -181,13 +352,13 @@
           "iconSrc": "/images/Risk Scoring.svg"
         },
         {
-          "title": "Génération de Synthèse",
+          "title": "Génération de Résumé",
           "description": "Obtenez des résumés clairs et concis des points clés de vos projets en quelques secondes.",
           "iconSrc": "/images/Summary Generation.svg"
         },
         {
-          "title": "Compliance Automatisée",
-          "description": "Vérifiez la conformité de vos documents par rapport aux standards et régulations en vigueur.",
+          "title": "Conformité Automatisée",
+          "description": "Vérifiez la conformité de vos documents par rapport aux normes et réglementations en vigueur.",
           "iconSrc": "/images/Automated Compliance.svg"
         },
         {
@@ -196,147 +367,147 @@
           "iconSrc": "/images/Strategic Recommendations.svg"
         },
         {
-          "title": "Rédaction connectée au savoir",
-          "description": "Réutilisez et adaptez vos contenus validés issus de la base de connaissances et des projets passés pour plus de cohérence et de rapidité.",
+          "title": "Rédaction Liée au Savoir",
+          "description": "Réutilisez et adaptez votre contenu validé depuis la base de connaissances et les projets passés pour plus de cohérence et de rapidité.",
           "iconSrc": "/images/Knowledge-Linked Writing.svg"
         }
       ]
     },
     "cta": {
-      "title": "Découvrez comment Aitenders répond exactement à vos besoins",
+      "title": "Découvrez comment Aitenders répond à vos besoins exacts",
       "subtitle": "Pas de démo générique. Pas de spam commercial. Juste trois questions rapides.",
-      "card_title": "AI Tender Assistant",
+      "card_title": "Assistant d'Appel d'Offres IA",
       "card_message": "Bonjour ! Je vais vous aider à trouver la solution Aitenders idéale pour votre équipe. Quel est votre secteur d'activité ?",
-      "card_button": "Cliquez pour démarrer votre évaluation personnalisée..."
+      "card_button": "Cliquez pour commencer votre évaluation personnalisée..."
     }
   },
   "uc3": {
     "header_26": {
       "title": "Chaque exigence maîtrisée, chaque risque sous contrôle",
-      "subtitle": "Analysez, validez et sécurisez vos appels d’offres complexes dès le premier jour.",
-      "cta1": "Démarrer",
+      "subtitle": "Analysez, validez et sécurisez vos appels d'offres complexes dès le premier jour.",
+      "cta1": "Commencer",
       "cta2": "En savoir plus"
     },
     "scrolling_logos": {
       "title": "Utilisé par les leaders de l'ingénierie et de la construction"
     },
     "ai_copilot": {
-      "tag": "Zero blind spots",
-      "title": "L’IA qui élimine omissions, incohérences et retards dans vos grands appels d’offres",
-      "subtitle": "La seule plateforme conçue pour sécuriser la conformité et accélérer vos réponses dès le premier jour.",
-      "step1": "Analyse intelligente des milliers de pages et capture des exigences",
-      "step2": "Détection immédiate des omissions, incohérences et risques de rejet",
-      "step3": "Pilotage collaboratif de chaque évolution pour une offre solide et compétitive"
+      "tag": "Zéro angle mort",
+      "title": "L'IA qui élimine les oublis, les incohérences et les retards dans vos grands appels d'offres",
+      "subtitle": "La seule plateforme conçue pour garantir la conformité et accélérer vos réponses dès le premier jour.",
+      "step1": "Analyse intelligente de milliers de pages et capture des exigences",
+      "step2": "Détection immédiate des oublis, incohérences et risques de rejet",
+      "step3": "Gestion collaborative de chaque évolution pour une offre solide et compétitive"
     },
     "user_benefits": {
       "you": "Vous",
       "stat1_number": "",
-      "stat1_text": "démarrez avec une donnée claire",
+      "stat1_text": "démarrez avec des données claires",
       "stat2_number": "",
       "stat2_text": "collaborez sans friction entre experts",
       "stat3_number": "",
-      "stat3_text": "maîtrisez chaque évolution en confiance"
+      "stat3_text": "maîtrisez chaque évolution avec confiance"
     },
     "offer_steps_headline": {
-      "title": "Nous guidons vos équipes dans chaque étape des appels d’offres complexes"
+      "title": "Nous guidons vos équipes à chaque étape des appels d'offres complexes"
     },
     "features": {
-      "feature1_tag": "Base intelligente prête dès J+1",
+      "feature1_tag": "Base intelligente prête dès le Jour 1",
       "feature1_title": "Démarrez avec des données structurées et intelligentes",
-      "feature1_desc": "Grâce aux assistants IA, vos documents sont automatiquement organisés en base de données : exigences identifiées, points clés résumés, similitudes et contradictions détectées. L’équipe projet commence sur une base claire, prête pour l’analyse, sans traitement manuel initial.",
+      "feature1_desc": "Grâce aux assistants IA, vos documents sont automatiquement organisés en base de données : exigences identifiées, points clés résumés, similitudes et contradictions détectées. L'équipe projet démarre sur une base claire, prête pour l'analyse, sans traitement manuel initial.",
       "feature1_stat": "100% des exigences détectées et organisées dès le départ",
-      "feature1_popup": "L’IA d’Aitenders structure automatiquement vos dossiers, classe les informations, identifie les exigences et résume les points critiques. Le bid manager met ainsi à disposition une base intelligible et exploitable, évitant des jours de traitement manuel.",
+      "feature1_popup": "L'IA d'Aitenders structure automatiquement vos dossiers, classifie l'information, identifie les exigences et résume les points critiques. Le bid manager fournit ainsi une base intelligible et exploitable, évitant des jours de traitement manuel.",
       "feature2_tag": "Collaboration structurée",
-      "feature2_title": "Assurez la conformité initiale sans friction",
-      "feature2_desc": "Aitenders génère automatiquement la matrice de conformité, affecte les exigences aux experts et structure les livrables attendus. Chaque expert connaît son périmètre, les zones de risque apparaissent clairement, et la stratégie de réponse se construit en équipe.",
-      "feature2_stat": "0 perte d’information dans la collaboration",
-      "feature2_popup": "La plateforme permet une collaboration fluide entre experts grâce à une matrice de conformité dynamique. Les tâches sont distribuées automatiquement, les angles morts visibles et la réponse consolidée collectivement, sans dépendre de fichiers Excel fragmentés.",
-      "feature3_tag": "Évolutions maîtrisées",
-      "feature3_title": "Pilotez chaque changement, sans rien manquer",
-      "feature3_desc": "Les modifications sont détectées et versionnées automatiquement. Les écarts sont signalés instantanément, permettant de mesurer leur impact et d’agir sans délai. Q&A, versions et amendements sont centralisés pour garantir une offre cohérente et conforme.",
+      "feature2_title": "Assurez une conformité initiale sans friction",
+      "feature2_desc": "Aitenders génère automatiquement la matrice de conformité, assigne les exigences aux experts et structure les livrables attendus. Chaque expert connaît son périmètre, les zones de risque sont clairement visibles et la stratégie de réponse se construit en équipe.",
+      "feature2_stat": "0 perte d'information dans la collaboration",
+      "feature2_popup": "La plateforme permet une collaboration fluide entre experts grâce à une matrice de conformité dynamique. Les tâches sont distribuées automatiquement, les angles morts sont visibles et la réponse est consolidée collectivement, sans dépendre de fichiers Excel fragmentés.",
+      "feature3_tag": "Évolutions contrôlées",
+      "feature3_title": "Gérez chaque changement, sans rien manquer",
+      "feature3_desc": "Les modifications sont détectées et versionnées automatiquement. Les écarts sont signalés instantanément, permettant de mesurer leur impact et d'agir sans délai. Q&R, versions et avenants sont centralisés pour garantir une offre cohérente et conforme.",
       "feature3_stat": "100% des changements détectés et tracés",
-      "feature3_popup": "Document evolutions are automatically compared, discrepancies flagged, and impacts assessed in real-time. The bid manager can thus correct issues upfront, avoid omissions and inconsistencies, and ensure flawless version management."
+      "feature3_popup": "Les évolutions des documents sont comparées automatiquement, les écarts signalés et les impacts évalués en temps réel. Le bid manager peut ainsi corriger les problèmes en amont, éviter les oublis et incohérences, et assurer une gestion de version sans faille."
     },
     "concrete_results": {
-      "title": "Des résultats concrets pour vos appels d’offres complexes",
+      "title": "Des résultats concrets pour vos appels d'offres complexes",
       "stat1_number": "90%",
-      "stat1_text": "du travail de structuration et d’organisation réalisé dès le premier jour",
+      "stat1_text": "du travail de structuration et d'organisation fait dès le premier jour",
       "stat2_number": "100%",
       "stat2_text": "des exigences critiques couvertes et tracées dans la matrice dynamique",
       "stat3_number": "0",
-      "stat3_text": "risque de rejet lié à une non-conformité formelle",
-      "cta_button": "Lancez la simulation de l’impact pour vos propres projets"
+      "stat3_text": "risque de rejet pour non-conformité formelle",
+      "cta_button": "Lancer la simulation d'impact pour vos propres projets"
     },
     "portfolio": {
       "title": "Exemples de projets complexes gérés",
       "projects": [
         {
-          "title": "Systématiser la découverte et le lancement de plus de 400 offres par an.",
-          "value": "400 offres / an",
-          "description": "CONTEXTE : Équipe de 5 ingénieurs devant analyser plus de 400 appels d’offres par an dans le domaine de l’ingénierie de conseil. Documents d’appel d’offres principalement en anglais, français et espagnol. Moyenne de 200 à 300 pages par appel d’offres. OBJECTIFS DU CLIENT : Gagner du temps dans l’identification des risques et anticiper les goulots d’étranglement. Identifier rapidement si nous devons mobiliser des partenaires/sous-traitants. Mobilisation de l’équipe de support. Identifier immédiatement les critères Bid / No Bid. Identifier les principaux risques (techniques, financiers et juridiques). SOLUTION MISE EN ŒUVRE : Classification automatique des clauses par catégories. Capture des risques et opportunités clés. Exportation et intégration dans le processus existant. Note additionnelle : Mise en place : 2 heures. Formation de l’équipe limitée à 2 × 1h. RÉSULTATS : 20/30 % DE TEMPS EN MOINS. -10/15H PAR PROJET. 300–500 K€/AN",
-          "category": "Étude de Cas",
+          "title": "Systématiser la découverte et le lancement de plus de 400 appels d'offres par an.",
+          "value": "400 AO / an",
+          "description": "CONTEXTE : Une équipe de 5 ingénieurs devant analyser plus de 400 appels d'offres par an dans le domaine de l'ingénierie conseil. Documents d'appel d'offres principalement en anglais, français et espagnol. Moyenne de 200 à 300 pages par appel d'offres. OBJECTIFS DU CLIENT : Gagner du temps dans l'identification des risques et anticiper les goulots d'étranglement. Identifier rapidement si nous devons faire appel à des partenaires/sous-traitants. Mobiliser l'équipe support. Identifier immédiatement les critères de Bid / No Bid. Identifier les principaux risques (techniques, financiers et juridiques). SOLUTION MISE EN ŒUVRE : Classification automatique des clauses par catégories. Capture des risques et opportunités clés. Exportation et intégration dans le processus existant. Note additionnelle : Mise en place : 2 heures. Formation de l'équipe limitée à 2 x 1h. RÉSULTATS : 20/30% DE TEMPS EN MOINS. -10/15H PAR PROJET. 300–500K€/AN",
+          "category": "Étude de cas",
           "cta_text": "Lire la suite",
           "imageSrc": "/images/Portfolio/Systematize%20the%20discovery%20and%20launch%20of%20over%20400%20tenders%20per%20year..jpg"
         },
         {
-          "title": "Extraire et produire la matrice de conformité des exigences sur un appel d’offres de 40 M€.",
-          "value": "Offre 40M€",
-          "description": "CONTEXTE : Le projet était un projet partiel pour la fourniture d’un système de traction métro intégré pour une nouvelle ligne de métro en France. Le client devait identifier plus de 2 000 exigences dans environ 50 documents techniques différents. L’équipe comptait 10 personnes, impliquant 3 Business Units différentes. OBJECTIFS DU CLIENT : Identifier et stocker immédiatement et correctement toutes les exigences identifiées par le client. Identifier les autres exigences impactant le périmètre et le chiffrage de l’offre. Permettre à l’équipe d’avoir une revue commune standardisée et simplifiée autour de toutes les exigences. Livrer rapidement une matrice de conformité totalement revue et précise à leurs clients. SOLUTION MISE EN ŒUVRE : Détection des exigences. Classification PBS, WBS. Importation des réponses – Association des questions. Analyse des écarts de version (V1 > V2). Couverture des exigences. Note additionnelle : Une session pour les Directeurs de Projet (1h) afin de lancer l’organisation du projet. 1h de formation pour le reste de l’équipe (9 membres). RÉSULTATS : MATRICE DE CONFORMITÉ LIVRÉE SANS LACUNES. ENVIRON 30 % DE TEMPS EN MOINS SUR L’ENSEMBLE DU PROCESSUS",
-          "category": "Étude de Cas",
+          "title": "Extraire et produire la matrice de conformité des exigences pour un appel d'offres de 40M€.",
+          "value": "Appel d'offres de 40M€",
+          "description": "CONTEXTE : Le projet était un projet partiel pour la fourniture d'un système de traction de métro intégré pour une nouvelle ligne de métro en France. Le client devait identifier plus de 2 000 exigences dans environ 50 documents techniques différents. L'équipe était composée de 10 personnes, impliquant 3 Business Units différentes. OBJECTIFS DU CLIENT : Identifier et stocker immédiatement et correctement toutes les exigences identifiées par le client. Identifier d'autres exigences ayant un impact sur le périmètre et le chiffrage de l'offre. Permettre à l'équipe d'avoir une revue commune standardisée et simplifiée autour de toutes les exigences. Livrer rapidement une matrice de conformité entièrement revue et précise à leurs clients. SOLUTION MISE EN ŒUVRE : Détection des exigences. Classification PBS, WBS. Importation des réponses – Association des questions. Analyse d'écart de version (V1 > V2). Couverture des exigences. Note additionnelle : Une session pour les Directeurs de Projet (1h) pour lancer l'organisation du projet. 1h de formation pour le reste de l'équipe (9 membres). RÉSULTATS : MATRICE DE CONFORMITÉ LIVRÉE SANS LACUNES. ENVIRON 30% DE TEMPS EN MOINS SUR L'ENSEMBLE DU PROCESSUS",
+          "category": "Étude de cas",
           "cta_text": "Lire la suite",
           "imageSrc": "/images/Portfolio/Extract%20and%20produce%20the%20requirement%20compliance%20matrix%20for%20a%20€40M%20tender..jpg"
         },
         {
-          "title": "Automatisez votre Bid / No Bid : Passez de 7 000 opportunités à 700 offres bien qualifiées !",
+          "title": "Automatisez votre Bid / No Bid : Passez de 7 000 opportunités à 700 appels d'offres bien qualifiés !",
           "value": "7000 opportunités / an",
-          "description": "CONTEXTE : Notre client reçoit par mail plus de 7 000 opportunités par an depuis un logiciel de sourcing. Le système de filtrage en place est inefficace car basé sur quelques mots-clés génériques. Les responsables des appels d’offres doivent ouvrir chaque appel d’offres et lire les premières pages pour voir s’il existe un potentiel d’être contractant principal ou sous-traitant sur le projet. OBJECTIFS DU CLIENT : Réduire drastiquement le temps moyen passé sur le processus de sélection (actuellement 1 heure par appel d’offres). Identifier immédiatement les 40 suspects habituels qui donnent un haut niveau de certitude pour décider du Bid / No Bid. SOLUTION MISE EN ŒUVRE : Détection de plus de 40 points clés en 5 minutes au lieu de plusieurs heures. Analyse des risques sur des sujets comme la finance, le contrat, le juridique… Note additionnelle : Aucun effort grâce à l’utilisation du standard Atenders pour la détection des risques Bid / No Bid (+400 critères). Personnalisation : quelques heures. Modèles spécifiques de détection : 3 semaines. RÉSULTATS : 95 % DE TEMPS GAGNÉ SUR L’IDENTIFICATION DES POINTS CLÉS. PLUS DE CAPACITÉ POUR UNE MEILLEURE SÉLECTION. +1 000 HEURES D’ÉCONOMIES PAR AN",
-          "category": "Étude de Cas",
+          "description": "CONTEXTE : Notre client reçoit plus de 7 000 opportunités par an par email d'un logiciel de sourcing. Le système de filtrage existant est inefficace car il est basé sur quelques mots-clés génériques. Les responsables d'appels d'offres doivent ouvrir chaque appel d'offres et lire les premières pages pour voir s'il y a un potentiel pour être un contractant principal ou un sous-traitant sur le projet. OBJECTIFS DU CLIENT : Réduire considérablement le temps moyen passé sur le processus de sélection (actuellement 1 heure par appel d'offres). Identifier immédiatement les 40 suspects habituels qui donnent un haut niveau de certitude pour décider du Bid / No Bid. SOLUTION MISE EN ŒUVRE : Détection de plus de 40 points clés en 5 minutes au lieu de plusieurs heures. Analyse des risques sur des sujets comme la finance, le contrat, le juridique... Note additionnelle : Aucun effort grâce à l'utilisation du standard Aitenders pour la détection des risques Bid / No Bid (+400 critères). Personnalisation : quelques heures. Modèles de détection spécifiques : 3 semaines. RÉSULTATS : 95% DE TEMPS GAGNÉ SUR L'IDENTIFICATION DES POINTS CLÉS. PLUS DE CAPACITÉ POUR UNE MEILLEURE SÉLECTION. +1 000 HEURES GAGNÉES PAR AN",
+          "category": "Étude de cas",
           "cta_text": "Lire la suite",
           "imageSrc": "/images/Portfolio/Automate%20your%20Bid%20No%20Bid%20Go%20from%207,000%20opportunities%20to%20700%20well-qualified%20tenders!.jpg"
         },
         {
-          "title": "Gestion des exigences pour un appel d’offres Design & Build de 10 Md€ – Consortium de 15 entreprises.",
-          "value": "Offre 10 Md€",
-          "description": "CONTEXTE : La ligne 15 du métro parisien est un appel d’offres Design & Build sur 2 ans, d’une valeur estimée à environ 10 Md€. Notre client est le Consortium, comprenant NGE, Webuilt, Equans et tous leurs partenaires (architectes, bureaux d’études, sous-traitants, etc.). OBJECTIFS DU CLIENT : Assurer l’efficacité dans la répartition du périmètre de travail entre les 15 entités différentes du consortium. Produire une matrice de conformité des exigences sans failles. Suivre et identifier collectivement les impacts des changements liés aux questions/réponses. Identifier les changements de versions et en analyser collectivement les impacts. SOLUTION MISE EN ŒUVRE : Détection et extraction automatique des exigences. Classification automatique. Périmètre et base de référence collaboratifs. Détection automatique des changements de version. Importation des Q&A et analyse des impacts. Note additionnelle : Session de formation de 2 heures pour les 150 membres de l’équipe. 2 heures de formation pour 10 managers. RÉSULTATS : MILLIERS DE JOURS/HOMMES ÉCONISÉS. MOINS DE RISQUES. ASSURER UN HAUT NIVEAU DE CONFORMITÉ",
-          "category": "Étude de Cas",
+          "title": "Gestion des exigences pour un appel d'offres Design & Build de 10Mds€ – Consortium de 15 entreprises.",
+          "value": "Appel d'offres de 10Mds€",
+          "description": "CONTEXTE : La ligne 15 du métro de Paris est un appel d'offres Design & Build de 2 ans, d'une valeur estimée à environ 10Mds€. Notre client est le Consortium, comprenant NGE, Webuilt, Equans, et tous leurs partenaires (architectes, bureaux d'études, sous-traitants, etc.). OBJECTIFS DU CLIENT : Assurer l'efficacité dans la répartition du périmètre de travail entre les 15 entités différentes du consortium. Produire une matrice de conformité des exigences sans faille. Suivre et identifier collectivement les impacts des changements liés aux questions/réponses. Identifier les changements de version et analyser collectivement leurs impacts. SOLUTION MISE EN ŒUVRE : Détection et extraction automatiques des exigences. Classification automatique. Périmètre et baseline collaboratifs. Détection automatique des changements de version. Importation des Q&R et analyse d'impact. Note additionnelle : Session de formation de 2 heures pour les 150 membres de l'équipe. 2 heures de formation pour 10 managers. RÉSULTATS : MILLIERS DE JOURS-HOMMES GAGNÉS. MOINS DE RISQUES. ASSURER UN HAUT NIVEAU DE CONFORMITÉ",
+          "category": "Étude de cas",
           "cta_text": "Lire la suite",
           "imageSrc": "/images/Portfolio/Requirement%20management%20for%20a%20€10Bn%20Design%20&%20Build%20tender%20–%20Consortium%20of%2015%20companies..jpg"
         }
       ]
     },
     "team_20": {
-      "tag": "Impact stratégique",
-      "title": "Des fonctionnalités avancées pour vos AO complexes",
-      "description": "Découvrez des outils qui ajoutent une dimension stratégique et renforcent la maîtrise de vos offres complexes.",
+      "tag": "Impact Stratégique",
+      "title": "Fonctionnalités avancées pour vos AO complexes",
+      "description": "Découvrez des outils qui ajoutent une dimension stratégique et renforcent le contrôle de vos offres complexes.",
       "cards": [
         {
-          "title": "Bulk Versioning",
+          "title": "Versioning en masse",
           "description": "Gérez plusieurs versions de vos documents simultanément avec synchronisation automatique et traçabilité complète des modifications multi-équipes.",
           "iconSrc": "/images/Bulk Versioning3.svg"
         },
         {
-          "title": "Response Writing",
-          "description": "Rédigez des réponses précises et conformes grâce à l’IA générative contextuelle, connectée à vos bases de connaissances.",
+          "title": "Rédaction de réponse",
+          "description": "Rédigez des réponses précises et conformes grâce à une IA générative contextuelle, connectée à vos bases de connaissances.",
           "iconSrc": "/images/Response Writing3.svg"
         },
         {
           "title": "Back to Back",
-          "description": "Automatisez le lien entre contrats client et sous-traitant avec un mappage intelligent des clauses et des flux contractuels.",
+          "description": "Automatisez le lien entre les contrats client et sous-traitant avec une cartographie intelligente des clauses et des flux contractuels.",
           "iconSrc": "/images/Back to Back3.svg"
         },
         {
-          "title": "Link with Deliverables",
-          "description": "Connectez chaque exigence à ses livrables associés pour assurer suivi en temps réel et validation de complétude.",
+          "title": "Lien avec les livrables",
+          "description": "Connectez chaque exigence à ses livrables associés pour assurer un suivi en temps réel et une validation de complétude.",
           "iconSrc": "/images/Link with Deliverables3.svg"
         },
         {
-          "title": "Sub-Requirements",
-          "description": "Décomposez automatiquement les exigences complexes en sous-exigences gérables et distribuez-les aux experts adaptés.",
+          "title": "Sous-exigences",
+          "description": "Décomposez automatiquement les exigences complexes en sous-exigences gérables et distribuez-les aux experts appropriés.",
           "iconSrc": "/images/Sub-Requirements3.svg"
         },
         {
-          "title": "Non-compliance Controls",
-          "description": "Détectez et corrigez proactivement les écarts de conformité avec alertes intelligentes avant la soumission finale.",
+          "title": "Contrôles de non-conformité",
+          "description": "Détectez et corrigez de manière proactive les écarts de conformité avec des alertes intelligentes avant la soumission finale.",
           "iconSrc": "/images/Non-compliance Controls3.svg"
         }
       ]
@@ -346,16 +517,16 @@
     "header_26": {
       "title": "Gérez les offres de taille moyenne, zéro surprise",
       "subtitle": "Découvrez, sécurisez et gérez chaque clause dès le premier jour pour une réponse plus rapide, plus sûre et plus compétitive.",
-      "cta1": "Démarrer",
+      "cta1": "Commencer",
       "cta2": "En savoir plus"
     },
     "scrolling_logos": {
-      "title": "Approuvé par les Leaders de l'Industrie"
+      "title": "Approuvé par les leaders de l'industrie"
     },
     "ai_copilot": {
       "tag": "Contrats intelligents",
       "title": "Votre contrat devient une source de réponses",
-      "subtitle": "Aitenders transforme les PDF statiques en connaissances exploitables avec résumés instantanés, recherche IA et accès direct aux obligations dès le premier jour.",
+      "subtitle": "Aitenders transforme les PDF statiques en connaissances exploitables avec des résumés instantanés, une recherche IA et un accès direct aux obligations dès le premier jour.",
       "step1": "Accès immédiat aux clauses clés",
       "step2": "Recherche intelligente en langage naturel",
       "step3": "Décisions rapides et conformité assurée"
@@ -365,7 +536,7 @@
       "stat1_number": "",
       "stat1_text": "accédez instantanément aux clauses clés",
       "stat2_number": "",
-      "stat2_text": "décidez en confiance sur le terrain",
+      "stat2_text": "décidez avec confiance sur le terrain",
       "stat3_number": "",
       "stat3_text": "réduisez votre dépendance au support juridique"
     },
@@ -374,126 +545,126 @@
     },
     "features": {
       "feature1_tag": "Résumé contractuel immédiat",
-      "feature1_title": "Un contrat lisible et exploitable dès J+1",
-      "feature1_desc": "Une fiche de synthèse claire est générée automatiquement. Elle regroupe les éléments essentiels du contrat et rend l’information immédiatement exploitable.",
-      "feature1_stat": "100 % des contrats résumés en fiche exploitable",
-      "feature1_popup": "Dès l’import d’un contrat, Aitenders crée une fiche contractuelle complète et structurée. Elle rassemble les durées, renouvellements, délais de préavis, SLA, pénalités et engagements. Les équipes disposent ainsi d’une base fiable, lisible et exploitable dès le premier jour, sans parcourir le PDF original.",
+      "feature1_title": "Un contrat lisible et exploitable dès le Jour 1",
+      "feature1_desc": "Une fiche de synthèse claire est générée automatiquement. Elle regroupe les éléments essentiels du contrat et rend l'information immédiatement utilisable.",
+      "feature1_stat": "100% des contrats résumés dans une fiche exploitable",
+      "feature1_popup": "Dès l'import d'un contrat, Aitenders crée une fiche contrat complète et structurée. Elle rassemble les durées, renouvellements, préavis, SLA, pénalités et engagements. Les équipes disposent ainsi d'une base fiable, lisible et exploitable dès le premier jour, sans avoir à parcourir le PDF d'origine.",
       "feature2_tag": "Accès ciblé aux clauses",
       "feature2_title": "Trouvez chaque clause critique en un clic",
-      "feature2_desc": "Les contrats sont organisés par thèmes. Chaque utilisateur accède directement à la clause recherchée sans relire l’ensemble du document.",
-      "feature2_stat": "80 % de temps gagné sur la recherche manuelle",
-      "feature2_popup": "Aitenders classe automatiquement le contrat en rubriques thématiques. Les utilisateurs naviguent par catégories pour identifier la clause pertinente immédiatement. Cette structuration réduit la relecture fastidieuse, limite les erreurs et offre un accès ciblé et fiable aux informations critiques.",
-      "feature3_tag": "Q&A contractuel intelligent",
-      "feature3_title": "Posez vos questions, l’IA vous répond",
-      "feature3_desc": "Le moteur de Q&A répond en langage naturel et fournit la clause exacte avec sa source, immédiatement disponible.",
-      "feature3_stat": "80 % des questions traitées sans service juridique",
-      "feature3_popup": "Les équipes posent directement leurs questions dans l’interface. L’IA identifie la clause, cite sa source et fournit une réponse exploitable immédiatement. Les réponses peuvent être archivées et partagées, évitant les sollicitations juridiques et accélérant le traitement des demandes."
+      "feature2_desc": "Les contrats sont organisés par thèmes. Chaque utilisateur accède directement à la clause recherchée sans relire l'ensemble du document.",
+      "feature2_stat": "80% de temps gagné sur la recherche manuelle",
+      "feature2_popup": "Aitenders classifie automatiquement le contrat en sections thématiques. Les utilisateurs naviguent par catégories pour identifier immédiatement la clause pertinente. Cette structuration réduit les relectures fastidieuses, limite les erreurs et offre un accès ciblé et fiable à l'information critique.",
+      "feature3_tag": "Q&R contractuel intelligent",
+      "feature3_title": "Posez vos questions, l'IA répond",
+      "feature3_desc": "Le moteur de Q&R répond en langage naturel et fournit la clause exacte avec sa source, immédiatement disponible.",
+      "feature3_stat": "80% des questions traitées sans services juridiques",
+      "feature3_popup": "Les équipes posent leurs questions directement dans l'interface. L'IA identifie la clause, cite sa source et fournit une réponse immédiatement exploitable. Les réponses peuvent être archivées et partagées, évitant les sollicitations juridiques et accélérant le traitement des demandes."
     },
     "concrete_results": {
       "title": "Des résultats concrets pour vos projets en exécution",
-      "stat1_number": "–60 %",
-      "stat1_text": "du temps d’accès aux clauses clés",
-      "stat2_number": "+80 %",
+      "stat1_number": "–60%",
+      "stat1_text": "de temps pour accéder aux clauses clés",
+      "stat2_number": "+80%",
       "stat2_text": "de questions traitées sans solliciter le juridique",
-      "stat3_number": "100 %",
-      "stat3_text": "de décisions alignées avec les engagements contractuels",
-      "cta_button": "Lancez la simulation de l’impact pour vos projets"
+      "stat3_number": "100%",
+      "stat3_text": "de décisions alignées sur les engagements contractuels",
+      "cta_button": "Lancer la simulation d'impact pour vos projets"
     },
     "portfolio": {
       "title": "Déployé sur de nombreux projets",
       "projects": [
         {
-          "title": "Systématiser la découverte et le lancement de plus de 400 offres par an.",
-          "value": "400 offres / an",
-          "description": "CONTEXTE : Équipe de 5 ingénieurs devant analyser plus de 400 appels d’offres par an dans le domaine de l’ingénierie de conseil. Documents d’appel d’offres principalement en anglais, français et espagnol. Moyenne de 200 à 300 pages par appel d’offres. OBJECTIFS DU CLIENT : Gagner du temps dans l’identification des risques et anticiper les goulots d’étranglement. Identifier rapidement si nous devons mobiliser des partenaires/sous-traitants. Mobilisation de l’équipe de support. Identifier immédiatement les critères Bid / No Bid. Identifier les principaux risques (techniques, financiers et juridiques). SOLUTION MISE EN ŒUVRE : Classification automatique des clauses par catégories. Capture des risques et opportunités clés. Exportation et intégration dans le processus existant. Note additionnelle : Mise en place : 2 heures. Formation de l’équipe limitée à 2 × 1h. RÉSULTATS : 20/30 % DE TEMPS EN MOINS. -10/15H PAR PROJET. 300–500 K€/AN",
-          "category": "Étude de Cas",
+          "title": "Systématiser la découverte et le lancement de plus de 400 appels d'offres par an.",
+          "value": "400 AO / an",
+          "description": "CONTEXTE : Une équipe de 5 ingénieurs devant analyser plus de 400 appels d'offres par an dans le domaine de l'ingénierie conseil. Documents d'appel d'offres principalement en anglais, français et espagnol. Moyenne de 200 à 300 pages par appel d'offres. OBJECTIFS DU CLIENT : Gagner du temps dans l'identification des risques et anticiper les goulots d'étranglement. Identifier rapidement si nous devons faire appel à des partenaires/sous-traitants. Mobiliser l'équipe support. Identifier immédiatement les critères de Bid / No Bid. Identifier les principaux risques (techniques, financiers et juridiques). SOLUTION MISE EN ŒUVRE : Classification automatique des clauses par catégories. Capture des risques et opportunités clés. Exportation et intégration dans le processus existant. Note additionnelle : Mise en place : 2 heures. Formation de l'équipe limitée à 2 x 1h. RÉSULTATS : 20/30% DE TEMPS EN MOINS. -10/15H PAR PROJET. 300–500K€/AN",
+          "category": "Étude de cas",
           "cta_text": "Lire la suite",
           "imageSrc": "/images/Portfolio/Systematize%20the%20discovery%20and%20launch%20of%20over%20400%20tenders%20per%20year..jpg"
         },
         {
-          "title": "Extraire et produire la matrice de conformité des exigences sur un appel d’offres de 40 M€.",
-          "value": "Offre 40M€",
-          "description": "CONTEXTE : Le projet était un projet partiel pour la fourniture d’un système de traction métro intégré pour une nouvelle ligne de métro en France. Le client devait identifier plus de 2 000 exigences dans environ 50 documents techniques différents. L’équipe comptait 10 personnes, impliquant 3 Business Units différentes. OBJECTIFS DU CLIENT : Identifier et stocker immédiatement et correctement toutes les exigences identifiées par le client. Identifier les autres exigences impactant le périmètre et le chiffrage de l’offre. Permettre à l’équipe d’avoir une revue commune standardisée et simplifiée autour de toutes les exigences. Livrer rapidement une matrice de conformité totalement revue et précise à leurs clients. SOLUTION MISE EN ŒUVRE : Détection des exigences. Classification PBS, WBS. Importation des réponses – Association des questions. Analyse des écarts de version (V1 > V2). Couverture des exigences. Note additionnelle : Une session pour les Directeurs de Projet (1h) afin de lancer l’organisation du projet. 1h de formation pour le reste de l’équipe (9 membres). RÉSULTATS : MATRICE DE CONFORMITÉ LIVRÉE SANS LACUNES. ENVIRON 30 % DE TEMPS EN MOINS SUR L’ENSEMBLE DU PROCESSUS",
-          "category": "Étude de Cas",
+          "title": "Extraire et produire la matrice de conformité des exigences pour un appel d'offres de 40M€.",
+          "value": "Appel d'offres de 40M€",
+          "description": "CONTEXTE : Le projet était un projet partiel pour la fourniture d'un système de traction de métro intégré pour une nouvelle ligne de métro en France. Le client devait identifier plus de 2 000 exigences dans environ 50 documents techniques différents. L'équipe était composée de 10 personnes, impliquant 3 Business Units différentes. OBJECTIFS DU CLIENT : Identifier et stocker immédiatement et correctement toutes les exigences identifiées par le client. Identifier d'autres exigences ayant un impact sur le périmètre et le chiffrage de l'offre. Permettre à l'équipe d'avoir une revue commune standardisée et simplifiée autour de toutes les exigences. Livrer rapidement une matrice de conformité entièrement revue et précise à leurs clients. SOLUTION MISE EN ŒUVRE : Détection des exigences. Classification PBS, WBS. Importation des réponses – Association des questions. Analyse d'écart de version (V1 > V2). Couverture des exigences. Note additionnelle : Une session pour les Directeurs de Projet (1h) pour lancer l'organisation du projet. 1h de formation pour le reste de l'équipe (9 membres). RÉSULTATS : MATRICE DE CONFORMITÉ LIVRÉE SANS LACUNES. ENVIRON 30% DE TEMPS EN MOINS SUR L'ENSEMBLE DU PROCESSUS",
+          "category": "Étude de cas",
           "cta_text": "Lire la suite",
           "imageSrc": "/images/Portfolio/Extract%20and%20produce%20the%20requirement%20compliance%20matrix%20for%20a%20€40M%20tender..jpg"
         },
         {
-          "title": "Automatisez votre Bid / No Bid : Passez de 7 000 opportunités à 700 offres bien qualifiées !",
+          "title": "Automatisez votre Bid / No Bid : Passez de 7 000 opportunités à 700 appels d'offres bien qualifiés !",
           "value": "7000 opportunités / an",
-          "description": "CONTEXTE : Notre client reçoit par mail plus de 7 000 opportunités par an depuis un logiciel de sourcing. Le système de filtrage en place est inefficace car basé sur quelques mots-clés génériques. Les responsables des appels d’offres doivent ouvrir chaque appel d’offres et lire les premières pages pour voir s’il existe un potentiel d’être contractant principal ou sous-traitant sur le projet. OBJECTIFS DU CLIENT : Réduire drastiquement le temps moyen passé sur le processus de sélection (actuellement 1 heure par appel d’offres). Identifier immédiatement les 40 suspects habituels qui donnent un haut niveau de certitude pour décider du Bid / No Bid. SOLUTION MISE EN ŒUVRE : Détection de plus de 40 points clés en 5 minutes au lieu de plusieurs heures. Analyse des risques sur des sujets comme la finance, le contrat, le juridique… Note additionnelle : Aucun effort grâce à l’utilisation du standard Atenders pour la détection des risques Bid / No Bid (+400 critères). Personnalisation : quelques heures. Modèles spécifiques de détection : 3 semaines. RÉSULTATS : 95 % DE TEMPS GAGNÉ SUR L’IDENTIFICATION DES POINTS CLÉS. PLUS DE CAPACITÉ POUR UNE MEILLEURE SÉLECTION. +1 000 HEURES D’ÉCONOMIES PAR AN",
-          "category": "Étude de Cas",
+          "description": "CONTEXTE : Notre client reçoit plus de 7 000 opportunités par an par email d'un logiciel de sourcing. Le système de filtrage existant est inefficace car il est basé sur quelques mots-clés génériques. Les responsables d'appels d'offres doivent ouvrir chaque appel d'offres et lire les premières pages pour voir s'il y a un potentiel pour être un contractant principal ou un sous-traitant sur le projet. OBJECTIFS DU CLIENT : Réduire considérablement le temps moyen passé sur le processus de sélection (actuellement 1 heure par appel d'offres). Identifier immédiatement les 40 suspects habituels qui donnent un haut niveau de certitude pour décider du Bid / No Bid. SOLUTION MISE EN ŒUVRE : Détection de plus de 40 points clés en 5 minutes au lieu de plusieurs heures. Analyse des risques sur des sujets comme la finance, le contrat, le juridique... Note additionnelle : Aucun effort grâce à l'utilisation du standard Aitenders pour la détection des risques Bid / No Bid (+400 critères). Personnalisation : quelques heures. Modèles de détection spécifiques : 3 semaines. RÉSULTATS : 95% DE TEMPS GAGNÉ SUR L'IDENTIFICATION DES POINTS CLÉS. PLUS DE CAPACITÉ POUR UNE MEILLEURE SÉLECTION. +1 000 HEURES GAGNÉES PAR AN",
+          "category": "Étude de cas",
           "cta_text": "Lire la suite",
           "imageSrc": "/images/Portfolio/Automate%20your%20Bid%20No%20Bid%20Go%20from%207,000%20opportunities%20to%20700%20well-qualified%20tenders!.jpg"
         },
         {
-          "title": "Gestion des exigences pour un appel d’offres Design & Build de 10 Md€ – Consortium de 15 entreprises.",
-          "value": "Offre 10 Md€",
-          "description": "CONTEXTE : La ligne 15 du métro parisien est un appel d’offres Design & Build sur 2 ans, d’une valeur estimée à environ 10 Md€. Notre client est le Consortium, comprenant NGE, Webuilt, Equans et tous leurs partenaires (architectes, bureaux d’études, sous-traitants, etc.). OBJECTIFS DU CLIENT : Assurer l’efficacité dans la répartition du périmètre de travail entre les 15 entités différentes du consortium. Produire une matrice de conformité des exigences sans failles. Suivre et identifier collectivement les impacts des changements liés aux questions/réponses. Identifier les changements de versions et en analyser collectivement les impacts. SOLUTION MISE EN ŒUVRE : Détection et extraction automatique des exigences. Classification automatique. Périmètre et base de référence collaboratifs. Détection automatique des changements de version. Importation des Q&A et analyse des impacts. Note additionnelle : Session de formation de 2 heures pour les 150 membres de l’équipe. 2 heures de formation pour 10 managers. RÉSULTATS : MILLIERS DE JOURS/HOMMES ÉCONISÉS. MOINS DE RISQUES. ASSURER UN HAUT NIVEAU DE CONFORMITÉ",
-          "category": "Étude de Cas",
+          "title": "Gestion des exigences pour un appel d'offres Design & Build de 10Mds€ – Consortium de 15 entreprises.",
+          "value": "Appel d'offres de 10Mds€",
+          "description": "CONTEXTE : La ligne 15 du métro de Paris est un appel d'offres Design & Build de 2 ans, d'une valeur estimée à environ 10Mds€. Notre client est le Consortium, comprenant NGE, Webuilt, Equans, et tous leurs partenaires (architectes, bureaux d'études, sous-traitants, etc.). OBJECTIFS DU CLIENT : Assurer l'efficacité dans la répartition du périmètre de travail entre les 15 entités différentes du consortium. Produire une matrice de conformité des exigences sans faille. Suivre et identifier collectivement les impacts des changements liés aux questions/réponses. Identifier les changements de version et analyser collectivement leurs impacts. SOLUTION MISE EN ŒUVRE : Détection et extraction automatiques des exigences. Classification automatique. Périmètre et baseline collaboratifs. Détection automatique des changements de version. Importation des Q&R et analyse d'impact. Note additionnelle : Session de formation de 2 heures pour les 150 membres de l'équipe. 2 heures de formation pour 10 managers. RÉSULTATS : MILLIERS DE JOURS-HOMMES GAGNÉS. MOINS DE RISQUES. ASSURER UN HAUT NIVEAU DE CONFORMITÉ",
+          "category": "Étude de cas",
           "cta_text": "Lire la suite",
           "imageSrc": "/images/Portfolio/Requirement%20management%20for%20a%20€10Bn%20Design%20&%20Build%20tender%20–%20Consortium%20of%2015%20companies..jpg"
         }
       ]
     },
     "team_20": {
-      "tag": "Additional Impact",
-      "title": "Des options intelligentes pour vos contrats",
-      "description": "Transformez vos PDF en assistants intelligents, exploitables à tout moment et par chaque acteur du projet.",
+      "tag": "Impact Additionnel",
+      "title": "Options intelligentes pour vos contrats",
+      "description": "Transformez vos PDF en assistants intelligents, utilisables à tout moment par chaque partie prenante du projet.",
       "cards": [
         {
-          "title": "Recherche thématique",
+          "title": "Recherche Thématique",
           "description": "Accédez directement aux clauses critiques (durée, SLA, pénalités, résiliation) organisées par thèmes sans relire tout le contrat.",
           "iconSrc": "/images/Thematic Search4.svg"
         },
         {
-          "title": "Partage de traçabilité",
-          "description": "Partagez des fiches explicites avec l’historique complet des consultations et décisions pour assurer collaboration et responsabilité.",
+          "title": "Partage de Traçabilité",
+          "description": "Partagez des fiches explicites avec l'historique complet des consultations et décisions pour garantir la collaboration et la responsabilité.",
           "iconSrc": "/images/Traceability Sharing4.svg"
         },
         {
-          "title": "Annotation de clauses",
-          "description": "Ajoutez des notes ou précisions opérationnelles directement dans les clauses pour faciliter l’usage par les équipes terrain.",
+          "title": "Annotation de Clause",
+          "description": "Ajoutez des notes ou des clarifications opérationnelles directement sur les clauses pour faciliter l'utilisation par les équipes terrain.",
           "iconSrc": "/images/Clause Annotation4.svg"
         },
         {
-          "title": "Rappels d’obligations",
-          "description": "Recevez des alertes automatiques sur délais, pénalités et renouvellements afin d’éviter oublis et litiges.",
+          "title": "Rappels d'Obligations",
+          "description": "Recevez des alertes automatiques sur les échéances, pénalités et renouvellements pour éviter les oublis et les litiges.",
           "iconSrc": "/images/Obligation Reminders4.svg"
         },
         {
-          "title": "Accès multi-devices",
+          "title": "Accès Multi-appareils",
           "description": "Consultez vos contrats en toute sécurité sur mobile ou tablette pour des décisions rapides et fiables sur le terrain.",
           "iconSrc": "/images/Multi-device Access4.svg"
         },
         {
-          "title": "Vue conformité",
-          "description": "Générez une vue consolidée de toutes les obligations et pénalités, affichant couverture et écarts en temps réel.",
+          "title": "Vue de Conformité",
+          "description": "Générez une vue consolidée de toutes les obligations et pénalités, montrant la couverture et les écarts en temps réel.",
           "iconSrc": "/images/Compliance View4.svg"
         }
       ]
     },
     "cta": {
-      "title": "Découvrez comment Aitenders répond exactement à vos besoins",
+      "title": "Découvrez comment Aitenders répond à vos besoins exacts",
       "subtitle": "Pas de démo générique. Pas de spam commercial. Juste trois questions rapides.",
-      "card_title": "AI Tender Assistant",
+      "card_title": "Assistant d'Appel d'Offres IA",
       "card_message": "Bonjour ! Je vais vous aider à trouver la solution Aitenders idéale pour votre équipe. Quel est votre secteur d'activité ?",
-      "card_button": "Cliquez pour démarrer votre évaluation personnalisée..."
+      "card_button": "Cliquez pour commencer votre évaluation personnalisée..."
     }
   },
   "uc5": {
     "header_26": {
       "title": "Chaque engagement suivi, chaque action tracée",
-      "subtitle": "Centralisez vos engagements, suivez vos actions et anticipez les dérives contractuelles pour des projets réactifs et sans surcharge administrative.",
-      "cta1": "Démarrer",
+      "subtitle": "Centralisez vos engagements, suivez vos actions et anticipez les écarts contractuels pour des projets réactifs sans surcharge administrative.",
+      "cta1": "Commencer",
       "cta2": "En savoir plus"
     },
     "ai_copilot": {
       "tag": "Gestion proactive",
-      "title": "Passez d’un suivi réactif à un pilotage proactif",
-      "subtitle": "Aitenders centralise vos engagements, détecte les dérives en temps réel et trace chaque action pour sécuriser vos projets moyens.",
+      "title": "Passez du suivi réactif à la gestion proactive",
+      "subtitle": "Aitenders centralise vos engagements, détecte les écarts en temps réel et trace chaque action pour sécuriser vos projets de taille moyenne.",
       "step1": "Centralisation des engagements clés",
-      "step2": "Détection en temps réel des dérives",
+      "step2": "Détection en temps réel des écarts",
       "step3": "Traçabilité complète de chaque action"
     },
     "user_benefits": {
@@ -501,110 +672,110 @@
       "stat1_number": "",
       "stat1_text": "démarrez sur une base unifiée",
       "stat2_number": "",
-      "stat2_text": "reliez chaque action à l’engagement",
+      "stat2_text": "liez chaque action à l'engagement",
       "stat3_number": "",
-      "stat3_text": "anticipez les risques avant rupture"
+      "stat3_text": "anticipez les risques avant qu'ils ne dégénèrent"
     },
     "offer_steps_headline": {
-      "title": "Nous accompagnons vos équipes dans chaque étape du projet"
+      "title": "Nous accompagnons vos équipes à chaque étape du projet"
     },
     "features": {
       "feature1_tag": "Base projet immédiate",
-      "feature1_title": "Structurez vos documents et critères dès J+1",
-      "feature1_desc": "Aitenders organise automatiquement contrats, plannings et annexes. Vous démarrez avec une base projet claire et exploitable, sans intervention manuelle.",
-      "feature1_stat": "100 % des projets structurés dès le premier jour",
-      "feature1_popup": "Dès l’import des documents initiaux, Aitenders génère une base projet intelligible et exploitable. Contrats, plannings et annexes sont organisés autour des engagements réels à suivre. Cette structuration évite les débuts à blanc, supprime des semaines de préparation et offre à l’équipe une base fiable et lisible dès le premier jour.",
+      "feature1_title": "Structurez vos documents et critères dès le Jour 1",
+      "feature1_desc": "Aitenders organise automatiquement les contrats, plannings et annexes. Vous démarrez avec une base projet claire et exploitable, sans intervention manuelle.",
+      "feature1_stat": "100% des projets structurés dès le premier jour",
+      "feature1_popup": "Dès l'import des documents initiaux, Aitenders génère une base projet intelligible et exploitable. Contrats, plannings et annexes sont organisés autour des engagements réels à suivre. Cette structuration évite de partir de zéro, élimine des semaines de préparation et fournit à l'équipe une base fiable et lisible dès le premier jour.",
       "feature2_tag": "Suivi des engagements",
-      "feature2_title": "Tracez chaque obligation avec confiance",
-      "feature2_desc": "Chaque clause devient une action suivie et documentée. Vous savez qui fait quoi, quand et pourquoi, sans dépendre d’Excel ni d’emails éparpillés.",
-      "feature2_stat": "100 % des actions reliées à leurs engagements",
-      "feature2_popup": "Aitenders transforme chaque clause en une action traçable. Les responsabilités sont attribuées, datées et justifiées. Le projet reste lisible et documenté sans dépendre de fichiers dispersés ou d’échanges informels. Le bid manager et les équipes disposent d’une visibilité totale et partagée sur l’avancement des obligations.",
+      "feature2_title": "Tracez chaque obligation en toute confiance",
+      "feature2_desc": "Chaque clause devient une action suivie et documentée. Vous savez qui fait quoi, quand et pourquoi, sans dépendre d'Excel ou d'emails dispersés.",
+      "feature2_stat": "100% des actions liées à leurs engagements",
+      "feature2_popup": "Aitenders transforme chaque clause en une action traçable. Les responsabilités sont assignées, datées et justifiées. Le projet reste lisible et documenté sans dépendre de fichiers dispersés ou d'échanges informels. Le bid manager et les équipes ont une visibilité totale et partagée sur l'avancement des obligations.",
       "feature3_tag": "Anticipation proactive",
-      "feature3_title": "Identifiez et maîtrisez les dérives critiques",
-      "feature3_desc": "L’IA et vos équipes détectent les zones sensibles avant qu’elles ne deviennent des litiges. Vous accédez instantanément à des informations fiables et sourcées.",
-      "feature3_stat": "80 % de dérives détectées avant qu’elles ne deviennent des réclamations",
-      "feature3_popup": "Grâce à la détection intelligente et à la recherche contractuelle, Aitenders identifie les points critiques avant qu’ils ne dégénèrent. Chaque engagement, historique ou clause est accessible immédiatement avec sa source. Les décisions sont prises sur des preuves concrètes, et non sur l’intuition, assurant un projet sous contrôle et anticipé plutôt que réactif."
+      "feature3_title": "Identifiez et contrôlez les écarts critiques",
+      "feature3_desc": "L'IA et vos équipes détectent les zones sensibles avant qu'elles ne deviennent des litiges. Vous accédez instantanément à une information fiable et sourcée.",
+      "feature3_stat": "80% des écarts détectés avant de devenir des réclamations",
+      "feature3_popup": "Grâce à la détection intelligente et à la recherche contractuelle, Aitenders identifie les points critiques avant qu'ils ne s'enveniment. Chaque engagement, historique ou clause est immédiatement accessible avec sa source. Les décisions sont prises sur des preuves concrètes, non sur l'intuition, assurant un projet sous contrôle et anticipé plutôt que réactif."
     },
     "concrete_results": {
-      "title": "Des résultats concrets pour vos projets moyens",
-      "stat1_number": "80 %",
-      "stat1_text": "de temps gagné sur le cadrage projet",
-      "stat2_number": "100 %",
-      "stat2_text": "des engagements tracés et contextualisés",
-      "stat3_number": "–50 %",
+      "title": "Des résultats concrets pour vos projets de taille moyenne",
+      "stat1_number": "80%",
+      "stat1_text": "de temps gagné sur le cadrage du projet",
+      "stat2_number": "100%",
+      "stat2_text": "des engagements suivis et contextualisés",
+      "stat3_number": "–50%",
       "stat3_text": "de litiges et contestations",
-      "cta_button": "Lancez la simulation de l’impact pour vos projets"
+      "cta_button": "Lancer la simulation d'impact pour vos projets"
     },
     "portfolio": {
-      "title": "Déployé sur des projets complexes moyens",
+      "title": "Déployé sur des projets de complexité moyenne",
       "projects": [
         {
-          "title": "Systématiser la découverte et le lancement de plus de 400 offres par an.",
-          "value": "400 offres / an",
-          "description": "CONTEXTE : Équipe de 5 ingénieurs devant analyser plus de 400 appels d’offres par an dans le domaine de l’ingénierie de conseil. Documents d’appel d’offres principalement en anglais, français et espagnol. Moyenne de 200 à 300 pages par appel d’offres. OBJECTIFS DU CLIENT : Gagner du temps dans l’identification des risques et anticiper les goulots d’étranglement. Identifier rapidement si nous devons mobiliser des partenaires/sous-traitants. Mobilisation de l’équipe de support. Identifier immédiatement les critères Bid / No Bid. Identifier les principaux risques (techniques, financiers et juridiques). SOLUTION MISE EN ŒUVRE : Classification automatique des clauses par catégories. Capture des risques et opportunités clés. Exportation et intégration dans le processus existant. Note additionnelle : Mise en place : 2 heures. Formation de l’équipe limitée à 2 × 1h. RÉSULTATS : 20/30 % DE TEMPS EN MOINS. -10/15H PAR PROJET. 300–500 K€/AN",
-          "category": "Étude de Cas",
+          "title": "Systématiser la découverte et le lancement de plus de 400 appels d'offres par an.",
+          "value": "400 AO / an",
+          "description": "CONTEXTE : Une équipe de 5 ingénieurs devant analyser plus de 400 appels d'offres par an dans le domaine de l'ingénierie conseil. Documents d'appel d'offres principalement en anglais, français et espagnol. Moyenne de 200 à 300 pages par appel d'offres. OBJECTIFS DU CLIENT : Gagner du temps dans l'identification des risques et anticiper les goulots d'étranglement. Identifier rapidement si nous devons faire appel à des partenaires/sous-traitants. Mobiliser l'équipe support. Identifier immédiatement les critères de Bid / No Bid. Identifier les principaux risques (techniques, financiers et juridiques). SOLUTION MISE EN ŒUVRE : Classification automatique des clauses par catégories. Capture des risques et opportunités clés. Exportation et intégration dans le processus existant. Note additionnelle : Mise en place : 2 heures. Formation de l'équipe limitée à 2 x 1h. RÉSULTATS : 20/30% DE TEMPS EN MOINS. -10/15H PAR PROJET. 300–500K€/AN",
+          "category": "Étude de cas",
           "cta_text": "Lire la suite",
           "imageSrc": "/images/Portfolio/Systematize%20the%20discovery%20and%20launch%20of%20over%20400%20tenders%20per%20year..jpg"
         },
         {
-          "title": "Extraire et produire la matrice de conformité des exigences sur un appel d’offres de 40 M€.",
-          "value": "Offre 40M€",
-          "description": "CONTEXTE : Le projet était un projet partiel pour la fourniture d’un système de traction métro intégré pour une nouvelle ligne de métro en France. Le client devait identifier plus de 2 000 exigences dans environ 50 documents techniques différents. L’équipe comptait 10 personnes, impliquant 3 Business Units différentes. OBJECTIFS DU CLIENT : Identifier et stocker immédiatement et correctement toutes les exigences identifiées par le client. Identifier les autres exigences impactant le périmètre et le chiffrage de l’offre. Permettre à l’équipe d’avoir une revue commune standardisée et simplifiée autour de toutes les exigences. Livrer rapidement une matrice de conformité totalement revue et précise à leurs clients. SOLUTION MISE EN ŒUVRE : Détection des exigences. Classification PBS, WBS. Importation des réponses – Association des questions. Analyse des écarts de version (V1 > V2). Couverture des exigences. Note additionnelle : Une session pour les Directeurs de Projet (1h) afin de lancer l’organisation du projet. 1h de formation pour le reste de l’équipe (9 membres). RÉSULTATS : MATRICE DE CONFORMITÉ LIVRÉE SANS LACUNES. ENVIRON 30 % DE TEMPS EN MOINS SUR L’ENSEMBLE DU PROCESSUS",
-          "category": "Étude de Cas",
+          "title": "Extraire et produire la matrice de conformité des exigences pour un appel d'offres de 40M€.",
+          "value": "Appel d'offres de 40M€",
+          "description": "CONTEXTE : Le projet était un projet partiel pour la fourniture d'un système de traction de métro intégré pour une nouvelle ligne de métro en France. Le client devait identifier plus de 2 000 exigences dans environ 50 documents techniques différents. L'équipe était composée de 10 personnes, impliquant 3 Business Units différentes. OBJECTIFS DU CLIENT : Identifier et stocker immédiatement et correctement toutes les exigences identifiées par le client. Identifier d'autres exigences ayant un impact sur le périmètre et le chiffrage de l'offre. Permettre à l'équipe d'avoir une revue commune standardisée et simplifiée autour de toutes les exigences. Livrer rapidement une matrice de conformité entièrement revue et précise à leurs clients. SOLUTION MISE EN ŒUVRE : Détection des exigences. Classification PBS, WBS. Importation des réponses – Association des questions. Analyse d'écart de version (V1 > V2). Couverture des exigences. Note additionnelle : Une session pour les Directeurs de Projet (1h) pour lancer l'organisation du projet. 1h de formation pour le reste de l'équipe (9 membres). RÉSULTATS : MATRICE DE CONFORMITÉ LIVRÉE SANS LACUNES. ENVIRON 30% DE TEMPS EN MOINS SUR L'ENSEMBLE DU PROCESSUS",
+          "category": "Étude de cas",
           "cta_text": "Lire la suite",
           "imageSrc": "/images/Portfolio/Extract%20and%20produce%20the%20requirement%20compliance%20matrix%20for%20a%20€40M%20tender..jpg"
         },
         {
-          "title": "Automatisez votre Bid / No Bid : Passez de 7 000 opportunités à 700 offres bien qualifiées !",
+          "title": "Automatisez votre Bid / No Bid : Passez de 7 000 opportunités à 700 appels d'offres bien qualifiés !",
           "value": "7000 opportunités / an",
-          "description": "CONTEXTE : Notre client reçoit par mail plus de 7 000 opportunités par an depuis un logiciel de sourcing. Le système de filtrage en place est inefficace car basé sur quelques mots-clés génériques. Les responsables des appels d’offres doivent ouvrir chaque appel d’offres et lire les premières pages pour voir s’il existe un potentiel d’être contractant principal ou sous-traitant sur le projet. OBJECTIFS DU CLIENT : Réduire drastiquement le temps moyen passé sur le processus de sélection (actuellement 1 heure par appel d’offres). Identifier immédiatement les 40 suspects habituels qui donnent un haut niveau de certitude pour décider du Bid / No Bid. SOLUTION MISE EN ŒUVRE : Détection de plus de 40 points clés en 5 minutes au lieu de plusieurs heures. Analyse des risques sur des sujets comme la finance, le contrat, le juridique… Note additionnelle : Aucun effort grâce à l’utilisation du standard Atenders pour la détection des risques Bid / No Bid (+400 critères). Personnalisation : quelques heures. Modèles spécifiques de détection : 3 semaines. RÉSULTATS : 95 % DE TEMPS GAGNÉ SUR L’IDENTIFICATION DES POINTS CLÉS. PLUS DE CAPACITÉ POUR UNE MEILLEURE SÉLECTION. +1 000 HEURES D’ÉCONOMIES PAR AN",
-          "category": "Étude de Cas",
+          "description": "CONTEXTE : Notre client reçoit plus de 7 000 opportunités par an par email d'un logiciel de sourcing. Le système de filtrage existant est inefficace car il est basé sur quelques mots-clés génériques. Les responsables d'appels d'offres doivent ouvrir chaque appel d'offres et lire les premières pages pour voir s'il y a un potentiel pour être un contractant principal ou un sous-traitant sur le projet. OBJECTIFS DU CLIENT : Réduire considérablement le temps moyen passé sur le processus de sélection (actuellement 1 heure par appel d'offres). Identifier immédiatement les 40 suspects habituels qui donnent un haut niveau de certitude pour décider du Bid / No Bid. SOLUTION MISE EN ŒUVRE : Détection de plus de 40 points clés en 5 minutes au lieu de plusieurs heures. Analyse des risques sur des sujets comme la finance, le contrat, le juridique... Note additionnelle : Aucun effort grâce à l'utilisation du standard Aitenders pour la détection des risques Bid / No Bid (+400 critères). Personnalisation : quelques heures. Modèles de détection spécifiques : 3 semaines. RÉSULTATS : 95% DE TEMPS GAGNÉ SUR L'IDENTIFICATION DES POINTS CLÉS. PLUS DE CAPACITÉ POUR UNE MEILLEURE SÉLECTION. +1 000 HEURES GAGNÉES PAR AN",
+          "category": "Étude de cas",
           "cta_text": "Lire la suite",
           "imageSrc": "/images/Portfolio/Automate%20your%20Bid%20No%20Bid%20Go%20from%207,000%20opportunities%20to%20700%20well-qualified%20tenders!.jpg"
         },
         {
-          "title": "Gestion des exigences pour un appel d’offres Design & Build de 10 Md€ – Consortium de 15 entreprises.",
-          "value": "Offre 10 Md€",
-          "description": "CONTEXTE : La ligne 15 du métro parisien est un appel d’offres Design & Build sur 2 ans, d’une valeur estimée à environ 10 Md€. Notre client est le Consortium, comprenant NGE, Webuilt, Equans et tous leurs partenaires (architectes, bureaux d’études, sous-traitants, etc.). OBJECTIFS DU CLIENT : Assurer l’efficacité dans la répartition du périmètre de travail entre les 15 entités différentes du consortium. Produire une matrice de conformité des exigences sans failles. Suivre et identifier collectivement les impacts des changements liés aux questions/réponses. Identifier les changements de versions et en analyser collectivement les impacts. SOLUTION MISE EN ŒUVRE : Détection et extraction automatique des exigences. Classification automatique. Périmètre et base de référence collaboratifs. Détection automatique des changements de version. Importation des Q&A et analyse des impacts. Note additionnelle : Session de formation de 2 heures pour les 150 membres de l’équipe. 2 heures de formation pour 10 managers. RÉSULTATS : MILLIERS DE JOURS/HOMMES ÉCONISÉS. MOINS DE RISQUES. ASSURER UN HAUT NIVEAU DE CONFORMITÉ",
-          "category": "Étude de Cas",
+          "title": "Gestion des exigences pour un appel d'offres Design & Build de 10Mds€ – Consortium de 15 entreprises.",
+          "value": "Appel d'offres de 10Mds€",
+          "description": "CONTEXTE : La ligne 15 du métro de Paris est un appel d'offres Design & Build de 2 ans, d'une valeur estimée à environ 10Mds€. Notre client est le Consortium, comprenant NGE, Webuilt, Equans, et tous leurs partenaires (architectes, bureaux d'études, sous-traitants, etc.). OBJECTIFS DU CLIENT : Assurer l'efficacité dans la répartition du périmètre de travail entre les 15 entités différentes du consortium. Produire une matrice de conformité des exigences sans faille. Suivre et identifier collectivement les impacts des changements liés aux questions/réponses. Identifier les changements de version et analyser collectivement leurs impacts. SOLUTION MISE EN ŒUVRE : Détection et extraction automatiques des exigences. Classification automatique. Périmètre et baseline collaboratifs. Détection automatique des changements de version. Importation des Q&R et analyse d'impact. Note additionnelle : Session de formation de 2 heures pour les 150 membres de l'équipe. 2 heures de formation pour 10 managers. RÉSULTATS : MILLIERS DE JOURS-HOMMES GAGNÉS. MOINS DE RISQUES. ASSURER UN HAUT NIVEAU DE CONFORMITÉ",
+          "category": "Étude de cas",
           "cta_text": "Lire la suite",
           "imageSrc": "/images/Portfolio/Requirement%20management%20for%20a%20€10Bn%20Design%20&%20Build%20tender%20–%20Consortium%20of%2015%20companies..jpg"
         }
       ]
     },
     "team_20": {
-      "tag": "Impact additionnel",
-      "title": "Des options avancées pour sécuriser vos projets",
+      "tag": "Impact Additionnel",
+      "title": "Options avancées pour sécuriser vos projets",
       "description": "Activez des fonctionnalités qui réduisent les litiges, fluidifient les réclamations et renforcent la sérénité des équipes.",
       "cards": [
         {
-          "title": "Action Q&A",
-          "description": "Simplifiez la résolution des problèmes avec des Q&A contextuels directement liés aux actions et engagements.",
+          "title": "Q&R d'Action",
+          "description": "Simplifiez la résolution de problèmes avec des Q&R contextuels directement liés aux actions et engagements.",
           "iconSrc": "/images/Action Q&A5.svg"
         },
         {
           "title": "Lien Action-Engagement",
-          "description": "Connectez chaque action à un engagement contractuel pour une traçabilité complète et une preuve de conformité continue.",
+          "description": "Connectez chaque action à un engagement contractuel pour une traçabilité complète et une preuve continue de conformité.",
           "iconSrc": "/images/Action-Commitment Link5.svg"
         },
         {
-          "title": "Sécurité avancée",
-          "description": "Bénéficiez d’un contrôle d’accès par rôle, d’une conformité RGPD et d’une auditabilité intégrée pour sécuriser chaque décision.",
+          "title": "Sécurité Avancée",
+          "description": "Bénéficiez d'un contrôle d'accès basé sur les rôles, de la conformité RGPD et d'une auditabilité intégrée pour sécuriser chaque décision.",
           "iconSrc": "/images/Advanced Security5.svg"
         },
         {
-          "title": "Journal des changements",
-          "description": "Conservez un historique horodaté de toutes les décisions et modifications contractuelles pour garantir une traçabilité incontestable.",
+          "title": "Journal des Modifications",
+          "description": "Maintenez un historique horodaté de toutes les décisions et modifications contractuelles pour assurer une traçabilité incontestable.",
           "iconSrc": "/images/Change Log5.svg"
         },
         {
-          "title": "Alertes réclamations",
-          "description": "Détectez en temps réel dérives, délais sensibles et risques de pénalités. Recevez des alertes avant que le problème n’apparaisse.",
+          "title": "Alertes de Réclamation",
+          "description": "Détectez les écarts, les délais sensibles et les risques de pénalités en temps réel. Recevez des alertes avant que le problème ne survienne.",
           "iconSrc": "/images/Claim Alerts5.svg"
         },
         {
-          "title": "Tableau des réclamations",
-          "description": "Visualisez l’évolution des réclamations, des risques et des points sensibles du projet en un seul tableau clair.",
+          "title": "Tableau de Bord des Réclamations",
+          "description": "Visualisez l'évolution des réclamations, des risques et des points sensibles du projet dans un seul tableau de bord clair.",
           "iconSrc": "/images/Claims Dashboard5.svg"
         }
       ]
@@ -612,15 +783,15 @@
   },
   "uc6": {
     "header_26": {
-      "title": "De l’exigence au livrable, zéro écart, zéro surprise",
-      "subtitle": "Reliez chaque exigence à ses livrables, assurez la conformité et réduisez les risques avec une traçabilité et une collaboration totales.",
-      "cta1": "Démarrer",
+      "title": "De l'exigence au livrable, zéro écart, zéro surprise",
+      "subtitle": "Liez chaque exigence à ses livrables, assurez la conformité et réduisez les risques avec une traçabilité et une collaboration totales.",
+      "cta1": "Commencer",
       "cta2": "En savoir plus"
     },
     "ai_copilot": {
-      "tag": "Maîtrise des exigences",
-      "title": "De l’exigence au livrable, chaque engagement tenu",
-      "subtitle": "Aitenders relie chaque exigence à ses livrables, intègre les preuves dans vos documents finaux et assure une traçabilité complète en exécution.",
+      "tag": "Maîtrise des Exigences",
+      "title": "De l'exigence au livrable, chaque engagement respecté",
+      "subtitle": "Aitenders lie chaque exigence à ses livrables, intègre les preuves dans vos documents finaux et assure une traçabilité complète en exécution.",
       "step1": "Capture et structuration des exigences",
       "step2": "Lien direct avec les livrables",
       "step3": "Traçabilité et conformité continues"
@@ -628,308 +799,179 @@
     "user_benefits": {
       "you": "Vous",
       "stat1_number": "",
-      "stat1_text": "démarrez l’exécution avec une vision totale",
+      "stat1_text": "démarrez l'exécution avec une vision totale",
       "stat2_number": "",
       "stat2_text": "alignez toutes les disciplines sur les exigences",
       "stat3_number": "",
-      "stat3_text": "prouvez la conformité sans manques ni retards"
+      "stat3_text": "prouvez la conformité sans lacunes ni retards"
     },
     "offer_steps_headline": {
-      "title": "Nous accompagnons vos équipes dans l’exécution des projets complexes"
+      "title": "Nous accompagnons vos équipes dans l'exécution de projets complexes"
     },
     "features": {
-      "feature1_tag": "Vision immédiate",
+      "feature1_tag": "Vision Immédiate",
       "feature1_title": "Démarrez avec une vision claire et totale",
-      "feature1_desc": "Chaque modification impacte automatiquement les exigences et questions liées. Vous passez d’un puzzle fragmenté à une vision exploitable et cohérente.",
-      "feature1_stat": "80 % de temps gagné sur le cadrage initial",
-      "feature1_popup": "Dès les premiers documents, Aitenders relie chaque exigence explicite et implicite à sa source. Les impacts des changements sont suivis, les contradictions identifiées et les liens créés automatiquement. Cette structuration immédiate évite toute interprétation manuelle et supprime la perte d’informations. Vos équipes disposent dès J+1 d’une vision claire, exploitable et partagée pour piloter le projet.",
-      "feature2_tag": "Management collectif",
+      "feature1_desc": "Chaque modification impacte automatiquement les exigences et questions associées. Vous passez d'un puzzle fragmenté à une vision exploitable et cohérente.",
+      "feature1_stat": "80% de temps gagné sur le cadrage initial",
+      "feature1_popup": "Dès les premiers documents, Aitenders lie chaque exigence explicite et implicite à sa source. Les impacts des changements sont suivis, les contradictions identifiées et les liens créés automatiquement. Cette structuration immédiate évite toute interprétation manuelle et élimine la perte d'information. Dès le Jour 1, vos équipes disposent d'une vision claire, exploitable et partagée pour gérer le projet.",
+      "feature2_tag": "Gestion Collective",
       "feature2_title": "Transformez la gestion en performance continue",
-      "feature2_desc": "Analysez budgets, coûts et délais avec des indicateurs guidés. Les décisions sont prises collectivement en temps réel pour plus d’efficacité.",
-      "feature2_stat": "30 % de temps gagné sur les cycles de revue",
-      "feature2_popup": "Grâce aux analyses guidées par vos indicateurs, Aitenders éclaire les budgets, coûts, délais et risques. Les impacts de chaque action sont mesurés immédiatement pour explorer les meilleures solutions. Le collectif travaille en mode Living Management, capable d’intégrer les changements, d’adapter la stratégie et de maintenir l’alignement des équipes tout au long du projet.",
-      "feature3_tag": "Couverture intégrale",
-      "feature3_title": "Maîtrisez vos exigences jusqu’à la dernière ligne",
-      "feature3_desc": "Toutes les exigences sont intégrées et reliées aux documents finaux. La conformité devient un fil conducteur continu de l’exécution.",
-      "feature3_stat": "100 % des exigences couvertes et tracées",
-      "feature3_popup": "Aitenders organise chaque exigence explicite, implicite ou dispersée dans une base centralisée. Grâce aux références croisées, la conformité devient un Living Thread, intégré à chaque étape de l’exécution. Vos documents finaux sont justifiés et traçables, offrant une maîtrise totale et une transparence généralisée sur l’ensemble du projet."
+      "feature2_desc": "Analysez les budgets, coûts et délais avec des indicateurs guidés. Les décisions sont prises collectivement en temps réel pour plus d'efficacité.",
+      "feature2_stat": "30% de temps gagné sur les cycles de revue",
+      "feature2_popup": "Grâce aux analyses guidées par vos indicateurs, Aitenders clarifie les budgets, coûts, délais et risques. Les impacts de chaque action sont mesurés immédiatement pour explorer les meilleures solutions. L'équipe travaille en mode de Gestion Vivante, capable d'intégrer les changements, d'adapter la stratégie et de maintenir l'alignement de l'équipe tout au long du projet.",
+      "feature3_tag": "Couverture Complète",
+      "feature3_title": "Maîtrisez vos exigences jusqu'à la dernière ligne",
+      "feature3_desc": "Toutes les exigences sont intégrées et liées aux documents finaux. La conformité devient un fil conducteur continu tout au long de l'exécution.",
+      "feature3_stat": "100% des exigences couvertes et tracées",
+      "feature3_popup": "Aitenders organise chaque exigence explicite, implicite ou dispersée dans une base centralisée. Grâce aux références croisées, la conformité devient un Fil Vivant, intégré à chaque étape de l'exécution. Vos documents finaux sont justifiés et traçables, offrant un contrôle total et une transparence généralisée sur l'ensemble du projet."
     },
     "concrete_results": {
       "title": "Des résultats concrets pour vos projets complexes",
-      "stat1_number": "80 %",
-      "stat1_text": "du travail initial réalisé dès le premier jour",
-      "stat2_number": "–50 %",
-      "stat2_text": "de temps sur les cycles de revue et décision",
-      "stat3_number": "100 %",
+      "stat1_number": "80%",
+      "stat1_text": "du travail initial fait dès le premier jour",
+      "stat2_number": "–50%",
+      "stat2_text": "de temps sur les cycles de revue et de décision",
+      "stat3_number": "100%",
       "stat3_text": "de couverture et de traçabilité des exigences",
-      "cta_button": "Lancez la simulation de l’impact sur vos projets"
+      "cta_button": "Lancer la simulation d'impact sur vos projets"
     },
     "portfolio": {
-      "title": "Des transformations menées avec succès",
+      "title": "Transformations menées avec succès",
       "projects": [
         {
-          "title": "Systématiser la découverte et le lancement de plus de 400 offres par an.",
-          "value": "400 offres / an",
-          "description": "CONTEXTE : Équipe de 5 ingénieurs devant analyser plus de 400 appels d’offres par an dans le domaine de l’ingénierie de conseil. Documents d’appel d’offres principalement en anglais, français et espagnol. Moyenne de 200 à 300 pages par appel d’offres. OBJECTIFS DU CLIENT : Gagner du temps dans l’identification des risques et anticiper les goulots d’étranglement. Identifier rapidement si nous devons mobiliser des partenaires/sous-traitants. Mobilisation de l’équipe de support. Identifier immédiatement les critères Bid / No Bid. Identifier les principaux risques (techniques, financiers et juridiques). SOLUTION MISE EN ŒUVRE : Classification automatique des clauses par catégories. Capture des risques et opportunités clés. Exportation et intégration dans le processus existant. Note additionnelle : Mise en place : 2 heures. Formation de l’équipe limitée à 2 × 1h. RÉSULTATS : 20/30 % DE TEMPS EN MOINS. -10/15H PAR PROJET. 300–500 K€/AN",
-          "category": "Étude de Cas",
+          "title": "Systématiser la découverte et le lancement de plus de 400 appels d'offres par an.",
+          "value": "400 AO / an",
+          "description": "CONTEXTE : Une équipe de 5 ingénieurs devant analyser plus de 400 appels d'offres par an dans le domaine de l'ingénierie conseil. Documents d'appel d'offres principalement en anglais, français et espagnol. Moyenne de 200 à 300 pages par appel d'offres. OBJECTIFS DU CLIENT : Gagner du temps dans l'identification des risques et anticiper les goulots d'étranglement. Identifier rapidement si nous devons faire appel à des partenaires/sous-traitants. Mobiliser l'équipe support. Identifier immédiatement les critères de Bid / No Bid. Identifier les principaux risques (techniques, financiers et juridiques). SOLUTION MISE EN ŒUVRE : Classification automatique des clauses par catégories. Capture des risques et opportunités clés. Exportation et intégration dans le processus existant. Note additionnelle : Mise en place : 2 heures. Formation de l'équipe limitée à 2 x 1h. RÉSULTATS : 20/30% DE TEMPS EN MOINS. -10/15H PAR PROJET. 300–500K€/AN",
+          "category": "Étude de cas",
           "cta_text": "Lire la suite",
           "imageSrc": "/images/Portfolio/Systematize%20the%20discovery%20and%20launch%20of%20over%20400%20tenders%20per%20year..jpg"
         },
         {
-          "title": "Extraire et produire la matrice de conformité des exigences sur un appel d’offres de 40 M€.",
-          "value": "Offre 40M€",
-          "description": "CONTEXTE : Le projet était un projet partiel pour la fourniture d’un système de traction métro intégré pour une nouvelle ligne de métro en France. Le client devait identifier plus de 2 000 exigences dans environ 50 documents techniques différents. L’équipe comptait 10 personnes, impliquant 3 Business Units différentes. OBJECTIFS DU CLIENT : Identifier et stocker immédiatement et correctement toutes les exigences identifiées par le client. Identifier les autres exigences impactant le périmètre et le chiffrage de l’offre. Permettre à l’équipe d’avoir une revue commune standardisée et simplifiée autour de toutes les exigences. Livrer rapidement une matrice de conformité totalement revue et précise à leurs clients. SOLUTION MISE EN ŒUVRE : Détection des exigences. Classification PBS, WBS. Importation des réponses – Association des questions. Analyse des écarts de version (V1 > V2). Couverture des exigences. Note additionnelle : Une session pour les Directeurs de Projet (1h) afin de lancer l’organisation du projet. 1h de formation pour le reste de l’équipe (9 membres). RÉSULTATS : MATRICE DE CONFORMITÉ LIVRÉE SANS LACUNES. ENVIRON 30 % DE TEMPS EN MOINS SUR L’ENSEMBLE DU PROCESSUS",
-          "category": "Étude de Cas",
+          "title": "Extraire et produire la matrice de conformité des exigences pour un appel d'offres de 40M€.",
+          "value": "Appel d'offres de 40M€",
+          "description": "CONTEXTE : Le projet était un projet partiel pour la fourniture d'un système de traction de métro intégré pour une nouvelle ligne de métro en France. Le client devait identifier plus de 2 000 exigences dans environ 50 documents techniques différents. L'équipe était composée de 10 personnes, impliquant 3 Business Units différentes. OBJECTIFS DU CLIENT : Identifier et stocker immédiatement et correctement toutes les exigences identifiées par le client. Identifier d'autres exigences ayant un impact sur le périmètre et le chiffrage de l'offre. Permettre à l'équipe d'avoir une revue commune standardisée et simplifiée autour de toutes les exigences. Livrer rapidement une matrice de conformité entièrement revue et précise à leurs clients. SOLUTION MISE EN ŒUVRE : Détection des exigences. Classification PBS, WBS. Importation des réponses – Association des questions. Analyse d'écart de version (V1 > V2). Couverture des exigences. Note additionnelle : Une session pour les Directeurs de Projet (1h) pour lancer l'organisation du projet. 1h de formation pour le reste de l'équipe (9 membres). RÉSULTATS : MATRICE DE CONFORMITÉ LIVRÉE SANS LACUNES. ENVIRON 30% DE TEMPS EN MOINS SUR L'ENSEMBLE DU PROCESSUS",
+          "category": "Étude de cas",
           "cta_text": "Lire la suite",
           "imageSrc": "/images/Portfolio/Extract%20and%20produce%20the%20requirement%20compliance%20matrix%20for%20a%20€40M%20tender..jpg"
         },
         {
-          "title": "Automatisez votre Bid / No Bid : Passez de 7 000 opportunités à 700 offres bien qualifiées !",
+          "title": "Automatisez votre Bid / No Bid : Passez de 7 000 opportunités à 700 appels d'offres bien qualifiés !",
           "value": "7000 opportunités / an",
-          "description": "CONTEXTE : Notre client reçoit par mail plus de 7 000 opportunités par an depuis un logiciel de sourcing. Le système de filtrage en place est inefficace car basé sur quelques mots-clés génériques. Les responsables des appels d’offres doivent ouvrir chaque appel d’offres et lire les premières pages pour voir s’il existe un potentiel d’être contractant principal ou sous-traitant sur le projet. OBJECTIFS DU CLIENT : Réduire drastiquement le temps moyen passé sur le processus de sélection (actuellement 1 heure par appel d’offres). Identifier immédiatement les 40 suspects habituels qui donnent un haut niveau de certitude pour décider du Bid / No Bid. SOLUTION MISE EN ŒUVRE : Détection de plus de 40 points clés en 5 minutes au lieu de plusieurs heures. Analyse des risques sur des sujets comme la finance, le contrat, le juridique… Note additionnelle : Aucun effort grâce à l’utilisation du standard Atenders pour la détection des risques Bid / No Bid (+400 critères). Personnalisation : quelques heures. Modèles spécifiques de détection : 3 semaines. RÉSULTATS : 95 % DE TEMPS GAGNÉ SUR L’IDENTIFICATION DES POINTS CLÉS. PLUS DE CAPACITÉ POUR UNE MEILLEURE SÉLECTION. +1 000 HEURES D’ÉCONOMIES PAR AN",
-          "category": "Étude de Cas",
+          "description": "CONTEXTE : Notre client reçoit plus de 7 000 opportunités par an par email d'un logiciel de sourcing. Le système de filtrage existant est inefficace car il est basé sur quelques mots-clés génériques. Les responsables d'appels d'offres doivent ouvrir chaque appel d'offres et lire les premières pages pour voir s'il y a un potentiel pour être un contractant principal ou un sous-traitant sur le projet. OBJECTIFS DU CLIENT : Réduire considérablement le temps moyen passé sur le processus de sélection (actuellement 1 heure par appel d'offres). Identifier immédiatement les 40 suspects habituels qui donnent un haut niveau de certitude pour décider du Bid / No Bid. SOLUTION MISE EN ŒUVRE : Détection de plus de 40 points clés en 5 minutes au lieu de plusieurs heures. Analyse des risques sur des sujets comme la finance, le contrat, le juridique... Note additionnelle : Aucun effort grâce à l'utilisation du standard Aitenders pour la détection des risques Bid / No Bid (+400 critères). Personnalisation : quelques heures. Modèles de détection spécifiques : 3 semaines. RÉSULTATS : 95% DE TEMPS GAGNÉ SUR L'IDENTIFICATION DES POINTS CLÉS. PLUS DE CAPACITÉ POUR UNE MEILLEURE SÉLECTION. +1 000 HEURES GAGNÉES PAR AN",
+          "category": "Étude de cas",
           "cta_text": "Lire la suite",
           "imageSrc": "/images/Portfolio/Automate%20your%20Bid%20No%20Bid%20Go%20from%207,000%20opportunities%20to%20700%20well-qualified%20tenders!.jpg"
         },
         {
-          "title": "Gestion des exigences pour un appel d’offres Design & Build de 10 Md€ – Consortium de 15 entreprises.",
-          "value": "Offre 10 Md€",
-          "description": "CONTEXTE : La ligne 15 du métro parisien est un appel d’offres Design & Build sur 2 ans, d’une valeur estimée à environ 10 Md€. Notre client est le Consortium, comprenant NGE, Webuilt, Equans et tous leurs partenaires (architectes, bureaux d’études, sous-traitants, etc.). OBJECTIFS DU CLIENT : Assurer l’efficacité dans la répartition du périmètre de travail entre les 15 entités différentes du consortium. Produire une matrice de conformité des exigences sans failles. Suivre et identifier collectivement les impacts des changements liés aux questions/réponses. Identifier les changements de versions et en analyser collectivement les impacts. SOLUTION MISE EN ŒUVRE : Détection et extraction automatique des exigences. Classification automatique. Périmètre et base de référence collaboratifs. Détection automatique des changements de version. Importation des Q&A et analyse des impacts. Note additionnelle : Session de formation de 2 heures pour les 150 membres de l’équipe. 2 heures de formation pour 10 managers. RÉSULTATS : MILLIERS DE JOURS/HOMMES ÉCONISÉS. MOINS DE RISQUES. ASSURER UN HAUT NIVEAU DE CONFORMITÉ",
-          "category": "Étude de Cas",
+          "title": "Gestion des exigences pour un appel d'offres Design & Build de 10Mds€ – Consortium de 15 entreprises.",
+          "value": "Appel d'offres de 10Mds€",
+          "description": "CONTEXTE : La ligne 15 du métro de Paris est un appel d'offres Design & Build de 2 ans, d'une valeur estimée à environ 10Mds€. Notre client est le Consortium, comprenant NGE, Webuilt, Equans, et tous leurs partenaires (architectes, bureaux d'études, sous-traitants, etc.). OBJECTIFS DU CLIENT : Assurer l'efficacité dans la répartition du périmètre de travail entre les 15 entités différentes du consortium. Produire une matrice de conformité des exigences sans faille. Suivre et identifier collectivement les impacts des changements liés aux questions/réponses. Identifier les changements de version et analyser collectivement leurs impacts. SOLUTION MISE EN ŒUVRE : Détection et extraction automatiques des exigences. Classification automatique. Périmètre et baseline collaboratifs. Détection automatique des changements de version. Importation des Q&R et analyse d'impact. Note additionnelle : Session de formation de 2 heures pour les 150 membres de l'équipe. 2 heures de formation pour 10 managers. RÉSULTATS : MILLIERS DE JOURS-HOMMES GAGNÉS. MOINS DE RISQUES. ASSURER UN HAUT NIVEAU DE CONFORMITÉ",
+          "category": "Étude de cas",
           "cta_text": "Lire la suite",
           "imageSrc": "/images/Portfolio/Requirement%20management%20for%20a%20€10Bn%20Design%20&%20Build%20tender%20–%20Consortium%20of%2015%20companies..jpg"
         }
       ]
     },
     "team_20": {
-      "tag": "Impact stratégique",
-      "title": "Des fonctionnalités premium pour exécuter sans faille",
+      "tag": "Impact Stratégique",
+      "title": "Fonctionnalités premium pour une exécution sans faille",
       "description": "Activez des options avancées pour un contrôle total, une gouvernance cohérente et une traçabilité consolidée à chaque étape.",
       "cards": [
         {
-          "title": "Exigences natives",
+          "title": "Exigences Natives",
           "description": "Chaque livrable hérite automatiquement des exigences métier et techniques, avec une traçabilité précise dès sa conception.",
           "iconSrc": "/images/Native Requirements6.svg"
         },
         {
-          "title": "Gestion des exigences client",
-          "description": "Déployez automatiquement les évolutions des exigences de référence avec validation et impact mesuré sur la performance projet.",
+          "title": "Gestion des Exigences Client",
+          "description": "Déployez automatiquement les changements des exigences de base avec validation et impact mesuré sur la performance du projet.",
           "iconSrc": "/images/Client Requirement Management6.svg"
         },
         {
-          "title": "Couverture de conformité",
-          "description": "Contrôlez en continu la conformité métier, technique et qualité pour détecter et corriger immédiatement toute déviation.",
+          "title": "Couverture de Conformité",
+          "description": "Surveillez en continu la conformité métier, technique et qualité pour détecter et corriger immédiatement tout écart.",
           "iconSrc": "/images/Compliance Coverage6.svg"
         },
         {
-          "title": "Audits tracés",
+          "title": "Audits Tracés",
           "description": "Chaque décision est documentée avec une auditabilité automatique basée sur des preuves traçables et vérifiables.",
           "iconSrc": "/images/Tracked Audits6.svg"
         },
         {
-          "title": "Collaboration multi-équipes",
-          "description": "Un espace collectif synchronise automatiquement chaque discipline et acteur impliqué dans l’exécution du projet.",
+          "title": "Collaboration Multi-équipes",
+          "description": "Un espace collectif synchronise automatiquement chaque discipline et partie prenante impliquée dans l'exécution du projet.",
           "iconSrc": "/images/Multi-team Collaboration6.svg"
-        }
-      ]
-    }
-  },
-  "uc1": {
-    "header_26": {
-      "title": "Une analyse go / no go claire et immédiate",
-      "subtitle": "Analysez, validez et sécurisez vos projets rapides dès le premier jour avec l’IA pour gagner du temps et éviter les faux départs.",
-      "cta1": "Démarrer",
-      "cta2": "En savoir plus"
-    },
-    "ai_copilot": {
-      "tag": "Validation rapide",
-      "title": "Décidez go / no-go en toute confiance",
-      "subtitle": "Aitenders analyse vos dossiers en minutes, priorise les points critiques et guide la validation pour garantir vos processus internes.",
-      "step1": "Analyse immédiate des documents",
-      "step2": "Vue claire et priorisée des risques",
-      "step3": "Validation guidée et archivage automatique"
-    },
-    "user_benefits": {
-      "you": "Vous",
-      "stat1_number": "",
-      "stat1_text": "gagnez plusieurs jours de revue manuelle",
-      "stat2_number": "",
-      "stat2_text": "obtenez Décision go / no-go en moins de 48 h",
-      "stat3_number": "",
-      "stat3_text": "gagnez en crédibilité immédiate en comité"
-    },
-    "offer_steps_headline": {
-      "title": "Nous accompagnons vos équipes dans chaque étape d’analyse"
-    },
-    "features": {
-      "feature1_tag": "Structuration immédiate",
-      "feature1_title": "Analysez et priorisez vos documents dès J+1",
-      "feature1_desc": "Les assistants IA détectent en minutes critères d’intérêt, points critiques et preuves. Le Bid Manager démarre avec une base claire et exploitable.",
-      "feature1_stat": "Décision go / no-go possible en quelques minutes",
-      "feature1_popup": "Grâce à l’analyse automatique, vos documents sont instantanément classés et priorisés. Les critères clés, points bloquants et preuves sont détectés et organisés. Le Bid Manager obtient une vision globale du projet et peut identifier immédiatement les risques potentiels pour décider rapidement d’un go / no-go.",
-      "feature2_tag": "Vision centralisée",
-      "feature2_title": "Obtenez une vue claire et priorisée",
-      "feature2_desc": "Aitenders génère un résumé visuel centralisé avec critères, valeurs et sources. Fini les centaines de pages ou fichiers dispersés.",
-      "feature2_stat": "Revue interne prête en quelques minutes",
-      "feature2_popup": "La plateforme produit automatiquement une synthèse claire et priorisée de tous les critères détectés. Chaque élément est relié à son document source. Les équipes n’ont plus besoin de parcourir des centaines de pages ni de jongler avec plusieurs fichiers : tout est centralisé dans un tableau visuel et exploitable immédiatement.",
-      "feature3_tag": "Validation guidée",
-      "feature3_title": "Validez et archivez chaque élément facilement",
-      "feature3_desc": "Confirmez, ajustez ou rejetez chaque point identifié par l’IA. Chaque validation est historisée et intégrée dans un dossier complet.",
-      "feature3_stat": "100 % des validations tracées automatiquement",
-      "feature3_popup": "Aitenders guide les équipes dans la validation pas à pas. Chaque élément identifié est confirmé, ajusté ou rejeté, puis archivé avec preuve. Ce processus fluide remplace les vérifications manuelles et incertaines. Résultat : un dossier probant, complet et traçable, sans zones grises ni surcharge administrative."
-    },
-    "concrete_results": {
-      "title": "Des résultats concrets pour vos petites offres",
-      "stat1_number": "50-70 %",
-      "stat1_text": "de temps gagné sur l’analyse",
-      "stat2_number": "100 %",
-      "stat2_text": "des critères critiques vérifiés et tracés",
-      "stat3_number": "0",
-      "stat3_text": "escalade interne, crédibilité renforcée en comité",
-      "cta_button": "Lancez la simulation de l’impact sur vos projets"
-    },
-    "portfolio": {
-      "title": "Déployé sur de nombreux projets",
-      "projects": [
-        {
-          "title": "Systématiser la découverte et le lancement de plus de 400 offres par an.",
-          "value": "400 offres / an",
-          "description": "CONTEXTE : Équipe de 5 ingénieurs devant analyser plus de 400 appels d’offres par an dans le domaine de l’ingénierie de conseil. Documents d’appel d’offres principalement en anglais, français et espagnol. Moyenne de 200 à 300 pages par appel d’offres. OBJECTIFS DU CLIENT : Gagner du temps dans l’identification des risques et anticiper les goulots d’étranglement. Identifier rapidement si nous devons mobiliser des partenaires/sous-traitants. Mobilisation de l’équipe de support. Identifier immédiatement les critères Bid / No Bid. Identifier les principaux risques (techniques, financiers et juridiques). SOLUTION MISE EN ŒUVRE : Classification automatique des clauses par catégories. Capture des risques et opportunités clés. Exportation et intégration dans le processus existant. Note additionnelle : Mise en place : 2 heures. Formation de l’équipe limitée à 2 × 1h. RÉSULTATS : 20/30 % DE TEMPS EN MOINS. -10/15H PAR PROJET. 300–500 K€/AN",
-          "category": "Étude de Cas",
-          "cta_text": "Lire la suite",
-          "imageSrc": "/images/Portfolio/Systematize%20the%20discovery%20and%20launch%20of%20over%20400%20tenders%20per%20year..jpg"
-        },
-        {
-          "title": "Extraire et produire la matrice de conformité des exigences sur un appel d’offres de 40 M€.",
-          "value": "Offre 40M€",
-          "description": "CONTEXTE : Le projet était un projet partiel pour la fourniture d’un système de traction métro intégré pour une nouvelle ligne de métro en France. Le client devait identifier plus de 2 000 exigences dans environ 50 documents techniques différents. L’équipe comptait 10 personnes, impliquant 3 Business Units différentes. OBJECTIFS DU CLIENT : Identifier et stocker immédiatement et correctement toutes les exigences identifiées par le client. Identifier les autres exigences impactant le périmètre et le chiffrage de l’offre. Permettre à l’équipe d’avoir une revue commune standardisée et simplifiée autour de toutes les exigences. Livrer rapidement une matrice de conformité totalement revue et précise à leurs clients. SOLUTION MISE EN ŒUVRE : Détection des exigences. Classification PBS, WBS. Importation des réponses – Association des questions. Analyse des écarts de version (V1 > V2). Couverture des exigences. Note additionnelle : Une session pour les Directeurs de Projet (1h) afin de lancer l’organisation du projet. 1h de formation pour le reste de l’équipe (9 membres). RÉSULTATS : MATRICE DE CONFORMITÉ LIVRÉE SANS LACUNES. ENVIRON 30 % DE TEMPS EN MOINS SUR L’ENSEMBLE DU PROCESSUS",
-          "category": "Étude de Cas",
-          "cta_text": "Lire la suite",
-          "imageSrc": "/images/Portfolio/Extract%20and%20produce%20the%20requirement%20compliance%20matrix%20for%20a%20€40M%20tender..jpg"
-        },
-        {
-          "title": "Automatisez votre Bid / No Bid : Passez de 7 000 opportunités à 700 offres bien qualifiées !",
-          "value": "7000 opportunités / an",
-          "description": "CONTEXTE : Notre client reçoit par mail plus de 7 000 opportunités par an depuis un logiciel de sourcing. Le système de filtrage en place est inefficace car basé sur quelques mots-clés génériques. Les responsables des appels d’offres doivent ouvrir chaque appel d’offres et lire les premières pages pour voir s’il existe un potentiel d’être contractant principal ou sous-traitant sur le projet. OBJECTIFS DU CLIENT : Réduire drastiquement le temps moyen passé sur le processus de sélection (actuellement 1 heure par appel d’offres). Identifier immédiatement les 40 suspects habituels qui donnent un haut niveau de certitude pour décider du Bid / No Bid. SOLUTION MISE EN ŒUVRE : Détection de plus de 40 points clés en 5 minutes au lieu de plusieurs heures. Analyse des risques sur des sujets comme la finance, le contrat, le juridique… Note additionnelle : Aucun effort grâce à l’utilisation du standard Atenders pour la détection des risques Bid / No Bid (+400 critères). Personnalisation : quelques heures. Modèles spécifiques de détection : 3 semaines. RÉSULTATS : 95 % DE TEMPS GAGNÉ SUR L’IDENTIFICATION DES POINTS CLÉS. PLUS DE CAPACITÉ POUR UNE MEILLEURE SÉLECTION. +1 000 HEURES D’ÉCONOMIES PAR AN",
-          "category": "Étude de Cas",
-          "cta_text": "Lire la suite",
-          "imageSrc": "/images/Portfolio/Automate%20your%20Bid%20No%20Bid%20Go%20from%207,000%20opportunities%20to%20700%20well-qualified%20tenders!.jpg"
-        },
-        {
-          "title": "Gestion des exigences pour un appel d’offres Design & Build de 10 Md€ – Consortium de 15 entreprises.",
-          "value": "Offre 10 Md€",
-          "description": "CONTEXTE : La ligne 15 du métro parisien est un appel d’offres Design & Build sur 2 ans, d’une valeur estimée à environ 10 Md€. Notre client est le Consortium, comprenant NGE, Webuilt, Equans et tous leurs partenaires (architectes, bureaux d’études, sous-traitants, etc.). OBJECTIFS DU CLIENT : Assurer l’efficacité dans la répartition du périmètre de travail entre les 15 entités différentes du consortium. Produire une matrice de conformité des exigences sans failles. Suivre et identifier collectivement les impacts des changements liés aux questions/réponses. Identifier les changements de versions et en analyser collectivement les impacts. SOLUTION MISE EN ŒUVRE : Détection et extraction automatique des exigences. Classification automatique. Périmètre et base de référence collaboratifs. Détection automatique des changements de version. Importation des Q&A et analyse des impacts. Note additionnelle : Session de formation de 2 heures pour les 150 membres de l’équipe. 2 heures de formation pour 10 managers. RÉSULTATS : MILLIERS DE JOURS/HOMMES ÉCONISÉS. MOINS DE RISQUES. ASSURER UN HAUT NIVEAU DE CONFORMITÉ",
-          "category": "Étude de Cas",
-          "cta_text": "Lire la suite",
-          "imageSrc": "/images/Portfolio/Requirement%20management%20for%20a%20€10Bn%20Design%20&%20Build%20tender%20–%20Consortium%20of%2015%20companies..jpg"
-        }
-      ]
-    },
-    "team_20": {
-      "tag": "Confiance supplémentaire",
-      "title": "Des options complémentaires pour sécuriser vos petites offres",
-      "description": "Au-delà de l’analyse principale, découvrez des fonctions intégrées qui simplifient les revues, renforcent la conformité et fiabilisent vos validations.",
-      "cards": [
-        {
-          "title": "Dossier de preuves",
-          "description": "Exploitez un fichier complet de validation avec sources et historique, prêt pour les comités ou les audits.",
-          "iconSrc": "/images/Auto evidence pack.svg"
-        },
-        {
-          "title": "Détection des changements",
-          "description": "Identifiez instantanément les modifications entre versions de documents, avec impacts suivis sur les critères.",
-          "iconSrc": "/images/Change Detection.svg"
-        },
-        {
-          "title": "Alertes de conformité",
-          "description": "Recevez une notification si un critère reste non validé afin d’éviter tout oubli avant soumission.",
-          "iconSrc": "/images/Compliance Alerts.svg"
-        },
-        {
-          "title": "Accès sécurisé",
-          "description": "Définissez des droits par rôle pour responsables, assistants ou réviseurs afin de garder le contrôle des validations.",
-          "iconSrc": "/images/Secure Access.svg"
-        },
-        {
-          "title": "Rapports exportables",
-          "description": "Générez des rapports clairs et formatés de toutes vos vérifications et validations, prêts à être partagés.",
-          "iconSrc": "/images/Report Export.svg"
-        },
-        {
-          "title": "Commentaires partagés",
-          "description": "Ajoutez des annotations sur critères ou documents pour faciliter la collaboration pendant les revues.",
-          "iconSrc": "/images/Shared Comments.svg"
         }
       ]
     }
   },
   "product": {
     "hero": {
-      "badge": "Plateforme IA pour Appels d'Offres",
+      "badge": "Plateforme IA pour les Appels d'Offres",
       "title": "Votre copilote IA pour maîtriser chaque appel d'offres.",
-      "subtitle": "Dès l'appel d'offres jusqu'à la livraison, Aitenders est votre copilote – conçu pour aller plus vite et rester aligné.",
+      "subtitle": "De l'appel d'offres à la livraison, Aitenders est votre copilote – conçu pour aller plus vite et rester aligné.",
       "cta_button": "Demander une démo"
     },
     "features": [
       {
-        "title": "Analyse",
-        "description": "Analyse intelligente des dossiers d'appel d'offres.",
+        "title": "Analyser",
+        "description": "Analyse intelligente des documents d'appel d'offres.",
         "points": [
-          "Détection d'exigences et vérification de conformité",
-          "Lecture automatique et génération de matrices",
+          "Détection des exigences et vérification de la conformité",
+          "Lecture automatique et génération de matrice",
           "Collaboration fluide avec les partenaires internes et externes"
         ],
         "iconSrc": "/images/UI1.svg"
       },
       {
-        "title": "Write",
+        "title": "Rédiger",
         "description": "Créez des réponses solides, alignées et traçables.",
         "points": [
-          "Génération de documents assistée par intelligence artificielle",
+          "Génération de documents assistée par l'IA",
           "Bibliothèques de contenu personnalisables et réutilisables",
           "Suivi de la couverture des exigences contractuelles"
         ],
         "iconSrc": "/images/UI 2.svg"
       },
       {
-        "title": "Pilot",
+        "title": "Piloter",
         "description": "Gardez le contrôle jusqu'à la fin du projet.",
         "points": [
-          "Gestion des modifications contractuelles et avenants",
-          "Suivi des obligations et des risques liés",
-          "Traçabilité documentaire et gestion des versions en masse"
+          "Gestion des changements contractuels et des avenants",
+          "Suivi des obligations et des risques associés",
+          "Traçabilité des documents et gestion des versions en masse"
         ],
         "iconSrc": "/images/UI 3.svg"
       },
       {
-        "title": "Knowledge",
-        "description": "Votre mémoire projet, centralisée et activable.",
+        "title": "Savoir",
+        "description": "La mémoire de vos projets, centralisée et activable.",
         "points": [
           "Recherche transversale sur les portefeuilles de projets",
-          "Partage structuré de livrables et référentiels",
-          "Infrastructure dédiée avec modèles IA personnalisables"
+          "Partage structuré des livrables et des référentiels",
+          "Infrastructure dédiée avec modèles d'IA personnalisables"
         ],
         "iconSrc": "/images/product-feature-4.svg"
       }
     ],
     "integrations": {
-      "tagline": "Intégrations intelligentes",
-      "heading": "Connectez Aitenders à vos outils métiers",
-      "description": "Notre plateforme s’intègre naturellement à votre écosystème logiciel. Reliée à vos outils et processus existants, elle transforme une gestion fragmentée en un flux d’intelligence connectée, pour sécuriser vos données et décupler l’impact de vos équipes.",
-      "subheading1": "Connecteurs prêts à l’emploi",
-      "subfeature1_text": "Intégration native avec Microsoft Word, Excel, Teams et SharePoint\n\nPlug-in Office 365 pour automatiser la gestion des contenus",
-      "subheading2": "Ouverte et interopérable",
-      "subfeature2_text": "API partenaires (Salesforce, Procore, CRM, ERP, DMS…)\n\nSécurité avancée : SaaS, instance dédiée ou déploiement sur site",
+      "tagline": "Intégrations Intelligentes",
+      "heading": "Connectez Aitenders à vos outils métier",
+      "description": "Notre plateforme s'intègre naturellement à votre écosystème logiciel. Connectée à vos outils et processus existants, elle transforme une gestion fragmentée en un flux d'intelligence connectée, pour sécuriser vos données et multiplier l'impact de vos équipes.",
+      "subheading1": "Connecteurs prêts à l'emploi",
+      "subfeature1_text": "Intégration native avec Microsoft Word, Excel, Teams et SharePoint\n\nPlug-in Office 365 pour automatiser la gestion de contenu",
+      "subheading2": "Ouvert et interopérable",
+      "subfeature2_text": "API partenaires (Salesforce, Procore, CRM, ERP, DMS…)\n\nSécurité avancée : déploiement SaaS, instance dédiée ou sur site (on-premise)",
       "cta_button": "Demander une démo"
     },
     "kpis": {
       "tagline": "Performance",
-      "heading": "Simplifiez vos appels d’offres et gagnez en efficacité",
-      "description": "Aitenders automatise l’analyse, le suivi et la conformité. Vos équipes répondent plus vite, réduisent les erreurs et augmentent leurs chances de succès.",
+      "heading": "Simplifiez vos appels d'offres et gagnez en efficacité",
+      "description": "Aitenders automatise l'analyse, le suivi et la conformité. Vos équipes répondent plus vite, réduisent les erreurs et augmentent leurs chances de succès.",
       "stat1_number": "70%",
       "stat1_text": "Préparation plus rapide",
-      "stat2_number": "3,5x",
-      "stat2_text": "Taux de réussite",
+      "stat2_number": "3.5x",
+      "stat2_text": "Taux de succès",
       "stat3_number": "100%",
       "stat3_text": "Conformité garantie",
       "cta_button": "Demander une démo",
@@ -937,153 +979,33 @@
     },
     "faq": {
       "title": "Vos questions sur Aitenders",
-      "subtitle": "Obtenez des réponses aux questions courantes sur la mise en œuvre et les fonctionnalités d'Aitenders.",
+      "subtitle": "Obtenez des réponses aux questions fréquentes sur la mise en œuvre et les fonctionnalités d'Aitenders.",
       "faq_list": [
         {
           "question": "Comment Aitenders s'intègre-t-il à nos processus existants ?",
-          "answer": "La plateforme s'adapte à vos méthodes de travail actuelles, sans bouleverser vos outils ni vos équipes."
+          "answer": "La plateforme s'adapte à vos méthodes de travail actuelles, sans perturber vos outils ni vos équipes."
         },
         {
-          "question": "Quels types d'appels d'offres peut-on gérer avec Aitenders ?",
-          "answer": "Tous types : marchés publics, privés, multi-lots, internationaux — quel que soit le secteur."
+          "question": "Quels types d'appels d'offres peuvent être gérés avec Aitenders ?",
+          "answer": "Tous types : publics, privés, multi-lots, internationaux — quel que soit le secteur."
         },
         {
-          "question": "Nos données sont-elles sécurisées avec Aitenders ?",
-          "answer": "Oui. L'infrastructure respecte des standards stricts (hébergement dédié, chiffrement, SSO, etc.)."
+          "question": "Nos données sont-elles en sécurité avec Aitenders ?",
+          "answer": "Oui. L'infrastructure est conforme aux normes strictes (hébergement dédié, chiffrement, SSO, etc.)."
         },
         {
-          "question": "Peut-on adapter Aitenders à notre secteur ou nos besoins spécifiques ?",
+          "question": "Aitenders peut-il être adapté à notre secteur ou à nos besoins spécifiques ?",
           "answer": "Oui. L'outil est modulaire et configurable selon vos enjeux métier et votre organisation."
         },
         {
-          "question": "Quel accompagnement proposez-vous lors de la mise en place ?",
-          "answer": "Nous assurons un onboarding complet : cadrage, paramétrage, formation, support technique."
+          "question": "Quel support offrez-vous lors de la mise en œuvre ?",
+          "answer": "Nous fournissons un accompagnement complet : cadrage, paramétrage, formation, support technique."
         },
         {
           "question": "Comment mesurer le ROI d'Aitenders ?",
-          "answer": "Par le temps gagné, la baisse d'erreurs, l'augmentation de réponses déposées et de taux de réussite."
+          "answer": "Par le temps gagné, la diminution des erreurs, l'augmentation des réponses soumises et un taux de succès plus élevé."
         }
       ]
-    }
-  },
-        "header": {
-                    "requestDemo": "Demander une démo",
-                    "menu": "Menu",
-                    "navigation": [
-                      {
-                        "title": "Notre Produit",
-                        "href": "/product"
-                      },
-                      {
-                        "title": "Cas d'Usage",
-                        "children": [
-                          {
-                            "title": "Petits projets – Offre",
-                            "href": "/uc-1"
-                          },
-                          {
-                            "title": "Moyens projets – Offre",
-                            "href": "/uc2test"
-                          },
-                          {
-                            "title": "Projets complexes – Offre",
-                            "href": "/uc-3"
-                          },
-                          {
-                            "title": "Petits projets – Exécution",
-                            "href": "/uc-4"
-                          },
-                          {
-                            "title": "Moyens projets – Exécution",
-                            "href": "/uc-5"
-                          },
-                          {
-                            "title": "Projets complexes – Exécution",
-                            "href": "/uc-6"
-                          }
-        ]
-      },
-      {
-        "title": "Our Product",
-        "href": "/product"
-      },
-      {
-        "title": "Word Addon",
-        "href": "/word-addon"
-      },
-      {
-        "title": "Privacy Policy",
-        "href": "/privacy"
-      }
-    ]
-  },
-  "homepage": {
-    "mainTitle": "L'intelligence de vos équipes projets,",
-    "mainSubtitle": "démultipliée par l'IA",
-    "description": "Aitenders, votre coéquipier digital pour gagner les appels d'offres, piloter les contrats et structurer la connaissance et l'expertise de vos projets.",
-    "domainSelection": "Comment puis-je vous aider ?",
-    "projectSize": "Quelle est la taille de vos projets ?",
-    "chooseUseCase": "Choisissez votre cas d'usage",
-    "yourSelection": "Votre sélection :",
-    "availableUseCases": "Cas d'usage disponibles :",
-    "back": "← Retour",
-    "tenderManagementTitle": "Je réponds à des appels d'offres",
-    "tenderManagementDescription": "Optimisez vos réponses aux appels d'offres. Analysez les exigences, collaborez efficacement et maximisez vos chances de succès.",
-    "contractExecutionTitle": "Je pilote des projets en exécution",
-    "contractExecutionDescription": "Pilotez vos projets en toute confiance. Suivi des livrables, conformité et gestion proactive des changements.",
-    "knowledgeManagementTitle": "Je structure la connaissance de mes experts",
-    "knowledgeManagementDescription": "Capitalisez sur vos savoirs et expériences passées. Accès rapide aux références, modèles et comparables pour chaque nouveau projet.",
-    "smallProjectTitle": "Petit Projets, régulier",
-    "smallProjectDescription": "Idéal pour les petites équipes et besoins ciblés. Mise en place rapide, fonctionnalités essentielles.",
-    "mediumProjectTitle": "Projets moyennement complexe",
-    "mediumProjectDescription": "Un équilibre entre flexibilité et puissance. Outils complets pour des projets structurés et collaboratifs.",
-    "largeProjectTitle": "Grand Projets complexes",
-    "largeProjectDescription": "Conçu pour les organisations complexes et à grande échelle. Solutions avancées, IA personnalisée et sécurité renforcée.",
-    "learnMore": "Je veux en savoir plus sur Aitenders",
-    "exploreSolutions": "Explorer nos solutions",
-    "discoverUseCase": "Découvrir ce cas d'usage",
-    "chatPlaceholder": "Interagissez avec le Chat Questions / Lancer le simulateur / Information ?",
-    "chatTitle": "Chat avec l'Assistant IA",
-    "ourUseCases": "Nos Cas d'Usage",
-    "simulationROI": "Simulation / ROI",
-    "aiAgents": "Agents IA",
-    "dataSecurity": "Sécurité des données",
-    "contactUs": "Contactez nous",
-    "tenderProcess": "Processus d'Appel d'Offres",
-    "scheduleDemo": "Planifier une Démo",
-    "ucMetadata": {
-      "UC1": {
-        "title": "Accélérer les petites offres",
-        "description": "Appels d'offres petits projets"
-      },
-      "uc2test": {
-        "title": "Gestion d'offres moyennes",
-        "description": "Gestion d'appels d'offres moyens"
-      },
-      "uc3": {
-        "title": "Offres complexes multi-lots",
-        "description": "Appels d'offres multi-lots complexes"
-      },
-      "uc4": {
-        "title": "Exécution de petits projets",
-        "description": "Exécution de petits projets"
-      },
-      "uc5": {
-        "title": "Exécution de projets moyens",
-        "description": "Exécution de projets moyens"
-      },
-      "uc6": {
-        "title": "Exécution de grands projets",
-        "description": "Exécution de grands projets"
-      },
-      "UC7": {
-        "title": "Gestion des connaissances petites structures",
-        "description": "Gestion des connaissances pour petites structures"
-      },
-      "UC8": {
-        "title": "Gestion des connaissances grandes organisations",
-        "description": "Gestion des connaissances pour grandes organisations"
-      }
     }
   },
   "word_addon": {
@@ -1091,12 +1013,12 @@
     "subtitle": "Commencez en quelques clics",
     "step1_title": "Allez sur le Microsoft Store",
     "step1_link": "juste ici",
-    "step1_desc": "Cliquez sur 'Obtenir maintenant' et téléchargez le complément.",
+    "step1_desc": "Cliquez sur 'Obtenir maintenant' et téléchargez l'add-in.",
     "step2_title": "Ouvrez Microsoft Word",
-    "step2_desc1": "Accédez à la barre de menu supérieure et cliquez sur l'onglet <strong>Insertion</strong>. Trouvez le groupe Compléments et cliquez sur 'Obtenir des compléments' ou Store (le libellé peut varier légèrement selon votre version de Word).",
+    "step2_desc1": "Allez dans la barre de menu supérieure et cliquez sur l'onglet <strong>Insertion</strong>. Trouvez le groupe Compléments et cliquez sur 'Obtenir des compléments' ou Store (le libellé peut varier légèrement selon votre version de Word).",
     "step2_desc2": "Une fenêtre apparaîtra avec le Store Office. Utilisez la barre de recherche pour trouver le complément spécifique que vous souhaitez installer.",
     "step2_desc3": "Une fois que vous avez localisé le plugin, cliquez dessus. Ensuite, cliquez sur le bouton <strong>Ajouter</strong> ou <strong>Installer</strong> (selon le complément) et confirmez l'installation.",
-    "step2_note": "<strong>Remarque :</strong> Certains compléments могут nécessiter une connexion avec un compte Microsoft.",
+    "step2_note": "<strong>Note :</strong> Certains compléments peuvent vous demander de vous connecter avec un compte Microsoft.",
     "step3_title": "Installation terminée",
     "step3_desc": "Le complément s'installera et vous verrez une confirmation une fois qu'il sera prêt à être utilisé. Les commandes du plugin peuvent maintenant être disponibles dans le ruban de Word ou dans un panneau séparé.",
     "support_title": "Besoin d'aide supplémentaire ?",
@@ -1108,61 +1030,61 @@
     "general_info": {
       "title": "1. Informations Générales",
       "scope": {
-        "title": "1.1 Portée",
+        "title": "1.1 Champ d'application",
         "p1": "Cet Avis de Confidentialité d'Aitenders (\"Avis de Confidentialité\") décrit comment nous collectons, traitons et divulguons les informations vous concernant en tant que personne physique (\"Données Personnelles\"), et quels sont vos droits concernant le traitement de vos Données Personnelles. Sous réserve que nous agissions en tant que Responsable du traitement, cet Avis de Confidentialité s'applique lorsque vous :",
         "list_items": [
-          "visitez l'un de nos sites web ou l'une de nos pages de réseaux sociaux,",
-          "accédez ou utilisez l'une de nos applications ou plateformes, telles qu'Aitenders.com et ses instances associées, l'Académie Aitenders, la Communauté Aitenders et le Portail Client Aitenders,",
+          "visitez l'un de nos sites web ou pages de réseaux sociaux,",
+          "accédez ou utilisez l'une de nos applications ou plateformes, telles que Aitenders.com et ses instances associées, l'Académie Aitenders, la Communauté Aitenders et le Portail Client Aitenders,",
           "accédez à notre application cloud,",
-          "vous inscrivez et/ou participez à des événements organisés ou auxquels Aitenders participe,",
+          "vous inscrivez et/ou participez à des événements organisés par ou auxquels Aitenders participe,",
           "contactez notre service client,",
-          "faites affaire avec nous, ou",
+          "faites des affaires avec nous, ou",
           "interagissez ou communiquez de toute autre manière avec nous."
         ],
         "p2": "Ces services sont ci-après collectivement désignés par les \"Services\". Si vous refusez de fournir vos Données Personnelles ou nous demandez de les supprimer, il se peut que vous ne puissiez pas accéder ou utiliser les Services."
       },
       "controller": {
-        "title": "1.2 Nom du Responsable du Traitement et du Délégué à la Protection des Données",
+        "title": "1.2 Nom du Responsable du traitement et du Délégué à la protection des données",
         "p1": "Lorsque nous faisons référence à \"Aitenders\" dans cet Avis de Confidentialité, nous entendons l'entité Aitenders qui est responsable des moyens et des finalités du traitement et qui agit donc en tant que Responsable du traitement de vos Données Personnelles, comme suit :",
         "box_line1": "<strong>Aitenders SAS</strong> si vous êtes situé en dehors de l'Amérique du Nord et pour toutes les activités du site web",
         "box_address": "<strong>Adresse :</strong> 20 rue professeur Benoit Lauras 42000 Saint Etienne",
-        "box_contact": "<strong>Coordonnées du Délégué à la Protection des Données :</strong> privacy@Aitenders.com",
+        "box_contact": "<strong>Contact du Délégué à la protection des données :</strong> privacy@Aitenders.com",
         "p2": "Toute demande ou question relative à la protection des données peut être adressée à privacy@Aitenders.com."
       },
       "update": {
         "title": "1.3 Mise à jour de la Politique de Confidentialité",
-        "p1": "Nous pouvons modifier ou remplacer cet Avis de Confidentialité à tout moment et à notre seule discrétion. Vous devez consulter régulièrement la version la plus récente de cet Avis de Confidentialité et chaque fois que vous accédez à l'un de nos Services."
+        "p1": "Nous pouvons modifier ou remplacer cet Avis de Confidentialité à tout moment et à notre seule discrétion. Vous devriez régulièrement consulter la version la plus récente de cet Avis de Confidentialité et chaque fois que vous accédez à l'un de nos Services."
       }
     },
     "data_categories": {
       "title": "2. Catégories de Données",
       "p1": "Les catégories de données que nous traitons dépendent de vos interactions avec nous et peuvent inclure une ou plusieurs des catégories de données suivantes.",
       "contact_business": {
-        "title": "2.1 Données de Contact et Professionnelles",
-        "p1": "Pour l'utilisation de certains Services, des données de contact peuvent être traitées. Les Données de Contact comprennent le nom, le prénom, l'adresse e-mail, l'adresse physique, le numéro de téléphone, le pays d'origine et des informations de contact similaires, y compris dans certaines circonstances des noms d'utilisateur et mots de passe. Celles-ci peuvent être complétées par des données professionnelles telles que le poste, le nom de l'entreprise et d'autres informations similaires."
+        "title": "2.1 Coordonnées et Données professionnelles",
+        "p1": "Pour l'utilisation de certains Services, des données de contact peuvent être traitées. Les Données de Contact comprennent le prénom, le nom, l'adresse e-mail, l'adresse physique, le numéro de téléphone, le pays d'origine et des informations de contact similaires, y compris dans certaines circonstances des noms d'utilisateur et des mots de passe. Celles-ci peuvent être complétées par des données professionnelles telles que le titre du poste, le nom de l'entreprise et d'autres informations similaires."
       },
       "communication_transaction": {
         "title": "2.2 Données de Communication et de Transaction",
-        "p1": "Les données de communication font référence aux données résultant de votre interaction avec nous, par ex., les e-mails, les messages de chat, les webinaires visités, les fichiers téléchargés et les informations sur l'intérêt pour les produits. Nous pouvons également collecter des informations d'inscription relatives à votre participation à l'un de nos événements, y compris les informations de voyage, les informations de planification, les préférences alimentaires ou les allergies, et les demandes d'accessibilité."
+        "p1": "Les données de communication font référence aux données résultant de votre interaction avec nous, par exemple, les e-mails, les messages de chat, les webinaires visités, les fichiers téléchargés et les informations sur l'intérêt pour les produits. Nous pouvons également collecter des informations d'inscription relatives à votre participation à l'un de nos événements, y compris les informations de voyage, les informations de planification, les préférences alimentaires ou les allergies, et les demandes d'accessibilité."
       },
       "application_usage": {
         "title": "2.3 Données d'Utilisation Liées à l'Application",
-        "p1": "Comme c'est le cas pour la plupart des fournisseurs de services hébergés, nous recueillons et analysons automatiquement des informations sur la manière et la fréquence d'utilisation de fonctionnalités spécifiques de nos Services, telles que des détails sur les applications et versions utilisées, les interactions des utilisateurs avec les Services (y compris les recherches et autres actions effectuées par les utilisateurs), les pages et fichiers consultés, les formations en ligne suivies, les types de sources de données interrogées et les types de visualisations créées."
+        "p1": "Comme c'est le cas pour la plupart des fournisseurs de services hébergés, nous collectons et analysons automatiquement des informations sur la manière et la fréquence d'utilisation de fonctionnalités spécifiques de nos Services, telles que les détails sur les applications et les versions utilisées, les interactions des utilisateurs avec les Services (y compris les recherches et autres actions effectuées par les utilisateurs), les pages et fichiers consultés, les formations en ligne suivies, les types de sources de données interrogées et les types de visualisations créées."
       },
       "device_browser": {
         "title": "2.4 Données sur l'Appareil et le Navigateur",
-        "p1": "Lorsque vous visitez l'un de nos sites web ou l'une de nos applications, des informations en ligne et techniques de votre ordinateur ou appareil mobile peuvent être collectées, telles que : le type d'appareil, l'emplacement, les informations sur le type et la version du navigateur, le système d'exploitation et la version, le FAI ou l'opérateur mobile, l'adresse IP (ou le serveur proxy) et les zones géographiques dérivées de votre adresse IP, l'heure et la date d'accès, la durée de l'accès, l'URL de référence (le cas échéant) et les identifiants qui nous aident à identifier de manière unique votre navigateur ou votre appareil."
+        "p1": "Lorsque vous visitez l'un de nos sites web ou applications, des informations en ligne et techniques de votre ordinateur ou appareil mobile peuvent être collectées, telles que : le type d'appareil, l'emplacement, les informations sur le type et la version du navigateur, le système d'exploitation et la version, le FAI ou l'opérateur mobile, l'adresse IP (ou le serveur proxy), et les zones géographiques dérivées de votre adresse IP, l'heure et la date d'accès, la durée de l'accès, l'URL de référence (le cas échéant), et les identifiants qui nous aident à identifier de manière unique votre navigateur ou votre appareil."
       }
     },
     "origin": {
       "title": "3. Origine des données",
-      "p1": "Dans la plupart des cas, vous nous fournissez directement les Données Personnelles en accédant à l'un de nos sites web ou en vous inscrivant et/ou en utilisant l'un des Services. Nous pouvons également obtenir des Données Personnelles de votre employeur dans le cadre de la fourniture des Services ou de fournisseurs tiers, de réseaux sociaux ou de partenaires. Pour permettre la collecte de données, nous pouvons utiliser des cookies, des balises web ou des technologies similaires (voir les informations supplémentaires fournies dans notre Avis sur les Cookies)."
+      "p1": "Dans la plupart des cas, vous nous fournissez directement des Données Personnelles en accédant à l'un de nos sites web ou en vous inscrivant et/ou en utilisant l'un des Services. Nous pouvons également obtenir des Données Personnelles de votre employeur dans le cadre de la fourniture des Services ou de fournisseurs tiers, de réseaux sociaux ou de partenaires. Pour permettre la collecte de données, nous pouvons utiliser des cookies, des balises web ou des technologies similaires (voir les informations supplémentaires fournies dans notre Avis sur les Cookies)."
     },
     "purposes": {
       "title": "4. Finalités du traitement",
-      "p1": "Nous utilisons les Données Personnelles collectées comme décrit dans cet Avis de Confidentialité, comme spécifié dans tout accord intégrant cet Avis de Confidentialité, ou comme il vous a été communiqué en lien avec les Services. Nous n'effectuons aucune évaluation statistique du comportement d'une personne concernée (profilage) ; en particulier, il n'y a pas de prise de décision automatisée (voir Art. 22 Par. 1 et Par. 4 RGPD et Art. 6 Par. 1(b) RGPD).",
+      "p1": "Nous utilisons les Données Personnelles collectées comme décrit dans cet Avis de Confidentialité, comme spécifié dans tout accord intégrant cet Avis de Confidentialité, ou comme communiqué à vous en relation avec les Services. Nous n'effectuons aucune évaluation statistique du comportement d'une personne concernée (profilage) ; en particulier, il n'y a pas de prise de décision automatisée (voir Art. 22 Par. 1 et Par. 4 RGPD et Art. 6 Par. 1(b) RGPD).",
       "providing_service": {
-        "title": "4.1 Fourniture du Service Demandé",
+        "title": "4.1 Fourniture du Service demandé",
         "p1": "Nous traitons vos Données Personnelles pour remplir nos obligations contractuelles envers vous, y compris pour :",
         "list_items": [
           "Fournir et livrer des produits et services (y compris leurs mises à jour) ;",
@@ -1176,48 +1098,48 @@
         "p1": "Si vous nous contactez via notre site web, par e-mail ou de toute autre manière, nous traitons vos Données Personnelles pour comprendre et répondre à votre demande et pour fournir un service client. Dans de telles circonstances, votre demande peut être transmise en interne au service compétent chez Aitenders."
       },
       "sales_marketing": {
-        "title": "4.3 Activités Commerciales et Marketing",
-        "p1": "Nous pouvons utiliser votre adresse e-mail pour de la publicité directe, pour communiquer des nouvelles sur les événements à venir, les produits et services, et pour des enquêtes. Nous utilisons également votre adresse e-mail, que nous recevons dans le cadre de la vente d'un produit ou service, pour la publicité directe de produits ou services similaires à ceux que vous avez commandés. Nos e-mails marketing vous permettent de vous désabonner pour ne plus recevoir de communications en sélectionnant le lien \"se désinscrire\"."
+        "title": "4.3 Activités de Vente et de Marketing",
+        "p1": "Nous pouvons utiliser votre adresse e-mail pour de la publicité directe, pour communiquer des nouvelles sur les événements à venir, les produits et services, et pour des enquêtes. Nous utilisons également votre adresse e-mail, que nous recevons dans le cadre de la vente d'un produit ou d'un service, pour de la publicité directe de produits ou services similaires à ceux que vous avez commandés. Nos e-mails marketing vous permettent de vous désabonner de la réception de communications supplémentaires en sélectionnant le lien \"se désabonner\"."
       },
       "statistics": {
         "title": "4.4 Statistiques",
-        "p1": "Pour améliorer la performance des Services, pour évaluer et améliorer l'expérience client et utilisateur, pour identifier les futures opportunités de développement des Services, et pour évaluer les besoins en capacité, nous pouvons analyser des informations agrégées, anonymisées ou statistiques basées sur les Données Personnelles."
+        "p1": "Pour améliorer les performances des Services, pour évaluer et améliorer l'expérience client et utilisateur, pour identifier les opportunités futures de développement des Services, et pour évaluer les besoins en capacité, nous pouvons analyser des informations agrégées, anonymisées ou statistiques basées sur les Données Personnelles."
       },
       "security_compliance": {
         "title": "4.5 Sécurité et Conformité",
-        "p1": "Nous pouvons analyser vos Données Personnelles pour maintenir la sécurité des Services et des installations, pour faire respecter nos termes et conditions ; pour protéger, enquêter et dissuader les activités frauduleuses, non autorisées ou illégales ; et pour éviter et détecter les attaques sur notre site web ou nos applications ou l'utilisation abusive de nos Services."
+        "p1": "Nous pouvons analyser vos Données Personnelles pour maintenir la sécurité des Services et des installations, pour faire respecter nos termes et conditions ; pour protéger, enquêter et dissuader les activités frauduleuses, non autorisées ou illégales ; et pour prévenir et détecter les attaques sur notre site web ou nos applications ou l'utilisation abusive de nos Services."
       }
     },
     "lawfulness": {
       "title": "5. Légalité du Traitement",
       "p1": "Lorsque nous collectons et utilisons vos Données Personnelles, nous ne le ferons que si au moins l'une des conditions suivantes s'applique :",
       "list_items": [
-        "Nous devons traiter vos Données Personnelles pour exécuter nos responsabilités en vertu de notre contrat avec vous et pour vous fournir des outils et des services. [voir Art. 6 Par. 1(b) RGPD]",
+        "Nous devons traiter vos Données Personnelles pour remplir nos responsabilités en vertu de notre contrat avec vous et pour vous fournir des outils et des services. [voir Art. 6 Par. 1(b) RGPD]",
         "Nous avons un intérêt légitime à traiter vos informations personnelles. [voir Art. 6 Par. 1(f) RGPD]",
         "Vous avez donné votre consentement au traitement des Données Personnelles. [voir Art. 6 Par. 1(a) RGPD]",
-        "Il nous est nécessaire de traiter vos Données Personnelles pour nous conformer à une obligation légale. [voir Art. 6 Par. 1(c) RGPD]"
+        "Il est nécessaire pour nous de traiter vos Données Personnelles pour nous conformer à une obligation légale. [voir Art. 6 Par. 1(c) RGPD]"
       ]
     },
     "cookies": {
       "title": "6. Cookies et autres Technologies de Suivi",
-      "p1": "Nous utilisons des \"cookies\" de session et persistants et des technologies similaires telles que les balises web pour accroître la convivialité et compiler des informations sur l'utilisation de nos sites web et applications. Les cookies sont créés soit par nous (cookies internes), soit par des fournisseurs tiers que nous avons désignés (cookies tiers). Voici les types de cookies que nous utilisons :",
+      "p1": "Nous utilisons des \"cookies\" de session et persistants et des technologies similaires telles que les balises web pour améliorer la convivialité et compiler des informations sur l'utilisation de nos sites web et applications. Les cookies sont créés soit par nous (cookies propriétaires), soit par des fournisseurs tiers que nous avons désignés (cookies tiers). Voici les types de cookies que nous utilisons :",
       "list_items": [
-        "<strong>Cookies Nécessaires.</strong> Les Cookies Nécessaires sont destinés à la fonctionnalité de base du site web, par ex., les cookies de session pour transmettre le site web, les cookies d'authentification et les cookies de sécurité. Ces cookies sont strictement nécessaires au fonctionnement du site web.",
-        "<strong>Cookies Fonctionnels.</strong> Les Cookies Fonctionnels améliorent les fonctions, les performances et les services sur le site web, par ex., les cookies utilisés pour analyser le trafic du site, les cookies pour les études de marché et les cookies pour afficher de la publicité non dirigée vers un individu particulier.",
-        "<strong>Cookies Marketing.</strong> Les Cookies Marketing suivent l'activité sur les sites web afin de comprendre vos intérêts, de vous adresser de la publicité ciblée et de suivre les performances de nos publicités."
+        "<strong>Cookies Nécessaires.</strong> Les Cookies Nécessaires sont destinés à la fonctionnalité de base du site web, par exemple, les cookies de session pour transmettre le site web, les cookies d'authentification et les cookies de sécurité. Ces cookies sont strictement nécessaires au fonctionnement du site web.",
+        "<strong>Cookies Fonctionnels.</strong> Les Cookies Fonctionnels améliorent les fonctions, les performances et les services sur le site web, par exemple, les cookies utilisés pour analyser le trafic du site, les cookies pour les études de marché et les cookies pour afficher de la publicité non dirigée vers un individu particulier.",
+        "<strong>Cookies Marketing.</strong> Les Cookies Marketing suivent l'activité sur les sites web pour comprendre vos intérêts, pour vous cibler avec de la publicité et pour suivre les performances de nos publicités."
       ],
       "p2": "Veuillez trouver des informations détaillées sur les cookies dans notre Avis sur les Cookies."
     },
     "recipients": {
       "title": "7. Destinataires",
-      "p1": "Vos Données Personnelles peuvent être transférées aux affiliés et partenaires d'Aitenders ainsi qu'à un nombre limité de prestataires de services (Sous-traitants) qui effectuent des opérations de traitement telles que la surveillance de bases de données, les services d'hébergement, la billetterie ou la fourniture d'outils logiciels. Ces prestataires de services traitent les Données Personnelles uniquement sur nos instructions et ont mis en œuvre des mesures techniques et organisationnelles de pointe pour protéger les données traitées.",
+      "p1": "Vos Données Personnelles peuvent être transférées aux affiliés et partenaires d'Aitenders ainsi qu'à un nombre limité de prestataires de services (sous-traitants) qui effectuent des opérations de traitement telles que la surveillance de bases de données, les services d'hébergement, la billetterie ou la fourniture d'outils logiciels. Ces prestataires de services ne traitent les Données Personnelles que sur nos instructions et ont mis en œuvre des mesures techniques et organisationnelles de pointe pour protéger les données traitées.",
       "p2": "Lorsque nous demandons à des tiers d'héberger ou de présenter certains événements comme des webinaires ou des formations, nous pouvons transmettre vos Données Personnelles au tiers respectif qui peut utiliser ces données pour fournir l'accès à l'événement ou peut vous contacter à des fins de marketing connexes.",
-      "p3": "Si des Données Personnelles sont transférées à des filiales, des partenaires, des prestataires de services ou des tiers situés en dehors de l'Espace Économique Européen (EEE) qui ne font pas l'objet d'une décision d'adéquation de la Commission Européenne, nous veillerons à ce que ce destinataire offre un niveau de protection des données adéquat, par exemple en concluant des Clauses Contractuelles Types de l'UE (CCT) et en mettant en œuvre des garanties supplémentaires conformément aux exigences légales.",
-      "p4": "Nous pouvons divulguer vos Données Personnelles pour nous conformer à des exigences légales, comme en réponse à une ordonnance du tribunal ou à une assignation à comparaître. Dans un tel cas, nous utiliserons toutes les mesures raisonnables et légalement disponibles pour nous opposer aux demandes d'informations trop larges, peu claires ou autrement inappropriées."
+      "p3": "Si des Données Personnelles sont transférées à des filiales, partenaires, prestataires de services ou tiers situés en dehors de l'Espace Économique Européen (EEE) qui ne font pas l'objet d'une décision d'adéquation de la Commission Européenne, nous veillerons à ce que ce destinataire offre un niveau de protection des données adéquat, par exemple en concluant des Clauses Contractuelles Types de l'UE (CCT) et en mettant en œuvre des garanties supplémentaires conformément aux exigences légales.",
+      "p4": "Nous pouvons divulguer vos Données Personnelles pour nous conformer aux exigences légales, par exemple en réponse à une ordonnance du tribunal ou à une assignation à comparaître. Dans un tel cas, nous utiliserons toutes les mesures raisonnables et légalement disponibles pour nous opposer aux demandes d'information trop larges, peu claires ou autrement inappropriées."
     },
     "duration": {
       "title": "8. Durée de Conservation des Données",
-      "p1": "Vos Données Personnelles seront supprimées à votre demande ou dès qu'elles ne seront plus nécessaires pour atteindre la finalité pour laquelle elles ont été collectées, à savoir fournir les Services demandés. Si des réglementations légales (par ex., en droit fiscal, commercial ou contractuel) s'appliquent et exigent une conservation plus longue de vos Données Personnelles, ou si nous avons besoin de vos Données Personnelles pour faire valoir des droits en justice ou nous défendre contre des actions en justice, nous conserverons vos Données Personnelles jusqu'à l'expiration des périodes de conservation correspondantes.",
+      "p1": "Vos Données Personnelles seront supprimées à votre demande ou dès qu'elles ne seront plus nécessaires pour atteindre la finalité pour laquelle elles ont été collectées, à savoir fournir les Services demandés. Si des réglementations légales (par exemple, en droit fiscal, commercial ou contractuel) s'appliquent et exigent une conservation plus longue de vos Données Personnelles, ou si nous avons besoin de vos Données Personnelles pour faire valoir des droits en justice ou nous défendre contre des actions en justice, nous conserverons vos Données Personnelles jusqu'à l'expiration des périodes de conservation correspondantes.",
       "p2": "Tout compte utilisateur et ses données associées dans les applications où nous agissons en tant que Responsable du traitement seront supprimés à votre demande ou après trois ans d'inactivité."
     },
     "your_rights": {
@@ -1225,14 +1147,14 @@
       "gdpr": {
         "title": "9.1 RGPD",
         "p1": "Sur demande, nous vous informerons si nous avons stocké des données vous concernant et lesquelles. Dans la mesure où les exigences légales sont remplies, vous avez le droit de faire corriger, bloquer ou supprimer ces données. Vous avez également le droit de recevoir les Données Personnelles que vous nous avez fournies, dans un format structuré, couramment utilisé et lisible par machine, et vous avez le droit de transmettre ces données à un autre Responsable du traitement dans les conditions et conformément au Règlement.",
-        "p2": "Dans la mesure où nous traitons vos données sur la base de la mise en balance des intérêts, vous avez un droit d'opposition si les conditions légales sont remplies.",
+        "p2": "Dans la mesure où nous traitons vos données sur la base d'une mise en balance des intérêts, vous avez un droit d'opposition si les conditions légales sont remplies.",
         "p3": "Lorsque nous nous appuyons sur le consentement pour traiter vos Données Personnelles, vous pouvez retirer votre consentement à tout moment pour l'avenir. Cependant, cela n'affectera pas la légalité de tout traitement effectué avant le retrait de votre consentement.",
         "box_p1": "Vous pouvez exercer vos droits en nous contactant par écrit, avec une preuve de votre identité, à <strong>privacy@Aitenders.com</strong>.",
-        "p4": "Si vous résidez dans l'UE, vous avez également le droit d'adresser des questions ou des plaintes à l'autorité de contrôle principale."
+        "p4": "Si vous résidez dans l'UE, vous avez également le droit d'adresser des questions ou des plaintes à l'autorité de contrôle chef de file."
       },
       "california": {
         "title": "9.2 Droits à la Confidentialité en Californie",
-        "p1": "Cette section fournit des détails supplémentaires sur les Données Personnelles que nous collectons sur les résidents de Californie et les droits qui leur sont accordés en vertu de la loi californienne sur la protection de la vie privée des consommateurs ou \"CCPA\". Nous étendons les mêmes droits à tous les résidents des États-Unis. Aux fins du CCPA, le terme défini \"Données Personnelles\" est le même que le terme \"Informations Personnelles\" tel que ce terme est défini dans le CCPA."
+        "p1": "Cette section fournit des détails supplémentaires sur les Données Personnelles que nous collectons sur les résidents de Californie et les droits qui leur sont accordés en vertu de la California Consumer Privacy Act ou \"CCPA\". Nous étendons les mêmes droits à tous les résidents américains. Aux fins du CCPA, le terme défini \"Données Personnelles\" est le même que le terme \"Informations Personnelles\" tel que ce terme est défini dans le CCPA."
       }
     }
   }

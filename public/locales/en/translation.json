@@ -1,77 +1,248 @@
 {
+  "header": {
+    "requestDemo": "Request a demo",
+    "menu": "Menu",
+    "navigation": [
+      {
+        "title": "Our Product",
+        "href": "/product"
+      },
+      {
+        "title": "Use Cases",
+        "children": [
+          {
+            "title": "Small Projects – Tender",
+            "href": "/uc-1"
+          },
+          {
+            "title": "Medium Projects – Tender",
+            "href": "/uc2test"
+          },
+          {
+            "title": "Complex Projects – Tender",
+            "href": "/uc-3"
+          },
+          {
+            "title": "Small Projects – Execution",
+            "href": "/uc-4"
+          },
+          {
+            "title": "Medium Projects – Execution",
+            "href": "/uc-5"
+          },
+          {
+            "title": "Complex Projects – Execution",
+            "href": "/uc-6"
+          }
+        ]
+      },
+      {
+        "title": "Word Addon",
+        "href": "/word-addon"
+      },
+      {
+        "title": "Privacy Policy",
+        "href": "/privacy"
+      }
+    ]
+  },
   "homepage": {
-    "mainTitle": "Your team's project intelligence,",
+    "mainTitle": "The intelligence of your project teams,",
     "mainSubtitle": "multiplied by AI",
-    "description": "Aitenders, your digital teammate to win tenders, manage contracts and structure the knowledge and expertise of your projects.",
+    "description": "Aitenders, your digital teammate to win tenders, manage contracts, and structure the knowledge and expertise of your projects.",
     "domainSelection": "How can I help you?",
     "projectSize": "What is the size of your projects?",
     "chooseUseCase": "Choose your use case",
-    "discoverUseCase": "Discover this use case",
-    "tenderManagementTitle": "I respond to tenders",
-    "tenderManagementDescription": "Optimize your tender responses. Analyze requirements, collaborate effectively and maximize your chances of success.",
+    "yourSelection": "Your selection:",
+    "availableUseCases": "Available use cases:",
+    "back": "← Back",
+    "tenderManagementTitle": "I respond to calls for tenders",
+    "tenderManagementDescription": "Optimize your responses to calls for tenders. Analyze requirements, collaborate effectively, and maximize your chances of success.",
     "contractExecutionTitle": "I manage projects in execution",
-    "contractExecutionDescription": "Manage your projects with confidence. Deliverable tracking, compliance and proactive change management.",
+    "contractExecutionDescription": "Manage your projects with confidence. Track deliverables, ensure compliance, and proactively manage changes.",
     "knowledgeManagementTitle": "I structure my experts' knowledge",
-    "knowledgeManagementDescription": "Capitalize on your past knowledge and experiences. Quick access to references, templates and comparables for each new project.",
-    "smallProjectTitle": "Small projects (< €1M)",
-    "mediumProjectTitle": "Medium projects (€1-10M)",
-    "largeProjectTitle": "Large projects (> €10M)",
+    "knowledgeManagementDescription": "Capitalize on your past knowledge and experiences. Quick access to references, templates, and comparables for each new project.",
+    "smallProjectTitle": "Small, regular Projects",
+    "smallProjectDescription": "Ideal for small teams and targeted needs. Quick setup, essential features.",
+    "mediumProjectTitle": "Moderately complex projects",
+    "mediumProjectDescription": "A balance between flexibility and power. Complete tools for structured and collaborative projects.",
+    "largeProjectTitle": "Large complex Projects",
+    "largeProjectDescription": "Designed for complex and large-scale organizations. Advanced solutions, personalized AI, and enhanced security.",
+    "learnMore": "I want to learn more about Aitenders",
+    "exploreSolutions": "Explore our solutions",
+    "discoverUseCase": "Discover this use case",
+    "chatPlaceholder": "Interact with the Chat Questions / Launch the simulator / Information?",
+    "chatTitle": "Chat with the AI Assistant",
+    "ourUseCases": "Our Use Cases",
+    "simulationROI": "Simulation / ROI",
+    "aiAgents": "AI Agents",
+    "dataSecurity": "Data Security",
+    "contactUs": "Contact us",
+    "tenderProcess": "Tender Process",
+    "scheduleDemo": "Schedule a Demo",
     "ucMetadata": {
       "UC1": {
-        "title": "Smart tender analysis",
-        "description": "Automatically analyze tender documents to identify key requirements and optimize your responses."
+        "title": "Accelerate small tenders",
+        "description": "Tenders for small projects"
       },
       "uc2test": {
-        "title": "Collaborative bid management",
-        "description": "Efficiently coordinate your teams during medium tender response preparation."
+        "title": "Medium tender management",
+        "description": "Management of medium-sized tenders"
       },
       "uc3": {
-        "title": "Large project bid strategy",
-        "description": "Develop winning strategies for large-scale tender opportunities."
+        "title": "Complex multi-lot tenders",
+        "description": "Complex multi-lot tenders"
       },
       "uc4": {
-        "title": "Small contract tracking",
-        "description": "Efficiently manage the execution of your small contracts with adapted tools."
+        "title": "Execution of small projects",
+        "description": "Execution of small projects"
       },
       "uc5": {
-        "title": "Medium contract management",
-        "description": "Master medium-sized contract execution with optimized processes."
+        "title": "Execution of medium projects",
+        "description": "Execution of medium projects"
       },
       "uc6": {
-        "title": "Large contract governance",
-        "description": "Manage the complexity of large contracts with advanced governance tools."
+        "title": "Execution of large projects",
+        "description": "Execution of large projects"
       },
       "UC7": {
-        "title": "Project knowledge base",
-        "description": "Structure and capitalize on your project teams' knowledge."
+        "title": "Knowledge management for small structures",
+        "description": "Knowledge management for small structures"
       },
       "UC8": {
-        "title": "Collective intelligence",
-        "description": "Leverage your organization's collective expertise to optimize projects."
+        "title": "Knowledge management for large organizations",
+        "description": "Knowledge management for large organizations"
       }
     }
   },
-  "header": {
-    "navigation": [
-      {
-        "title": "Solutions",
-        "children": [
-          { "title": "Tender Management", "href": "/solutions/tender-management" },
-          { "title": "Contract Execution", "href": "/solutions/contract-execution" },
-          { "title": "Knowledge Management", "href": "/solutions/knowledge-management" }
-        ]
-      },
-      {
-        "title": "Resources",
-        "children": [
-          { "title": "Blog", "href": "/blog" },
-          { "title": "Documentation", "href": "/docs" },
-          { "title": "Support", "href": "/support" }
-        ]
-      }
-    ],
-    "requestDemo": "Request Demo",
-    "menu": "Menu"
+  "uc1": {
+    "header_26": {
+      "title": "A clear and immediate go / no-go analysis",
+      "subtitle": "Analyze, validate, and secure your fast-track projects from day one with AI to save time and avoid false starts.",
+      "cta1": "Get Started",
+      "cta2": "Learn More"
+    },
+    "ai_copilot": {
+      "tag": "Quick Validation",
+      "title": "Decide go / no-go with full confidence",
+      "subtitle": "Aitenders analyzes your files in minutes, prioritizes critical points, and guides validation to guarantee your internal processes.",
+      "step1": "Immediate document analysis",
+      "step2": "Clear and prioritized view of risks",
+      "step3": "Guided validation and automatic archiving"
+    },
+    "user_benefits": {
+      "you": "You",
+      "stat1_number": "",
+      "stat1_text": "save several days of manual review",
+      "stat2_number": "",
+      "stat2_text": "get a go / no-go decision in under 48h",
+      "stat3_number": "",
+      "stat3_text": "gain immediate credibility in committee"
+    },
+    "offer_steps_headline": {
+      "title": "We support your teams at every stage of analysis"
+    },
+    "features": {
+      "feature1_tag": "Immediate Structuring",
+      "feature1_title": "Analyze and prioritize your documents from Day 1",
+      "feature1_desc": "AI assistants detect criteria of interest, critical points, and evidence in minutes. The Bid Manager starts with a clear and actionable base.",
+      "feature1_stat": "Go / no-go decision possible in a few minutes",
+      "feature1_popup": "Thanks to automatic analysis, your documents are instantly classified and prioritized. Key criteria, blocking points, and evidence are detected and organized. The Bid Manager gets a global vision of the project and can immediately identify potential risks to quickly decide on a go / no-go.",
+      "feature2_tag": "Centralized Vision",
+      "feature2_title": "Get a clear and prioritized view",
+      "feature2_desc": "Aitenders generates a centralized visual summary with criteria, values, and sources. No more hundreds of pages or scattered files.",
+      "feature2_stat": "Internal review ready in a few minutes",
+      "feature2_popup": "The platform automatically produces a clear and prioritized summary of all detected criteria. Each element is linked to its source document. Teams no longer need to browse hundreds of pages or juggle multiple files: everything is centralized in a visual and immediately usable table.",
+      "feature3_tag": "Guided Validation",
+      "feature3_title": "Validate and archive each element easily",
+      "feature3_desc": "Confirm, adjust, or reject each point identified by the AI. Each validation is logged and integrated into a complete file.",
+      "feature3_stat": "100% of validations automatically tracked",
+      "feature3_popup": "Aitenders guides teams through step-by-step validation. Each identified element is confirmed, adjusted, or rejected, then archived with proof. This fluid process replaces manual and uncertain checks. The result: a probative, complete, and traceable file, with no gray areas or administrative overload."
+    },
+    "concrete_results": {
+      "title": "Concrete results for your small bids",
+      "stat1_number": "50-70%",
+      "stat1_text": "of time saved on analysis",
+      "stat2_number": "100%",
+      "stat2_text": "of critical criteria checked and traced",
+      "stat3_number": "0",
+      "stat3_text": "internal escalations, enhanced credibility in committee",
+      "cta_button": "Launch the impact simulation on your projects"
+    },
+    "portfolio": {
+      "title": "Deployed on numerous projects",
+      "projects": [
+        {
+          "title": "Systematize the discovery and launch of over 400 tenders per year.",
+          "value": "400 tenders / year",
+          "description": "CONTEXT: A team of 5 engineers needing to analyze over 400 tenders per year in the consulting engineering field. Tender documents are mainly in English, French, and Spanish. Average of 200 to 300 pages per tender. CLIENT'S OBJECTIVES: Save time in identifying risks and anticipating bottlenecks. Quickly identify if we need to involve partners/subcontractors. Mobilize the support team. Immediately identify Bid / No Bid criteria. Identify the main risks (technical, financial, and legal). IMPLEMENTED SOLUTION: Automatic classification of clauses by categories. Capture of key risks and opportunities. Export and integration into the existing process. Additional note: Setup: 2 hours. Team training limited to 2 x 1h. RESULTS: 20/30% LESS TIME. -10/15H PER PROJECT. €300–500K/YEAR",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Systematize%20the%20discovery%20and%20launch%20of%20over%20400%20tenders%20per%20year..jpg"
+        },
+        {
+          "title": "Extract and produce the requirement compliance matrix for a €40M tender.",
+          "value": "€40M Tender",
+          "description": "CONTEXT: The project was a partial project for the supply of an integrated metro traction system for a new metro line in France. The client had to identify over 2,000 requirements in about 50 different technical documents. The team consisted of 10 people, involving 3 different Business Units. CLIENT'S OBJECTIVES: Immediately and correctly identify and store all requirements identified by the client. Identify other requirements impacting the scope and costing of the offer. Allow the team to have a standardized and simplified common review around all requirements. Quickly deliver a fully reviewed and accurate compliance matrix to their clients. IMPLEMENTED SOLUTION: Requirement detection. PBS, WBS classification. Import of answers – Association of questions. Version gap analysis (V1 > V2). Requirement coverage. Additional note: One session for Project Directors (1h) to launch the project organization. 1h of training for the rest of the team (9 members). RESULTS: COMPLIANCE MATRIX DELIVERED WITHOUT GAPS. ABOUT 30% LESS TIME ON THE ENTIRE PROCESS",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Extract%20and%20produce%20the%20requirement%20compliance%20matrix%20for%20a%20€40M%20tender..jpg"
+        },
+        {
+          "title": "Automate your Bid / No Bid: Go from 7,000 opportunities to 700 well-qualified tenders!",
+          "value": "7000 opportunities / year",
+          "description": "CONTEXT: Our client receives over 7,000 opportunities per year by email from a sourcing software. The existing filtering system is ineffective as it is based on a few generic keywords. The tender managers have to open each tender and read the first few pages to see if there is potential to be a main contractor or subcontractor on the project. CLIENT'S OBJECTIVES: Drastically reduce the average time spent on the selection process (currently 1 hour per tender). Immediately identify the 40 usual suspects that give a high level of certainty to decide on Bid / No Bid. IMPLEMENTED SOLUTION: Detection of over 40 key points in 5 minutes instead of several hours. Risk analysis on topics like finance, contract, legal... Additional note: No effort thanks to the use of the Aitenders standard for Bid / No Bid risk detection (+400 criteria). Customization: a few hours. Specific detection models: 3 weeks. RESULTS: 95% TIME SAVED ON IDENTIFYING KEY POINTS. MORE CAPACITY FOR BETTER SELECTION. +1,000 HOURS SAVED PER YEAR",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Automate%20your%20Bid%20No%20Bid%20Go%20from%207,000%20opportunities%20to%20700%20well-qualified%20tenders!.jpg"
+        },
+        {
+          "title": "Requirement management for a €10Bn Design & Build tender – Consortium of 15 companies.",
+          "value": "€10Bn Tender",
+          "description": "CONTEXT: The Paris Metro Line 15 is a 2-year Design & Build tender, with an estimated value of about €10Bn. Our client is the Consortium, including NGE, Webuilt, Equans, and all their partners (architects, engineering firms, subcontractors, etc.). CLIENT'S OBJECTIVES: Ensure efficiency in the distribution of the work scope among the 15 different entities of the consortium. Produce a flawless requirement compliance matrix. Collectively track and identify the impacts of changes related to questions/answers. Identify version changes and collectively analyze their impacts. IMPLEMENTED SOLUTION: Automatic detection and extraction of requirements. Automatic classification. Collaborative scope and baseline. Automatic detection of version changes. Import of Q&A and impact analysis. Additional note: 2-hour training session for the 150 team members. 2 hours of training for 10 managers. RESULTS: THOUSANDS OF MAN-DAYS SAVED. FEWER RISKS. ENSURING A HIGH LEVEL OF COMPLIANCE",
+          "category": "Case Study",
+          "cta_text": "Read more",
+          "imageSrc": "/images/Portfolio/Requirement%20management%20for%20a%20€10Bn%20Design%20&%20Build%20tender%20–%20Consortium%20of%2015%20companies..jpg"
+        }
+      ]
+    },
+    "team_20": {
+      "tag": "Extra Confidence",
+      "title": "Complementary options to secure your small bids",
+      "description": "Beyond the main analysis, discover integrated functions that simplify reviews, reinforce compliance, and make your validations more reliable.",
+      "cards": [
+        {
+          "title": "Evidence Pack",
+          "description": "Use a complete validation file with sources and history, ready for committees or audits.",
+          "iconSrc": "/images/Auto evidence pack.svg"
+        },
+        {
+          "title": "Change Detection",
+          "description": "Instantly identify modifications between document versions, with impacts tracked on the criteria.",
+          "iconSrc": "/images/Change Detection.svg"
+        },
+        {
+          "title": "Compliance Alerts",
+          "description": "Receive a notification if a criterion remains unvalidated to avoid any oversight before submission.",
+          "iconSrc": "/images/Compliance Alerts.svg"
+        },
+        {
+          "title": "Secure Access",
+          "description": "Define rights by role for managers, assistants, or reviewers to maintain control of validations.",
+          "iconSrc": "/images/Secure Access.svg"
+        },
+        {
+          "title": "Exportable Reports",
+          "description": "Generate clear and formatted reports of all your verifications and validations, ready to be shared.",
+          "iconSrc": "/images/Report Export.svg"
+        },
+        {
+          "title": "Shared Comments",
+          "description": "Add annotations on criteria or documents to facilitate collaboration during reviews.",
+          "iconSrc": "/images/Shared Comments.svg"
+        }
+      ]
+    }
   },
   "uc2test": {
     "header_26": {
@@ -734,135 +905,6 @@
       ]
     }
   },
-  "uc1": {
-    "header_26": {
-      "title": "A clear and immediate go / no-go analysis",
-      "subtitle": "Analyze, validate, and secure your fast-track projects from day one with AI to save time and avoid false starts.",
-      "cta1": "Get Started",
-      "cta2": "Learn More"
-    },
-    "ai_copilot": {
-      "tag": "Quick Validation",
-      "title": "Decide go / no-go with full confidence",
-      "subtitle": "Aitenders analyzes your files in minutes, prioritizes critical points, and guides validation to guarantee your internal processes.",
-      "step1": "Immediate document analysis",
-      "step2": "Clear and prioritized view of risks",
-      "step3": "Guided validation and automatic archiving"
-    },
-    "user_benefits": {
-      "you": "You",
-      "stat1_number": "",
-      "stat1_text": "save several days of manual review",
-      "stat2_number": "",
-      "stat2_text": "get a go / no-go decision in under 48h",
-      "stat3_number": "",
-      "stat3_text": "gain immediate credibility in committee"
-    },
-    "offer_steps_headline": {
-      "title": "We support your teams at every stage of analysis"
-    },
-    "features": {
-      "feature1_tag": "Immediate Structuring",
-      "feature1_title": "Analyze and prioritize your documents from Day 1",
-      "feature1_desc": "AI assistants detect criteria of interest, critical points, and evidence in minutes. The Bid Manager starts with a clear and actionable base.",
-      "feature1_stat": "Go / no-go decision possible in a few minutes",
-      "feature1_popup": "Thanks to automatic analysis, your documents are instantly classified and prioritized. Key criteria, blocking points, and evidence are detected and organized. The Bid Manager gets a global vision of the project and can immediately identify potential risks to quickly decide on a go / no-go.",
-      "feature2_tag": "Centralized Vision",
-      "feature2_title": "Get a clear and prioritized view",
-      "feature2_desc": "Aitenders generates a centralized visual summary with criteria, values, and sources. No more hundreds of pages or scattered files.",
-      "feature2_stat": "Internal review ready in a few minutes",
-      "feature2_popup": "The platform automatically produces a clear and prioritized summary of all detected criteria. Each element is linked to its source document. Teams no longer need to browse hundreds of pages or juggle multiple files: everything is centralized in a visual and immediately usable table.",
-      "feature3_tag": "Guided Validation",
-      "feature3_title": "Validate and archive each element easily",
-      "feature3_desc": "Confirm, adjust, or reject each point identified by the AI. Each validation is logged and integrated into a complete file.",
-      "feature3_stat": "100% of validations automatically tracked",
-      "feature3_popup": "Aitenders guides teams through step-by-step validation. Each identified element is confirmed, adjusted, or rejected, then archived with proof. This fluid process replaces manual and uncertain checks. The result: a probative, complete, and traceable file, with no gray areas or administrative overload."
-    },
-    "concrete_results": {
-      "title": "Concrete results for your small bids",
-      "stat1_number": "50-70%",
-      "stat1_text": "of time saved on analysis",
-      "stat2_number": "100%",
-      "stat2_text": "of critical criteria checked and traced",
-      "stat3_number": "0",
-      "stat3_text": "internal escalations, enhanced credibility in committee",
-      "cta_button": "Launch the impact simulation on your projects"
-    },
-    "portfolio": {
-      "title": "Deployed on numerous projects",
-      "projects": [
-        {
-          "title": "Systematize the discovery and launch of over 400 tenders per year.",
-          "value": "400 tenders / year",
-          "description": "CONTEXT: A team of 5 engineers needing to analyze over 400 tenders per year in the consulting engineering field. Tender documents are mainly in English, French, and Spanish. Average of 200 to 300 pages per tender. CLIENT'S OBJECTIVES: Save time in identifying risks and anticipating bottlenecks. Quickly identify if we need to involve partners/subcontractors. Mobilize the support team. Immediately identify Bid / No Bid criteria. Identify the main risks (technical, financial, and legal). IMPLEMENTED SOLUTION: Automatic classification of clauses by categories. Capture of key risks and opportunities. Export and integration into the existing process. Additional note: Setup: 2 hours. Team training limited to 2 x 1h. RESULTS: 20/30% LESS TIME. -10/15H PER PROJECT. €300–500K/YEAR",
-          "category": "Case Study",
-          "cta_text": "Read more",
-          "imageSrc": "/images/Portfolio/Systematize%20the%20discovery%20and%20launch%20of%20over%20400%20tenders%20per%20year..jpg"
-        },
-        {
-          "title": "Extract and produce the requirement compliance matrix for a €40M tender.",
-          "value": "€40M Tender",
-          "description": "CONTEXT: The project was a partial project for the supply of an integrated metro traction system for a new metro line in France. The client had to identify over 2,000 requirements in about 50 different technical documents. The team consisted of 10 people, involving 3 different Business Units. CLIENT'S OBJECTIVES: Immediately and correctly identify and store all requirements identified by the client. Identify other requirements impacting the scope and costing of the offer. Allow the team to have a standardized and simplified common review around all requirements. Quickly deliver a fully reviewed and accurate compliance matrix to their clients. IMPLEMENTED SOLUTION: Requirement detection. PBS, WBS classification. Import of answers – Association of questions. Version gap analysis (V1 > V2). Requirement coverage. Additional note: One session for Project Directors (1h) to launch the project organization. 1h of training for the rest of the team (9 members). RESULTS: COMPLIANCE MATRIX DELIVERED WITHOUT GAPS. ABOUT 30% LESS TIME ON THE ENTIRE PROCESS",
-          "category": "Case Study",
-          "cta_text": "Read more",
-          "imageSrc": "/images/Portfolio/Extract%20and%20produce%20the%20requirement%20compliance%20matrix%20for%20a%20€40M%20tender..jpg"
-        },
-        {
-          "title": "Automate your Bid / No Bid: Go from 7,000 opportunities to 700 well-qualified tenders!",
-          "value": "7000 opportunities / year",
-          "description": "CONTEXT: Our client receives over 7,000 opportunities per year by email from a sourcing software. The existing filtering system is ineffective as it is based on a few generic keywords. The tender managers have to open each tender and read the first few pages to see if there is potential to be a main contractor or subcontractor on the project. CLIENT'S OBJECTIVES: Drastically reduce the average time spent on the selection process (currently 1 hour per tender). Immediately identify the 40 usual suspects that give a high level of certainty to decide on Bid / No Bid. IMPLEMENTED SOLUTION: Detection of over 40 key points in 5 minutes instead of several hours. Risk analysis on topics like finance, contract, legal... Additional note: No effort thanks to the use of the Aitenders standard for Bid / No Bid risk detection (+400 criteria). Customization: a few hours. Specific detection models: 3 weeks. RESULTS: 95% TIME SAVED ON IDENTIFYING KEY POINTS. MORE CAPACITY FOR BETTER SELECTION. +1,000 HOURS SAVED PER YEAR",
-          "category": "Case Study",
-          "cta_text": "Read more",
-          "imageSrc": "/images/Portfolio/Automate%20your%20Bid%20No%20Bid%20Go%20from%207,000%20opportunities%20to%20700%20well-qualified%20tenders!.jpg"
-        },
-        {
-          "title": "Requirement management for a €10Bn Design & Build tender – Consortium of 15 companies.",
-          "value": "€10Bn Tender",
-          "description": "CONTEXT: The Paris Metro Line 15 is a 2-year Design & Build tender, with an estimated value of about €10Bn. Our client is the Consortium, including NGE, Webuilt, Equans, and all their partners (architects, engineering firms, subcontractors, etc.). CLIENT'S OBJECTIVES: Ensure efficiency in the distribution of the work scope among the 15 different entities of the consortium. Produce a flawless requirement compliance matrix. Collectively track and identify the impacts of changes related to questions/answers. Identify version changes and collectively analyze their impacts. IMPLEMENTED SOLUTION: Automatic detection and extraction of requirements. Automatic classification. Collaborative scope and baseline. Automatic detection of version changes. Import of Q&A and impact analysis. Additional note: 2-hour training session for the 150 team members. 2 hours of training for 10 managers. RESULTS: THOUSANDS OF MAN-DAYS SAVED. FEWER RISKS. ENSURING A HIGH LEVEL OF COMPLIANCE",
-          "category": "Case Study",
-          "cta_text": "Read more",
-          "imageSrc": "/images/Portfolio/Requirement%20management%20for%20a%20€10Bn%20Design%20&%20Build%20tender%20–%20Consortium%20of%2015%20companies..jpg"
-        }
-      ]
-    },
-    "team_20": {
-      "tag": "Extra Confidence",
-      "title": "Complementary options to secure your small bids",
-      "description": "Beyond the main analysis, discover integrated functions that simplify reviews, reinforce compliance, and make your validations more reliable.",
-      "cards": [
-        {
-          "title": "Evidence Pack",
-          "description": "Use a complete validation file with sources and history, ready for committees or audits.",
-          "iconSrc": "/images/Auto evidence pack.svg"
-        },
-        {
-          "title": "Change Detection",
-          "description": "Instantly identify modifications between document versions, with impacts tracked on the criteria.",
-          "iconSrc": "/images/Change Detection.svg"
-        },
-        {
-          "title": "Compliance Alerts",
-          "description": "Receive a notification if a criterion remains unvalidated to avoid any oversight before submission.",
-          "iconSrc": "/images/Compliance Alerts.svg"
-        },
-        {
-          "title": "Secure Access",
-          "description": "Define rights by role for managers, assistants, or reviewers to maintain control of validations.",
-          "iconSrc": "/images/Secure Access.svg"
-        },
-        {
-          "title": "Exportable Reports",
-          "description": "Generate clear and formatted reports of all your verifications and validations, ready to be shared.",
-          "iconSrc": "/images/Report Export.svg"
-        },
-        {
-          "title": "Shared Comments",
-          "description": "Add annotations on criteria or documents to facilitate collaboration during reviews.",
-          "iconSrc": "/images/Shared Comments.svg"
-        }
-      ]
-    }
-  },
   "product": {
     "hero": {
       "badge": "AI Platform for Tenders",
@@ -964,126 +1006,6 @@
           "answer": "Through time saved, a decrease in errors, an increase in submitted responses, and a higher success rate."
         }
       ]
-    }
-  },
-  "header": {
-    "requestDemo": "Request a demo",
-    "menu": "Menu",
-    "navigation": [
-      {
-        "title": "Our Product",
-        "href": "/product"
-      },
-      {
-        "title": "Use Cases",
-        "children": [
-          {
-            "title": "Small Projects – Tender",
-            "href": "/uc-1"
-          },
-          {
-            "title": "Medium Projects – Tender",
-            "href": "/uc2test"
-          },
-          {
-            "title": "Complex Projects – Tender",
-            "href": "/uc-3"
-          },
-          {
-            "title": "Small Projects – Execution",
-            "href": "/uc-4"
-          },
-          {
-            "title": "Medium Projects – Execution",
-            "href": "/uc-5"
-          },
-          {
-            "title": "Complex Projects – Execution",
-            "href": "/uc-6"
-          }
-        ]
-      },
-      {
-        "title": "Our Product",
-        "href": "/product"
-      },
-      {
-        "title": "Word Addon",
-        "href": "/word-addon"
-      },
-      {
-        "title": "Privacy Policy",
-        "href": "/privacy"
-      }
-    ]
-  },
-  "homepage": {
-    "mainTitle": "The intelligence of your project teams,",
-    "mainSubtitle": "multiplied by AI",
-    "description": "Aitenders, your digital teammate to win tenders, manage contracts, and structure the knowledge and expertise of your projects.",
-    "domainSelection": "How can I help you?",
-    "projectSize": "What is the size of your projects?",
-    "chooseUseCase": "Choose your use case",
-    "yourSelection": "Your selection:",
-    "availableUseCases": "Available use cases:",
-    "back": "← Back",
-    "tenderManagementTitle": "I respond to calls for tenders",
-    "tenderManagementDescription": "Optimize your responses to calls for tenders. Analyze requirements, collaborate effectively, and maximize your chances of success.",
-    "contractExecutionTitle": "I manage projects in execution",
-    "contractExecutionDescription": "Manage your projects with confidence. Track deliverables, ensure compliance, and proactively manage changes.",
-    "knowledgeManagementTitle": "I structure my experts' knowledge",
-    "knowledgeManagementDescription": "Capitalize on your past knowledge and experiences. Quick access to references, templates, and comparables for each new project.",
-    "smallProjectTitle": "Small, regular Projects",
-    "smallProjectDescription": "Ideal for small teams and targeted needs. Quick setup, essential features.",
-    "mediumProjectTitle": "Moderately complex projects",
-    "mediumProjectDescription": "A balance between flexibility and power. Complete tools for structured and collaborative projects.",
-    "largeProjectTitle": "Large complex Projects",
-    "largeProjectDescription": "Designed for complex and large-scale organizations. Advanced solutions, personalized AI, and enhanced security.",
-    "learnMore": "I want to learn more about Aitenders",
-    "exploreSolutions": "Explore our solutions",
-    "discoverUseCase": "Discover this use case",
-    "chatPlaceholder": "Interact with the Chat Questions / Launch the simulator / Information?",
-    "chatTitle": "Chat with the AI Assistant",
-    "ourUseCases": "Our Use Cases",
-    "simulationROI": "Simulation / ROI",
-    "aiAgents": "AI Agents",
-    "dataSecurity": "Data Security",
-    "contactUs": "Contact us",
-    "tenderProcess": "Tender Process",
-    "scheduleDemo": "Schedule a Demo",
-    "ucMetadata": {
-      "UC1": {
-        "title": "Accelerate small tenders",
-        "description": "Tenders for small projects"
-      },
-      "uc2test": {
-        "title": "Medium tender management",
-        "description": "Management of medium-sized tenders"
-      },
-      "uc3": {
-        "title": "Complex multi-lot tenders",
-        "description": "Complex multi-lot tenders"
-      },
-      "uc4": {
-        "title": "Execution of small projects",
-        "description": "Execution of small projects"
-      },
-      "uc5": {
-        "title": "Execution of medium projects",
-        "description": "Execution of medium projects"
-      },
-      "uc6": {
-        "title": "Execution of large projects",
-        "description": "Execution of large projects"
-      },
-      "UC7": {
-        "title": "Knowledge management for small structures",
-        "description": "Knowledge management for small structures"
-      },
-      "UC8": {
-        "title": "Knowledge management for large organizations",
-        "description": "Knowledge management for large organizations"
-      }
     }
   },
   "word_addon": {

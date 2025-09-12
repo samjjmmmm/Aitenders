@@ -23,7 +23,13 @@ export default defineConfig({
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
   },
+  // This line is correct and sets the project's web root to your 'client' folder.
   root: path.resolve(import.meta.dirname, "client"),
+
+  // --- THIS IS THE FIX ---
+  // This new line explicitly tells Vite the full path to your public assets folder.
+  publicDir: path.resolve(import.meta.dirname, "client", "public"),
+
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
