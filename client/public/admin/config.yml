@@ -1,0 +1,54 @@
+# ---------------------------------------------------------------- #
+#  1. BACKEND CONFIGURATION: How the CMS connects to GitHub
+# ---------------------------------------------------------------- #
+backend:
+  name: git-gateway # Uses Netlify's Git Gateway for authentication
+  branch: main # IMPORTANT: Change this to 'master' if that's your default branch
+
+# ---------------------------------------------------------------- #
+#  2. MEDIA CONFIGURATION: Where to store uploaded images/files
+# ---------------------------------------------------------------- #
+media_folder: "public/uploads"   # Saves uploaded files to this folder in your repo
+public_folder: "/uploads"        # The public URL path for your app to access these files
+
+# ---------------------------------------------------------------- #
+#  3. COLLECTIONS: Defines the content you can edit
+# ---------------------------------------------------------------- #
+collections:
+  # --- Collection 1: Editing your Turkish Translation JSON file ---
+  - name: "translations_tr" # An internal ID for the collection
+    label: "Turkish Content (TR)" # The name shown in the CMS UI
+    files: # 'files' is used for editing specific, single files
+      - file: "public/locales/tr/translation.json" # <-- EXACT PATH from your structure
+        label: "Turkish Translations"
+        name: "tr"
+        fields:
+          # You need to build fields that MATCH your JSON structure.
+          # This is an EXAMPLE. You MUST adapt it to your actual JSON.
+          - { label: "Page Title", name: "pageTitle", widget: "string" }
+          - label: "Navigation"
+            name: "navigation"
+            widget: "object"
+            fields:
+              - { label: "Home", name: "home", widget: "string" }
+              - { label: "About", name: "about", widget: "string" }
+              - { label: "Contact", name: "contact", widget: "string" }
+          - label: "Homepage Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Main Heading", name: "heading", widget: "string" }
+              - { label: "Subheading", name: "subheading", widget: "text" }
+              - { label: "Button Text", name: "buttonText", widget: "string" }
+
+  # --- Collection 2: Editing your admin-test.json file ---
+  - name: "admin_test"
+    label: "Admin Test Content"
+    files:
+      - file: "client/src/content/admin-test.json" # <-- EXACT PATH from your structure
+        label: "Admin Test JSON"
+        name: "admin_test_json"
+        fields:
+          # Add fields that match the structure of admin-test.json
+          - { label: "Test Setting", name: "testSetting", widget: "string" }
+          - { label: "Enable Feature", name: "enableFeature", widget: "boolean" }

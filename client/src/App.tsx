@@ -26,10 +26,6 @@ import UC6Page from "@/pages/UC-6";
 import ProductPage from "@/pages/Product-page";
 
 
-// --- THE CORRECT IMPORT ---
-// We are importing the file you created: AdminPage.tsx
-import AdminPage from "./pages/AdminPage"; 
-
 import "./index.css"; 
 
 function RouterContent() {
@@ -42,8 +38,7 @@ function RouterContent() {
   return (
     <Switch>
       {/* --- ADMIN ROUTES --- */}
-      {/* This route now correctly points to /admin and uses the correct component */}
-      <Route path="/admin" component={AdminPage} /> 
+ 
       <Route path="/admin/simulator" component={SimulatorAdmin} />
       <Route path="/admin/mailing" component={MailingAdmin} />
 
