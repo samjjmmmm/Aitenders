@@ -1,5 +1,7 @@
 import express, { type Request, Response, NextFunction } from "express";
 import http from 'http';
+import path from 'path';
+import fs from 'fs';
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import { translationService } from './translations';
@@ -47,6 +49,16 @@ app.use((req, res, next) => {
     // ====================================================================
     if (app.get("env") === "development") {
       await setupVite(app, server);
+      
+      // Static admin panel serving
+      app.use('/admin', express.static(path.resolve(import.meta.dirname, '..', 'client', 'public', 'admin'), {index: 'index.html'}));
+      app.get('/admin', (req, res) => {
+        res.sendFile(path.resolve(import.meta.dirname, '..', 'client', 'public', 'admin', 'index.html'));
+      });
+      
+      // Static assets serving
+      app.use('/locales', express.static(path.resolve(import.meta.dirname, '..', 'client', 'public', 'locales')));
+      app.use(express.static(path.resolve(import.meta.dirname, '..', 'client', 'public')));
     } else {
       serveStatic(app);
     }
@@ -54,6 +66,23 @@ app.use((req, res, next) => {
     // Now register API routes and the main application catch-all
     await registerRoutes(app);
     // ====================================================================
+    
+    // Dev-only SPA fallback with manual React preamble injection
+    if (app.get("env") === "development") {
+      app.get(/^(?!\/api|\/admin|\/public|\/locales|\/@vite|\/@react-refresh|\/assets).*/, async (req, res, next) => {
+        try {
+          let html = await fs.promises.readFile(path.resolve(import.meta.dirname, '..', 'client', 'index.html'), 'utf8');
+          const preamble = `<script type="module">import RefreshRuntime from "/@react-refresh"; RefreshRuntime.injectIntoGlobalHook(window); window.$RefreshReg$=()=>{}; window.$RefreshSig$=()=>t=>t; window.__vite_plugin_react_preamble_installed__=true;</script>\n<script type="module" src="/@vite/client"></script>`;
+          html = html.replace('</head>', `${preamble}</head>`);
+          res.setHeader('Content-Type', 'text/html');
+          res.status(200).send(html);
+          log(`Dev SPA with preamble: ${req.originalUrl}`);
+        } catch (error) {
+          console.error('Dev SPA fallback error:', error);
+          next(error);
+        }
+      });
+    }
 
     app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
       const status = err.status || err.statusCode || 500;
