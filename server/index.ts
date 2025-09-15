@@ -1,9 +1,12 @@
 import express, { type Request, Response, NextFunction } from "express";
+import http from 'http';
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import { translationService } from './translations';
 
 const app = express();
+const server = http.createServer(app); // Create the server instance here
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -39,49 +42,46 @@ app.use((req, res, next) => {
 
 (async () => {
   try {
-    const server = await registerRoutes(app);
-
-    app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
-      const status = err.status || err.statusCode || 500;
-      const message = err.message || "Internal Server Error";
-
-      res.status(status).json({ message });
-      throw err;
-    });
-
-    // importantly only setup vite in development and after
-    // setting up all the other routes so the catch-all route
-    // doesn't interfere with the other routes
+    // ====================================================================
+    // THE FIX: Set up static/Vite routes BEFORE application routes
+    // ====================================================================
     if (app.get("env") === "development") {
       await setupVite(app, server);
     } else {
       serveStatic(app);
     }
 
-    // Initialize translation system (skip seeding for faster startup)
+    // Now register API routes and the main application catch-all
+    await registerRoutes(app);
+    // ====================================================================
+
+    app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
+      const status = err.status || err.statusCode || 500;
+      const message = err.message || "Internal Server Error";
+
+      res.status(status).json({ message });
+      // It's often better not to re-throw the error, as it can crash the process
+      // unless you have a top-level unhandled exception catcher.
+      console.error(err);
+    });
+
+    // Initialize translation system
     try {
       await translationService.initializeLanguages();
       console.log('✅ Languages initialized');
-
-      // Skip translation seeding on startup to improve performance
-      // Run: npm run seed-translations to seed translations if needed
       console.log('ℹ️ Skipping translation seeding for faster startup');
     } catch (error) {
       console.error('Error initializing translations:', error);
     }
 
-    // ALWAYS serve the app on the port specified in the environment variable PORT
-    // Other ports are firewalled. Default to 5000 if not specified.
-    // this serves both the API and the client.
-    // It is the only port that is not firewalled.
     const port = parseInt(process.env.PORT || '5000', 10);
     server.listen({
       port,
       host: "0.0.0.0",
-      reusePort: true,
     }, () => {
       log(`serving on port ${port}`);
     });
+
   } catch (error) {
     console.error('Critical server startup error:', error);
     process.exit(1);
