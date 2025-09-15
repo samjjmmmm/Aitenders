@@ -4,13 +4,60 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
-  
-  <!-- THIS IS THE CRUCIAL SCRIPT THAT WAS MISSING -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  
+  <!-- Decap CMS stylesheet -->
+  <link href="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.css" rel="stylesheet" />
 </head>
 <body>
-  <!-- This is the Decap CMS application script -->
+  <!-- Set manual initialization before including the script -->
+  <script>
+    window.CMS_MANUAL_INIT = true;
+  </script>
+  
+  <!-- Include the Decap CMS script -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  
+  <!-- Manual initialization with inline config -->
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      if (window.CMS) {
+        window.CMS.init({
+          config: {
+            backend: {
+              name: 'test-repo'
+            },
+            load_config_file: false,
+            media_folder: "public/uploads",
+            public_folder: "/uploads",
+            collections: [
+              {
+                name: "translations",
+                label: "Website Translations",
+                files: [
+                  {
+                    name: "english",
+                    label: "English Translation",
+                    file: "client/public/locales/en/translation.json",
+                    fields: [
+                      { label: "Content", name: "content", widget: "code", default_language: "json" }
+                    ]
+                  },
+                  {
+                    name: "french", 
+                    label: "French Translation",
+                    file: "client/public/locales/fr/translation.json",
+                    fields: [
+                      { label: "Content", name: "content", widget: "code", default_language: "json" }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        });
+      } else {
+        console.error('CMS not loaded');
+      }
+    });
+  </script>
 </body>
 </html>
