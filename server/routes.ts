@@ -859,6 +859,68 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Admin panel routes - serve static files from client/public/admin
+  app.get("/admin", (req, res) => {
+    try {
+      const adminIndexPath = path.resolve(
+        import.meta.dirname,
+        "..",
+        "client",
+        "public",
+        "admin",
+        "index.html"
+      );
+      res.sendFile(adminIndexPath);
+    } catch (error) {
+      console.error('Error serving admin panel:', error);
+      res.status(500).json({ message: "Failed to load admin panel" });
+    }
+  });
+
+  // Serve admin config file
+  app.get("/admin/config.yml", (req, res) => {
+    try {
+      const configPath = path.resolve(
+        import.meta.dirname,
+        "..",
+        "client",
+        "public",
+        "admin",
+        "config.yml"
+      );
+      res.setHeader('Content-Type', 'text/yaml');
+      res.sendFile(configPath);
+    } catch (error) {
+      console.error('Error serving admin config:', error);
+      res.status(500).json({ message: "Failed to load admin config" });
+    }
+  });
+
+  // Handle any other admin static files
+  app.get("/admin/*", (req, res) => {
+    try {
+      const filename = (req.params as any)[0]; // Get the filename after /admin/
+      const filePath = path.resolve(
+        import.meta.dirname,
+        "..",
+        "client",
+        "public",
+        "admin",
+        filename
+      );
+      
+      // Check if file exists and serve it
+      if (fs.existsSync(filePath)) {
+        res.sendFile(filePath);
+      } else {
+        res.status(404).json({ message: "Admin file not found" });
+      }
+    } catch (error) {
+      console.error('Error serving admin file:', error);
+      res.status(500).json({ message: "Failed to load admin file" });
+    }
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }
