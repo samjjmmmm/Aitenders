@@ -1,8 +1,22 @@
+          # This tells the CMS how to connect to your GitHub repository.
           backend:
             name: git-gateway
-            branch: main # <-- We may need to change this!
+            branch: main # This should match your GitHub branch, which we confirmed is 'main'.
 
-          media_folder: "public/uploads"
+          # This tells the CMS where to save any images you upload.
+          media_folder: "client/public/uploads"
+          public_folder: "/uploads"
 
-          # We will configure this later, after the login works.
-          collections: []
+          # This is where we will define the content you can edit.
+          # We will start by adding your Turkish translation file here.
+          collections:
+            - name: "translations" # An internal name for this content type
+              label: "Website Content (Turkish)" # The name you will see in the CMS
+              files:
+                - label: "Turkish Translations"
+                  name: "tr_translations"
+                  file: "client/public/locales/tr/translation.json" # The exact path to your file
+                  fields:
+                    # We need to add fields that match your JSON file structure.
+                    # For now, let's just add one simple field as a test.
+                    - { label: "Test Field", name: "test_field", widget: "string" }
