@@ -1,0 +1,23 @@
+I need your help to understand a server configuration issue within my Replit project. I'm integrating a headless CMS (Decap CMS) into my React/TSX application.
+
+Here is a detailed explanation of what we are doing and what we need:
+
+1. The Goal:
+The headless CMS is a self-contained static application. Its core files are an index.html and a config.yml. I have placed these files inside a folder at client/public/admin/. The goal is to be able to access this CMS by navigating to my website's URL and adding /admin to the end (e.g., my-site.replit.dev/admin).
+
+2. The Problem We Are Facing:
+Whenever I try to access the /admin URL, the server does not serve the client/public/admin/index.html file. Instead, my main React application's router intercepts the request, doesn't find a route for /admin, and displays its own custom "404 Page Not Found" component.
+
+3. The Troubleshooting Steps We Have Already Taken:
+To confirm the problem isn't a simple typo, we have already:
+
+    Verified the admin folder is correctly located inside client/public.
+
+    Verified the file is correctly named index.html.
+
+    Created a simple test.html file directly inside the client/public folder. When we tried to access this test file via its URL (my-site.replit.dev/test.html), we still got the same "404 Page Not Found" error from the React application.
+
+This confirms the issue is with how the development server is configured to handle requests for static files in sub-directories.
+
+4. Our Specific Question (Diagnosis, Not a Fix):
+What specific part of my project's server configuration is causing this behavior? I am not asking you to write code or fix it. I need you to diagnose the issue and explain the technical reason. Please look at my vite.config.ts file, my package.json scripts, or any other relevant server setup files and tell me why the dev server is prioritizing the React application's router for all URL paths, instead of first checking if a matching static file or folder exists in the client/public directory.
