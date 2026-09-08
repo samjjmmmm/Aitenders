@@ -44,6 +44,10 @@ The platform adopts an enterprise B2B SaaS aesthetic, emphasizing professional t
 - **Styling**: Tailwind CSS
 - **Development Environment**: Replit (for development optimizations)
 
+## MCP Integrations
+Model Context Protocol (MCP) servers available to Claude Code / Claude Agent SDK sessions are declared in the project-scoped `.mcp.json` at the repo root. Project-scoped servers require a one-time approval the first time each developer opens the project in Claude Code.
+- **Ubersuggest** (`ubersuggest`): HTTP MCP server (`https://ubersuggest-mcp.neilpatelapi.com/mcp`) providing SEO and keyword-research data (keyword ideas, search volume, competition, and traffic metrics) for market-intelligence and content workflows.
+
 ## Recent Changes
 - **September 1, 2025**: Fixed critical startup issue where translation seeding process was causing server hang during initialization. Temporarily disabled translation seeding on startup for improved performance - translations can be seeded separately using `npm run seed-translations` command.
 ```
