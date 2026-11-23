@@ -24,6 +24,7 @@ import UC4Page from "@/pages/UC-4";
 import UC5Page from "@/pages/UC-5";
 import UC6Page from "@/pages/UC-6";
 import ProductPage from "@/pages/Product-page";
+import BlogPage from "@/pages/blog";
 
 
 import "./index.css"; 
@@ -57,6 +58,7 @@ function RouterContent() {
       <Route path="/word-addon" component={WordAddonPage} />
       <Route path="/privacy" component={PrivacyPage} />
       <Route path="/security" component={SecurityPage} />
+      <Route path="/blog" component={BlogPage} />
     
 
       {/* Fallback for any other path */}

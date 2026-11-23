@@ -1157,5 +1157,15 @@
         "p1": "Cette section fournit des détails supplémentaires sur les Données Personnelles que nous collectons sur les résidents de Californie et les droits qui leur sont accordés en vertu de la California Consumer Privacy Act ou \"CCPA\". Nous étendons les mêmes droits à tous les résidents américains. Aux fins du CCPA, le terme défini \"Données Personnelles\" est le même que le terme \"Informations Personnelles\" tel que ce terme est défini dans le CCPA."
       }
     }
+  },
+  "blog": {
+    "title": "Blog Aitenders",
+    "subtitle": "Actualités et articles",
+    "description": "Les actualités et articles publiés par l’équipe Aitenders.",
+    "readArticle": "Lire l’article",
+    "emptyTitle": "Aucun article publié pour le moment",
+    "emptyDescription": "Les nouveaux articles apparaîtront ici dès leur publication.",
+    "errorTitle": "Les articles n’ont pas pu être chargés",
+    "errorDescription": "Merci de réessayer plus tard."
   }
 }

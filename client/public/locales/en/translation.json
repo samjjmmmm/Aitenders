@@ -1157,5 +1157,15 @@
         "p1": "This section provides additional details about the Personal Data we collect about California residents and the rights afforded to them under the California Consumer Privacy Act or \"CCPA\". We extend the same rights to all U.S. residents. For purposes of the CCPA, the defined term \"Personal Data\" is the same as the term \"Personal Information\" as that term is defined in the CCPA."
       }
     }
+  },
+  "blog": {
+    "title": "Aitenders blog",
+    "subtitle": "News and articles",
+    "description": "Updates and articles published by the Aitenders team.",
+    "readArticle": "Read article",
+    "emptyTitle": "No articles published yet",
+    "emptyDescription": "New articles will appear here once they are published.",
+    "errorTitle": "Articles could not be loaded",
+    "errorDescription": "Please try again later."
   }
 }

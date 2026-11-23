@@ -19,3 +19,26 @@
                               # We need to add fields that match your JSON file structure.
                               # For now, let's just add one simple field as a test.
                               - { label: "Test Field", name: "test_field", widget: "string" }
+                      # Blog articles. Each article is saved as one JSON file in
+                      # client/src/content/blog/ and listed on the /blog page.
+                      - name: "blog"
+                        label: "Blog"
+                        label_singular: "Article"
+                        folder: "client/src/content/blog"
+                        create: true
+                        extension: "json"
+                        format: "json"
+                        slug: "{{slug}}"
+                        summary: "{{title}} ({{language}})"
+                        sortable_fields: ["date", "title"]
+                        fields:
+                          - { label: "Title", name: "title", widget: "string" }
+                          - { label: "Slug (URL)", name: "slug", widget: "string", required: false, hint: "Leave empty to use the file name" }
+                          - { label: "Language", name: "language", widget: "select", options: ["en", "fr"], default: "en" }
+                          - { label: "Publish date", name: "date", widget: "datetime" }
+                          - { label: "Author", name: "author", widget: "string", required: false }
+                          - { label: "Cover image", name: "cover_image", widget: "image", required: false }
+                          - { label: "Excerpt", name: "excerpt", widget: "text", required: false }
+                          - { label: "Tags", name: "tags", widget: "list", required: false }
+                          - { label: "Published", name: "published", widget: "boolean", default: true }
+                          - { label: "Body", name: "body", widget: "markdown" }
